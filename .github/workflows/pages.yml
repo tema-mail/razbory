@@ -1,6 +1,8 @@
 name: pages
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
 permissions:
   contents: read
   pages: write
@@ -17,8 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: tema-mail/seo-razbory
-          token: ${{ secrets.RAZBORY_TOKEN }}
           path: src
       - name: Собрать сайт
         run: |
