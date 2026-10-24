@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Миграция TEYES Sibir</title>
+<meta name="description" content="Срез поиска TEYES Sibir 25.10.2026: какие адреса дают заявки и показы, что забрать при переезде на код и что усилить по семи направлениям.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – красный TEYES Sibir */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;word-break:break-all}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:var(--surface)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{display:inline-block;min-width:38px;text-align:center;font:600 12px/1.7 var(--f-mono);padding:0 6px;border-radius:4px}
+.pos.top{background:var(--good-bg);color:var(--good)} .pos.mid{background:var(--mid-bg);color:var(--mid)} .pos.no{background:var(--bad-bg);color:var(--bad)}
+.na{color:var(--none);font-size:13px}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.dir .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.dir .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tree{font:13.5px/1.75 var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre;margin:0}
+.tree .n{color:var(--good);font-weight:500} .tree .k{color:var(--muted)} .tree .x{color:var(--bad)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=search]{font:16px var(--f-body);padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0;flex:1 1 220px}
+#mig td.q{font-size:12.5px;color:var(--muted);min-width:260px}
+#mig td.u{min-width:200px}
+.tbl-wrap{max-height:75vh;overflow:auto}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<header style="display:flex;flex-direction:column;gap:14px">
+  <span class="eyebrow">TEYES Sibir · срез 25.10.2026</span>
+  <h1>Что забрать при переезде на код и что усилить</h1>
+  <p class="lead">Какие адреса teyes-sibir.ru приносят заявки и показы, куда они переезжают, по каким запросам их находят и что сделать, чтобы встать в топ по семи направлениям.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">Сначала вернуть потерянное, потом строить новое.</b>
+    <p>С 11.10 на сайте 42 адреса с трафиком отдают 404, редиректы так и не включены. За год через эти адреса пришло 176 визитов с заявкой из поиска и 517 визитов с заявкой из всех каналов. Среди них /teyes, /autosound, /russification, /signaling. Пока эти адреса не ведут на новые страницы, наращивать контент бесполезно: вес старых страниц теряется.</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>729</b><span>визитов с заявкой из поиска за 12 мес (из 8 039 поисковых)</span></div>
+    <div class="fact"><b>324</b><span>адреса в таблице, на них 728 из 729 таких визитов</span></div>
+    <div class="fact"><b>42</b><span>из них отдают 404 на 25.10, ещё 34 уже стоят на 301</span></div>
+    <div class="fact"><b>0 из 340</b><span>старых адресов из карты 301 перенаправлены</span></div>
+  </div>
+  <p class="note">Источники:
+    <br>– Метрика 99532918: 25.10.2025–24.10.2026 и 90 дней 27.07–24.10. Заявка – это форма, отправленные контакты, телефон, мессенджер, покупка или кнопки Яндекс Бизнеса.
+    <br>– Google Search Console: данные есть только с 20.04.2026.
+    <br>– Вебмастер: месяц 06.09–06.10, Новосибирск, снят 17.10 из кабинета.
+    <br>– Вордстат через XMLRiver: Новосибирск, снят 11–12.10.
+    <br>– Коды ответа сайта проверены curl 25.10.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Шаг 0 – до любого контента</span>
+  <h2>Что горит</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Что</th><th>Почему важно</th><th>Что сделать</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sev c">критично</span> 301 не стоят</td><td>/teyes: 649 поисковых визитов и 108 с заявкой за год, плюс 4 770 визитов из рекламы. /autosound: 25 визитов с заявкой, /russification 13, /sound_insulation 13, /signaling 11, /catalog_teyes 3.</td><td>Включить на Tilda карту 301 из слепка: 340 адресов. Она же переедет на код без изменений.</td></tr>
+      <tr><td><span class="sev c">критично</span> Каннибализация «установка Teyes»</td><td>За один запрос спорят главная, /services/installation_teyes и /store/catalog_teyes.</td><td>Одна фраза – одна страница, схема ниже.</td></tr>
+      <tr><td><span class="sev m">важно</span> Работы в трёх разделах</td><td>/works, /work и /multimedia_teyes с одинаковым title. Около 47 пар страниц на одну и ту же модель.</td><td>На коде один раздел работ, у каждой модели одна страница, остальные адреса – 301 на неё.</td></tr>
+      <tr><td><span class="sev m">важно</span> Ошибки в метаданных</td><td>У /store/camera и /store/autosound title «Доводчики дверей». У страниц приложений title «ГУ JETOUR». /thankpage и /fail стоят в sitemap. Меню ведёт на адреса с заглавными буквами.</td><td>Исправить при переносе, на Tilda – по «да».</td></tr>
+      <tr><td><span class="sev l">не снято</span> Вебмастер</td><td>API отвечает 000 за 15 с. В Chrome открыт аккаунт Кирилла, сайт ему не принадлежит. Индексация, исключённые страницы и главное зеркало у Яндекса не видны.</td><td>Войти в Chrome под artemiy.galimov или выдать доступ аккаунту.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Семь направлений</span>
+  <h2>Где стоим и что усиливать</h2>
+  <p class="note">«Спрос» – частота Вордстата по Новосибирску за 30 дней (11.10). «Позиция» – средняя за месяц: Яндекс из Вебмастера по НСК (06.09–06.10), Google из GSC (90 дней). <span class="pos top">1–3</span> <span class="pos mid">4–10</span> <span class="pos no">11+</span>. Свежий съём позиций XMLRiver не делался: сметы на 21 ₽ ждут подтверждения.</p>
+
+  <div class="dir">
+    <h3>1. Установка, покупка и официальный представитель Teyes</h3>
+    <div class="meta"><span>Спрос: teyes <b>7 745</b> · teyes новосибирск <b>387</b> · установка teyes <b>378</b> · teyes купить <b>366</b> · teyes официальный <b>219</b> · установка магнитолы teyes <b>170</b></span></div>
+    <div class="scroll"><table><thead><tr><th>Запрос</th><th class="r">Яндекс НСК</th><th class="r">Google</th><th>Комментарий</th></tr></thead><tbody>
+      <tr><td>teyes</td><td class="r"><span class="pos mid">7,6</span></td><td class="r"><span class="na">нет в выгрузке</span></td><td>149 показов в месяц, 4 клика</td></tr>
+      <tr><td>teyes официальный сайт новосибирск</td><td class="r"><span class="pos top">3,1</span></td><td class="r"><span class="na">–</span></td><td>82 показа, 13 кликов – лучший брендовый запрос</td></tr>
+      <tr><td>teyes новосибирск</td><td class="r"><span class="pos top">3,8</span></td><td class="r"><span class="pos mid">9,4</span></td><td>в Google 06.09–06.10 позиция 10,3, месяцем раньше 8,0 – просели</td></tr>
+      <tr><td>установка магнитолы teyes</td><td class="r"><span class="pos top">1,9</span></td><td class="r"><span class="pos mid">4,6</span></td><td>держим</td></tr>
+      <tr><td>магнитола teyes купить в новосибирске</td><td class="r"><span class="pos mid">10,3</span></td><td class="r"><span class="na">–</span></td><td>коммерческий запрос, на грани топ-10</td></tr>
+      <tr><td>купить магнитолу teyes в новосибирске</td><td class="r"><span class="pos mid">10,0</span></td><td class="r"><span class="na">–</span></td><td>то же</td></tr>
+    </tbody></table></div>
+    <pre class="tree"><span class="k">одна фраза – одна страница</span>
+/                              <span class="k">← teyes новосибирск, teyes sibir, тиайс нск (бренд + город)</span>
+/services/installation_teyes   <span class="k">← установка teyes, установка магнитолы teyes новосибирск</span>  <span class="x">← 301 с /teyes</span>
+/store/catalog_teyes           <span class="k">← купить teyes новосибирск, магнитола teyes купить, цены</span>  <span class="x">← 301 с /catalog_teyes</span>
+<span class="n">/o-kompanii</span>                    <span class="k">← официальный дилер / представитель teyes новосибирск (новая)</span></pre>
+    <ul class="list">
+      <li><b>Главная:</b> в title и H1 оставить «TEYES Sibir – установочный центр Teyes в Новосибирске» без слов «установка» и «купить», чтобы не забирать эти запросы у двух страниц ниже.</li>
+      <li><b>Установка:</b> сейчас H1 = title, «Подбор и установка мультимедиа и аксессуаров…» длиной в 80 знаков. Нужен короткий «Установка Teyes в Новосибирске», цена от, срок, гарантия, работы по маркам, FAQ с разметкой FAQPage.</li>
+      <li><b>Купить:</b> на коде у магазина карточки в HTML. Сейчас на Tilda их рисует скрипт, и Google видит 0 карточек. Нужны Product и Offer с ценой и наличием, а в листинге – цена «от».</li>
+      <li><b>Официальный представитель:</b> отдельной страницы нет, /about и /dealer отдают 404. Нужна страница с документом дилерства, адресом шоурума, мастерами, гарантией, Organization и LocalBusiness в разметке. Карточки Яндекс Бизнеса и 2ГИС должны совпадать с ней, на отзывы 2ГИС нет ответов с 03.07. «Официальный» писать можно, только если есть документ.</li>
+    </ul>
+  </div>
+
+  <div class="dir">
+    <h3>2. Русификация всех авто – японские, корейские, европейские</h3>
+    <div class="meta"><span>Спрос: русификация <b>2 598</b> · в новосибирске <b>340</b> · Toyota <b>779</b> · Honda <b>636</b> · Mazda <b>349</b> · BMW/Mercedes/Audi/VW <b>386</b> · Subaru <b>132</b> · Kia/Hyundai <b>89</b> · Nissan <b>73</b> · Suzuki <b>49</b></span></div>
+    <p>За год русификация дала 132 визита с заявкой из поиска. Главные адреса: /toyotarus (20), /russification (13, сейчас 404), /multimedia_teyes/honda/honda_stepwgn (20). Отдельных страниц для Honda, Mazda, Subaru нет, хотя спрос по ним выше порога в 20 запросов в месяц. По Хонде сейчас работают страницы моделей Teyes, а не русификации.</p>
+    <div class="scroll"><table><thead><tr><th>Запрос</th><th class="r">Яндекс НСК</th><th class="r">Google</th></tr></thead><tbody>
+      <tr><td>русификация toyota новосибирск</td><td class="r"><span class="na">–</span></td><td class="r"><span class="pos mid">8,5</span></td></tr>
+      <tr><td>русификация авто новосибирск</td><td class="r"><span class="na">–</span></td><td class="r"><span class="pos no">13,8</span></td></tr>
+      <tr><td>русификация хонда везел новосибирск</td><td class="r"><span class="pos top">2,8</span></td><td class="r"><span class="na">–</span></td></tr>
+      <tr><td>русификация японских магнитол в новосибирске</td><td class="r"><span class="na">–</span></td><td class="r"><span class="pos no">27,4</span></td></tr>
+    </tbody></table></div>
+    <pre class="tree"><span class="n">/rusifikaciya</span>                     <span class="k">хаб: все страны, цена от, как проходит, FAQ</span>   <span class="x">← 301 /russification, /services/russification_of_cars</span>
+  <span class="n">/rusifikaciya/yaponiya</span>          <span class="k">японские магнитолы и приборки</span>
+    <span class="n">/rusifikaciya/toyota</span>          <span class="k">779</span>   <span class="x">← 301 /toyotarus</span>
+    <span class="n">/rusifikaciya/honda</span>           <span class="k">636 – новая; Vezel, Stepwgn, Freed – разделами</span>
+    <span class="n">/rusifikaciya/mazda</span>           <span class="k">349 – новая</span>
+    <span class="n">/rusifikaciya/subaru</span>          <span class="k">132 – новая</span>
+    <span class="k">Nissan 73, Suzuki 49, Lexus 20 – решить по съёму XMLRiver; Mitsubishi 27 – разделом</span>
+  <span class="n">/rusifikaciya/evropa</span>            <span class="k">BMW/Mercedes/Audi/VW 386 – китайские версии (Li, L); марки разделами до замера</span>
+  <span class="n">/rusifikaciya/koreya</span>            <span class="k">Kia/Hyundai 89 – разделом в хабе</span></pre>
+    <p class="note">Дерево собрано по схеме EV Sibir: хаб, страна, марка, модель. В EV 123 страницы, но модели там брали без порога. Здесь модель получает свою страницу, только если у неё ≥20 запросов в месяц и есть что сказать по делу: какая система стоит, какие версии, что именно переводим. Иначе это раздел на странице марки. Отдельная страница, где отличается только название модели, – мусор, и Яндекс за такое понижает весь сайт.</p>
+  </div>
+
+  <div class="dir">
+    <h3>3. Русификация китайских авто – как в EV</h3>
+    <div class="meta"><span>Спрос: русификация китайских <b>136</b> · китай <b>135</b> · китайских автомобилей <b>79</b> · в новосибирске <b>47</b> · Geely <b>135</b> · Changan <b>128</b> · Chery <b>68</b> · Haval <b>43</b> · Voyah <b>26</b> · Zeekr <b>23</b> · Jetour <b>23</b> · BYD <b>12</b> · Lixiang <b>6</b></span></div>
+    <p>Здесь спрос в Вордстате малый, а заявки идут. За год: /tankapp 20, /tankrus 11, /changanrus 9, /geelyrus 8, /havalrus 7, /exeedrus 7, /bydrus 5, /jetourrus 5, /exeedapp 4. Причина в том, что люди ищут не «русификация марки», а «<марка> на русском», «приложения», «прошивка». У /tankapp 1 443 показа в Google за полгода. Поэтому существующие страницы марок сохраняем все: у них есть заявки, и это само по себе подтверждает спрос.</p>
+    <div class="scroll"><table><thead><tr><th>Запрос</th><th class="r">Яндекс НСК</th><th class="r">Google</th></tr></thead><tbody>
+      <tr><td>русификация китайских автомобилей в новосибирске</td><td class="r"><span class="pos mid">8,4</span></td><td class="r"><span class="na">–</span></td></tr>
+      <tr><td>русификация китайских авто новосибирск</td><td class="r"><span class="na">–</span></td><td class="r"><span class="pos mid">6,3</span></td></tr>
+    </tbody></table></div>
+    <pre class="tree"><span class="n">/rusifikaciya/kitay</span>             <span class="k">хаб китайских: что переводим (ГУ, приборка, голос), приложения, цена от</span>
+  <span class="n">/rusifikaciya/tank</span>            <span class="x">← 301 /tankrus</span>     <span class="k">+ раздел «приложения» ← 301 /tankapp</span>
+  <span class="n">/rusifikaciya/geely</span>           <span class="x">← 301 /geelyrus</span>
+  <span class="n">/rusifikaciya/changan</span>         <span class="x">← 301 /changanrus, /changan_app</span>
+  <span class="n">/rusifikaciya/haval</span>           <span class="x">← 301 /havalrus, /havalapp, /page72020233.html</span>
+  <span class="n">/rusifikaciya/exeed</span>, byd, jetour, zeekr, lixiang, voyah, avatr, denza, hongqi, lynk-co, polestar
+  <span class="n">/rusifikaciya/chery</span>           <span class="k">68 – новая (сейчас нет)</span></pre>
+    <p class="note">Страницы приложений – вопрос владельцу: держать отдельными адресами или сделать разделом страницы марки. У /tankapp и /tankrus разные запросы: «танк 700 русификация» против «приложения tank». Склеивать их без съёма позиций рискованно, поэтому до замера сохраняем оба адреса.</p>
+  </div>
+
+  <div class="dir">
+    <h3>4. Установка сигнализаций StarLine</h3>
+    <div class="meta"><span>Спрос: сигнализация старлайн <b>8 372</b> · автозапуск старлайн <b>2 983</b> · старлайн новосибирск <b>1 048</b> · установка старлайн <b>1 033</b> · установка сигнализации <b>3 366</b> · с автозапуском <b>711</b> · новосибирск <b>799</b> · установка starline <b>383</b></span></div>
+    <p>Самый большой коммерческий спрос из всех направлений, а приносит всего 13 визитов с заявкой из поиска за год. В Яндексе по «установка сигнализации с автозапуском в новосибирске» мы на 8,7 месте, по «…цена» на 10,8. В Google почти не видны: «автосигнализация новосибирск» 55-е место. Отдельной страницы StarLine и автозапуска нет. /signaling (11 визитов с заявкой) отдаёт 404.</p>
+    <pre class="tree">/services/alarm_installation    <span class="k">хаб «Установка сигнализации в Новосибирске»: цены от, сроки 4–6 ч, гарантия 12 мес</span>  <span class="x">← 301 /signaling</span>
+  <span class="n">…/starline</span>                  <span class="k">установка старлайн / starline новосибирск – новая</span>
+  <span class="n">…/avtozapusk</span>                 <span class="k">сигнализация с автозапуском / автозапуск старлайн – новая</span>
+  <span class="n">…/gsm-gps</span>                    <span class="k">с телефона, GSM, GPS – новая (план 11.10, P0)</span>
+/store/signaling                <span class="k">купить сигнализацию starline – магазин</span>  <span class="x">← 301 /catalogsignaling</span></pre>
+    <p class="note">Работы по сигнализациям уже есть, например /starline_s96_toyota_raize (318 показов в Google). Их надо ставить ссылками на страницы StarLine и автозапуска. Модельные запросы «старлайн а93», «s96» – это поиск брелока и инструкции, страницы под них не делаем.</p>
+  </div>
+
+  <div class="dir">
+    <h3>5. Автозвук</h3>
+    <div class="meta"><span>Спрос: автозвук новосибирск <b>в реестре, замер ждёт сметы</b> · установка автозвука <b>119</b> · установка автозвука новосибирск <b>58</b> · сабвуфер новосибирск <b>291</b> · купить сабвуфер в новосибирске <b>168</b></span></div>
+    <p>/autosound отдаёт 404, а это 25 визитов с заявкой из поиска за год, все из Яндекса. В Яндексе НСК: «автозвук новосибирск установка» 10,4, «установка автозвука новосибирск» 10,0, «…цена» 5,3. Живая страница /services/installing_car_audio набрала с 20.04 101 показ в Google (средняя позиция 10,1, 5 кликов) и 16 поисковых визитов, из них 3 с заявкой.</p>
+    <pre class="tree">/services/installing_car_audio  <span class="k">автозвук новосибирск, установка автозвука, цена</span>  <span class="x">← 301 /autosound</span>
+  <span class="k">разделы: динамики, сабвуфер и усилитель, процессор, шумоизоляция дверей</span>
+/services/installing_sound_insulation  <span class="x">← 301 /sound_insulation</span>  <span class="k">(13 визитов с заявкой – отдельное направление)</span></pre>
+    <p class="note">Спрос на установку здесь небольшой, поэтому одна сильная страница лучше пяти слабых. Помогут реальные работы со звуком и фото, а также честная граница: «не обещаем децибелы».</p>
+  </div>
+
+  <div class="dir">
+    <h3>6. Камеры 360 / круговой обзор</h3>
+    <div class="meta"><span>Спрос: круговой обзор <b>375</b> · камера кругового обзора <b>160</b> · круговой обзор 360 <b>44</b> · установка кругового обзора <b>32</b> · teyes круговой обзор <b>20</b></span></div>
+    <p>Трафик приносят работы, а не услуга. /360_toyota_prado150: 1 185 показов в Google, 112 поисковых визитов, 5 с заявкой. По «установка кругового обзора тойота» в Google 7-е место, 93 показа. Страница /services/camera360 живая, но слабая: 24 показа в Google с 20.04 (позиция 8,4), 3 поисковых визита.</p>
+    <pre class="tree">/services/camera360              <span class="k">установка камер 360 / кругового обзора в новосибирске</span>
+  <span class="k">раздел «Toyota»: спрос 18 + 9, в Google 93 показа; работы Prado 150, LC200, RAV4, Camry ссылками</span>
+/360_toyota_prado150             <span class="k">сохранить адрес и текст 1:1 – лучшая страница направления</span></pre>
+  </div>
+
+  <div class="dir">
+    <h3>7. Подогрев сидений</h3>
+    <div class="meta"><span>Спрос: подогрев сидений <b>2 545</b> · установка подогрева сидений <b>468</b> · подогрев сидений новосибирск <b>88</b> · подогрев сидений хонда <b>175</b> · тойота <b>152</b> · ремонт подогрева сидений <b>61</b></span></div>
+    <p>Страница /services/seat-heating живая. В выгрузке Google её нет ни разу с 20.04, в Метрике за год 1 визит, в реестре SEO-админки нет ни одной фразы. Спрос при этом выше, чем у автозвука и 360. Праворульные японцы, ядро нашей аудитории, часто приходят без подогрева, отсюда «подогрев сидений хонда/тойота».</p>
+    <pre class="tree">/services/seat-heating           <span class="k">установка подогрева сидений в новосибирске: цена за сиденье, ткань/кожа, кнопка в штатное место</span>
+  <span class="k">раздел «Honda и Toyota из Японии» – 175 + 152; ремонт подогрева – раздел (61)</span></pre>
+    <p class="note">Нужно: добавить фразы в реестр SEO-админки, снять по ним позиции и проверить, что страница в индексе Яндекса. Индексацию сейчас не видно, Вебмастер недоступен.</p>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Таблица миграции</span>
+  <h2>324 адреса, которые надо забрать</h2>
+  <p>Попали все адреса, у которых за 12 месяцев была хотя бы одна заявка, или ≥3 поисковых визита, или ≥20 показов в Google. P0 – ≥3 визитов с заявкой из поиска, ≥10 с заявкой всего, ≥100 поисковых визитов или ≥500 показов. «Адрес на коде» сейчас указывает, куда адрес живёт или куда его вести по карте 301. Новые адреса из схем выше подставим после вашего «да» на дерево.</p>
+  <div class="filters" id="fdir"></div>
+  <div class="filters" id="fprio"></div>
+  <div class="filters"><input type="search" id="q" placeholder="Поиск по адресу или запросу" aria-label="Поиск по адресу или запросу"><a href="data/migration.csv" download>Скачать CSV (Excel)</a></div>
+  <p class="note" id="cnt"></p>
+  <div class="scroll tbl-wrap"><table id="mig">
+    <thead><tr><th>Пр.</th><th>Адрес сейчас</th><th>Код</th><th>Адрес на коде</th><th class="r" title="Визиты с заявкой из поиска, 12 мес">Заявки поиск 12м</th><th class="r" title="Визиты с заявкой, все каналы, 12 мес">Заявки все 12м</th><th class="r">Поиск визиты 12м</th><th class="r">Поиск 90д</th><th class="r">Google показы</th><th>Запросы</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <p class="note">Запросы Google взяты из GSC (страница × запрос) с показами и средней позицией. Google скрывает около 90% кликов как анонимные, поэтому это пример запросов, а не полный список. Фразы Яндекса из Метрики видны лишь частично: 425 визитов из 8 040, остальное скрыто порогом приватности. Полный список даст Вебмастер, когда появится доступ.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Ваши решения</span>
+  <h2>Что решить, чтобы двигаться</h2>
+  <div class="decide">
+    <div><div><b>Включить 301 на Tilda сейчас</b><p>Карта из 340 адресов, до переезда. Это самое выгодное действие во всём списке: вернёт вес /teyes, /autosound, /russification, /signaling. В Tilda без вашего «да» ничего не пишу.</p></div></div>
+    <div><div><b>Дерево адресов на коде</b><p>Вариант А – новое дерево /rusifikaciya/…, /services/alarm_installation/starline и т.д. со 301 со всех старых адресов за один переезд. Вариант Б – оставить старые адреса как есть. Рекомендую А: ЧПУ с иерархией нужны по вашему стандарту, и переезд один, а не два. Возможна просадка на 2–6 недель, гарантии нет.</p></div></div>
+    <div><div><b>Есть ли документ официального дилера Teyes</b><p>Без него страницу «официальный представитель» не делаем, чтобы не обещать лишнего.</p></div></div>
+    <div><div><b>Сметы XMLRiver заново – 21 ₽</b><p>Прошлые истекли. Спрос по 280 фразам (14,80 ₽) и позиции Яндекс и Google по НСК (6,20 ₽). Подтверждать в <a href="https://admin.teyes-sibir.ru/demand/">admin.teyes-sibir.ru/demand</a>, я пересоздам сметы по вашему слову.</p></div></div>
+    <div><div><b>Доступ к Вебмастеру</b><p>Войти в Chrome под artemiy.galimov, иначе индексация и запросы Яндекса по страницам остаются неизвестны.</p></div></div>
+  </div>
+</section>
+
+</main>
+<script>
+(function(){
+  var data=[],dir="Все",prio="Все",q="";
+  var tb=document.querySelector("#mig tbody"),cnt=document.getElementById("cnt");
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function chips(el,vals,get,set){
+    el.innerHTML="";
+    vals.forEach(function(v){var b=document.createElement("button");b.className="chip";b.textContent=v;b.setAttribute("aria-pressed",String(get()===v));
+      b.onclick=function(){set(v);chips(el,vals,get,set);draw()};el.appendChild(b)});
+  }
+  function sev(p){return p==="P0"?"c":p==="P1"?"m":"l"}
+  function codeTag(c){return c==="200"?'<span class="sev g">200</span>':c==="404"?'<span class="sev c">404</span>':'<span class="sev m">'+esc(c)+'</span>'}
+  function draw(){
+    var rows=data.filter(function(r){return(dir==="Все"||r.dir===dir)&&(prio==="Все"||r.prio===prio)&&(!q||(r.url+" "+r.target+" "+r.gq+" "+r.yq).toLowerCase().indexOf(q)>=0)});
+    var sl=rows.reduce(function(a,r){return a+r.sl12},0);
+    cnt.textContent="Показано адресов: "+rows.length+" · визитов с заявкой из поиска за 12 мес: "+sl;
+    tb.innerHTML=rows.map(function(r){
+      var qs=[r.gq?"G: "+esc(r.gq):"",r.yq?"Я: "+esc(r.yq):""].filter(Boolean).join("<br>")||'<span class="na">нет данных</span>';
+      return "<tr><td><span class='sev "+sev(r.prio)+"'>"+r.prio+"</span></td><td class='u'><code>"+esc(r.url)+"</code><br><span class='na'>"+esc(r.dir)+"</span></td><td>"+codeTag(r.code)+"</td><td class='u'><code>"+esc(r.target)+"</code><br><span class='na'>"+esc(r.action)+"</span></td><td class='r'>"+r.sl12+"</td><td class='r'>"+r.l12+"</td><td class='r'>"+r.s12+"</td><td class='r'>"+r.s90+"</td><td class='r'>"+r.gimp+"</td><td class='q'>"+qs+"</td></tr>";
+    }).join("");
+  }
+  fetch("data/migration.json").then(function(r){return r.json()}).then(function(d){
+    data=d;
+    var dirs=["Все"];d.forEach(function(r){if(dirs.indexOf(r.dir)<0)dirs.push(r.dir)});
+    chips(document.getElementById("fdir"),dirs,function(){return dir},function(v){dir=v});
+    chips(document.getElementById("fprio"),["Все","P0","P1","P2"],function(){return prio},function(v){prio=v});
+    document.getElementById("q").oninput=function(e){q=e.target.value.trim().toLowerCase();draw()};
+    draw();
+  }).catch(function(){cnt.textContent="Таблица не загрузилась – скачайте CSV по ссылке выше."});
+})();
+</script>
+</body>
+</html>
