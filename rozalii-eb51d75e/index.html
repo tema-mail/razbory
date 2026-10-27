@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Розалия: SEO-стратегия</title>
+<meta name="description" content="rozalii.ru: спрос, конкуренты и порядок продвижения – розница по городам и опт.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Отчёт-документ: одна колонка, широкие таблицы в своих прокрутках; акцент – тёмно-бирюзовый, как кнопки на сайте клиента */
+:root{
+  --bg:#f7f6f1; --surface:#ffffff; --ink:#21241d; --muted:#5f6457; --line:#dfded4;
+  --accent:#2b5a55; --accent-soft:#e1ecea;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#7b8079; --none-bg:#ecece6;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#151712; --surface:#1d201a; --ink:#e8eae2; --muted:#a6ab9f; --line:#30342b;
+  --accent:#8fd0c6; --accent-soft:#1d3330;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9aa29b; --none-bg:#262a23; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#151712; --surface:#1d201a; --ink:#e8eae2; --muted:#a6ab9f; --line:#30342b;
+  --accent:#8fd0c6; --accent-soft:#1d3330;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9aa29b; --none-bg:#262a23; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1000px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:18px;font-weight:500}
+p{margin:0;max-width:74ch}
+section{display:flex;flex-direction:column;gap:18px}
+.back{font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;word-break:break-all}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:78ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:620px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+tr.grp th{font:500 15px var(--f-display);background:var(--bg);color:var(--ink);padding-top:14px;text-transform:none;letter-spacing:0}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.c{white-space:nowrap}
+.pos{display:inline-block;min-width:34px;text-align:center;font:600 12px/1.7 var(--f-mono);padding:0 6px;border-radius:4px}
+.pos.top{background:var(--good-bg);color:var(--good)} .pos.mid{background:var(--mid-bg);color:var(--mid)} .pos.no{background:var(--bad-bg);color:var(--bad)}
+.na{color:var(--none);font-size:13px}
+.issues{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.issue{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.issue>div{min-width:0;display:flex;flex-direction:column;gap:4px}
+.issue h3{font:600 16px/1.4 var(--f-body)}
+.issue p{color:var(--muted);font-size:15px}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;align-self:start;justify-self:start}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)}
+.tree{font:14px/1.75 var(--f-mono);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;overflow-x:auto;white-space:pre;margin:0}
+.tree .n{color:var(--good);font-weight:500} .tree .k{color:var(--muted)} .tree .x{color:var(--bad)}
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.step>div{min-width:0;display:flex;flex-direction:column;gap:4px}
+.step h3{font:600 16px/1.4 var(--f-body)}
+.step p{color:var(--muted);font-size:15px}
+.tag{font:500 12px var(--f-body);color:var(--muted)}
+@media (max-width:560px){.issue{grid-template-columns:1fr;gap:6px}.wrap{gap:44px}}
+</style>
+<style>
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card h3{font:700 19px/1.3 var(--f-display)}
+.card.good{border-top:5px solid var(--good)} .card.bad{border-top:5px solid var(--bad)}
+.card ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.bar{display:grid;grid-template-columns:minmax(150px,230px) 1fr 64px;gap:10px;align-items:center;font-size:14px}
+.bar i{display:block;height:12px;border-radius:3px;background:var(--line)}
+.bar i.me{background:var(--accent)}
+.bar b{font-variant-numeric:tabular-nums;text-align:right;font-weight:600}
+.bars{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.bar span{overflow-wrap:anywhere}
+@media (max-width:720px){.two{grid-template-columns:1fr}.bar{grid-template-columns:1fr 64px}.bar i{grid-column:1/-1;grid-row:2}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header style="display:flex;flex-direction:column;gap:14px">
+  <div class="eyebrow">SEO-стратегия · 27.10.2026</div>
+  <h1>Розалия: как продвигаемся в поиске – розница по городам и опт</h1>
+  <p class="lead">rozalii.ru – производство ритуальных венков в Сергиевом Посаде, продаёт в розницу и оптом. Ниже – что ищут, как продвигаются конкуренты (в том числе по районам), что из этого брать нам и в каком порядке.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">Коротко: сначала магазин, потом города, опт – параллельно и уже сейчас.</b>
+    <p>1. Пока у 69 товаров нет цен, а у 53 вместо названия заглушка, Яндекс не считает сайт магазином и не покажет его в блоке «Популярные товары». Этот блок стоит во всех 7 снятых выдачах.</p>
+    <p>2. Районные и «метро»-страницы конкурентов – шаблоны, они держатся на доменах 2014–2019 годов. Наш домен зарегистрирован 09.09.2026: такой же набор страниц даст фильтр на весь сайт. Нам – 3 страницы настоящих городов доставки (Сергиев Посад, Пушкино, Мытищи) со своими фактами, остальные города – таблицей на странице «Доставка».</p>
+    <p>3. Опт – самый большой спрос, который нам доступен: «венки оптом» 1 272 в месяц по России, при 18 по «ритуальным венкам» в самом Сергиевом Посаде. Оптовый сезон – с ноября по март, то есть начинается сейчас. У оптовиков слабые сайты и нет гео-страниц.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Где мы сейчас</h2>
+  <div class="facts">
+    <div class="fact"><b>09.09.2026</b><span>дата регистрации домена (whois); у конкурентов – 2014–2019</span></div>
+    <div class="fact"><b>0 из 7</b><span>выдач Яндекса, где есть rozalii.ru (топ-10, снято 27.10)</span></div>
+    <div class="fact"><b>18 визитов</b><span>в Метрике с 22.10 по 27.10, почти все – наши проверки из Новосибирска; целей нет</span></div>
+    <div class="fact"><b>0 ₽</b><span>цена у всех 69 товаров: Тильда пишет price=0 в разметку</span></div>
+  </div>
+  <ul class="list">
+    <li><b>Вебмастер:</b> сайт подтверждён, но данные ещё не загружены. Страниц в поиске, запросов и региона пока не видно, sitemap в кабинет не добавлены. Сайт в индексе есть: по запросу «rozalii.ru» первой идёт /catalog.</li>
+    <li><b>Google Search Console:</b> у нашего ключа доступа к сайту нет (404).</li>
+    <li><b>Уже сделано 27.10:</b> title, description и keywords на 15 страницах и 69 товарах, по одному H1 на страницу. Главное зеркало – https://rozalii.ru, robots и обе карты сайта в порядке.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Что ищут</h2>
+  <p class="note">Источник – Wordstat, частота за 08.09–07.10.2026 (свежее сервис не отдаёт), снято 27.10.2026 через браузер.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Запрос</th><th>Регион</th><th class="r">В месяц</th></tr></thead>
+    <tbody>
+      <tr class="grp"><th colspan="3">Розница</th></tr>
+      <tr><td>ритуальные венки</td><td>Москва и область</td><td class="r">2 268</td></tr>
+      <tr><td>траурный венок</td><td>Москва и область</td><td class="r">1 411</td></tr>
+      <tr><td>венок на кладбище</td><td>Москва и область</td><td class="r">920</td></tr>
+      <tr><td>искусственные венки</td><td>Москва и область</td><td class="r">579</td></tr>
+      <tr><td>ритуальная корзина</td><td>Москва и область</td><td class="r">371</td></tr>
+      <tr><td>ритуальные венки / венок на кладбище</td><td>Сергиев Посад</td><td class="r">18 / 22</td></tr>
+      <tr class="grp"><th colspan="3">Город в тексте запроса (по России)</th></tr>
+      <tr><td>венки пушкино</td><td>Россия</td><td class="r">90</td></tr>
+      <tr><td>венки мытищи</td><td>Россия</td><td class="r">76</td></tr>
+      <tr><td>венки сергиев посад</td><td>Россия</td><td class="r">39</td></tr>
+      <tr><td>венки ивантеевка</td><td>Россия</td><td class="r">15</td></tr>
+      <tr><td>венки хотьково</td><td>Россия</td><td class="r">13</td></tr>
+      <tr><td>ритуальные венки сергиев посад</td><td>Россия</td><td class="r">9</td></tr>
+      <tr class="grp"><th colspan="3">Опт</th></tr>
+      <tr><td>венки оптом</td><td>Россия</td><td class="r">1 272</td></tr>
+      <tr><td>ритуальные венки оптом</td><td>Россия</td><td class="r">453</td></tr>
+      <tr><td>венки от производителя</td><td>Россия</td><td class="r">160</td></tr>
+      <tr><td>венки оптом / ритуальные венки оптом</td><td>Москва и область</td><td class="r">143 / 21</td></tr>
+      <tr><td>комплектующие оптом: ёрш, фоны, каркасы</td><td>Россия</td><td class="r">10–28 каждое</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="list">
+    <li>«Ритуальные венки» в соседних городах: Мытищи 27, Пушкино 24, Королёв 20, Александров 8, Щёлково 7, Ивантеевка 2, Дмитров 1, Хотьково 0. Пересвета и Краснозаводска среди регионов Wordstat нет. «Венки королёв» и «венки александров» – шум («королевский венок», Александр Невский).</li>
+    <li>Сезонность (10.2024–09.2026). В рознице по Москве и области резкого пика к Радонице нет: апрель выше марта на 15–20 %. Опт по России закупает с ноября по март, провал в июне (772), подъём с августа (1 324).</li>
+    <li>Около 200 оптовых запросов – брендовые (София Ритуал, Феникс, Анемона): ищут конкретного поставщика.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Как продвигаются конкуренты</h2>
+  <p class="note">Разобрано 11 розничных и 9 оптовых сайтов, проверено 27.10.2026. Выдача Яндекса снята с ya.ru и персонализирована учёткой Артёма.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Сайт</th><th>Как сделана география</th><th>Риск для нас, если повторить</th></tr></thead>
+    <tbody>
+      <tr><td>Венки24.рф</td><td>474 гео-страницы: 116 районов Москвы, 190 станций метро, 122 кладбища, 36 городов области, включая Сергиев Посад и Дмитров. Тексты шаблонные: у Сергиева Посада и Мытищ 31 из 48 предложений совпадают. Карточка в Яндекс Картах, разметка.</td><td><span class="sev c">высокий</span></td></tr>
+      <tr><td>Купить-венок.рф</td><td>245 страниц: районы, округа, кладбища, города области. Тексты переписаны, своё на странице – только список кладбищ с адресами.</td><td><span class="sev m">средний</span></td></tr>
+      <tr><td>ГС-Ритуал, МФЦ-Ритуал</td><td>Поддомены городов (sergiyev-posad, khotkovo, dmitrov…), каталог копируется с подменой города: совпадает 43 из 50 и 56 из 60 предложений. У МФЦ ещё 1 094 шаблонные страницы кладбищ.</td><td><span class="sev c">высокий</span></td></tr>
+      <tr><td>Венокшоп</td><td>42 страницы кладбищ с действительно своими текстами.</td><td><span class="sev l">низкий</span></td></tr>
+      <tr><td>Оптовики: nika-ritual, venki-optom (София Ритуал), Hottex, Стелла-Ритуал, Флоритус, venokmoskva</td><td>Гео-страниц нет ни у кого. Открытые цены, минимальный заказ на видном месте (10–50 тыс. ₽), свой транспорт по области плюс транспортные компании по России. Кабинет оптовика есть у четырёх. Контент слабый: новости и акции.</td><td>–</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="list">
+    <li>У всех розничных топов цена «от 3 000–3 630 ₽» прямо в title, каталог по размерам 90/110/125/140 и товарная разметка.</li>
+    <li>По «ритуальные венки» топ почти одинаковый в Сергиевом Посаде, Дмитрове и Москве: регион меняет 1–3 строки, и это как раз городские поддомены. Значит, основная борьба идёт за общий запрос по Москве и области. Город – добавка, а не основа.</li>
+    <li>Оптовики стоят и в розничной выдаче: сайт производителя Яндекс воспринимает как магазин.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Почему мы не копируем районы и метро</h2>
+  <p>Google прямо называет страницы под города с подменой названия дорвеями (doorway). У Яндекса это «малополезный контент», и санкция бьёт по всему сайту, а не по отдельной странице. Конкуренты держатся за счёт возраста домена и ссылок. У нас ни того, ни другого, поэтому 400 шаблонных страниц на новом домене скорее уронят и каталог.</p>
+  <p>Безопасный формат – страница настоящего города доставки или кладбища, где есть факты, которых нет на соседних страницах: срок, цена доставки, самовывоз, кладбища города с адресами, фото и отзывы оттуда. Порог – 20 запросов в месяц плюс эта своя польза. Ниже порога город идёт строкой в таблицу на странице «Доставка».</p>
+</section>
+
+<section>
+  <h2>B2C: розница по городам</h2>
+  <div class="steps">
+    <div class="step"><div><h3>База магазина – раньше любых новых страниц</h3><p>Цены у всех товаров, хотя бы «от N ₽». Настоящие названия вместо 53 заглушек («тип + название + размер»). Работающая корзина и ответ на заказ в течение суток. Реквизиты, телефон, оплата и доставка в подвале. Без цен в блок «Популярные товары» не попасть, а он стоит во всех выдачах.</p></div></div>
+    <div class="step"><div><h3>Яндекс Бизнес по реальному адресу в Сергиевом Посаде</h3><p>Только фактический адрес. Онлайн-профиль не показывается ни в Картах, ни в Поиске. Карточки на чужие адреса запрещены правилами. Блок Карт уже стоит в выдаче «венки сергиев посад». Сюда же – прайс вручную или файлом (бесплатно) и сбор отзывов по ссылке или QR-коду.</p></div></div>
+    <div class="step"><div><h3>Регион сайта в Вебмастере – «Москва и Московская область»</h3><p>Регион у сайта один. Город доставки указывается на сайте, а не в настройке. Если доставки в Москву нет, ставим «Сергиев Посад» – решает владелец по фактической географии.</p></div></div>
+    <div class="step"><div><h3>Каталог под спрос</h3><p>Размеры 90/110/125/140 сейчас – подкатегории магазина Тильды без своих адресов. Делаем их отдельными страницами с ценой «от» в title. Под крупные намерения «траурный венок» (1 411) и «венок на кладбище» (920) – отдельные блоки или страницы с проверкой на каннибализацию. «Ритуальные корзины» уже есть отдельной страницей.</p></div></div>
+    <div class="step"><div><h3>Города: 3 страницы и таблица доставки</h3><p>Сергиев Посад – главная и «Доставка». Отдельные страницы – Пушкино (90) и Мытищи (76), если туда реально возим: со сроком, ценой доставки и кладбищами города. Хотьково, Ивантеевка, Пересвет, Краснозаводск, Александров, Дмитров, Щёлково – строками в таблице «Доставка» и блоком доставки в карточке товара.</p></div></div>
+    <div class="step"><div><h3>Кладбища Сергиево-Посадского округа</h3><p>Самый честный гео-формат: адрес, как проехать, режим, можно ли заказать с доставкой к воротам. Спрос по кладбищам ещё не снят – страницы только после проверки спроса.</p></div></div>
+    <div class="step"><div><h3>Статьи вокруг покупки</h3><p>«Как выбрать венок», «что написать на ленте», «какой размер на какое место». Это информационный спрос и внутренние ссылки на каталог. У конкурентов 68–73 статьи. Мы начинаем с 5–8 по реальным вопросам клиентов.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>B2B: опт отдельно, без городов</h2>
+  <div class="steps">
+    <div class="step"><div><h3>Раздел /optom/ – одна сильная страница</h3><p>Первый экран: «от производителя», минимальный заказ, цены по размерам, сроки. Прайс – HTML-таблицей, чтобы его видел поиск; PDF – дополнительно. Ниже: скидка от объёма, оплата для юрлиц, договор, форма «получить прайс / стать партнёром».</p></div></div>
+    <div class="step"><div><h3>Доставка по России – одна страница</h3><p>Свой транспорт по области плюс транспортные компании по России, с таблицей направлений и сроков. Страницы «венки оптом в &lt;город&gt;» без представительства в городе – дорвей, их не делаем.</p></div></div>
+    <div class="step"><div><h3>Доверие производителя</h3><p>Фото и видео цеха, объёмы, сроки изготовления, реквизиты, образец договора, кейсы с агентствами. Только подтверждённое, ничего не придумываем. У оптовиков-конкурентов этого почти нет – здесь легко выделиться.</p></div></div>
+    <div class="step"><div><h3>Под тип клиента – только при разных условиях</h3><p>Ритуальные агентства, магазины у кладбищ, перепродавцы. Если условия для них одинаковые, делаем одну страницу с блоками. Комплектующие (ёрш, фоны, каркасы, спрос 10–28) – только если Розалия их продаёт.</p></div></div>
+    <div class="step"><div><h3>Кабинет оптовика</h3><p>Демо уже есть: <a href="https://tema-mail.github.io/rozalii/opt/">tema-mail.github.io/rozalii/opt/</a>. Сам кабинет закрыт от индекса. В поиск идут только условия и прайс. Кабинет есть у четырёх из девяти разобранных оптовиков.</p></div></div>
+  </div>
+  <p class="note">Каннибализация розница/опт: «ритуальные венки» ведут на каталог, а «… оптом», «от производителя», «прайс» – на /optom/. Оптовые копии карточек товаров не создаём.</p>
+</section>
+
+<section>
+  <h2>Тильда или код</h2>
+  <div class="two">
+    <div class="card good"><h3>На Тильде можно уже сейчас</h3><ul>
+      <li>цены, названия, корзина, доставка, реквизиты;</li>
+      <li>страницы размеров, городов и /optom/ – вручную, отдельными страницами;</li>
+      <li>title и description, robots, 301, разметка JSON-LD в head;</li>
+      <li>YML-фид магазина (на живом проекте не проверен).</li>
+    </ul></div>
+    <div class="card bad"><h3>Упирается в Тильду</h3><ul>
+      <li>фильтры не дают своих адресов;</li>
+      <li>адреса карточек только /tproduct/id-…, без разделов;</li>
+      <li>нет оптовых цен по группам клиентов и кабинета оптовика;</li>
+      <li>поддомен – только отдельный проект с дублями товаров.</li>
+    </ul></div>
+  </div>
+  <p>Рекомендация: базу магазина, «Доставку», три города и /optom/ делать на Тильде сразу – это не ждёт. Переход на код (готовая копия и версия с адресами по карте сайта) – когда понадобится кабинет оптовика и страницы фильтров.</p>
+</section>
+
+<section>
+  <h2>Порядок работ</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Когда</th><th>Что</th><th>Кто</th></tr></thead>
+    <tbody>
+      <tr><td class="c">Сразу</td><td>Вебмастер: обе карты сайта и регион. Метрика: цели на заявки, обход по счётчику. Доступ в Google Search Console для нашего ключа.</td><td>мы, после «да»</td></tr>
+      <tr><td class="c">Неделя 1</td><td>Цены «от», настоящие названия, реквизиты, проверка корзины. Яндекс Бизнес по адресу производства.</td><td>данные – клиент, внесение – мы</td></tr>
+      <tr><td class="c">Неделя 1–2</td><td>/optom/ с прайсом и «Доставка по России» – к старту оптового сезона.</td><td>мы + условия от клиента</td></tr>
+      <tr><td class="c">Неделя 2–3</td><td>Страницы размеров 90/110/125/140, «Доставка» с таблицей городов, Пушкино и Мытищи.</td><td>мы</td></tr>
+      <tr><td class="c">Неделя 3–4</td><td>Спрос по кладбищам округа, 5–8 статей, отзывы в Бизнесе. Первый замер позиций и Вебмастера.</td><td>мы</td></tr>
+      <tr><td class="c">Март</td><td>Подготовка к весне (Пасха, Радоница): проверка карточек и цен; по рознице пик слабый, по опту – закупки до марта.</td><td>мы</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Гарантий по срокам выхода в топ нет: домену полтора месяца. Первые изменения видны в Вебмастере через 2–6 недель после внесения.</p>
+</section>
+
+<section>
+  <h2>Что нужно решить и узнать у клиента</h2>
+  <ol class="list">
+    <li>Цены в рознице, хотя бы «от» по размерам, и названия 53 товаров с заглушками.</li>
+    <li>Куда реально возите в розницу: Москва? Пушкино, Мытищи? Сроки и цена доставки по городам.</li>
+    <li>Фактический адрес для Яндекс Бизнеса: в шапке «ул. Инженерная, 21», на «Контактах» – «д. Воронцово, 41с2».</li>
+    <li>Оптовые условия: минимальный заказ, скидки от объёма, оплата, доставка по России. Продаёте ли комплектующие.</li>
+    <li>Разрешение на настройки Вебмастера, Метрики и Google Search Console.</li>
+    <li>Когда переходим с Тильды на код – по готовности кабинета оптовика.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Источники</h2>
+  <p class="note">Сырьё и подробные разборы лежат в репозитории проекта, в папке docs/seo/research:</p>
+  <ul class="list note">
+    <li><code>spros-i-vydacha.md</code>, <code>wordstat-2026-10-27.json</code>, <code>serp-2026-10-27.json</code> – спрос и выдача;</li>
+    <li><code>konkurenty.md</code> – 20 сайтов с URL;</li>
+    <li><code>metodika.md</code> – правила Яндекса и Google с пометками «официально / практика / мнение»;</li>
+    <li><code>yandex-2026-10-27.json</code> – Метрика и Вебмастер.</li>
+  </ul>
+</section>
+
+</div>
+</body>
+</html>
