@@ -1,0 +1,234 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Ссылки TEYES и EV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – красный TEYES Sibir */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;word-break:break-all}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:var(--surface)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{display:inline-block;min-width:38px;text-align:center;font:600 12px/1.7 var(--f-mono);padding:0 6px;border-radius:4px}
+.pos.top{background:var(--good-bg);color:var(--good)} .pos.mid{background:var(--mid-bg);color:var(--mid)} .pos.no{background:var(--bad-bg);color:var(--bad)}
+.na{color:var(--none);font-size:13px}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.dir .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.dir .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tree{font:13.5px/1.75 var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre;margin:0}
+.tree .n{color:var(--good);font-weight:500} .tree .k{color:var(--muted)} .tree .x{color:var(--bad)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=search]{font:16px var(--f-body);padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0;flex:1 1 220px}
+#mig td.q{font-size:12.5px;color:var(--muted);min-width:260px}
+#mig td.u{min-width:200px}
+.tbl-wrap{max-height:75vh;overflow:auto}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}}
+</style>
+</head><body>
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:14px">
+  <span class="eyebrow">Ссылки · первый прогон агента · 29.10.2026</span>
+  <h1>Ссылки и площадки: TEYES Sibir и EV Sibir, Новосибирск</h1>
+  <p class="lead">Завёл агента-линкбилдера для рынка РФ и своего города и сразу прогнал его по двум сайтам. Главный вывод: покупать ссылки пока рано. Сначала вернуть то, что потеряли при переезде, и навести порядок на картах: там неверные телефоны.</p>
+  <audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px"></audio>
+  <p class="note">Послушать итог голосом, около полутора минут.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">Три дела на эту неделю, все бесплатные</b>
+    <ol class="list">
+      <li><b>TEYES:</b> включить 301 на Tilda хотя бы для 7 адресов ниже. На них сейчас ведут 33 внешние ссылки из 122, и все упираются в 404. Только у <code>/teyes</code> за год было 10 651 вход.</li>
+      <li><b>TEYES, Яндекс Карты:</b> в карточке единственный телефон <b>+7 905 945-06-95</b>, номера с сайта 437-92-66 нет, а ссылки ведут на <code>/teyes</code> и <code>/signaling</code>, которые отдают 404. Нужно поправить телефон и ссылки.</li>
+      <li><b>EV:</b> выбрать одно название и один телефон. Сейчас на сайте «EV Service» и 953-37-28, на картах «Evolution Sibir» / «Evolution, автосервис» и 952-18-26, а в Яндекс-карточке EV ещё стоит телефон TEYES.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Что сделано</span>
+  <h2>Агент linkbilding</h2>
+  <p>Агент работает в подчинении у главного по SEO (<code>seo-lead</code>). Вызывается словами «ссылки», «линкбилдинг», «доноры», «нас нет на картах», «ссылки на 404 после переезда». База знаний лежит в <code>~/.claude/znaniya/linkbilding/</code>: площадки РФ и Новосибирска, проверка донора и анкоров, защита, черновики писем, шаблон реестра.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>Ступень</th><th>Что даёт</th><th>Деньги</th></tr></thead>
+    <tbody>
+      <tr><td>0</td><td>Готовность: страницы в индексе, техника, цели</td><td>без неё ссылки уходят в никуда</td><td>0</td></tr>
+      <tr><td>1</td><td>Возврат потерянных ссылок (404 после переезда)</td><td>вес, который уже был</td><td>0</td></tr>
+      <tr><td>2</td><td>Карты и справочники, одинаковые название, адрес и телефон</td><td>звонки, доверие, источник для Алисы</td><td>0 – 3 250 ₽/мес (drive2)</td></tr>
+      <tr><td>3</td><td>Партнёры и производители: «где установить», дилерские списки</td><td>сильная естественная ссылка</td><td>0</td></tr>
+      <tr><td>4</td><td>Упоминания: drive2, Дзен, городские СМИ, Pressfeed, чаты марок</td><td>ИИ-ответы и живые люди</td><td>время</td></tr>
+      <tr><td>5</td><td>Биржи (Miralinks, GoGetLinks, PR.Sape), только на страницы с 11–25 места</td><td>вес для позиций, в Google сильнее</td><td>5–15 тыс. ₽/мес</td></tr>
+    </tbody></table></div>
+  <h3>Что взял из готовых решений</h3>
+  <p>Готового инструмента под Яндекс и местный рынок нет. Чужие скиллы я прочитал как текст и ничего из них не устанавливал. У rampstackco <i>seo-offpage</i> взял правила: пробел в данных называть пробелом, отдельно работать с потерянными ссылками и с материалами, на которые ссылаются сами. У 11Agents <i>backlink-build</i>: одна тактика не больше 40% объёма, агент сам ничего не отправляет, повторное письмо только с новым поводом. Ahrefs, HARO и disavow заменил нашими аналогами: Вебмастером, Pressfeed и тем, что у Яндекса отклонения ссылок нет вовсе.</p>
+  <h3>Защита: шесть фронтов в каждом прогоне</h3>
+  <ul class="list">
+    <li><b>Фильтры.</b> Анкоры: голый адрес 50–60%, бренд 25–30%, коммерческие не больше 5%. Не больше 2–4 платных размещений в месяц, равномерно. Если у донора хоть один красный флаг, не берём.</li>
+    <li><b>Карточки.</b> Никаких виртуальных номеров, мультиаккаунтов и отзывов «от клиентов». Отзывы просим только у реальных клиентов.</li>
+    <li><b>Закон.</b> Платная статья считается рекламой: пометка и erid через ОРД (38-ФЗ, ст. 18.1). Фейковые отзывы – это недобросовестная конкуренция. Номера машин размываем по рамке.</li>
+    <li><b>Ключи.</b> Токен Вебмастера даёт только чтение. Пароли агент не хранит, регистрации делаются в вашем Chrome, SMS вводите вы. Перед выкладкой папка отчёта прогоняется grep по ключам.</li>
+    <li><b>Мошенники.</b> Отказываемся от «пакетов 500 ссылок», прогонов, «гарантии топ-3» и предоплаты мимо биржи.</li>
+    <li><b>Чужой код и негативное SEO.</b> Сторонние скиллы не устанавливаем. Всплески мусорных доноров отмечаем в отчёте.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Прогон 1 · teyes-sibir.ru</span>
+  <h2>TEYES Sibir</h2>
+  <div class="facts">
+    <div class="fact"><b>122</b><span>внешние ссылки по Вебмастеру (29 год назад)</span></div>
+    <div class="fact"><b>21</b><span>ссылающийся домен</span></div>
+    <div class="fact"><b>60</b><span>ИКС</span></div>
+    <div class="fact"><b>33</b><span>ссылки ведут на 404</span></div>
+  </div>
+  <p class="note">Источник: API Яндекс Вебмастера, снято 29.10.2026 в 00:30. История ссылок есть до 03.10. 92 ссылки из 122 – это одна карточка в Яндекс Картах, просто на четырёх доменах yandex.*. Ещё есть Дзен (7), drive2 (4), teletype (3), 2ГИС (2), VK, ОК и дилерский список redpower.ru. Пять доноров мусорные: ai.pixeltools, letsearch, backlinks-checker и похожие. Трогать их не нужно, у Яндекса нет отклонения ссылок.</p>
+
+  <h3>Ступень 1. Потерянные ссылки: 301 на Tilda</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Старый адрес (404 сейчас)</th><th class="r">Ссылок</th><th>Откуда</th><th>Куда 301 (из карты переезда)</th></tr></thead>
+    <tbody>
+      <tr><td class="u">/teyes</td><td class="r">21</td><td>Яндекс Карты, Дзен, teletype</td><td class="u">/services/installation_teyes</td></tr>
+      <tr><td class="u">/signaling</td><td class="r">6</td><td>Яндекс Карты</td><td class="u">/services/alarm_installation</td></tr>
+      <tr><td class="u">/russification</td><td class="r">1</td><td>Дзен</td><td class="u">/services/russification_of_cars</td></tr>
+      <tr><td class="u">/closers</td><td class="r">1</td><td>2ГИС, прайс</td><td class="u">/services/closers</td></tr>
+      <tr><td class="u">/camera_washers/</td><td class="r">1</td><td>2ГИС, прайс</td><td class="u">/store/camera_washers</td></tr>
+      <tr><td class="u">/works/works_toyota</td><td class="r">1</td><td>Дзен</td><td class="u">/works/toyota</td></tr>
+      <tr><td class="u">/catalog_honda?…</td><td class="r">1</td><td>teletype</td><td class="u">/store/catalog/honda</td></tr>
+      <tr><td class="u">/ustroistva/sravnenie</td><td class="r">1</td><td>drive2</td><td><span class="na">нужно решение</span></td></tr>
+    </tbody></table></div>
+  <p class="note">Коды ответа я проверил curl 29.10. Цели 301 взяты из <code>teyes-sibir-slepok/data/redirect_map.csv</code>. Ссылки в своих постах на Дзене и teletype и ссылки в карточках карт можно поправить вручную, это бесплатно. 301 при этом всё равно нужны: старые адреса остались в поиске.</p>
+
+  <h3>Ступень 2. Карты и справочники</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Площадка</th><th>Состояние</th><th>Что сделать</th></tr></thead>
+    <tbody>
+      <tr><td>Яндекс Карты</td><td><span class="sev c">расхождение</span> телефон только +7 905 945-06-95 (проверил сам), главная категория «автоакустика», нет «пом. 110»; 4,8 · 29 отзывов</td><td>Телефон с сайта, ссылки на новые адреса, категория «установка автоэлектроники», ответить на отзывы</td></tr>
+      <tr><td>2ГИС</td><td><span class="sev g">совпадает</span> 5,0 · 164 отзыва (данные агента, у меня curl закрыт антиботом)</td><td>Поправить ссылки из прайса (/closers, /camera_washers)</td></tr>
+      <tr><td>Яндекс Услуги</td><td><span class="sev m">нет</span> по «teyes» выходят «Центр Автобезопасность» и «Спарта Маркет»</td><td>Завести профиль исполнителя (ИП есть)</td></tr>
+      <tr><td>drive2, бизнес</td><td><span class="sev m">нет</span>; бизнес-посты конкурентов в Новосибирске стоят в топ-10 Яндекса</td><td>Решить про 3 250 ₽/мес. Кейсы Prado 150 и LC200 – готовый материал</td></tr>
+      <tr><td>Zoon, Flamp, Авито</td><td><span class="sev l">не проверено</span> антибот</td><td>Сверить руками, 10 минут</td></tr>
+    </tbody></table></div>
+
+  <h3>Ступени 3–4. Партнёры и упоминания</h3>
+  <ul class="list">
+    <li>redpower.ru уже ставит ссылку из списка дилеров. Нужен такой же раздел у официального дистрибьютора Teyes в РФ (упирается в документ дилера, вопрос давно открыт) и в списках установщиков StarLine и Pandora по Новосибирску. У Pandora там 13 точек, есть ли среди них вы, не проверено: список грузится скриптом.</li>
+    <li>Кейсы приносят больше всего входов с поиска (360° на Prado 150, CC4 Pro на LC200). Их стоит выкладывать на drive2 и Дзен со ссылкой на страницу модели.</li>
+    <li>Pressfeed: отвечать журналистам на темы «как не нарваться на серую магнитолу» и «автозапуск зимой в Сибири».</li>
+  </ul>
+
+  <h3>Ступень 5. Кого поднимать ссылками, когда сделаны ступени 1–2</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Страница</th><th>Запрос</th><th class="r">Позиция</th><th class="r">Частота НСК</th></tr></thead>
+    <tbody>
+      <tr><td class="u">товар teyes-cc3-2k</td><td>teyes cc3</td><td class="r"><span class="pos mid">Я 12</span></td><td class="r">1 021</td></tr>
+      <tr><td class="u">/services/alarm_installation</td><td>установка сигнализации новосибирск</td><td class="r"><span class="pos mid">Я 12,8</span></td><td class="r">799</td></tr>
+      <tr><td class="u">товар cc4l</td><td>teyes cc4l</td><td class="r"><span class="pos mid">Я 11,4</span></td><td class="r">494</td></tr>
+      <tr><td class="u">/</td><td>установка teyes</td><td class="r"><span class="pos mid">G 12</span></td><td class="r">378</td></tr>
+      <tr><td class="u">/services/russification_of_cars</td><td>русификация авто</td><td class="r"><span class="pos mid">G 11</span></td><td class="r">140</td></tr>
+      <tr><td class="u">/</td><td>установка магнитолы новосибирск</td><td class="r"><span class="pos mid">G 15</span></td><td class="r">137</td></tr>
+    </tbody></table></div>
+  <p class="note">Позиции: Вебмастер по Новосибирску 06.09–06.10 и выдача 17.10 (бэкап админки от 28.10); Google – GSC из среза 25.10, без фильтра по региону. Под сигнализацию раньше входили на <code>/signaling</code>, которая сейчас отдаёт 404. Поэтому сначала 301, потом ссылки. Старт: 2–3 статьи в месяц, 5–10 тыс. ₽, анкоры по плану. Пять похожих страниц оставляем без ссылок как контрольную группу.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Прогон 2 · evolutioncarservice.ru</span>
+  <h2>EV Sibir (Evolution Car Service)</h2>
+  <div class="facts">
+    <div class="fact"><b>8</b><span>внешних ссылок</span></div>
+    <div class="fact"><b>7</b><span>доменов (один из них свой .com)</span></div>
+    <div class="fact"><b>10</b><span>ИКС</span></div>
+    <div class="fact"><b>0</b><span>ссылок на 404</span></div>
+  </div>
+  <p class="note">Источник: API Вебмастера, 29.10.2026. Главное зеркало у Яндекса – http, у https ноль ссылок. Все 8 ссылок ведут на главную: карточка Яндекса, Дзен, справочники big-book-avto и gdeservisy, свой evolutioncarservice.com. Сайт молодой, ссылочного профиля почти нет. Потерянных ссылок нет.</p>
+
+  <h3>Ступень 0–2. Сначала навести порядок</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Что</th><th>Сейчас</th><th>Что сделать</th></tr></thead>
+    <tbody>
+      <tr><td>Название</td><td><span class="sev c">3 варианта</span> сайт «EV Service» (title) и «Evolution Car Service» (разметка), Яндекс «Evolution Sibir», 2ГИС «Evolution, автосервис»</td><td>Выбрать одно и поставить везде</td></tr>
+      <tr><td>Телефон</td><td><span class="sev c">расхождение</span> сайт 953-37-28; Яндекс-карточка: 952-18-26, <b>437-92-66 (это TEYES)</b>, 953 777-78-91 (проверил сам); 2ГИС и VK – 952-18-26</td><td>Решить, какой номер главный, убрать из карточки номер TEYES</td></tr>
+      <tr><td>Telegram</td><td>карточки ведут на @evolutioncarnsk (публичной страницы нет), сайт на @evolutioncar_ru</td><td>Одна ссылка везде</td></tr>
+      <tr><td>Зеркало</td><td>у Яндекса главное зеркало http, у https статистики нет</td><td>Передать site-tech: переезд на https в Вебмастере</td></tr>
+      <tr><td>Яндекс Услуги, drive2, Zoon</td><td>нет или не проверено. У конкурента L Service есть drive2 и 139 отзывов в 2ГИС, у вас 24 оценки</td><td>Профиль в Услугах, drive2 после решения по деньгам</td></tr>
+    </tbody></table></div>
+
+  <h3>Ступени 3–4</h3>
+  <ul class="list">
+    <li>Партнёр по прошивкам snick.pro: попросить строку «партнёр в Новосибирске».</li>
+    <li>У вас уже есть материалы, на которые охотно ссылаются: статьи «приложение <марки> в России», про мастер-аккаунт и прогрев Москвича 3e зимой. Их стоит выкладывать на drive2 и Дзен, а журналистам на Pressfeed предлагать тему «китайские электромобили зимой в Сибири».</li>
+    <li>Клубы и чаты Lixiang, Zeekr и Voyah в Новосибирске без входа в Telegram не нашлись. Чтобы искать их через TGStat, нужен ваш аккаунт.</li>
+  </ul>
+
+  <h3>Ступень 5: пока нет</h3>
+  <p>Позиции снимали 17–18.10, с тех пор таймер выключен. В Яндексе сайт нашёлся по 5 фразам из 212. Ближайшие кандидаты: <code>/rusifikaciya/honda/</code> (Я 13), русификация Zeekr и Toyota (Google 11–20). Биржи имеет смысл подключать не раньше чем через месяц, после порядка на картах и свежего съёма позиций. Съём платный, только по вашему слову.</p>
+</section>
+
+<section>
+  <span class="eyebrow">План</span>
+  <h2>По месяцам, обе компании</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Когда</th><th>TEYES Sibir</th><th>EV Sibir</th></tr></thead>
+    <tbody>
+      <tr><td>Неделя 1</td><td>301 на Tilda (7 адресов), Яндекс Карты: телефон и ссылки; правка постов Дзен/teletype</td><td>Одно название и телефон; Яндекс-карточка без номера TEYES; Telegram</td></tr>
+      <tr><td>Месяц 1</td><td>Яндекс Услуги, сверка Zoon/Flamp/Авито, письма StarLine/Pandora/дистрибьютору</td><td>Зеркало https, Яндекс Услуги, snick.pro, просить отзывы у клиентов</td></tr>
+      <tr><td>Месяц 2</td><td>drive2 и Дзен: 2 кейса; 2 ответа на Pressfeed</td><td>drive2 и Дзен: 2 материала; свежий съём позиций (по слову)</td></tr>
+      <tr><td>Месяц 3+</td><td>Биржи 2–3/мес на страницы из таблицы, контрольная группа</td><td>Биржи 1–2/мес, если страницы на 11–25</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Решить вам</span>
+  <h2>Вопросы</h2>
+  <ol class="list">
+    <li>Какой телефон TEYES правильный для Яндекс Карт: 437-92-66 с сайта или 905 945-06-95 из карточки?</li>
+    <li>EV: одно название (Evolution Car Service?) и один телефон (953-37-28 или 952-18-26)?</li>
+    <li>Включаем 301 на Tilda по карте? Это бесплатно, и дел на час.</li>
+    <li>drive2-бизнес за 3 250 ₽/мес: для TEYES, для EV или для обоих?</li>
+    <li>Бюджет бирж с третьего месяца: 5–10 тыс. ₽/мес на TEYES?</li>
+  </ol>
+  <p class="note">Ничего не опубликовано, не зарегистрировано и не оплачено. Сырые данные лежат в <code>~/Documents/linkbilding/</code>, CSV в папке <a href="data/">data</a>. Не собрано: Zoon, Flamp, Авито и справочники второго ряда (там антибот), списки установщиков Pandora и StarLine, чаты марок. Трафик доноров тоже не собран: нет доступа к Keys.so.</p>
+</section>
+</div>
+</body></html>
