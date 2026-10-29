@@ -1,0 +1,239 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Площадки EV в Новосибирске</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – красный TEYES Sibir */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:var(--surface)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{display:inline-block;min-width:38px;text-align:center;font:600 12px/1.7 var(--f-mono);padding:0 6px;border-radius:4px}
+.pos.top{background:var(--good-bg);color:var(--good)} .pos.mid{background:var(--mid-bg);color:var(--mid)} .pos.no{background:var(--bad-bg);color:var(--bad)}
+.na{color:var(--none);font-size:13px}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.dir .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.dir .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tree{font:13.5px/1.75 var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre;margin:0}
+.tree .n{color:var(--good);font-weight:500} .tree .k{color:var(--muted)} .tree .x{color:var(--bad)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=search]{font:16px var(--f-body);padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0;flex:1 1 220px}
+#mig td.q{font-size:12.5px;color:var(--muted);min-width:260px}
+#mig td.u{min-width:200px}
+.tbl-wrap{max-height:75vh;overflow:auto}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}.verdict b.big{font-size:18px}}
+</style>
+<style>
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.node{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.node b{font:700 16px/1.3 var(--f-display)} .node span{font-size:14px;color:var(--muted)}
+.node.me{border:2px solid var(--accent);background:var(--accent-soft)}
+.steps{counter-reset:k;display:flex;flex-direction:column;gap:10px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px 16px 62px;position:relative;display:flex;flex-direction:column;gap:6px}
+.step::before{counter-increment:k;content:counter(k);position:absolute;left:18px;top:14px;font:700 26px/1 var(--f-display);color:var(--accent)}
+.step .io{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted)}
+.step .io b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+</style>
+</head><body>
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:14px">
+  <span class="eyebrow">Evolution Car Service · площадки Новосибирска · 29.10.2026</span>
+  <h1>Где EV появиться в Новосибирске: площадки, блоги, СМИ и чаты</h1>
+  <p class="lead">Агент разобрал 29 площадок для сервиса электромобилей, каждой поставил балл по методике и расписал, что на ней делать. Главное я перепроверил сам по ссылкам. Ниже по порядку: что делать первым, полный список с оценкой и что ты можешь сделать только сам.</p>
+  <audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px"></audio>
+  <p class="note">Итог голосом, около полутора минут.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">В поиске сервис электромобилей по Новосибирску почти не ищут: за сентябрь у фраз вида «сервис Zeekr Новосибирск» по нулю запросов. Его ищут в чатах марок, на drive2, на картах и спрашивают у нейросетей. Поэтому для EV главное – быть там, где задают вопрос, а не покупать ссылки ради мест в выдаче.</b>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>29</b><span>площадок разобрано</span></div>
+    <div class="fact"><b>13</b><span>набрали порог 9 из 15</span></div>
+    <div class="fact"><b>0 ₽</b><span>стоят первые 8 действий</span></div>
+    <div class="fact"><b>853</b><span>человека в местном клубе Lixiang/Zeekr, но клуб ведёт конкурент L Service</span></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Что показали данные</span>
+  <h2>Четыре вывода</h2>
+  <ul class="list">
+    <li><b>Спроса в поиске почти нет.</b> По Wordstat за сентябрь 2026 в Новосибирске: «сервис Zeekr / Lixiang / Voyah Новосибирск» и «ремонт электромобилей Новосибирск» – 0 запросов. Ненулевые: «сервис гибридов» – 132, «обслуживание гибридов» – 29, «ТО электромобиля» – 25.</li>
+    <li><b>drive2 – главная площадка после сайтов сервисов.</b> По 212 фразам EV он попадает в первую тройку выдачи 104 раза в Яндексе и 170 раз в Google, и Google 16 раз берёт его источником для ИИ-ответа. Профиль конкурента L Service там слабый: 8 подписчиков, последние посты 8 месяцев назад. Место свободно.</li>
+    <li><b>Нейросети уже знают EV.</b> «Evolution» упомянут в 13 ответах из 24, L Service – в 8 (замер 17.10).</li>
+    <li><b>Местное сообщество собирает конкурент.</b> Telegram-клуб «Lixiang / Voyah / Zeekr / Lynk клуб Сибирь» на 853 человека ведёт L Service и записывает оттуда в свой сервис. Своего клуба у EV нет, это отдельное решение.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Твои ответы учтены</span>
+  <h2>Что поменялось после твоих решений</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Решение</th><th>Что делаем</th></tr></thead>
+    <tbody>
+      <tr><td>Телефон TEYES в Яндекс Картах – подменный номер Яндекса</td><td>снято с проблем; правило «подменный номер – не ошибка» записал в базу агента</td></tr>
+      <tr><td>drive2-бизнес пока нет</td><td>убран из плана; бесплатная часть на drive2 остаётся: упоминания реальных клиентов в их бортжурналах</td></tr>
+      <tr><td>Бюджет на биржи 5–10 тыс. ₽/мес – да</td><td>принят. Для EV биржи пока рано: страниц на 11–25 месте с живым спросом почти нет, есть одна (русификация Honda XR-V, спрос 361). Предлагаю начать биржи с TEYES, где спрос есть, а на EV взять 1–2 размещения на Honda</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Что делать</span>
+  <h2>План по порядку: сначала бесплатное и быстрое</h2>
+  <div class="decide">
+    <div><span><b>Одно название и один телефон EV.</b><p>Сейчас «Evolution Sibir» на Яндексе, «Evolution, автосервис» в 2ГИС, «EV Service» на сайте. В 2ГИС и VK указан 952-18-26, на сайте 953-37-28. Пока ты не решишь, письма ниже не отправляем, иначе разнесём путаницу по новым площадкам. Решаешь ты.</p></span></div>
+    <div><span><b>SnickPro, «Мастера в городах».</b><p>На snick.pro/masters/ в Новосибирске два частных мастера, Evolution нет. Пишем, чтобы добавили: это ссылка от производителя решения на страницу русификации. Балл 11. Черновик готов. 0 ₽, 10 минут, отправляешь ты.</p></span></div>
+    <div><span><b>Упоминания на drive2 от реальных клиентов.</b><p>Попросить 3–5 владельцев, у которых есть бортжурнал, упомянуть сервис в записи о работе. Без скидки за упоминание, иначе это скрытая реклама. Балл 13. 0 ₽, просишь ты.</p></span></div>
+    <div><span><b>НГС, экспертный комментарий.</b><p>Повод – их материал 22.06 «Одноразовые и неремонтопригодные: эксперт рассказал, кому не подходят китайские авто». Предлагаем взгляд сервиса перед зимой: что чинится в городе, а что ждёт запчастей из Китая. Telegram НГС – 111 тыс. подписчиков. Балл 12. Черновик готов. 0 ₽.</p></span></div>
+    <div><span><b>Sib.fm и ВН.ру, у каждого свой угол.</b><p>Sib.fm 22.10 писал про 175 зарядок в области – тема «зарядок стало много, а где чинить». ВН.ру писал про рост спроса на электромобили с пробегом – тема «что проверить в Zeekr с пробегом». Баллы 11 и 10. Тексты напишет агент.</p></span></div>
+    <div><span><b>Клуб Lixiang, 43,5 тыс. участников: условия партнёрства.</b><p>Реклама в чате – бан без предупреждения. Для бизнеса есть отдельный путь через бота клуба. Спрашиваем, на каких условиях берут партнёра в Сибири. Черновик готов, 5 минут.</p></span></div>
+    <div><span><b>Большие чаты марок с твоего личного аккаунта.</b><p>Техчат ZEEKR club (4,9 тыс.), Lixiang Russia (18,5 тыс.), Красный чат Lixiang/Zeekr (8,8 тыс.). Читаешь закреп, отвечаешь на реальные вопросы по ремонту 1–2 раза в неделю. Без рекламы.</p></span></div>
+    <div><span><b>Раздел «Услуги» в маркетплейсе ZEEKR club, 5,3 тыс.</b><p>Прочитать правила. Если можно бесплатно, одно объявление в месяц.</p></span></div>
+    <div><span><b>Pressfeed.</b><p>Регистрируешься сам, подписываешься на авто-запросы журналистов и отвечаешь на 1–2 в месяц про электромобили и русификацию.</p></span></div>
+    <div><span><b>Авито и Дром-услуги.</b><p>Оба часто стоят в выдаче по фразам EV: Авито 60 раз в первой тройке Яндекса, Дром первый в Google по «русификация автомобилей Новосибирск». Открой в своём Chrome, проверь, есть ли профиль и сколько стоит объявление: у агента не пускает защита сайтов.</p></span></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Полный список</span>
+  <h2>29 площадок с оценкой</h2>
+  <p class="note">Балл от 0 до 15: видят ли люди, видит ли поисковик, тема и город, цитируют ли нейросети, цена. Порог – 9. Данные снимались 29.10.2026. У СМИ ИКС и трафик не сняты: нет Keys.so.</p>
+  <div class="filters" id="f">
+    <button class="chip" aria-pressed="true" data-g="all">Все</button>
+    <button class="chip" aria-pressed="false" data-g="smi">СМИ</button>
+    <button class="chip" aria-pressed="false" data-g="chat">Чаты и сообщества</button>
+    <button class="chip" aria-pressed="false" data-g="vyd">Из выдачи</button>
+    <button class="chip" aria-pressed="false" data-g="part">Партнёры</button>
+    <button class="chip" aria-pressed="false" data-g="no">Не берём</button>
+  </div>
+  <div class="scroll"><table id="t">
+    <thead><tr><th>Площадка</th><th>Размер, живость</th><th class="r">Балл</th><th>Что делать</th><th class="r">Цена</th></tr></thead>
+    <tbody>
+      <tr data-g="part"><td><a href="https://snick.pro/masters/">SnickPro – мастера в городах</a></td><td>56 адресов, в НСК два частных мастера, нас нет</td><td class="r"><span class="pos top">11</span></td><td>просить добавить, ссылка на /rusifikaciya/</td><td class="r">0</td></tr>
+      <tr data-g="vyd"><td><a href="https://www.drive2.ru/">drive2 – бизнес-профиль</a></td><td>№1 по фразам EV в выдаче и ИИ-ответах</td><td class="r"><span class="pos top">13</span></td><td><b>отложено по твоему решению</b></td><td class="r">3 250 ₽/мес</td></tr>
+      <tr data-g="vyd"><td>drive2 – бортжурналы клиентов</td><td>посты о сервисе Lixiang собирают 76–118 комментариев</td><td class="r"><span class="pos top">13</span></td><td>просить реальных клиентов упомянуть сервис</td><td class="r">0</td></tr>
+      <tr data-g="smi"><td><a href="https://ngs.ru/text/auto/">НГС, «Авто»</a></td><td>TG 111 тыс.; 4 материала про электромобили за год</td><td class="r"><span class="pos top">12</span></td><td>экспертный комментарий, черновик готов</td><td class="r">0</td></tr>
+      <tr data-g="smi"><td><a href="https://sib.fm/">Sib.fm</a></td><td>22.10 – 175 зарядок в НСО</td><td class="r"><span class="pos top">11</span></td><td>комментарий «а где чинить»</td><td class="r">0</td></tr>
+      <tr data-g="smi"><td><a href="https://vn.ru/">ВН.ру</a></td><td>спрос на электромобили с пробегом +46%</td><td class="r"><span class="pos top">10</span></td><td>«что проверить в Zeekr с пробегом»</td><td class="r">0</td></tr>
+      <tr data-g="vyd"><td><a href="https://baza.drom.ru/">Дром, услуги</a></td><td>№1 в Google по «русификация автомобилей НСК»</td><td class="r"><span class="pos top">10</span></td><td>проверить цену объявления в твоём Chrome</td><td class="r">не проверено</td></tr>
+      <tr data-g="vyd"><td>YouTube</td><td>16 раз в первой тройке Google, 8 раз в ИИ-ответах</td><td class="r"><span class="pos top">10</span></td><td>короткие «до/после русификации», номер размыт</td><td class="r">время</td></tr>
+      <tr data-g="smi"><td><a href="https://ksonline.ru/">Континент Сибирь</a></td><td>TG 3,1 тыс.; писали про зарядки</td><td class="r"><span class="pos top">9</span></td><td>деловой угол, только с твоими фактами</td><td class="r">0</td></tr>
+      <tr data-g="smi"><td><a href="https://ndn.info/">НДН.инфо</a></td><td>TG 914</td><td class="r"><span class="pos top">9</span></td><td>запасной адрес, другой текст</td><td class="r">0</td></tr>
+      <tr data-g="smi"><td><a href="https://nsknews.info/">Новосибирские новости</a></td><td>писали про зарядки</td><td class="r"><span class="pos top">9</span></td><td>тема «электромобиль к зиме»</td><td class="r">0</td></tr>
+      <tr data-g="smi"><td><a href="https://pressfeed.ru/queries">Pressfeed</a></td><td>авто-запросы журналистов открыты</td><td class="r"><span class="pos top">9</span></td><td>регистрация твоя, 1–2 ответа в месяц</td><td class="r">0 на старте?</td></tr>
+      <tr data-g="vyd"><td>Авито, услуги</td><td>60 раз в первой тройке Яндекса</td><td class="r"><span class="pos top">9</span></td><td>проверить профиль и цену в твоём Chrome</td><td class="r">не проверено</td></tr>
+      <tr data-g="chat"><td><a href="https://www.drive2.ru/communities/4035225266123965231/">DRIVE2 Новосибирск</a></td><td>8,7 тыс., почти мёртвое (последний пост блога 2022)</td><td class="r"><span class="pos mid">8</span></td><td>позже, отвечать в темах «где сервис»</td><td class="r">0</td></tr>
+      <tr data-g="chat"><td><a href="https://t.me/zeekrclub_tech">ZEEKR club – Техчат</a></td><td>4,9 тыс., 817 онлайн</td><td class="r"><span class="pos mid">7</span></td><td>ответы по делу с личного аккаунта</td><td class="r">0</td></tr>
+      <tr data-g="chat"><td><a href="https://t.me/zeekrclub_marketplace">ZEEKR club – Маркетплейс</a></td><td>5,3 тыс., есть раздел «Услуги»</td><td class="r"><span class="pos mid">7</span></td><td>правила, одно объявление, если бесплатно</td><td class="r">0?</td></tr>
+      <tr data-g="chat"><td><a href="https://t.me/zeekrclubrus">ZEEKR Club (второй)</a></td><td>28,6 тыс.</td><td class="r"><span class="pos mid">7</span></td><td>сначала правила, потом ответы</td><td class="r">0</td></tr>
+      <tr data-g="chat"><td><a href="https://t.me/lixiang_chat">Lixiang Russia</a></td><td>18,5 тыс.</td><td class="r"><span class="pos mid">7</span></td><td>ответы по делу</td><td class="r">0</td></tr>
+      <tr data-g="chat"><td><a href="https://t.me/redLichat">Красный чат Lixiang/Zeekr</a></td><td>8,8 тыс.</td><td class="r"><span class="pos mid">7</span></td><td>ответы по делу</td><td class="r">0</td></tr>
+      <tr data-g="chat"><td><a href="https://t.me/lixiangautorussia">Клуб Lixiang в РФ и СНГ</a></td><td>43,5 тыс., 7 тыс. онлайн; реклама – бан</td><td class="r"><span class="pos mid">6</span></td><td>спросить бота про партнёрство в Сибири</td><td class="r">у бота</td></tr>
+      <tr data-g="chat"><td><a href="https://t.me/avatrclub">Avatr Club</a></td><td>5,1 тыс.</td><td class="r"><span class="pos mid">6</span></td><td>позже, ответы по делу</td><td class="r">0</td></tr>
+      <tr data-g="chat"><td><a href="https://t.me/moskvich3e">Москвич 3е Клуб</a></td><td>562</td><td class="r"><span class="pos mid">6</span></td><td>отвечать про прогрев зимой, у нас есть статья</td><td class="r">0</td></tr>
+      <tr data-g="no"><td><a href="https://t.me/liservicensk54">Клуб Сибирь (L Service)</a></td><td>853, ведёт конкурент</td><td class="r"><span class="pos no">–</span></td><td>не идём; решить про свой клуб</td><td class="r">–</td></tr>
+      <tr data-g="no"><td>NAVI Моторс, партнёрская сеть</td><td>26 центров, в НСК уже свой партнёр</td><td class="r"><span class="pos no">–</span></td><td>это вход в чужую сеть и конфликт со SnickPro, решаешь ты</td><td class="r">–</td></tr>
+      <tr data-g="no"><td>Russification.ru, регионы</td><td>ссылки на партнёра нет, только перехват заявок</td><td class="r"><span class="pos no">–</span></td><td>не берём</td><td class="r">–</td></tr>
+      <tr data-g="no"><td>Xanavi, карта партнёров</td><td>сам конкурент по русификации</td><td class="r"><span class="pos no">–</span></td><td>не проверено, та же развилка, что с NAVI</td><td class="r">–</td></tr>
+      <tr data-g="no"><td>Дилер VOYAH Премиум Парк</td><td>свой сервис</td><td class="r"><span class="pos no">–</span></td><td>не берём: дилер на сервис не сошлётся</td><td class="r">–</td></tr>
+      <tr data-g="no"><td>Партнёры клуба Lixiang (сайт)</td><td>только Москва</td><td class="r"><span class="pos no">–</span></td><td>только узнать условия (см. бот клуба)</td><td class="r">–</td></tr>
+      <tr data-g="no"><td>Зарядные сети НСО</td><td>списка партнёров-сервисов не нашли</td><td class="r"><span class="pos no">–</span></td><td>не тратить время сейчас</td><td class="r">–</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Нужен ты</span>
+  <h2>Что агент проверить не смог: это можешь только ты</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Что</th><th>Почему не вышло</th><th>Что сделать тебе</th></tr></thead>
+    <tbody>
+      <tr><td><b>Городские чаты владельцев электромобилей в Новосибирске</b></td><td>поиск по Telegram без входа невозможен, tgstat закрыт</td><td>в своём Telegram поискать «Lixiang Новосибирск», «Zeekr НСК», «Voyah Новосибирск», «электромобили Новосибирск», «Tesla Новосибирск» и скинуть список с числом участников; агент оценит</td></tr>
+      <tr><td><b>VK-группы</b></td><td>поиск VK без входа пустой</td><td>тот же поиск в своём VK</td></tr>
+      <tr><td><b>Правила больших чатов марок</b></td><td>без входа видно только число участников</td><td>прочитать закреп при вступлении</td></tr>
+      <tr><td><b>Авито, Zoon, Flamp</b></td><td>защита сайтов от роботов</td><td>открыть карточки в своём Chrome</td></tr>
+      <tr><td><b>Сообщества drive2 и Дзен</b></td><td>поиск работает только в браузере</td><td>поиск по маркам в своём браузере</td></tr>
+      <tr><td><b>Полная выдача по 10 денежным фразам</b></td><td>свежий съём платный (XMLRiver), а данные на сервере агенту закрыты</td><td>сказать «снимай» – смету назову до съёма</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Черновики</span>
+  <h2>Три письма, готовые к отправке</h2>
+  <p class="note">Отправляешь ты после решения про название и телефон. В угловых скобках – что подтвердить, агент факты о компании не придумывал.</p>
+  <div class="card"><h3>1. SnickPro – добавить в «Мастера в городах»</h3>
+    <p>Здравствуйте! Это Evolution Car Service из Новосибирска, мы ставим ваше решение на &lt;модели: подтвердить&gt; с &lt;месяц/год: подтвердить&gt;. На странице «Мастера в городах» (snick.pro/masters/) в Новосибирске сейчас два мастера, нас нет. Добавите карточку? Evolution Car Service, Новосибирск, ул. Сухарная, 35 к13, &lt;часы&gt;, &lt;телефон после решения&gt;, сайт evolutioncarservice.ru/rusifikaciya/. Если нужно подтвердить наши установки – пришлём. Артём Галимов, Evolution Car Service</p></div>
+  <div class="card"><h3>2. НГС – экспертный комментарий</h3>
+    <p>Здравствуйте! В июне у вас вышел материал «Одноразовые и неремонтопригодные: эксперт рассказал, кому не подходят китайские авто». Мы в Новосибирске обслуживаем только электромобили и гибриды – Lixiang, Zeekr, Voyah, BYD и другие – и можем дать взгляд со стороны сервиса перед зимой: что в таких машинах реально чинится в городе, а что приходится ждать из Китая; почему у части машин сервис упирается не в железо, а в китайский мастер-аккаунт; что проверить до морозов. Пример из практики: &lt;1–2 реальных случая&gt;. Готов ответить письменно или по телефону. Артём Галимов, владелец Evolution Car Service</p></div>
+  <div class="card"><h3>3. Клуб Lixiang – условия партнёрства</h3>
+    <p>Здравствуйте! Я из Evolution Car Service, Новосибирск – сервис только электромобилей и гибридов, Lixiang обслуживаем &lt;с какого года&gt;. По правилам чата реклама запрещена, поэтому пишу сюда: на каких условиях клуб берёт партнёров из регионов, есть ли у вас партнёр в Сибири и сколько это стоит? Нам важно отвечать владельцам из Новосибирска по делу, а не рекламировать. Артём, Evolution Car Service</p></div>
+</section>
+
+<section>
+  <span class="eyebrow">Проверка</span>
+  <h2>Что я перепроверил сам</h2>
+  <ul class="list">
+    <li>Клуб «Сибирь» L Service – 853 участника; клуб Lixiang – 43 555; Техчат ZEEKR – 4 923 (страницы t.me, 29.10).</li>
+    <li>На snick.pro/masters/ Новосибирск упомянут 17 раз, Evolution – ни разу.</li>
+    <li>Материал НГС от 22.06.2026 с этим заголовком существует.</li>
+    <li>У L Service на drive2 8 подписчиков.</li>
+    <li>Нули спроса по «сервис Zeekr Новосибирск», «ремонт электромобилей Новосибирск» и 132 по «сервис гибридов» – в файле спроса проекта, Wordstat НСК, сентябрь 2026.</li>
+  </ul>
+  <p class="note">Полный разбор с источниками: <code>~/Documents/linkbilding/evolutioncarservice/regionalnye-ploshchadki-2026-10-29.md</code>. Ничего не отправлено и не опубликовано.</p>
+</section>
+</div>
+<script>
+document.getElementById('f').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;
+document.querySelectorAll('#f .chip').forEach(c=>c.setAttribute('aria-pressed',c===b));
+const g=b.dataset.g;document.querySelectorAll('#t tbody tr').forEach(r=>{r.style.display=(g==='all'||r.dataset.g===g)?'':'none'})});
+</script>
+</body></html>
