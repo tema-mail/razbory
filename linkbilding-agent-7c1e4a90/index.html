@@ -1,0 +1,278 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Агент по ссылкам</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – красный TEYES Sibir */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:var(--surface)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{display:inline-block;min-width:38px;text-align:center;font:600 12px/1.7 var(--f-mono);padding:0 6px;border-radius:4px}
+.pos.top{background:var(--good-bg);color:var(--good)} .pos.mid{background:var(--mid-bg);color:var(--mid)} .pos.no{background:var(--bad-bg);color:var(--bad)}
+.na{color:var(--none);font-size:13px}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.dir .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.dir .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tree{font:13.5px/1.75 var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre;margin:0}
+.tree .n{color:var(--good);font-weight:500} .tree .k{color:var(--muted)} .tree .x{color:var(--bad)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=search]{font:16px var(--f-body);padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0;flex:1 1 220px}
+#mig td.q{font-size:12.5px;color:var(--muted);min-width:260px}
+#mig td.u{min-width:200px}
+.tbl-wrap{max-height:75vh;overflow:auto}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}.verdict b.big{font-size:18px}}
+</style>
+<style>
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.node{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.node b{font:700 16px/1.3 var(--f-display)} .node span{font-size:14px;color:var(--muted)}
+.node.me{border:2px solid var(--accent);background:var(--accent-soft)}
+.steps{counter-reset:k;display:flex;flex-direction:column;gap:10px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px 16px 62px;position:relative;display:flex;flex-direction:column;gap:6px}
+.step::before{counter-increment:k;content:counter(k);position:absolute;left:18px;top:14px;font:700 26px/1 var(--f-display);color:var(--accent)}
+.step .io{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted)}
+.step .io b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+</style>
+</head><body>
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:14px">
+  <span class="eyebrow">Агент linkbilding · как устроен · 29.10.2026</span>
+  <h1>Агент по ссылкам: что умеет и как работает</h1>
+  <p class="lead">Агент нужен, чтобы о сайте писали там, где это видят Яндекс, Google, нейросети и люди своего города, и чтобы это не кончилось фильтром, баном карточки или штрафом. Работает по рынку РФ, но в первую очередь по своему городу. Ниже весь процесс: в каком порядке он работает, как принимает решения и где останавливается.</p>
+  <audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px"></audio>
+  <p class="note">Итог голосом, около полутора минут.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">Сначала агент возвращает то, что уже было у сайта, потом выводит его на карты города, потом ищет партнёров и упоминания. Ссылки на биржах покупает в последнюю очередь и понемногу. Сам ничего не публикует и не платит: всё отправляешь ты после своего «да».</b>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>6</b><span>ступеней лестницы, перескакивать нельзя</span></div>
+    <div class="fact"><b>8</b><span>шагов в одном прогоне по сайту</span></div>
+    <div class="fact"><b>7</b><span>направлений защиты, проверяются в каждом прогоне</span></div>
+    <div class="fact"><b>0</b><span>публикаций, писем и оплат без твоего «да»</span></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Когда звать</span>
+  <h2>Какие слова его запускают</h2>
+  <p>Агент запускается сам, когда в разговоре звучит: «линкбилдинг», «ссылки», «нарасти ссылки», «купить ссылки», «где разместиться», «крауд», «доноры», «проверь донора», «анкоры», «нас нет на картах», «2ГИС», «каталоги», «упоминания бренда», «чтобы Алиса нас советовала», «ссылки на 404 после переезда».</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Если задача такая</th><th>Её делает другой исполнитель</th></tr></thead>
+    <tbody>
+      <tr><td>Ссылки между страницами самого сайта, title и мета-описания</td><td><code>site-seo</code></td></tr>
+      <tr><td>Битые ссылки внутри сайта, 301, robots, скорость</td><td><code>site-tech</code></td></tr>
+      <tr><td>Цифры Метрики и Вебмастера в целом</td><td><code>yandex-dannye</code></td></tr>
+      <tr><td>Какую страницу поднимаем и зачем</td><td><code>seo-lead</code>, он старший над агентом</td></tr>
+      <tr><td>Отзывы: просить у клиентов и отвечать по существу</td><td>ты, агент даёт только черновики</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Место в команде</span>
+  <h2>С кем он работает</h2>
+  <div class="flow">
+    <div class="node"><b>Ты</b><span>ставишь задачу, говоришь «да», публикуешь и платишь в своём Chrome</span></div>
+    <div class="node"><b>seo-lead</b><span>решает, какую страницу поднимаем; отдаёт кандидатов</span></div>
+    <div class="node me"><b>linkbilding</b><span>решает, откуда и как на страницу сослаться; готовит план, черновики, реестр, отчёт</span></div>
+    <div class="node"><b>yandex-dannye</b><span>снимает ссылки и ИКС из API Вебмастера</span></div>
+    <div class="node"><b>site-tech / Tilda</b><span>ставит 301 по карте, которую собрал агент</span></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Логика</span>
+  <h2>Лестница: в каком порядке и почему</h2>
+  <p>Ступени идут снизу вверх. Каждая следующая имеет смысл, только когда сделана предыдущая: ссылка на страницу, которая не в индексе или отдаёт 404, – выброшенные деньги.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>Ступень</th><th>Что даёт</th><th class="r">Деньги</th></tr></thead>
+    <tbody>
+      <tr><td>0</td><td><b>Готовность сайта</b>: страницы в индексе, техника чистая, цели стоят</td><td>без этого ссылки уходят в никуда</td><td class="r">0</td></tr>
+      <tr><td>1</td><td><b>Возврат потерянного</b>: внешние ссылки, которые после переезда ведут на 404, – переадресация 301 или письмо донору</td><td>самый дешёвый вес: он у сайта уже был</td><td class="r">0</td></tr>
+      <tr><td>2</td><td><b>Карты и справочники города</b>: Яндекс Бизнес, 2ГИС, Zoon, Flamp, drive2, Авито; название, адрес, телефон и сайт везде одинаковые</td><td>звонки, доверие, источник для нейросетей</td><td class="r">0 – 3 250 ₽/мес</td></tr>
+      <tr><td>3</td><td><b>Партнёры и производители</b>: «где установить» у производителя, поставщики, клубы марок</td><td>сильная естественная ссылка</td><td class="r">0</td></tr>
+      <tr><td>4</td><td><b>Экспертные материалы и упоминания</b>: drive2, Дзен, местные СМИ, Pressfeed, чаты марок</td><td>упоминания для Алисы и ChatGPT, живые люди</td><td class="r">время</td></tr>
+      <tr><td>5</td><td><b>Биржи</b>: Miralinks, GoGetLinks, PR.Sape, только на страницы с 11–25 места</td><td>вес для позиций, в Google заметнее</td><td class="r">5–15 тыс. ₽/мес</td></tr>
+      <tr><td><span class="sev c">✕</span></td><td>Прогоны, сотни каталогов, аренда ссылок, сетки сайтов, иностранные доноры, накрутка отзывов</td><td>фильтр или ноль</td><td class="r">никогда</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Ещё одно правило: на одну тактику не больше 40% работы за месяц. Ступени идут вместе, а не «всё в биржи».</p>
+</section>
+
+<section>
+  <span class="eyebrow">Процесс</span>
+  <h2>Один прогон по сайту – 8 шагов</h2>
+  <div class="steps">
+    <div class="step"><h3>Ссылочный профиль</h3><p>Кто ссылается на сайт, сколько доноров, ИКС, как менялось. Данные берёт не руками, а через <code>yandex-dannye</code> из API Вебмастера. Ahrefs и Semrush у нас нет, поэтому DR агент не придумывает.</p><div class="io"><span>Вход: <b>API Вебмастера</b></span><span>Выход: <b>файл ссылок с датой</b></span></div></div>
+    <div class="step"><h3>Потерянные ссылки</h3><p>Каждый адрес, на который ведёт внешняя ссылка, проверяется на код ответа. Если 404, адрес попадает в карту 301 или в письмо донору с просьбой поправить ссылку. Если такие ссылки есть, это первая задача отчёта.</p><div class="io"><span>Вход: <b>адреса из профиля</b></span><span>Выход: <b>карта «старый → новый»</b></span></div></div>
+    <div class="step"><h3>Площадки</h3><p>Таблица по картам и справочникам. Для каждой площадки отмечено: есть ли там сайт, совпадают ли название, адрес и телефон, есть ли конкуренты. Если площадка закрыта от проверки, агент пишет «не проверено», а не «всё нормально».</p><div class="io"><span>Вход: <b>ploshchadki.md, живые карточки</b></span><span>Выход: <b>таблица «есть / нет / расхождение»</b></span></div></div>
+    <div class="step"><h3>Страницы-кандидаты</h3><p>Ссылки ставятся только на страницы в индексе, со спросом и на 11–25 месте. Кандидатов даёт <code>seo-lead</code>. Если свежих позиций нет, агент не гадает, а спрашивает, снимать ли их: съём платный.</p><div class="io"><span>Вход: <b>позиции, спрос</b></span><span>Выход: <b>список целевых страниц</b></span></div></div>
+    <div class="step"><h3>План на 3 месяца</h3><p>По ступеням лестницы: что делать, где, на какую страницу, с каким анкором, сколько стоит и кто делает.</p><div class="io"><span>Выход: <b>план по месяцам</b></span></div></div>
+    <div class="step"><h3>Черновики</h3><p>Пять шаблонов: письмо донору про 404, письмо производителю в раздел «где установить», комментарий эксперта для СМИ и Pressfeed, сообщение в чат марки, статья. Отправляешь ты.</p><div class="io"><span>Вход: <b>shablony.md</b></span><span>Выход: <b>готовые тексты на «да»</b></span></div></div>
+    <div class="step"><h3>Реестр и контроль</h3><p>Каждая ссылка записывается: где стоит, на какую страницу ведёт, анкор, rel, цена, erid. Через 7, 30 и 90 дней агент проверяет, жива ли ссылка, в индексе ли она, видна ли в Вебмастере и не поменялся ли rel.</p><div class="io"><span>Выход: <b>reestr.csv по проекту</b></span></div></div>
+    <div class="step"><h3>Отчёт</h3><p>Страница в разделе разборов на GitHub Pages с голосовым итогом вверху. У каждого числа указаны источник и дата.</p><div class="io"><span>Выход: <b>ссылка тебе и Фёдору</b></span></div></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Как решает</span>
+  <h2>Правила, по которым он говорит «да» или «нет»</h2>
+  <div class="two">
+    <div class="card"><h3>Куда ставить ссылку</h3>
+      <ul class="list">
+        <li><b>Да:</b> страница на 11–25 месте по денежному запросу; главная; хаб марки, с которого вес идёт на модели.</li>
+        <li><b>Нет:</b> страница не в индексе; страница на 50+ месте, потому что проблема в самой странице; блог, если цель – заявки; адрес с 404 или редиректом.</li>
+      </ul></div>
+    <div class="card"><h3>Донор: один красный флаг – отказ</h3>
+      <ul class="list">
+        <li>не в индексе Яндекса;</li>
+        <li>сайт «обо всём»: казино, займы, крипта;</li>
+        <li>больше 3–5 внешних ссылок на странице;</li>
+        <li>лента из одних заказных статей;</li>
+        <li>трафик упал вдвое за полгода;</li>
+        <li>иностранный сайт или другой язык.</li>
+      </ul>
+      <p class="note">Если показатель не проверить, агент пишет «не проверено», а не «хороший донор».</p></div>
+    <div class="card"><h3>Анкоры против Минусинска</h3>
+      <ul class="list">
+        <li>голый адрес – 50–60%;</li>
+        <li>бренд – 25–30%;</li>
+        <li>разбавленные («установка Teyes в нашем центре в Новосибирске») – 10–15%;</li>
+        <li>точные коммерческие – 0–5%;</li>
+        <li>«тут», «здесь», «по ссылке» – не ставим.</li>
+      </ul></div>
+    <div class="card"><h3>Как доказать, что сработало</h3>
+      <p>Берутся 10 похожих страниц на 11–25 месте: на 5 ставим ссылки, на 5 нет, и обе группы не трогаем 1–3 месяца. Сравниваем группы между собой, а не «до и после». Рост агент не обещает, он обещает проверку.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Защита</span>
+  <h2>7 направлений, проверяются в каждом прогоне</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>От чего</th><th>Что делает агент</th></tr></thead>
+    <tbody>
+      <tr><td><b>Фильтры Яндекса и Google</b></td><td>2–4 платных размещения в месяц на сайт, равномерно; доли анкоров по таблице выше; донор только после проверки</td></tr>
+      <tr><td><b>Бан карточек на картах</b></td><td>никаких виртуальных номеров, мультиаккаунтов, отзывов «от клиентов» и отзывов за скидку; карточка только на твой номер и аккаунт</td></tr>
+      <tr><td><b>Закон РФ</b></td><td>платная статья – это реклама: пометка «Реклама» и erid через ОРД (38-ФЗ, ст. 18.1); фейковые отзывы запрещены (38-ФЗ, 135-ФЗ); госномера на фото размыты по рамке; без «лучший в городе» без подтверждения</td></tr>
+      <tr><td><b>Утечка ключей</b></td><td>токен Вебмастера только на чтение; пароли от бирж и карт агент не хранит и не спрашивает; перед публикацией отчёта проверяет папку на токены и пароли</td></tr>
+      <tr><td><b>Мошенники</b></td><td>сразу отказ: «пакет 500 ссылок», «прогон по 1000 каталогам», «топ-3 за месяц», предоплата вне биржи, пресс-релизы «на 300 сайтов»</td></tr>
+      <tr><td><b>Чужие скиллы и негативное SEO</b></td><td>чужие скиллы только читает как образец (в одном Snyk нашёл выгрузку данных); резкий всплеск мусорных доноров отмечает в отчёте с датами</td></tr>
+      <tr><td><b>Переадресации 301</b></td><td>перед записью сверяет каждое правило со всеми живыми страницами и картой сайта; правила записывает полным списком из файла и потом сверяет с тем, что сохранилось в Tilda</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Граница</span>
+  <h2>Что агент делает сам, а что только ты</h2>
+  <div class="two">
+    <div class="card"><h3>Агент</h3>
+      <ul class="list"><li>снимает и проверяет данные;</li><li>проверяет доноров и площадки;</li><li>пишет план, черновики, реестр, отчёт;</li><li>собирает карту 301;</li><li>заполняет поля формы в твоём Chrome, если ты попросил.</li></ul></div>
+    <div class="card"><h3>Только ты</h3>
+      <ul class="list"><li>говоришь «да» на каждое действие наружу;</li><li>регистрируешься, вводишь SMS и капчу;</li><li>отправляешь письма и публикуешь;</li><li>платишь на биржах и за drive2;</li><li>отвечаешь на отзывы по существу.</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Пример</span>
+  <h2>Первый прогон 29.10: что он дал</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Что нашёл</th><th>Что сделано</th></tr></thead>
+    <tbody>
+      <tr><td>TEYES Sibir: 122 внешние ссылки, 21 домен, ИКС 60; 33 ссылки ведут на 404 после переезда (/teyes – 21, /signaling – 6)</td><td><span class="sev g">сделано</span> по твоему «да» в Tilda включены 312 переадресаций</td></tr>
+      <tr><td>TEYES в Яндекс Картах: телефон +7 905 945-06-95, на сайте 437-92-66</td><td><span class="sev m">ждёт тебя</span> какой номер правильный</td></tr>
+      <tr><td>EV Sibir: 8 ссылок, 7 доменов, ИКС 10; в Яндекс-карточке стоит номер TEYES, у компании три названия</td><td><span class="sev m">ждёт тебя</span> одно название и один телефон</td></tr>
+      <tr><td>Агент сам ошибся: правило 301 задело живую страницу Toyota Yaris, потому что Tilda не различает большие и малые буквы</td><td><span class="sev g">исправлено</span> правило убрано, страница открывается; урок записан в правила агента</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Полный отчёт прогона: <a href="https://tema-mail.github.io/razbory/linkbilding-nsk-b266e35b/">tema-mail.github.io/razbory/linkbilding-nsk-b266e35b</a></p>
+</section>
+
+<section>
+  <span class="eyebrow">Пределы</span>
+  <h2>Чего агент не может</h2>
+  <ul class="list">
+    <li>Самопроверка следит за формой отчёта, но не скажет, что донор живой только на бумаге или что статья никому не нужна. Вопрос «зашёл бы сюда живой клиент из Новосибирска и поверил бы» решает человек.</li>
+    <li>Ahrefs, Semrush и Keys.so не подключены, поэтому трафик донора часто остаётся «не проверено».</li>
+    <li>Позиции страниц собираются через платный XMLRiver, их снимают только по твоему слову.</li>
+    <li>Часть карт закрыта от автоматической проверки. Тогда агент проверяет их в браузере или пишет «не проверено».</li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Где лежит</span>
+  <h2>Файлы агента</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Что</th><th>Где</th></tr></thead>
+    <tbody>
+      <tr><td>Сам агент</td><td><code>~/.claude/agents/linkbilding.md</code></td></tr>
+      <tr><td>База знаний: площадки, проверка донора, защита, шаблоны писем, разбор готовых решений</td><td><code>~/.claude/znaniya/linkbilding/</code></td></tr>
+      <tr><td>Данные прогонов и реестры по проектам</td><td><code>~/Documents/linkbilding/&lt;проект&gt;/</code></td></tr>
+      <tr><td>Старший над агентом</td><td>скилл <code>seo-lead</code>, строка в таблице команды</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Агент собран из нашей SEO-карты от 24.10 и лучших приёмов готовых решений (rampstackco seo-offpage, 11Agents backlink-build). Чужой код не ставили: под Яндекс и локальный рынок готового нет.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Дальше</span>
+  <h2>Что ждёт тебя</h2>
+  <div class="decide">
+    <div><span><b>Телефон TEYES для Яндекс Карт.</b><p>Сейчас там +7 905 945-06-95, на сайте 437-92-66.</p></span></div>
+    <div><span><b>Одно название и один телефон EV.</b><p>Сейчас три названия, а в карточке стоит номер TEYES.</p></span></div>
+    <div><span><b>Бизнес-аккаунт drive2.</b><p>3 250 ₽ в месяц, площадка, где сидят владельцы машин.</p></span></div>
+    <div><span><b>Бюджет на биржи.</b><p>Старт 5–10 тыс. ₽ в месяц, начинаем после карт.</p></span></div>
+  </div>
+</section>
+</div>
+</body></html>
