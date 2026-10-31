@@ -1,0 +1,210 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>План на ноябрь и прогноз</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tfoot td{font-weight:600;border-top:2px solid var(--line)}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.bar{display:flex;align-items:center;gap:10px;font-size:14px}
+.bar i{display:block;height:12px;border-radius:3px;background:var(--accent);min-width:2px}
+.bar.g i{background:var(--good)} .bar.l i{background:var(--none)}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}.verdict b.big{font-size:18px}}
+</style>
+</head><body><div class="wrap">
+
+<header>
+  <span class="eyebrow">Evolution Car Service · план на ноябрь и прогноз · 01.11.2026</span>
+  <h1>Пять статей в день: что пишем, зачем и к чему придём</h1>
+  <audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px"></audio>
+  <p class="note">Итог голосом, около минуты.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">Главное, что я нашёл, считая прогноз: наш ограничитель – не количество статей. Мы забираем 6,5 % того спроса, который уже замерен. И у нас 146 запросов висят на 6–10 месте, где наш собственный CTR меньше одного процента – против семи процентов в топ-5. Поднять их стоит больше, чем написать сто новых статей.</b>
+    <p>Поэтому план на ноябрь – это не «150 статей любой ценой». Это 5 статей в день там, где есть спрос и факты, плюс подтягивание того, что уже показывается. И честная оговорка: на 150 статей у нас сейчас нет ни тем, ни данных. Откуда их взять – ниже.</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>6,5 %</b><span>замеренного спроса забираем сейчас</span></div>
+    <div class="fact"><b>2860</b><span>показов за октябрь</span></div>
+    <div class="fact"><b>50</b><span>кликов за октябрь</span></div>
+    <div class="fact"><b>146</b><span>запросов на 6–10 месте</span></div>
+    <div class="fact"><b>34</b><span>статьи в блоге</span></div>
+    <div class="fact"><b>44 062</b><span>показов/мес – весь замеренный спрос</span></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Где мы сейчас</span>
+  <h2>Факт: наша собственная кривая CTR</h2>
+  <p>Это не книжные проценты, а наши данные из Search Console за октябрь – 529 запросов, 2860 показов, 50 кликов.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Позиция</th><th class="r">Запросов</th><th class="r">Показов</th><th class="r">Кликов</th><th class="r">CTR</th><th>Что это значит</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="r">35</td><td class="r">50</td><td class="r">5</td><td class="r">10,00 %</td><td><span class="sev g">работает</span></td></tr>
+      <tr><td>2–3</td><td class="r">50</td><td class="r">159</td><td class="r">11</td><td class="r">6,92 %</td><td><span class="sev g">работает</span></td></tr>
+      <tr><td>4–5</td><td class="r">47</td><td class="r">306</td><td class="r">21</td><td class="r">6,86 %</td><td><span class="sev g">работает</span></td></tr>
+      <tr><td>6–10</td><td class="r">146</td><td class="r">1253</td><td class="r">12</td><td class="r">0,96 %</td><td><span class="sev c">обрыв в 7 раз</span></td></tr>
+      <tr><td>11–20</td><td class="r">121</td><td class="r">752</td><td class="r">1</td><td class="r">0,13 %</td><td><span class="sev c">почти мёртво</span></td></tr>
+      <tr><td>21–50</td><td class="r">107</td><td class="r">292</td><td class="r">0</td><td class="r">0 %</td><td><span class="sev l">мёртво</span></td></tr>
+    </tbody>
+    <tfoot><tr><td>Всего</td><td class="r">529</td><td class="r">2860</td><td class="r">50</td><td class="r">1,75 %</td><td></td></tr></tfoot>
+  </table></div>
+  <div class="dir">
+    <h3>Вывод, на котором держится весь план</h3>
+    <p>Разница между 5-м и 6-м местом у нас – <b>в семь раз по кликам</b>. 146 запросов на 6–10 месте дают 1253 показа и 12 кликов. Если поднять их в топ-5 при нашем же CTR 6,9 %, это <b>86 кликов вместо 12</b> – плюс 74 клика в месяц, без единой новой статьи.</p>
+    <p class="note">Поэтому в плане две линии, а не одна: новые статьи берут новый спрос, доработка старых берёт деньги с того, что уже показывается.</p>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Честно про темп</span>
+  <h2>Откуда 150 статей, если тем на 35</h2>
+  <p>5 статей в день × 30 дней = 150. По замеренному спросу у нас осталось 25–35 тем. Разрыв закрывается тремя источниками, и два из них зависят от вас.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Источник тем</th><th class="r">Статей</th><th>Что нужно</th><th>Готово?</th></tr></thead>
+    <tbody>
+      <tr><td>Остаток замеренного спроса: ремонт, диагностика, масла, модели</td><td class="r">25–35</td><td>ничего, факты со своих страниц</td><td><span class="sev g">можно писать сейчас</span></td></tr>
+      <tr><td>Узловые статьи по маркам: батарея, редукторы, прошивки, диагностика, ходовая – по образцу ГРАФИТа</td><td class="r">30–50</td><td><b>ваши данные</b>: чем диагностируем, какие батареи и прошивки видели, сроки запчастей, частые обращения</td><td><span class="sev c">ждёт вас</span></td></tr>
+      <tr><td>Русификация по моделям: 127 модельных страниц уже есть, статьи к топовым</td><td class="r">20–30</td><td>ничего, факты со своих страниц</td><td><span class="sev g">можно писать сейчас</span></td></tr>
+      <tr><td>Сезонные и локальные: зима, Новосибирск</td><td class="r">5–10</td><td>ничего</td><td><span class="sev g">можно писать сейчас</span></td></tr>
+      <tr><td>Новые кусты из платного съёма спроса под информационные запросы</td><td class="r">20–40</td><td><b>ваше разрешение</b> и бюджет XMLRiver</td><td><span class="sev m">ждёт решения</span></td></tr>
+    </tbody>
+    <tfoot><tr><td>Итого потенциал</td><td class="r">100–165</td><td></td><td></td></tr></tfoot>
+  </table></div>
+  <p class="note">Без ваших данных и без съёма остаётся 50–75 статей – это 10–15 дней по пять. Дальше я начну пересказывать сам себя, и это уже не контент, а то, за что наказывают.</p>
+</section>
+
+<section>
+  <span class="eyebrow">План</span>
+  <h2>Ноябрь по неделям</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Срок</th><th>Что делаем</th><th class="r">Статей</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td>1–7 ноября</td><td>остаток замеренного спроса: ремонт по маркам, диагностика, масла, модели ZEEKR и LiXiang</td><td class="r">35</td><td>закрыть всё, что можно писать без ожидания</td></tr>
+      <tr><td>1–7 ноября, параллельно</td><td>доработка 20 статей и страниц с позиций 6–10: объём до 900–1200 слов, таблицы, перелинковка</td><td class="r">–</td><td>главный рычаг по кликам: +74 клика/мес при переходе в топ-5</td></tr>
+      <tr><td>8–14 ноября</td><td>узловые статьи по вашим данным: батареи, прошивки, оборудование, запчасти</td><td class="r">35</td><td>то, что конкуренту перебить нечем – у него нет наших машин</td></tr>
+      <tr><td>15–21 ноября</td><td>русификация по моделям: статьи к топовым из 127 модельных страниц</td><td class="r">35</td><td>русификация – 78 крепких фраз, наш самый большой куст</td></tr>
+      <tr><td>22–30 ноября</td><td>зимние и локальные темы, плюс новые кусты из съёма спроса</td><td class="r">45</td><td>сезон и расширение на то, чего мы пока не видим</td></tr>
+    </tbody>
+    <tfoot><tr><td>Итого</td><td></td><td class="r">150</td><td></td></tr></tfoot>
+  </table></div>
+  <p class="note">Каждый день: 5 статей, проверка стандарта (0 ошибок и 0 замечаний), проверка пересечения текста ниже 80 %, выкладка, IndexNow – и ссылки вам в чат и Фёдору в Telegram, чтобы вы могли открыть и проверить.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Прогноз</span>
+  <h2>К чему придём к 30 ноября</h2>
+  <p>Считаю по методу, который уже применяю к срокам работ: три оценки и ожидание по формуле (быстро + 4 × вероятно + долго) / 6. Основание – наши собственные цифры октября, а не чужие бенчмарки.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Показатель</th><th class="r">Факт октября</th><th class="r">Пессимистично</th><th class="r">Вероятно</th><th class="r">Оптимистично</th><th class="r">Прогноз</th></tr></thead>
+    <tbody>
+      <tr><td>Показов в месяц</td><td class="r">2 860</td><td class="r">6 000</td><td class="r">10 000</td><td class="r">15 000</td><td class="r"><b>10 167</b></td></tr>
+      <tr><td>Кликов в месяц</td><td class="r">50</td><td class="r">150</td><td class="r">300</td><td class="r">600</td><td class="r"><b>325</b></td></tr>
+      <tr><td>Доля замеренного спроса</td><td class="r">6,5 %</td><td class="r">14 %</td><td class="r">23 %</td><td class="r">34 %</td><td class="r"><b>23 %</b></td></tr>
+      <tr><td>Запросов в топ-5</td><td class="r">132</td><td class="r">180</td><td class="r">250</td><td class="r">350</td><td class="r"><b>253</b></td></tr>
+      <tr><td>Статей в блоге</td><td class="r">34</td><td class="r">90</td><td class="r">150</td><td class="r">184</td><td class="r"><b>141</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="two">
+    <div class="dir">
+      <h3>Что заложено в «вероятно»</h3>
+      <ul class="list">
+        <li>статья выходит на свои показы за 5–14 дней – это наш факт: 11 статей дали 0,2 показа в день сразу после выкладки и 11,9 через пять дней;</li>
+        <li>зрелая статья даёт около 7 показов в день;</li>
+        <li>из 150 новых к 30 ноября успеют «созреть» примерно две трети;</li>
+        <li>доработка 20 старых страниц поднимает часть запросов из 6–10 в топ-5.</li>
+      </ul>
+    </div>
+    <div class="dir">
+      <h3>Что прогноз ломает</h3>
+      <ul class="list">
+        <li><b>Яндекс.</b> Он не обходит сайт с 10.10 из-за аварии дата-центров. Весь прогноз – только по Google. Если Яндекс оживёт, цифры вырастут сверху, и это не заслуга плана;</li>
+        <li><b>нет данных от вас</b> – выпадает 30–50 статей, прогноз падает к пессимистичному;</li>
+        <li><b>нет съёма спроса</b> – выпадает ещё 20–40;</li>
+        <li>сезон: зимой спрос на ТО обычно ниже, чем осенью;</li>
+        <li>конкуренты тоже пишут – ГРАФИТ уже пишет лучше нас по формату.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">Чего прогноз НЕ обещает: заявок. С блога за неделю 29 визитов и ноль заявок – это вопрос призыва в статьях, а не трафика, и его надо решать отдельно. Обещать заявки, не починив конверсию, было бы врать.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Как проверяем</span>
+  <h2>Журнал прогноз против факта</h2>
+  <p>Прогноз без проверки – это гадание. Поэтому завожу правило: каждую неделю снимаю факт и ставлю его рядом с прогнозом, а в конце месяца пересчитываю поправку, с которой считаю следующий прогноз.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Контрольная точка</th><th class="r">Прогноз показов</th><th class="r">Прогноз кликов</th><th class="r">Факт показов</th><th class="r">Факт кликов</th><th>Поправка</th></tr></thead>
+    <tbody>
+      <tr><td>7 ноября</td><td class="r">4 500</td><td class="r">110</td><td class="r"><span class="na">—</span></td><td class="r"><span class="na">—</span></td><td class="na">снимается 8.11</td></tr>
+      <tr><td>14 ноября</td><td class="r">6 500</td><td class="r">180</td><td class="r"><span class="na">—</span></td><td class="r"><span class="na">—</span></td><td class="na">снимается 15.11</td></tr>
+      <tr><td>21 ноября</td><td class="r">8 500</td><td class="r">250</td><td class="r"><span class="na">—</span></td><td class="r"><span class="na">—</span></td><td class="na">снимается 22.11</td></tr>
+      <tr><td>30 ноября</td><td class="r">10 167</td><td class="r">325</td><td class="r"><span class="na">—</span></td><td class="r"><span class="na">—</span></td><td class="na">снимается 1.12</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Недельные цифры – накопленным итогом за месяц, снимаются из Search Console командой, которой я уже снимаю данные. Если факт уходит от прогноза больше чем на треть – разбираю причину и переписываю прогноз, а не подгоняю задним числом.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Решения</span>
+  <h2>Что нужно от вас, чтобы план не встал на 15-м дне</h2>
+  <div class="decide">
+    <div><div><b>Шесть блоков данных по машинам</b><p>Чем диагностируем, какие батареи и ёмкости видели по VIN, какие прошивки встречаются и что слетает после OTA, чем отличается рестайлинг ZEEKR 001, реальные сроки по запчастям, три-пять самых частых обращений по каждой марке. Можно голосом – я разберу. Это открывает 30–50 статей, которых больше ни у кого не будет.</p></div></div>
+    <div><div><b>Платный съём спроса под информационные запросы</b><p>Текущий снимок собирали под коммерческие: в нём ноль фраз про сигнализации и приложения, хотя в Google по ним показы есть. Съём покажет настоящие вопросы владельцев. Цену назову до запуска, без вашего слова не трогаю.</p></div></div>
+    <div><div><b>Цены ТО по маркам</b><p>У Geely, Changan, BYD, TANK, Dongfeng и ещё полутора десятков марок на сайте «Цена по запросу». Запрос «сколько стоит» – один из самых сильных: по «сколько стоит поставить автозапуск» мы на первом месте. Без цен эти статьи писать можно, но они теряют половину силы.</p></div></div>
+    <div><div><b>Telegram и WhatsApp в статьях</b><p>У ГРАФИТа в каждой статье форма, Telegram, MAX, телефон и обещание перезвонить за 15 минут. У нас только телефон и форма. Если каналы есть – поставлю в шаблон, появится сразу на всех статьях.</p></div></div>
+    <div><div><b>Фото для подписи автора</b><p>Подпись «Артём Галимов, основатель техцентра» уже стоит на всех 34 статьях и в разметке. Фотография усилит её – поиск читает автора полнее, когда у него есть лицо.</p></div></div>
+  </div>
+</section>
+
+<footer class="note">План и прогноз от 01.11.2026. Все цифры факта – Google Search Console за 01.10–01.11.2026, снято 01.11.2026; спрос – снимок Wordstat через XMLRiver за сентябрь, снят 27.10.2026. Яндекс в прогноз не включён: он не обходит сайт с 10.10 из-за аварии своих дата-центров.</footer>
+
+</div></body></html>

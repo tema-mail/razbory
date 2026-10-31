@@ -1,0 +1,220 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Блог ГРАФИТа против нашего</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – красный TEYES Sibir */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}.verdict b.big{font-size:18px}}
+</style>
+</head><body><div class="wrap">
+
+<header>
+  <span class="eyebrow">Evolution Car Service · разбор блога ГРАФИТа и чужих сервисов · 01.11.2026</span>
+  <h1>Почему их семь статей сильнее наших тридцати четырёх</h1>
+  <audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px"></audio>
+  <p class="note">Итог голосом, около минуты.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">У ГРАФИТа семь статей против наших тридцати четырёх, и каждая из них весит больше нашей. Дело не в темах – темы у нас те же. Дело в формате: их статья это 1000–1500 слов и четыре таблицы с конкретными цифрами, наша – 491 слово и, в 26 случаях из 34, вообще без таблицы. Они пишут про узел и модель, мы – про услугу и марку.</b>
+    <p>И главное ограничение, которое надо назвать сразу: скопировать их статьи мы не можем. Их цифры – ёмкости батарей, химия ячеек, версии прошивок, модели сканеров – даны <b>без единого источника</b>. Нам такое писать нельзя: правило проекта – факты только подтверждённые источником или владельцем. Но эти данные у нас есть – в голове у Артёма и в практике техцентра. Их нужно вынуть, а не придумать.</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>7</b><span>статей в блоге ГРАФИТа</span></div>
+    <div class="fact"><b>34</b><span>статьи у нас</span></div>
+    <div class="fact"><b>1000–1500</b><span>слов в их статье</span></div>
+    <div class="fact"><b>491</b><span>слово в нашей, в среднем</span></div>
+    <div class="fact"><b>4</b><span>таблицы в их статье</span></div>
+    <div class="fact"><b>8 из 34</b><span>наших статей имеют таблицу</span></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Что у них есть</span>
+  <h2>Весь блог ГРАФИТа – семь статей</h2>
+  <p>Ни дат, ни анонсов, ни рубрик, ни пагинации: голый список заголовков. Зато каждый заголовок – конкретный вопрос владельца конкретной машины.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Статья</th><th>О чём</th><th>Есть ли у нас</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://grafit-service.ru/blog/batareya-zeekr-001/">Батарея Zeekr 001: ёмкость, химия CATL и запас хода</a></td><td>86–140 кВт·ч, ячейки CATL, NMC и LFP, деградация 8–12 % за 5 лет, гарантия 8 лет / 160 000 км</td><td><span class="sev c">нет</span></td></tr>
+      <tr><td><a href="https://grafit-service.ru/blog/diagnostika-lixiang-skanery/">Чем диагностировать LiXiang: сканеры, совместимость, практика</a></td><td>ELM327, OBDLink, XTOOL, Launch, Autel, LDM-X Lite/ADB/Full, Lisik.Tech, дилерский Li Auto IAST, Li OS 8.x</td><td><span class="sev m">частично</span><br><span class="note">у нас есть «Диагностика китайского гибрида», но про инструменты в ней ничего</span></td></tr>
+      <tr><td><a href="https://grafit-service.ru/blog/zeekr-001-skolko-proezzhaet-na-odnom-zaryade/">Zeekr 001: сколько проезжает на одном заряде</a></td><td>запас хода по циклам, расход 15–35 кВт·ч/100 км</td><td><span class="sev c">нет</span></td></tr>
+      <tr><td><a href="https://grafit-service.ru/blog/russkiy-yazyk-v-lixiang/">Русский язык в LiXiang: включить официально</a></td><td>как включается штатно</td><td><span class="sev g">есть страница услуги</span><br><span class="note">/rusifikaciya/lixiang/, но статьи нет</span></td></tr>
+      <tr><td><a href="https://grafit-service.ru/blog/restayling-zeekr-001/">Рестайлинг Zeekr 001: отличия от дорестайла</a></td><td>чем отличаются версии</td><td><span class="sev m">упоминаем</span><br><span class="note">на странице русификации сказано, что прошивки разные и цена разная – но отдельной статьи нет</span></td></tr>
+      <tr><td><a href="https://grafit-service.ru/blog/lixiang-proshivka-8-5/">Прошивка LiXiang 8.5: OTA, changelog и установка</a></td><td>версия ПО, что изменилось, как ставится</td><td><span class="sev c">нет</span></td></tr>
+      <tr><td><a href="https://grafit-service.ru/blog/chto-takoe-master-akkaunt/">Мастер-аккаунт в китайском автомобиле</a></td><td>что это и как получить</td><td><span class="sev g">есть, и даже лучше</span><br><span class="note">у нас общая статья плюс девять по маркам</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Пять тем из семи у нас не закрыты вообще. При этом по мастер-аккаунту мы их обходим: у нас на эту тему десять статей вместо одной.</p>
+</section>
+
+<section>
+  <span class="eyebrow">В чём разница</span>
+  <h2>Их формат против нашего</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Признак</th><th>ГРАФИТ</th><th>Мы</th><th>Вывод</th></tr></thead>
+    <tbody>
+      <tr><td>Объём своего текста</td><td>1000–1500 слов</td><td>322–750, в среднем 491</td><td><span class="sev c">отстаём в 2–3 раза</span></td></tr>
+      <tr><td>Таблицы</td><td>4 на статью</td><td>в 8 статьях из 34</td><td><span class="sev c">отстаём</span></td></tr>
+      <tr><td>FAQ</td><td>5 вопросов</td><td>5 вопросов</td><td><span class="sev g">наравне</span></td></tr>
+      <tr><td>Тема статьи</td><td>узел и модель: батарея 001, прошивка 8.5</td><td>услуга и марка: ТО LiXiang, диагностика гибрида</td><td><span class="sev m">у них ближе к вопросу владельца</span></td></tr>
+      <tr><td>Автор указан</td><td>да, основатель техцентра</td><td>нет</td><td><span class="sev c">у нас нет подписи вообще</span></td></tr>
+      <tr><td>Каналы связи в статье</td><td>форма, Telegram, MAX, телефон, «перезвоним за 15 минут»</td><td>телефон и форма</td><td><span class="sev m">у нас меньше</span></td></tr>
+      <tr><td>Источники цифр</td><td>нет ни одного</td><td>всё со своих страниц услуг</td><td><span class="sev g">здесь мы честнее</span></td></tr>
+      <tr><td>Перелинковка</td><td>блок похожих статей</td><td>6 ссылок в каждой статье</td><td><span class="sev g">наравне</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Что берём</span>
+  <h2>Три вещи, которые надо изменить в наших статьях</h2>
+  <div class="two">
+    <div class="dir">
+      <h3>1. Объём и таблицы</h3>
+      <p>Довести статью до 900–1200 слов и ставить 2–4 таблицы. Таблица – это то, что поиск и нейросети вытаскивают в ответ целиком. Шаблон статьи таблицы уже поддерживает, мы ставим их редко.</p>
+    </div>
+    <div class="dir">
+      <h3>2. Тема = узел или модель, а не услуга</h3>
+      <p>Не «ТО ZEEKR», а «Батарея ZEEKR 001», «Редукторы LiXiang L9», «Рестайлинг 001: что меняется для сервиса». Услугу закрывают страницы услуг, у нас их 255 – статьи должны брать вопрос владельца.</p>
+    </div>
+    <div class="dir">
+      <h3>3. Подпись автора</h3>
+      <p>У них под статьёй основатель техцентра. У нас подписи нет вообще, хотя мы специализированный техцентр – это и есть то, что поиск называет опытом и экспертностью. Ставится один раз в шаблон.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Чего не берём</span>
+  <h2>Их цифры копировать нельзя</h2>
+  <p>В статье про батарею ZEEKR приведены ёмкости, химия ячеек, деградация и условия гарантии – и ни одной ссылки на источник. В статье про диагностику – модели сканеров и версии прошивок, тоже без источника. Возможно, всё верно и взято из практики. Но для нас это чужие непроверенные числа, а правило проекта прямое: факты о машинах и оборудовании только подтверждённые источником или владельцем.</p>
+  <p>Поэтому такие статьи мы напишем только после того, как данные дадите вы. Хорошая новость: эти данные у вас есть – вы видите эти машины каждый день.</p>
+  <div class="dir">
+    <h3>Что нужно от Артёма, чтобы написать экспертные статьи</h3>
+    <ul class="list">
+      <li><b>Чем диагностируете</b> – конкретные модели сканеров и программ по маркам: что держим сами, что берём под задачу, с чем не работаем.</li>
+      <li><b>Батареи</b> – какие ёмкости и химию реально видели по VIN на ZEEKR, LiXiang, VOYAH, AVATR; что показывал SOH на пробегах.</li>
+      <li><b>Прошивки</b> – какие версии встречаются, что меняется после OTA, что слетает.</li>
+      <li><b>Рестайлинги</b> – чем отличается обслуживание дорестайла и рестайлинга ZEEKR 001, кроме цены русификации.</li>
+      <li><b>Запчасти</b> – реальные сроки по узлам: расходники, ходовая, электроника, высоковольтная часть.</li>
+      <li><b>Что чаще всего приезжает</b> – три-пять самых частых обращений по каждой марке. Это закроет весь куст «ремонт» на РФ 1532.</li>
+    </ul>
+    <p class="note">Каждый такой ответ – это одна-две статьи, которые конкуренту нечем перебить: у него нет наших машин.</p>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Что писать</span>
+  <h2>Восемь тем по образцу, с пометкой что нужно</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Тема</th><th>Откуда спрос</th><th>Данные есть?</th></tr></thead>
+    <tbody>
+      <tr><td>Батарея ZEEKR 001: ёмкость, запас хода, деградация</td><td>ZEEKR 001 НСК 441, их статья на ту же тему</td><td><span class="sev c">нужны ваши</span></td></tr>
+      <tr><td>Чем диагностируем китайские электромобили: оборудование</td><td>диагностика Geely РФ 752, LiXiang 151</td><td><span class="sev c">нужны ваши</span></td></tr>
+      <tr><td>Рестайлинг ZEEKR 001: что меняется для сервиса</td><td>их статья, у нас факт о разных прошивках уже есть</td><td><span class="sev m">частично</span></td></tr>
+      <tr><td>Прошивки и OTA: что слетает после обновления</td><td>их статья; у нас факт про слетающую русификацию уже есть</td><td><span class="sev m">частично</span></td></tr>
+      <tr><td>Запас хода зимой по моделям</td><td>сезон, их статья про запас хода</td><td><span class="sev c">нужны ваши замеры</span></td></tr>
+      <tr><td>Русский язык в LiXiang: официально и нет</td><td>русификация LiXiang, их статья</td><td><span class="sev g">есть</span></td></tr>
+      <tr><td>Подвеска китайского гибрида: что смотреть на 10 000 км</td><td>внешний источник ниже даёт конкретику</td><td><span class="sev m">частично</span></td></tr>
+      <tr><td>Сколько ждать запчасти: по типам узлов</td><td>ремонт ZEEKR 467, LiXiang 438, BYD 332, VOYAH 295</td><td><span class="sev c">нужны ваши</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Чужой опыт</span>
+  <h2>Что пишут другие сервисы России и Беларуси</h2>
+  <p>Искал блоги сервисов, которые работают с китайскими электромобилями. Нашлось немного, и почти всё – реклама самих сервисов. Одно исключение стоит того, чтобы прочитать целиком.</p>
+  <div class="dir">
+    <h3>Самое ценное: интервью директора ETS AUTO (Беларусь)</h3>
+    <p>Владимир Кожановский, ETS AUTO, интервью abw.by, перепечатка на <a href="https://110km.ru/art/kitayskie-elektromobili-trebuyut-chastogo-kontrolya-i-slozhnee-remontiruyutsya-188097.html">110km.ru</a> от 20.10.2026. Это не блог сервиса, а разговор по делу, с цифрами:</p>
+    <ul class="list">
+      <li>запчасти из Китая – <b>от полутора до двух месяцев, иногда до полугода</b>;</li>
+      <li>расходники на BYD, Geely, Li Auto, Voyah и Zeekr обычно доступны, а электронные блоки, инверторы и камеры помощи водителю найти сложно;</li>
+      <li>для NIO ES8 тормозные колодки искали <b>около месяца</b>;</li>
+      <li>подвеску проверять <b>каждые 10 000 км</b>; на Li Auto L6 люфт рычага бывает уже при 10 000 км;</li>
+      <li>тормоза в их климате – чистить и смазывать <b>раз в полгода</b>;</li>
+      <li>батареи иногда восстанавливают – корпус, микропроцессоры, балансировка; отдельные ячейки не меняют, их сложно подобрать;</li>
+      <li>замену заднего электромотора на одной машине оценивали примерно в <b>415 000 ₽</b>, а нашли окисленный провод и обошлись без замены.</li>
+    </ul>
+    <p class="note">Это внешний источник, и он подтверждает ровно то, о чём мы написали в статье про ремонт: главная боль не в железе, а в запчастях и доступе. Цифры по срокам можно цитировать со ссылкой на него – как чужой опыт, не как свой.</p>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>Кто</th><th>Что у них</th><th>Чем полезно</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://bestchinacars.ru/blog/dzikun-arkadiy/remont-gibridnykh-avtomobiley-v-moskve--profession/">BestChinaCars</a>, Москва</td><td>блог с авторскими статьями про ремонт гибридов и электромобилей</td><td>формат «автор + город + услуга», ориентир по подаче</td></tr>
+      <tr><td><a href="https://bcc-service.ru/">BCC Service</a>, Москва</td><td>сервис BYD, Denza, Yangwang, Fangchengbao</td><td>узкая специализация по маркам как позиционирование</td></tr>
+      <tr><td><a href="https://bimas.ru/blog/service/bimas-ru-servis-jelektro-i-gibridomobilej-v-spb/">Bimas</a>, Санкт-Петербург</td><td>блог сервиса электро и гибридов</td><td>тот же профиль, что у нас, другой город</td></tr>
+      <tr><td><a href="https://westmotors.by/blog/post/obsluzhivanie-i-remont-aito-specifika-kitajskogo-elektromobilya">WestMotors</a>, Беларусь</td><td>статья «Обслуживание и ремонт AITO: специфика»</td><td>пример статьи по одной марке, которой у нас нет</td></tr>
+      <tr><td><a href="https://avtocharge.ru/tehnicheskoe-obsluzhivanie-elektromobiley/">Avtocharge</a></td><td>руководство по ТО электромобилей, ориентир 10–20 тыс. км</td><td>общий регламент, сверять с нашим</td></tr>
+      <tr><td><a href="https://marscars.by/services">Mars Cars</a>, Минск</td><td>сервис электромобилей из Китая</td><td>список марок в работе</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Вывод по рынку: сильных блогов у сервисов почти нет. ГРАФИТ здесь исключение, а не правило. Значит место свободно, и занять его можно именно глубиной – нашими данными, которых нет ни у кого.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Решения</span>
+  <h2>Что решаете вы</h2>
+  <div class="decide">
+    <div><div><b>Переписывать старые статьи или писать новые?</b><p>34 статьи уже стоят и начали показываться. Довести их до 900–1200 слов с таблицами – это 34 правки. Моё предложение: не трогать, а довести до нового формата десять самых перспективных по показам, остальные оставить как есть.</p></div></div>
+    <div><div><b>Подпись автора – от кого?</b><p>Нужно имя и роль: владелец, мастер, техцентр. Один раз в шаблон, дальше стоит на всех статьях.</p></div></div>
+    <div><div><b>Данные по списку выше</b><p>Шесть пунктов: оборудование, батареи, прошивки, рестайлинги, запчасти, частые обращения. Можно голосом, я разберу. Без них экспертных статей не будет – будет пересказ чужих цифр, а это запрещено нашим же правилом.</p></div></div>
+    <div><div><b>Добавлять Telegram и WhatsApp в статьи?</b><p>У ГРАФИТа в каждой статье форма, Telegram, MAX, телефон и обещание перезвонить за 15 минут. У нас только телефон и форма. Если каналы есть – поставлю.</p></div></div>
+    <div><div><b>Платный съём спроса под информационные запросы</b><p>Текущий снимок собирали под коммерческие: в нём 0 фраз про сигнализации и приложения, хотя в Google по ним показы есть. Съём покажет настоящие вопросы владельцев. Цену назову до запуска.</p></div></div>
+  </div>
+</section>
+
+<footer class="note">Разбор от 01.11.2026. Блог ГРАФИТа смотрел на живом сайте, наши цифры посчитаны по исходникам статей; внешние источники – по ссылкам в тексте. Чужие цифры в наши статьи без подтверждения не пойдут.</footer>
+
+</div></body></html>
