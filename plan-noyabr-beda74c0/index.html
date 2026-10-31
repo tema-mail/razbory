@@ -149,7 +149,7 @@ tfoot td{font-weight:600;border-top:2px solid var(--line)}
       <tr><td>Показов в месяц</td><td class="r">2 860</td><td class="r">6 000</td><td class="r">10 000</td><td class="r">15 000</td><td class="r"><b>10 167</b></td></tr>
       <tr><td>Кликов в месяц</td><td class="r">50</td><td class="r">150</td><td class="r">300</td><td class="r">600</td><td class="r"><b>325</b></td></tr>
       <tr><td>Доля замеренного спроса</td><td class="r">6,5 %</td><td class="r">14 %</td><td class="r">23 %</td><td class="r">34 %</td><td class="r"><b>23 %</b></td></tr>
-      <tr><td>Запросов в топ-5</td><td class="r">132</td><td class="r">180</td><td class="r">250</td><td class="r">350</td><td class="r"><b>253</b></td></tr>
+      <tr><td>Запросов в топ-5</td><td class="r">122</td><td class="r">180</td><td class="r">250</td><td class="r">350</td><td class="r"><b>253</b></td></tr>
       <tr><td>Статей в блоге</td><td class="r">34</td><td class="r">90</td><td class="r">150</td><td class="r">184</td><td class="r"><b>141</b></td></tr>
     </tbody>
   </table></div>
@@ -174,7 +174,35 @@ tfoot td{font-weight:600;border-top:2px solid var(--line)}
       </ul>
     </div>
   </div>
-  <p class="note">Чего прогноз НЕ обещает: заявок. С блога за неделю 29 визитов и ноль заявок – это вопрос призыва в статьях, а не трафика, и его надо решать отдельно. Обещать заявки, не починив конверсию, было бы врать.</p>
+  <p class="note">Прогноз по заявкам считается отдельно и ниже – по формуле нашего скилла, только со спроса Новосибирска. Коротко: с блога это 3,6 заявки в месяц при закрытых 19 городских темах. Чего прогноз НЕ обещает: заявок с РФ-трафика. С блога за неделю 29 визитов и ноль заявок – это вопрос призыва в статьях, а не трафика, и его надо решать отдельно. Обещать заявки, не починив конверсию, было бы врать.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Поправка, которую дал расчёт</span>
+  <h2>Трафик будет. Заявок с него почти нет</h2>
+  <p>Пересчитал прогноз по формуле из нашего же скилла по статьям TEYES – и она показала то, что я в первой версии плана пропустил. Считаю её же коэффициентами: доля показов зависит от ширины запроса, CTR 0,04, заявки – 5 % от визитов, калибровка «формула осторожная в 2,4 раза».</p>
+  <div class="verdict">
+    <b class="big">Заявки приходят только со спроса Новосибирска. А в темах, которые я поставил первыми, спрос Новосибирска – 11 %. Остальные 89 % это Россия: трафик будет, звонков с него не будет, потому что мы работаем в одном городе.</b>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>Стратегия на 10 статей</th><th class="r">Спрос НСК</th><th class="r">Спрос РФ</th><th class="r">Визитов/мес</th><th class="r">Заявок/мес</th></tr></thead>
+    <tbody>
+      <tr><td>По крупным кустам РФ – как я спланировал сначала: ремонт 1532, диагностика 1024, масла 586</td><td class="r">454</td><td class="r">3 691</td><td class="r">26</td><td class="r"><b>0,3</b></td></tr>
+      <tr><td>По крупным кустам Новосибирска: ZEEKR 9X 569, ZEEKR 001 441, AVATR 405, Geely EX5 400, ТО Воях 267, LiXiang L7 265…</td><td class="r">3 000+</td><td class="r">–</td><td class="r">47</td><td class="r"><b>2,3</b></td></tr>
+    </tbody>
+    <tfoot><tr><td>Разница по заявкам</td><td class="r"></td><td class="r"></td><td class="r">×1,8</td><td class="r"><b>×8</b></td></tr></tfoot>
+  </table></div>
+  <p>Всего фраз со спросом Новосибирска от 100 показов – <b>19</b>, суммарно 5 070 показов в месяц. Если закрыть их все: <b>73 визита и 3,6 заявки в месяц</b>, по хорошему сценарию – 174 визита и 8,7 заявки.</p>
+  <div class="dir">
+    <h3>Что меняю в плане</h3>
+    <ul class="list">
+      <li>первыми идут темы с <b>спросом Новосибирска</b>, а не самые жирные по РФ: ZEEKR 9X, ZEEKR 001, AVATR, Geely EX5, ТО Воях, LiXiang L7 и L9, BYD Tang и Han, VOYAH Dream, ZEEKR X, гибрид Geely, сервис гибридов, ТО Джили;</li>
+      <li>РФ-кусты пишем тоже – они дают показы, вес домена и видимость в ИИ-ответах, но в прогноз заявок их не кладём;</li>
+      <li><b>Geely EX5 – НСК 400, а страницы нет вообще.</b> Это первое, что нужно сделать, и это страница услуги, а не статья;</li>
+      <li>три фразы из девятнадцати – не наш профиль по ТО, но наш по русификации: Mercedes E-Class L 659, Honda XR-V 361, русификация магнитолы 185. По ним заявки реальнее всего, потому что это Новосибирск и наша услуга.</li>
+    </ul>
+  </div>
+  <p class="note">Честно про цифру заявок: 3,6 в месяц с блога – это немного, и обещать больше я не стану. Блог тут не основной канал продаж, он берёт тех, кто ищет ответ, и переводит на услугу. Основные заявки дают страницы услуг, а их задача – стоять в топ-5 по коммерческим запросам Новосибирска.</p>
 </section>
 
 <section>
@@ -184,10 +212,10 @@ tfoot td{font-weight:600;border-top:2px solid var(--line)}
   <div class="scroll"><table>
     <thead><tr><th>Контрольная точка</th><th class="r">Прогноз показов</th><th class="r">Прогноз кликов</th><th class="r">Факт показов</th><th class="r">Факт кликов</th><th>Поправка</th></tr></thead>
     <tbody>
-      <tr><td>7 ноября</td><td class="r">4 500</td><td class="r">110</td><td class="r"><span class="na">—</span></td><td class="r"><span class="na">—</span></td><td class="na">снимается 8.11</td></tr>
-      <tr><td>14 ноября</td><td class="r">6 500</td><td class="r">180</td><td class="r"><span class="na">—</span></td><td class="r"><span class="na">—</span></td><td class="na">снимается 15.11</td></tr>
-      <tr><td>21 ноября</td><td class="r">8 500</td><td class="r">250</td><td class="r"><span class="na">—</span></td><td class="r"><span class="na">—</span></td><td class="na">снимается 22.11</td></tr>
-      <tr><td>30 ноября</td><td class="r">10 167</td><td class="r">325</td><td class="r"><span class="na">—</span></td><td class="r"><span class="na">—</span></td><td class="na">снимается 1.12</td></tr>
+      <tr><td>7 ноября</td><td class="r">4 500</td><td class="r">110</td><td class="r"><span class="na">–</span></td><td class="r"><span class="na">–</span></td><td class="na">снимается 8.11</td></tr>
+      <tr><td>14 ноября</td><td class="r">6 500</td><td class="r">180</td><td class="r"><span class="na">–</span></td><td class="r"><span class="na">–</span></td><td class="na">снимается 15.11</td></tr>
+      <tr><td>21 ноября</td><td class="r">8 500</td><td class="r">250</td><td class="r"><span class="na">–</span></td><td class="r"><span class="na">–</span></td><td class="na">снимается 22.11</td></tr>
+      <tr><td>30 ноября</td><td class="r">10 167</td><td class="r">325</td><td class="r"><span class="na">–</span></td><td class="r"><span class="na">–</span></td><td class="na">снимается 1.12</td></tr>
     </tbody>
   </table></div>
   <p class="note">Недельные цифры – накопленным итогом за месяц, снимаются из Search Console командой, которой я уже снимаю данные. Если факт уходит от прогноза больше чем на треть – разбираю причину и переписываю прогноз, а не подгоняю задним числом.</p>
