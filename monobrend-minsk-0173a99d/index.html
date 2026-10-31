@@ -1,0 +1,238 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Монобрендовые сервисы Минска: SEO-разбор</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – общий */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;word-break:break-all}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:var(--surface)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{display:inline-block;min-width:38px;text-align:center;font:600 12px/1.7 var(--f-mono);padding:0 6px;border-radius:4px}
+.pos.top{background:var(--good-bg);color:var(--good)} .pos.mid{background:var(--mid-bg);color:var(--mid)} .pos.no{background:var(--bad-bg);color:var(--bad)}
+.na{color:var(--none);font-size:13px}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.dir .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.dir .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tree{font:13.5px/1.75 var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre;margin:0}
+.tree .n{color:var(--good);font-weight:500} .tree .k{color:var(--muted)} .tree .x{color:var(--bad)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=search]{font:16px var(--f-body);padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0;flex:1 1 220px}
+#mig td.q{font-size:12.5px;color:var(--muted);min-width:260px}
+#mig td.u{min-width:200px}
+.tbl-wrap{max-height:75vh;overflow:auto}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}}
+</style>
+</head><body>
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:14px">
+  <span class="eyebrow">SEO-разбор конкурентов · снято 01.11.2026</span>
+  <h1>lixiangminsk.by, zeekrminsk.by, voyahminsk.by: как они берут выдачу</h1>
+  <p class="lead">Это одна компания с одним шаблоном, размноженным на марки. Каждый сайт – матрица «услуга × модель» примерно на 280 страниц. В Яндексе по Минску они берут почти все запросы вида «марка + модель + услуга», а общие запросы про электромобили и китайские машины уходят мультибрендовым сервисам. Под ваши две стратегии это прямое подтверждение: моносайт забирает марку, агрегатор забирает всё остальное.</p>
+  <audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px"></audio>
+  <p class="note">Послушать итог голосом, около двух минут.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">Коротко</b>
+    <ol class="list">
+      <li><b>Модель рабочая:</b> домен «марка+город», 4–7 моделей × ~50 услуг, title по формуле «услуга + марка + модель + в Минске». Из 13 проверенных запросов с маркой они на 1–2 месте в 12.</li>
+      <li><b>Сделано дёшево:</b> страницы моделей – близнецы (L7 и L8 совпадают на 69%), цены есть на каждой шестой, разметки услуг и FAQ нет, на каждой странице мега-меню на ~600 ссылок. Часто вместо нужной страницы ранжируется главная. Значит, вытягивают домен и главная, а матрица работает наполовину.</li>
+      <li><b>Где их нет:</b> «сервис электромобилей минск», «ремонт китайских электромобилей минск». Там стоят мультибренды: eastservice.by, next100.by, chinacarservice.by, electro-car-service.by, evmaster.by, marscars.by.</li>
+      <li><b>Обогнать можно качеством той же матрицы:</b> цена и срок на каждой странице, факты конкретной модели вместо замены названия, разметка Service, Offer и FAQPage, отзывы и кейсы по модели.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Кто это</span>
+  <h2>Одна сеть, четыре домена</h2>
+  <div class="facts">
+    <div class="fact"><b>287</b><span>страниц lixiangminsk.by (домен с 23.09.2023)</span></div>
+    <div class="fact"><b>282</b><span>страницы zeekrminsk.by (с 13.09.2023)</span></div>
+    <div class="fact"><b>273</b><span>страницы voyahminsk.by (с 23.04.2024)</span></div>
+    <div class="fact"><b>161</b><span>страница bydminsk.by, четвёртый сайт сети</span></div>
+  </div>
+  <p>На всех сайтах одни реквизиты: ЧУП «МонументБел», УНП 190976018, Минск, ул. Могилевская 5 к.1, телефон +375 29 630-08-00, почта zeekrminsk@gmail.com, в том числе на сайте Lixiang. Движок WordPress с Yoast или All in One SEO. Шаблон общий: «более 12000 клиентов, 13 лет, 8 специалистов». Друг на друга сайты почти не ссылаются (с Lixiang есть по одной ссылке на Voyah и BYD), а тексты между марками разные: совпадение около 3%. По-видимому, это сделано намеренно, чтобы Яндекс не склеил сайты как аффилиаты. Марки не пересекаются по запросам, поэтому этот фильтр их и не трогает.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Структура</span>
+  <h2>Матрица «услуга × модель»</h2>
+<pre class="tree">lixiangminsk.by/
+├─ <span class="n">remont-i-obsluzhivanie-lixiang-li-l7-v-minske/</span>   хаб модели   <span class="k">(L6 53, L7 53, L8 52, L9 49 дочерних)</span>
+│   ├─ zamena-antifriza-lixiang-li-l7/                услуга × модель
+│   ├─ rusifikacziya-lixiang-li-l8/
+│   └─ diagnostika-lixiang-li-l9/ …
+├─ <span class="n">zamena-antifriza-lixiang-li/</span>                     услуга × марка   <span class="k">(58 страниц 1-го уровня)</span>
+├─ remont-rulevogo-upravleniya-lixiang/…               мини-хабы узлов (рулевое 12, подвеска 7)
+└─ zapchasti-dlya-lixiang-li/                          запчасти – одна страница-заявка
+
+zeekrminsk.by   7 моделей: 001, 007, 009, 7X, 9X, 8X, X   (30–41 услуга на модель)
+voyahminsk.by   3 модели: Free 75, Dreamer 67, Passion 54</pre>
+  <h3>Какие услуги они закрывают</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Группа</th><th>Примеры страниц</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td>ТО и жидкости</td><td>ТО, масло ДВС и редуктора, антифриз, тормозная жидкость, фильтры, свечи</td><td>частый повторный спрос</td></tr>
+      <tr><td>Тормоза, подвеска, рулевое</td><td>колодки, диски, проточка, суппорты, пневмоподвеска (ремонт, адаптация, компрессор), сайлентблоки, рейка, ЭУР, развал</td><td>ремонт с чеком</td></tr>
+      <tr><td>Диагностика узлов EV и гибридов</td><td>инвертор, электродвигатель, редуктор, генератор, блок TCAM, «Hytera», батарея</td><td>длинный хвост без конкуренции</td></tr>
+      <tr><td>Софт и адаптация к стране</td><td>русификация, SIM, приложения, прошивка, обновления без SIM, мастер-аккаунт, NFC-ключи, разблокировка, регистрация, инженерное меню</td><td>главный денежный крючок для привозных машин</td></tr>
+      <tr><td>Допы</td><td>пороги с доводчиком, фаркоп, фары, лобовое</td><td>единичный спрос</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Ключи и страницы</span>
+  <h2>Как написаны страницы</h2>
+  <ul class="list">
+    <li><b>Title по одной формуле:</b> «Замена антифриза Lixiang Li L8 | СТО LIXIANGMINSK». Город «в Минске» есть только в половине заголовков: 147 из 286 у Lixiang, 196 из 282 у Zeekr. Это место для роста.</li>
+    <li><b>Сленг почти не используют.</b> «Лисян» есть в 16 title и description, «Лисянг» в 10, «Li Auto» в 14, «Ли Авто» и «Ли Сян» не встречаются нигде. «Зикр» есть в 35 из 282, «Воя» в 36 из 261. Народные написания закрыты слабо.</li>
+    <li><b>Description</b> собран из эмодзи и клише «✅гарантия качества, ✅сниженная стоимость». Дублей нет, но и пользы мало.</li>
+    <li><b>Текст – шаблон с подстановкой модели.</b> Страницы «антифриз L7» и «антифриз L8» совпадают на 69% по шинглам из 6 слов, «антифриз» и «ремонт двигателя» – на 62%. Факты конкретной модели (объём, регламент, отличия) почти не появляются.</li>
+    <li><b>Цены</b> есть на 45 страницах из 286 (Lixiang), на 38 из 282 (Zeekr), на 38 из 261 (Voyah). <b>FAQ</b> есть на 21, 34 и 22 страницах соответственно.</li>
+    <li><b>Разметка</b> только служебная: Organization, BreadcrumbList, WebPage. Service, Offer, FAQPage, AutoRepair и отзывов нет.</li>
+    <li><b>Перелинковка – мега-меню:</b> ~600 внутренних ссылок на каждой странице, то есть все услуги всех моделей. Вес размазан, тематической связки «модель → её услуги» нет.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Выдача</span>
+  <h2>Яндекс, Минск, 01.11.2026</h2>
+  <p class="note">yandex.by, регион 157, органика без рекламы, топ-12, снято вручную через браузер. Спрос (Wordstat) и Google не снимались, подробности ниже.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Запрос</th><th class="r">Их место</th><th>Какая страница</th><th>Кто рядом</th></tr></thead>
+    <tbody>
+      <tr><td>сервис lixiang минск</td><td class="r"><span class="pos top">1</span></td><td>главная</td><td>lixiang.by (официал), chinacarservice, marscars</td></tr>
+      <tr><td>ремонт lixiang минск</td><td class="r"><span class="pos top">2</span></td><td>главная</td><td>lixiang.by; 4 рекламы над выдачей</td></tr>
+      <tr><td>то lixiang l9 минск</td><td class="r"><span class="pos top">2</span></td><td><b>главная, а не страница L9</b></td><td>chinacarservice.by/services/lixang/l9/ – 1</td></tr>
+      <tr><td>замена масла lixiang l7</td><td class="r"><span class="pos top">1</span></td><td>услуга × модель</td><td>российские блоги и видео</td></tr>
+      <tr><td>пневмоподвеска lixiang ремонт</td><td class="r"><span class="pos top">1</span></td><td><b>главная</b></td><td>marscars, eastservice</td></tr>
+      <tr><td>русификация lixiang минск</td><td class="r"><span class="pos top">1</span></td><td>услуга × марка</td><td>chinacarservice, eastservice</td></tr>
+      <tr><td>замена антифриза lixiang l8</td><td class="r"><span class="pos top">1</span></td><td><b>главная</b></td><td>lihome.pro, российские сайты</td></tr>
+      <tr><td>ремонт zeekr минск</td><td class="r"><span class="pos no">–</span></td><td>сайта нет в топ-12</td><td>1 место – их карточка в каталоге service.edriver.by</td></tr>
+      <tr><td>сервис zeekr 001 минск</td><td class="r"><span class="pos top">1</span></td><td>главная</td><td>electro-car-service.by/zeekr/servis-zeekr-001/</td></tr>
+      <tr><td>калибровка датчиков zeekr</td><td class="r"><span class="pos top">1</span></td><td>услуга × марка</td><td>evmaster.by, российские блоги</td></tr>
+      <tr><td>регистрация zeekr минск</td><td class="r"><span class="pos top">1</span></td><td>услуга × марка</td><td>bycars.by, laocar.by</td></tr>
+      <tr><td>ремонт voyah минск</td><td class="r"><span class="pos top">1</span></td><td>главная</td><td>voyah.by, chinacarservice, voyah-minsk.by</td></tr>
+      <tr><td>сервис voyah free минск</td><td class="r"><span class="pos top">2</span></td><td>главная</td><td>voyah.by (официал) – 1</td></tr>
+      <tr><td>ремонт китайских электромобилей минск</td><td class="r"><span class="pos no">–</span></td><td>нет</td><td>eastservice, next100, chinacarservice, 2ГИС</td></tr>
+      <tr><td>сервис электромобилей минск</td><td class="r"><span class="pos no">–</span></td><td>нет</td><td>electro-car-service, evmaster, ets-auto, marscars</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Что из этого следует</h3>
+  <ul class="list">
+    <li><b>Вес держится на домене и главной.</b> Из 12 запросов, где они в топе, в 8 ранжируется главная, даже когда в запросе модель и услуга, а отдельная страница под это у них есть. Точное вхождение «марка + город» в домене заметно помогает.</li>
+    <li><b>Мультибренды с разделом под марку стабильно в топ-5:</b> eastservice.by/marki-avto/lixiang/, chinacarservice.by/services/lixang/l9/, electro-car-service.by/zeekr/servis-zeekr-001/. Агрегатор может стоять рядом с моносайтом по марочным запросам и один забирать общие.</li>
+    <li><b>Каталог СТО тоже ранжируется:</b> service.edriver.by – карточки сервисов. По «ремонт zeekr минск» их карточка в каталоге стоит выше их собственного сайта.</li>
+    <li><b>Маленький сайт тоже пробивается:</b> evolutioncarservice.com (ООО «Дабл Авто», Минск, около 20 страниц, по одной на модель) стоит в топ-12 по Lixiang L9, Zeekr 001 и Voyah Free. Название совпадает с вашими Evolution, но реквизиты другие. Возможно, это ваш клиент Evolution Car BY, проверьте.</li>
+    <li><b>Хвосты без города</b> («замена масла lixiang l7», «калибровка датчиков zeekr») даже в Минске отдают российским монобрендам: lixiang-sto.ru, ruslixiang.ru, autopilot-lixiang.ru, lizeekr.ru, ruszeekr.ru. Значит, в России та же модель уже занята, и в Москве конкуренция будет плотнее.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Мнение</span>
+  <h2>Стратегия 1: моносайт марки + города</h2>
+  <div class="dir">
+    <b>Сама модель – да.</b> Она доказана выдачей. Берём их матрицу как минимум и делаем каждую страницу лучше:
+    <ul class="list">
+      <li>цена «от» и срок на каждой странице услуги, а не на каждой шестой;</li>
+      <li>на странице модели – её факты: объём жидкостей, регламент, типовые болячки. Если у модели нечего сказать отдельно и нет своего спроса, страница идёт разделом на странице марки, а не близнецом;</li>
+      <li>разметка AutoRepair, Service, Offer, FAQPage; отзывы и кейсы с моделью;</li>
+      <li>перелинковка «модель → её услуги → соседние узлы» вместо меню на 600 ссылок;</li>
+      <li>народные написания в title и тексте: Лисян, Ли Авто, Зикр, Воя.</li>
+    </ul>
+  </div>
+  <div class="dir">
+    <b>Города на поддоменах – осторожно, это главный риск.</b>
+    <ul class="list">
+      <li>Поддомен с копией 280 страниц и заменой города – это дорвей по правилам Яндекса и Google, а у нас стоп по своему правилу. Поддомен оправдан, только если в городе есть реальная точка (своя или партнёр): адрес, телефон, карточка в Яндекс Бизнесе и 2ГИС, отзывы.</li>
+      <li>На поддомене – только страницы, у которых есть спрос в этом городе, а не вся матрица.</li>
+      <li>Яндекс считает поддомен почти отдельным сайтом, доверие главного домена переходит слабо. По этой выдаче видно, что домен «марка + город» сильный сигнал. Для Москвы и Питера я бы взял <b>отдельные домены вида lixiang-msk</b>, а поддомены оставил для городов поменьше.</li>
+      <li>Регион поддомену назначается в Вебмастере и подкрепляется картами. Без адреса в городе Яндекс регион не даст.</li>
+    </ul>
+  </div>
+  <h2>Стратегия 2: сервис-агрегатор всех марок</h2>
+  <div class="dir">
+    <b>Тоже да: он забирает то, что моносайт не возьмёт.</b>
+    <ul class="list">
+      <li>Общие запросы «сервис электромобилей», «ремонт китайских авто», «ремонт гибридов», где монобрендов нет вообще.</li>
+      <li>Дерево: марка → модель → узел → <b>проблема или симптом</b> («не заряжается», «ошибка пневмоподвески», «стук в редукторе»). Симптомы – это и информационно-коммерческий спрос, и материал для ИИ-ответов (GEO), которого у минских сайтов нет совсем.</li>
+      <li>Масштаб огромный: все марки × модели × проблемы – это десятки тысяч сочетаний. Страница создаётся только при своём спросе, остальное идёт разделами. Иначе получится слоп, и сайт уйдёт под фильтр целиком.</li>
+      <li>Можно сделать часть агрегатора каталогом сервисов, как edriver.by, и разместить там моносайты. Это вторая позиция в выдаче и ссылка.</li>
+    </ul>
+  </div>
+  <div class="dir">
+    <b>Главный риск двух стратегий вместе – аффилированность.</b> Если моносайт «ремонт lixiang москва» и агрегатор со страницей Lixiang в Москве ведут на один телефон, адрес или СТО, Яндекс склеит их и покажет только один. Минская сеть обходит это тем, что марки не пересекаются. У вас пересечение будет прямое, поэтому агрегатору нужны действительно свои реквизиты, телефоны и адреса. Вы сами сказали «для другой компании», и это правильно, но разделение должно быть полным, включая счётчики и аккаунты Вебмастера.
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Что не собрано</span>
+  <h2>Пробелы</h2>
+  <ul class="list">
+    <li><b>Спрос (Wordstat)</b> по матрице «марка × модель × услуга» – не снят. Это платный XMLRiver, жду вашего «да» и города.</li>
+    <li><b>Индексация их сайтов</b> – недоступна: это чужой Вебмастер. Можно оценить косвенно через выдачу по <code>site:</code>, но это не делалось.</li>
+    <li><b>Google</b> – не снят. В Беларуси у него большая доля, это стоит добрать.</li>
+    <li><b>Москва и другие города России</b> – выдача не снималась. Всё выше – Минск.</li>
+  </ul>
+  <p class="note">Сырые данные: <a href="data/">data</a> – списки URL трёх сайтов, title, H1 и description всех 829 страниц, выдача по 15 запросам.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Решить вам</span>
+  <h2>Вопросы</h2>
+  <ol class="list">
+    <li>С какой марки и какого города стартуем моносайт? Новосибирск (идея lixiangnsk.ru от 25.10), Москва или Минск?</li>
+    <li>В каких городах есть реальная точка или партнёр? От этого зависит, где можно ставить город.</li>
+    <li>Снимаем Wordstat по матрице для первого города? Смету назову до съёма.</li>
+    <li>evolutioncarservice.com (ООО «Дабл Авто») – это ваш клиент Evolution Car BY или чужой сайт?</li>
+  </ol>
+</section>
+</div>
+</body></html>
