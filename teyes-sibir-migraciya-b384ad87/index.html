@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>TEYES Sibir: карта переезда с Тильды на код</title>
+<meta name="description" content="Карта SEO-миграции teyes-sibir.ru с Tilda на код и проверка всех страниц копии: адреса, 301, title, description, H1, alt, разметка, готовность к ответам нейросетей.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – красный TEYES Sibir */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;word-break:break-all}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:var(--surface)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{display:inline-block;min-width:38px;text-align:center;font:600 12px/1.7 var(--f-mono);padding:0 6px;border-radius:4px}
+.pos.top{background:var(--good-bg);color:var(--good)} .pos.mid{background:var(--mid-bg);color:var(--mid)} .pos.no{background:var(--bad-bg);color:var(--bad)}
+.na{color:var(--none);font-size:13px}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.dir .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.dir .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tree{font:13.5px/1.75 var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre;margin:0}
+.tree .n{color:var(--good);font-weight:500} .tree .k{color:var(--muted)} .tree .x{color:var(--bad)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=search]{font:16px var(--f-body);padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0;flex:1 1 220px}
+#mig td.q{font-size:12.5px;color:var(--muted);min-width:260px}
+#mig td.u{min-width:200px}
+.tbl-wrap{max-height:75vh;overflow:auto}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}}
+</style>
+<style>audio{width:100%;max-width:520px} #map td:first-child{min-width:240px} #map td:nth-child(2){min-width:240px} #map td:last-child{min-width:200px}</style>
+</head>
+<body>
+<main class="wrap">
+
+<section>
+<span class="eyebrow">TEYES Sibir · переезд на код · 01.11.2026</span>
+<h1>Карта переезда teyes-sibir.ru с Тильды на код</h1>
+<p class="lead">Разобрал все 5,535 адресов, которые знает Тильда, и прошёл проверкой все 3,929 страниц копии на коде. По адресам переезд почти готов. По SEO копия повторяет все слабости Тильды, а магазин на коде добавил свои. Ниже то, что исправить до переезда, порядок дня переезда и карта адресов.</p>
+<audio controls preload="none" src="itog.mp3"></audio>
+<p class="note">Послушать итог голосом.</p>
+</section>
+
+<section>
+<div class="verdict">
+<b class="big">Переезжать можно после пяти правок, а не завтра утром</b>
+<p>Адреса сходятся: 3,902 страниц переезжают по тем же адресам, 1,396 редиректов собраны готовым файлом для сервера. Но в копии нет robots.txt, sitemap.xml и страницы 404, все страницы закрыты от поиска, счётчик Метрики вырезан, а меню на 163 страницах ведёт на 6 мёртвых адресов. Если переключить домен как есть, поисковики увидят сайт, закрытый от индексации.</p>
+</div>
+<div class="facts">
+<div class="fact"><b>3,902</b><span>адресов переезжают 1:1</span></div>
+<div class="fact"><b>1,396</b><span>301-редиректов, файл для Caddy готов</span></div>
+<div class="fact"><b>178</b><span>визитов с заявкой из поиска за год висят на адресах, которым нужен 301</span></div>
+<div class="fact"><b>27,392</b><span>картинок без alt из 69,404</span></div>
+</div>
+</section>
+
+<section>
+<h2>До переезда: обязательно (без этого не переключаем)</h2>
+<div class="decide">
+<div><div><h3>Открыть сайт для поиска в день переезда</h3><p>Все 3,929 страниц копии стоят с <code>noindex, nofollow</code> – это правильно, пока копия дублирует живой сайт. В сборке для боевого домена снять, добавить robots.txt со ссылкой на карту сайта, собрать sitemap.xml только из страниц с кодом 200 и canonical на себя, сделать страницу 404 с настоящим кодом 404. Сейчас нет ни одного из трёх файлов.</p></div></div>
+<div><div><h3>Сервер: 301, а не 308, и адреса без слэша</h3><p>Canonical у страниц без слэша на конце (<code>/multimedia_teyes/honda</code>), а файлы лежат папками. Сервер должен отдавать страницу по адресу без слэша сразу, без перехода. Caddy по умолчанию перенаправляет кодом 308 – Яндекс такие не склеивает (проверено в октябре на 19 сайтах), поэтому в файле редиректов код 301 прописан явно.</p></div></div>
+<div><div><h3>Починить меню и ссылки внутри сайта</h3><p>Меню и подвал на 163 страницах ведут на адреса, которых нет: /teyes, /autosound, /heating_systems, /russification, /signaling, /sound_insulation. Работы ссылаются на старые карточки товаров /catalog_teyes/tproduct/… Всего 96 битых целей. Редирект их закроет, но ссылки должны вести сразу на живой адрес.</p><ul class="list note"><li><span class="u">/autosound</span> – ссылаются 164 страниц</li><li><span class="u">/teyes</span> – ссылаются 164 страниц</li><li><span class="u">/heating_systems</span> – ссылаются 163 страниц</li><li><span class="u">/russification</span> – ссылаются 163 страниц</li><li><span class="u">/signaling</span> – ссылаются 163 страниц</li><li><span class="u">/sound_insulation</span> – ссылаются 163 страниц</li><li><span class="u">/accessories/tproduct/498706501042-kamera-zadnego-perednego-vida-teyes-sony</span> – ссылаются 93 страниц</li><li><span class="u">/catalog_teyes/tproduct/516229718052-teyes-cc3-2k</span> – ссылаются 60 страниц</li></ul></div></div>
+<div><div><h3>Вернуть Метрику и проверить заявки</h3><p>Счётчик 99532918 и цели в копии вырезаны специально. В боевой сборке вернуть, иначе мы не увидим, потеряли ли трафик. Формы копии отправляют заявки в Тильду: после переезда это надо проверить одной тестовой заявкой с твоего разрешения.</p></div></div>
+<div><div><h3>Раздел StarLine без canonical</h3><p>37 страниц /starline/… есть только на коде, у них нет canonical и разметки. Добавить перед открытием.</p></div></div>
+</div>
+</section>
+
+<section>
+<h2>Проверка страниц на коде</h2>
+<p>Скрипт <code>scripts/seo_audit.py</code> в репо teyes-sibir-kod, прогон 01.11.2026 по сборке (страницы Tilda + страницы Astro). Зелёный – ноль, жёлтый – меньше половины раздела, красный – половина и больше.</p>
+<div class="scroll"><table>
+<thead><tr><th>Раздел</th><th class="r">Страниц</th><th class="r">title &gt; 70</th><th class="r">description не 70–170</th><th class="r">нет description</th><th class="r">H1 не один</th><th class="r">картинок без alt</th><th class="r">без разметки</th><th class="r">с битыми ссылками</th><th class="r">без canonical</th></tr></thead>
+<tbody>
+<tr><td><b>Магазин</b></td><td class="r"><b>3198</b></td><td class="r"><span class="sev c">3105</span></td><td class="r"><span class="sev c">2365</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">15512</span></td><td class="r"><span class="sev m">155</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>Модель</b></td><td class="r"><b>258</b></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev m">3</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">217</span></td><td class="r"><span class="sev c">3397</span></td><td class="r"><span class="sev c">239</span></td><td class="r"><span class="sev m">13</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>Работа</b></td><td class="r"><b>191</b></td><td class="r"><span class="sev m">45</span></td><td class="r"><span class="sev m">19</span></td><td class="r"><span class="sev m">2</span></td><td class="r"><span class="sev c">96</span></td><td class="r"><span class="sev c">2415</span></td><td class="r"><span class="sev c">153</span></td><td class="r"><span class="sev m">6</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>Одиночная</b></td><td class="r"><b>175</b></td><td class="r"><span class="sev m">32</span></td><td class="r"><span class="sev m">25</span></td><td class="r"><span class="sev m">5</span></td><td class="r"><span class="sev m">9</span></td><td class="r"><span class="sev c">3153</span></td><td class="r"><span class="sev c">174</span></td><td class="r"><span class="sev c">163</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>StarLine</b></td><td class="r"><b>37</b></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">716</span></td><td class="r"><span class="sev c">37</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">37</span></td></tr>
+<tr><td><b>Работы</b></td><td class="r"><b>23</b></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">345</span></td><td class="r"><span class="sev c">23</span></td><td class="r"><span class="sev c">22</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>Русификация</b></td><td class="r"><b>16</b></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">16</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">590</span></td><td class="r"><span class="sev c">16</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>Услуга</b></td><td class="r"><b>15</b></td><td class="r"><span class="sev m">6</span></td><td class="r"><span class="sev m">5</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev m">2</span></td><td class="r"><span class="sev c">842</span></td><td class="r"><span class="sev m">7</span></td><td class="r"><span class="sev m">1</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>Приложения</b></td><td class="r"><b>9</b></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev m">2</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev m">1</span></td><td class="r"><span class="sev c">328</span></td><td class="r"><span class="sev c">9</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>Блог</b></td><td class="r"><b>3</b></td><td class="r"><span class="sev c">2</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">41</span></td><td class="r"><span class="sev c">3</span></td><td class="r"><span class="sev m">1</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>Работа (код)</b></td><td class="r"><b>3</b></td><td class="r"><span class="sev c">2</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">12</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td></tr>
+<tr><td><b>Главная</b></td><td class="r"><b>1</b></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">1</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev c">41</span></td><td class="r"><span class="sev c">1</span></td><td class="r"><span class="sev g">0</span></td><td class="r"><span class="sev g">0</span></td></tr>
+</tbody></table></div>
+<ul class="list">
+<li><b>Магазин (код, наша сборка):</b> title длиннее 70 знаков у 3,105 карточек из 3,198, description не той длины у 2,365. Разметка Product есть. Чинится одним шаблоном в Astro – это самое дешёвое большое улучшение.</li>
+<li><b>Модельные страницы:</b> два H1 у 217 из 258, разметки нет у 239. Это страницы, которые приносят заявки (Honda, LC200), – чинить первыми.</li>
+<li><b>Работы:</b> два H1 у 96 из 191, разметки нет у 153.</li>
+<li><b>Русификация:</b> у всех 16 страниц description 30–34 знака, разметки нет, alt нет ни у одной картинки. А эти страницы дают заявки (Changan, Exeed, Haval, Tank).</li>
+<li><b>Дубли:</b> одинаковый title у 138 страниц, одинаковый description у 150, одинаковый H1 у 72. Хуже всего:<ul class="list note"><li>«Установка Teyes на Subaru в Новосибирске — наши работы Teyes Sibir» – 47 страниц</li><li>«Установка Teyes на Suzuki в Новосибирске — наши работы Teyes Sibir» – 7 страниц</li><li>«Установка Teyes на Opel в Новосибирске — наши работы Teyes Sibir» – 7 страниц</li><li>«Наши работы — установка Teyes в Новосибирске | Teyes Sibir» – 4 страниц</li></ul></li>
+<li><b>Главная:</b> description – «Произведем доработку и дооснащение автомобиля на высоком уровне!» (65 знаков, без города и услуг), разметки нет.</li>
+</ul>
+</section>
+
+<section>
+<h2>Ответы нейросетей и Алисы (AEO, GEO)</h2>
+<ul class="list">
+<li>Разметка вопросов-ответов (FAQPage) – на 66 страницах из 3,929. Вопросы на страницах есть чаще, чем разметка.</li>
+<li>Разметка организации (адрес, телефон, часы) – на 33 страницах, на главной и в контактах её нет. Это первое, что читают карты и нейросети.</li>
+<li>llms.txt нет. Короткий файл «кто мы, услуги, адрес, телефон, главные страницы» – дешёвая вещь для ответов нейросетей.</li>
+<li>Хлебные крошки в разметке – на 42 страницах.</li>
+<li>Ответ в первом абзаце – есть на новых страницах услуг и работах Case Studio, на старых страницах Тильды почти нет: там первым экраном идёт баннер.</li>
+</ul>
+</section>
+
+<section>
+<h2>День переезда по шагам</h2>
+<ol class="list">
+<li>За неделю: исправления из блока «обязательно», сборка боевой версии, проверка <code>seo_audit.py</code> – ноль в колонках «нет canonical», «нет description», «с битыми ссылками».</li>
+<li>Сервер (Beget или другой): Caddy, файл <code>caddy-redirects.txt</code> внутри блока сайта, адреса без слэша без перехода, https и одно зеркало без www – кодом 301.</li>
+<li>Проверка на сервере до DNS: 50 адресов из карты с заявками – код 200 или 301 на нужную цель (скрипт пройдёт все 5 535).</li>
+<li>Переключение DNS. Тильду не удалять 30 дней – это откат.</li>
+<li>В тот же день: Вебмастер и Search Console – отправить sitemap, переобход 50 главных адресов (агент <code>yandex-dannye</code>).</li>
+<li>Две недели: каждый день входы с поиска и заявки против прошлого года, ошибки 404 в Вебмастере. Проседание больше 20% на неделе – разбираем адреса.</li>
+</ol>
+</section>
+
+<section>
+<h2>Карта адресов</h2>
+<p>Все 5,535 адресов: <a href="data/karta.csv">karta.csv</a> (Excel откроет, разделитель «;»). Файл редиректов для сервера: <a href="data/caddy-redirects.txt">caddy-redirects.txt</a>. Ниже адреса с заявками или хотя бы 15 входами из поиска за год (Метрика, 25.10.2025–24.10.2026), отсортированы по заявкам.</p>
+<div class="facts">
+<div class="fact"><b>3,902</b><span>1:1 – тот же адрес</span></div><div class="fact"><b>1,067</b><span>301 – как на Tilda</span></div><div class="fact"><b>324</b><span>301 – вернуть вес (сейчас 404)</span></div><div class="fact"><b>212</b><span>404 без трафика – оставить 404</span></div><div class="fact"><b>14</b><span>служебная – не переносить, отдать 404</span></div><div class="fact"><b>11</b><span>404 с трафиком – выбрать цель 301</span></div><div class="fact"><b>5</b><span>301 – дубль Tilda, на основной адрес</span></div>
+</div>
+<div class="scroll tbl-wrap"><table id="map">
+<thead><tr><th>Адрес на Тильде</th><th>Что делаем</th><th class="r">Поиск 12м</th><th class="r">С заявкой</th><th>Замечания SEO на коде</th></tr></thead>
+<tbody>
+<tr><td><span class="u">/</span><br><span class="na">Главная · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/</span></td><td class="r">2236</td><td class="r">316</td><td class="na">description 65 зн.; alt нет у 41 из 41; нет разметки</td></tr>
+<tr><td><span class="u">/teyes</span><br><span class="na">Одиночная страница · код 404</span></td><td><span class="sev m">301 – вернуть вес (сейчас 404)</span><br><span class="u">/services/installation_teyes</span></td><td class="r">649</td><td class="r">108</td><td class="na">title 77 зн.; alt нет у 50 из 50; нет разметки</td></tr>
+<tr><td><span class="u">/autosound</span><br><span class="na">Одиночная страница · код 404</span></td><td><span class="sev m">301 – вернуть вес (сейчас 404)</span><br><span class="u">/services/installing_car_audio</span></td><td class="r">284</td><td class="r">25</td><td class="na">description 55 зн.; alt нет у 175 из 175; нет разметки</td></tr>
+<tr><td><span class="u">/tankapp</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/tankapp</span></td><td class="r">214</td><td class="r">20</td><td class="na">description 171 зн.; alt нет у 39 из 39; нет разметки</td></tr>
+<tr><td><span class="u">/toyotarus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/toyotarus</span></td><td class="r">204</td><td class="r">20</td><td class="na">description 33 зн.; alt нет у 36 из 36; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/honda_stepwgn</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/honda_stepwgn</span></td><td class="r">171</td><td class="r">20</td><td class="na">description 51 зн.; H1: 2; alt нет у 13 из 19</td></tr>
+<tr><td><span class="u">/sound_insulation</span><br><span class="na">Одиночная страница · код 404</span></td><td><span class="sev m">301 – вернуть вес (сейчас 404)</span><br><span class="u">/services/installing_sound_insulation</span></td><td class="r">203</td><td class="r">13</td><td class="na">description 60 зн.; alt нет у 164 из 164; нет разметки</td></tr>
+<tr><td><span class="u">/russification</span><br><span class="na">Одиночная страница · код 404</span></td><td><span class="sev m">301 – вернуть вес (сейчас 404)</span><br><span class="u">/services/russification_of_cars</span></td><td class="r">198</td><td class="r">13</td><td class="na">description 51 зн.; alt нет у 120 из 120; нет разметки</td></tr>
+<tr><td><span class="u">/signaling</span><br><span class="na">Одиночная страница · код 404</span></td><td><span class="sev m">301 – вернуть вес (сейчас 404)</span><br><span class="u">/services/alarm_installation</span></td><td class="r">188</td><td class="r">11</td><td class="na">title 93 зн.; alt нет у 68 из 68; нет разметки</td></tr>
+<tr><td><span class="u">/tankrus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/tankrus</span></td><td class="r">166</td><td class="r">11</td><td class="na">description 31 зн.; alt нет у 40 из 40; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/honda_vezel</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/honda_vezel</span></td><td class="r">116</td><td class="r">10</td><td class="na">H1: 2; alt нет у 13 из 19</td></tr>
+<tr><td><span class="u">/changanrus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/changanrus</span></td><td class="r">53</td><td class="r">9</td><td class="na">description 34 зн.; alt нет у 42 из 42; нет разметки</td></tr>
+<tr><td><span class="u">/geelyrus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/geelyrus</span></td><td class="r">97</td><td class="r">8</td><td class="na">description 32 зн.; alt нет у 34 из 34; нет разметки</td></tr>
+<tr><td><span class="u">/havalrus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/havalrus</span></td><td class="r">104</td><td class="r">7</td><td class="na">description 32 зн.; alt нет у 34 из 34; нет разметки</td></tr>
+<tr><td><span class="u">/exeedrus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/exeedrus</span></td><td class="r">25</td><td class="r">7</td><td class="na">description 32 зн.; alt нет у 32 из 32; нет разметки</td></tr>
+<tr><td><span class="u">/services/russification_of_cars</span><br><span class="na">Услуга · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/services/russification_of_cars</span></td><td class="r">79</td><td class="r">6</td><td class="na">description 51 зн.; alt нет у 120 из 120; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/vezel</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/vezel</span></td><td class="r">75</td><td class="r">6</td><td class="na">H1: 2; alt нет у 13 из 21; нет разметки</td></tr>
+<tr><td><span class="u">/360_toyota_prado150</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/360_toyota_prado150</span></td><td class="r">112</td><td class="r">5</td><td class="na">title 79 зн.; alt нет у 22 из 22; нет разметки; битых ссылок 9</td></tr>
+<tr><td><span class="u">/installing_teyescc4pro_toyotalandcruiser200</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/installing_teyescc4pro_toyotalandcruiser200</span></td><td class="r">83</td><td class="r">5</td><td class="na">title 79 зн.; description 251 зн.; alt нет у 19 из 19; нет разметки; битых ссылок 8</td></tr>
+<tr><td><span class="u">/bydrus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/bydrus</span></td><td class="r">44</td><td class="r">5</td><td class="na">description 30 зн.; alt нет у 50 из 50; нет разметки</td></tr>
+<tr><td><span class="u">/jetourrus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/jetourrus</span></td><td class="r">33</td><td class="r">5</td><td class="na">description 33 зн.; alt нет у 36 из 36; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/cr-v</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/cr-v</span></td><td class="r">18</td><td class="r">5</td><td class="na">H1: 2; alt нет у 13 из 21; нет разметки</td></tr>
+<tr><td><span class="u">/exeedapp</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/exeedapp</span></td><td class="r">73</td><td class="r">4</td><td class="na">alt нет у 42 из 42; нет разметки</td></tr>
+<tr><td><span class="u">/atermal</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/atermal</span></td><td class="r">97</td><td class="r">3</td><td class="na">alt нет у 48 из 48; нет разметки</td></tr>
+<tr><td><span class="u">/jetourapp</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/jetourapp</span></td><td class="r">78</td><td class="r">3</td><td class="na">alt нет у 46 из 46; нет разметки</td></tr>
+<tr><td><span class="u">/catalog_teyes</span><br><span class="na">Одиночная страница · код 404</span></td><td><span class="sev m">301 – вернуть вес (сейчас 404)</span><br><span class="u">/store/catalog_teyes</span></td><td class="r">46</td><td class="r">3</td><td class="na">description 57 зн.; нет разметки</td></tr>
+<tr><td><span class="u">/lynk__corus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/lynk__corus</span></td><td class="r">32</td><td class="r">3</td><td class="na">description 36 зн.; alt нет у 40 из 40; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/toyota/toyota_land_cruiser_200</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/toyota/toyota_land_cruiser_200</span></td><td class="r">20</td><td class="r">3</td><td class="na">description 53 зн.; H1: 2; alt нет у 13 из 14</td></tr>
+<tr><td><span class="u">/services/installing_car_audio</span><br><span class="na">Услуга · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/services/installing_car_audio</span></td><td class="r">16</td><td class="r">3</td><td class="na">description 55 зн.; alt нет у 175 из 175; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/lexus/rx</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/lexus/rx</span></td><td class="r">4</td><td class="r">3</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/tinting</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/tinting</span></td><td class="r">120</td><td class="r">2</td><td class="na">alt нет у 60 из 60; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/hondafit</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/hondafit</span></td><td class="r">24</td><td class="r">2</td><td class="na">alt нет у 13 из 19; нет разметки</td></tr>
+<tr><td><span class="u">/havalapp</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/havalapp</span></td><td class="r">21</td><td class="r">2</td><td class="na">description 172 зн.; alt нет у 39 из 39; нет разметки</td></tr>
+<tr><td><span class="u">/teyes_cc4_pro_13_infiniti_qx80</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/teyes_cc4_pro_13_infiniti_qx80</span></td><td class="r">8</td><td class="r">2</td><td class="na">alt нет у 17 из 21; нет разметки; битых ссылок 9</td></tr>
+<tr><td><span class="u">/multimedia_teyes/toyota/30h6pn2zt1-zamena-magnitoli-i-rusifikatsiya-toyota</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/toyota/30h6pn2zt1-zamena-magnitoli-i-rusifikatsiya-toyota</span></td><td class="r">7</td><td class="r">2</td><td class="na">H1: 2; alt нет у 13 из 14</td></tr>
+<tr><td><span class="u">/multimedia_teyes/mazda/cx-3</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/mazda/cx-3</span></td><td class="r">6</td><td class="r">2</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/kia/bongo</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/kia/bongo</span></td><td class="r">4</td><td class="r">2</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/toyota/ns1s1p8951-zamena-magnitoli-i-rusifikatsiya-toyota</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/toyota/ns1s1p8951-zamena-magnitoli-i-rusifikatsiya-toyota</span></td><td class="r">4</td><td class="r">2</td><td class="na">H1: 2; alt нет у 13 из 14</td></tr>
+<tr><td><span class="u">/toyota_land_cruiser_200_teyes_lux_one</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/toyota_land_cruiser_200_teyes_lux_one</span></td><td class="r">32</td><td class="r">1</td><td class="na">title 84 зн.; alt нет у 16 из 18; нет разметки; битых ссылок 8</td></tr>
+<tr><td><span class="u">/cc32k_hondavezel</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/cc32k_hondavezel</span></td><td class="r">28</td><td class="r">1</td><td class="na">alt нет у 17 из 17; нет разметки; битых ссылок 8</td></tr>
+<tr><td><span class="u">/teyes_lux_one_360_bmw_x5_e70</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/teyes_lux_one_360_bmw_x5_e70</span></td><td class="r">28</td><td class="r">1</td><td class="na">alt нет у 17 из 21; нет разметки; битых ссылок 9</td></tr>
+<tr><td><span class="u">/honda_accord_8_teyes_lux_one_12</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/honda_accord_8_teyes_lux_one_12</span></td><td class="r">24</td><td class="r">1</td><td class="na">alt нет у 17 из 21; нет разметки; битых ссылок 9</td></tr>
+<tr><td><span class="u">/teyes_cc3_360_toyota_rav4_2021</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/teyes_cc3_360_toyota_rav4_2021</span></td><td class="r">24</td><td class="r">1</td><td class="na">alt нет у 17 из 20; нет разметки; битых ссылок 9</td></tr>
+<tr><td><span class="u">/catalog</span><br><span class="na">Одиночная страница · код 404</span></td><td><span class="sev m">301 – вернуть вес (сейчас 404)</span><br><span class="u">/store/catalog</span></td><td class="r">23</td><td class="r">1</td><td class="na">description 57 зн.; нет разметки</td></tr>
+<tr><td><span class="u">/starline_s96_v2_mazda_cx_3_2016</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/starline_s96_v2_mazda_cx_3_2016</span></td><td class="r">23</td><td class="r">1</td><td class="na">alt нет у 17 из 18; нет разметки; битых ссылок 9</td></tr>
+<tr><td><span class="u">/cc4pro_lexus_rx350_novosibirsk</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/cc4pro_lexus_rx350_novosibirsk</span></td><td class="r">21</td><td class="r">1</td><td class="na">alt нет у 20 из 20; нет разметки; битых ссылок 8</td></tr>
+<tr><td><span class="u">/jaecooapp</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/jaecooapp</span></td><td class="r">21</td><td class="r">1</td><td class="na">alt нет у 40 из 40; нет разметки</td></tr>
+<tr><td><span class="u">/avatrrus</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/avatrrus</span></td><td class="r">17</td><td class="r">1</td><td class="na">description 32 зн.; alt нет у 34 из 34; нет разметки</td></tr>
+<tr><td><span class="u">/work/changanuniv</span><br><span class="na">Работа (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/work/changanuniv</span></td><td class="r">17</td><td class="r">1</td><td class="na">title 142 зн.; H1: 2; alt нет у 14 из 17</td></tr>
+<tr><td><span class="u">/cherryapp</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/cherryapp</span></td><td class="r">15</td><td class="r">1</td><td class="na">alt нет у 42 из 42; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/toyota/rocky</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/toyota/rocky</span></td><td class="r">14</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/freed</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/freed</span></td><td class="r">11</td><td class="r">1</td><td class="na">alt нет у 13 из 19; нет разметки</td></tr>
+<tr><td><span class="u">/catalog_teyes/tproduct/209607957732-teyes-cc4</span><br><span class="na">Товар · код 301</span></td><td><span class="sev m">301 – как на Tilda</span><br><span class="u">/store/catalog_teyes/tproduct/209607957732-teyes-cc4</span></td><td class="r">10</td><td class="r">1</td><td class="na">description 63 зн.</td></tr>
+<tr><td><span class="u">/multimedia_teyes/mazda/axela</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/mazda/axela</span></td><td class="r">10</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/suzuki/xbee</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/suzuki/xbee</span></td><td class="r">10</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/teyes_cc3l4/64_subaruforester_sh</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/teyes_cc3l4/64_subaruforester_sh</span></td><td class="r">9</td><td class="r">1</td><td class="na">alt нет у 16 из 20; нет разметки; битых ссылок 8</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/n-box</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/n-box</span></td><td class="r">8</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/honda_envix_2020_teyes_cc3_2k</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/honda_envix_2020_teyes_cc3_2k</span></td><td class="r">7</td><td class="r">1</td><td class="na">alt нет у 17 из 22; нет разметки; битых ссылок 9</td></tr>
+<tr><td><span class="u">/multimedia_teyes/subaru/levorg</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/subaru/levorg</span></td><td class="r">7</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/store/catalog_teyes/tproduct/735723214102-teyes-cc4-pro</span><br><span class="na">Товар · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/store/catalog_teyes/tproduct/735723214102-teyes-cc4-pro</span></td><td class="r">7</td><td class="r">1</td><td class="na">description 59 зн.</td></tr>
+<tr><td><span class="u">/catalog_toyota/tproduct/551669906672-shtatnaya-magnitola-teyes-cc4-pro-toyota</span><br><span class="na">Товар · код 301</span></td><td><span class="sev m">301 – как на Tilda</span><br><span class="u">/store/catalog/toyota/tproduct/551669906672-shtatnaya-magnitola-teyes-cc4-pro-toyota</span></td><td class="r">6</td><td class="r">1</td><td class="na">title 122 зн.</td></tr>
+<tr><td><span class="u">/multimedia_teyes/subaru/tribeca</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/subaru/tribeca</span></td><td class="r">6</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/catalogsignaling</span><br><span class="na">Одиночная страница · код 404</span></td><td><span class="sev m">301 – вернуть вес (сейчас 404)</span><br><span class="u">/store/signaling</span></td><td class="r">5</td><td class="r">1</td><td class="na">description 58 зн.; alt нет у 3 из 5; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/honda_shuttle</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/honda_shuttle</span></td><td class="r">5</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14</td></tr>
+<tr><td><span class="u">/multimedia_teyes/toyota/corolla-axio</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/toyota/corolla-axio</span></td><td class="r">5</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/works/toyota</span><br><span class="na">Работы · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/works/toyota</span></td><td class="r">5</td><td class="r">1</td><td class="na">alt нет у 15 из 15; нет разметки; битых ссылок 1</td></tr>
+<tr><td><span class="u">/hyundai_creta_teyes_cc4_pro</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/hyundai_creta_teyes_cc4_pro</span></td><td class="r">4</td><td class="r">1</td><td class="na">alt нет у 16 из 20; нет разметки; битых ссылок 8</td></tr>
+<tr><td><span class="u">/multimedia_teyes/hyundai/ix35</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/hyundai/ix35</span></td><td class="r">4</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/toyota/camry</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/toyota/camry</span></td><td class="r">4</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 21; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/toyota/land-cruiser-100</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/toyota/land-cruiser-100</span></td><td class="r">4</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/toyota/toyota_rav4</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/toyota/toyota_rav4</span></td><td class="r">4</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 18</td></tr>
+<tr><td><span class="u">/work/toyota/teyes_toyota_harrier_2017</span><br><span class="na">Работа (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/work/toyota/teyes_toyota_harrier_2017</span></td><td class="r">4</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 22</td></tr>
+<tr><td><span class="u">/work/ustanovka-gwm-split-tank-500-novosibirsk</span><br><span class="na">Работа (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/work/ustanovka-gwm-split-tank-500-novosibirsk</span></td><td class="r">4</td><td class="r">1</td><td class="na">alt нет у 12 из 21; нет разметки</td></tr>
+<tr><td><span class="u">/catalog_toyota</span><br><span class="na">Одиночная страница · код 404</span></td><td><span class="sev m">301 – вернуть вес (сейчас 404)</span><br><span class="u">/store/catalog/toyota</span></td><td class="r">3</td><td class="r">1</td><td class="na">title 81 зн.; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/inspire</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/inspire</span></td><td class="r">3</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/services</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/services</span></td><td class="r">3</td><td class="r">1</td><td class="na">description 65 зн.; H1: 0; alt нет у 36 из 36; нет разметки</td></tr>
+<tr><td><span class="u">/store/catalog_teyes/tproduct/516229718052-teyes-cc3-2k</span><br><span class="na">Товар · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/store/catalog_teyes/tproduct/516229718052-teyes-cc3-2k</span></td><td class="r">3</td><td class="r">1</td><td class="na">description 66 зн.</td></tr>
+<tr><td><span class="u">/teyes_cc3l_toyota_raize</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/teyes_cc3l_toyota_raize</span></td><td class="r">3</td><td class="r">1</td><td class="na">alt нет у 18 из 20; нет разметки; битых ссылок 9</td></tr>
+<tr><td><span class="u">/multimedia_teyes/bmw/e71</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/bmw/e71</span></td><td class="r">2</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/airwave</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/airwave</span></td><td class="r">2</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/x-rv</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/x-rv</span></td><td class="r">2</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/mitsubishi/grandis</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/mitsubishi/grandis</span></td><td class="r">2</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/store/closers</span><br><span class="na">Магазин: раздел · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/store/closers</span></td><td class="r">2</td><td class="r">1</td><td class="na">title 77 зн.; description 68 зн.; alt нет у 3 из 5; нет разметки</td></tr>
+<tr><td><span class="u">/works/subaru</span><br><span class="na">Работы · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/works/subaru</span></td><td class="r">2</td><td class="r">1</td><td class="na">alt нет у 15 из 15; нет разметки; битых ссылок 1</td></tr>
+<tr><td><span class="u">/multimedia_teyes/honda/n-one</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/honda/n-one</span></td><td class="r">1</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/hyundai/solaris</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/hyundai/solaris</span></td><td class="r">1</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/multimedia_teyes/nissan/teana</span><br><span class="na">Модель (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/multimedia_teyes/nissan/teana</span></td><td class="r">1</td><td class="r">1</td><td class="na">H1: 2; alt нет у 13 из 14; нет разметки</td></tr>
+<tr><td><span class="u">/toyota_rav4_teyes_cc3l</span><br><span class="na">Одиночная страница · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/toyota_rav4_teyes_cc3l</span></td><td class="r">1</td><td class="r">1</td><td class="na">alt нет у 17 из 21; нет разметки; битых ссылок 9</td></tr>
+<tr><td><span class="u">/work/infinity/ustanovka-teyes-cc4-pro-infinity-qx80-novosibirsk</span><br><span class="na">Работа (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/work/infinity/ustanovka-teyes-cc4-pro-infinity-qx80-novosibirsk</span></td><td class="r">1</td><td class="r">1</td><td class="na">H1: 2; alt нет у 12 из 18; нет разметки; битых ссылок 1</td></tr>
+<tr><td><span class="u">/work/lexus/ustanovka-teyes-lux-one-lexus-rx300-novosibirsk</span><br><span class="na">Работа (поток) · код 200</span></td><td><span class="sev g">1:1 – тот же адрес</span><br><span class="u">/work/lexus/ustanovka-teyes-lux-one-lexus-rx300-novosibirsk</span></td><td class="r">1</td><td class="r">1</td><td class="na">title 124 зн.; H1: 2; alt нет у 12 из 15; нет разметки</td></tr>
+</tbody></table></div>
+<p class="note">Ещё 42 страниц есть только на коде: работы Case Studio (/nashi-raboty), раздел StarLine, заказ, избранное. На Тильде их нет, им нужен только sitemap.</p>
+</section>
+
+<section>
+<h2>Что решаешь ты</h2>
+<div class="decide">
+<div><div><h3>Сервер для боевого сайта</h3><p>Beget VPS (там уже Caddy и SEO-админка) или другой. От этого зависит, куда класть файл редиректов.</p></div></div>
+<div><div><h3>Дату переезда</h3><p>Предлагаю не раньше, чем закроем блок «обязательно» и модельные страницы. Зимний сезон: проседание в ноябре–декабре больнее, чем весной. Если тянуть нечего – переезжать в январе после праздников.</p></div></div>
+<div><div><h3>Тестовая заявка</h3><p>Одна заявка с копии, чтобы проверить, что формы после переезда доходят. Только с твоего «да».</p></div></div>
+</div>
+</section>
+
+<section>
+<h2>Источники</h2>
+<ul class="list note">
+<li>Слепок Тильды: <span class="u">~/Documents/teyes-sibir-slepok/data/master_pages.csv</span> (12.10, коды обновлены 25.10).</li>
+<li>Трафик и заявки: Метрика 99532918, поиск, 25.10.2025–24.10.2026; Google Search Console – срез 25.10.2026.</li>
+<li>Сайт на коде: <span class="u">~/Documents/teyes-sibir-kod</span>, сборка public + site/dist 01.11.2026; проверка <span class="u">scripts/seo_audit.py</span>.</li>
+<li>Сборка карты: <span class="u">~/Sites/seo-razbory/teyes-sibir-migraciya-b384ad87/build.py</span>, страница – <span class="u">page.py</span>.</li>
+</ul>
+<p class="note">Скрипты меряют форму: есть ли title, сколько знаков, есть ли alt. Хорошие ли тексты и ответит ли страница на вопрос человека – это видно только глазами.</p>
+</section>
+
+</main>
+</body>
+</html>
