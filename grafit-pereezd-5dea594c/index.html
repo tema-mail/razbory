@@ -1,0 +1,296 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>GRAFIT: поиск и трафик перед переездом</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – красный TEYES Sibir */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}.verdict b.big{font-size:18px}}
+</style>
+</head><body><div class="wrap">
+
+<header>
+  <span class="eyebrow">GRAFIT · grafit-service.ru · Метрика и Вебмастер перед переездом · снято 02.11.2026</span>
+  <h1>Что у GRAFIT с поиском и трафиком перед переездом с Тильды</h1>
+  <p class="lead">Метрика сервиса (счётчик 100302321) и Вебмастер сняты по API 02.11.2026, плюс техническая проверка сайта снаружи в тот же день. Google взят из разбора 24.10.</p>
+</header>
+
+<div class="verdict">
+  <b class="big">Сайт живёт на рекламе, а живой поиск появился только с июля 2026 – и это блог.</b>
+  <p>За 20 месяцев 81 тыс. визитов из 110 тыс. дал Директ, поиск – 12,7 тыс. С июля поиск вырос с 250 до 2,2–2,5 тыс. визитов в месяц, на 60–70% это статьи блога. Статьи почти не дают заявок, заявки с поиска приходят с главной и страниц марок.</p>
+  <p><b>Главная опасность:</b> с апреля по август 2026 в Вебмастере видна накрутка поведенческих. Клики в выдаче выросли в 80 раз, а визитов на сайт почти не прибавилось. Позиции коммерческих запросов в этот период поднялись в топ-3, после конца накрутки опустились на 5–7. Кто крутил – свои или конкурент – из данных не видно.</p>
+</div>
+
+<div class="facts">
+  <div class="fact"><b>110 499</b><span>визитов 11.03.2025–01.11.2026, все источники</span></div>
+  <div class="fact"><b>12 707</b><span>из поиска: Яндекс 10 455, Google 2 189</span></div>
+  <div class="fact"><b>2 252</b><span>визита с поиска в октябре 2026 (в июне – 254)</span></div>
+  <div class="fact"><b>41 + 41</b><span>заявки с поиска в октябре: формы и переходы в мессенджер</span></div>
+  <div class="fact"><b>64</b><span>страницы в поиске Яндекса, 7 исключено, ИКС 70</span></div>
+  <div class="fact"><b>59</b><span>адресов, на которые приходили с поиска за 90 дней – их нельзя потерять</span></div>
+</div>
+
+<section>
+  <h2>1. Трафик по месяцам</h2>
+  <p>Метрика 100302321, визиты по последнему источнику, без сэмплирования. Счётчик создан 11.03.2025, раньше данных нет.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Месяц</th><th class="r">Всего</th><th class="r">Реклама</th><th class="r">Поиск</th><th class="r">Яндекс</th><th class="r">Google</th><th class="r">Прямые</th></tr></thead>
+    <tbody>
+<tr><td>2025-03</td><td class="r">5 696</td><td class="r">5 293</td><td class="r">40</td><td class="r">40</td><td class="r">–</td><td class="r">83</td></tr>
+<tr><td>2025-04</td><td class="r">4 955</td><td class="r">4 212</td><td class="r">145</td><td class="r">136</td><td class="r">–</td><td class="r">117</td></tr>
+<tr><td>2025-05</td><td class="r">871</td><td class="r">425</td><td class="r">153</td><td class="r">130</td><td class="r">23</td><td class="r">82</td></tr>
+<tr><td>2025-06</td><td class="r">971</td><td class="r">461</td><td class="r">164</td><td class="r">130</td><td class="r">34</td><td class="r">120</td></tr>
+<tr><td>2025-07</td><td class="r">16 943</td><td class="r">15 509</td><td class="r">252</td><td class="r">182</td><td class="r">68</td><td class="r">249</td></tr>
+<tr><td>2025-08</td><td class="r">8 048</td><td class="r">6 931</td><td class="r">214</td><td class="r">137</td><td class="r">77</td><td class="r">218</td></tr>
+<tr><td>2025-09</td><td class="r">6 330</td><td class="r">5 338</td><td class="r">242</td><td class="r">184</td><td class="r">58</td><td class="r">294</td></tr>
+<tr><td>2025-10</td><td class="r">13 113</td><td class="r">11 526</td><td class="r">245</td><td class="r">191</td><td class="r">54</td><td class="r">451</td></tr>
+<tr><td>2025-11</td><td class="r">6 386</td><td class="r">5 087</td><td class="r">264</td><td class="r">209</td><td class="r">55</td><td class="r">372</td></tr>
+<tr><td>2025-12</td><td class="r">11 792</td><td class="r">10 255</td><td class="r">318</td><td class="r">215</td><td class="r">100</td><td class="r">354</td></tr>
+<tr><td>2026-01</td><td class="r">3 484</td><td class="r">2 454</td><td class="r">332</td><td class="r">245</td><td class="r">85</td><td class="r">322</td></tr>
+<tr><td>2026-02</td><td class="r">2 012</td><td class="r">776</td><td class="r">414</td><td class="r">298</td><td class="r">116</td><td class="r">472</td></tr>
+<tr><td>2026-03</td><td class="r">5 350</td><td class="r">3 782</td><td class="r">397</td><td class="r">278</td><td class="r">116</td><td class="r">706</td></tr>
+<tr><td>2026-04</td><td class="r">4 752</td><td class="r">3 228</td><td class="r">641</td><td class="r">514</td><td class="r">122</td><td class="r">454</td></tr>
+<tr><td>2026-05</td><td class="r">3 644</td><td class="r">2 381</td><td class="r">368</td><td class="r">256</td><td class="r">101</td><td class="r">564</td></tr>
+<tr><td>2026-06</td><td class="r">1 029</td><td class="r">224</td><td class="r">254</td><td class="r">182</td><td class="r">68</td><td class="r">383</td></tr>
+<tr><td>2026-07</td><td class="r">3 110</td><td class="r">1 116</td><td class="r">1 213</td><td class="r">1 033</td><td class="r">177</td><td class="r">423</td></tr>
+<tr><td>2026-08</td><td class="r">3 686</td><td class="r">718</td><td class="r">2 211</td><td class="r">1 967</td><td class="r">243</td><td class="r">418</td></tr>
+<tr><td>2026-09</td><td class="r">4 312</td><td class="r">832</td><td class="r">2 520</td><td class="r">2 169</td><td class="r">342</td><td class="r">581</td></tr>
+<tr><td>2026-10</td><td class="r">3 906</td><td class="r">706</td><td class="r">2 252</td><td class="r">1 902</td><td class="r">332</td><td class="r">530</td></tr>
+    </tbody></table></div>
+  <p class="note">«–» – Метрика строк не отдала. Прыжки 07.2025, 10.2025 и 12.2025 – это Директ, 7,5 тыс. визитов пришли через квиз quiz.marquiz.ru. Москва – 46 193 визита, Краснодар – 6 606, Уфа – десятки в месяц. С телефона 64% визитов.</p>
+</section>
+
+<section>
+  <h2>2. Накрутка в Вебмастере: клики есть, людей нет</h2>
+  <p>Вебмастер считает клики в выдаче Яндекса, Метрика – людей, которые дошли до сайта. В норме цифры близки, так было до марта 2026. С апреля по август они разошлись в 25–50 раз.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Месяц</th><th class="r">Показы (Вебм.)</th><th class="r">Клики (Вебм.)</th><th class="r">CTR</th><th class="r">Ср. позиция показа</th><th class="r">Визиты из Яндекса (Метрика)</th></tr></thead>
+    <tbody>
+<tr><td>2025-10</td><td class="r">19 530</td><td class="r">290</td><td class="r">1,5%</td><td class="r">≈9,8</td><td class="r">191</td></tr>
+<tr><td>2026-01</td><td class="r">16 962</td><td class="r">262</td><td class="r">1,5%</td><td class="r">≈9,5</td><td class="r">245</td></tr>
+<tr><td>2026-03</td><td class="r">8 073</td><td class="r">382</td><td class="r">4,7%</td><td class="r">≈9,9</td><td class="r">278</td></tr>
+<tr><td><b>2026-04</b></td><td class="r">40 265</td><td class="r"><b>25 710</b></td><td class="r">64%</td><td class="r"><b>≈3,5</b></td><td class="r">514</td></tr>
+<tr><td><b>2026-05</b></td><td class="r">34 274</td><td class="r"><b>23 528</b></td><td class="r">69%</td><td class="r">≈3,6</td><td class="r">256</td></tr>
+<tr><td><b>2026-06</b></td><td class="r">34 802</td><td class="r"><b>22 214</b></td><td class="r">64%</td><td class="r">≈4,4</td><td class="r">182</td></tr>
+<tr><td><b>2026-07</b></td><td class="r">83 902</td><td class="r"><b>42 700</b></td><td class="r">51%</td><td class="r">≈4,4</td><td class="r">1 033</td></tr>
+<tr><td><b>2026-08</b></td><td class="r">123 598</td><td class="r"><b>52 217</b></td><td class="r">42%</td><td class="r">≈4,3</td><td class="r">1 967</td></tr>
+<tr><td>2026-09</td><td class="r">72 501</td><td class="r">4 662</td><td class="r">6,4%</td><td class="r">≈7,1</td><td class="r">2 169</td></tr>
+<tr><td>2026-10 (по 06.10)</td><td class="r">15 936</td><td class="r">447</td><td class="r">2,8%</td><td class="r">≈8,7</td><td class="r">1 902 (весь месяц)</td></tr>
+    </tbody></table></div>
+  <p class="note">Позиция – среднее за дни месяца, по дневным значениям Вебмастера. Фильтр роботов в Метрике включён.</p>
+  <p><b>Что это значит.</b> Боты вбивали коммерческие запросы, кликали по GRAFIT и уходили до загрузки счётчика. Так раскачивают поведенческие. Сходится всё сразу: CTR 40–80% на позициях 2–4 (живой бывает 10–25%), клики без визитов и подъём позиций ровно в эти месяцы. В сентябре накрутка кончилась, и позиции вернулись примерно туда, где были до неё.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Запрос</th><th class="r">Показы за 01.2025–10.2026</th><th class="r">Средняя позиция за период</th><th class="r">Показы 23.09–06.10</th><th class="r">Позиция 23.09–06.10</th></tr></thead>
+    <tbody>
+<tr><td>ремонт zeekr</td><td class="r">2 332</td><td class="r">3,7</td><td class="r">122</td><td class="r">6,5</td></tr>
+<tr><td>то lixiang</td><td class="r">1 859</td><td class="r">2,8</td><td class="r">7</td><td class="r">–</td></tr>
+<tr><td>ремонт voyah</td><td class="r">1 728</td><td class="r">2,0</td><td class="r">11</td><td class="r">–</td></tr>
+<tr><td>zeekr обслуживание</td><td class="r">1 280</td><td class="r">1,7</td><td class="r">1</td><td class="r">–</td></tr>
+<tr><td>сервис зикр</td><td class="r">1 755</td><td class="r">3,8</td><td class="r">108</td><td class="r">5,7</td></tr>
+<tr><td>автосервис электромобилей</td><td class="r">1 726</td><td class="r">2,8</td><td class="r">68</td><td class="r">6,6</td></tr>
+<tr><td>сервис lixiang</td><td class="r">1 234</td><td class="r">7,2</td><td class="r">114</td><td class="r">6,9</td></tr>
+<tr><td>сервис лисян</td><td class="r">1 697</td><td class="r">2,7</td><td class="r">88</td><td class="r">3,9</td></tr>
+<tr><td>то китайских автомобилей в москве</td><td class="r">1 260</td><td class="r">5,2</td><td class="r">200</td><td class="r">5,6</td></tr>
+<tr><td>русификация zeekr 001 цена</td><td class="r">1 283</td><td class="r">2,6</td><td class="r">204</td><td class="r">5,2</td></tr>
+<tr><td>русификация zeekr 8x</td><td class="r">1 100</td><td class="r">10,1</td><td class="r">250</td><td class="r">11,8</td></tr>
+    </tbody></table></div>
+  <p class="note">«–» – Вебмастер позицию не отдал, показов слишком мало. За 14 дней «то lixiang» показали 7 раз, а за период – 1 859. Значит, боты накручивали и показы. Отсюда два вывода. Спрос по «Популярным запросам» Вебмастера за весь период брать нельзя, считать его надо по Wordstat. А позиции «2–3», которые видно в кабинете, – это позиции под накруткой.</p>
+  <div class="dir">
+    <h3>Почему это важно для переезда</h3>
+    <ul class="list">
+      <li>Если крутили сами, Яндекс может опустить сайт в выдаче за накрутку поведенческих. Обычно это 8–12 месяцев. Переезд на новый домен или адреса при таком наказании проблему не снимает и может затянуть восстановление.</li>
+      <li>Если крутил конкурент, сайт тоже рискует. Сейчас в Вебмастере нарушений нет (проверено 02.11, раздел проблем), но это стоит смотреть до переезда и неделю после.</li>
+      <li>Мерить переезд по кликам Вебмастера нельзя, мерить по визитам Метрики можно. Точка отсчёта – сентябрь–октябрь 2026, а не лето.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>3. Заявки с поиска</h2>
+  <p>Метрика, достижения целей у визитов из поиска. В октябре 2026 – 41 форма и квиз, 41 переход в мессенджер, 76 кликов по телефону. Цели не складывать: один человек может сделать два действия.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Месяц</th><th class="r">Формы и квизы</th><th class="r">Мессенджер</th><th class="r">Клик по телефону</th><th class="r">Звонок (Динамика)</th></tr></thead>
+    <tbody>
+<tr><td>2025-10</td><td class="r">12</td><td class="r">цели нет</td><td class="r">цели нет</td><td class="r">14</td></tr>
+<tr><td>2025-12</td><td class="r">12</td><td class="r">цели нет</td><td class="r">цели нет</td><td class="r">23</td></tr>
+<tr><td>2026-01</td><td class="r">22</td><td class="r">цели нет</td><td class="r">цели нет</td><td class="r">40</td></tr>
+<tr><td>2026-03</td><td class="r">18</td><td class="r">3</td><td class="r">цели нет</td><td class="r">37</td></tr>
+<tr><td>2026-04</td><td class="r">20</td><td class="r">11</td><td class="r">цели нет</td><td class="r">6</td></tr>
+<tr><td>2026-05</td><td class="r">22</td><td class="r">16</td><td class="r">цели нет</td><td class="r">10</td></tr>
+<tr><td>2026-06</td><td class="r">4</td><td class="r">6</td><td class="r">цели нет</td><td class="r">8</td></tr>
+<tr><td>2026-07</td><td class="r">10</td><td class="r">17</td><td class="r">цели нет</td><td class="r">не меряется</td></tr>
+<tr><td>2026-08</td><td class="r">30</td><td class="r">41</td><td class="r">цели нет</td><td class="r">не меряется</td></tr>
+<tr><td>2026-09</td><td class="r">22</td><td class="r">41</td><td class="r">85</td><td class="r">не меряется</td></tr>
+<tr><td>2026-10</td><td class="r">41</td><td class="r">41</td><td class="r">76</td><td class="r">не меряется</td></tr>
+    </tbody></table></div>
+  <ul class="list">
+    <li><b>Звонки с июля 2026 не меряются.</b> Цели колл-трекинга «Динамика» с 07.2026 пишут 0 по всем источникам, в том числе по рекламе. Значит, отвалилась интеграция, а не кончились звонки. До июня звонков с поиска было больше, чем форм.</li>
+    <li>За весь период поиск дал 261 форму, 278 звонков, 176 переходов в мессенджер. Реклама – 468 форм и 948 звонков, но на 6,4 раза больше визитов.</li>
+    <li>В счётчике 37 целей. Две пары дублируют друг друга (одинаковые формы Zeekr). Четыре CRM-цели пустые.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>4. Какие страницы приводят людей из поиска</h2>
+  <p>Метрика, входы из поиска за 90 дней (04.08–01.11.2026). Полный список – 59 адресов.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Страница</th><th class="r">Визиты</th><th class="r">Отказы</th><th class="r">Формы</th><th class="r">Тел. + мессенджер</th></tr></thead>
+    <tbody>
+<tr><td><code>/</code></td><td class="r">1 001</td><td class="r">17%</td><td class="r">32</td><td class="r">103</td></tr>
+<tr><td><code>/blog/voyah-free-zaryadka-ot-rozetki/</code></td><td class="r">964</td><td class="r">10%</td><td class="r">1</td><td class="r">1</td></tr>
+<tr><td><code>/blog/problemy-voyah-free/</code></td><td class="r">644</td><td class="r">12%</td><td class="r">1</td><td class="r">3</td></tr>
+<tr><td><code>/blog/zeekr-001-skolko-proezzhaet-na-odnom-zaryade/</code></td><td class="r">477</td><td class="r">12%</td><td class="r">0</td><td class="r">1</td></tr>
+<tr><td><code>/blog/batareya-voyah-free/</code></td><td class="r">346</td><td class="r">13%</td><td class="r">0</td><td class="r">0</td></tr>
+<tr><td><code>/blog/chto-takoe-master-akkaunt/</code></td><td class="r">336</td><td class="r">12%</td><td class="r">1</td><td class="r">6</td></tr>
+<tr><td><code>/blog/diagnostika-lixiang-skanery/</code></td><td class="r">321</td><td class="r">10%</td><td class="r">0</td><td class="r">1</td></tr>
+<tr><td><code>/franchise</code></td><td class="r">293</td><td class="r">6%</td><td class="r">11</td><td class="r">9</td></tr>
+<tr><td><code>/zeekr-service</code></td><td class="r">258</td><td class="r"><b>69%</b></td><td class="r">1</td><td class="r">6</td></tr>
+<tr><td><code>/blog/russkiy-yazyk-v-lixiang/</code></td><td class="r">226</td><td class="r">18%</td><td class="r">1</td><td class="r">0</td></tr>
+<tr><td><code>/russification</code></td><td class="r">225</td><td class="r">20%</td><td class="r">2</td><td class="r">7</td></tr>
+<tr><td><code>/blog/lixiang-proshivka-8-5/</code></td><td class="r">202</td><td class="r">17%</td><td class="r">3</td><td class="r">1</td></tr>
+<tr><td><code>/lynk-co-service</code></td><td class="r">162</td><td class="r">15%</td><td class="r">2</td><td class="r">7</td></tr>
+<tr><td><code>/lixiang-service</code></td><td class="r">155</td><td class="r">12%</td><td class="r">5</td><td class="r">18</td></tr>
+<tr><td><code>/voyah-service</code></td><td class="r">135</td><td class="r">10%</td><td class="r">9</td><td class="r">17</td></tr>
+<tr><td><code>/russification/avatr/11/</code></td><td class="r">42</td><td class="r">5%</td><td class="r">6</td><td class="r">2</td></tr>
+<tr><td><code>/service/voyah/dream/</code></td><td class="r">36</td><td class="r">11%</td><td class="r">3</td><td class="r">1</td></tr>
+<tr><td><code>/russification/zeekr/8x/</code></td><td class="r">21</td><td class="r">14%</td><td class="r">2</td><td class="r">1</td></tr>
+    </tbody></table></div>
+  <ul class="list">
+    <li><b>Блог даёт трафик, заявок почти не даёт.</b> 4 350 входов из поиска за 90 дней и 8 визитов с отправленной формой. Из статьи человек не попадает на страницу услуги: в статьях нет блока «запишитесь на …» с нужной маркой.</li>
+    <li><b>Заявки приносят главная, хабы марок и модели русификации.</b> Avatr 11 и 12, Voyah Dream, Zeekr 8X – у них по 10–40 визитов, но формы конвертят в 8–19%.</li>
+    <li><b>У /zeekr-service 69% отказов</b> при 10–15% у других марок. Либо туда доходит часть ботов, либо страница не отвечает на запрос. Это надо разобрать до вёрстки нового шаблона.</li>
+    <li><b>7 статей блога уже отдают 404,</b> хотя в августе–сентябре на них заходили из поиска: сбои приложения цифрового ключа, проверка VIN, автопилот, SOH батареи, калибровка ADAS, подготовка к зиме, быстрая зарядка. Это 122 визита из поиска за 90 дней, проверено 02.11. Статьи вернуть или поставить 301 на близкие страницы.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>5. Запросы: на чём сайт виден</h2>
+  <p>Вебмастер, «Популярные запросы» за 01.01.2025–06.10.2026: 2 965 запросов. Позже 06.10 Вебмастер данных не отдаёт – в октябре упали дата-центры Яндекса. Показы в группах ниже раздуты накруткой, сравнивать можно только сами группы между собой.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Группа</th><th class="r">Запросов</th><th class="r">Показы</th><th class="r">Ср. позиция</th></tr></thead>
+    <tbody>
+<tr><td>Ремонт и ТО без марки («ремонт электромобилей», «то китайских…»)</td><td class="r">417</td><td class="r">33 385</td><td class="r">5,5</td></tr>
+<tr><td>Ремонт и ТО Zeekr</td><td class="r">164</td><td class="r">28 507</td><td class="r">2,8</td></tr>
+<tr><td>Ремонт и ТО Voyah</td><td class="r">175</td><td class="r">27 352</td><td class="r">2,4</td></tr>
+<tr><td>Ремонт и ТО Lixiang</td><td class="r">176</td><td class="r">26 541</td><td class="r">2,7</td></tr>
+<tr><td>Бренд «графит / grafit»</td><td class="r">301</td><td class="r">15 186</td><td class="r">2,1</td></tr>
+<tr><td>Русификация Zeekr</td><td class="r">68</td><td class="r">10 930</td><td class="r">6,9</td></tr>
+<tr><td>Информационные Voyah (блог)</td><td class="r">531</td><td class="r">7 947</td><td class="r">6,4</td></tr>
+<tr><td>Информационные Zeekr / Lixiang</td><td class="r">471</td><td class="r">9 505</td><td class="r">5,7–6,9</td></tr>
+<tr><td>Русификация Voyah / Lixiang / Avatr / без марки</td><td class="r">263</td><td class="r">10 015</td><td class="r">1,8–9,6</td></tr>
+<tr><td>Lynk &amp; Co, все</td><td class="r">79</td><td class="r">2 858</td><td class="r">5,9–7,2</td></tr>
+    </tbody></table></div>
+  <p class="note">Группы разобраны по словам в запросе, скриптом. Свежие 14 дней (23.09–06.10): больше всего показов у «lixiang l7» (664, поз. 11,3, статья блога), «русификация zeekr 8x/9x» (поз. 9–12) и запросов про франшизу (поз. 5–8). Русификация Zeekr 8X и 9X – стабильный спрос на 2-й странице, это ближайший резерв.</p>
+  <p>Google (GSC, разбор 24.10): за 16 месяцев 1 970 кликов, небрендовых около 28. В Метрике из Google 332 визита в октябре – вдвое больше, чем весной.</p>
+</section>
+
+<section>
+  <h2>6. Индексация и техника</h2>
+  <div class="two">
+    <div class="dir">
+      <h3>Вебмастер, 02.11.2026</h3>
+      <ul class="list">
+        <li>В поиске 64 страницы, исключено 7, ИКС 70 (в 2025 был 10). Главное зеркало https://grafit-service.ru – верно.</li>
+        <li>Из поиска за всё время удалено 38 страниц: 21 – «не каноническая», 15 – ошибка HTTP.</li>
+        <li>Робот загрузил 11 541 адрес, почти все – главная и разделы с метками (etext, yclid, utm). Вебмастер просит Clean-param в robots.</li>
+        <li>«Обход по счётчику Метрики» выключен.</li>
+        <li>Внешних ссылок 39, в основном справочники-мусор. Sitemap – 62 адреса, ошибок нет.</li>
+      </ul>
+    </div>
+    <div class="dir">
+      <h3>Сайт снаружи, 02.11.2026</h3>
+      <ul class="list">
+        <li><span class="sev c">важно</span> robots закрывает <code>/russification/lixiang/</code> и <code>/voyah/</code> целиком, вместе с 6 моделями: L6–L9, Free, Dream. Ещё закрыты 4 статьи.</li>
+        <li><span class="sev c">важно</span> canonical у Zeekr 007, 009, X, 7X ведёт на адрес без слэша, а он отдаёт 404.</li>
+        <li><span class="sev m">средне</span> Слэш в конце не склеен: оба вида адреса открываются, хабы без слэша, модели со слэшем.</li>
+        <li><span class="sev m">средне</span> Ссылка на несуществующую <code>/russification/zeekr/zeekr-001/</code> стоит примерно на 30 страницах.</li>
+        <li><span class="sev m">средне</span> Дубль главной <code>/page262023309.html</code> в sitemap. У Avatr 07, 11, 12 в title «ремонт Лисян». По два H1 на 7 страницах.</li>
+        <li><span class="sev l">мелко</span> Страница 404 без телефона и меню. HTML весит 1,2–1,7 МБ на страницу.</li>
+        <li><span class="sev g">в порядке</span> Зеркала идут одним 301, разметка AutoRepair на 58 страницах, OG везде.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">Счётчик франшизы 107704614 стоит на всех 62 страницах, а не только на /franchise.</p>
+</section>
+
+<section>
+  <h2>7. План переезда по данным</h2>
+  <div class="decide">
+    <div><div><h3>Сохранить каждый адрес, на который приходят из поиска</h3><p>Единый список – 244 пути: визиты за всё время и с поиска, есть ли в sitemap, есть ли в индексе Яндекса. 72 из них получали поисковый трафик. Каждый либо живёт по тому же адресу, либо получает 301 на ближайшую страницу. Ни один не должен уйти в 404.</p></div></div>
+    <div><div><h3>Один вид адреса и 301 на него</h3><p>Сейчас хабы без слэша, модели со слэшем, и оба вида открываются. На коде выбрать один вид, поставить 301 с другого, canonical – строго на рабочий адрес. Служебные <code>/pageNNN.html</code> и <code>/tilda/…</code> – 301 на нужные страницы или 410.</p></div></div>
+    <div><div><h3>Сразу при переезде снять блокировки</h3><p>Открыть в robots хабы Lixiang и Voyah с моделями, убрать дубль главной, вернуть или переадресовать 7 статей с 404, поправить title Avatr, оставить один H1, добавить Clean-param для yclid, utm, etext.</p></div></div>
+    <div><div><h3>Перенести цели и починить звонки</h3><p>Тот же счётчик 100302321, цели – событиями JS вместо адресов <code>/tilda/formNNN/submitted/</code>, иначе после переезда они обнулятся. Колл-трекинг «Динамика» молчит с июля, его надо проверить отдельно. Дубли целей убрать. Счётчик франшизы – только на /franchise, если владелец не скажет иначе.</p></div></div>
+    <div><div><h3>Связать блог с услугами</h3><p>В каждой статье – блок записи на свою марку и ссылки на страницы ТО и русификации этой марки. Это главный рычаг: 4 350 входов в блог из поиска за 90 дней дали 8 форм.</p></div></div>
+    <div><div><h3>Мерить по Метрике, точка отсчёта – сентябрь–октябрь</h3><p>Поиск: 2 520 и 2 252 визита в месяц. Формы с поиска: 22 и 41. После выкладки – переобход по списку адресов (квота 730 в день, свободна) и сверка индекса через 2 и 6 недель. Сроков роста не обещаем.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Что решаешь ты</h2>
+  <ol class="list">
+    <li>Узнать у GRAFIT, заказывали ли они накрутку поведенческих в апреле–августе 2026. От ответа зависит, когда и как переезжать.</li>
+    <li>Счётчик франшизы 107704614 на всём сайте – так задумано?</li>
+    <li>Кто отвечает за колл-трекинг «Динамика»: звонки не пишутся с июля.</li>
+    <li>Платный съём спроса по Wordstat (XMLRiver) под карту нового сайта – нужен ли. Цену назову до запуска.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Источники и что не собрано</h2>
+  <ul class="list">
+    <li>Яндекс Метрика 100302321, API, 11.03.2025–01.11.2026, без сэмплирования, снято 02.11.2026. Коды ответа 200, два запроса вернули 400 «слишком сложный» и пересняты частями.</li>
+    <li>Яндекс Вебмастер, хост https:grafit-service.ru:443, API, снято 02.11.2026, все методы 200. Запросы – по 06.10.2026, по страницам – только 23.09–06.10.</li>
+    <li>Сайт снаружи – curl с паузой 6 с, 02.11.2026, 62 адреса из sitemap. Статьи с 404 перепроверены вручную в тот же день.</li>
+    <li>Не собрано: скорость на телефоне (PageSpeed ответил 429), расходы Директа (нет доступа), звонки с 07.2026 (цели пишут 0), регион сайта (в API нет метода), просмотры по полному URL (таймаут).</li>
+    <li>Файлы: <code>~/Documents/grafit-seo/2026-11-02/</code> – свод <code>svod.md</code>, список адресов <code>pereezd-adresa.csv</code>, страницы входа, запросы, техника по каждой странице <code>urls-tech.tsv</code>, сырые JSON.</li>
+  </ul>
+</section>
+
+</div></body></html>
