@@ -1,0 +1,180 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Блог ALEX KROWN: план</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – фиолетовый «кибер», бренд чёрно-белый */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#5b3cc4; --accent-soft:#ece7fb;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#b3a1ff; --accent-soft:#272040;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#b3a1ff; --accent-soft:#272040;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1100px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:78ch}
+section{display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:760px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tfoot td{font-weight:600;border-top:2px solid var(--line)}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.g{background:var(--good-bg);color:var(--good)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.card p{font-size:15px}
+.card .w{font-size:13px;color:var(--muted)}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+@media (max-width:560px){.wrap{gap:44px}.verdict b.big{font-size:18px}}
+</style>
+</head><body><div class="wrap">
+
+<header>
+  <span class="eyebrow">ALEX KROWN · план блога по спросу · ноябрь 2026 · данные на 03.11.2026</span>
+  <h1>Десять статей на месяц для тех, кто одевается не как все</h1>
+  <audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px"></audio>
+  <p class="note">Итог голосом, около полутора минут.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">Людей, которые ищут в интернете «киберпанк» или «техвир» про одежду, немного: «техвир» – 120 запросов в месяц на всю Россию. Аудитория ALEX KROWN ищет себя другими словами – «опиум стиль», «андеграунд», «total black», «авангард», «мантия с капюшоном». На этих словах и строим блог.</b>
+    <p>Десять статей покрывают около 11 200 запросов в месяц. Через три месяца после выхода они дадут около 5 600 показов в Яндексе и около 320 переходов в месяц вместе с Google. Это немного, но это люди из своей ниши: они ищут именно такую одежду, а не «футболку подешевле». Больше половины переходов дадут две статьи, про опиум-стиль и про мантии. В выдаче по ним стоят такие же небольшие магазины со статьями, а не маркетплейсы.</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>10</b><span>статей на месяц, по 2–3 в неделю</span></div>
+    <div class="fact"><b>≈11 200</b><span>запросов в месяц покрывают статьи (Wordstat, Россия)</span></div>
+    <div class="fact"><b>≈5 600</b><span>показов в Яндексе в месяц на 3-й месяц</span></div>
+    <div class="fact"><b>≈320</b><span>переходов в месяц на 3-й месяц (Яндекс ≈185 + Google ≈135)</span></div>
+    <div class="fact"><b>288</b><span>визитов из поиска у сайта за октябрь (Метрика), почти все по названию бренда</span></div>
+  </div>
+  <p class="note">Источники: Wordstat через XMLRiver (Россия, широкая частота за последний месяц, 172 фразы) и выдача Яндекса по 20 фразам (мобильная, Россия). Всё снято 03.11.2026 и стоило 4,78 ₽. Метрика (счётчик 112281637) и Вебмастер сняты агентом yandex-dannye 03.11.2026. Метрика ведёт данные с 04.09.2026, Вебмастер отдал запросы за 03.08–06.10.2026. Сырые данные лежат в <code>data/wordstat-2026-11-03.json</code>.</p>
+</section>
+
+<section>
+  <h2>Где сайт сейчас</h2>
+  <ul class="list">
+    <li><b>Технических блокировок нет.</b> Хост в Вебмастере подтверждён (https), в поиске 229 страниц, исключено 49, ИКС 30. Ставить статьи можно, они не встанут в мёртвую очередь.</li>
+    <li><b>Поиск почти целиком брендовый.</b> 86 фраз за два месяца, и почти все переходы по ним – «alex krown одежда», «алекс краун» и похожие. Небрендовые фразы дали по одному визиту: джоггеры из экокожи, мантия с капюшоном, дизайнерские брюки.</li>
+    <li><b>По мантиям сайт уже виден, но кликов нет.</b> «черная мантия купить»: 88 показов, позиция 12,5, 0 кликов. «костюм черный мантия»: 57 показов, позиция 17,8. «белая мантия»: 15 показов, позиция 15,6. Сейчас сайт стоит десятым в выдаче по «черная мантия купить», рядом Wildberries, Ozon и freak-butik.</li>
+    <li><b>Кто приходит из поиска.</b> Москва 79 визитов, Петербург 59, Новосибирск 53, Ростов 39, Воронеж 26. С телефона приходят 80% посетителей. Поэтому спрос считаем по всей России, а не по Новосибирску.</li>
+  </ul>
+  <p class="note"><b>Быстрая победа до статей:</b> поднять раздел мантий с 10–12 места на первую страницу. Для этого нужны title, H1 и текст раздела под «черная мантия купить», «мантия мужская с капюшоном» и «белая мантия». Это работа агента site-seo по самому разделу, а не статья. Статья про мантии ниже берёт другие фразы, справочные, чтобы не перебивать раздел.</p>
+</section>
+
+<section>
+  <h2>Кто ещё носит такую одежду и что он ищет</h2>
+  <div class="cards">
+    <div class="card"><h3>Opium и drain: слушатели рэпа</h3><p>Молодые парни и девушки, кумиры – Playboi Carti и его лейбл Opium, Ken Carson. Всё чёрное, кожа, длинные силуэты, кресты.</p><p class="w">«опиум стиль» 1 476 · «опиум стиль одежды» 357 · «дрейн стиль одежды» 68 · «одежда рэперов» 582</p></div>
+    <div class="card"><h3>Андеграунд и неформалы</h3><p>Ходят на концерты и в клубы, одеваются против мейнстрима. Ищут «стиль» и «бренды», а не конкретную вещь.</p><p class="w">«андеграунд одежда» 1 379, из них «андеграунд стиль одежды» 793 · «неформальный стиль одежды» 373 · «магазин неформальной одежды» 794</p></div>
+    <div class="card"><h3>Киберпанк, техвир и футуризм</h3><p>Фанаты «Бегущего по лезвию» и «Матрицы», айтишники, гики. Из 7 812 запросов «киберпанк одежда» большая часть про игру Cyberpunk 2077. Реальную одежду ищут около 1 000 раз в месяц.</p><p class="w">«киберпанк стиль одежды» 693 · «techwear стиль» 287 · «techwear одежда» 191 · «футуризм стиль в одежде» 169 · «техвир» 120</p></div>
+    <div class="card"><h3>Total black</h3><p>Взрослые мужчины 25–40 лет, у которых в шкафу только чёрное. Самая большая и самая «денежная» группа.</p><p class="w">«черная одежда мужская» 1 200 · «монохромный образ» 433 · «черно белый образ мужской» 283 · «черный стиль одежды мужской» 174</p></div>
+    <div class="card"><h3>Авангард и «архив»</h3><p>Ценители Рика Оуэнса и Йоджи Ямамото, которым те не по карману. Сами бренды ищут десятки тысяч раз (Rick Owens – 46 710), но это поиск самих брендов. Нам нужны слова про стиль.</p><p class="w">«авангардная одежда» 445 · «японский стиль одежды мужской» 169 · «стиль ямамото» 83 · «деконструкция в одежде» 77 · «стиль рик оуэнс» 63</p></div>
+    <div class="card"><h3>Рейв и техно</h3><p>Ходят на техно-вечеринки и фестивали. Ищут, что надеть на конкретное событие.</p><p class="w">«рейв одежда» 699 · «вечеринка в стиле техно» 80 · «образ на техно вечеринку» 23 · «как одеться на техно вечеринку» 20</p></div>
+    <div class="card"><h3>Ищут российский стритвир</h3><p>Хотят поддержать своих и выглядеть не как с маркетплейса. Самые конкурентные запросы: в выдаче журналы Яндекс Маркета, Lamoda и ЦУМа.</p><p class="w">«стритвир бренды» 868 · «русский стритвир» 507 · «российские бренды уличной одежды» 179 · «российские дизайнеры одежды» 1 839</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>План на месяц</h2>
+  <p>Адреса статей – английскими словами, по правилу сайта. Они одинаковые на Тильде и на новом сайте, поэтому при переезде переадресации не понадобятся. Прогноз считается для Яндекса. Google добавлен оценкой ×0,75: такое соотношение у сайта по Метрике за октябрь (Яндекс 160, Google 119).</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Дата</th><th>Статья и адрес</th><th>Какой спрос покрывает (запросов в месяц)</th><th class="r">Спрос</th><th>Конкуренция</th><th class="r">1-й мес.<br>показы / переходы</th><th class="r">3-й мес.<br>показы / переходы*</th></tr></thead>
+    <tbody>
+      <tr><td>05.11</td><td><b>Опиум-стиль: как одеваться в духе Playboi Carti и не выглядеть как косплей</b><br><span class="u">/blog/opium-style/</span></td><td>опиум стиль 1 476 (одежды 357, мужской 53, девушки 28, архив 28), opium стиль одежды 58</td><td class="r">1 508</td><td><span class="sev g">низкая</span> блоги магазинов, Дзен, Pinterest</td><td class="r">340 / 20</td><td class="r">1 130 / 120</td></tr>
+      <tr><td>07.11</td><td><b>Мантия, кейп, балахон: как называется длинная накидка с капюшоном и с чем её носить мужчине</b><br><span class="u">/blog/hooded-robe-guide/</span></td><td>балахон мужской 338, накидка с капюшоном как называется 206, плащ мужской длинный с капюшоном 186, кардиган мантия 96, черный плащ с капюшоном мужской 49, мантия с капюшоном как называется 39</td><td class="r">925</td><td><span class="sev g">низкая</span> справочных статей нет, сайт уже 10-й по мантии</td><td class="r">210 / 12</td><td class="r">690 / 75</td></tr>
+      <tr><td>11.11</td><td><b>Андеграунд-стиль в одежде: откуда он, кто так ходит и российские андеграунд-бренды</b><br><span class="u">/blog/underground-style/</span></td><td>андеграунд одежда 1 379 (стиль 793, бренды 153, мужская 43, русские бренды 21)</td><td class="r">1 379</td><td><span class="sev m">средняя</span> выдача не снялась (ошибка провайдера)</td><td class="r">190 / 3</td><td class="r">620 / 16</td></tr>
+      <tr><td>14.11</td><td><b>Кожаные джоггеры: с чем носить мужчине и девушке, как не замёрзнуть зимой</b><br><span class="u">/blog/leather-joggers-how-to-wear/</span></td><td>кожаные джоггеры 513 (женские 107), с чем носить джоггеры мужчине 116, с чем носят джоггеры мужские 111, как носить джоггеры мужские 32</td><td class="r">779</td><td><span class="sev m">средняя</span> блоги Ramonki, Stockmann</td><td class="r">105 / 2</td><td class="r">350 / 9</td></tr>
+      <tr><td>18.11</td><td><b>Киберпанк в реальной жизни: как собрать футуристичный образ без костюма из игры</b><br><span class="u">/blog/cyberpunk-style/</span></td><td>киберпанк стиль одежды 693 (без запросов про игру), футуризм стиль в одежде 169, футуристичная одежда 148</td><td class="r">983</td><td><span class="sev m">средняя</span> freak-butik, insystemout</td><td class="r">130 / 2</td><td class="r">440 / 12</td></tr>
+      <tr><td>21.11</td><td><b>Total black для мужчин: как носить только чёрное и не выглядеть скучно</b><br><span class="u">/blog/total-black-mens-style/</span></td><td>черная одежда мужская 1 200 (черный стиль одежды мужской 174), монохромный образ 433, черно белый образ мужской 283, total black образ 62</td><td class="r">1 968</td><td><span class="sev m">средняя</span> блоги Kanzler, Albione, Henderson</td><td class="r">270 / 4</td><td class="r">890 / 23</td></tr>
+      <tr><td>25.11</td><td><b>Техвир (techwear): что это за стиль и как собрать базу</b><br><span class="u">/blog/techwear-style/</span></td><td>techwear стиль 287, techwear одежда 191, техвир 120, darkwear 58</td><td class="r">598</td><td><span class="sev g">низкая</span> блоги Defeez, freak-butik, criterium</td><td class="r">135 / 8</td><td class="r">450 / 47</td></tr>
+      <tr><td>27.11</td><td><b>Авангард в одежде: деконструкция, асимметрия и что взять от Рика Оуэнса и Ямамото</b><br><span class="u">/blog/avant-garde-fashion/</span></td><td>авангардная одежда 445 (стиль 144, бренды 48), японский стиль одежды мужской 169, стиль ямамото 83, деконструкция в одежде 77, стиль рик оуэнс 63</td><td class="r">829</td><td><span class="sev m">средняя</span> Burda, Dress-mag, Star-tex</td><td class="r">110 / 2</td><td class="r">370 / 10</td></tr>
+      <tr><td>30.11</td><td><b>Что надеть на рейв и техно-вечеринку: удобно, темно и в тему</b><br><span class="u">/blog/rave-outfit/</span></td><td>рейв одежда 699 (ру рейв 182, для рейва 123), вечеринка в стиле техно 80, образ на техно вечеринку 23, как одеться на техно вечеринку 20</td><td class="r">822</td><td><span class="sev m">средняя</span> freak-butik, Афиша, fuga-studios</td><td class="r">110 / 2</td><td class="r">370 / 10</td></tr>
+      <tr><td>02.12</td><td><b>Российский стритвир: бренды, которые не стыдно носить, и чем отличается авангард</b><br><span class="u">/blog/russian-streetwear-brands/</span></td><td>стритвир бренды 868, русский стритвир 507 (с пересечением 164), российские бренды уличной одежды 179, авангардные бренды одежды 48</td><td class="r">1 438</td><td><span class="sev c">высокая</span> журналы Маркета, Lamoda, ЦУМ</td><td class="r">85 / 0</td><td class="r">290 / 2</td></tr>
+    </tbody>
+    <tfoot><tr><td></td><td>Итого 10 статей</td><td></td><td class="r">11 229</td><td></td><td class="r">1 680 / 55</td><td class="r">5 600 / 320</td></tr></tfoot>
+  </table></div>
+  <p class="note">* На 3-й месяц переходы указаны вместе с Google, показы – только Яндекса. 1-й месяц – это первые 30 дней после выхода статьи, только Яндекс.</p>
+</section>
+
+<section>
+  <h2>Как считал прогноз</h2>
+  <ul class="list">
+    <li><b>Спрос</b> – сумма фраз Wordstat, которые закрывает статья. Чужие смыслы вычтены: игра Cyberpunk 2077, «выкройка» и «как сшить», дождевики, кроссворды, взрослый контент. Вложенные фразы не считаются дважды.</li>
+    <li><b>Позиция через три месяца</b> оценена по выдаче 03.11.2026. Если в топе блоги небольших магазинов, ставлю 3–8 место: 75% спроса доходит до показа, кликают 6%. Если сильные блоги и магазины – 8–15 место: 45% и 1,5%. Если в топе журналы маркетплейсов – 15–30 место: 20% и 0,3%.</li>
+    <li><b>Сверка с живыми данными сайта.</b> По «черная мантия купить» на 12-й позиции Вебмастер показал 88 показов за два месяца и ни одного клика. Это совпадает с моделью: на второй странице показы есть, а переходов почти нет.</li>
+    <li><b>Первый месяц</b> – 30% от третьего: статья 1–2 недели попадает в индекс и ещё неделями поднимается.</li>
+    <li><b>Что прогноз не гарантирует.</b> Если позиции окажутся на ступень ниже, переходов будет в 3–4 раза меньше. Факт сверим через 30 и 90 дней по Вебмастеру.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Почему это не мусор: польза каждой статьи</h2>
+  <p>Каждая статья опирается на то, чего нет у соседей по выдаче: вещи бренда с фото и составом, взгляд основателя Алексея Жоркина, показ в Милане (Promenade della Moda, 24.02.2024) и честные советы по посадке и уходу. Ниже – что каждая статья продаёт из каталога.</p>
+  <ul class="list">
+    <li><b>Опиум, андеграунд, рейв</b> → мантии, джоггеры «Cardiogram» и «Lightning», футболки с крестом, бейсболки и шапки.</li>
+    <li><b>Мантии</b> → раздел «Мужские мантии с капюшоном»: Black men, White men, Geometric gray. Статья ссылается на раздел, раздел – на статью.</li>
+    <li><b>Кожаные джоггеры</b> → джоггеры кожа «Winter», утеплённые black и white man, женские джоггеры. Плюс блок про уход за экокожей.</li>
+    <li><b>Киберпанк, техвир, авангард</b> → куртка-трансформер Backstreet, худи и джоггеры «Геометрия», кожаный джемпер.</li>
+    <li><b>Total black и стритвир</b> → чёрные коллекции и наборы со скидкой. В статье про стритвир ALEX KROWN выступает одним из брендов, честно рядом с другими.</li>
+  </ul>
+  <p class="note">Проверка на каннибализацию: у каждой статьи своя главная фраза, ни одна не совпадает с другой статьёй и с разделами каталога. Фразы со словом «купить» отданы каталогу. Когда статьи будут свёрстаны, проверю это скриптом из стандарта seo-lead.</p>
+</section>
+
+<section>
+  <h2>Что не вошло и почему</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Тема</th><th class="r">Спрос</th><th>Решение</th></tr></thead>
+    <tbody>
+      <tr><td>Что подарить парню на Новый год</td><td class="r">1 522</td><td>В запас на декабрь. Выдачу держат маркетплейсы и СМИ, шанс малый. Имеет смысл как подборка подарков от 950 ₽, если владелец захочет.</td></tr>
+      <tr><td>Стиль одежды рэперов</td><td class="r">≈580</td><td>В запас. Пересекается с опиум-стилем, дать ему месяц.</td></tr>
+      <tr><td>Неформальный стиль, необычные стили одежды</td><td class="r">373 / 392</td><td>В запас. Пересекается с андеграундом.</td></tr>
+      <tr><td>Готический стиль мужской</td><td class="r">≈284</td><td>В запас. Бренд не готика, натяжка.</td></tr>
+      <tr><td>Экокожа: натуральная или нет, уход</td><td class="r">≈150</td><td>Блоком внутри статьи про кожаные джоггеры, не отдельной статьёй.</td></tr>
+      <tr><td>Одежда Cyberpunk 2077, косплей</td><td class="r">≈5 000</td><td>Не берём. Это игроки: ищут моды и предметы в игре, а не одежду.</td></tr>
+      <tr><td>Rick Owens, Yohji Yamamoto (бренды)</td><td class="r">46 710 / 12 197</td><td>Не берём. Люди ищут сами бренды и их кроссовки. Имена работают только внутри статьи про авангард.</td></tr>
+      <tr><td>Сценический костюм, образ на Хэллоуин, мужская юбка</td><td class="r">473 / 406 / 146</td><td>Не берём. У сценического костюма спрос про театр и танцы, Хэллоуин прошёл, мужских юбок в каталоге нет.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Что решаешь ты</h2>
+  <div class="decide">
+    <div><span><b>Где публикуем.</b><p>Сейчас на alex-krown.com работает сайт на Тильде, новый сайт ещё не на домене. Вариант А: ставить статьи на Тильду уже в ноябре, с теми же адресами /blog/…, а при переезде они просто переедут. Нужно твоё «да» на запись в Тильду. Вариант Б: ждать переезда, но тогда месяц роста пропадает. Советую А.</p></span></div>
+    <div><span><b>Голос основателя.</b><p>Чтобы статьи были не как у всех, нужны 3–5 фраз Алексея на каждую тему: зачем мантия, почему чёрное, откуда геометрия. Можно голосовым, я переведу в текст.</p></span></div>
+    <div><span><b>Фото.</b><p>Беру фото товаров из каталога. Если есть съёмки образов целиком или фото с показа в Милане, они сильно поднимут статьи.</p></span></div>
+  </div>
+</section>
+
+</div></body></html>
