@@ -1,0 +1,154 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Блог для цветочных: спрос</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}.verdict b.big{font-size:18px}}
+</style></head><body><main class=wrap>
+<header>
+<span class=eyebrow>TargetFactory · цветочные · 3 ноября 2026</span>
+<h1>Что писать в блог, чтобы его читали владельцы цветочных магазинов</h1>
+<p class=lead>Спрос из Wordstat по всей России за октябрь 2026: 125 запросов, снято бесплатно через браузер. В каждом запросе смотрел формулировки и оставлял только те, что пишет владелец магазина, а не покупатель букета.</p>
+<audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px"></audio>
+</header>
+
+<section><div class=verdict>
+<b class=big>Владельцы ищут не «маркетинг», а конкретные шаги: как попасть на Яндекс Карты, что делать с отзывами, как открыть магазин, какой ОКВЭД выбрать.</b>
+<p>Запросов прямо про рекламу цветочного магазина мало: «реклама цветочного магазина» – 456 в месяц, «продвижение цветочного магазина» – 41. Владелец приходит через практический вопрос, а в статье мы показываем, что эту работу можно отдать нам. Поэтому план – 40 статей в три волны: сначала те, что ведут прямо в услугу.</p>
+</div></section>
+
+<section><div class=facts>
+<div class=fact><b>40</b><span>статей, под которые есть свой спрос</span></div>
+<div class=fact><b>18,8 тыс.</b><span>запросов в месяц у этих тем, Россия, окт. 2026</span></div>
+<div class=fact><b>940–2 250</b><span>визитов в месяц, когда статьи выйдут в топ (оценка, 3–6 мес.)</span></div>
+<div class=fact><b>1 в день</b><span>темп: 40 статей за 2 месяца по будням</span></div>
+</div>
+<p class=note>Оценка визитов – 5–12% от спроса: столько забирает статья с 3–10 места в Яндексе. Это ориентир, а не обещание; сверяем с фактом через 30, 60 и 90 дней.</p></section>
+
+<section><span class=eyebrow>Волна 1 · 23 статьи · 9,7 тыс. запросов</span>
+<h2>Владелец уже работает – статья ведёт прямо в нашу услугу</h2>
+<p>Карты, отзывы, ВКонтакте, рассылки, сайт, агрегаторы. Человек с такой задачей – готовый клиент: прочитал, как это делается, и понял, что проще отдать.</p>
+<div class=scroll><table><thead><tr><th class=r>№</th><th>Статья и главный запрос</th><th class=r>Спрос в мес.</th><th class=r>Визиты в мес.</th><th>Ведёт к услуге</th></tr></thead><tbody><tr><td class=r>1</td><td><b>День матери 29 ноября: как цветочному магазину собрать заказы за 3 недели</b><br><span class=note>«день матери цветочный магазин» · сезон: опубликовать до 8.11</span></td><td class=r>сезон</td><td class=r>сезон</td><td>Праздники: реклама + рассылка</td></tr>
+<tr><td class=r>2</td><td><b>Как добавить цветочный магазин на Яндекс Карты и в Яндекс Бизнес: пошагово</b><br><span class=note>«как добавить организацию в яндекс карты»</span></td><td class=r>1190</td><td class=r>60–143</td><td>Карты</td></tr>
+<tr><td class=r>3</td><td><b>Реклама цветочного магазина: 9 каналов и сколько стоит заказ в каждом</b><br><span class=note>«реклама цветочного магазина»</span></td><td class=r>590</td><td class=r>30–71</td><td>Вся услуга (флагман)</td></tr>
+<tr><td class=r>4</td><td><b>Реклама в Яндекс Бизнесе для цветочного: запускать самому или нет</b><br><span class=note>«яндекс бизнес реклама»</span></td><td class=r>470</td><td class=r>24–56</td><td>Реклама на картах</td></tr>
+<tr><td class=r>5</td><td><b>Продвижение цветочного магазина на Яндекс Картах: что реально поднимает</b><br><span class=note>«продвижение в яндекс картах»</span></td><td class=r>870</td><td class=r>44–104</td><td>Карты</td></tr>
+<tr><td class=r>6</td><td><b>Реклама на Яндекс Картах и приоритетное размещение: цена и окупаемость для цветочного</b><br><span class=note>«реклама на яндекс картах»</span></td><td class=r>400</td><td class=r>20–48</td><td>Реклама на картах</td></tr>
+<tr><td class=r>7</td><td><b>Как добавить цветочный магазин в 2ГИС бесплатно</b><br><span class=note>«2гис добавить организацию»</span></td><td class=r>690</td><td class=r>34–83</td><td>Карты</td></tr>
+<tr><td class=r>8</td><td><b>Как удалить или оспорить плохой отзыв на Яндекс Картах</b><br><span class=note>«как удалить отзыв на яндекс картах»</span></td><td class=r>710</td><td class=r>36–85</td><td>Карты / репутация</td></tr>
+<tr><td class=r>9</td><td><b>Как отвечать на отзывы о цветочном магазине: 20 готовых ответов</b><br><span class=note>«как ответить на отзыв в яндекс картах» · общий спрос 9 тыс., берём хвост «в яндексе/картах»</span></td><td class=r>930</td><td class=r>46–112</td><td>Карты / репутация</td></tr>
+<tr><td class=r>10</td><td><b>30 постов для группы цветочного магазина: контент-план на месяц</b><br><span class=note>«пост для цветочного магазина»</span></td><td class=r>290</td><td class=r>14–35</td><td>Ведение ВК</td></tr>
+<tr><td class=r>11</td><td><b>Чат-бот ВКонтакте для цветочного магазина: что он отвечает вместо флориста</b><br><span class=note>«чат бот вконтакте» · общий спрос, цветочный угол – наш</span></td><td class=r>880</td><td class=r>44–106</td><td>Чат-бот ВК</td></tr>
+<tr><td class=r>12</td><td><b>Рассылка ВКонтакте по базе: как вернуть покупателей цветов к праздникам</b><br><span class=note>«рассылка вконтакте»</span></td><td class=r>770</td><td class=r>38–92</td><td>Рассылки</td></tr>
+<tr><td class=r>13</td><td><b>Как продвигать группу ВК цветочного магазина в 2026</b><br><span class=note>«как продвигать группу в вк»</span></td><td class=r>390</td><td class=r>20–47</td><td>Ведение ВК</td></tr>
+<tr><td class=r>14</td><td><b>Реклама ВКонтакте для цветочного: как мы получили обращение по 251 ₽</b><br><span class=note>«реклама цветов вконтакте» · спрос мал, но это кейс – ссылки с рекламы и vc.ru</span></td><td class=r>20</td><td class=r>1–2</td><td>Таргет ВК</td></tr>
+<tr><td class=r>15</td><td><b>Сайт для цветочного магазина: нужен ли, что на нём должно быть, сколько стоит</b><br><span class=note>«сайт для цветочного магазина»</span></td><td class=r>380</td><td class=r>19–46</td><td>Сайт</td></tr>
+<tr><td class=r>16</td><td><b>Flowwow для продавцов: комиссия, плюсы, минусы и как не зависеть от агрегатора</b><br><span class=note>«flowwow для продавцов»</span></td><td class=r>370</td><td class=r>18–44</td><td>Свой канал заказов</td></tr>
+<tr><td class=r>17</td><td><b>Как продавать цветы на Озоне, Яндекс Маркете и в Яндекс Еде</b><br><span class=note>«как продавать цветы на озон»</span></td><td class=r>150</td><td class=r>8–18</td><td>Свой канал заказов</td></tr>
+<tr><td class=r>18</td><td><b>Как увеличить продажи цветочного магазина в будни</b><br><span class=note>«как увеличить продажи цветочного магазина»</span></td><td class=r>110</td><td class=r>6–13</td><td>Вся услуга (флагман)</td></tr>
+<tr><td class=r>19</td><td><b>Акции для цветочного магазина без «скидки 40%»</b><br><span class=note>«акции для цветочного магазина»</span></td><td class=r>50</td><td class=r>2–6</td><td>Маркетинг / рассылки</td></tr>
+<tr><td class=r>20</td><td><b>Реклама доставки цветов: где брать заказы на доставку</b><br><span class=note>«реклама доставки цветов»</span></td><td class=r>160</td><td class=r>8–19</td><td>Реклама</td></tr>
+<tr><td class=r>21</td><td><b>Как продавать цветы через Авито</b><br><span class=note>«как продать цветы на авито»</span></td><td class=r>70</td><td class=r>4–8</td><td>Авито</td></tr>
+<tr><td class=r>22</td><td><b>Программа лояльности и бонусы для цветочного магазина</b><br><span class=note>«программа лояльности цветочного магазина»</span></td><td class=r>20</td><td class=r>1–2</td><td>Рассылки / база</td></tr>
+<tr><td class=r>23</td><td><b>CRM и программа учёта для цветочного магазина: что выбрать</b><br><span class=note>«программа для цветочного магазина»</span></td><td class=r>230</td><td class=r>12–28</td><td>База клиентов</td></tr></tbody></table></div></section>
+
+<section><span class=eyebrow>Волна 2 · 10 статей · 7,4 тыс. запросов</span>
+<h2>Открывают магазин – большой спрос, клиент через пару месяцев</h2>
+<p>Самые частотные темы ниши. Читатель ещё не продаёт, но через пару месяцев ему понадобятся карты, группа и реклама. В каждой статье – раздел «что сделать до открытия, чтобы с первого дня были заказы».</p>
+<div class=scroll><table><thead><tr><th class=r>№</th><th>Статья и главный запрос</th><th class=r>Спрос в мес.</th><th class=r>Визиты в мес.</th><th>Ведёт к услуге</th></tr></thead><tbody><tr><td class=r>24</td><td><b>Как открыть цветочный магазин с нуля в 2026: пошагово</b><br><span class=note>«как открыть цветочный магазин»</span></td><td class=r>1260</td><td class=r>63–151</td><td>Запуск под ключ</td></tr>
+<tr><td class=r>25</td><td><b>Бизнес-план цветочного магазина с расчётами</b><br><span class=note>«бизнес план цветочного магазина»</span></td><td class=r>1090</td><td class=r>54–131</td><td>Запуск под ключ</td></tr>
+<tr><td class=r>26</td><td><b>Сколько стоит открыть цветочный магазин: смета 2026</b><br><span class=note>«сколько стоит открыть цветочный магазин»</span></td><td class=r>510</td><td class=r>26–61</td><td>Запуск под ключ</td></tr>
+<tr><td class=r>27</td><td><b>Выгоден ли цветочный бизнес: окупаемость и подводные камни</b><br><span class=note>«цветочный магазин как бизнес»</span></td><td class=r>360</td><td class=r>18–43</td><td>Запуск под ключ</td></tr>
+<tr><td class=r>28</td><td><b>ОКВЭД для цветочного магазина: какие коды выбрать</b><br><span class=note>«оквэд цветы»</span></td><td class=r>1020</td><td class=r>51–122</td><td>Запуск под ключ</td></tr>
+<tr><td class=r>29</td><td><b>Название для цветочного магазина: 100 идей и как проверить</b><br><span class=note>«название для цветочного магазина»</span></td><td class=r>1030</td><td class=r>52–124</td><td>Брендинг</td></tr>
+<tr><td class=r>30</td><td><b>Логотип цветочного магазина: как сделать и сколько стоит</b><br><span class=note>«логотип цветочного магазина»</span></td><td class=r>510</td><td class=r>26–61</td><td>Брендинг</td></tr>
+<tr><td class=r>31</td><td><b>Франшиза цветочного магазина: стоит ли покупать</b><br><span class=note>«франшиза цветочного магазина»</span></td><td class=r>300</td><td class=r>15–36</td><td>Запуск под ключ</td></tr>
+<tr><td class=r>32</td><td><b>Оформление цветочного магазина: вывеска, витрина, зал</b><br><span class=note>«оформление цветочного магазина»</span></td><td class=r>1090</td><td class=r>54–131</td><td>Брендинг</td></tr>
+<tr><td class=r>33</td><td><b>Визитка цветочного магазина: что написать, чтобы по ней заказывали</b><br><span class=note>«визитка цветочного магазина»</span></td><td class=r>240</td><td class=r>12–29</td><td>Брендинг</td></tr></tbody></table></div></section>
+
+<section><span class=eyebrow>Волна 3 · 7 статей · 1,6 тыс. запросов</span>
+<h2>Хозяйство магазина – аудитория наша, до услуги дальше</h2>
+<p>Темы про то, как устроен магазин изнутри: холодильник, закупка, наценка, списания. Такие статьи показывают, что мы знаем нишу, и дают ссылки на статьи первой волны.</p>
+<div class=scroll><table><thead><tr><th class=r>№</th><th>Статья и главный запрос</th><th class=r>Спрос в мес.</th><th class=r>Визиты в мес.</th><th>Ведёт к услуге</th></tr></thead><tbody><tr><td class=r>34</td><td><b>Какая температура нужна в холодильнике для цветов</b><br><span class=note>«температура в холодильнике для цветов»</span></td><td class=r>780</td><td class=r>39–94</td><td>(доверие)</td></tr>
+<tr><td class=r>35</td><td><b>Списание цветов: причины и как сократить через рекламу под остатки</b><br><span class=note>«причины списания цветов» · мостик к блоку «закуп уходит в заказы»</span></td><td class=r>180</td><td class=r>9–22</td><td>Реклама под остатки</td></tr>
+<tr><td class=r>36</td><td><b>Закупка цветов для магазина: где брать и сколько закупать к праздникам</b><br><span class=note>«закупка цветов для цветочного магазина»</span></td><td class=r>210</td><td class=r>10–25</td><td>Праздники</td></tr>
+<tr><td class=r>37</td><td><b>Наценка на цветы: как считать цену букета</b><br><span class=note>«наценка на цветы»</span></td><td class=r>170</td><td class=r>8–20</td><td>(доверие)</td></tr>
+<tr><td class=r>38</td><td><b>Учёт в цветочном магазине: тетрадь, Excel или программа</b><br><span class=note>«учет в цветочном магазине»</span></td><td class=r>60</td><td class=r>3–7</td><td>База клиентов</td></tr>
+<tr><td class=r>39</td><td><b>Как организовать доставку цветов</b><br><span class=note>«открыть доставку цветов»</span></td><td class=r>150</td><td class=r>8–18</td><td>Реклама доставки</td></tr>
+<tr><td class=r>40</td><td><b>Как фотографировать букеты для сайта и соцсетей</b><br><span class=note>«как фотографировать букеты»</span></td><td class=r>80</td><td class=r>4–10</td><td>Ведение ВК / сайт</td></tr></tbody></table></div></section>
+
+<section><span class=eyebrow>Не берём</span><h2>Большой спрос, но читатель не тот</h2>
+<ul class=list>
+<li><b>Упаковка букетов</b> – 3,7 тыс.: в основном флористы-любители, заказчиками рекламы они не станут.</li>
+<li><b>«Яндекс Бизнес»</b> – 417 тыс.: это вход в личный кабинет. Берём только хвосты «как добавить», «реклама», «отзывы».</li>
+<li><b>«Купить / продаю цветочный магазин»</b> – 12,5 тыс.: объявления о продаже бизнеса, это Авито.</li>
+<li><b>Flowwow, Самокат, Купер, Яндекс Еда</b> – десятки тысяч, но это покупатели букетов; берём только «для продавцов».</li>
+<li><b>Маркировка цветов</b> (это парты и резисторы), <b>цветочный павильон</b> (дорама), <b>курьер доставка цветов</b> (покупатели).</li>
+<li><b>Подписка на цветы</b> – 1,2 тыс., ищут покупатели; как идея для магазина – абзац внутри статьи про акции.</li>
+</ul></section>
+
+<section><span class=eyebrow>Почему не 5 статей в день</span><h2>Темп – одна статья в день</h2>
+<ul class=list>
+<li>Тем со своим спросом – 40. При 5 в день они кончатся за 8 рабочих дней, дальше пойдут статьи без спроса и повторы. Яндекс и Google считают такое мусором и режут весь раздел.</li>
+<li>Одна статья в день – это 40 статей примерно за 2 месяца. Дальше блог растёт за счёт обновлений и хвостов, которые покажет Вебмастер.</li>
+<li>Праздники ставим вне очереди: День матери (29 ноября) – первой статьёй, 14 февраля и 8 Марта – в январе. Октябрьский Wordstat праздничный спрос не показывает, его доберём по сезону.</li>
+</ul></section>
+
+<section><span class=eyebrow>Нужно решение</span><h2>Где публиковать</h2>
+<div class=decide>
+<div><p><b>Демо tema-mail.github.io/tf-flowers закрыто от поиска (noindex).</b> Статьи там не соберут ни одного просмотра из поиска. Блог нужен на боевом домене.</p></div>
+<div><p><b>На targetfactory.ru (Тильда) раздела блога нет</b>: в карте сайта только главная, /flowers и /flowers/services. Варианты: раздел targetfactory.ru/flowers/blog на Тильде или новый лендинг на коде, когда он выйдет в бой на домене. Без вашего «да» в Тильду ничего не грузим.</p></div>
+<div><p><b>Автор статей</b> – Денис Коротаев: его подпись и опыт (50+ магазинов, кейсы ВКонтакте) дают статьям вес в поиске. Нужно его согласие и фото.</p></div>
+</div></section>
+
+<section><p class=note>Источник: Wordstat, регион Россия (225), 01–31.10.2026, все устройства. Сырые данные и план: репо tf-flowers, docs/blog/plan-statey.csv и maski-spros.txt. По 4 запросам Wordstat с первого раза не ответил, их сняли повторно.</p></section>
+</main></body></html>
