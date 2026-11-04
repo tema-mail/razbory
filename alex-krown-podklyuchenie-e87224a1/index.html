@@ -1,0 +1,141 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Магазин: что подключить</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – фиолетовый «кибер», бренд чёрно-белый */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#5b3cc4; --accent-soft:#ece7fb;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#b3a1ff; --accent-soft:#272040;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#b3a1ff; --accent-soft:#272040;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1100px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:78ch}
+section{display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:760px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tfoot td{font-weight:600;border-top:2px solid var(--line)}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.g{background:var(--good-bg);color:var(--good)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.card p{font-size:15px}
+.card .w{font-size:13px;color:var(--muted)}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+@media (max-width:560px){.wrap{gap:44px}.verdict b.big{font-size:18px}}
+</style>
+</head><body><div class="wrap">
+
+<header>
+  <span class="eyebrow">ALEX KROWN и все магазины на движке · что готово и что дать · 04.11.2026</span>
+  <h1>Всё собрано: осталось дать данные сервисов</h1>
+  <audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px"></audio>
+  <p class="note">Итог голосом, около полутора минут.</p>
+</header>
+
+<section>
+  <div class="verdict">
+    <b class="big">Beget умер – стенд переехал на новый сервер FirstVDS в Москве и проверен живьём. Оплата теперь умеет пять банков: ЮKassa, Т-Банк, Сбер, Альфа и Точка. Менеджеру приходят уведомления о заказах. Всё выключено, пока ты не дашь данные: каждое подключение – одна команда и проверка тестовой картой.</b>
+    <p>Это движок всех магазинов, а не только ALEX KROWN: следующему магазину понадобятся те же данные по тому же списку.</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>5</b><span>банков в общей логике оплаты</span></div>
+    <div class="fact"><b>зелёный</b><span>CI: все тесты движка на настоящей базе Postgres</span></div>
+    <div class="fact"><b>4</b><span>живых заказа на новом стенде – путь прошёл целиком</span></div>
+    <div class="fact"><b>1</b><span>письмо менеджеру о заказе – пришло само</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Где тестировать</h2>
+  <ul class="list">
+    <li>Сайт: <a href="https://alexkrown.168.113.179.49.nip.io/v1/">alexkrown.168.113.179.49.nip.io/v1/</a> – пароль стенда тот же, что был.</li>
+    <li>Админка магазина: <a href="https://admin.alexkrown.168.113.179.49.nip.io/">admin.alexkrown.168.113.179.49.nip.io</a> – пароль стенда, потом вход владельца (почта и пароль прежние).</li>
+    <li>Коды входа покупателей и письма менеджеру на стенде уходят в перехватчик на сервере – скажи, пришлю код.</li>
+  </ul>
+  <p class="note">Старые адреса на 45.12.72.227 больше не работают. База стенда новая: прежние тестовые заказы остались на мёртвом сервере.</p>
+</section>
+
+<section>
+  <h2>Что сделано и проверено</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Что</th><th>Как проверено</th></tr></thead>
+    <tbody>
+      <tr><td>Переезд стенда на FirstVDS: свой сертификат, http→https 301, свой перехватчик писем</td><td>выкладка с проверками снаружи; вход по коду, 500 баллов, заказ со списанием баллов</td></tr>
+      <tr><td>Получатель в заказе: имя, телефон, город, адрес, комментарий видны менеджеру в админке</td><td>живой заказ – адрес с эмодзи дошёл целиком</td></tr>
+      <tr><td>Оплата: общий шлюз и пять банков, уведомления банков без пароля стенда, проверка ключа командой</td><td>CI на каждом шаге; на стенде уведомления всех пяти банков доходят до сервера</td></tr>
+      <tr><td>Уведомления менеджеру о заказах: Telegram и письмо (оформлен, оплачен, отменён, требует внимания)</td><td>письмо «Новый заказ №3 – 9 400 ₽» пришло само; Telegram – ждёт токена</td></tr>
+      <tr><td>Частичный возврат денег пересчитывает баллы, кешбэк и уровень покупателя</td><td>тесты денег на Postgres</td></tr>
+      <tr><td>СДЭК: справочник 35 статусов, незнакомый статус – «требует внимания», ночная сверка</td><td>тесты на подставном СДЭК; живой – ждёт ключей</td></tr>
+      <tr><td>Админка без входа сотрудника не открывает разделы; витрина сжата и кэшируется</td><td>CI админки; на стенде разделы без входа уводят на вход</td></tr>
+      <tr><td>Все тесты движка – на настоящей базе в CI (раньше часть просто пропускалась)</td><td>первый прогон сразу нашёл ошибку в тесте каталога</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Что прислать – и что я сделаю</h2>
+  <div class="decide">
+    <div><span><b>Банк для оплаты картой – любой один, тестовые данные.</b><p>ЮKassa: «Тестовый магазин» – shopId и ключ test_…. Т-Банк: в кабинете Т-Бизнеса DEMO-терминал – TerminalKey и пароль. Сбер: тестовый логин API и пароль. Альфа: логин API (…-api) и пароль. Точка: тестовой среды нет – только JWT, номер клиента и ID магазина, и проверка 1 ₽ уже на боевом домене. Ввожу командой, проверяю ключ и прогоняю карты: успех, отказ, брошенная оплата, возврат.</p></span></div>
+    <div><span><b>СДЭК – Client ID и Secret.</b><p>Тогда доставка считается сама и входит в оплату, статусы посылок обновляются без менеджера.</p></span></div>
+    <div><span><b>Уведомления менеджеру.</b><p>Почта менеджера – сразу. Telegram: токен бота и чат. С нового сервера Telegram заблокирован, нужен свой ретранслятор (например бесплатный Cloudflare Worker – сделаю за 10 минут, если дашь аккаунт Cloudflare).</p></span></div>
+    <div><span><b>Почта покупателям (коды входа).</b><p>Ключ Unisender Go и домен отправителя – пропишу DNS-записи и включу. Без этого коды видит только стенд.</p></span></div>
+    <div><span><b>Боевой домен.</b><p>Когда переводим alex-krown.com с Тильды на этот сервер – соберу 301 со старых адресов и включу индексацию.</p></span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Решения за тобой (по умолчанию стоит безопасное)</h2>
+  <ul class="list">
+    <li><b>Доставка в оплате:</b> сейчас картой оплачиваются товары, доставку считает менеджер. С ключами СДЭК можно брать сразу всё.</li>
+    <li><b>Чеки 54-ФЗ:</b> выключены. У Т-Банка чек обязателен, если на терминале подключена онлайн-касса.</li>
+    <li><b>E-mail покупателя Сберу:</b> не передаём (это персональные данные).</li>
+    <li><b>Кешбэк уже потрачен, а покупатель вернул вещь:</b> сейчас баланс уходит в минус и гасится следующими покупками. Альтернатива – списать в убыток.</li>
+    <li><b>Имя, телефон и адрес покупателя в Telegram менеджеру:</b> это передача данных за рубеж (152-ФЗ) – нужен юрист и уведомление РКН. Письмо на почту в РФ – без этого вопроса.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Что ещё не сделано</h2>
+  <ul class="list">
+    <li>Страница «Оплата» в админке – банк пока настраиваю я командами.</li>
+    <li>Возврат в день оплаты у Сбера и Альфы (до взаиморасчётов) – отдельным шагом до их боевого запуска.</li>
+    <li>Живые проверки банков, СДЭК и Telegram – как только будут данные.</li>
+    <li>Остальные проекты с Beget (Лупа, Склад, SEO-админка TEYES и др.) – не трогал: они вне этого чата, их данные остались на мёртвом сервере.</li>
+  </ul>
+</section>
+
+</div></body></html>
