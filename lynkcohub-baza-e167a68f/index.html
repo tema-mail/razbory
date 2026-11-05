@@ -1,0 +1,112 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>База знаний как у Lynk & Co Hub: что брать и на какой спрос</title><style>
+/* Отчёт-документ, как прочие разборы; акцент – красный TEYES Sibir */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}.verdict b.big{font-size:18px}}
+</style></head><body><div class="wrap">
+<header><div class="eyebrow">lynkcohub.ru · разбор и наш спрос · снято 05.11.2026</div>
+<h1>База знаний как у Lynk &amp; Co Hub: что брать на наши сайты</h1>
+<audio controls src="itog.mp3" style="width:100%"></audio>
+<p class="lead">Разобрал все 55 материалов хаба, снял 226 запросов Wordstat по нашим маркам и выдачу Яндекса по 16 темам.</p></header>
+
+<div class="verdict"><b class="big">Да, забираем на все сайты, но формат, а не тексты, и не одну и ту же статью на всех.</b>
+<p>Хороши у них регламенты с артикулами и инструкции из настоящего ремонта. Калькуляторы и инженерные разборы спроса почти не имеют. У нас главная задача другая: блог Графита уже приносит заходы, но почти не приносит заявок. Поэтому каждая статья должна вести на работу, модель и запись.</p></div>
+
+<div class="facts"><div class="fact"><b>55</b><span>материалов: 19 виджетов и служебных, 11 про коробки, 9 ТО</span></div>
+<div class="fact"><b>21,9 тыс.</b><span>просмотров всего по счётчику на страницах, источники неизвестны</span></div>
+<div class="fact"><b>апрель 2026</b><span>почти всё написано за апрель–май, новый сайт</span></div>
+<div class="fact"><b>№4 и №2</b><span>«то lynk co 900» и «замена масла 3dht pro» в Яндексе, Москва</span></div></div>
+
+<section><h2>1. Как устроен хаб</h2>
+<ul class="list">
+<li><b>Меню:</b> база знаний по узлам (ТО, двигатели, коробки, кузов, мультимедиа, подвеска, салон, шумоизоляция), виджеты, запчасти, автосервисы, подбор авто.</li>
+<li><b>Как написано:</b> просто, от лица владельца и механика. Страница ТО – короткая таблица с артикулами, объёмами и интервалами (медиана 259 слов). Коробки – длинные инструкции с фото (медиана 940 слов). В статье об ошибках есть симптом, причина, фото разобранной детали и порядок ремонта.</li>
+<li><b>Чем живёт:</b> заказ запчастей по VIN от 2 000 ₽, русификация, Telegram-чат владельцев, список сервисов от участников чата.</li>
+<li><b>Слабые места:</b> на сайте нет разметки FAQ и HowTo, есть только Article; 21 материал из 55 с видео, часть из них – пересказ чужих роликов; много виджетов одного дня.</li>
+<li><b>Важно:</b> у них стоит запрет на использование материалов без активной ссылки. Тексты и фото не копируем, берём только формат. Артикулы и объёмы сверяем сами, по VIN и у мастера.</li></ul>
+<h3>Что там реально читают</h3>
+<p class="note">Счётчик просмотров на самих страницах, снят 05.11.2026. Это не поиск и не Метрика: туда входят чат и, возможно, боты. Ориентир, а не точная цифра.</p>
+<div class="scroll"><table style="min-width:420px"><thead><tr><th>Материал</th><th>Просмотры</th></tr></thead><tbody><tr><td>Замена масла в коробке 7DCT (инструкция)</td><td>1 900</td></tr><tr><td>Калькулятор растаможки</td><td>1 300</td></tr><tr><td>ТО Lynk & Co 900 (регламент и артикулы)</td><td>1 300</td></tr><tr><td>Замена масла в коробке 3DHT Pro (инструкция)</td><td>1 000</td></tr><tr><td>Подбор запчастей</td><td>757</td></tr><tr><td>Режимы работы 3DHT Pro</td><td>678</td></tr><tr><td>Как не убить коробку 3DHT Pro</td><td>648</td></tr><tr><td>Сравнение моделей</td><td>646</td></tr><tr><td>Здоровье батареи (SOH)</td><td>641</td></tr><tr><td>Дешифратор кодов</td><td>590</td></tr></tbody></table></div></section>
+
+<section><h2>2. Что ищут по нашим маркам</h2>
+<p class="note">Wordstat, Россия, октябрь 2026, снято 05.11.2026 через Chrome, бесплатно. Широкая частота, в месяц. Жирным – от 1 000.</p>
+<div class="scroll"><table style="min-width:1100px"><thead><tr><th>Марка</th><th class="r">ТО</th><th class="r">Регламент</th><th class="r">Масло</th><th class="r">Ошибка</th><th class="r">Проблемы</th><th class="r">Батарея</th><th class="r">Запас хода</th><th class="r">Шины</th><th class="r">Запчасти</th><th class="r">Прошивка</th><th class="r">Русификация</th><th class="r">Мастер-аккаунт</th><th class="r">Пневмо</th><th class="r">Аккумулятор</th><th class="r">Зарядка</th><th class="r">Гарантия</th><th class="r">Отзывы</th></tr></thead><tbody><tr><td><b>Lixiang</b></td><td class="r">474</td><td class="r">37</td><td class="r">176</td><td class="r">209</td><td class="r">101</td><td class="r">859</td><td class="r">214</td><td class="r">48</td><td class="r">250</td><td class="r">372</td><td class="r">245</td><td class="r">294</td><td class="r">207</td><td class="r">147</td><td class="r"><b>1 054</b></td><td class="r">75</td><td class="r">148</td></tr><tr><td><b>Zeekr</b></td><td class="r">525</td><td class="r">61</td><td class="r">177</td><td class="r">189</td><td class="r">318</td><td class="r"><b>1 567</b></td><td class="r"><b>1 167</b></td><td class="r">118</td><td class="r">420</td><td class="r">421</td><td class="r"><b>1 133</b></td><td class="r">519</td><td class="r">201</td><td class="r">472</td><td class="r"><b>2 202</b></td><td class="r">124</td><td class="r">792</td></tr><tr><td><b>Voyah</b></td><td class="r"><b>1 133</b></td><td class="r">130</td><td class="r">300</td><td class="r">540</td><td class="r">284</td><td class="r"><b>2 489</b></td><td class="r">813</td><td class="r">204</td><td class="r">384</td><td class="r">683</td><td class="r">437</td><td class="r">268</td><td class="r">217</td><td class="r"><b>1 276</b></td><td class="r"><b>2 430</b></td><td class="r">310</td><td class="r"><b>1 546</b></td></tr><tr><td><b>Avatr</b></td><td class="r">37</td><td class="r">5</td><td class="r">1</td><td class="r">48</td><td class="r">31</td><td class="r">223</td><td class="r">93</td><td class="r">15</td><td class="r">78</td><td class="r">63</td><td class="r">35</td><td class="r">48</td><td class="r">11</td><td class="r">81</td><td class="r">307</td><td class="r">36</td><td class="r">137</td></tr><tr><td><b>Lynk Co</b></td><td class="r">164</td><td class="r">26</td><td class="r">49</td><td class="r">53</td><td class="r">76</td><td class="r">232</td><td class="r">75</td><td class="r">41</td><td class="r">160</td><td class="r">173</td><td class="r">362</td><td class="r">116</td><td class="r">16</td><td class="r">59</td><td class="r">329</td><td class="r">47</td><td class="r">517</td></tr><tr><td><b>Geely*</b></td><td class="r"><b>7 703</b></td><td class="r">860</td><td class="r"><b>3 723</b></td><td class="r"><b>4 035</b></td><td class="r"><b>1 463</b></td><td class="r"><b>3 173</b></td><td class="r"><b>1 401</b></td><td class="r"><b>1 115</b></td><td class="r"><b>3 821</b></td><td class="r"><b>6 703</b></td><td class="r"><b>2 167</b></td><td class="r">394</td><td class="r">95</td><td class="r"><b>5 033</b></td><td class="r"><b>3 418</b></td><td class="r"><b>1 913</b></td><td class="r"><b>6 688</b></td></tr><tr><td><b>Changan*</b></td><td class="r"><b>3 401</b></td><td class="r">488</td><td class="r"><b>2 140</b></td><td class="r"><b>1 287</b></td><td class="r">708</td><td class="r"><b>1 677</b></td><td class="r">947</td><td class="r">619</td><td class="r"><b>2 051</b></td><td class="r"><b>1 525</b></td><td class="r"><b>2 743</b></td><td class="r"><b>1 022</b></td><td class="r">59</td><td class="r"><b>1 894</b></td><td class="r"><b>1 973</b></td><td class="r">793</td><td class="r"><b>4 980</b></td></tr><tr><td><b>BYD*</b></td><td class="r">265</td><td class="r">13</td><td class="r">237</td><td class="r">321</td><td class="r">143</td><td class="r"><b>2 175</b></td><td class="r">861</td><td class="r">91</td><td class="r">864</td><td class="r">280</td><td class="r">616</td><td class="r">207</td><td class="r">25</td><td class="r"><b>1 142</b></td><td class="r"><b>1 757</b></td><td class="r">42</td><td class="r"><b>1 222</b></td></tr></tbody></table></div>
+<p>* Geely, Changan и BYD сильно завышены: сюда попадают бензиновые Atlas и Coolray, а у BYD – аккумуляторы для пылесосов. Для наших гибридов и электро смотреть надо модели: батарея Geely EX5 – 1 122, русификация Changan Q05 – 1 323, мастер-аккаунт Q05 – 539.</p>
+<div class="dir"><b>Большая частота не всегда значит статью.</b> Я открыл выдачу. По «батарея voyah free» (1 716) в топе магазины аккумуляторов 12 В. По «voyah free зарядка» (1 617) – Ozon, Wildberries и продавцы зарядок. Люди хотят купить, статья туда пробьётся трудно. Поэтому «отзывы», «зарядка» и «батарея» проверяем выдачей перед тем, как писать. Выдачу снял только по 16 темам, остальное помечено «не смотрели».</div>
+<p>У Графита это уже видно на деле: за 90 дней из поиска статья про зарядку Voyah Free от розетки дала 964 захода, про проблемы Voyah Free – 644, про запас хода Zeekr 001 – 477 (Метрика, снято 02.11.2026). Заявок блог почти не приносит.</p></section>
+
+<section><h2>3. Что берём, а что нет</h2>
+<div class="two"><div class="dir"><h3>Берём</h3><div class="scroll"><table style="min-width:300px"><thead><tr><th>Что</th><th>Почему</th></tr></thead><tbody><tr><td><b>Регламент модели таблицей</b>: работа, интервал, объём, спецификация, артикул</td><td>ТО Lynk & Co 900 – 1 300 просмотров, №4 в Яндексе при 234 словах. Сразу ведёт на запись</td></tr><tr><td><b>Инструкция с фото из настоящего ремонта</b></td><td>Самые читаемые материалы хаба. Такой опыт есть только у сервиса, это наше преимущество</td></tr><tr><td><b>Разбор поломки</b>: симптом, причина, что менять, как правильно</td><td>Статья про ошибки 3DHT Pro объясняет, почему просто заменить деталь мало. Это честно подводит к записи</td></tr><tr><td><b>Шапка статьи</b>: дата обновления, для какой модели, «Информация помогла?»</td><td>Дешёво, даёт доверие и обратную связь, какие статьи устарели</td></tr><tr><td><b>Один виджет: здоровье батареи (SOH)</b></td><td>«soh батареи» 228 в месяц. Мягко ведёт на платную диагностику батареи</td></tr><tr><td><b>Один справочник кодов ошибок на марку</b></td><td>Отдельный код не ищут: p0c2a – 12 в месяц. А вместе по Voyah 540, по Lixiang 209, по Zeekr 189</td></tr><tr><td><b>Список сервисов по городам – только для агрегатора</b></td><td>На сайте сервиса он уводит клиента к чужим. Для второй стратегии, агрегатора, это готовый ход</td></tr></tbody></table></div></div>
+<div class="dir"><h3>Не берём</h3><div class="scroll"><table style="min-width:300px"><thead><tr><th>Что</th><th>Почему</th></tr></thead><tbody><tr><td>Ещё 15+ калькуляторов и тестов («какой ты водитель», вязкость масла, кредит)</td><td>Спроса почти нет: калькулятор стоимости владения – 33 в месяц. Заявок они не дают</td></tr><tr><td>Калькулятор растаможки</td><td>30 049 в месяц, но это покупатели, а не владельцы, и там сильные игроки. Сервису не нужен. Может пригодиться только сайту пригона</td></tr><tr><td>Инженерные разборы по чужим видео</td><td>Пересказ YouTube без своего опыта. 3dht pro – 47 в месяц, своего опыта в таком материале нет</td></tr><tr><td>Страницы по 200 слов только со списком артикулов</td><td>Работают только там, где есть спрос на модель. Ниже порога уходят блоком на страницу марки</td></tr><tr><td>Адреса транслитом и рубрики по узлам</td><td>У нас адреса по-английски и по цепочке марка – модель</td></tr></tbody></table></div></div></div></section>
+
+<section><h2>4. С чего начать: первые 11 материалов</h2>
+<p class="note">Для пяти марок Графита, по убыванию спроса и полезности. Частота – Wordstat РФ, октябрь 2026. Порог страницы тот же, что на сайтах: от 20 в месяц и своя польза, 5–19 – блоком на странице марки, меньше 5 – не делаем.</p>
+<div class="scroll"><table style="min-width:900px"><thead><tr><th>Материал</th><th>Спрос в месяц</th><th>Кто в топе</th><th>Что делать</th><th>Что нужно от мастера</th></tr></thead><tbody><tr><td>ТО Voyah Free: регламент и цена</td><td>то voyah free 695, стоимость 114, регламент 83</td><td>voyah-borishof, e-n-cars, elektroman</td><td>новая</td><td>интервалы, объёмы, артикулы, цена</td></tr><tr><td>Zeekr: реальный запас хода, в том числе 8X и 9X</td><td>zeekr запас хода 1 126, реальный 285, 001 – 425, 9X – 195, 8X – 182</td><td>ruszeekr №1–2, Графит №3</td><td>дополнить статью Графита</td><td>замеры клиентов летом и зимой</td></tr><tr><td>Voyah Free: расход и запас хода</td><td>расход 590 (топлива 317), запас хода 539</td><td>не смотрели</td><td>новая</td><td>реальные замеры</td></tr><tr><td>Прошивка Voyah Free: версии и что меняется</td><td>прошивка 541, обновление 67, с русским 67</td><td>vk, e-n-cars, voyahchat</td><td>новая</td><td>список версий, что получает клиент</td></tr><tr><td>Мастер-аккаунт по маркам</td><td>Changan Q05 539, Zeekr 513, Voyah 268, передача Lixiang 74, Lynk 900 54</td><td>общий запрос: Графит №1–2</td><td>разделы к статье Графита</td><td>порядок и сроки по марке</td></tr><tr><td>Lynk & Co 900: батарея и её аккумулятор 12 В</td><td>батарея 152, какая батарея 51</td><td>магазины аккумуляторов</td><td>новая</td><td>ёмкости, тип, что менять</td></tr><tr><td>Lixiang: прошивка 8.6</td><td>прошивка 8.6 – 134</td><td>не смотрели</td><td>обновить статью про 8.5</td><td>что изменилось</td></tr><tr><td>ТО Lynk & Co 900</td><td>то 103, регламент 23</td><td>хаб №4</td><td>новая</td><td>регламент, артикулы, цена</td></tr><tr><td>Zeekr 9X: проблемы и редуктор</td><td>проблемы 87, с редуктором 46</td><td>не смотрели</td><td>новая</td><td>только реальные случаи из сервиса</td></tr><tr><td>ТО Lixiang L7 и какое масло</td><td>то l7 92, масло 59 и 35</td><td>не смотрели</td><td>новая</td><td>регламент и допуски</td></tr><tr><td>Виджет «Здоровье батареи»</td><td>soh батареи 228, как проверить 48</td><td>electrohab, dzen</td><td>новый, один на сайт</td><td>формула и ёмкости по моделям</td></tr></tbody></table></div></section>
+
+<section><h2>5. Как разложить по всем сайтам</h2>
+<ul class="list">
+<li><b>Один банк фактов, разные тексты.</b> Регламенты, артикулы и случаи из ремонта лежат в одном месте. На сайте выходит только своя статья под свою марку и со своим опытом.</li>
+<li><b>Одна и та же статья на нескольких сайтах запрещена.</b> Яндекс сочтёт копией, а связанные сайты может склеить как аффилиатов. Это ломает и стратегию с моносайтами и агрегатором, где компании должны быть разведены.</li>
+<li><b>Поддомены городов статьи не дублируют.</b> База живёт на главном домене, на поддомене только ссылка на неё.</li>
+<li><b>Модель страницы:</b> /knowledge/&lt;марка&gt;/&lt;модель&gt;/&lt;тема&gt;/. Статьи блога Графита остаются на своих адресах, у них есть заходы.</li>
+<li><b>Под каждой статьёй:</b> ссылки на работу и модель, цена «от», форма записи; содержание сбоку и призыв под ним, как в нашем стандарте блога.</li>
+<li><b>Без опыта статья не выходит.</b> Статья, собранная нейросетью из чужих текстов, – это как раз то, что мы запретили. Нужны данные и фото от мастеров, поэтому сначала договариваемся, кто их даёт.</li></ul></section>
+
+<section><h2>6. Что решить</h2>
+<div class="decide">
+<div><div><b>С какого сайта начать.</b><p>Советую Графит: у него уже есть блог, заходы и ИКС 70, эффект будет виден раньше всего. Но это клиентский сайт, и материалы останутся у клиента.</p></div></div>
+<div><div><b>Графит и наши моносайты в Москве – конкуренты.</b><p>В прототипах моносайтов стоит Москва, а у Графита те же марки в Москве. Если это разные компании, опыт Графита нельзя переносить на моносайты. Нужен ответ, чьи это сайты и в каких городах.</p></div></div>
+<div><div><b>Кто даёт данные.</b><p>Регламенты, артикулы и фото из ремонта. Без них первые 11 материалов не выйдут.</p></div></div>
+<div><div><b>Запчасти.</b><p>Заказ по VIN – одна из двух услуг хаба рядом с русификацией. «Запчасти Voyah» – 384, «Zeekr» – 420, «Lixiang» – 250 в месяц. Если будете продавать, форма и каталог нужны. Если нет, не делаем.</p></div></div>
+</div></section>
+
+<p class="note">Источники: lynkcohub.ru, sitemap и 55 страниц, 05.11.2026; Wordstat РФ, октябрь 2026; выдача Яндекса, Москва, lr=213, 05.11.2026, через Chrome; Метрика Графита, 02.11.2026. XMLRiver не использовался, денег не тратил.</p>
+</div></body></html>
