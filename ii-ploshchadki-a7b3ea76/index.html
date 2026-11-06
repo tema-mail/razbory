@@ -1,0 +1,103 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Как попасть в ответы нейросетей: где размещаться</title>
+<style>
+:root{--bg:#f6f5f2;--surface:#fff;--ink:#1d1d1f;--muted:#5d5d63;--line:#dedcd6;--accent:#b3261e;--good:#1f7a45;--good-bg:#e1f1e6;--mid:#8a6a00;--mid-bg:#f7eecb;--bad:#a1281b;--bad-bg:#fbe4df}
+@media (prefers-color-scheme:dark){:root{--bg:#141416;--surface:#1c1c1f;--ink:#ececee;--muted:#a4a4ab;--line:#2f2f34;--accent:#ff8a80;--good:#7fd6a0;--good-bg:#183a26;--mid:#e6c35c;--mid-bg:#3a3215;--bad:#ff9c8c;--bad-bg:#3a1a16;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 64px}h1{font-size:clamp(26px,5vw,36px);line-height:1.15;margin:0 0 8px}h2{font-size:22px;line-height:1.25;margin:40px 0 10px}
+.meta,small,.note{color:var(--muted);font-size:14px}.box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin:12px 0}table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:620px}th,td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{font-weight:600;white-space:nowrap}tr:last-child td{border-bottom:0}td.n{white-space:nowrap;font-variant-numeric:tabular-nums}
+.t{display:inline-block;padding:1px 7px;border-radius:5px;font-size:13px;white-space:nowrap}.g{background:var(--good-bg);color:var(--good)}.m{background:var(--mid-bg);color:var(--mid)}.b{background:var(--bad-bg);color:var(--bad)}
+a{color:var(--accent);overflow-wrap:anywhere}li{margin:6px 0}code{font-size:.92em;overflow-wrap:anywhere}
+</style></head><body><main>
+<h1>Как попасть в ответы нейросетей: где размещаться</h1>
+<p class="meta">Разбор 06.11.2026. Первый рейтинг снят по TEYES Sibir из Яндекс Вебмастера.</p>
+<div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+
+<div class="box"><b>Коротко.</b> Signum.AI не покупаем: Алису он, судя по его страницам, не видит. Для Алисы уже есть бесплатный раздел Вебмастера. Он дал первый рейтинг: drive2, Авито, Профи, Яндекс Услуги, Дзен, Zoon. Готовые программы с GitHub не ставим, берём из них логику. Доказательства, что размещение само поднимает бренд в ответах, нет ни у кого, поэтому проверяем контрольной группой.</div>
+
+<h2>1. Чем мерить каждую нейросеть</h2>
+<p>Каждая ищет по-своему: <a href="https://www.agenzy.lt/blog/which-sources-ai-engines-cite-2026">в замере Agenzy</a> (109 проектов, в основном Литва) у ChatGPT, обзоров Google и Perplexity общих в топ-10 всего 2 домена из 10. Поэтому у каждой нейросети рейтинг свой. Это не Рунет, и Алиса туда не входила.</p>
+<div class="wrap"><table><tr><th>Где</th><th>Чем снимать</th><th>Цена</th><th>Насколько это правда</th></tr>
+<tr><td>Алиса в Поиске</td><td><a href="https://webmaster.yandex.ru/blog/efficiency-alice">Вебмастер, «Видимость сайта в Алисе AI»</a></td><td class="n">0 ₽</td><td><span class="t g">первоисточник</span> Только по своему сайту, только в кабинете (в документации API его нет), без региона, данные с задержкой</td></tr>
+<tr><td>Яндекс, ответ со ссылками</td><td><a href="https://aistudio.yandex.ru/docs/en/search-api/concepts/generative-response.html">Search API, генеративный ответ</a>: текст и список источников</td><td class="n"><a href="https://aistudio.yandex.ru/docs/ru/search-api/pricing">5,08 ₽</a> за запрос</td><td><span class="t m">проверить</span> Официальный API, но Яндекс не пишет, что это те же ответы, что у Алисы. Можно сверить на 44 запросах из Вебмастера</td></tr>
+<tr><td>Алиса вручную</td><td>Вопрос с городом в приложении</td><td class="n">время</td><td><span class="t g">правда</span> Единственный сейчас способ увидеть Новосибирск. Только 10–20 вопросов</td></tr>
+<tr><td>Настоящий ChatGPT</td><td>Вручную или платные парсеры (Bright Data и другие)</td><td class="n">цены не смотрел</td><td><span class="t m">частично</span> Ответ через API и ответ в приложении расходятся</td></tr>
+<tr><td>Perplexity</td><td>OpenRouter, <code>perplexity/sonar</code></td><td class="n">~0,01 $ за ответ</td><td><span class="t g">свой поиск</span> Это API, а не приложение</td></tr>
+<tr><td>Gemini, обзоры Google</td><td>Gemini с поиском Google; обзоры только через парсеры</td><td class="n">проверить</td><td><span class="t m">не проверено</span> Показываются ли обзоры в России и по какому поиску отвечает модель, я ещё не мерил</td></tr>
+</table></div>
+
+<h2>2. Логика выбора площадки</h2>
+<ol>
+<li><b>Вопросы.</b> Настоящие вопросы клиентов из Вебмастера и Wordstat, с городом и без бренда в формулировке. Вопрос «где поставить Teyes» сам подталкивает к бренду и завышает результат.</li>
+<li><b>Повторы.</b> Каждый вопрос минимум 3 раза, в разные дни. Один ответ ничего не значит: по <a href="https://www.searchenginejournal.com/ai-recommendations-change-with-nearly-every-query-sparktoro/566242/">данным SparkToro</a> одинаковый список выпадает реже чем 1 раз из 100. Считаем долю появлений, а не место в списке.</li>
+<li><b>Только где нас нет.</b> Главный рейтинг строим по ответам без нашего бренда. Там видно, кто решает за нас.</li>
+<li><b>Отсев.</b> Убираем конкурентов, маркетплейсы и заводы контента: туда не встать. Есть и сайты, сделанные только чтобы их цитировал ИИ (<a href="https://github.com/elmohq/elmo/blob/main/packages/docs/content/blog/can-you-trust-ai-citations.mdx">разбор в блоге Elmo</a>): это не цель, правило «не дорвеи» в силе.</li>
+<li><b>Страница, а не домен.</b> Открываем цитируемую страницу и смотрим формат: карточка, отзыв, обзор, бортжурнал. Размещаемся в том же формате и в том же разделе. Просто «есть на Авито» не считается.</li>
+<li><b>Можно ли туда попасть.</b> Своя карточка, пост, редакция, платно с пометкой рекламы. Дальше наша проверка донора и балл площадки из <code>metodika.md</code>, строка «ИИ цитирует» теперь считается замером.</li>
+<li><b>Сложность.</b> Приём из Elmo: источники по вопросу часто меняются значит вход открыт, одни и те же держатся значит занято. Начинаем с открытых.</li>
+<li><b>Контроль.</b> 10 похожих площадок: на 5 размещаемся, на 5 нет. Повтор через 30 и 60 дней. Отдельно считаем «назвали по имени» и «дали ссылку»: это разные события.</li>
+</ol>
+<p class="note">Пороги и веса пока не задаю: без повторных замеров это были бы выдуманные числа. Появятся после первых двух прогонов.</p>
+
+<h2>3. Первый рейтинг: Алиса, TEYES Sibir</h2>
+<p>Вебмастер, примеры за последние 3 полных месяца, снято 06.11.2026. Показано 44 запроса: 33 без нашего сайта и 11 с ним. Подсчёт мой, пересчитан из выгрузки: в скольких запросах стоит домен. Яндекс долей по чужим сайтам не даёт.</p>
+<div class="wrap"><table><tr><th>Площадка</th><th>Без нас, из 33</th><th>С нами, из 11</th><th>Что это</th><th>Что делать</th></tr>
+<tr><td>drive2.ru</td><td class="n">14</td><td class="n">6</td><td>сообщество</td><td>В личном журнале ссылка на бизнес ведёт к бану. Бизнес-аккаунт 3 250 ₽ в месяц (цена от 24.10), ты сказал «пока нет»: <b>решение 3</b></td></tr>
+<tr><td>avito.ru</td><td class="n">14</td><td class="n">4</td><td>услуги</td><td>Проверить объявления по цитируемым услугам</td></tr>
+<tr><td>profi.ru</td><td class="n">12</td><td class="n">3</td><td>исполнители</td><td><b>Нет в нашей базе площадок.</b> Изучить условия, цена заявки неизвестна</td></tr>
+<tr><td>uslugi.yandex.ru</td><td class="n">9</td><td class="n">0</td><td>исполнители, Яндекс</td><td>В базе есть. Проверить профиль и услуги</td></tr>
+<tr><td>dzen.ru</td><td class="n">9</td><td class="n">3</td><td>статьи</td><td>Канал есть. Сверить темы с вопросами без нас, задание через главреда</td></tr>
+<tr><td>zoon.ru</td><td class="n">8</td><td class="n">2</td><td>справочник</td><td>Проверить карточку и категории</td></tr>
+<tr><td>auto.ru</td><td class="n">8</td><td class="n">0</td><td>журнал и обзоры</td><td>Самим не разместиться. Смотреть формат, вариант на потом</td></tr>
+<tr><td>club.dns-shop.ru</td><td class="n">6</td><td class="n">0</td><td>блоги покупателей</td><td><b>Нет в базе.</b> Проверить правила: можно ли там компании</td></tr>
+<tr><td>yandex.ru</td><td class="n">6</td><td class="n">4</td><td>Карты и другое</td><td>Яндекс Бизнес, карточка</td></tr>
+<tr><td>2gis.ru</td><td class="n">5</td><td class="n">3</td><td>справочник</td><td>Проверить карточку</td></tr>
+</table></div>
+<p><b>Отсеяно:</b> madwrappers, stylegarage, mosolimp-pro, rolf, stolica-atc, teyesmsk (похоже на компании с услугами, туда не встать; вручную не открывал) и ozon. <b>Сравнивать колонки между собой нельзя:</b> примеры в разделе случайные и разбиты самим Яндексом.</p>
+<div class="box"><b>Три оговорки.</b>
+<ul><li><b>Это не Новосибирск.</b> Региона в разделе нет. В заголовках источников Москва встречается 103 раза из 374, Новосибирск 25. Это список, что проверять, а не план для города.</li>
+<li><b>Доля 74–80% выглядит лучше, чем есть.</b> Измерено 5 недель, последняя 21–27.09: 76,61%. База только те запросы, где сайт уже показывается в Поиске и Алиса ответила. Это не доля рынка.</li>
+<li><b>Есть ли мы на этих площадках сегодня, не сверял.</b> Наши карточки по этому списку не проверены. По EV SIBIR Яндекс пишет «пока недостаточно данных»: рейтинга нет.</li></ul></div>
+<p>Что ещё показал раздел: из 33 запросов без нас почти все денежные и без города, вроде «установка сигнализации» и «сколько стоит тонировка». А нас называют по узким: русификация Tank, Honda Accord 8. Яндекс также назвал 10 сайтов тематики: 4pda, YouTube, drive2, kibercar, car-smart, cardevice-shop, teyes24, frontcam, auto.ru, vk.</p>
+
+<h2>4. Готовое на GitHub</h2>
+<div class="wrap"><table><tr><th>Проект</th><th>Что это</th><th>Яндекс</th><th>Решение</th></tr>
+<tr><td><a href="https://github.com/elmohq/elmo">elmo</a><br><small>570 звёзд, MIT</small></td><td>Самый полный: доля голоса, цитаты, запросы движка, пробелы, отчёт о возможностях. Отчёт пишет нейросеть по данным</td><td>движка нет</td><td><span class="t m">берём логику</span> Настоящий ChatGPT снимает через платные парсеры</td></tr>
+<tr><td><a href="https://github.com/limelit-co/open">limelit-co/open</a><br><small>388 звёзд, Apache</small></td><td>Простой: один файл SQLite, свои ключи, цитаты по типам сайтов</td><td>нет</td><td><span class="t m">запасной</span> Если нужна готовая панель</td></tr>
+<tr><td><a href="https://github.com/ai-search-guru/getcito-worlds-first-open-source-aio-aeo-or-geo-tool">GetCito</a><br><small>449 звёзд, MIT</small></td><td>Трекер плюс задачи и контент, нужен Supabase</td><td>движка не нашёл</td><td><span class="t b">нет</span> Тяжело ради нашей задачи</td></tr>
+<tr><td><a href="https://github.com/danishashko/geo-aeo-tracker">geo-aeo-tracker</a><br><small>320 звёзд, MIT</small></td><td>Трекер, сбор через Bright Data</td><td>нет</td><td><span class="t b">нет</span> Завязан на платный сбор</td></tr>
+<tr><td><a href="https://github.com/onvoyage-ai/gtm-engineer-skills">gtm-engineer-skills</a><br><small>1 355 звёзд, MIT</small></td><td>Скиллы для агентов: контент, Reddit, ссылки</td><td>не смотрел</td><td><span class="t m">почитать</span> Reddit у нас не рынок</td></tr>
+<tr><td><a href="https://github.com/IndexResearch-ru/alice-ai-geo-specialists-russia-july-2026">IndexResearch</a></td><td>Снимок одного ответа Алисы, не инструмент</td><td>один ответ</td><td><span class="t b">нет</span> Автор сам №1 в этом ответе</td></tr>
+</table></div>
+<p class="note">Читал описания и часть кода Elmo, ничего не устанавливал и не запускал. Готового под Алису в поиске на GitHub не нашёл: выдача по «Yandex GEO Алиса» пустая.</p>
+
+<h2>5. Что доказано, а что нет</h2>
+<div class="wrap"><table><tr><th>Утверждение</th><th>Источник</th><th>Вес</th></tr>
+<tr><td>Упоминания бренда связаны с обзорами Google сильнее ссылок: 0,664 против 0,218</td><td><a href="https://ahrefs.com/blog/ai-overview-brand-correlation/">Ahrefs, 75 000 брендов, май 2025</a></td><td><span class="t m">связь</span> Не причина, и Ahrefs продаёт такой инструмент</td></tr>
+<tr><td>Списки «лучших» цитируют чаще других форматов: около 21%</td><td><a href="https://arxiv.org/abs/2606.20065">Препринт Ranqo, 100 тыс. ответов</a></td><td><span class="t m">продавец</span> Без экспертной оценки</td></tr>
+<tr><td>Своё или чужое важнее: споры. У Ranqo около 78% ссылок на сайты компаний, у AirOps 85% упоминаний с чужих доменов</td><td>Ranqo; AirOps в пересказе, первоисточник не читал</td><td><span class="t b">спорно</span> Считают разное. Вывод ролика «только площадки» слишком простой</td></tr>
+<tr><td>Алиса берёт около 90% источников из топ-10 Яндекса</td><td>Данные агентств, первоисточник не найден</td><td><span class="t m">проверить</span> Если так, обычное SEO остаётся основой</td></tr>
+<tr><td>Алиса любит Яндекс Услуги</td><td><a href="https://gaeo.ru/articles/kakie-istochniki-ispolzuyut-neyroseti-pri-vybore-geo-specialistov/">gaeo.ru</a> и наши 9 из 33</td><td><span class="t g">совпало</span> Два независимых сигнала, ниши разные</td></tr>
+<tr><td>Приёмы из работы про GEO (цитаты, статистика) на новых движках не сработали</td><td><a href="https://github.com/elmohq/elmo/blob/main/packages/docs/content/blog/can-content-scores-predict-ai-citations.mdx">Пересказ в блоге Elmo</a></td><td><span class="t m">пересказ</span> Саму работу не читал</td></tr>
+<tr><td>Размещение на площадке заставляет ИИ советовать</td><td>Опытов с контрольной группой не нашёл</td><td><span class="t b">не доказано</span> Поэтому шаг 8</td></tr>
+</table></div>
+<p>Яндекс <a href="https://webmaster.yandex.ru/blog/efficiency-alice">советует</a> только общее: полный ответ, актуальность, принципы ЭПОС. Google <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">пишет</a>, что особая оптимизация под ИИ не требуется, а llms.txt поиском не используется.</p>
+
+<h2>6. Что не так в нашем сборе</h2>
+<p><b>Поправка к моему прошлому ответу.</b> Я написал, что наш скрипт уже знает, какие сайты цитирует нейросеть. Это верно только наполовину.</p>
+<div class="wrap"><table><tr><th>Что</th><th>Почему плохо</th><th>Где</th></tr>
+<tr><td>ChatGPT и Gemini ищут через Exa, 3 результата</td><td>Это не их настоящие источники. Подпись «ChatGPT» в отчёте вводит в заблуждение</td><td>TEYES <code>llm_visibility.py</code>, EV <code>llm_visibility_once.py</code></td></tr>
+<tr><td>Сохранённый прогон 18.10: 182 ошибки из 240</td><td>Кончился лимит ключа, целиком 14 вопросов из 60. Для рейтинга не годится, поэтому бесплатного рейтинга не вышло. Проверку на такие прогоны поставили ещё в октябре</td><td>TEYES, данные</td></tr>
+<tr><td>Источники: сортировка по алфавиту, потом первые 8</td><td>Отсекает домены с конца алфавита, настоящий баг</td><td>TEYES, строка 148</td></tr>
+<tr><td>Нет повторов, адресов страниц, запросов движка</td><td>Шаги 2 и 5 логики не на чем считать</td><td>TEYES</td></tr>
+</table></div>
+<p class="note">Код не правил. EV проверен только поиском Exa в его скрипте, строку 148 там не смотрел. Что сейчас показывает кабинет admin.teyes-sibir.ru, не видел: с мака он ответил 000 за 15 секунд, возможно из-за VPN.</p>
+
+<h2>7. Что решить</h2>
+<ol>
+<li><b>Проверка API Яндекса, 224 ₽.</b> 44 запроса из Вебмастера через генеративный API, сверяем с источниками Алисы. Совпало: получаем автоматический замер и Новосибирск. Нужен кабинет Yandex Cloud и ключ, заводишь сам.</li>
+<li><b>Починка скрипта и новый прогон, около 3 $ за круг на старых моделях.</b> Настоящий поиск у ChatGPT и Gemini, адреса страниц, 3 повтора. Точную цену назову после пробы на 3 вопросах. По твоему правилу съём только с разрешения.</li>
+<li><b>drive2-бизнес, 3 250 ₽ в месяц.</b> В Алисе drive2 первый, но ты говорил «пока нет». Советую решать после проверки по Новосибирску: может оказаться, что там другая картина.</li>
+</ol>
+<p class="meta">Источники по ChatGPT и движкам: <a href="https://github.com/elmohq/elmo/blob/main/packages/docs/content/blog/chatgpt-ui-reddit-citations-api.mdx">разбор API и приложения</a>, <a href="https://www.frase.io/blog/which-ai-engines-cite-which-sources">Frase, какие движки что цитируют</a>. Блог Elmo продаёт свой продукт и помечен как написанный ИИ.</p>
+</main></body></html>
