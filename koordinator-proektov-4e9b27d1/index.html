@@ -1,0 +1,427 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Агент-координатор: разбор</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px;scroll-margin-top:16px}
+header{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+audio{width:100%;max-width:560px}
+.player{display:flex;flex-direction:column;gap:6px}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.warn{background:var(--bad-bg);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.warn b.t{color:var(--bad);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:680px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:500;white-space:nowrap}
+.g{background:var(--good-bg);color:var(--good)}.m{background:var(--mid-bg);color:var(--mid)}.b{background:var(--bad-bg);color:var(--bad)}.n{background:var(--none-bg);color:var(--none)}
+.stages{display:flex;flex-direction:column;gap:10px}
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:12px}
+.stage .num{font:700 24px/1.15 var(--f-display);color:var(--accent);font-variant-numeric:tabular-nums}
+.stage .body{display:flex;flex-direction:column;gap:7px;min-width:0}
+.stage .row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:8px;font-size:14.5px}
+.stage .row>span:first-child{color:var(--muted);font-size:13px;padding-top:1px}
+.gate{border-top:1px dashed var(--line);padding-top:8px;margin-top:2px}
+.gap{color:var(--bad)}
+pre{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;font:13px/1.55 var(--f-mono)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;display:grid;grid-template-columns:32px minmax(0,1fr);gap:8px}
+.q b.n1{font:700 20px/1.3 var(--f-display);color:var(--accent)}
+.q .rec{color:var(--good);font-size:14.5px}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+@media (max-width:520px){.stage{grid-template-columns:minmax(0,1fr);row-gap:6px}.stage .row{grid-template-columns:minmax(0,1fr);gap:0}.verdict{padding:16px}}
+</style></head><body><div class="wrap">
+
+<header>
+  <div class="eyebrow">Разбор для Артёма · 07.11.2026</div>
+  <h1>Агент-координатор и регламент работ</h1>
+  <p class="lead">Что я изучил, как у нас идёт SEO-переделка сайта по этапам, что готового есть на GitHub и как поставить разработку.</p>
+  <div class="player">
+    <audio controls preload="none" src="itog.mp3"></audio>
+    <span class="note">Послушать итог голосом</span>
+  </div>
+  <nav class="toc" aria-label="Разделы">
+    <a href="#kurs">Курс</a><a href="#kolmakov">Модель</a><a href="#seychas">Где мы сейчас</a><a href="#payplayn">Пайплайн SEO</a><a href="#produkty">Другие продукты</a><a href="#klassika">Классика</a><a href="#github">GitHub</a><a href="#agent">Агент</a><a href="#razrabotka">Разработка</a><a href="#resheniya">Твои решения</a>
+  </nav>
+</header>
+
+<div class="verdict">
+  <b class="big">Тебе нужен координатор: это прямая должность из модели Колмакова. Часть роли уже есть в <code>prodzhekt</code>, не хватает трёх вещей: единого регламента, карточки проекта и расписания, которое запускает его каждый день.</b>
+  <ul class="list">
+    <li>Курс в базе нашёл, но <b>прочитать не смог: сервер базы лежит</b>. Модель ниже собрана из открытых источников, это черновик.</li>
+    <li>Этапы и исполнители у нас в основном есть. Никто не отвечает за передачу между ними.</li>
+    <li>Агент <code>prodzhekt</code> за 30 дней не запускали ни разу, а его план по EV Sibir стоит с 25.10. Отсюда главное требование: роль работает по расписанию.</li>
+    <li>Готового агента под рекламное агентство на GitHub я не нашёл. Движки есть: Archon и Paperclip. Первым проверил бы Archon.</li>
+    <li>Водопад подходит всему до запуска сайта. После запуска SEO идёт регулярным циклом, его тоже можно жёстко зарегламентировать.</li>
+  </ul>
+</div>
+
+<section id="kurs">
+  <h2>Что с курсом</h2>
+  <div class="warn">
+    <b class="t">Задачу «изучить полностью» я не выполнил</b>
+    <p>База отвечает на соединение и молчит: HTTPS виснет на первом шаге, SSH не отдаёт приветствие. С мака и с VPS картина одна: все попытки за 25 минут дали ответ 000. Похоже, упал сервер базы, наша сеть работает: GitHub отвечал 200. Я оставил автопроверку на 45 минут, но база на чужом сервере, и поднять её может только её владелец. Локальной копии курса на маке я не нашёл.</p>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>Вопрос</th><th>Что установил</th><th>Статус</th></tr></thead>
+    <tbody>
+      <tr><td>Что за курс</td><td>Михаил Колмаков, «Академия системного бизнеса», компания ДНК Бизнеса</td><td><span class="tag g">проверено</span></td></tr>
+      <tr><td>Где лежит</td><td>Раздел 07 базы, папка <code>kolmakov-akademiya-sistemnogo-biznesa</code>: 1 файл, 106 фрагментов, 1,3 МБ. Нашёл по копии оглавления в старой сессии</td><td><span class="tag g">проверено</span></td></tr>
+      <tr><td>Что внутри</td><td>По оглавлению базы это пакет «Руководитель»: идеальный координатор, проблемы собственника, 13 качеств, тайм-менеджмент</td><td><span class="tag m">только оглавление</span></td></tr>
+      <tr><td>Весь ли это курс</td><td>Похоже, часть. В открытых описаниях программы от 16 до 18 модулей, среди них регламенты, KPI, CRM, найм. Модулей по регламентам и KPI в базе может не быть</td><td><span class="tag m">проверить, когда база оживёт</span></td></tr>
+      <tr><td>«Академия системного маркетинга»</td><td>Курса с таким названием я не нашёл ни в базе, ни в сети. Считаю, что ты говорил про этот же курс</td><td><span class="tag n">вопрос 1</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="kolmakov">
+  <h2>Что понял про модель</h2>
+  <p>Источники: архивная вакансия координатора ДНК Система (2020), интервью Колмакова на РБК (2023, рекламный материал), отзывы. Текст самого курса я не видел. Сливы курса не открывал.</p>
+  <div class="two">
+    <div class="card"><h3>1. Дорожная карта</h3><p>Аналитик за день погружается в бизнес, находит проблемы и предлагает решения.</p></div>
+    <div class="card"><h3>2. Постановка задач</h3><p>Проблемы группируют, назначают даты и ответственных, расставляют приоритеты.</p></div>
+    <div class="card"><h3>3. Внедрение</h3><p>Координатор, он же project-менеджер, каждый день контролирует внедрение вместе с топ-менеджером и владельцем. Обычно это занимает около 6 месяцев.</p></div>
+  </div>
+  <p>Перед внедрением ДНК разбирает, какие функции собственника можно передать координатору. Колмаков называет его полным заместителем предпринимателя по операционным вопросам.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Что делает координатор у Колмакова</th><th>Что это значит у нас</th><th>Сейчас у нас</th></tr></thead>
+    <tbody>
+      <tr><td>Помогает сформировать цели и стратегию</td><td>Цель и «точка А» в карточке каждого проекта</td><td><span class="tag m">частично</span> разделы в админках, план EV</td></tr>
+      <tr><td>Контролирует сроки выполнения задач</td><td>Срок на каждом этапе, просрочка видна каждое утро</td><td><span class="tag b">нет</span> сроков по этапам нет</td></tr>
+      <tr><td>Не даёт сотрудникам уйти от задачи</td><td>Этап закрывает только проверка, слова агента «готово» мало</td><td><span class="tag m">частично</span> проверки есть, связки с этапом нет</td></tr>
+      <tr><td>Проводит планёрки с топ-менеджерами</td><td>Ежедневный обход главных: <code>site-lead</code>, <code>seo-lead</code>, <code>glavred</code>, <code>product-lead</code></td><td><span class="tag b">нет</span> главные не работают по расписанию</td></tr>
+      <tr><td>Курирует и пишет регламенты</td><td>Владеет файлом регламента, правки вносит через главного по скиллам</td><td><span class="tag m">частично</span> правила разбросаны по скиллам</td></tr>
+      <tr><td>Размещает вакансии и проводит собеседования</td><td>Замечает провал участка и ставит задачу завести нового агента</td><td><span class="tag m">частично</span> правило есть только у <code>seo-lead</code></td></tr>
+      <tr><td>Вводит ритуалы, карту взаимодействия отделов, дашборды (из отзыва, не проверено)</td><td>Утренний обход, разбор недели, карта передач</td><td><span class="tag m">частично</span> отчёты Фёдора и Секретаря</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Что учесть из отзывов.</b> Клиенты пишут про текучку координаторов и про то, что в итоге всё делали сами по их шаблонам. Отзывы анонимные, я их не проверял. Для агента вывод такой: его работа оценивается снятой с тебя нагрузкой, и письма тебе без готовой рекомендации считаются его браком. Текучка агенту не грозит, поэтому его опыт надо хранить в файлах.</p>
+</section>
+
+<section id="seychas">
+  <h2>Где мы сейчас</h2>
+  <div class="facts">
+    <div class="fact"><b>23 из 80</b><span>проектов со статусом «Ждёт меня», ещё 12 со статусом «?». Реестр Штаба, 07.11</span></div>
+    <div class="fact"><b>0</b><span>запусков <code>prodzhekt</code> за 30 дней из 156 чатов</span></div>
+    <div class="fact"><b>12</b><span>чатов с <code>site-lead</code> за те же 30 дней. <code>deploy-check</code> звали в 28</span></div>
+    <div class="fact"><b>2</b><span>плана на один проект EV Sibir: один ведёт <code>prodzhekt</code>, другой Фёдор</span></div>
+  </div>
+  <p class="note">Счёт по основным файлам чатов на маке. Чаты больше 60 МБ, вложенные агенты и запуски по расписанию в него не вошли, поэтому цифры по агентам могут быть немного занижены.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Кто</th><th>За что отвечает</th><th>Когда работает</th><th>Чего не делает</th></tr></thead>
+    <tbody>
+      <tr><td><b>Фёдор</b></td><td>Реестр всех проектов: что где лежит, живы ли адреса</td><td>Каждый день, 09:00</td><td>Не ведёт этапы и передачи</td></tr>
+      <tr><td><b>Секретарь</b></td><td>Отчёт дня, задачи дня</td><td>Каждый вечер, 21:30</td><td>Смотрит назад, вперёд работу не двигает</td></tr>
+      <tr><td><b><code>prodzhekt</code></b></td><td>Картина одного проекта, план по неделям</td><td>Только если позвать, и его не зовут</td><td>Только читает, запускать других не может</td></tr>
+      <tr><td><b>Главные</b>: <code>site-lead</code>, <code>seo-lead</code>, <code>glavred</code>, <code>product-lead</code></td><td>Качество работы в своём участке</td><td>Когда идёт работа в чате</td><td>Не отвечают за стыки и общий срок</td></tr>
+      <tr><td><b>Главный по разработке</b>: <code>expert-work-orchestrator</code></td><td>Шаги, проверки, ревизия кода</td><td>Когда идёт разработка</td><td>Не ведёт клиентские проекты</td></tr>
+      <tr><td><b>Главный по скиллам</b>: <code>создание-скиллов</code></td><td>Как создавать агентов и скиллы</td><td>По запросу</td><td>Не следит за тем, работают ли они потом</td></tr>
+    </tbody>
+  </table></div>
+  <p>Отдельного человека за передачу между ролями нет. Им работаешь ты: помнишь этап, зовёшь следующего, спрашиваешь, что встало. Новый координатор должен забрать именно это. Его часть: кто, когда, на каком этапе, кому передать. Как делать работу внутри участка, решают главные.</p>
+</section>
+
+<section id="payplayn">
+  <h2>Пайплайн: сайт на SEO-переделку</h2>
+  <p>Черновик для нашего прохода по шагам. Я собрал его из текущих скиллов и истории проектов. <span class="gap">Красным</span> отмечены места, где владельца или проверки сегодня нет. Сроков здесь пока нет: их поставим вместе с журналом «прогноз и факт».</p>
+  <div class="stages">
+
+    <div class="stage"><div class="num">0</div><div class="body"><h3>Заявка и договорённость</h3>
+      <div class="row"><span>Подэтапы</span><span>Разговор, цель клиента, регион, смета, цена, оффер, КП, договор, первый платёж</span></div>
+      <div class="row"><span>Кто</span><span>Артём, <code>prodavec</code>, <code>product-lead</code> (смета), <code>hormozi</code> (оффер)</span></div>
+      <div class="row"><span>На выходе</span><span>Паспорт проекта: цель, объём, цена, ответственный со стороны клиента</span></div>
+      <div class="row gate"><span>Ворота</span><span>Договор и платёж есть, цель записана. <span class="gap">В скиллах и агентах порядка договора и первого платежа я не нашёл.</span></span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">1</div><div class="body"><h3>Доступы и точка А</h3>
+      <div class="row"><span>Подэтапы</span><span>Домен, хостинг, Метрика, Вебмастер, Search Console, боевой или тестовый сайт, цифры «до», список старых адресов</span></div>
+      <div class="row"><span>Кто</span><span><code>yandex-dannye</code> (цифры), <code>site-tech</code> (техника), Артём (доступы от клиента)</span></div>
+      <div class="row"><span>На выходе</span><span>Снимок «до» с датами и источниками, у кого A-запись домена</span></div>
+      <div class="row gate"><span>Ворота</span><span>Цифры сняты или честно названы пробелом. <span class="gap">Единого списка доступов в скиллах я не нашёл.</span></span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">2</div><div class="body"><h3>Исследование и спрос</h3>
+      <div class="row"><span>Подэтапы</span><span>Компания, конкуренты, отзывы, спрос, выдача, техника сайта. Глубина зависит от чека</span></div>
+      <div class="row"><span>Кто</span><span><code>исследование-бренда</code> (16 агентов, по «да»), <code>seo-lead</code>, XMLRiver до 150 ₽ на задачу</span></div>
+      <div class="row"><span>На выходе</span><span>Что продавать, спрос по услугам, что мешает сайту</span></div>
+      <div class="row gate"><span>Ворота</span><span>Выводы проверены независимо, техника разобрана раньше контента</span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">3</div><div class="body"><h3>Карта сайта</h3>
+      <div class="row"><span>Подэтапы</span><span>Дерево страниц, ЧПУ, тип каждой страницы, спрос и каннибализация, таблица 301</span></div>
+      <div class="row"><span>Кто</span><span><code>site-map</code>, <code>seo-lead</code> (порог спроса), под управлением <code>site-lead</code></span></div>
+      <div class="row"><span>На выходе</span><span>Карта ссылкой, таблица «старый адрес → новый»</span></div>
+      <div class="row gate"><span>Ворота</span><span>Первое «да» Артёма. Урок gaz-mag: без карты сайт уехал с тильдовскими адресами</span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">4</div><div class="body"><h3>Смыслы, тексты, прототип</h3>
+      <div class="row"><span>Подэтапы</span><span>Бриф, оффер, план блоков, SEO-задание на каждую страницу, тексты, чёрно-белый прототип</span></div>
+      <div class="row"><span>Кто</span><span><code>marketolog</code>, <code>hormozi</code>, <code>site-seo</code>, <code>copywriting</code>, <code>stop-slop</code>, <code>site-prototype</code></span></div>
+      <div class="row"><span>На выходе</span><span>Прототип ссылкой с настоящим текстом и логикой блоков</span></div>
+      <div class="row gate"><span>Ворота</span><span>Второе «да» Артёма, до вёрстки. <span class="gap">Когда смотрит клиент и сколько кругов правок, в скиллах не задано.</span></span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">5</div><div class="body"><h3>Дизайн и сборка</h3>
+      <div class="row"><span>Подэтапы</span><span>Astro и Preact, страницы, формы, источник заявки, WebP, 301 в коде, админка</span></div>
+      <div class="row"><span>Кто</span><span><code>site-lead</code>, <code>admin-builder</code>, <code>change-reviewer</code></span></div>
+      <div class="row"><span>На выходе</span><span>Тестовый сайт на Pages, закрытый от индекса</span></div>
+      <div class="row gate"><span>Ворота</span><span>Сборка и гейты прошли. <span class="gap">Правило «верстаем после второго да» записано только словами, машинной проверки нет.</span></span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">6</div><div class="body"><h3>Проверка перед показом</h3>
+      <div class="row"><span>Подэтапы</span><span>SEO страниц, техника, формы, магазин или лендинг, закон, защита</span></div>
+      <div class="row"><span>Кто</span><span><code>site-seo</code>, <code>site-tech</code>, <code>site-forms</code>, <code>site-shop</code> или <code>site-landing</code>, <code>юр-проверка-сайта</code>, <code>защита-сайта</code></span></div>
+      <div class="row"><span>На выходе</span><span>Сводка PASS или FAIL с доказательствами</span></div>
+      <div class="row gate"><span>Ворота</span><span>Нет красных пунктов, путь заявки пройден на живом адресе</span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">7</div><div class="body"><h3>Согласование с клиентом</h3>
+      <div class="row"><span>Подэтапы</span><span>Показ, сбор правок, разделение на правки и новый объём, контент от клиента, акт этапа</span></div>
+      <div class="row"><span>Кто</span><span>Артём, координатор ведёт список</span></div>
+      <div class="row"><span>На выходе</span><span>Письменное «да» клиента</span></div>
+      <div class="row gate"><span>Ворота</span><span class="gap">Порядка согласования с клиентом в скиллах я не нашёл. 2 карточки в реестре сейчас стоят со статусом «Ждёт клиента».</span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">8</div><div class="body"><h3>Вывод в бой</h3>
+      <div class="row"><span>Подэтапы</span><span>Чек-лист до, переключение, чек-лист после, копии на отдельный сервер, 48 часов наблюдения</span></div>
+      <div class="row"><span>Кто</span><span><code>site-lead</code>, <code>deploy-check</code>, <code>site-tech</code>, <code>site-forms</code>, <code>yandex-dannye</code></span></div>
+      <div class="row"><span>На выходе</span><span>Боевой сайт, 301 проверены живьём, заявка дошла</span></div>
+      <div class="row gate"><span>Ворота</span><span>Слово Артёма. Техдолга в бою нет: всё работает или не выкатываем</span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">9</div><div class="body"><h3>Индексация и приёмка, 30 дней</h3>
+      <div class="row"><span>Подэтапы</span><span>Зеркало, sitemap, старые адреса, переобход, индекс, первые заявки</span></div>
+      <div class="row"><span>Кто</span><span><code>yandex-dannye</code>, <code>seo-lead</code>, <code>site-tech</code></span></div>
+      <div class="row"><span>На выходе</span><span>Отчёт на 7, 14 и 30 день</span></div>
+      <div class="row gate"><span>Ворота</span><span>Индекс и заявки сверены с точкой А. <span class="gap">Контрольных дат нет. EV Sibir: через месяц после переноса в индексе Яндекса было 23 старых адреса, 21 из них отдавал 404.</span></span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">10</div><div class="body"><h3>Регулярное SEO, цикл</h3>
+      <div class="row"><span>Подэтапы</span><span>Понедельник цифры, вторник – четверг выкладка, пятница докрутка. Раз в месяц отчёт клиенту и пересмотр приоритетов</span></div>
+      <div class="row"><span>Кто</span><span><code>seo-lead</code>, <code>glavred</code>, <code>sayt-seo</code>, <code>linkbilding</code>, <code>uluchsheniya</code></span></div>
+      <div class="row"><span>На выходе</span><span>Месячный отчёт с заявками и следующим планом</span></div>
+      <div class="row gate"><span>Ворота</span><span>Цифры с датой и источником. <span class="gap">Шаблона месячного отчёта клиенту в скиллах я не нашёл. В плане EV ритм записан, а файл с 25.10 никто не обновлял.</span></span></div>
+    </div></div>
+
+    <div class="stage"><div class="num">11</div><div class="body"><h3>Разбор и уроки</h3>
+      <div class="row"><span>Подэтапы</span><span>Прогноз против факта, часы и деньги, ошибки, что внести в скиллы</span></div>
+      <div class="row"><span>Кто</span><span><code>site-mentor</code>, <code>product-lead</code>, координатор</span></div>
+      <div class="row"><span>На выходе</span><span>Строка в журнале прогнозов, правки стандартов после твоего «да»</span></div>
+      <div class="row gate"><span>Ворота</span><span>Правило «одна ошибка – один раз» закрыто. <span class="gap"><code>site-mentor</code> звали в 2 чатах за 30 дней.</span></span></div>
+    </div></div>
+  </div>
+</section>
+
+<section id="produkty">
+  <h2>Другие продукты</h2>
+  <p>Ты хочешь прийти к водопаду везде. До запуска это верно. После запуска поисковик и рынок меняются сами, и заранее расписанный план устаревает. Там я предлагаю фиксированный цикл: шаги и даты неизменны, меняются задачи внутри. Гибкость без регламента брать незачем.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Продукт</th><th>Режим</th><th>Этапы от SEO-переделки</th><th>Что не решено</th></tr></thead>
+    <tbody>
+      <tr><td>SEO-переделка</td><td><span class="tag g">водопад + цикл</span></td><td>Все 0–11</td><td>Красные места выше</td></tr>
+      <tr><td>Новый сайт, визитка</td><td><span class="tag g">водопад</span></td><td>Без старых адресов и части точки А</td><td>Этапы договора и согласования</td></tr>
+      <tr><td>Лендинг под рекламу</td><td><span class="tag g">водопад</span>, затем тесты</td><td>Короткие 3–4, вместо 6 проверка <code>site-landing</code></td><td>A/B-тесты отложены с 06.11</td></tr>
+      <tr><td>Магазин из шаблона</td><td><span class="tag g">водопад</span></td><td>Стадия 1 описана, донор → сайт</td><td>Стадии 2+ не решены с 30.10</td></tr>
+      <tr><td>ЛК и админка</td><td><span class="tag g">водопад</span></td><td>Разведка, эталон, шаги, приёмка через <code>admin-builder</code></td><td>Переход в сопровождение</td></tr>
+      <tr><td>Контент и соцсети</td><td><span class="tag m">цикл</span></td><td>Тема, задание, текст, проверка, «да», выход, цифры</td><td>Часть площадок только заводится</td></tr>
+      <tr><td>Реклама</td><td><span class="tag m">цикл</span></td><td>Оффер, объявления, тестовый бюджет, замер, решение</td><td><span class="gap">Агента на запуск и ведение кабинетов нет</span></td></tr>
+      <tr><td>Новый продукт, эксперимент</td><td><span class="tag n">короткие проверки</span></td><td>Гипотеза, проверка, решение</td><td>Здесь водопад вреден: ты ещё не знаешь, что строишь</td></tr>
+      <tr><td>Личные дела</td><td><span class="tag n">позже</span></td><td>Входящие, следующее действие, неделя, разбор</td><td>Только в закрытом контуре, отдельно от клиентов</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="klassika">
+  <h2>Что берём из менеджмента</h2>
+  <p>Ты прав: всё это давно придумано. Описываю по известным первоисточникам, для регламента нам хватит семи вещей.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Подход</th><th>Суть</th><th>Что применим</th></tr></thead>
+    <tbody>
+      <tr><td><b>Файоль, 1916</b></td><td>Управление: планировать, организовать, распоряжаться, координировать, контролировать</td><td>Должностная инструкция координатора</td></tr>
+      <tr><td><b>Ганнт, 1910-е</b></td><td>Этапы на шкале времени</td><td>Вид проекта по этапам на странице Штаба</td></tr>
+      <tr><td><b>PDCA, Шухарт и Деминг</b></td><td>Планируй, делай, проверяй, исправляй</td><td>Цикл этапа 10 и разбор этапа 11</td></tr>
+      <tr><td><b>Канбан, Toyota</b></td><td>Лимит работ в процессе, виден затор</td><td>Лимит проектов, ждущих тебя, и очередь решений</td></tr>
+      <tr><td><b>Stage-Gate, Купер</b></td><td>Этап заканчивается воротами: идём, правим или закрываем</td><td>Основа нашего водопада</td></tr>
+      <tr><td><b>RACI</b></td><td>Кто делает, кто отвечает, с кем советуются, кому сообщают</td><td>Строка на каждый этап в регламенте</td></tr>
+      <tr><td><b>Гроув, High Output Management, 1983</b></td><td>Степень контроля зависит от зрелости исполнителя в этой задаче</td><td>Новому агенту полная проверка, проверенному выборочная</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Для личных дел потом подойдёт GTD Аллена. Для планёрок и показателей посмотрим Traction (EOS), когда прочитаем, что предлагает Колмаков, чтобы не смешивать две системы.</p>
+</section>
+
+<section id="github">
+  <h2>Что есть на GitHub</h2>
+  <p>12 поисков и 28 проверенных репозиториев, звёзды на 07.11.2026. Я прочитал README и роли, ничего не запускал. Готового агента, который ведёт SEO-переделку сайта в рекламном агентстве, я не нашёл. Почти всё здесь сделано под разработку софта. Берём движки и отдельные приёмы.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Проект</th><th class="r">Звёзды</th><th>Что это</th><th>Решение</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://github.com/coleam00/Archon">Archon</a></td><td class="r">23 851</td><td>Процесс как YAML: шаги, проверки кодом, ожидание человека, журнал, стоимость. Запускает Claude Code и Codex, есть Telegram. Заявлены не только разработка, но и контент, исследования, операции</td><td><span class="tag g">проверить первым</span></td></tr>
+      <tr><td><a href="https://github.com/paperclipai/paperclip">Paperclip</a></td><td class="r">111 864</td><td>Компания из агентов: оргсхема, задачи, ворота согласований, бюджеты, пробуждения по расписанию, телефон. Node и встроенный Postgres</td><td><span class="tag m">второй кандидат</span> приёмы берём сразу</td></tr>
+      <tr><td><a href="https://github.com/smartsheet/cli-agent-power-tools">Smartsheet Power Tools</a></td><td class="r">9</td><td>6 агентов проджекта: узкие места, риски, подготовка планёрки, статус, передача, клон проекта. Привязаны к Smartsheet</td><td><span class="tag g">берём список функций</span></td></tr>
+      <tr><td><a href="https://github.com/sdi2200262/agentic-project-management">APM</a></td><td class="r">2 452</td><td>Planner, Manager, Worker. Состояние в файлах, передача роли в новый чат</td><td><span class="tag g">берём схему передачи</span></td></tr>
+      <tr><td><a href="https://github.com/spec-kitty/spec-kitty">Spec Kitty</a></td><td class="r">1 716</td><td>Статусы работы, ворота проверки, разбор после каждого задания, правила в репозитории</td><td><span class="tag g">берём разбор и статусы</span></td></tr>
+      <tr><td><a href="https://github.com/gastownhall/beads">Beads</a></td><td class="r">28 568</td><td>Граф задач для агентов: что свободно, кто взял, что разблокировалось</td><td><span class="tag m">берём идею «взять задачу»</span></td></tr>
+      <tr><td><a href="https://github.com/msitarzewski/agency-agents">agency-agents</a></td><td class="r">167 027</td><td>Большой набор ролей, есть Project Shepherd и Studio Producer. Роли общие, с целями вроде «95% в срок» без механизма</td><td><span class="tag n">только шаблон паспорта</span></td></tr>
+      <tr><td><a href="https://github.com/bmad-code-org/BMAD-METHOD">BMAD</a></td><td class="r">55 097</td><td>Метод разработки: от идеи через план к проверке. Модуль маркетинга отдельный, 33 звезды, под SaaS</td><td><span class="tag n">не нужен</span> закрыт нашими скиллами</td></tr>
+      <tr><td><a href="https://github.com/github/spec-kit">Spec Kit</a>, <a href="https://github.com/gsd-build/get-shit-done">GSD</a>, <a href="https://github.com/obra/superpowers">Superpowers</a></td><td class="r">148 292, 64 157, 313 829</td><td>Процесс написания кода по заданию</td><td><span class="tag n">не наша задача</span></td></tr>
+      <tr><td><a href="https://github.com/zubair-trabzada/ai-agency-claude">ai-agency-claude</a></td><td class="r">162</td><td>Одна команда запускает 5 аудитов бизнеса и собирает КП. Проектов не ведёт</td><td><span class="tag n">идея для предпродажи</span></td></tr>
+      <tr><td><a href="https://github.com/makeplane/plane">Plane</a>, <a href="https://github.com/hcengineering/platform">Huly</a></td><td class="r">62 109, 28 065</td><td>Открытые аналоги Jira и Linear</td><td><span class="tag n">позже</span> когда появятся люди-исполнители</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Какие приёмы берём сразу</h3>
+  <ul class="list">
+    <li><b>Код решает, готово ли.</b> Archon закрывает цикл по результату команды, агент только судит внутри шага. Для нас это гейты: 301, WebP, формы.</li>
+    <li><b>Один пункт внимания.</b> Что случилось, почему важно, рекомендация, варианты. Так координатор пишет тебе, и ты можешь ответить голосом по номеру.</li>
+    <li><b>Сначала чтение, потом запись.</b> В Smartsheet доверие строят по порядку: читает, предлагает, делает. Сразу давать агенту права на запись они не советуют.</li>
+    <li><b>Один исполнитель на задачу.</b> В Paperclip задачу берут атомарно. У нас 03.11 две сессии Фёдора правили одну карточку, и снятый вопрос вернулся.</li>
+    <li><b>Состояние живёт в файлах.</b> В APM новый чат подхватывает роль из файлов, поэтому смерть сессии ничего не ломает.</li>
+  </ul>
+</section>
+
+<section id="agent">
+  <h2>Каким должен быть агент</h2>
+  <p>Рабочее название: <code>koordinator</code>. Он заменяет <code>prodzhekt</code>: сбор картины проекта становится одним из его режимов. Четвёртый отчётный агент рядом с Фёдором и Секретарём тебе не нужен. Фёдор отвечает за портфель, Секретарь за день, главные за качество участка.</p>
+  <div class="two">
+    <div class="card"><h3>Цель должности</h3><p>Проекты идут по этапам в срок, а тебе приходят только решения, которые можешь принять ты один.</p></div>
+    <div class="card"><h3>Почему нужны часы</h3><p>Субагент живёт один запуск и сам не просыпается, запускать других тоже не может. Поэтому координатор работает главной сессией по расписанию, а исполнителей вызывает сам. Так уже сделан Фёдор, а <code>prodzhekt</code> так не сделан.</p></div>
+  </div>
+  <h3>Ритуалы</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Когда</th><th>Что делает</th><th>Что получаешь ты</th></tr></thead>
+    <tbody>
+      <tr><td>Утро, после Фёдора</td><td>Обходит карточки, сверяет с git, живым адресом и данными, запускает передачи</td><td>Одно сообщение: что встало и какие 1–5 решений нужны</td></tr>
+      <tr><td>Конец этапа</td><td>Запускает проверку ворот, при PASS передаёт следующему, при FAIL возвращает с замечаниями</td><td>Ничего, если прошло. «Да» на этапах 3, 4, 8</td></tr>
+      <tr><td>Просрочка или круг правок</td><td>Спрашивает владельца участка о причине, предлагает решение</td><td>Один пункт с рекомендацией</td></tr>
+      <tr><td>Пятница</td><td>Разбор недели: прогноз и факт, затор, повторяющиеся сбои</td><td>Голос и страница</td></tr>
+      <tr><td>Участок провалился второй раз</td><td>Ставит задачу главному по скиллам на доработку или нового агента</td><td>Предложение: внести или нет</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Права</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Сам</th><th>Спрашивает тебя</th><th>Никогда</th></tr></thead>
+    <tbody>
+      <tr><td>Читает проекты, ведёт карточки, запускает проверки и агентов на чтение, задаёт срок внутри этапа, перезапускает упавший шаг один раз</td><td>Ворота на этапах 3, 4, 8, новый объём, траты сверх разрешённых, смена приоритета между проектами, запуск исполнителя с правом записи на первом месяце</td><td>Пишет клиенту, публикует, грузит в Тильду, переключает домены, платит, правит код и скиллы сам</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Карточка проекта</h3>
+  <p>Один файл на проект рядом с реестром Штаба. Проект ссылается на версию регламента. Пример ниже условный, значения не настоящие. Запись только через скрипт с блокировкой: один писатель на карточку.</p>
+  <pre>{
+  "proekt": 16,
+  "reglament": "seo-peredelka@1",
+  "cel": "заявки с поиска: было / цель, дата и источник",
+  "etap": 9,
+  "vladelec": "seo-lead",
+  "srok": "2026-12-05",
+  "zhdyot": null,
+  "vorota": [{"etap": 8, "itog": "PASS", "dokazatelstvo": "ссылка", "data": "..."}],
+  "sobytiya": [{"data": "...", "kto": "site-tech", "chto": "FAIL: 21 адрес отдаёт 404"}]
+}</pre>
+  <h3>Как поймём, что он работает</h3>
+  <ul class="list">
+    <li>Сколько дней проект стоит на этапе и сколько из них ждёт тебя, клиента или агента.</li>
+    <li>Сколько раз этап вернули на доработку и на каких воротах это происходит чаще.</li>
+    <li>Точность сроков: прогноз против факта в журнале.</li>
+    <li>Сколько раз ты сам напомнил ему о проекте. Цель: ноль.</li>
+    <li>Сколько сообщений тебе пришло без рекомендации. Цель: ноль.</li>
+  </ul>
+  <p class="note">Предел проверки: метрики покажут движение и форму. Правильно ли выбран приоритет и нужен ли проект вообще, решаешь ты.</p>
+</section>
+
+<section id="razrabotka">
+  <h2>Как поставить разработку</h2>
+  <p>Порядок важен: сначала регламент, потом агент, потом автоматика. Агент без регламента будет следить за тем, чего нет.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Шаг</th><th>Кто ведёт</th><th>Что делаем</th><th>Как поймём, что готово</th></tr></thead>
+    <tbody>
+      <tr><td><b>1. Курс</b></td><td>Я, когда база оживёт</td><td>Читаем 106 фрагментов, выжимка координатора и 13 качеств, сверка с этой страницей</td><td>Выжимка с цитатами. Что не сошлось, правим здесь</td></tr>
+      <tr><td><b>2. Проход с тобой</b></td><td>Ты и я</td><td>Идём по этапам 0–11: что верно, что поменять, кто отвечает, сроки. Закрываем красное</td><td>Регламент v1, твоё «да» по каждому этапу</td></tr>
+      <tr><td><b>3. Архитектура</b></td><td>Главный по разработке: <code>agent-system-architecture</code>, <code>architecture-reviewer</code>, <code>verify-plan</code></td><td>Карточка, запуск, блокировка, где живёт, проба Archon на этапе 6</td><td>Независимый PASS. Решение записано в РЕШЕНИЯ Штаба</td></tr>
+      <tr><td><b>4. Роль</b></td><td>Главный по скиллам: <code>создание-скиллов</code> и <code>skill-authoring.md</code></td><td>Сначала чиним его ссылки (внизу). Агент: твои слова в триггерах, примеры из истории, запрет и разрешение, самопроверка</td><td>Тестовые фразы запускают нужного агента, соседние его не трогают</td></tr>
+      <tr><td><b>5. Код</b></td><td>Главный по разработке, шаги до 3 файлов</td><td>Регламент данными, карточка, валидатор ворот, утренний обход</td><td>Тесты. Валидатор краснеет на примерах EV Sibir и gaz-mag. <code>change-reviewer</code></td></tr>
+      <tr><td><b>6. Тень</b></td><td>Координатор, только чтение</td><td>2 недели на живом проекте: пишет, что сделал бы. Сравниваем с тем, что было на деле</td><td>Твоя оценка каждого утреннего письма</td></tr>
+      <tr><td><b>7. Передачи</b></td><td>Координатор, с твоим подтверждением</td><td>Запускает исполнителей после «да», потом часть ворот без тебя</td><td>Месяц без пропущенной передачи и без лишних действий</td></tr>
+      <tr><td><b>8. Расширение</b></td><td>Главные и координатор</td><td>Другие продукты по одному, потом закрытый контур личных дел</td><td>Регламент на каждый продукт</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Прогноз до рабочего агента в тени</h3>
+  <div class="facts">
+    <div class="fact"><b>2,5 / 4,5 / 9 ч</b><span>моё активное время: быстро, вероятно, долго. PERT ≈ 4,9 ч</span></div>
+    <div class="fact"><b>2–3 ч</b><span>твоё время: проход по этапам и ответы</span></div>
+    <div class="fact"><b>≈ 3 недели</b><span>календарь с двумя неделями тени</span></div>
+    <div class="fact"><b>?</b><span>стоимость модели на ежедневный обход посчитаем на тени</span></div>
+  </div>
+  <p class="note">Ломают оценку: база не оживёт, и курс придётся доставать иначе; Archon подойдёт или нет; твои ответы растянут календарь. Код мы обычно делаем быстрее прогноза, а роли и регламенты дольше: скилл продакта занял 2 ч 45 мин, поэтому запас я оставил.</p>
+</section>
+
+<section id="resheniya">
+  <h2>Твои решения</h2>
+  <div class="stages">
+    <div class="q"><b class="n1">1</b><div><p><b>Курс.</b> Напишешь владельцу базы, чтобы поднял сервер, или пришлёшь файлы курса? «Академия системного маркетинга» и «системного бизнеса» – это один курс? Есть ли у тебя модули про регламенты и KPI?</p><p class="rec">Предлагаю: напиши владельцу базы, а я тем временем не жду и иду дальше.</p></div></div>
+    <div class="q"><b class="n1">2</b><div><p><b>Заменяем <code>prodzhekt</code> координатором?</b></p><p class="rec">Предлагаю: да. Две одинаковые роли опять разойдутся.</p></div></div>
+    <div class="q"><b class="n1">3</b><div><p><b>Имя.</b> Координатор или человеческое имя, как у Фёдора?</p><p class="rec">Предлагаю: выбери сам, ты будешь звать его голосом.</p></div></div>
+    <div class="q"><b class="n1">4</b><div><p><b>Проект для первого прохода и тени.</b> Какой сайт сейчас идёт как SEO-переделка?</p><p class="rec">Предлагаю: Тычинку, она стоит на КП на новый сайт и SEO, и мы пройдём её с этапа 0. Balance проверит этапы 7–9: старый сайт там ещё в бою. EV Sibir подойдёт для этапов 9–11.</p></div></div>
+    <div class="q"><b class="n1">5</b><div><p><b>Когда идём по этапам?</b> Этап 0 и договор затрагивают только тебя, их я один не напишу.</p><p class="rec">Предлагаю: начать в этом чате с этапа 0, не дожидаясь курса.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Что нашёл попутно</h2>
+  <p>Не чинил, записал.</p>
+  <ul class="list">
+    <li><code>создание-скиллов</code> ссылается на методику в папке другого компьютера, такого пути нет. Заказчик в тексте скилла указан как Юрий. Главного по скиллам надо привести в порядок первым.</li>
+    <li><code>expert-work-orchestrator</code> отправляет SEO в <code>seo-orchestrator-core</code>, такого скилла на маке нет. Для поиска скиллов <code>find-skills</code> там уже помечен как не установленный.</li>
+    <li>В плане EV Sibir дни недели сбиты: «Пн 27.10» приходится на вторник. Файл с 25.10 не обновляли, хотя в нём написано обновлять по пятницам.</li>
+    <li>Бот Фёдора <code>com.artem.shtab-bot</code> в списке запущенных служб не значится. Карточка 65 стоит как «Ждёт меня». Канал сообщений координатора надо выбрать осознанно.</li>
+    <li>База знаний лежит на чужом сервере, и своей копии курсов у нас нет. Сегодня это остановило работу, резервную копию стоит обсудить с её владельцем.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Источники</h2>
+  <ul class="list note">
+    <li>Наши файлы: скиллы и агенты, реестр и решения Штаба, память, планы EV Sibir, чаты за 30 дней.</li>
+    <li><a href="https://vo.plus.rbc.ru/partners/64ca1d037a8aa901b1450c30">Интервью Колмакова на РБК, 2023</a>, рекламный материал ООО «ДНК Бизнеса».</li>
+    <li><a href="https://web.archive.org/web/20200725120325/http://marketingdnk.ru:80/coordinator">Вакансия координатора ДНК Система, снимок 2020 года</a>.</li>
+    <li><a href="https://rabotaip.ru/training-and-consulting/dnk-biznesa/">Отзывы о ДНК Бизнеса на rabotaip.ru</a>, анонимные, не проверены.</li>
+    <li>GitHub: README перечисленных проектов, снято 07.11.2026.</li>
+  </ul>
+</section>
+
+</div></body></html>
