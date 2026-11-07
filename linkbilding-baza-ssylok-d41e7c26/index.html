@@ -1,0 +1,178 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>База ссылок: разбор</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Отчёт-документ, как прочие разборы; акцент – красный TEYES Sibir */
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#dedcd6;
+  --accent:#b3261e; --accent-soft:#f7e3e1;
+  --good:#1f7a45; --good-bg:#e1f1e6; --mid:#8a6a00; --mid-bg:#f7eecb; --bad:#a1281b; --bad-bg:#fbe4df; --none:#76767c; --none-bg:#ebebe8;
+  --f-display:"Literata",Georgia,serif; --f-body:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1c1c1f; --ink:#ececee; --muted:#a4a4ab; --line:#2f2f34;
+  --accent:#ff8a80; --accent-soft:#3a1d1b;
+  --good:#7fd6a0; --good-bg:#183a26; --mid:#e6c35c; --mid-bg:#3a3215; --bad:#ff9c8c; --bad-bg:#3a1a16; --none:#9a9aa2; --none-bg:#26262a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1060px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:clamp(23px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:76ch}
+section{display:flex;flex-direction:column;gap:18px}
+.eyebrow{font:500 12px/1 var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+code,.u{font-family:var(--f-mono);font-size:.84em;overflow-wrap:anywhere}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.verdict b.big{font:700 21px/1.3 var(--f-display)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fact{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact b{font:700 26px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+ul.list,ol.list{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;background:var(--surface)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{display:inline-block;min-width:38px;text-align:center;font:600 12px/1.7 var(--f-mono);padding:0 6px;border-radius:4px}
+.pos.top{background:var(--good-bg);color:var(--good)} .pos.mid{background:var(--mid-bg);color:var(--mid)} .pos.no{background:var(--bad-bg);color:var(--bad)}
+.na{color:var(--none);font-size:13px}
+.sev{font:600 11px/1.7 var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.sev.c{background:var(--bad-bg);color:var(--bad)} .sev.m{background:var(--mid-bg);color:var(--mid)} .sev.l{background:var(--none-bg);color:var(--none)} .sev.g{background:var(--good-bg);color:var(--good)}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.dir .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.dir .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tree{font:13.5px/1.75 var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:pre;margin:0}
+.tree .n{color:var(--good);font-weight:500} .tree .k{color:var(--muted)} .tree .x{color:var(--bad)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=search]{font:16px var(--f-body);padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0;flex:1 1 220px}
+#mig td.q{font-size:12.5px;color:var(--muted);min-width:260px}
+#mig td.u{min-width:200px}
+.tbl-wrap{max-height:75vh;overflow:auto}
+.decide{counter-reset:s;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.decide>div{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.decide>div::before{counter-increment:s;content:counter(s);font:700 22px/1.2 var(--f-display);color:var(--accent)}
+.decide p{color:var(--muted);font-size:15px}
+@media (max-width:560px){.wrap{gap:44px}.dir{padding:16px}.verdict b.big{font-size:18px}}
+</style>
+</head><body>
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:14px">
+  <div class="eyebrow">Линкбилдинг · проверка базы · 08.11.2026</div>
+  <h1>«Бесплатная база качественных ссылок»: из 377 сайтов нам подходят 6</h1>
+  <p class="lead">Таблицу скормили линкбилдеру: он проверил каждый домен и занёс результат в свои знания. Источник: лид-магнит чужого SEO-сервиса с кнопкой «Забрать стратегию».</p>
+  <div><b>Послушать итог голосом</b><br><audio controls preload="none" src="itog.mp3" style="width:100%;max-width:520px;margin-top:6px"></audio></div>
+</header>
+
+<div class="verdict">
+  <b class="big">Ссылочную массу эта база не даст.</b>
+  <p>Новая ссылка с возможным весом одна: своя статья на Teletype, 1–2 в месяц. Плюс справочник Новосибирска, точка на карте и страница бренда для Минска. Ничего не зарегистрировано, не опубликовано и не отправлено.</p>
+</div>
+
+<div class="facts">
+  <div class="fact"><b>377</b><span>уникальных доменов (404 строки таблицы)</span></div>
+  <div class="fact"><b>6</b><span>прошли: 4 для РФ, 2 только для Google</span></div>
+  <div class="fact"><b>287</b><span>отклонено с причиной</span></div>
+  <div class="fact"><b>84</b><span>не проверено: антибот, таймаут, DNS</span></div>
+</div>
+
+<section>
+  <h2>Почему база не работает</h2>
+  <ul class="list">
+    <li><b>Нашего рынка в ней нет.</b> Россия стоит первой страной у 8 строк таблицы, это ЖЖ, Teletype, Telegraph и единичные сайты. Адрес одного из них, api.prx.org, оказался американским радио.</li>
+    <li><b>Рейтинг DR ничего не гарантирует.</b> Из 219 доменов с заявленным DR от 70 у 22 сайта уже нет, он продаётся, сменил хозяина или занят чужим контентом.</li>
+    <li><b>Заявленный dofollow часто неправда.</b> Из 28 доменов, где удалось открыть настоящую страницу: подтверждён у 8, опровергнут у 8, примера больше нет у 5, проверить нельзя у 7. У других 349 без регистрации проверить нельзя.</li>
+    <li><b>Dofollow не равен весу.</b> Примеры на Google Groups и Wakelet не находятся ни в Яндексе, ни в Google, у Twitch страница закрыта noindex.</li>
+    <li><b>В выдаче их нет.</b> Ни один не встретился среди 255 адресов топа по 25 снятым запросам Новосибирска и Минска. Ни один не попал и в источники нашего ИИ-замера 06.11. Выборка узкая: это коммерческие запросы, Google без города.</li>
+    <li><b>Приёмы из таблицы опасны.</b> Ключевые слова вместо имени, выдуманные курсы, «псевдокнижки», профили на доменах-подделках под вузы. Все три примера профиля roxannemartin1 уже удалены.</li>
+  </ul>
+  <p class="note">Правила поисковиков: <a href="https://yandex.ru/support/webmaster/en/recommendations/links">Яндекс</a> не учитывает ссылки со спам-сайтов и предупреждает о вреде размещения в спам-каталогах, <a href="https://developers.google.com/search/docs/essentials/spam-policies">Google</a> прямо называет такие приёмы ссылочным спамом.</p>
+</section>
+
+<section>
+  <h2>Что прошло отбор</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Площадка</th><th>Что это даёт</th><th>Кому и куда</th><th>Что мешает</th></tr></thead>
+    <tbody>
+      <tr><td><b>teletype.in</b><br><span class="na">ИКС 3 630, балл 9/15</span></td><td>Статья на своём аккаунте, ссылка без rel. Такую ссылку TEYES Яндекс видит в Вебмастере с 18.05</td><td>TEYES, EV, Автобалл, Минск после переделки</td><td>Правила площадки не прочитаны. У профиля nofollow</td></tr>
+      <tr><td><b>livejournal.com</b><br><span class="na">ИКС 10 200, балл 9/15</span></td><td>Своя статья, rel смешанный</td><td>EV, как уже в календаре</td><td>Новый журнал проверится только первым постом</td></tr>
+      <tr><td><b>nsk.auto2.info</b><br><span class="na">ИКС 220, балл 9/15</span></td><td>Справочник города. Веса нет, ссылка через /out.php. Польза для людей</td><td>TEYES: карточка уже есть. EV: не найдена</td><td>Телефон TEYES на карточке другой, см. решения</td></tr>
+      <tr><td><b>openstreetmap.org</b><br><span class="na">ИКС 2 510, балл 7/15</span></td><td>Настоящая точка на карте, ссылка nofollow</td><td>TEYES, EV, Минск</td><td>Без метки UTM: отступление от нашего правила</td></tr>
+      <tr><td><b>linktr.ee</b><br><span class="na">только Google, балл 5/15</span></td><td>Одна страница бренда</td><td>Минск</td><td>Не масса, только страница бренда</td></tr>
+      <tr><td><b>giphy.com</b><br><span class="na">только Google, балл 5/15</span></td><td>Канал со своими роликами</td><td>Минск, если есть ролики с размытым номером</td><td>Условия канала не проверены</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Позиции целевых страниц не собраны, балл частично оценочный: трафика доноров нет, Keys.so и CheckTrust у нас нет. Teletype и ЖЖ прошли ровно по порогу.</p>
+</section>
+
+<section>
+  <h2>Что отсеяли</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Причина</th><th class="r">Доменов</th></tr></thead>
+    <tbody>
+      <tr><td>Иностранный, без пользы нашему рынку</td><td class="r">170</td></tr>
+      <tr><td>Сетка блогов и закладочников</td><td class="r">38</td></tr>
+      <tr><td>Мёртв</td><td class="r">23</td></tr>
+      <tr><td>Запрещённый приём</td><td class="r">13</td></tr>
+      <tr><td>Русскоязычный, но без пользы</td><td class="r">11</td></tr>
+      <tr><td>Сменил хозяина</td><td class="r">11</td></tr>
+      <tr><td>Захвачен или спам</td><td class="r">11</td></tr>
+      <tr><td>Rel опровергнут</td><td class="r">5</td></tr>
+      <tr><td>Домен продаётся</td><td class="r">4</td></tr>
+      <tr><td>Вход закрыт для РФ</td><td class="r">1</td></tr>
+      <tr><td><b>Всего</b></td><td class="r"><b>287</b></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>От тебя: 6 решений</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>Вопрос</th><th>Что советую</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Первая статья TEYES про сигнализацию на Teletype?</td><td><b>Да, но после цен.</b> Линкбилдер предложил ссылку на /store/signaling. Главная страница сигнализации по разбору 07.11 другая, /services/alarm_installation, и на ней цены спорят: 12 000, 9 000 и 1 500. Сначала твои цены, потом страницу выбирает seo-lead, потом /go/ и Clean-param у site-tech</td></tr>
+      <tr><td>2</td><td>Заменить в календаре EV: Telegraph 22.11 на Teletype, Справкер 02.12 на nsk.auto2.info?</td><td><b>Да.</b> У Telegraph в тексте nofollow, а у Teletype ссылка без rel. На EV /go/ сейчас отдаёт 404, это отдельная задача</td></tr>
+      <tr><td>3</td><td>На auto2 у TEYES стоит номер …945-06-95, основной …437-92-66. Менять?</td><td><b>Да.</b> Подменный номер нужен только в Яндекс Картах, остальным лучше основной</td></tr>
+      <tr><td>4</td><td>Уточнить правило «иностранные доноры – никогда»: карта и одна страница бренда – это не донор, для Google-сайта и без массы?</td><td><b>Да.</b> Это не отмена запрета: на массу он остаётся, цифры выше его подтверждают</td></tr>
+      <tr><td>5</td><td>OpenStreetMap без UTM?</td><td><b>Да.</b> Метка в данных карты выглядит мусором и не нужна для карты</td></tr>
+      <tr><td>6</td><td>84 непроверенных вручную не разбирать, пока домен не появится в выдаче по нашему запросу?</td><td><b>Да.</b> Русской аудитории у них нет даже по заявлению базы</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Что теперь знает линкбилдер</h2>
+  <ul class="list">
+    <li>Все 377 доменов с меткой, причиной, кодом ответа, найденным rel и датой. Похожую базу или площадку из неё заново проверять не будет.</li>
+    <li>Памятка: какие приёмы запрещены и почему, DR не критерий, устаревает 08.02.2027.</li>
+    <li>Два правила: заранее проверять страницу с настоящей внешней ссылкой, а не главную; отсутствие nofollow не значит вес.</li>
+    <li>В свою таблицу площадок попали только прошедшие. Запрет на иностранных доноров не менял, он ждёт твоего решения №4.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Что не проверено</h2>
+  <ul class="list">
+    <li><b>Доступность из России.</b> Сеть мака выходит через Нидерланды. Коды ответа: настоящий сайт у 240, 403 у 59, нет ответа у 20.</li>
+    <li><b>84 домена</b> с меткой «не проверено» и <b>rel у 349 доменов</b>: без регистрации публичного примера нет, регистрироваться запрещено.</li>
+    <li><b>Трафик доноров и позиции наших страниц</b>, Google Search Console.</li>
+    <li><b>Индекс Яндекса</b> снят для 30 доменов шорт-листа: 26 да, 3 нет, 1 нет данных.</li>
+    <li><b>Эффект.</b> Рост позиций не обещаем, проверка через 1–3 месяца по контрольной группе.</li>
+  </ul>
+  <p class="note">Попутно: аккаунт TEYES на Teletype живой (@teyes_sibir), а в реестре редакции он записан как «не заведён», пора поправить. В статье ссылка идёт на старый адрес /teyes, он работает через 301. XMLRiver: 73 запроса, по балансу 7,15 ₽ при расчётной цене 1,83 ₽, баланс общий, поэтому разницу не объясняем. Работа агента заняла 24 минуты при прогнозе 30–40.</p>
+</section>
+</div>
+
+</body></html>
