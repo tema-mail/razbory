@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Прототип – Zeekr 9X, карточка модели – evolutioncar.by</title>
+<style>/* Комплект чёрно-белого прототипа (маркетолог → site-prototype).
+   Прототип показывает смысл, текст, порядок и действие – не дизайн. Цвета только серые; дизайнер делает визуал после «да» владельца.
+   Блок: <section class="w-block" data-n="1" data-name="Первый экран" data-question="вопрос клиента" data-proof="опора"> */
+:root {
+  --ink: #141414; --muted: #5f5f5f; --line: #b9b9b9; --fill: #ececec; --fill2: #f6f6f6; --paper: #ffffff;
+  --note: #fff6c8; --note-line: #c9b44a; --ask: #7a1f1f;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Menlo, Consolas, monospace;
+  --wrap: 1180px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 var(--font); }
+img { max-width: 100%; }
+a { color: var(--ink); }
+h1, h2, h3 { margin: 0; line-height: 1.2; text-wrap: balance; }
+h1 { font-size: clamp(28px, 4.2vw, 46px); }
+h2 { font-size: clamp(22px, 3vw, 32px); }
+h3 { font-size: 18px; }
+p { margin: 0; }
+.w-wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.w-stack { display: grid; gap: 14px; }
+.w-muted { color: var(--muted); }
+
+/* Панель прототипа: переключатели «Логика» и «Комментарии» */
+.w-bar { position: sticky; top: 0; z-index: 50; background: var(--ink); color: #fff; font: 13px/1.3 var(--mono); }
+.w-bar .w-wrap { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding-block: 8px; }
+.w-bar b { font-weight: 600; }
+.w-bar label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+
+/* Блок и его подпись логики */
+.w-block { border-top: 1px dashed var(--line); padding-block: 40px; position: relative; }
+.w-logic { display: none; font: 12.5px/1.45 var(--mono); background: var(--fill2); border: 1px solid var(--line); padding: 8px 10px; margin-bottom: 18px; }
+body.show-logic .w-logic { display: block; }
+.w-logic b { font-weight: 700; }
+.w-note { display: none; background: var(--note); border: 1px dashed var(--note-line); padding: 8px 10px; font-size: 13.5px; margin-top: 12px; }
+body.show-notes .w-note { display: block; }
+.w-note::before { content: "Дизайнеру: "; font-weight: 700; }
+.w-seo { display: none; font: 13px/1.5 var(--mono); background: #eef3ff; border: 1px solid #8aa0d6; padding: 12px 14px; margin: 12px auto; max-width: var(--wrap); }
+body.show-seo .w-seo { display: block; }
+.w-seo table { border-collapse: collapse; width: 100%; }
+.w-seo td { border-top: 1px solid #c9d4ee; padding: 4px 6px; vertical-align: top; }
+.w-seo td:first-child { white-space: nowrap; font-weight: 700; width: 1%; }
+.w-seo .bad { color: var(--ask); font-weight: 700; }
+.w-seo ul { margin: 0; padding-left: 18px; }
+.w-ask { color: var(--ask); font-weight: 600; background: #f7e9e9; padding: 0 4px; }
+
+/* Место под фото/видео/схему: роль, а не «картинка» */
+.w-media { background: repeating-linear-gradient(45deg, var(--fill), var(--fill) 10px, var(--fill2) 10px, var(--fill2) 20px);
+  border: 1px solid var(--line); min-height: 220px; display: grid; place-items: center; text-align: center; padding: 16px;
+  color: var(--muted); font-size: 14px; }
+.w-media::before { content: "▣ "; }
+.w-media.small { min-height: 120px; }
+
+/* Кнопки */
+.w-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border: 2px solid var(--ink);
+  background: var(--ink); color: #fff; font-weight: 600; text-decoration: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
+.w-btn.ghost { background: transparent; color: var(--ink); }
+.w-btn[disabled] { opacity: .45; cursor: not-allowed; }
+.w-hint { font-size: 13px; color: var(--muted); }
+
+/* Шапка */
+.w-header .w-wrap { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; padding-block: 12px; }
+.w-logo { border: 2px solid var(--ink); padding: 6px 10px; font-weight: 700; }
+.w-descr { font-size: 13.5px; color: var(--muted); max-width: 34ch; }
+.w-contacts-top { display: grid; gap: 2px; font-size: 14px; text-align: right; }
+.w-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14.5px; border-top: 1px solid var(--line); padding-block: 8px; }
+
+/* Первый экран */
+.w-hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; }
+.w-hero ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.w-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+/* Сетки и карточки */
+.w-grid { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
+.w-card { border: 1px solid var(--line); padding: 16px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.w-card .w-media { min-height: 140px; }
+.w-price { font-weight: 700; }
+
+/* Этапы */
+.w-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); gap: 14px; counter-reset: st; }
+.w-steps li { border: 1px solid var(--line); padding: 14px; counter-increment: st; display: grid; gap: 6px; }
+.w-steps li::before { content: counter(st); font-weight: 700; font-size: 22px; }
+
+/* Таблица */
+.w-table-wrap { overflow-x: auto; }
+.w-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.w-table th, .w-table td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+.w-table th { background: var(--fill2); }
+
+/* FAQ */
+.w-faq details { border: 1px solid var(--line); padding: 12px 14px; }
+.w-faq details + details { border-top: 0; }
+.w-faq summary { font-weight: 600; cursor: pointer; }
+
+/* Форма */
+.w-form { border: 2px solid var(--ink); padding: 18px; display: grid; gap: 12px; max-width: 520px; }
+.w-field { display: grid; gap: 4px; font-size: 14px; }
+.w-field input, .w-field select { min-height: 44px; border: 1px solid var(--ink); padding: 0 10px; font: inherit; background: #fff; }
+.w-check { display: flex; gap: 8px; align-items: flex-start; font-size: 13.5px; }
+
+/* Полоса призыва */
+.w-cta { background: var(--fill); padding: 24px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; }
+/* Плашка призыва между блоками: section.w-block.w-cta-strip с одной строкой предложения и кнопкой или мини-формой (карточка prizyv-mezhdu-blokami) */
+.w-block.w-cta-strip { padding-block: 16px; }
+.w-cta-strip .w-cta { padding: 14px 18px; }
+.w-cta-strip .w-cta p { margin: 0; font-weight: 600; }
+
+/* Состояние формы после отправки (карточка stranica-spasibo-sleduyushchiy-shag): видно по переключателю «После отправки» */
+.w-success { display: none; border: 2px dashed var(--ink); padding: 14px; background: var(--fill); }
+.w-success p { margin: 0 0 6px; }
+body.show-success .w-success { display: block; }
+
+/* Подвал */
+.w-footer { background: var(--fill2); border-top: 1px solid var(--line); padding-block: 28px; font-size: 14px; }
+
+/* Липкая панель действий на телефоне */
+.w-sticky { display: none; }
+header.w-block { padding-block: 0; border-top: 0; }
+header.w-block > .w-logic { margin: 8px auto; max-width: var(--wrap); }
+
+@media (max-width: 760px) {
+  .w-hide-m { display: none !important; }
+  /* Мобильная шапка: логотип, короткий дескриптор и «Меню»; звонок и мессенджеры – в липкой панели снизу */
+  .w-header .w-wrap { flex-wrap: nowrap; padding-block: 8px; gap: 10px; }
+  .w-header .w-contacts-top, .w-header .w-wrap > .w-btn, .w-nav { display: none !important; }
+  .w-header .w-descr { font-size: 12px; line-height: 1.3; }
+  .w-header > div.w-wrap:has(> .w-logo)::after { content: "☰ Меню"; margin-left: auto; border: 1px solid var(--ink); padding: 6px 10px; font-size: 13px; white-space: nowrap; }
+  .w-hero .w-media, .w-block[data-n="1"] .w-media:first-of-type { min-height: 160px; }
+  .w-bar .w-wrap { padding-block: 4px; gap: 4px 10px; font-size: 11px; }
+  .w-hero { grid-template-columns: 1fr; }
+  .w-grid { grid-template-columns: repeat(var(--cols-m, 2), minmax(0, 1fr)); }
+  .w-steps { grid-template-columns: 1fr; }
+  .w-contacts-top { text-align: left; }
+  .w-block { padding-block: 28px; }
+  .w-sticky { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    padding: 8px max(12px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+    background: #fff; border-top: 1px solid var(--line); }
+  body { padding-bottom: 72px; }
+}
+@media (max-width: 420px) { .w-grid.one-m { grid-template-columns: 1fr; } }
+</style>
+<style>
+/* Дополнения прототипа карточки (серые, не дизайн) */
+.w-updated { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin-top: 20px; }
+.w-answer { font-size: 17px; border-left: 3px solid var(--ink); padding-left: 12px; }
+.w-price-line { font-size: 15px; }
+.w-table td.num, .w-table th.num { white-space: nowrap; }
+.w-table caption { text-align: left; font-size: 13px; color: var(--muted); caption-side: bottom; padding-top: 6px; }
+.w-table tr.itog td { font-weight: 700; background: var(--fill2); }
+.w-lot dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; font-size: 14px; }
+.w-lot dt { color: var(--muted); }
+.w-lot dd { margin: 0; }
+.w-links { columns: 2; padding-left: 18px; margin: 0; }
+.w-links li { margin-bottom: 6px; }
+.w-src { font-size: 13px; color: var(--muted); }
+@media (max-width: 760px) {
+  .w-sticky.w-sticky-buy { grid-template-columns: 1.3fr 1fr; }
+  .w-sticky-buy .w-sticky-price { grid-column: 1 / -1; font-size: 13px; line-height: 1.2; }
+  .w-sticky-buy .w-btn { min-height: 44px; padding: 0 10px; font-size: 15px; }
+  body { padding-bottom: 96px; }
+  .w-links { columns: 1; }
+  .w-table { font-size: 14px; }
+  .w-answer { font-size: 16px; }
+}
+</style>
+<!-- Виджеты страницы (окна, ярлычок, боковая панель мессенджеров, нижняя панель телефона) – модуль tema-mail/vidzhety.
+     Набор под страницу – по справочнику ~/.claude/skills/marketolog/references/vidzhety-spravochnik.md. Чтобы включить – раскомментировать
+     это и блок «Виджеты: подключение» в конце страницы, положить рядом vidzhety-zeekr-9x.json. Образец – ~/Sites/sayty-agent/prototipy/gaz-mag/.
+<link rel="stylesheet" href="https://tema-mail.github.io/vidzhety/vidzhety.css">
+<style>
+:root { --w-accent: #141414; --w-accent-2: #5f5f5f; --w-radius: 6px; --w-wa: #3d3d3d; --w-tg: #3d3d3d; --w-max: #3d3d3d; }
+body.vz-has-sticky .w-sticky { display: none !important; }
+</style>
+-->
+</head>
+<body>
+<!-- Прототип карточки модели Zeekr 9X. Источник текста: plan-zeekr-9x.md (план блоков, тексты, SEO-задание от 10.11.2026).
+     Факты о модели – только из плана (src/content/models/zeekr-9x-config.ts: news.metal.com, auto.sina.cn). Чего нет – метка «запросить».
+     Ориентиры цен конкурентов на странице не показываются (решение главного). -->
+<div class="w-bar"><div class="w-wrap">
+  <b>Прототип · Evolution Car BY · /catalog/zeekr/9x/ · версия 10.11.2026</b>
+  <label><input type="checkbox" id="t-logic"> Логика блоков</label>
+  <label><input type="checkbox" id="t-notes"> Комментарии дизайнеру</label>
+  <label><input type="checkbox" id="t-seo"> SEO страницы</label>
+  <label><input type="checkbox" id="t-success"> После отправки</label>
+  <span>Меток «запросить»: <b id="ask-count">0</b></span>
+</div></div>
+
+<script type="application/json" id="w-seo">{"title": "Zeekr 9X (Зикр 9Х) из Китая в Минск – цена под ключ 2026", "description": "Zeekr 9X под ключ в Минск: 3 версии, цены в $ и BYN, разбивка платежей, срок привоза. Конфигуратор на официальных фото и живые предложения из Китая.", "h1": "Zeekr 9X из Китая в Минск под ключ", "zapros": "zeekr 9x (464 в мес., Беларусь, Wordstat 30 дней); зикр 9х (175); zeekr 9x купить (49); зикр 9х купить (33); zeekr 9x характеристики (22); zeekr 9x цена (21); zeekr 9x hyper (18); zeekr 9x ultra (16); зикр 9 икс (16); зикр 9х купить в минске (14); зикр 9х фото (11). Варианты написания в тексте: Зикр 9Х, Зикр 9 икс, Zeekr 9X. Адрес: /catalog/zeekr/9x/", "schema": "Car (vehicleConfiguration по версиям Max / Ultra / Hyper, EngineSpecification, fuelType, seatingCapacity 6, vehicleModelDate) + AggregateOffer (lowPrice/highPrice в USD и BYN, priceValidUntil, availability PreOrder) + BreadcrumbList + FAQPage (10 вопросов блока 12) + AutoDealer (адрес, УНП, часы) + ItemList живых лотов (блок 5) + ImageObject + VideoObject при видео + Review/AggregateRating только реальные. GEO: страница в llms.txt; факты таблицами с единицами и датой; источник у каждой цифры; одинаковые название, адрес и телефон на сайте, картах и площадках.", "links": ["/catalog/zeekr/ – хаб Zeekr", "/catalog/zeekr/9x/konfigurator/ – конфигуратор 9X", "/catalog/zeekr/7x/ – Zeekr 7X", "/catalog/zeekr/8x/ – Zeekr 8X", "/catalog/zeekr/001/ – Zeekr 001", "/catalog/lixiang/l9/ – Li L9", "Aito M9 – карточка модели [адрес запросить]", "Voyah Taishan – карточка модели [адрес запросить]", "Доставка и растаможка – страница [адрес запросить]", "Калькулятор – страница [адрес запросить]", "Города РБ – страницы [адреса запросить]"]}</script>
+<div class="w-seo" id="w-seo-box"></div>
+
+<header class="w-header w-block" data-n="0" data-name="Шапка" data-question="Где вы и как с вами связаться?" data-proof="телефон, мессенджеры, «Расчёт за 15 минут» [запросить срок]">
+  <div class="w-wrap">
+    <span class="w-logo">Evolution Car</span>
+    <span class="w-descr">Привоз авто из Китая, Кореи, Европы, США в Минск под ключ</span>
+    <span class="w-contacts-top"><a href="tel:+375291358888">+375 29 135-88-88</a><span class="w-muted">Автосалон: ежедневно 09:00 – 18:00 · <a href="https://t.me/manager_evolutioncar_bot">Telegram</a></span></span>
+    <a class="w-btn ghost" href="#raschet">Расчёт за <span class="w-ask">[запросить: срок расчёта, в плане «15 минут»]</span></a>
+  </div>
+  <nav class="w-wrap w-nav"><a href="#versii">Версии и цены</a><a href="#konfigurator">Конфигуратор</a><a href="#cena">Из чего цена</a><a href="#loty">Предложения</a><a href="#harakteristiki">Характеристики</a><a href="#sravnenie">Сравнение</a><a href="#voprosy">Вопросы</a></nav>
+</header>
+
+<main>
+  <section class="w-block" data-n="1" data-name="Первый экран + короткий ответ" data-question="Сколько стоит Zeekr 9X под ключ в Минске и сколько ждать?" data-proof="цена под ключ от … $ и BYN с датой, срок, 3 версии, 1030 кВт; фото реальной выдачи или официальный рендер" data-next="Какую версию брать и чем они отличаются?">
+    <div class="w-wrap">
+      <div class="w-hero">
+        <div class="w-stack">
+          <p class="w-muted w-hide-m">Каталог / Zeekr / 9X</p>
+          <h1>Zeekr 9X из Китая в Минск под ключ</h1>
+          <p class="w-answer">Zeekr 9X – флагманский гибридный кроссовер Zeekr на 6 мест: три мотора, 1030 кВт, батарея до 70 кВт·ч и до 380 км на электричестве. В Китае стоит от 465 900 ¥. Привоз в Минск под ключ – от <span class="w-ask">[запросить: цена под ключ, $]</span> $, срок <span class="w-ask">[запросить: срок привоза]</span> дней, с растаможкой, ЭПТС и постановкой на учёт.</p>
+          <p class="w-price-line"><b>Под ключ в Минске:</b> от <span class="w-ask">[запросить: цена, $]</span> $ / <span class="w-ask">[запросить: цена, BYN]</span> BYN, цена на <span class="w-ask">[запросить: дата цены]</span></p>
+          <ul class="w-hide-m"><li><b>3 версии</b> – Max, Ultra, Hyper</li><li><b>1030 кВт</b> – около 1380 л.с., три мотора</li><li><b>6 мест</b> – до 380 км на электричестве (CLTC)</li></ul>
+          <div class="w-actions"><a class="w-btn" href="#raschet">Получить расчёт Zeekr 9X в BYN</a><a class="w-btn ghost w-hide-m" href="tel:+375291358888">Позвонить</a></div>
+          <p class="w-hint">Версия, цвет и место получения – расчёт с разбивкой придёт в Telegram или по телефону</p>
+          <p class="w-muted w-hide-m">Отзывы: <span class="w-ask">[запросить: рейтинг на Яндекс Картах или Google – оценка, число отзывов, год, ссылка]</span></p>
+        </div>
+        <div class="w-media" data-alt="Zeekr 9X на выдаче в Минске, Evolution Car">Фото реальной выдачи Zeekr 9X клиенту в Минске (номер размыт по рамке) – доказывает, что возим именно эту модель. Нет своей выдачи – официальный рендер Zeekr с подписью «официальное фото Zeekr». <span class="w-ask">[запросить: фото выдачи 9X]</span></div>
+      </div>
+      <p class="w-updated">Обновлено 10.11.2026 · Проверил: <span class="w-ask">[запросить: имя и роль эксперта]</span> · Источники: zeekr.cn, autohome.com.cn</p>
+      <p class="w-note">Короткий ответ (абзац с рамкой) – для нейроответов Google и Алисы: держать первым абзацем после H1, 40–60 слов, без кнопок внутри. На телефоне скрыты хлебные крошки, список из трёх фактов, «Позвонить» и отзывы – звонок живёт в липкой панели. Строка «Обновлено…» – и здесь, и в конце страницы; дата меняется при каждой сверке цен.</p>
+      <p class="w-note">Виджеты страницы: на телефоне – своя липкая панель «от … $ · Получить расчёт · Telegram» (вместо нижней панели модуля); на компьютере – боковая панель связи (телефон, Telegram-бот менеджера); окно на уходе только на компьютере «Пришлём разбивку цены Zeekr 9X в Telegram» – если владелец подтвердит, что разбивку отправляем; окна по времени нет. Почему так: страница под поиск – по справочнику перекрывающие окна на телефоне при входе с поиска нельзя (Яндекс «Юзабилити», Google); человек сравнивает цены, главное – не мешать дочитать до разбивки. Настройки – в vidzhety-zeekr-9x.json по образцу gaz-mag/vidzhety-kartochka.json.</p>
+    </div>
+  </section>
+
+  <section class="w-block" id="versii" data-n="2" data-name="Версии и цены (таблица)" data-question="Какую версию брать и чем они отличаются?" data-proof="таблица Max / Ultra / Hyper: цена в Китае ¥, под ключ $ и BYN, батарея, электро-ход, места, помощь водителю" data-next="Как он будет выглядеть в моём цвете?">
+    <div class="w-wrap w-stack">
+      <h2>Версии и цены Zeekr 9X: Max, Ultra, Hyper</h2>
+      <div class="w-table-wrap">
+        <table class="w-table">
+          <thead><tr><th>Версия</th><th class="num">Цена в Китае</th><th class="num">Под ключ, $</th><th class="num">Под ключ, BYN</th><th>Батарея</th><th>На электричестве (CLTC)</th><th>Мест</th><th>Помощь водителю</th><th>Второй ряд</th></tr></thead>
+          <tbody>
+            <tr><td><b>9X Max</b></td><td class="num">465 900 ¥</td><td><span class="w-ask">[запросить: под ключ Max, $]</span></td><td><span class="w-ask">[запросить: под ключ Max, BYN]</span></td><td>55 кВт·ч, 6C</td><td>300 км</td><td>6</td><td>H7</td><td><span class="w-ask">[запросить: кресла второго ряда Max]</span></td></tr>
+            <tr><td><b>9X Ultra</b></td><td class="num">485 900 ¥</td><td><span class="w-ask">[запросить: под ключ Ultra, $]</span></td><td><span class="w-ask">[запросить: под ключ Ultra, BYN]</span></td><td>70 кВт·ч, 6C</td><td>380 км</td><td>6</td><td>H9</td><td>отдельные кресла с поворотом на 180°</td></tr>
+            <tr><td><b>9X Hyper</b></td><td class="num">559 900 ¥</td><td><span class="w-ask">[запросить: под ключ Hyper, $]</span></td><td><span class="w-ask">[запросить: под ключ Hyper, BYN]</span></td><td>70 кВт·ч, 6C</td><td>380 км</td><td>6</td><td>H9</td><td>кресла с поворотом</td></tr>
+          </tbody>
+          <caption>Цены в Китае: news.metal.com, auto.sina.cn, на <span class="w-ask">[запросить: дата сверки цен]</span>. Цены под ключ – на <span class="w-ask">[запросить: дата и курс]</span>.</caption>
+        </table>
+      </div>
+      <p>Другие версии (5 мест, YaoHei – Black Edition): <span class="w-ask">[запросить: какие версии возим]</span></p>
+      <div class="w-actions"><a class="w-btn" href="#raschet">Рассчитать мою версию</a></div>
+      <p class="w-note">Настоящая HTML-таблица (не карточки) – её забирают в нейроответы и сниппеты. На телефоне – прокрутка таблицы вбок внутри рамки, первый столбец «Версия» закрепить (position: sticky). Чем Hyper отличается от Ultra, кроме цены, в фактах нет – спросить у владельца и добавить строку.</p>
+    </div>
+  </section>
+
+  <section class="w-block" id="konfigurator" data-n="3" data-name="Конфигуратор" data-question="Как он будет выглядеть в моём цвете?" data-proof="наш конфигуратор на официальных рендерах Zeekr: цвет кузова, диски, салон" data-next="Из чего складывается цена и нет ли скрытых платежей?">
+    <div class="w-wrap w-stack">
+      <h2>Соберите свой Zeekr 9X: цвет кузова, диски, салон</h2>
+      <p>Конфигуратор на официальных рендерах Zeekr. Салон – тёмно-синий, бежевый или коричневый.</p>
+      <div class="w-media" data-alt="Конфигуратор Zeekr 9X – цвет кузова, диски, салон">Конфигуратор: машина на официальном рендере Zeekr, переключатели «цвет кузова / диски / салон» – человек видит свой 9X до расчёта</div>
+      <div class="w-actions"><a class="w-btn" href="/catalog/zeekr/9x/konfigurator/">Собрать свой 9X</a></div>
+      <p class="w-note">Встроить существующий остров L9Configurator, данные zeekr-9x-config.ts. На странице – облегчённый вид (кузов, диски, салон), полный – по кнопке на /catalog/zeekr/9x/konfigurator/. Остров грузить client:visible, место зарезервировать, чтобы страница не прыгала.</p>
+    </div>
+  </section>
+
+  <section class="w-block" id="cena" data-n="4" data-name="Из чего цена" data-question="Из чего складывается цена и нет ли скрытых платежей?" data-proof="таблица: цена в Китае → экспорт и логистика (Хоргос → СВХ в Минске) → таможенные платежи гибрида → ЭПТС и учёт → наша работа; суммы [запросить]" data-next="Есть ли конкретные машины прямо сейчас?">
+    <div class="w-wrap w-stack">
+      <h2>Из чего складывается цена Zeekr 9X под ключ</h2>
+      <div class="w-table-wrap">
+        <table class="w-table">
+          <thead><tr><th>№</th><th>Статья</th><th class="num">Сумма, $</th><th class="num">Сумма, BYN</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Цена в Китае (9X Max – 465 900 ¥)</td><td><span class="w-ask">[запросить]</span></td><td><span class="w-ask">[запросить]</span></td></tr>
+            <tr><td>2</td><td>Экспорт и логистика: Хоргос → СВХ в Минске</td><td><span class="w-ask">[запросить]</span></td><td><span class="w-ask">[запросить]</span></td></tr>
+            <tr><td>3</td><td>Таможенные платежи гибрида</td><td><span class="w-ask">[запросить]</span></td><td><span class="w-ask">[запросить]</span></td></tr>
+            <tr><td>4</td><td>ЭПТС и учёт</td><td><span class="w-ask">[запросить]</span></td><td><span class="w-ask">[запросить]</span></td></tr>
+            <tr><td>5</td><td>Наша работа</td><td><span class="w-ask">[запросить]</span></td><td><span class="w-ask">[запросить]</span></td></tr>
+            <tr class="itog"><td></td><td>Итого под ключ в Минске</td><td><span class="w-ask">[запросить]</span></td><td><span class="w-ask">[запросить]</span></td></tr>
+          </tbody>
+          <caption>Пример на версию Max, курс и дата: <span class="w-ask">[запросить: курс ¥, $, BYN и дата]</span></caption>
+        </table>
+      </div>
+      <div class="w-actions"><a class="w-btn" href="#raschet">Получить разбивку на мою версию</a></div>
+      <p class="w-note">Главное отличие карточки от конкурентов – разбивка по строкам. Суммы только от владельца на одну дату и один курс; пока их нет, строки остаются с метками. Таблица HTML, не картинка. Переключатель версии Max / Ultra / Hyper над таблицей – по желанию, если владелец даст суммы на все три.</p>
+    </div>
+  </section>
+
+  <section class="w-block" id="loty" data-n="5" data-name="Предложения сейчас" data-question="Есть ли конкретные машины прямо сейчас?" data-proof="живые лоты новых и с пробегом из Китая: год, версия, пробег, цена, дата обновления (фид с площадок Китая)" data-next="Что у него по мощности, батарее и зарядке?">
+    <div class="w-wrap w-stack">
+      <h2>Zeekr 9X в продаже в Китае сейчас: новые и с пробегом</h2>
+      <p class="w-muted">Источник лотов: <span class="w-ask">[запросить: площадки Китая и доступ к фиду]</span></p>
+      <div class="w-grid" style="--cols:4;--cols-m:2">
+        <article class="w-card w-lot"><div class="w-media small" data-alt="Zeekr 9X, лот с площадки Китая">Фото лота с площадки Китая (из фида)</div><h3>Zeekr 9X · версия из фида</h3><dl><dt>Год</dt><dd>из фида</dd><dt>Пробег</dt><dd>из фида, км</dd><dt>Цена</dt><dd>из фида, ¥ и под ключ $</dd><dt>Обновлено</dt><dd>дата из фида</dd></dl><a class="w-btn" href="#raschet">Забронировать лот</a></article>
+        <article class="w-card w-lot"><div class="w-media small" data-alt="Zeekr 9X, лот с площадки Китая">Фото лота с площадки Китая (из фида)</div><h3>Zeekr 9X · версия из фида</h3><dl><dt>Год</dt><dd>из фида</dd><dt>Пробег</dt><dd>из фида, км</dd><dt>Цена</dt><dd>из фида, ¥ и под ключ $</dd><dt>Обновлено</dt><dd>дата из фида</dd></dl><a class="w-btn" href="#raschet">Забронировать лот</a></article>
+        <article class="w-card w-lot"><div class="w-media small" data-alt="Zeekr 9X, лот с площадки Китая">Фото лота с площадки Китая (из фида)</div><h3>Zeekr 9X · версия из фида</h3><dl><dt>Год</dt><dd>из фида</dd><dt>Пробег</dt><dd>из фида, км</dd><dt>Цена</dt><dd>из фида, ¥ и под ключ $</dd><dt>Обновлено</dt><dd>дата из фида</dd></dl><a class="w-btn" href="#raschet">Забронировать лот</a></article>
+        <article class="w-card w-lot"><div class="w-media small" data-alt="Zeekr 9X, лот с площадки Китая">Фото лота с площадки Китая (из фида)</div><h3>Zeekr 9X · версия из фида</h3><dl><dt>Год</dt><dd>из фида</dd><dt>Пробег</dt><dd>из фида, км</dd><dt>Цена</dt><dd>из фида, ¥ и под ключ $</dd><dt>Обновлено</dt><dd>дата из фида</dd></dl><a class="w-btn" href="#raschet">Забронировать лот</a></article>
+      </div>
+      <p class="w-hint">Бронь лота: <span class="w-ask">[запросить: условия брони – предоплата, срок, возврат]</span></p>
+      <p class="w-note">Фид лотов с площадок Китая, обновление раз в сутки, разметка ItemList. 4–6 карточек; на компьютере ряд из 4 (или 3 при 6 лотах), на телефоне по 2. Лотов нет – блок показывает «Новых лотов сегодня нет – подберём под заказ» и кнопку на форму, а не пустую сетку. Дата обновления видна у каждого лота.</p>
+    </div>
+  </section>
+
+  <section class="w-block" id="harakteristiki" data-n="6" data-name="Характеристики" data-question="Что у него по мощности, батарее и зарядке?" data-proof="полная таблица характеристик с источником и датой" data-next="Не будет ли проблем с языком, зарядкой, зимой и сервисом?">
+    <div class="w-wrap w-stack">
+      <h2>Характеристики Zeekr 9X</h2>
+      <div class="w-table-wrap">
+        <table class="w-table">
+          <tbody>
+            <tr><th>Тип</th><td>гибрид с подзарядкой</td></tr>
+            <tr><th>Моторы</th><td>три</td></tr>
+            <tr><th>Мощность</th><td>1030 кВт (около 1380 л.с.)</td></tr>
+            <tr><th>Архитектура</th><td>900 В</td></tr>
+            <tr><th>Батарея</th><td>55 кВт·ч (Max), 70 кВт·ч (Ultra, Hyper), зарядка 6C</td></tr>
+            <tr><th>На электричестве (CLTC)</th><td>300 км (Max), 380 км (Ultra, Hyper)</td></tr>
+            <tr><th>Мест</th><td>6</td></tr>
+            <tr><th>Помощь водителю</th><td>H7 (Max), H9 (Ultra, Hyper)</td></tr>
+            <tr><th>Экраны</th><td>два по 16" спереди, 17" на потолке для задних</td></tr>
+            <tr><th>Проекция на стекло</th><td>47" с дополненной реальностью</td></tr>
+            <tr><th>Салон</th><td>тёмно-синий, бежевый или коричневый</td></tr>
+            <tr><th>Разгон 0–100 км/ч</th><td><span class="w-ask">[запросить: разгон – свести с cars.json]</span></td></tr>
+            <tr><th>Габариты, бак, расход, общий запас хода</th><td><span class="w-ask">[запросить: габариты, объём бака, расход, общий запас хода]</span></td></tr>
+          </tbody>
+          <caption>Источник: news.metal.com, auto.sina.cn; проверено <span class="w-ask">[запросить: дата сверки характеристик]</span></caption>
+        </table>
+      </div>
+      <p class="w-note">До вёрстки свести мощность к одному числу: в cars.json сейчас «660 кВт, разгон 3,9 с», в конфигураторе 1030 кВт. На странице – только одно значение. Таблица с единицами измерения в каждой ячейке – для нейроответов. На телефоне таблица из двух столбцов, без прокрутки вбок.</p>
+    </div>
+  </section>
+
+  <section class="w-block" data-n="7" data-name="Жизнь в Беларуси" data-question="Не будет ли проблем с языком, зарядкой, зимой и сервисом?" data-proof="русификация, зимняя подготовка, антикор и плёнка, зарядка дома и на станциях, сервис в Минске [запросить: свой сервис/партнёр, гарантия]" data-next="Почему 9X, а не Lixiang L9 или Aito M9?">
+    <div class="w-wrap w-stack">
+      <h2>Zeekr 9X в Беларуси: язык, зима, зарядка, сервис</h2>
+      <div class="w-grid" style="--cols:3;--cols-m:1">
+        <article class="w-card"><h3>Русификация</h3><p><span class="w-ask">[запросить: что переводим – меню, голос, навигация; цена и срок]</span></p></article>
+        <article class="w-card"><h3>Зимняя подготовка</h3><p><span class="w-ask">[запросить: что входит в зимнюю подготовку]</span></p></article>
+        <article class="w-card"><h3>Антикор и плёнка</h3><p><span class="w-ask">[запросить: что делаем, цена]</span></p></article>
+        <article class="w-card"><h3>Зарядка дома и на станциях</h3><p><span class="w-ask">[запросить: какая зарядка подходит, ставим ли домашнюю станцию, переходники]</span></p></article>
+        <article class="w-card"><h3>Сервис в Минске</h3><p><span class="w-ask">[запросить: свой сервис или партнёр, гарантия]</span></p></article>
+      </div>
+      <div class="w-actions"><a class="w-btn" href="#raschet">Записаться на подготовку</a></div>
+      <p class="w-note">Карточки без иконок-украшений: в каждой одна строка факта (что делаем, цена или срок). Фото – только реальные работы сервиса с размытыми номерами, если владелец даст. На телефоне карточки в один столбец.</p>
+    </div>
+  </section>
+
+  <section class="w-block" id="sravnenie" data-n="8" data-name="Сравнение" data-question="Почему 9X, а не Lixiang L9 или Aito M9?" data-proof="таблица 9X / Li L9 / Aito M9 / Voyah Taishan: мощность, электро-ход, места, цена в Китае; ссылки на их карточки" data-next="Как купить безопасно?">
+    <div class="w-wrap w-stack">
+      <h2>Zeekr 9X или Lixiang L9, Aito M9, Voyah Taishan</h2>
+      <div class="w-table-wrap">
+        <table class="w-table">
+          <thead><tr><th></th><th>Zeekr 9X</th><th><a href="/catalog/lixiang/l9/">Li L9</a></th><th>Aito M9</th><th>Voyah Taishan</th></tr></thead>
+          <tbody>
+            <tr><th>Мощность</th><td>1030 кВт</td><td><span class="w-ask">[запросить: мощность Li L9]</span></td><td><span class="w-ask">[запросить: мощность Aito M9]</span></td><td><span class="w-ask">[запросить: мощность Voyah Taishan]</span></td></tr>
+            <tr><th>На электричестве (CLTC)</th><td>300–380 км</td><td><span class="w-ask">[запросить: электро-ход Li L9]</span></td><td><span class="w-ask">[запросить: электро-ход Aito M9]</span></td><td><span class="w-ask">[запросить: электро-ход Voyah Taishan]</span></td></tr>
+            <tr><th>Мест</th><td>6</td><td><span class="w-ask">[запросить: мест Li L9]</span></td><td><span class="w-ask">[запросить: мест Aito M9]</span></td><td><span class="w-ask">[запросить: мест Voyah Taishan]</span></td></tr>
+            <tr><th>Цена в Китае</th><td>от 465 900 ¥</td><td><span class="w-ask">[запросить: цена Li L9]</span></td><td><span class="w-ask">[запросить: цена Aito M9]</span></td><td><span class="w-ask">[запросить: цена Voyah Taishan]</span></td></tr>
+          </tbody>
+          <caption>Источник и дата по каждой модели: <span class="w-ask">[запросить: источники и дата сверки]</span></caption>
+        </table>
+      </div>
+      <div class="w-actions"><a class="w-btn" href="#raschet">Сравнить под ключ</a></div>
+      <p class="w-note">Данные Li L9 и Voyah, вероятно, есть в проекте (lixiang-l9-config.ts, voyah-*.ts) – взять оттуда с источником и датой, не из головы. Ссылки на карточки Aito M9 и Voyah Taishan – когда страницы появятся. Первый столбец на телефоне закрепить, таблица прокручивается вбок внутри рамки.</p>
+    </div>
+  </section>
+
+  <section class="w-block" data-n="9" data-name="Как покупаем" data-question="Как купить безопасно?" data-proof="шаги со сроками, договор с ООО, оплата частями, отслеживание [запросить: реквизиты, этапы оплаты]" data-next="Кто уже купил у вас?">
+    <div class="w-wrap w-stack">
+      <h2>Как купить Zeekr 9X из Китая безопасно: договор, оплата частями, отслеживание</h2>
+      <ol class="w-steps" style="--cols:3">
+        <li><b>Расчёт и выбор версии</b><span>Срок: <span class="w-ask">[запросить]</span></span></li>
+        <li><b>Договор с ООО</b><span>ООО «Тренд Экспресс Авто», УНП 193710155. Реквизиты в договоре: <span class="w-ask">[запросить: реквизиты]</span></span></li>
+        <li><b>Оплата частями</b><span><span class="w-ask">[запросить: этапы оплаты]</span></span></li>
+        <li><b>Выкуп и доставка, отслеживание</b><span>Хоргос → СВХ в Минске. Срок: <span class="w-ask">[запросить]</span>; как отслеживать: <span class="w-ask">[запросить]</span></span></li>
+        <li><b>Растаможка, ЭПТС и учёт</b><span>Срок: <span class="w-ask">[запросить]</span></span></li>
+        <li><b>Выдача в Минске</b><span>г. Минск, проспект Машерова, 15/4</span></li>
+      </ol>
+      <div class="w-actions"><a class="w-btn" href="#raschet">Получить договор-образец</a></div>
+      <p class="w-note">Шаги – из цепочки цены (блок 4) и плана; сроки у каждого шага только от владельца. Договор-образец – отдать файлом PDF после формы, если владелец согласен (кнопка обещает реальный файл). На телефоне шаги в один столбец.</p>
+    </div>
+  </section>
+
+  <section class="w-block" data-n="10" data-name="Выдачи и отзывы" data-question="Кто уже купил у вас?" data-proof="фото выдач Zeekr (номера размыты), отзывы с датой и площадкой (Яндекс Карты, Google) [запросить]" data-next="Можно в лизинг или кредит?">
+    <div class="w-wrap w-stack">
+      <h2>Выдачи Zeekr в Минске и отзывы покупателей</h2>
+      <div class="w-grid" style="--cols:3;--cols-m:1">
+        <div class="w-media small" data-alt="Выдача Zeekr клиенту в Минске, Evolution Car">Фото выдачи Zeekr клиенту в Минске, номер размыт по рамке – доказывает, что машины доходят. <span class="w-ask">[запросить: фото выдач]</span></div>
+        <div class="w-media small" data-alt="Выдача Zeekr 9X, Evolution Car">Фото выдачи Zeekr 9X (или другой модели Zeekr), номер размыт, дата выдачи в подписи</div>
+        <div class="w-media small" data-alt="Zeekr на СВХ в Минске">Машина на СВХ в Минске – доказывает путь Хоргос → Минск</div>
+      </div>
+      <div class="w-grid" style="--cols:3;--cols-m:1">
+        <article class="w-card"><p><span class="w-ask">[запросить: отзыв, имя, дата, площадка – Яндекс Карты]</span></p></article>
+        <article class="w-card"><p><span class="w-ask">[запросить: отзыв, имя, дата, площадка – Google]</span></p></article>
+        <article class="w-card"><p><span class="w-ask">[запросить: отзыв, имя, дата, площадка]</span></p></article>
+      </div>
+      <div class="w-actions"><a class="w-btn" href="#raschet">Хочу так же</a></div>
+      <p class="w-note">Фото – попапом по клику (лайтбокс). Номера размыты строго по рамке таблички. Отзывы только настоящие, со ссылкой на площадку; разметка Review/AggregateRating – только по ним. На телефоне фото листаются вбок, отзывы – два видно, остальные под «Ещё отзывы».</p>
+    </div>
+  </section>
+
+  <section class="w-block" data-n="11" data-name="Лизинг и кредит" data-question="Можно в лизинг или кредит?" data-proof="партнёры, аванс, срок, пример платежа [запросить]" data-next="Остались вопросы?">
+    <div class="w-wrap w-stack">
+      <h2>Zeekr 9X в лизинг или кредит</h2>
+      <div class="w-table-wrap">
+        <table class="w-table">
+          <tbody>
+            <tr><th>Партнёры</th><td><span class="w-ask">[запросить: банки и лизинговые компании]</span></td></tr>
+            <tr><th>Аванс</th><td><span class="w-ask">[запросить: аванс]</span></td></tr>
+            <tr><th>Срок</th><td><span class="w-ask">[запросить: срок лизинга и кредита]</span></td></tr>
+            <tr><th>Пример платежа</th><td><span class="w-ask">[запросить: пример платежа на 9X Max]</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="w-actions"><a class="w-btn" href="#raschet">Рассчитать платёж</a></div>
+    </div>
+  </section>
+
+  <section class="w-block" id="voprosy" data-n="12" data-name="Частые вопросы" data-question="Остались вопросы?" data-proof="10 вопросов из выдачи «Похожие вопросы» и Wordstat" data-next="Готовы получить расчёт?">
+    <div class="w-wrap w-stack w-faq">
+      <h2>Частые вопросы о Zeekr 9X</h2>
+      <details><summary>Сколько стоит Zeekr 9X под ключ в Минске?</summary><p>В Китае Zeekr 9X стоит от 465 900 ¥ (Max) до 559 900 ¥ (Hyper). Под ключ в Минске – от <span class="w-ask">[запросить: цена под ключ, $ и BYN, дата]</span>, с растаможкой, ЭПТС и постановкой на учёт.</p></details>
+      <details><summary>Сколько ждать Zeekr 9X из Китая?</summary><p><span class="w-ask">[запросить: срок привоза в днях, от оплаты до выдачи]</span></p></details>
+      <details><summary>Какую версию выбрать: Max, Ultra или Hyper?</summary><p>Max – батарея 55 кВт·ч, до 300 км на электричестве (CLTC), помощь водителю H7. Ultra – 70 кВт·ч, до 380 км, H9, второй ряд – отдельные кресла с поворотом на 180°. Hyper – 70 кВт·ч, до 380 км, H9, кресла с поворотом. Во всех версиях 6 мест и 1030 кВт. Чем Hyper отличается от Ultra ещё: <span class="w-ask">[запросить: отличия Hyper]</span></p></details>
+      <details><summary>Сколько стоит растаможка гибрида Zeekr 9X в Беларуси?</summary><p><span class="w-ask">[запросить: таможенные платежи гибрида на дату и курс]</span></p></details>
+      <details><summary>Можно ли купить Zeekr 9X в лизинг или кредит?</summary><p><span class="w-ask">[запросить: партнёры, аванс, срок]</span></p></details>
+      <details><summary>Будет ли русский язык и навигация?</summary><p><span class="w-ask">[запросить: что переводится при русификации, какая навигация]</span></p></details>
+      <details><summary>Где обслуживать Zeekr 9X в Минске и что с гарантией?</summary><p><span class="w-ask">[запросить: свой сервис или партнёр, условия гарантии]</span></p></details>
+      <details><summary>Сколько он проезжает на электричестве зимой?</summary><p>По циклу CLTC – 300 км (Max) и 380 км (Ultra, Hyper). Зимой в Беларуси: <span class="w-ask">[запросить: реальный запас хода зимой у клиентов]</span></p></details>
+      <details><summary>Можно ли купить Zeekr 9X с пробегом из Китая?</summary><p>Да: в блоке «Предложения сейчас» – лоты новых и с пробегом с площадок Китая с датой обновления. Как проверяем машину с пробегом: <span class="w-ask">[запросить: проверка истории и осмотр]</span></p></details>
+      <details><summary>Чем Zeekr 9X отличается от Lixiang L9?</summary><p>Zeekr 9X – три мотора, 1030 кВт, архитектура 900 В, 6 мест, до 380 км на электричестве. Li L9: <span class="w-ask">[запросить: данные Li L9 для сравнения]</span></p></details>
+      <p class="w-note">10 вопросов – раскрывашки details/summary, разметка FAQPage по ним же. Первый вопрос открыт по умолчанию на компьютере. Ответы – из фактов плана; цифры владельца подставить вместо меток.</p>
+    </div>
+  </section>
+
+  <section class="w-block" id="raschet" data-n="13" data-name="Форма расчёта" data-question="Готовы получить расчёт?" data-proof="версия, цвет, место, телефон, галочка согласия; что будет после отправки" data-next="Что ещё посмотреть?">
+    <div class="w-wrap">
+      <form class="w-form" onsubmit="event.preventDefault()">
+        <h2>Расчёт Zeekr 9X под ключ в BYN на вашу версию</h2>
+        <label class="w-field">Версия<select id="f-versiya"><option>Ещё не решил</option><option>9X Max</option><option>9X Ultra</option><option>9X Hyper</option></select></label>
+        <label class="w-field">Цвет кузова и салона<input id="f-cvet" placeholder="например, салон бежевый"></label>
+        <label class="w-field">Где получить<input id="f-mesto" placeholder="Минск или другой город"></label>
+        <label class="w-field">Телефон<input id="f-phone" type="tel" inputmode="tel" placeholder="+375 (__) ___-__-__"></label>
+        <label class="w-check"><input type="checkbox" id="f-agree" data-agree> <span>Согласен на обработку <a href="#">персональных данных</a></span></label>
+        <button class="w-btn" id="f-send" type="submit" disabled>Получить расчёт Zeekr 9X</button>
+        <p class="w-hint">Пришлём расчёт с разбивкой по строкам (как в таблице выше) в течение <span class="w-ask">[запросить: срок ответа]</span>. Не хотите ждать – <a href="https://t.me/manager_evolutioncar_bot">напишите в Telegram</a>.</p>
+        <div class="w-success">
+          <p><b>Заявка на расчёт Zeekr 9X принята.</b></p>
+          <p>Менеджер пришлёт расчёт в течение <span class="w-ask">[запросить: срок ответа]</span> – звонком или в Telegram.</p>
+          <p>Срочно – <a href="tel:+375291358888">позвонить +375 29 135-88-88</a> или <a href="https://t.me/manager_evolutioncar_bot">написать в Telegram</a>.</p>
+          <p>Чтобы расчёт был точным: решите, нужен ли кредит или лизинг. Пока ждёте – <a href="/catalog/zeekr/9x/konfigurator/">соберите свой 9X в конфигураторе</a>.</p>
+        </div>
+      </form>
+      <p class="w-note">Цель Метрики – на ответ сервера «принято», источник заявки (Яндекс/Google, страница, метки) – скрытыми полями. На телефоне форма во всю ширину, поле телефона с маской +375.</p>
+    </div>
+  </section>
+
+  <section class="w-block" data-n="14" data-name="Похожие модели и материалы" data-question="Что ещё посмотреть?" data-proof="Zeekr 7X, 8X, 001; Li L9; обзоры блога; хаб Zeekr; города РБ">
+    <div class="w-wrap w-stack">
+      <h2>Другие Zeekr и похожие модели из Китая</h2>
+      <ul class="w-links">
+        <li><a href="/catalog/zeekr/">Все модели Zeekr</a></li>
+        <li><a href="/catalog/zeekr/7x/">Zeekr 7X</a></li>
+        <li><a href="/catalog/zeekr/8x/">Zeekr 8X</a></li>
+        <li><a href="/catalog/zeekr/001/">Zeekr 001</a></li>
+        <li><a href="/catalog/lixiang/l9/">Lixiang L9</a></li>
+        <li><a href="/catalog/zeekr/9x/konfigurator/">Конфигуратор Zeekr 9X</a></li>
+        <li>Доставка и растаможка: <span class="w-ask">[запросить: адрес страницы]</span></li>
+        <li>Калькулятор: <span class="w-ask">[запросить: адрес страницы]</span></li>
+        <li>Обзоры блога: <span class="w-ask">[запросить: какие статьи про Zeekr]</span></li>
+        <li>Города РБ: <span class="w-ask">[запросить: страницы городов]</span></li>
+      </ul>
+      <p class="w-updated">Обновлено 10.11.2026 · Проверил: <span class="w-ask">[запросить: имя и роль эксперта]</span> · Источники: zeekr.cn, autohome.com.cn</p>
+      <p class="w-note">Страниц 8X и 001 в проекте пока нет – ставить ссылку, только когда страница живая. Пишем «Зикр 9Х» и «Зикр 9 икс» естественно в подписях фото и ответах, без перечня ключей.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="w-footer"><div class="w-wrap w-stack">
+  <span>Evolution Car · ООО «Тренд Экспресс Авто», УНП 193710155 · г. Минск, проспект Машерова, 15/4 · +375 29 135-88-88 · Автосалон: ежедневно 09:00 – 18:00</span>
+  <span><a href="#">Политика обработки персональных данных</a> · <a href="#">Согласие</a> · <a href="#">Cookie</a></span>
+</div></footer>
+
+<div class="w-sticky w-sticky-buy"><span class="w-sticky-price">Zeekr 9X под ключ от <span class="w-ask">[запросить: цена, $]</span> $</span><a class="w-btn" href="#raschet">Получить расчёт</a><a class="w-btn ghost" href="https://t.me/manager_evolutioncar_bot">Telegram</a></div>
+
+<script>
+// Переключатели прототипа и подпись логики над каждым блоком (по умолчанию скрыто).
+document.querySelectorAll('.w-block').forEach(function (b) {
+  var d = b.dataset, el = document.createElement('div');
+  el.className = 'w-logic';
+  el.innerHTML = '<b>Блок ' + (d.n || '?') + ' · ' + (d.name || '') + '</b><br>Вопрос клиента: ' + (d.question || '–') + '<br>Опора: ' + (d.proof || '–') + (d.next ? '<br>Дальше спросит: ' + d.next : '');
+  if (b.tagName === 'HEADER') b.prepend(el); else (b.querySelector('.w-wrap') || b).prepend(el);
+});
+document.getElementById('t-logic').addEventListener('change', function (e) { document.body.classList.toggle('show-logic', e.target.checked); });
+document.getElementById('t-notes').addEventListener('change', function (e) { document.body.classList.toggle('show-notes', e.target.checked); });
+document.getElementById('t-seo').addEventListener('change', function (e) { document.body.classList.toggle('show-seo', e.target.checked); });
+document.getElementById('t-success').addEventListener('change', function (e) { document.body.classList.toggle('show-success', e.target.checked); });
+(function () {
+  var src = document.getElementById('w-seo'), box = document.getElementById('w-seo-box');
+  if (!src || !box) return;
+  var d = JSON.parse(src.textContent), esc = function (t) { return String(t).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); };
+  var len = function (t, max) { return ' <span class="' + (t.length > max ? 'bad' : '') + '">(' + t.length + ' / ' + max + ')</span>'; };
+  var heads = [].map.call(document.querySelectorAll('main h1, main h2, header h1'), function (h) { return '<li>' + h.tagName + ' – ' + esc(h.textContent.trim()) + '</li>'; }).join('');
+  var alts = [].map.call(document.querySelectorAll('.w-media[data-alt]'), function (m) { return '<li>' + esc(m.dataset.alt) + '</li>'; }).join('');
+  box.innerHTML = '<table><tr><td>title</td><td>' + esc(d.title) + len(d.title, 65) + '</td></tr><tr><td>description</td><td>' + esc(d.description) + len(d.description, 160) +
+    '</td></tr><tr><td>запрос</td><td>' + esc(d.zapros || '–') + '</td></tr><tr><td>заголовки</td><td><ul>' + heads + '</ul></td></tr><tr><td>alt</td><td><ul>' + (alts || '<li>–</li>') +
+    '</ul></td></tr><tr><td>разметка</td><td>' + esc(d.schema || '–') + '</td></tr><tr><td>ссылки</td><td><ul>' + (d.links || []).map(function (l) { return '<li>' + esc(l) + '</li>'; }).join('') + '</ul></td></tr></table>';
+})();
+document.getElementById('ask-count').textContent = document.querySelectorAll('.w-ask').length;
+// Любая форма: галочка data-agree включает кнопку отправки своей формы.
+document.querySelectorAll('form').forEach(function (f) {
+  var a = f.querySelector('[data-agree]'), btn = f.querySelector('button[type="submit"], button:not([type])');
+  if (a && btn) a.addEventListener('change', function () { btn.disabled = !a.checked; });
+});
+</script>
+<!-- Виджеты: подключение (раскомментировать вместе с блоком в head).
+<div data-vidzhety data-src="vidzhety-zeekr-9x.json"></div>
+<script src="https://tema-mail.github.io/vidzhety/vidzhety.js"></script>
+Пример vidzhety-zeekr-9x.json (факты – только с сайта клиента; срок акции не выдумывать):
+{
+  "demo": true, "consent": false, "endpoint": "demo:", "tz": 7, "agreement": "https://<сайт>/soglasie",
+  "widgets": [
+    { "id": "svyaz", "enabled": true, "type": "contacts", "group": "contact", "trigger": { "on": "load" },
+      "content": { "layout": "side", "phone": "+70000000000", "phoneText": "8 (000) 000-00-00", "max": "https://max.ru/u/...",
+        "tg": "https://t.me/...", "email": "...", "callback": "zvonok",
+        "buttons": [ { "text": "Главное действие страницы", "open": "zvonok", "kind": "main" }, { "text": "Позвонить", "href": "tel:+70000000000" } ] } },
+    { "id": "akciya", "enabled": true, "type": "modal", "trigger": { "on": "time", "s": 20 }, "mobileAs": "bar",
+      "content": { "title": "Предложение с сайта", "text": "Оставьте телефон – менеджер закрепит условия.", "short": "Коротко для плашки", "button": "Закрепить" },
+      "form": { "fields": ["phone"], "button": "Оставить телефон" } },
+    { "id": "uhod", "enabled": true, "type": "modal", "trigger": { "on": "exit" }, "target": { "device": "desktop" },
+      "content": { "title": "Предложение на уходе" }, "form": { "fields": ["phone"] } },
+    { "id": "zvonok", "enabled": true, "type": "callback", "trigger": { "on": "click" }, "content": { "title": "Перезвоним вам" },
+      "form": { "fields": ["name", "phone"], "button": "Перезвоните мне" } }
+  ]
+}
+В комментарий дизайнеру (.w-note) – строка «Виджеты страницы: … Почему так: …».
+-->
+
