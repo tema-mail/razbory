@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Сайт Анжелы – отчёт</title>
+<script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}if(!t){var h=new Date().getHours();t=(h>=19||h<7||matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}document.documentElement.dataset.theme=t})();</script>
+<style>
+:root{--bg:#f6f4f1;--card:#fff;--ink:#1d1b19;--muted:#6b6560;--line:#e4dfd9;--accent:#986d53;--ok-bg:#e7f5e6;--ok-ink:#1f4a1d;--warn-bg:#fff4dc;--warn-ink:#5a4310;--stop-bg:#fbe5e2;--stop-ink:#6b1d14}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--ink:#ecebe8;--muted:#a9abb0;--line:#33363c;--accent:#deb497;--ok-bg:#1f3320;--ok-ink:#d6ecd0;--warn-bg:#3a3220;--warn-ink:#f1e6c8;--stop-bg:#3b2222;--stop-ink:#f3d6d3;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:28px;line-height:1.2;margin:0 0 6px}
+h2{font-size:21px;margin:0 0 12px}
+.sub{color:var(--muted);margin:0 0 20px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 16px}
+.ok{background:var(--ok-bg);color:var(--ok-ink)} .warn{background:var(--warn-bg);color:var(--warn-ink)}
+a{color:var(--accent)}
+ul,ol{margin:6px 0 0;padding-left:22px} li{margin:5px 0}
+table{width:100%;border-collapse:collapse;font-size:15px;table-layout:fixed}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+th{color:var(--muted);font-weight:600}
+.num{white-space:normal}
+code{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:14px;word-break:break-all}
+audio{width:100%;margin-top:6px}
+.links a{display:inline-block;margin:4px 10px 4px 0}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:9;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
+@media (max-width:600px){table{font-size:14px}th,td{padding:7px 4px}}
+</style>
+</head>
+<body>
+<main>
+<h1>Сайт Анжелы Богатырёвой – отчёт</h1>
+<p class="sub">Перманентный макияж, Краснодар · 10–11.11.2026 · сделал Claude по задаче Артёма</p>
+
+<!-- голосовой итог: golos.txt, mp3 добавится после озвучки -->
+
+<div class="box ok">
+<b>Итог.</b> Сайт в бою на <a href="https://permanentbogatyryova.ru">permanentbogatyryova.ru</a>: наш сервер в Москве, SSL Let's Encrypt (продлевается сам), заявки сохраняются в кабинете с источником. Проверка боя – 8 из 8 пунктов. Метрика пишет визиты, Яндекс Вебмастер подтверждён.
+</div>
+
+<div class="box links">
+<b>Ссылки</b><br>
+<a href="https://permanentbogatyryova.ru">Сайт</a>
+<a href="https://permanentbogatyryova.ru/admin">Кабинет (логин и пароль – в чате)</a>
+<a href="https://tema-mail.github.io/razbory/angela-telegram-bot-5c8e21d4/">Инструкция: бот для заявок с телефона</a>
+<a href="https://github.com/tema-mail/angela-pmu-krasnodar">Код (закрытый репо)</a>
+</div>
+
+<div class="box">
+<h2>Что сделано</h2>
+<table>
+<tr><th>Блок</th><th>Что сделано</th><th>Проверка</th></tr>
+<tr><td>Перенос</td><td>Сайт из Deford2027/permanent-makeup перенесён на Astro 1:1, в наше закрытое репо. Адреса: <code>/</code>, <code>/privacy-policy/</code>, <code>/terms/</code>, <code>/thanks/</code>; старые <code>*.html</code> – 301</td><td>высота страниц со старой версией совпала до пикселя на 390 и 1440</td></tr>
+<tr><td>Заявки</td><td>Раньше форма никуда не отправляла (в коде было «TODO»). Теперь – на свой сервер, в базу: имя, телефон или @ник Telegram, источник (Яндекс/Google, реклама, метки). «Спасибо» – только после ответа сервера, при сбое – телефон</td><td>живая заявка на стенде дошла с источником «Яндекс реклама» (удалена)</td></tr>
+<tr><td>Домен и SSL</td><td>permanentbogatyryova.ru на наш сервер, сертификат выпускается и продлевается сам; www и http → https кодом 301. Правило «без SSL в бой не идём» записано для всех сайтов и проверяется скриптом</td><td><code>proverka-boya.sh</code> – 8 из 8</td></tr>
+<tr><td>Телефон</td><td>Таб-бар внизу: Услуги, Работы, Отзывы, Записаться; окно «Связаться»: телефон, VK, Telegram, MAX (без ссылки), кнопка «Записаться», адрес. В шапке «Записаться» вместо «Заказать». Убрана горизонтальная прокрутка</td><td>390 px, без ошибок</td></tr>
+<tr><td>Фото</td><td>Фото работ, отзывов, мастера и в окне услуги открываются во весь экран, крестик; фон и иконки – нет</td><td>все виды открываются и закрываются</td></tr>
+<tr><td>Фавикон</td><td>Медальон с короной и «AB» из логотипа – вкладка, телефон (иконка на экране)</td><td>отдаётся на домене</td></tr>
+<tr><td>Кабинет</td><td>Базовый ЛК: <b>Страницы, Редактор, Заявки, Метрика</b>. SEO-аналитика, Позиции, Точка А, Рекомендации, AEO/GEO и кластер в карточке страницы – под замком. Вход по логину и паролю</td><td>все разделы открываются, закрытые – с замком</td></tr>
+<tr><td>Редактор</td><td>Как на Balance: текст, картинки, ссылки кнопок прямо на странице. Модуль один на все сайты; доработали – один скрипт обновляет все сайты с редактором</td><td>страница открывается в редакторе, текст выбирается</td></tr>
+<tr><td>Счётчики</td><td>Метрика 114169928: включается только после согласия на cookie, цели: заявка, телефон, Telegram, открытие окна записи. Яндекс Вебмастер – права подтверждены</td><td>до согласия 0 запросов, после – визит пишется (1 мой проверочный визит)</td></tr>
+<tr><td>WhatsApp</td><td>Убран везде (твоё решение 06–07.11)</td><td>в сборке 0 упоминаний</td></tr>
+</table>
+</div>
+
+<div class="box">
+<h2>SEO: услуги и город</h2>
+<p>Главная дыра была в том, что описания и цены 7 услуг жили только в скрипте всплывающих окон – поисковик их не видел.</p>
+<table>
+<tr><th>Что видит поисковик на главной</th><th class="num">Было</th><th class="num">Стало</th></tr>
+<tr><td>Слов текста</td><td class="num">436</td><td class="num">691</td></tr>
+<tr><td>Цены (₽)</td><td class="num">0</td><td class="num">7</td></tr>
+<tr><td>«Краснодар»</td><td class="num">4</td><td class="num">9</td></tr>
+<tr><td>Город в H1</td><td class="num">нет</td><td class="num">«…и микроблейдинг в Краснодаре»</td></tr>
+<tr><td>Разметка салона (BeautySalon)</td><td class="num">нет</td><td class="num">адрес, часы, телефон, координаты, карта, 7 услуг с ценами и описанием</td></tr>
+</table>
+<ul>
+<li>Новый блок «<b>Цены на перманентный макияж в Краснодаре</b>» – 7 услуг: суть, цена, кнопка «Подробнее». Данные одним файлом для окон, блока и разметки.</li>
+<li>Заголовок раздела: «Услуги перманентного макияжа в Краснодаре»; подписи к фото услуг; адрес и телефон в подвале; превью для соцсетей; <code>llms.txt</code> для нейросетей.</li>
+</ul>
+</div>
+
+<div class="box warn">
+<h2>Ждёт от тебя</h2>
+<ol>
+<li><b>Бот для заявок.</b> Адрес <code>website_leads_bot</code> занят чужим ботом – выбери: <code>website_leads2_bot</code> или <code>permanentbogatyryova_leads_bot</code>. Потом токен и «Анжела нажала Запустить». Пока бота нет, заявки копятся в кабинете без уведомлений.</li>
+<li><b>Ссылка на MAX</b> – пункт в окне «Связаться» стоит пустым.</li>
+<li><b>Search Console.</b> У проекта Google нашего ключа выключен сервис подтверждения сайтов. Одно из двух: включить его по ссылке в твоём аккаунте Google Cloud (проект 630219646968, Site Verification API) – или добавить сайт в Search Console самому и выдать доступ <code>teyes-seo-admin@teyes-seo-admin.iam.gserviceaccount.com</code>.</li>
+<li><b>Автопубликация из редактора.</b> Сейчас правка из редактора уходит на сайт моей ручной выкладкой. Для автоматики нужен ключ GitHub → сервер; система безопасности не дала мне его поставить сама – нужно твоё разрешение.</li>
+<li><b>Тексты услуг:</b> автор макета пометил описания всех услуг, кроме губ, как черновые. Показать Анжеле – правки она может внести сама в редакторе.</li>
+<li><b>Дубль сайта</b> на deford2027.github.io/permanent-makeup – выключить там Pages (у нас только чтение).</li>
+<li><b>Пароль reg.ru Анжелы</b> лучше сменить – он остался в чате.</li>
+</ol>
+</div>
+
+<div class="box">
+<h2>Что дальше по SEO – предложение</h2>
+<ol>
+<li><b>Карточки на картах:</b> Яндекс Бизнес и 2ГИС с тем же адресом, телефоном и ссылкой на сайт – для мастера в Краснодаре это основной поток.</li>
+<li><b>Отдельные страницы услуг</b> (брови, губы, межресничка, удаление) – только где есть спрос в Краснодаре: снять Wordstat (до 150 ₽) и решить по цифрам.</li>
+<li><b>Вопросы и ответы</b> (сколько держится, больно ли, коррекция) – по ответам Анжелы, без выдумки; это и ответы в поиске, и в нейросетях.</li>
+</ol>
+</div>
+
+<div class="box">
+<h2>Найдено по пути в эталоне EV (не чинил без задания)</h2>
+<ul>
+<li>Раздел «Настройки» кабинета EV падает с ошибкой.</li>
+<li>Имя клиента со знаком «&lt;» ломает уведомление о заявке в Telegram (сама заявка в базе остаётся).</li>
+<li>Вход в кабинет EV – только по паролю, без логина.</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>Время</h2>
+<p>≈ 5,5 часа активной работы: разведка и план – 0,7 ч; перенос, сервер, заявки – 1 ч; домен, SSL, выкладка – 1 ч; таб-бар, фото, фавикон – 0,8 ч; редактор и базовый ЛК – 1 ч; SEO и счётчики – 1 ч. По меткам коммитов 10.11 15:58 – 11.11 02:18 (29 коммитов), с перерывами.</p>
+</div>
+</main>
+<button id="tema-btn" type="button" aria-label="Сменить тему">◐</button>
+<script>document.getElementById('tema-btn').onclick=function(){var t=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=t;try{localStorage.setItem('tema',t)}catch(e){}};</script>
+</body>
+</html>
