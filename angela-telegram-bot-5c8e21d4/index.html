@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Бот для заявок Анжелы</title>
+<script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}if(!t){var h=new Date().getHours();t=(h>=19||h<7||matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}document.documentElement.dataset.theme=t})();</script>
+<style>
+:root{--bg:#f6f4f1;--card:#fff;--ink:#1d1b19;--muted:#6b6560;--line:#e4dfd9;--accent:#2a8bd8;--accent-ink:#fff;--warn-bg:#fff4dc;--warn-ink:#5a4310;--ok-bg:#e7f5e6;--ok-ink:#1f4a1d;--bubble-in:#fff;--bubble-out:#e3f5d6;--chat:#d9e8c8}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--ink:#ecebe8;--muted:#a9abb0;--line:#33363c;--accent:#5aa9ea;--accent-ink:#0d1117;--warn-bg:#3a3220;--warn-ink:#f1e6c8;--ok-bg:#1f3320;--ok-ink:#d6ecd0;--bubble-in:#2a2d33;--bubble-out:#2f4a32;--chat:#1a2a22;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:760px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:28px;line-height:1.2;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 24px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 18px}
+.step{display:flex;gap:14px;align-items:flex-start}
+.n{flex:0 0 36px;height:36px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700}
+.step h2{font-size:19px;margin:4px 0 8px}
+.step p{margin:0 0 10px}
+code{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:14px;word-break:break-all}
+a{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;border-radius:999px;padding:10px 18px;font-weight:600}
+img{max-width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+figure{margin:12px 0 0}
+figcaption{color:var(--muted);font-size:13px;margin-top:6px}
+.chat{background:var(--chat);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.b{max-width:85%;padding:8px 12px;border-radius:14px;font-size:15px;line-height:1.4;white-space:pre-line}
+.in{background:var(--bubble-in);align-self:flex-start;border-bottom-left-radius:4px}
+.out{background:var(--bubble-out);align-self:flex-end;border-bottom-right-radius:4px}
+.who{font-size:12px;font-weight:700;color:var(--accent);display:block;margin-bottom:2px}
+.mark{background:#ffe27a;color:#1d1b19;border-radius:4px;padding:0 3px}
+.warn{background:var(--warn-bg);color:var(--warn-ink);border-radius:12px;padding:12px 14px;margin-top:10px;font-size:15px}
+.ok{background:var(--ok-bg);color:var(--ok-ink)}
+ul{margin:6px 0 0;padding-left:20px}
+li{margin:4px 0}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:9;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+<h1>Бот для заявок с сайта Анжелы</h1>
+<p class="sub">permanentbogatyryova.ru · 5 шагов, около 5 минут · нужен только Telegram на телефоне или компьютере</p>
+
+<div class="box ok">
+<b>Зачем.</b> Заявка с сайта сразу сохраняется в кабинете сайта. Бот нужен, чтобы Анжела в ту же секунду получала её в Telegram: имя, телефон или ник, с какой рекламы пришёл человек.
+</div>
+
+<div class="box"><div class="step"><div class="n">1</div><div>
+<h2>Откройте @BotFather</h2>
+<p>Это официальный бот Telegram, через него создаются все боты. Галочка у имени – проверенный аккаунт.</p>
+<p><a class="btn" href="https://t.me/BotFather">Открыть @BotFather</a></p>
+<figure><img src="botfather.webp" alt="Страница @BotFather с кнопкой START BOT" width="640" height="500" loading="lazy"><figcaption>Настоящий экран: нажмите «START BOT» (в приложении – «Запустить» или «Старт» внизу чата).</figcaption></figure>
+</div></div></div>
+
+<div class="box"><div class="step"><div class="n">2</div><div>
+<h2>Отправьте команду <code>/newbot</code> и дайте имя</h2>
+<p>BotFather задаст два вопроса. Первый – как бот будет называться в списке чатов. Второй – адрес: латиницей, без пробелов, в конце обязательно <code>bot</code>.</p>
+<div class="chat" aria-label="Пример переписки с BotFather">
+<div class="b out">/newbot</div>
+<div class="b in"><span class="who">BotFather</span>Alright, a new bot. How are we going to call it? Please choose a name for your bot.</div>
+<div class="b out">Анжела – заявки с сайта</div>
+<div class="b in"><span class="who">BotFather</span>Good. Now let's choose a username for your bot. It must end in `bot`.</div>
+<div class="b out">AngelaPMU_zayavki_bot</div>
+</div>
+<p style="margin-top:8px;color:var(--muted);font-size:14px">Схема переписки. Тексты BotFather приходят по-английски – это нормально.</p>
+<div class="warn">Если ответ «Sorry, this username is already taken» – адрес занят. Добавьте цифры, например <code>AngelaPMU_zayavki2_bot</code>.</div>
+</div></div></div>
+
+<div class="box"><div class="step"><div class="n">3</div><div>
+<h2>Скопируйте токен</h2>
+<p>В ответ BotFather пришлёт сообщение «Done! Congratulations…». В нём – длинный ключ после строки «Use this token to access the HTTP API». Это и есть токен.</p>
+<div class="chat">
+<div class="b in"><span class="who">BotFather</span>Done! Congratulations on your new bot. You will find it at t.me/AngelaPMU_zayavki_bot…
+
+Use this token to access the HTTP API:
+<span class="mark">7712345678:AAH3x…_пример_длинного_ключа</span>
+Keep your token secure…</div>
+</div>
+<p style="margin-top:8px;color:var(--muted);font-size:14px">Схема. Нажмите на токен – Telegram скопирует его.</p>
+<div class="warn"><b>Токен – как пароль.</b> Отправляйте его только Claude в рабочий чат, не в общие группы. Если он утёк – в BotFather команда <code>/revoke</code> выдаст новый.</div>
+</div></div></div>
+
+<div class="box"><div class="step"><div class="n">4</div><div>
+<h2>Анжела нажимает «Старт» в новом боте</h2>
+<p>Бот не может написать человеку первым. Поэтому Анжела один раз открывает ссылку на бота (она в сообщении BotFather: <code>t.me/имя_бота</code>) и нажимает «Старт». Больше ничего делать не нужно – можно сразу закрыть.</p>
+<div class="chat">
+<div class="b out">/start</div>
+</div>
+<p style="margin-top:8px;color:var(--muted);font-size:14px">Хотите получать копии заявок сами – тоже нажмите «Старт» в этом боте со своего Telegram.</p>
+</div></div></div>
+
+<div class="box"><div class="step"><div class="n">5</div><div>
+<h2>Пришлите Claude</h2>
+<ul>
+<li><b>Токен</b> из шага 3.</li>
+<li><b>Адрес бота</b> – например, <code>@AngelaPMU_zayavki_bot</code>.</li>
+<li>Словами: <b>«Анжела нажала Старт»</b> (и «я тоже», если нужны копии).</li>
+</ul>
+<p style="margin-top:10px">Дальше всё делает Claude: находит чат Анжелы, прописывает бота на сервере сайта и отправляет ей проверочное сообщение «Бот заявок подключён». Пришло сообщение – значит, работает. Номер её чата и токен никому, кроме сервера сайта, не передаются.</p>
+</div></div></div>
+
+<div class="box">
+<b>Как будет выглядеть заявка у Анжелы</b>
+<div class="chat">
+<div class="b in"><span class="who">Анжела – заявки с сайта</span><b>Заявка с сайта</b>
+
+<b>Имя:</b> Мария
+<b>Telegram:</b> @maria_k – t.me/maria_k
+<b>Связаться:</b> Telegram
+<b>Страница:</b> /
+<b>Источник:</b> Яндекс реклама · вход: /
+<b>Время:</b> 11.11.2026 14:05 (Москва)</div>
+</div>
+<p style="margin-top:8px;color:var(--muted);font-size:14px">Пример. Если человек оставил телефон – вместо ника будет номер.</p>
+</div>
+</main>
+<button id="tema-btn" type="button" aria-label="Сменить тему">◐</button>
+<script>document.getElementById('tema-btn').onclick=function(){var t=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=t;try{localStorage.setItem('tema',t)}catch(e){}};</script>
+</body>
+</html>
