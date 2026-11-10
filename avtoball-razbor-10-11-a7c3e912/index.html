@@ -1,0 +1,69 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Автобалл: разбор 10.11</title>
+<style>:root{--bg:#fafaf7;--fg:#1d1d1b;--mut:#6b6b66;--line:#e2e0d8;--head:#f0eee6;--acc:#b8860b}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,sans-serif}main{max-width:960px;margin:0 auto;padding:24px 16px 64px}h1{font-size:24px;line-height:1.25}h2{font-size:19px;margin-top:32px}.m{color:var(--mut);font-size:13px}.t{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--head)}audio{width:100%;margin:8px 0 16px}.k{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}.k div{border:1px solid var(--line);border-radius:8px;padding:10px}.k b{display:block;font-size:22px}.stop{background:#fbe9e7;padding:10px 12px;border-radius:8px}.ready{background:#e8f5e9;padding:10px 12px;border-radius:8px}.note{background:#fff8e1;padding:10px 12px;border-radius:8px}code{background:var(--head);padding:1px 4px;border-radius:4px}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main>
+<h1>Автобалл: разбор 10.11.2026 – что тупит, что починено, что решить</h1><audio controls src="golos.mp3"></audio>
+<p class="m">Владелец: «сходи, посмотри по нашей стратегии… что корректировать, что доделать… может, боты тупят». Источники: сервер FirstVDS (/opt/avtoball/sbor), Метрика 113920999 и Вебмастер по API, Google Search Console (sc-domain:avtoball.ru), независимое чтение 7 статей РУКИ, репо reytingi и reyting-avto. Съём 10.11.2026.</p>
+
+<div class="k"><div><b>6</b>городов открыто</div><div><b>4 342</b>адресов в sitemap</div><div><b>1 666</b>показов в Google за неделю</div><div><b>0</b>визитов из Яндекса</div><div><b>0</b>заявок</div><div><b>~1–3</b>человека в день</div></div>
+
+<h2>1. Кто тупил</h2>
+<div class="t"><table><tr><th>Участок</th><th>Что было</th><th>Что сделано 10.11</th></tr>
+<tr><td><b>Съём на сервере</b></td><td>6 миллионников сняты (Москва 84 ниши / 13 384 компании, Питер 83 / 15 473, Екатеринбург 81, Казань 78, Уфа 82, Ростов 77), но ни один не отмечен готовым: цепочка шагов падала на одной нише с «липкой» капчей, поток крутил 8 × 30 мин на запросе «lynk co техническое обслуживание». Районы не добирались.</td><td class="ready">Ниша с капчей помечается и при повторе пропускается (пробуем ровно дважды), пауза 10 мин вместо 30, город снят от 70 ниш из 84. Потоки перезапущены, очередь: Воронеж, Нижний, Челябинск, Казань, Екатеринбург, Самара, Волгоград, Барнаул, Пермь, Саратов, Тюмень, Москва, Питер, 21 город по 500 тыс.</td></tr>
+<tr><td><b>Капча Яндекса</b></td><td>Везде на одних нишах: BYD, Zeekr, Lynk &amp; Co, Avatr, Lixiang, русификация, установка магнитол, сервис китайских – с сервера и с мака одинаково. Это наши партнёрские ниши.</td><td class="stop">Не лечится паузами. Нужен другой источник (2ГИС, ручной съём, другой IP) – <b>решение владельца</b>.</td></tr>
+<tr><td><b>Яндекс</b></td><td>Хост в Вебмастере NOT_LOADED 11 дней после открытия; sitemap в Вебмастер не добавлена; диагностика ни разу не запускалась; 0 визитов из Яндекса. Chrome залогинен под «Автостиль Ярославль», кабинет avtoball недоступен.</td><td class="stop">POST sitemap по API – 504 (второй день). <b>Владельцу:</b> зайти в Вебмастер под artemiy.galimov, добавить https://avtoball.ru/sitemap.xml, посмотреть, когда хост добавлен и нет ли ошибки «сайт не загружен».</td></tr>
+<tr><td><b>РУКИ (7 статей 10.11)</b></td><td>5 статей «автошкола цена» – один каркас (62 % тех же H2, дословные связки), 4 из 5 без единой цены («в наших данных нет» по 6–12 раз). Красноярск: устаревший срок пересдачи (30 дней; с 01.04.2024 – 6–9 месяцев после третьей неудачи). ОСАГО – без чисел. Группа «Как выбрать» на 16–23 из 25 фраз – бренды и «отзывы».</td><td class="ready">Норма в Красноярске исправлена. «Цены» – только при файле цен (ceny.py), иначе тема ждёт. Одна тема в день на все города. «Отзывы», «рейтинг», «лучшие», «топ», бренды – интент рейтинга, из блога убраны. ОТК ловит каркас (H2 ≥ 60 %, ≥ 3 дословных предложения, «в наших данных нет» &gt; 3). Объём по данным: 1 200–2 000 при тонких. ТЗ, агент и регламент обновлены.</td></tr>
+<tr><td><b>Ведение по понедельникам</b></td><td>09.11 разбор недели не прошёл: <code>claude -p</code> – «You've hit your weekly limit · resets Nov 11». РУКИ (7 запусков в день) зависят от того же лимита.</td><td class="note">Лимит обновится 11.11 18:00. Если повторится – РУКИ будут писать меньше статей, чем городов; в журнале это видно.</td></tr>
+<tr><td><b>Барнаул</b></td><td>На сервере 81 ниша, на сайте 33 (копировали только по понедельникам).</td><td class="ready">Подтянут: 52 рейтинга вместо 31, 410 карточек компаний, +212 адресов в sitemap (4 554). «Сервис китайских» в Барнауле не набрал 5 компаний по правилу – страницы нет. Для ниш «установка магнитол» и «сервис китайских» вне Новосибирска добавлены правило отбора и тексты.</td></tr>
+</table></div>
+
+<h2>2. Где мы по цифрам (30.10–10.11)</h2>
+<div class="t"><table><tr><th>Канал</th><th>Цифра</th><th>Источник</th></tr>
+<tr><td>Google: показы / клики / позиция</td><td>1 666 / 90 / 24,7 (клики 04.11 – 57, похоже на бота: CTR 70–100 % на позициях 50–85; реальных переходов из Google по Метрике – 13)</td><td>GSC 30.10–09.11</td></tr>
+<tr><td>Google по городам (показы)</td><td>Новосибирск 875, Краснодар 218, Омск 203, Красноярск 201, Пермь 109, Барнаул 79</td><td>GSC</td></tr>
+<tr><td>Что ведёт из Google</td><td>ремонт дизелей, турбин, грузовиков, бортовых компьютеров, мото – ниши с низкой конкуренцией, а не мультимедиа и сигнализации; карточки компаний начинают выходить (svoy-master – позиция 1)</td><td>GSC</td></tr>
+<tr><td>Яндекс</td><td>хост не загружен, 0 визитов</td><td>Вебмастер API 200 → 404 HOST_NOT_LOADED</td></tr>
+<tr><td>Метрика: визиты / люди</td><td>35 / 22, из них 6 – HeadlessChrome (наши проверки форм), реальных ≈ 29; поиск 13 (весь Google), прямые 21</td><td>Метрика 30.10–10.11</td></tr>
+<tr><td>Заявки (5 целей)</td><td>0</td><td>Метрика</td></tr>
+<tr><td>Блог</td><td>2 просмотра (прямые), 0 из поиска; в Google проиндексированы /blog/ и статьи НСК</td><td>Метрика, GSC</td></tr>
+</table></div>
+
+<h2>3. Стратегия: что держим, что корректируем</h2>
+<ul>
+<li><b>Держим:</b> рейтинг по открытым цифрам, порог 5 компаний, города по одному раз в 2 дня (Казань первая – после добора на сервере), каталог карточек. Google уже отдаёт показы на это.</li>
+<li><b>Корректируем блог:</b> не «статья в каждый город каждый день любой ценой», а статья там, где есть данные: цены – из съёма цен, законы – с датой редакции, выбор – через рейтинг. День без данных – город пропускает день, это записано в журнал. Иначе это scaled content на молодом домене.</li>
+<li><b>Корректируем партнёрские ниши:</b> они не снимаются с Яндекс Карт по капче. Без них Казань и дальше выйдут без «магнитол» и «китайских» – то есть без страниц для TEYES и Evolution в новых городах.</li>
+<li><b>Техдолг, который стоит денег:</b> Яндекс не видит сайт. Пока хост не загружен, половина поиска для нас не существует. Это первое, что надо снять руками.</li>
+<li><b>Добор по районам</b> для Москвы и Питера идёт после 500-тысячников (они последние в порядке открытия). Если Москву надо раньше – передвинуть в очереди.</li>
+</ul>
+
+<h2>4. Что решить Артёму</h2>
+<ol>
+<li>Вебмастер: добавить sitemap и проверить хост под своим логином (API отдаёт 504).</li>
+<li>Партнёрские ниши под капчей: 2ГИС как второй источник, ручной съём, или оставить города без них.</li>
+<li>Снимать цены по всем 6 городам (scripts/sbor/ceny.py, бесплатно, с сайтов компаний) – тогда ~140 тем «Цены» откроются для РУКИ. Да/нет.</li>
+<li>4 статьи «автошкола цена» без цен (Омск, Барнаул, Краснодар, Пермь): переписать после съёма цен или закрыть noindex сейчас.</li>
+</ol>
+
+<p class="m">Следы: reytingi – коммиты «Разбор 10.11», журнал docs/vedenie/zhurnal.md; reyting-avto – правила ниш, тексты, ОТК; сервер – /opt/avtoball/sbor/zhurnal.log, gotovo.txt. Автор разбора – Claude по заданию Артёма Галимова.</p>
+</main><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
