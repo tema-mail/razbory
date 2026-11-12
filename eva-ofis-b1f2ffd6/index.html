@@ -1,0 +1,24 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ева: офис Дефорд</title><meta name="robots" content="noindex,nofollow">
+<style>
+:root{--bg:#f6f6f4;--card:#fff;--text:#16171a;--muted:#5f6470;--line:#e2e2de}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--text:#e4e4e2;--muted:#9aa0ab;--line:#33363c;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:32px 16px 64px}
+h1{font-size:30px;margin:0 0 8px}p{color:var(--muted);margin:0 0 24px;max-width:720px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+figure img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;cursor:zoom-in}
+#z{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:9}#z img{max-width:96vw;max-height:90vh}#z button{position:absolute;right:14px;top:14px;font-size:28px;line-height:1;background:none;border:0;color:#fff;cursor:pointer}
+figcaption{padding:10px 14px}figcaption b{display:inline-block;min-width:28px;color:#4f8cff}
+#t{position:fixed;right:14px;top:14px;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:10px;padding:8px 12px;cursor:pointer}
+</style>
+<script>(function(){var s;try{s=localStorage.getItem('tema')}catch(e){}var h=new Date().getHours();var d=s?s==='dark':(h>=19||h<7||matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.theme=d?'dark':'light'})();</script>
+</head><body><button id="t" type="button">Тема</button><main>
+<h1>Ева в офисе Дефорд: выбери вариант</h1>
+<p>Ева та же, что сейчас стоит в звонке (A3, графитовый андроид). Её одели и посадили в кресло как у тебя на созвоне, за спиной неоновый deford. и синие папки. Напиши номер; можно два-три на доработку. Выбранный поставлю плиткой Евы на meet.deford.ru.</p>
+<div class="g"><figure><img src="img/01.webp" alt="Ева в офисе Дефорд, вариант 01" loading="lazy"><figcaption><b>01</b> Светлый офис как у Артёма: белая стена, дверь, синий неон, полка с папками. Чёрное худи deford.</figcaption></figure><figure><img src="img/02.webp" alt="Ева в офисе Дефорд, вариант 02" loading="lazy"><figcaption><b>02</b> Вечер, темно: белый неон с синим свечением, подсвеченная полка папок. Чёрная водолазка</figcaption></figure><figure><img src="img/03.webp" alt="Ева в офисе Дефорд, вариант 03" loading="lazy"><figcaption><b>03</b> Лофт: тёмный кирпич, синий неон, чёрный металлический стеллаж с папками. Тёмно-синяя рубашка</figcaption></figure><figure><img src="img/04.webp" alt="Ева в офисе Дефорд, вариант 04" loading="lazy"><figcaption><b>04</b> Минимализм: синяя стена, белый неон, длинная полка с папками в ряд. Белая рубашка и чёрный пиджак</figcaption></figure><figure><img src="img/05.webp" alt="Ева в офисе Дефорд, вариант 05" loading="lazy"><figcaption><b>05</b> Стеклянная перегородка, за ней опенспейс в размытии, папки на тумбе. Серый свитер</figcaption></figure><figure><img src="img/06.webp" alt="Ева в офисе Дефорд, вариант 06" loading="lazy"><figcaption><b>06</b> Тёплый: дубовые полки с синими папками, растение, синий неон. Чёрное худи deford.</figcaption></figure><figure><img src="img/07.webp" alt="Ева в офисе Дефорд, вариант 07" loading="lazy"><figcaption><b>07</b> Футуризм: тёмно-синий офис, светодиодные линии, папки светятся на стеклянных полках. Техно-куртка</figcaption></figure><figure><img src="img/08.webp" alt="Ева в офисе Дефорд, вариант 08" loading="lazy"><figcaption><b>08</b> Почти твоя комната: белая стена, дверь, потолок, вместо TEYES неон deford., полка у двери. Чёрная футболка</figcaption></figure><figure><img src="img/09.webp" alt="Ева в офисе Дефорд, вариант 09" loading="lazy"><figcaption><b>09</b> Студия: серые акустические панели, белый неон, стопка папок и ноутбук сзади. Худи deford., высокий хвост</figcaption></figure></div></main>
+<div id="z"><button type="button" aria-label="Закрыть">✕</button><img alt=""></div>
+<script>document.getElementById('t').onclick=function(){var n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('tema',n)}catch(e){}};
+var z=document.getElementById('z');document.querySelectorAll('figure img').forEach(function(i){i.onclick=function(){z.querySelector('img').src=i.src;z.style.display='flex'}});z.onclick=function(){z.style.display='none'};document.addEventListener('keydown',function(e){if(e.key==='Escape')z.style.display='none'});</script>
+</body></html>
