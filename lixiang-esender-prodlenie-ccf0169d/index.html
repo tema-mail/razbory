@@ -27,13 +27,13 @@ a{color:var(--acc)}
 table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
 th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
 th{font-size:.82rem;color:var(--muted);font-weight:600}
-td.r,th.r{text-align:right}
+td.r,th.r{text-align:right}td small{color:var(--muted);font-size:.8rem;margin-left:4px}
 code,.btn{background:var(--chip);border-radius:6px;padding:1px 7px;font:inherit;font-weight:600;white-space:nowrap}
 .step{display:grid;grid-template-columns:1fr 250px;gap:22px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 14px}
 .step .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--acc);color:var(--bg);font-weight:700;margin-right:8px}
 .step h3{display:flex;align-items:center;font-size:1.12rem;margin-bottom:12px}
 figure{margin:0}figcaption{font-size:.78rem;color:var(--muted);text-align:center;margin-top:8px}
-.shot{display:block;width:100%;border-radius:22px;border:6px solid #1b1c1f;cursor:zoom-in;background:#fff}
+.shot{display:block;width:100%;height:auto;border-radius:22px;border:6px solid #1b1c1f;cursor:zoom-in;background:#fff}
 /* схема экрана телефона – всегда светлая, как настоящий экран */
 .ph{border:6px solid #1b1c1f;border-radius:22px;background:#f2f2f6;color:#15161a;overflow:hidden;font-size:12.5px;line-height:1.35}
 .ph .bar{background:#ededed;padding:10px 12px;font-weight:600;text-align:center;position:relative}
@@ -64,7 +64,7 @@ figure{margin:0}figcaption{font-size:.78rem;color:var(--muted);text-align:center
 #lb{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.88);display:none;place-items:center;padding:16px}
 #lb.on{display:grid}#lb img{max-width:100%;max-height:100%;border-radius:12px}
 #lb button{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#111;font-size:24px;line-height:1;cursor:pointer}
-@media (max-width:720px){.step{grid-template-columns:1fr;padding:16px}.step figure{max-width:260px;margin:0 auto;width:100%}.kv{grid-template-columns:1fr;gap:2px 0}.kv dd{margin-bottom:10px}}
+@media (max-width:720px){th,td{padding:8px 6px;font-size:.9rem;white-space:normal}th{font-size:.74rem}td small{display:block;margin:0}.box.tw{padding:12px}.step{grid-template-columns:1fr;padding:16px}.step figure{max-width:260px;margin:0 auto;width:100%}.kv{grid-template-columns:1fr;gap:2px 0}.kv dd{margin-bottom:10px}}
 </style></head><body><main>
 
 <h1>Li Auto: как продлить китайский номер eSender</h1>
@@ -76,9 +76,9 @@ figure{margin:0}figcaption{font-size:.78rem;color:var(--muted);text-align:center
 <h2>Коротко</h2>
 <div class="box">
 <dl class="kv">
-<dt>Что случилось</dt><dd>Закончился срок обслуживания виртуального номера +86 171… в сервисе eSender (на телефоне клиента WeChat перевёл название как «Yi Botong»). Это не SIM в машине и не «баланс». На этот номер приходят СМС-коды для входа в приложение Li Auto.</dd>
+<dt>Что случилось</dt><dd>Закончился срок обслуживания виртуального номера +86 171… в сервисе eSender (на телефоне клиента WeChat перевёл название как «Yi Botong»). Это не SIM в машине и не «баланс». На этот номер приходят СМС-коды для входа в приложение Li Auto.</dd>
 <dt>Что делать</dt><dd>Купить пакет продления внутри WeChat на телефоне клиента. Просто пополнить баланс бесполезно: срок продлевает только пакет.</dd>
-<dt>Сколько стоит</dt><dd>138 юаней за год, 398 за три года, 668 за пять лет. В рублях – примерно 1 700, 4 900 и 8 300 ₽ по курсу ЦБ.</dd>
+<dt>Сколько стоит</dt><dd>138 юаней за год, 398 за три года, 668 за пять лет. В рублях – примерно 1 700, 4 900 и 8 300 ₽ по курсу ЦБ.</dd>
 <dt>Чем платить</dt><dd>Alipay с юанями на балансе. Российские карты напрямую не проходят.</dd>
 <dt>Сколько времени</dt><dd>10–15 минут, если юани на Alipay уже лежат. От часа до пары дней, если Alipay надо заводить и пополнять.</dd>
 <dt>Срочность</dt><dd>Платить сегодня. После окончания срока номер хранится недолго, потом его аннулируют.</dd>
@@ -103,14 +103,14 @@ figure{margin:0}figcaption{font-size:.78rem;color:var(--muted);text-align:center
 <p>Цены со скрина клиента от 12.11.2026. Сервис считает в гонконгских долларах, но юани принимает один к одному: 100 юаней = 100 HKD.</p>
 <div class="box tw">
 <table>
-<tr><th>Срок</th><th class="r">Цена, юани</th><th class="r">В год, юани</th><th class="r">В рублях по ЦБ</th></tr>
-<tr><td>360 дней (1 год)</td><td class="r">138</td><td class="r">138</td><td class="r">1 710 ₽</td></tr>
-<tr><td>720 дней (2 года)</td><td class="r">268</td><td class="r">134</td><td class="r">3 321 ₽</td></tr>
-<tr><td>1 080 дней (3 года)</td><td class="r">398</td><td class="r">133</td><td class="r">4 932 ₽</td></tr>
-<tr><td>1 800 дней (5 лет)</td><td class="r">668</td><td class="r">134</td><td class="r">8 277 ₽</td></tr>
+<tr><th>Срок</th><th class="r">Цена, юани</th><th class="r">В год, юани</th><th class="r">Рубли по&nbsp;ЦБ</th></tr>
+<tr><td>1 год <small>360&nbsp;дней</small></td><td class="r">138</td><td class="r">138</td><td class="r">1 710 ₽</td></tr>
+<tr><td>2 года <small>720&nbsp;дней</small></td><td class="r">268</td><td class="r">134</td><td class="r">3 321 ₽</td></tr>
+<tr><td>3 года <small>1&nbsp;080&nbsp;дней</small></td><td class="r">398</td><td class="r">133</td><td class="r">4 932 ₽</td></tr>
+<tr><td>5 лет <small>1&nbsp;800&nbsp;дней</small></td><td class="r">668</td><td class="r">134</td><td class="r">8 277 ₽</td></tr>
 </table>
 </div>
-<p class="meta" style="margin-top:10px">Курс ЦБ на 12.11.2026 – 12,39 ₽ за юань. Банк при переводе на Alipay берёт свой курс, по оценкам в обзорах выходит на 5–8 % дороже.</p>
+<p class="meta" style="margin-top:10px">Курс ЦБ на 12.11.2026 – 12,39 ₽ за юань. Банк при переводе на Alipay берёт свой курс, по оценкам в обзорах выходит на 5–8 % дороже.</p>
 <p>Скидки за долгий срок почти нет, год стоит 133–138 юаней при любом пакете. Брать на столько, сколько клиент планирует ездить на машине. На скрине клиента уже отмечен пакет на три года.</p>
 
 <h2>Восемь шагов</h2>
@@ -140,13 +140,13 @@ figure{margin:0}figcaption{font-size:.78rem;color:var(--muted);text-align:center
 
 <section class="step">
 <div><h3><span class="n">3</span>Выбрать номер и нажать Recharge</h3>
-<p>Откроется страница сервиса. В строке <code>Phone Number</code> нажать <span class="btn">Please choose number</span> и выбрать номер клиента, он начинается на +86 171.</p>
+<p>Откроется страница сервиса. В строке <code>Phone Number</code> нажать <span class="btn">Please choose number</span> и выбрать номер клиента, он начинается на +86 171.</p>
 <p>Затем нажать <span class="btn">Recharge</span>. Откроется экран оплаты – тот самый, что на скринах клиента. Судя по заголовку, на этот же экран ведёт и пункт <code>Top-up</code> из меню My A/C.</p>
 <div class="stop"><p><b>Номера в списке нет?</b> Значит, его уже аннулировали. Дальше не идти, сразу писать в поддержку – контакты в разделе <a href="#sboy">«Если что-то пошло не так»</a>.</p></div></div>
 <figure><div class="ph"><div class="bar">eSender<small>hk.multi-byte.com.cn</small></div><div class="pad">
 <div class="ttl">Welcome to eSender</div><div class="sub">Package Plan</div>
 <div class="row"><span class="grey">Phone Number:</span></div>
-<div class="row hl"><b>+86 171 ••• ••••</b></div>
+<div class="row hl"><b>+86 171 ••• ••••</b></div>
 <div class="gbtn hl">Recharge</div></div></div><figcaption>Схема экрана</figcaption></figure>
 </section>
 
@@ -161,7 +161,7 @@ figure{margin:0}figcaption{font-size:.78rem;color:var(--muted);text-align:center
 
 <section class="step">
 <div><h3><span class="n">5</span>Выбрать пакет и нажать «Оплата»</h3>
-<p>Пролистать страницу вниз до списка пакетов. Нажать на нужную строку, справа появится зелёная галочка. На скрине клиента отмечен пакет на 1 080 дней за 398.</p>
+<p>Пролистать страницу вниз до списка пакетов. Нажать на нужную строку, справа появится зелёная галочка. На скрине клиента отмечен пакет на 1 080 дней за 398.</p>
 <p>Внизу зелёная кнопка <span class="btn">Оплата</span> (в английском варианте – <code>Payment</code>). Нажать её.</p>
 <div class="stop"><p><b>Главная ошибка – пополнить баланс вместо пакета.</b> Под списком пакетов есть поле «только пополнение баланса». Сумму туда не вводить: деньги на балансе срок номера не продлевают, они идут на отправку СМС. Об этом прямо написано фиолетовым текстом на экране.</p></div>
 <p>Оплата не возвращается и на другие услуги не переносится – перед нажатием ещё раз сверить номер и срок.</p></div>
@@ -216,10 +216,10 @@ figure{margin:0}figcaption{font-size:.78rem;color:var(--muted);text-align:center
 <li>Перевести рубли из банка: в приложении Сбера или Т-Банка раздел переводов за рубеж → Китай → Alipay, получатель – номер телефона, к которому привязан Alipay.</li>
 <li>Перед подтверждением смотреть, сколько юаней придёт. Комиссия обычно показана как ноль, наценка спрятана в курсе.</li>
 </ol>
-<p>У банков есть минимальная сумма перевода. Источники называют разное, от 300 до 5 000 ₽, поэтому смотреть в приложении. Если минимум больше цены пакета, остаток останется на Alipay до следующего клиента.</p>
+<p>У банков есть минимальная сумма перевода. Источники называют разное, от 300 до 5 000 ₽, поэтому смотреть в приложении. Если минимум больше цены пакета, остаток останется на Alipay до следующего клиента.</p>
 <p>Зачисление – от нескольких минут до часа, у одного владельца заняло 30–60 минут. Обзоры предупреждают, что на проверках перевод может зависнуть на несколько дней, так что начинать сегодня.</p>
 <h3 style="margin-top:18px">Если совсем срочно, а платить нечем</h3>
-<p>Есть посредники, которые продлевают eSender за рубли – от 3 000 ₽ за год. Им достаточно номера телефона. Мы их не проверяли. Пароль от eSender и коды из СМС посреднику не давать ни под каким предлогом.</p>
+<p>Есть посредники, которые продлевают eSender за рубли – от 3 000 ₽ за год. Им достаточно номера телефона. Мы их не проверяли. Пароль от eSender и коды из СМС посреднику не давать ни под каким предлогом.</p>
 </div>
 
 <h3 style="margin-top:22px">Что не работает</h3>
