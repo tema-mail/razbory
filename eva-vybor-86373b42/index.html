@@ -1,0 +1,21 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ева: выбор образа</title><meta name="robots" content="noindex,nofollow">
+<style>
+:root{--bg:#f6f6f4;--card:#fff;--text:#16171a;--muted:#5f6470;--line:#e2e2de}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--text:#e4e4e2;--muted:#9aa0ab;--line:#33363c;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:32px 16px 64px}
+h1{font-size:30px;margin:0 0 8px}p{color:var(--muted);margin:0 0 24px;max-width:720px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+figure img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+figcaption{padding:10px 14px}figcaption b{display:inline-block;min-width:28px;color:#4f8cff}
+#t{position:fixed;right:14px;top:14px;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:10px;padding:8px 12px;cursor:pointer}
+</style>
+<script>(function(){var s;try{s=localStorage.getItem('tema')}catch(e){}var h=new Date().getHours();var d=s?s==='dark':(h>=19||h<7||matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.theme=d?'dark':'light'})();</script>
+</head><body><button id="t" type="button">Тема</button><main>
+<h1>Ева на созвоне: выбери образ</h1>
+<p>Ева будет всегда сидеть отдельной плиткой в каждом звонке на meet.deford.ru и попадать в запись. Напиши номер, который нравится, можно два-три на доработку: поправлю детали и поставлю.</p>
+<div class="g"><figure><img src="img/01.webp" alt="Ева, вариант 01" loading="lazy"><figcaption><b>01</b> Живое фото: проджект студии, очки, пучок, светлый офис</figcaption></figure><figure><img src="img/02.webp" alt="Ева, вариант 02" loading="lazy"><figcaption><b>02</b> Живое фото: гарнитура, тёмный пиджак, вечер, синяя подсветка</figcaption></figure><figure><img src="img/03.webp" alt="Ева, вариант 03" loading="lazy"><figcaption><b>03</b> 3D-мультфильм: дружелюбная, с блокнотом</figcaption></figure><figure><img src="img/04.webp" alt="Ева, вариант 04" loading="lazy"><figcaption><b>04</b> Рисованный портрет: рыжая, спокойная, уверенная</figcaption></figure><figure><img src="img/05.webp" alt="Ева, вариант 05" loading="lazy"><figcaption><b>05</b> Аниме: короткие синие волосы, светлый фон</figcaption></figure><figure><img src="img/06.webp" alt="Ева, вариант 06" loading="lazy"><figcaption><b>06</b> Голограмма из синего света: «ИИ» без сомнений</figcaption></figure><figure><img src="img/07.webp" alt="Ева, вариант 07" loading="lazy"><figcaption><b>07</b> Плоская иллюстрация в цветах «Встреч»: тёмный фон, синий</figcaption></figure><figure><img src="img/08.webp" alt="Ева, вариант 08" loading="lazy"><figcaption><b>08</b> Андроид: фарфоровое лицо, синие огоньки</figcaption></figure><figure><img src="img/09.webp" alt="Ева, вариант 09" loading="lazy"><figcaption><b>09</b> Без человека: светящийся шар-ассистент с лицом</figcaption></figure><figure><img src="img/10.webp" alt="Ева, вариант 10" loading="lazy"><figcaption><b>10</b> Живое фото: строгая, чёрная водолазка, тёмная студия</figcaption></figure></div></main>
+<script>document.getElementById('t').onclick=function(){var n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('tema',n)}catch(e){}};</script>
+</body></html>
