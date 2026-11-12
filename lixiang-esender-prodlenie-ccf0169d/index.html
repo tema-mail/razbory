@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Li Auto: как продлить китайский номер eSender</title>
+<script data-tema-v1>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}if(!t){var h=new Date().getHours();t=(h>=19||h<7||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--text:#16181c;--muted:#626873;--line:#e1e4e9;--acc:#0b6b66;--mark:#e0188c;--warn-bg:#fff4d6;--warn-tx:#5a4300;--stop-bg:#fde5e3;--stop-tx:#7a1c14;--ok-bg:#e3f4e4;--ok-tx:#1d4d22;--chip:#eceef2}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--text:#e8e8e6;--muted:#a3a6ad;--line:#33363c;--acc:#5fd4c9;--mark:#ff5cb8;--warn-bg:#3a3220;--warn-tx:#f1e6c8;--stop-bg:#3b2222;--stop-tx:#f3d6d3;--ok-bg:#1f3320;--ok-tx:#d6ecd0;--chip:#2a2d33;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:940px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:clamp(1.55rem,1.1rem + 2vw,2.3rem);line-height:1.15;margin:0 0 10px;text-wrap:balance}
+h2{font-size:1.35rem;line-height:1.25;margin:44px 0 14px}
+h3{font-size:1.08rem;margin:0 0 8px}
+p{margin:0 0 12px}ul,ol{margin:0 0 12px;padding-left:22px}li{margin:0 0 6px}
+a{color:var(--acc)}
+.lead{color:var(--muted);max-width:720px}
+.meta{color:var(--muted);font-size:.875rem;margin:0 0 18px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.audio{display:grid;gap:8px;margin:18px 0 0}.audio b{font-size:.95rem}.audio audio{width:100%}
+.note{background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:14px 16px;margin:0 0 12px}
+.stop{background:var(--stop-bg);color:var(--stop-tx);border-radius:12px;padding:14px 16px;margin:0 0 12px}
+.ok{background:var(--ok-bg);color:var(--ok-tx);border-radius:12px;padding:14px 16px;margin:0 0 12px}
+.note>:last-child,.stop>:last-child,.ok>:last-child,.box>:last-child{margin-bottom:0}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:8px 16px;margin:0}
+.kv dt{color:var(--muted)}.kv dd{margin:0}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:.82rem;color:var(--muted);font-weight:600}
+td.r,th.r{text-align:right}
+code,.btn{background:var(--chip);border-radius:6px;padding:1px 7px;font:inherit;font-weight:600;white-space:nowrap}
+.step{display:grid;grid-template-columns:1fr 250px;gap:22px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 14px}
+.step .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--acc);color:var(--bg);font-weight:700;margin-right:8px}
+.step h3{display:flex;align-items:center;font-size:1.12rem;margin-bottom:12px}
+figure{margin:0}figcaption{font-size:.78rem;color:var(--muted);text-align:center;margin-top:8px}
+.shot{display:block;width:100%;border-radius:22px;border:6px solid #1b1c1f;cursor:zoom-in;background:#fff}
+/* схема экрана телефона – всегда светлая, как настоящий экран */
+.ph{border:6px solid #1b1c1f;border-radius:22px;background:#f2f2f6;color:#15161a;overflow:hidden;font-size:12.5px;line-height:1.35}
+.ph .bar{background:#ededed;padding:10px 12px;font-weight:600;text-align:center;position:relative}
+.ph .bar small{display:block;font-weight:400;color:#777;font-size:10px}
+.ph .bar .dots{position:absolute;right:8px;top:6px;padding:2px 6px;letter-spacing:1px}
+.ph .pad{padding:10px}
+.ph .row{background:#fff;border-radius:8px;padding:9px 10px;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.ph .ico{flex:none;width:26px;height:26px;border-radius:50%;background:#7a3fa0;color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700}
+.ph .grey{color:#888}
+.ph .msg{background:#fff;border-radius:8px;height:44px;margin:0 0 6px;opacity:.7}
+.ph .menu{background:#fff;border-radius:8px;margin:0 0 6px 34%;box-shadow:0 2px 10px rgba(0,0,0,.14)}
+.ph .menu div{padding:7px 10px;border-bottom:1px solid #eee}.ph .menu div:last-child{border:0}
+.ph .tabs{display:grid;grid-template-columns:1fr 1fr 1fr;background:#fafafa;border-top:1px solid #ddd;text-align:center}
+.ph .tabs div{padding:9px 2px;border-left:1px solid #e3e3e3}.ph .tabs div:first-child{border:0}
+.ph .ttl{color:#8b4a9e;font-size:15px;text-align:center;margin:6px 0 2px}.ph .sub{text-align:center;margin:0 0 10px;font-size:13px}
+.ph .gbtn{background:#2aa52a;color:#fff;text-align:center;border-radius:6px;padding:9px;font-weight:600;margin:8px 0 0}
+.ph .bbtn{background:#1e6fff;color:#fff;text-align:center;border-radius:18px;padding:9px;font-weight:600;margin:10px 0 0}
+.ph .ali{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:700;color:#1677ff;margin:12px 0}
+.ph .ali i{width:24px;height:24px;border-radius:5px;background:#1677ff;display:inline-block}
+.ph .sheet{background:#fff;border-radius:12px 12px 0 0;padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:22px;box-shadow:0 -4px 14px rgba(0,0,0,.18)}
+.ph .tile{background:#f1f1f4;border-radius:8px;padding:10px 6px;text-align:center;font-size:11.5px}
+.ph .sum{font-size:22px;font-weight:700;text-align:center;margin:10px 0}
+.ph .dark{background:#262b45;height:34px}
+.ph .hl{outline:3px solid var(--mark);outline-offset:1px;border-radius:8px}
+.ph .tabs .hl,.ph .menu .hl{outline-offset:-3px}
+.src li{word-break:break-word}
+#tema{position:fixed;right:14px;bottom:14px;z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.88);display:none;place-items:center;padding:16px}
+#lb.on{display:grid}#lb img{max-width:100%;max-height:100%;border-radius:12px}
+#lb button{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#111;font-size:24px;line-height:1;cursor:pointer}
+@media (max-width:720px){.step{grid-template-columns:1fr;padding:16px}.step figure{max-width:260px;margin:0 auto;width:100%}.kv{grid-template-columns:1fr;gap:2px 0}.kv dd{margin-bottom:10px}}
+</style></head><body><main>
+
+<h1>Li Auto: как продлить китайский номер eSender</h1>
+<p class="lead">У клиента закончился срок виртуального китайского номера, к которому привязан мастер-аккаунт Li Auto. Ниже – что это за номер, чем платить из России и восемь шагов оплаты с картинками.</p>
+<p class="meta">Собрано 12.11.2026 по двум скринам клиента, официальному сайту eSender и инструкциям владельцев. Страница закрыта от поиска.</p>
+
+<div class="box audio"><b>Послушать итог голосом, 1 минута</b><audio controls preload="none" src="itog.mp3"></audio></div>
+
+<h2>Коротко</h2>
+<div class="box">
+<dl class="kv">
+<dt>Что случилось</dt><dd>Закончился срок обслуживания виртуального номера +86 171… в сервисе eSender (на телефоне клиента WeChat перевёл название как «Yi Botong»). Это не SIM в машине и не «баланс». На этот номер приходят СМС-коды для входа в приложение Li Auto.</dd>
+<dt>Что делать</dt><dd>Купить пакет продления внутри WeChat на телефоне клиента. Просто пополнить баланс бесполезно: срок продлевает только пакет.</dd>
+<dt>Сколько стоит</dt><dd>138 юаней за год, 398 за три года, 668 за пять лет. В рублях – примерно 1 700, 4 900 и 8 300 ₽ по курсу ЦБ.</dd>
+<dt>Чем платить</dt><dd>Alipay с юанями на балансе. Российские карты напрямую не проходят.</dd>
+<dt>Сколько времени</dt><dd>10–15 минут, если юани на Alipay уже лежат. От часа до пары дней, если Alipay надо заводить и пополнять.</dd>
+<dt>Срочность</dt><dd>Платить сегодня. После окончания срока номер хранится недолго, потом его аннулируют.</dd>
+</dl>
+</div>
+
+<h2>Почему нельзя тянуть</h2>
+<div class="stop">
+<p><b>Просроченный номер eSender хранит ограниченное время, потом аннулирует и может выдать другому человеку.</b> Сколько именно дней – источники расходятся: называют 3, 7, 15 и 30 дней. На официальном сайте срок не указан, сказано только «продлевайте до окончания срока».</p>
+<p>Если номер уйдёт, коды входа в приложение Li Auto приходить перестанут, а мастер-аккаунт придётся восстанавливать. Это отдельная долгая и дорогая работа.</p>
+</div>
+<div class="ok"><p><b>Хороший признак на скрине клиента:</b> номер ещё выбирается в списке и тарифы показываются. Скорее всего, его не аннулировали и продление пройдёт. Это наше предположение по экрану, а не подтверждение от сервиса.</p></div>
+
+<h2>Что приготовить</h2>
+<ol>
+<li><b>Телефон клиента с WeChat</b>, в котором подключён eSender. Страница оплаты открывается только внутри WeChat. Мы открыли её адрес в обычном браузере 12.11.2026 – там заглушка «подпишитесь на аккаунт в WeChat».</li>
+<li><b>Alipay с юанями</b> на сумму пакета. Где взять юани – в разделе <a href="#yuani">«Где взять юани»</a>.</li>
+<li><b>Решение клиента, на сколько лет продлевать.</b> От этого зависит сумма.</li>
+</ol>
+
+<h2>Тарифы</h2>
+<p>Цены со скрина клиента от 12.11.2026. Сервис считает в гонконгских долларах, но юани принимает один к одному: 100 юаней = 100 HKD.</p>
+<div class="box tw">
+<table>
+<tr><th>Срок</th><th class="r">Цена, юани</th><th class="r">В год, юани</th><th class="r">В рублях по ЦБ</th></tr>
+<tr><td>360 дней (1 год)</td><td class="r">138</td><td class="r">138</td><td class="r">1 710 ₽</td></tr>
+<tr><td>720 дней (2 года)</td><td class="r">268</td><td class="r">134</td><td class="r">3 321 ₽</td></tr>
+<tr><td>1 080 дней (3 года)</td><td class="r">398</td><td class="r">133</td><td class="r">4 932 ₽</td></tr>
+<tr><td>1 800 дней (5 лет)</td><td class="r">668</td><td class="r">134</td><td class="r">8 277 ₽</td></tr>
+</table>
+</div>
+<p class="meta" style="margin-top:10px">Курс ЦБ на 12.11.2026 – 12,39 ₽ за юань. Банк при переводе на Alipay берёт свой курс, по оценкам в обзорах выходит на 5–8 % дороже.</p>
+<p>Скидки за долгий срок почти нет, год стоит 133–138 юаней при любом пакете. Брать на столько, сколько клиент планирует ездить на машине. На скрине клиента уже отмечен пакет на три года.</p>
+
+<h2>Восемь шагов</h2>
+<p class="lead" style="margin-bottom:16px">Названия кнопок даны так, как они выглядят в WeChat на английском, и рядом – как их перевёл телефон клиента. Розовая рамка показывает, куда нажимать.</p>
+
+<section class="step">
+<div><h3><span class="n">1</span>Открыть eSender в WeChat</h3>
+<p>На телефоне клиента открыть WeChat. В списке чатов найти раздел служебных аккаунтов (у владельцев он называется «Сообщения учётной записи» или «Учётные записи служб») либо набрать в поиске <code>esender</code>.</p>
+<p>Нужен аккаунт с фиолетовым значком и словом eSender в названии. Перед словом стоят три иероглифа – это китайское название сервиса.</p>
+<p>Открыть его чат. В чате лежат сообщения сервиса и СМС, которые приходили на номер.</p></div>
+<figure><div class="ph"><div class="bar">WeChat</div><div class="pad">
+<div class="row grey">🔍 esender</div>
+<div class="row hl"><span class="ico">eS</span><b>eSender</b></div>
+<div class="msg"></div><div class="msg"></div></div></div><figcaption>Схема экрана</figcaption></figure>
+</section>
+
+<section class="step">
+<div><h3><span class="n">2</span>My A/C → Package Plan</h3>
+<p>Внизу чата три кнопки меню: <code>Com Info</code>, <code>eSender</code>, <code>My A/C</code>. Нажать правую – <span class="btn">My A/C</span>.</p>
+<p>Всплывёт список: Account Info, Top-up, Recharge Voucher, Package Plan (Renew service), Voice Mail. Выбрать <span class="btn">Package Plan (Renew service)</span> – это продление срока номера.</p>
+<p>Если меню внизу нет, а видна строка ввода текста – нажать значок клавиатуры слева от неё, меню вернётся.</p></div>
+<figure><div class="ph"><div class="bar">eSender</div><div class="pad">
+<div class="msg"></div>
+<div class="menu"><div>Account Info</div><div>Top-up</div><div>Recharge Voucher</div><div class="hl"><b>Package Plan (Renew service)</b></div><div>Voice Mail</div></div></div>
+<div class="tabs"><div>Com Info</div><div>eSender</div><div class="hl"><b>My A/C</b></div></div></div><figcaption>Схема экрана</figcaption></figure>
+</section>
+
+<section class="step">
+<div><h3><span class="n">3</span>Выбрать номер и нажать Recharge</h3>
+<p>Откроется страница сервиса. В строке <code>Phone Number</code> нажать <span class="btn">Please choose number</span> и выбрать номер клиента, он начинается на +86 171.</p>
+<p>Затем нажать <span class="btn">Recharge</span>. Откроется экран оплаты – тот самый, что на скринах клиента. Судя по заголовку, на этот же экран ведёт и пункт <code>Top-up</code> из меню My A/C.</p>
+<div class="stop"><p><b>Номера в списке нет?</b> Значит, его уже аннулировали. Дальше не идти, сразу писать в поддержку – контакты в разделе <a href="#sboy">«Если что-то пошло не так»</a>.</p></div></div>
+<figure><div class="ph"><div class="bar">eSender<small>hk.multi-byte.com.cn</small></div><div class="pad">
+<div class="ttl">Welcome to eSender</div><div class="sub">Package Plan</div>
+<div class="row"><span class="grey">Phone Number:</span></div>
+<div class="row hl"><b>+86 171 ••• ••••</b></div>
+<div class="gbtn hl">Recharge</div></div></div><figcaption>Схема экрана</figcaption></figure>
+</section>
+
+<section class="step">
+<div><h3><span class="n">4</span>Выбрать способ оплаты – Alipay</h3>
+<p>Проверить, что вверху стоит нужный номер. Ниже список способов оплаты, разбитый по валютам.</p>
+<p>Нужен первый блок – <b>«Оплата в юанях (через CNY)»</b>. В нём две строки: зелёный значок – кошелёк WeChat, синий значок с подписью ALIPAY – то, что нам нужно. Нажать на строку <span class="btn">Alipay</span>, справа появится зелёная галочка.</p>
+<p>Блоки ниже – гонконгские WeChat Pay и Alipay HK, корейский KakaoPay – не трогать. Это другие кошельки, обычный Alipay там не сработает.</p>
+<div class="note"><p>Под строкой Alipay мелкий текст: оплата не откроется прямо в WeChat, ссылку надо открыть в браузере. Это нормально, так и сделаем на шаге 6.</p></div></div>
+<figure><img class="shot" src="img/skrin-oplata.webp" width="591" height="1280" alt="Экран оплаты eSender: номер и способы оплаты в юанях" loading="lazy"><figcaption>Скрин клиента, 12.11.2026. Номер скрыт</figcaption></figure>
+</section>
+
+<section class="step">
+<div><h3><span class="n">5</span>Выбрать пакет и нажать «Оплата»</h3>
+<p>Пролистать страницу вниз до списка пакетов. Нажать на нужную строку, справа появится зелёная галочка. На скрине клиента отмечен пакет на 1 080 дней за 398.</p>
+<p>Внизу зелёная кнопка <span class="btn">Оплата</span> (в английском варианте – <code>Payment</code>). Нажать её.</p>
+<div class="stop"><p><b>Главная ошибка – пополнить баланс вместо пакета.</b> Под списком пакетов есть поле «только пополнение баланса». Сумму туда не вводить: деньги на балансе срок номера не продлевают, они идут на отправку СМС. Об этом прямо написано фиолетовым текстом на экране.</p></div>
+<p>Оплата не возвращается и на другие услуги не переносится – перед нажатием ещё раз сверить номер и срок.</p></div>
+<figure><img class="shot" src="img/skrin-tarify.webp" width="591" height="1280" alt="Экран оплаты eSender: список пакетов и кнопка Оплата" loading="lazy"><figcaption>Скрин клиента, 12.11.2026</figcaption></figure>
+</section>
+
+<section class="step">
+<div><h3><span class="n">6</span>Открыть счёт в браузере</h3>
+<p>Откроется страница <code>Payment in Browser</code> с синим значком Alipay и зелёной кнопкой PAY. Саму кнопку PAY внутри WeChat нажимать бесполезно – WeChat не пускает в Alipay.</p>
+<p>Нажать три точки <span class="btn">•••</span> в правом верхнем углу. Снизу выедет панель с плитками. Выбрать <span class="btn">Открыть в браузере</span>.</p>
+<p>Если такой плитки нет – нажать <span class="btn">Копировать URL</span>, открыть Safari или Chrome и вставить ссылку в адресную строку.</p>
+<div class="note"><p><b>Alipay стоит на другом телефоне?</b> Скопированную ссылку можно переслать на телефон, где лежат юани, и открыть там. По логике счёт привязан к ссылке, а не к телефону. Мы этот вариант сами не проверяли – при первой оплате станет ясно.</p></div></div>
+<figure><div class="ph"><div class="bar">Payment in Browser<small>hk.multi-byte.com.cn</small><span class="dots hl">•••</span></div><div class="pad" style="padding-bottom:0">
+<div class="ali"><i></i>ALIPAY</div><div class="gbtn" style="opacity:.55">PAY</div>
+<div class="sheet"><div class="tile hl"><b>Открыть в браузере</b></div><div class="tile">Копировать URL</div></div></div></div><figcaption>Схема экрана</figcaption></figure>
+</section>
+
+<section class="step">
+<div><h3><span class="n">7</span>Подтвердить платёж в Alipay</h3>
+<p>В браузере страница предложит войти или продолжить в приложении Alipay. Выбрать приложение.</p>
+<p>В Alipay откроется карточка счёта: сумма в юанях, получатель eSender, источник – <code>Balance</code>. Проверить, что сумма совпадает с выбранным пакетом.</p>
+<p>Нажать синюю кнопку <span class="btn">Confirm</span> (в части версий – <code>Pay</code>) и ввести платёжный пароль Alipay.</p>
+<p>Сумма может оказаться на пару юаней меньше цены пакета – владельцы пишут, что Alipay иногда сам применяет купон.</p></div>
+<figure><div class="ph"><div class="dark"></div><div class="pad" style="background:#fff">
+<div class="sum">¥398.00</div>
+<div class="row" style="background:#f4f6f8"><span class="grey">Item</span><span style="margin-left:auto">eSender</span></div>
+<div class="row" style="background:#f4f6f8">Balance<span style="margin-left:auto;color:#1e6fff">✓</span></div>
+<div class="bbtn hl">Confirm</div></div></div><figcaption>Схема экрана</figcaption></figure>
+</section>
+
+<section class="step">
+<div><h3><span class="n">8</span>Проверить, что срок продлён</h3>
+<p>Вернуться в WeChat, в чат eSender. В течение пары минут придёт сообщение вида: <i>You have purchased the package of HK$398/1080days … valid until 2029/…</i></p>
+<p><b>Дата после слов valid until – новый срок номера.</b> Сфотографировать сообщение, записать дату клиенту и поставить ему напоминание в календарь за месяц до неё.</p>
+<p>Контрольная проверка: в приложении Li Auto запросить код входа по этому номеру. СМС с кодом должна прийти в чат eSender. Сообщения в чате хранятся около трёх суток, потом удаляются.</p></div>
+<figure><div class="ph"><div class="bar">eSender</div><div class="pad">
+<div class="msg"></div>
+<div class="row hl" style="display:block">You have purchased the package of HK$398/1080days, <b>valid until 2029/…</b></div>
+<div class="row" style="background:none;padding:6px 0;gap:6px"><span class="tile" style="background:#fff;border:1px solid #999;padding:5px 7px">WeChat Customer service</span><span class="tile" style="background:#fff;border:1px solid #999;padding:5px 7px">WhatsApp</span></div></div></div><figcaption>Схема экрана</figcaption></figure>
+</section>
+
+<h2 id="yuani">Где взять юани</h2>
+<div class="box">
+<h3>Если Alipay с юанями уже есть</h3>
+<p>У клиента или у нас – просто идём по шагам. Это самый быстрый путь.</p>
+<h3 style="margin-top:18px">Если юани лежат в кошельке WeChat</h3>
+<p>На шаге 4 выбрать зелёный значок в блоке «Оплата в юанях» вместо Alipay. Оплата пройдёт прямо в WeChat, шаги 6 и 7 не понадобятся.</p>
+<h3 style="margin-top:18px">Если Alipay нет или он пустой</h3>
+<ol>
+<li>Поставить приложение Alipay и зарегистрироваться по российскому номеру телефона.</li>
+<li>Подтвердить личность загранпаспортом внутри приложения. Без этого перевод из банка может не зачислиться – проверить до отправки денег.</li>
+<li>Перевести рубли из банка: в приложении Сбера или Т-Банка раздел переводов за рубеж → Китай → Alipay, получатель – номер телефона, к которому привязан Alipay.</li>
+<li>Перед подтверждением смотреть, сколько юаней придёт. Комиссия обычно показана как ноль, наценка спрятана в курсе.</li>
+</ol>
+<p>У банков есть минимальная сумма перевода. Источники называют разное, от 300 до 5 000 ₽, поэтому смотреть в приложении. Если минимум больше цены пакета, остаток останется на Alipay до следующего клиента.</p>
+<p>Зачисление – от нескольких минут до часа, у одного владельца заняло 30–60 минут. Обзоры предупреждают, что на проверках перевод может зависнуть на несколько дней, так что начинать сегодня.</p>
+<h3 style="margin-top:18px">Если совсем срочно, а платить нечем</h3>
+<p>Есть посредники, которые продлевают eSender за рубли – от 3 000 ₽ за год. Им достаточно номера телефона. Мы их не проверяли. Пароль от eSender и коды из СМС посреднику не давать ни под каким предлогом.</p>
+</div>
+
+<h3 style="margin-top:22px">Что не работает</h3>
+<ul>
+<li><b>Российская карта напрямую</b> – не проходит ни в одном способе на экране оплаты.</li>
+<li><b>ЮMoney</b> – раньше через него платили картой РФ, сервис его отключил. Об этом писал владелец ещё в ноябре 2024 года.</li>
+<li><b>Приложение eSender</b> – оплаты в юанях там нет, по данным владельца на 22.05.2026. Только WeChat.</li>
+<li><b>Apple Pay и PayPal</b> – в списке сервиса есть, но с российскими картами не работают.</li>
+<li><b>Открыть страницу оплаты с компьютера</b> – вне WeChat она не открывается, проверено нами.</li>
+</ul>
+
+<h2 id="sboy">Если что-то пошло не так</h2>
+<div class="box">
+<dl class="kv">
+<dt>Номера нет в списке</dt><dd>Его аннулировали. Писать в поддержку и просить вернуть номер, пока его не выдали другому.</dd>
+<dt>Оплата прошла, срок не изменился</dt><dd>Скорее всего, деньги ушли на баланс, а не в пакет. Зайти в My A/C → Package Plan и купить пакет с баланса. Не получается – в поддержку со скрином платежа.</dd>
+<dt>Alipay не открывается из браузера</dt><dd>Скопировать ссылку заново на шаге 6, вставить в другой браузер. Проверить, что Alipay установлен и в нём выполнен вход.</dd>
+<dt>В Alipay «недостаточно средств»</dt><dd>Юаней на балансе меньше цены пакета. Довести баланс и повторить с шага 5 – счёт формируется заново.</dd>
+<dt>Поддержка eSender</dt><dd>Круглосуточно, отвечают и на русском. WhatsApp <a href="https://wa.me/85292901111" target="_blank" rel="noopener">+852 9290 1111</a>. В чате eSender внизу есть кнопки WeChat Customer service и WhatsApp.</dd>
+</dl>
+</div>
+
+<h2>Безопасность</h2>
+<div class="note">
+<p>В начале ноября Li Auto в России подтвердил около 20 случаев угона мастер-аккаунтов. Все связаны с виртуальными китайскими номерами: владельцы сами отдавали данные от сервисов вроде eSender посторонним, потом с них требовали деньги.</p>
+<p>Поэтому: платим только с телефона клиента и при нём, пароль eSender и коды из СМС никому не пересылаем, у себя данные клиента не храним.</p>
+</div>
+
+<h2>Что проверено, а что нет</h2>
+<div class="box">
+<p><b>Проверено нами 12.11.2026:</b> адрес страницы оплаты вне WeChat не открывается; тарифы и способы оплаты – со скринов клиента; курс – с сайта ЦБ.</p>
+<p><b>Не проверено:</b> сам платёж мы не проводили, доступа к WeChat клиента у нас нет. Шаги 1–3 и 6–8 описаны по инструкции владельца от 22.05.2026 с его скринами, картинки к ним – наши схемы, а не снимки экрана. Перевод из банка на Alipay описан по опыту владельцев и обзорам 2025–2026 годов, условия банков меняются.</p>
+</div>
+
+<h2>Источники</h2>
+<ul class="src">
+<li><a href="https://www.drive2.ru/l/734062825957235519/" target="_blank" rel="noopener">Инструкция по продлению китайского номера +86</a> – владелец Geely, drive2, 22.05.2026. Живые скрины каждого шага.</li>
+<li><a href="https://www.drive2.ru/l/708070645954520052/" target="_blank" rel="noopener">Как оплатить китайский номер для Lixiang</a> – владелец Li Auto L6, drive2, 28.06.2025. Перевод из Сбера на Alipay.</li>
+<li><a href="https://www.drive2.ru/l/691171427113523546/" target="_blank" rel="noopener">Как продлевал номер eSender через WeChat</a> – владелец Voyah, drive2, 26.11.2024. Про отключение ЮMoney.</li>
+<li><a href="https://www.esender.hk/ru/" target="_blank" rel="noopener">Официальный сайт eSender</a> – способы оплаты, поддержка.</li>
+<li><a href="https://auto.ru/mag/article/v-li-auto-podtverdili-sluchai-vzloma-masterakkauntov-v-rossii-chem-eto-grozit-i-chto-delat/" target="_blank" rel="noopener">Li Auto подтвердил взломы мастер-аккаунтов</a> – Авто.ру.</li>
+<li><a href="https://russification.ru/blog/kitayskiy-nomer-dlya-master-akkaunta/" target="_blank" rel="noopener">Китайский номер для мастер-аккаунта</a> – про баланс, который не продлевает срок.</li>
+<li><a href="https://www.cbr.ru/currency_base/daily/" target="_blank" rel="noopener">Курсы ЦБ</a> на 12.11.2026.</li>
+</ul>
+
+</main>
+<div id="lb" role="dialog" aria-label="Скрин во весь экран"><button type="button" aria-label="Закрыть">×</button><img alt=""></div>
+<button id="tema" type="button" data-tema-v1></button>
+<script>
+(function(){var b=document.getElementById('tema'),r=document.documentElement;
+function upd(){var d=r.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};upd();
+var lb=document.getElementById('lb'),im=lb.querySelector('img');
+function close(){lb.classList.remove('on')}
+document.querySelectorAll('img.shot').forEach(function(s){s.addEventListener('click',function(){im.src=s.src;im.alt=s.alt;lb.classList.add('on')})});
+lb.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
+</body></html>
