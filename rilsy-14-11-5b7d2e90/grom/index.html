@@ -232,8 +232,7 @@ textarea{width:100%;margin:10px 0;padding:10px;border:1px solid var(--ln);border
 <script>(function(){var t=document.getElementById('nagrady'),o=document.getElementById('ok');
 try{t.value=localStorage.getItem('grom-nagrady')||''}catch(e){}
 t.oninput=function(){try{localStorage.setItem('grom-nagrady',t.value)}catch(e){}};
-document.getElementById('copy').onclick=function(){var s='Мои награды для Грома:
-'+t.value.trim();
+document.getElementById('copy').onclick=function(){var s='Мои награды для Грома:\n'+t.value.trim();
 (navigator.clipboard?navigator.clipboard.writeText(s):Promise.reject()).then(function(){o.textContent='Скопировано, вставь в чат'},function(){t.select();o.textContent='Выделено – скопируй вручную'})}})();</script></main><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
 function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
 b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
