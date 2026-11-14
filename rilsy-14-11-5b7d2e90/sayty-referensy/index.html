@@ -41,14 +41,14 @@ html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!impor
 if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
 document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><div class="crumbs"><a href="../">← Все разборы рилсов 14.11</a></div><h1>Референсы дизайна против ИИ-слопа: что из рилса брать</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
 <p>Автор рилса прав в главном: свой вкус у модели не появится, нужен референс. Но в его списке полезны только два бесплатных источника. <strong>Refero Styles</strong> отдаёт готовый DESIGN.md по ссылке, без входа. <strong>Hallmark</strong> полезен как список примет ИИ-слопа, ставить его целиком не надо. Остальные три для наших сайтов на Astro второстепенны.</p>
-<p>Главная проблема у нас не в нехватке скиллов. Наши скиллы <strong>противоречат друг другу</strong> как раз по приметам из рилса:
+<p>Главная проблема у нас не в нехватке скиллов. Наши скиллы <strong>противоречили друг другу</strong> как раз по приметам из рилса (14.11 закрыто, раздел 5):
 - <code>impeccable</code> надзаголовок над заголовком запрещает;
 - <code>high-end-visual-design</code> прямо его требует (крошечная плашка капсом с разрядкой 0.2em);
 - <code>minimalist-ui</code> предлагает плашки капсом с разрядкой;
 - <code>design-taste-frontend</code> разрешает один надзаголовок на три секции;
 - в знаниях <code>marketolog</code> лежит карточка «Надзаголовок называет продукт».</p>
 <p>Отсюда надзаголовки на наших сайтах: грубый подсчёт grep нашёл классы eyebrow / section-label в 27 файлах evolution-car-by и ещё в 12 проектах (глазами не проверял).</p>
-<p>Второй пробел: «одно цветное слово в заголовке» и «подписка в конце страницы» у нас не запрещает ни один скилл. Под заголовками h1–h3 deford-nsk grep нашёл 20 вставок span/em, у plutos-auto 9.</p>
+<p>Второй пробел: «одно цветное слово в заголовке» и «подписка в конце страницы» у нас не запрещал ни один скилл, теперь запрещает <code>site-lead/references/anti-slop-dizayn.md</code>. Под заголовками h1–h3 deford-nsk grep нашёл 20 вставок span/em, у plutos-auto 9.</p>
 <blockquote>
 <p><strong>Рилс:</strong> <a href="https://www.instagram.com/reels/Dfj1L8Dtf9a/">kalter_db – «гуру нейрослопа, ты собрал сайт ИИ, а любой дизайнер за секунду это видит»</a>, 10.11.2026, 2 427 лайков. На экране: <a href="https://styles.refero.design">styles.refero.design</a>, <a href="https://deck.gallery">deck.gallery</a>, <a href="https://godly.website">godly.website</a>, <a href="https://21st.dev">21st.dev</a>, скилл <a href="https://github.com/nutlope/hallmark">Hallmark</a> (<code>npx skills add nutlope/hallmark -g</code>). Проверено 14.11.2026: curl, <code>gh api</code>, браузер на сервере; ничего не ставили и не регистрировались.</p>
 </blockquote>
@@ -193,7 +193,7 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 <li><strong>«Вот стиль с Refero – сделай так же».</strong> Кидаешь ссылку <code>styles.refero.design/style/...</code>. Я забираю DESIGN.md, меняю шрифты на кириллические, переношу токены в DESIGN.md проекта (скилл design-md) и показываю палитру и шрифты одним экраном. После твоего «да» верстаю первый экран, потом остальное.</li>
 <li><strong>«Хочу как у BMW / Tesla / Apple».</strong> Беру готовый DESIGN.md из awesome-design-md (бесплатно, без входа) и делаю то же самое. Бренд целиком не копирую: берём материал (бумага, шрифт, один акцент), логотипы и фирменные шрифты чужого бренда не используем.</li>
 <li><strong>«Вот сайт, который нравится» (с Recent / Awwwards / любой).</strong> Кидаешь ссылку на живой сайт. Если он есть в Refero, беру оттуда. Если нет, открываю в vps-browser на 1440 и 390, снимаю цвета, шрифты, отступы и сетку и собираю DESIGN.md сам. Помечаю «снято с сайта, не официальный гайд».</li>
-<li><strong>«Проверь, не ИИ-слоп ли».</strong> Прогоняю готовую страницу по нашему списку: четыре приметы из рилса, выдуманные цифры, «отправлено» без отправки, шапка и подвал по шаблону. Даю список «где – что – чем заменить», вместе с проверкой site-landing и site-tech. Нужен скрипт <code>proverka-slopa.sh</code>: после твоего «да» внесу его (раздел 5).</li>
+<li><strong>«Проверь, не ИИ-слоп ли».</strong> Прогоняю готовую страницу по нашему списку: четыре приметы из рилса, выдуманные цифры, «отправлено» без отправки, шапка и подвал по шаблону. Даю список «где – что – чем заменить», вместе с проверкой site-landing и site-tech. Это делает скрипт <code>proverka-slopa.sh</code> (раздел 5).</li>
 </ol>
 <p>Источники: <a href="https://doc.refero.design/help/plans.md">Refero plans</a>, <a href="https://doc.refero.design/mcp/getting-started.md">Refero MCP</a>, <a href="https://refero.design/pricing">refero.design/pricing</a>, <a href="https://help.21st.dev/ai/pricing.md">21st pricing</a>, <a href="https://help.21st.dev/ai/mcp.md">21st MCP</a>, <a href="https://help.21st.dev/cli/find.md">21st CLI</a>, <a href="https://www.deck.gallery/pricing/">deck.gallery/pricing</a>, <a href="https://recent.design/info">recent.design/info</a>, <a href="https://github.com/nutlope/hallmark">nutlope/hallmark</a>.</p>
 <h2>3. Hallmark: правила анти-слопа</h2>
@@ -354,29 +354,153 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 </tr>
 </tbody>
 </table></div>
-<p>Чего нет нигде:
-- машинной проверки четырёх примет на готовом сайте (у impeccable есть детектор, но он не ловит цветное слово и подписку в конце);
-- шага «референс → DESIGN.md» в <code>site-lead</code>: вёрстка начинается с прототипа, источник стиля нигде не назван;
-- проверки кириллицы у шрифта из референса.</p>
-<h2>5. Нужно от тебя: что внести в скиллы (только после «да»)</h2>
-<ol>
-<li><strong>Убрать противоречие про надзаголовок.</strong> Одна строка в <code>site-lead/references/standarty.md</code>: «Дизайн-запреты: верх – impeccable craft-floor; правила <code>high-end-visual-design</code> п. 52 и <code>minimalist-ui</code> про плашки капсом на наших сайтах не применять».
-   - Сами чужие скиллы не трогать: при обновлении правка затрётся.
-   - Карточку <code>marketolog/znaniya/tekst/nadzagolovok-produkt-zagolovok-cennost.md</code> сузить: смысловая строка «что и где» допустима <strong>один раз, в первом экране</strong>, обычным регистром, без разрядки, и несёт запрос для SEO. Над секциями – нет.</li>
-<li><strong>Новый файл <code>site-lead/references/anti-slop-dizayn.md</code></strong> (≈40 строк). Четыре приметы из рилса плюс Hallmark 46a, 63, 66, 70, 85 и 42, переведённые на русский. С поправками под нас:
-   - тире «–» разрешено;
-   - лимит слов не для SEO-страниц;
-   - форма заявки в конце – это задача страницы, а не слоп.</li>
-<li><strong>Проверка, которая ловит сама</strong> (правило «одна ошибка – один раз»): <code>site-lead/scripts/proverka-slopa.sh &lt;dist&gt;</code>. Это grep по собранному HTML:
-   - классы eyebrow / kicker / overline / section-label перед h2;
-   - <code>text-transform: uppercase</code> вместе с <code>letter-spacing</code> больше 0.03em на тексте до 15px;
-   - <code>&lt;span&gt;</code>, <code>&lt;em&gt;</code> или <code>&lt;mark&gt;</code> внутри h1–h3;
-   - форма с одним полем e-mail перед <code>&lt;footer&gt;</code>;
-   - « · » в мета-строках, «→» внутри кнопок.</li>
-</ol>
-<p>Шаг в <code>site-landing</code> и <code>site-tech</code> перед показом. Hallmark <code>sloplint.mjs</code> как есть не годится: падает на русском тире.
-4. <strong><code>design-md</code>: добавить источник.</strong> «Если Артём дал ссылку на стиль Refero или файл из awesome-design-md, это референс уровня 1 (слово владельца). Взять токены и правила, шрифты проверить на кириллицу и заменить, записать в DESIGN.md проекта как <em>принятые</em> только после его “да”». Запрет «не тянуть каталоги по умолчанию» оставить: тянем только по ссылке.
-5. <strong><code>site-lead</code> шаг вёрстки:</strong> перед вёрсткой спросить или предложить 1–2 референса стиля, собрать DESIGN.md (скилл design-md), потом верстать. Сейчас этого шага нет.</p>
+<h2>5. Сделано 14.11: правки в скиллах и проверка</h2>
+<p>Спор скиллов закрыт, правила и проверка внесены. Чужие скиллы (<code>high-end-visual-design</code>, <code>minimalist-ui</code>) не правил: при обновлении правка затрётся, поэтому верх задан в нашем стандарте.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Что</th>
+<th>Где</th>
+<th>Суть</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Противоречие про надзаголовок</td>
+<td><code>site-lead/references/standarty.md</code>, раздел «Дизайн»</td>
+<td>Верх – <code>impeccable</code> и наш файл примет; п. 52 <code>high-end-visual-design</code> и плашки капсом <code>minimalist-ui</code> на наших сайтах не применять. Над секцией надзаголовка нет; одна строка «что и где» в первом экране – можно</td>
+</tr>
+<tr>
+<td>Карточка маркетолога</td>
+<td><code>marketolog/znaniya/tekst/nadzagolovok-produkt-zagolovok-cennost.md</code></td>
+<td>Сужена: строка «что и где» только в первом экране, один раз, обычным регистром, несёт запрос для SEO</td>
+</tr>
+<tr>
+<td>Файл примет</td>
+<td><code>site-lead/references/anti-slop-dizayn.md</code> (41 строка)</td>
+<td>Четыре приметы из рилса и Hallmark 3, 8, 42, 46a, 63, 65, 66, 70, 74 по-русски. Тире, SEO-объём, фото клиента и форма заявки в конце – разрешены</td>
+</tr>
+<tr>
+<td>Проверка сама</td>
+<td><code>site-lead/scripts/proverka-slopa.sh &lt;проект&gt;</code></td>
+<td>По собранному dist. FAIL: надзаголовок (kicker, eyebrow, overline, section-label), подпись капсом с разрядкой больше 0.03em. ВНИМ: выделенное слово в h1–h3, подписка e-mail, «A · B · C», «→» в кнопке. Админку и прототипы не смотрит</td>
+</tr>
+<tr>
+<td>Шаг проверки</td>
+<td>агенты <code>site-landing</code> (п. 13) и <code>site-tech</code> (п. 10а)</td>
+<td>Перед показом гоняют скрипт, FAIL идёт в отчёт</td>
+</tr>
+<tr>
+<td>Референс в DESIGN.md</td>
+<td><code>design-md/SKILL.md</code></td>
+<td>Ссылка Артёма на Refero или awesome-design-md – референс уровня «слово владельца»; шрифты на кириллицу; принятым считается после «да»</td>
+</tr>
+<tr>
+<td>Стиль до вёрстки</td>
+<td><code>site-lead/SKILL.md</code>, шаг 2</td>
+<td>Перед вёрсткой – 1–2 референса стиля, DESIGN.md, потом вёрстка</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Что проверка нашла на наших сайтах (по последней сборке dist, 14.11)</h3>
+<p>Только прочитал, ничего не чинил: правка сайта – по задаче в его чате.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Сайт</th>
+<th>Надзаголовки, мест</th>
+<th>Капс с разрядкой, страниц</th>
+<th>Выделенное слово в заголовке, мест</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>evolution-car-by</td>
+<td>58</td>
+<td>268</td>
+<td>10</td>
+</tr>
+<tr>
+<td>community-dealer</td>
+<td>7</td>
+<td>1</td>
+<td>25</td>
+</tr>
+<tr>
+<td>elite-rose-nsk</td>
+<td>7</td>
+<td>54</td>
+<td>1</td>
+</tr>
+<tr>
+<td>teyes-sibir-kod</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>tf-flowers</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>alex-krown</td>
+<td>0</td>
+<td>549</td>
+<td>0</td>
+</tr>
+<tr>
+<td>milovini-samara</td>
+<td>0</td>
+<td>282</td>
+<td>1</td>
+</tr>
+<tr>
+<td>tsvetibezpovoda</td>
+<td>0</td>
+<td>101</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ev-sibir</td>
+<td>0</td>
+<td>64</td>
+<td>0</td>
+</tr>
+<tr>
+<td>gaz-mag</td>
+<td>1</td>
+<td>43</td>
+<td>0</td>
+</tr>
+<tr>
+<td>rozalii</td>
+<td>0</td>
+<td>17</td>
+<td>2</td>
+</tr>
+<tr>
+<td>reyting-avto</td>
+<td>0</td>
+<td>1</td>
+<td>15</td>
+</tr>
+<tr>
+<td>plutos-auto</td>
+<td>1</td>
+<td>1</td>
+<td>12</td>
+</tr>
+<tr>
+<td>deford-studio</td>
+<td>1</td>
+<td>3</td>
+<td>6</td>
+</tr>
+</tbody>
+</table></div>
+<p>Чисто или по одному месту: angela-pmu-krasnodar, balance-fit, evolution-service-minsk, grafit-prototip, kitaccess, monobrend-servis, reyting-nsk, starline-catalog, teyes-case-studio. «Выделенное слово» – смотреть глазами: часть из них просто перенос строки в span.</p>
 <p><strong>Ерунда или не нам:</strong>
 - Ставить Hallmark целиком: конфликт с русским языком, SEO-объёмом, фотобанком клиента и Astro.
 - 21st.dev как источник «красоты»: анимированные героические блоки на React – тот же слоп, плюс перенос под Preact.
