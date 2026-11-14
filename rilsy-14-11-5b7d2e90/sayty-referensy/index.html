@@ -1,0 +1,389 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Референсы дизайна против ИИ-слопа: что из рилса брать</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}
+.crumbs{font-size:14px;color:var(--mut);margin-bottom:14px}audio{width:100%;margin-top:6px}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><div class="crumbs"><a href="../">← Все разборы рилсов 14.11</a></div><h1>Референсы дизайна против ИИ-слопа: что из рилса брать</h1>
+<p>Автор рилса прав в главном: свой вкус у модели не появится, нужен референс. Но в его списке полезны только два бесплатных источника. <strong>Refero Styles</strong> отдаёт готовый DESIGN.md по ссылке, без входа. <strong>Hallmark</strong> полезен как список примет ИИ-слопа, ставить его целиком не надо. Остальные три для наших сайтов на Astro второстепенны.</p>
+<p>Главная проблема у нас не в нехватке скиллов. Наши скиллы <strong>противоречат друг другу</strong> как раз по приметам из рилса:
+- <code>impeccable</code> надзаголовок над заголовком запрещает;
+- <code>high-end-visual-design</code> прямо его требует (крошечная плашка капсом с разрядкой 0.2em);
+- <code>minimalist-ui</code> предлагает плашки капсом с разрядкой;
+- <code>design-taste-frontend</code> разрешает один надзаголовок на три секции;
+- в знаниях <code>marketolog</code> лежит карточка «Надзаголовок называет продукт».</p>
+<p>Отсюда надзаголовки на наших сайтах: грубый подсчёт grep нашёл классы eyebrow / section-label в 27 файлах evolution-car-by и ещё в 12 проектах (глазами не проверял).</p>
+<p>Второй пробел: «одно цветное слово в заголовке» и «подписка в конце страницы» у нас не запрещает ни один скилл. Под заголовками h1–h3 deford-nsk grep нашёл 20 вставок span/em, у plutos-auto 9.</p>
+<blockquote>
+<p><strong>Рилс:</strong> <a href="https://www.instagram.com/reels/Dfj1L8Dtf9a/">kalter_db – «гуру нейрослопа, ты собрал сайт ИИ, а любой дизайнер за секунду это видит»</a>, 10.11.2026, 2 427 лайков. На экране: <a href="https://styles.refero.design">styles.refero.design</a>, <a href="https://deck.gallery">deck.gallery</a>, <a href="https://godly.website">godly.website</a>, <a href="https://21st.dev">21st.dev</a>, скилл <a href="https://github.com/nutlope/hallmark">Hallmark</a> (<code>npx skills add nutlope/hallmark -g</code>). Проверено 14.11.2026: curl, <code>gh api</code>, браузер на сервере; ничего не ставили и не регистрировались.</p>
+</blockquote>
+<h2>1. Ресурсы из рилса и ещё лучше, ссылками</h2>
+<h3>Пять ресурсов из рилса</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ресурс</th>
+<th>Что это на деле</th>
+<th>Бесплатно / платно</th>
+<th>API / MCP / выгрузка</th>
+<th>Что могу сделать прямо сейчас</th>
+<th>Ограничения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>styles.refero.design</strong> (Refero Styles)</td>
+<td>Каталог стилей реальных сайтов. У каждого стиля: палитра с ролями, шкала шрифтов, отступы, компоненты, «делай / не делай», подсказка для агента, Tailwind v4 и CSS-переменные</td>
+<td>Веб бесплатный. В карте сайта 1 341 стиль, на главной обещают «2 000+»</td>
+<td>Refero MCP (<code>https://api.refero.design/mcp</code>) только на платном Pro: €120 в год (€10 в месяц при оплате за год), лимит 8 000 вызовов в месяц, пробного периода нет. На Free MCP нет. Месячную цену не снимал</td>
+<td><strong>По ссылке на стиль скачиваю DESIGN.md curl'ом без входа</strong>: он целиком лежит в HTML страницы. Проверил на ElevenLabs: 21,9 тыс. знаков, 440 строк, разделы токенов, компонентов, «Do / Don't», Agent Prompt Guide, Quick Start с CSS и Tailwind</td>
+<td>robots.txt закрывает сайт для ClaudeBot, anthropic-ai и других ИИ-краулеров. Брать только по одной ссылке, которую дал Артём, каталог не выкачивать. Шрифты из образцов (Waldenburg, Söhne и т. п.) часто без кириллицы, их надо заменять</td>
+</tr>
+<tr>
+<td><strong>deck.gallery</strong></td>
+<td>Галерея презентаций: брендбуки, отчёты, питч-деки (Tesla, SpaceX, Nike и др.)</td>
+<td>Free: «дека дня» и 6 слайдов из каждой архивной. Pro $15 в месяц: 200+ дек, 9 000+ слайдов, поиск, MCP, плагин ChatGPT, плагин Claude «скоро». Team $20 за человека</td>
+<td>MCP только на Pro</td>
+<td>curl упирается в Cloudflare (403). Через vps-browser главная и цены открываются</td>
+<td>Сайтов там нет. Нужна только для КП и презентаций (deford-kp, tehnics-preza), не для вёрстки</td>
+</tr>
+<tr>
+<td><strong>godly.website</strong></td>
+<td><strong>Godly больше нет</strong>: 301-редирект на recent.design. На странице Info сказано: «Recent заменяет Godly». Лента сайтов, видео запусков, OG-картинок, иконок и каталог дизайн-скиллов (recent.design/skills)</td>
+<td>Бесплатно</td>
+<td>API нет. В robots <code>use=reference</code>, ClaudeBot и anthropic-ai закрыты</td>
+<td>Смотреть может только Артём. От меня польза, когда он даёт ссылку на понравившийся живой сайт</td>
+<td>Это вдохновение, не система: токенов и DESIGN.md нет</td>
+</tr>
+<tr>
+<td><strong>21st.dev</strong></td>
+<td>Маркетплейс из 12 000+ компонентов на React + Tailwind + shadcn: героические блоки, шейдеры, фоны, темы, шаблоны. Magic MCP теперь называется «21st MCP» (репо 21st-dev/magic-mcp, ★6,5 тыс., жив)</td>
+<td>Просмотр и поиск бесплатно. Free: <strong>2 копирования в день</strong> (компонент, иконка, тема, промпт). Builder без ИИ: $8 в месяц при оплате за квартал / $6 за год. С ИИ: от $20 / $15. ИИ-генерация только на платном</td>
+<td>MCP <code>https://21st.dev/api/mcp</code> с ключом из аккаунта. CLI <code>21st search/get/add</code>, установка через <code>npx shadcn add</code></td>
+<td>Без входа код не взять: реестр <code>/r/&lt;автор&gt;/&lt;компонент&gt;</code> отвечает 403 «Authentication required». Страницу с превью и кнопку «Copy prompt» смотреть можно</td>
+<td>Наш стек Astro + Preact, а там React и framer-motion. Каждый компонент придётся переносить. Анимированные «героические блоки» сами по себе главный источник слопа</td>
+</tr>
+<tr>
+<td><strong>Hallmark</strong> (nutlope/hallmark)</td>
+<td>Скилл анти-слопа от Together AI, MIT, ★54,7 тыс., обновлён 11.11.2026. 50 тем, линтер <code>sloplint.mjs</code> (231 КБ, без зависимостей, читает и <code>.astro</code>), проверка в браузере на 8 ширинах, ревизор со свежим взглядом</td>
+<td>Бесплатно</td>
+<td>MCP нет. Своя библиотека из 755 фото с Wikimedia</td>
+<td>Ставить не нужно: README, SKILL.md и gates.md прочитаны, правила ниже</td>
+<td><strong>Под английский язык.</strong> Линтер ставит FAIL на любое тире «–» в тексте (правило 19), то есть русская типографика падает всегда. Лимиты «≈80 слов на экран, 450 слов на страницу» убивают SEO-тексты. Фото с Wikimedia противоречат нашему правилу «картинки от фотобанка клиента». Свой опрос из 4 вопросов дублирует marketolog. Собирает отдельный HTML, а не Astro. Требует «штамп» в первой строке CSS</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Ещё ресурсы (ссылки проверены 14.11.2026)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ресурс</th>
+<th>Что даёт</th>
+<th>Почему полезен нам</th>
+<th>Проверка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/VoltAgent/awesome-design-md">github.com/VoltAgent/awesome-design-md</a></td>
+<td>84 готовых DESIGN.md (формат Google), ★127 тыс.</td>
+<td><strong>Лучше Refero для наших автоклиентов и бесплатно через <code>gh</code>:</strong> bmw, bmw-m, ferrari, lamborghini, tesla, renault, bugatti, а также apple, airbnb, spotify, nike. Файл Apple – 37 КБ с токенами в YAML</td>
+<td><code>gh api</code>, файлы читаются</td>
+</tr>
+<tr>
+<td><a href="https://github.com/google-labs-code/design.md">github.com/google-labs-code/design.md</a></td>
+<td>Спецификация формата DESIGN.md, ★28,9 тыс.</td>
+<td>Наш <code>design-md</code> взят из другого апстрима (jeftarmascarenhas). Свести формат со спецификацией Google, чтобы файлы Refero и awesome-design-md ложились без переделки</td>
+<td><code>gh api</code></td>
+</tr>
+<tr>
+<td><a href="https://getdesign.md">getdesign.md</a></td>
+<td>Каталог 550+ DESIGN.md, часть платная (Catalog Pass)</td>
+<td>Запасной источник, если стиля нет в Refero</td>
+<td>200, условия платной части не смотрел</td>
+</tr>
+<tr>
+<td><a href="https://www.navbar.gallery">navbar.gallery</a> и <a href="https://www.footer.design">footer.design</a></td>
+<td>Галереи только шапок и только подвалов</td>
+<td>Прямо против правила 42 «ИИ-шапка и ИИ-подвал»</td>
+<td>200</td>
+</tr>
+<tr>
+<td><a href="https://www.checklist.design">checklist.design</a></td>
+<td>Чек-листы элементов и страниц</td>
+<td>Заготовка для проверок site-forms и site-landing</td>
+<td>200</td>
+</tr>
+<tr>
+<td><a href="https://www.darkmodedesign.com">darkmodedesign.com</a></td>
+<td>Тёмные сайты</td>
+<td>Под правило тёмной темы на наших страницах и тёмный сайт TEYES</td>
+<td>200</td>
+</tr>
+<tr>
+<td><a href="https://fontsinuse.com">fontsinuse.com</a> и <a href="https://www.typewolf.com">typewolf.com</a></td>
+<td>Шрифты в реальных работах, пары</td>
+<td>Подбор шрифтов вместо Inter. Кириллицу проверять отдельно</td>
+<td>200</td>
+</tr>
+<tr>
+<td><a href="https://recent.design/skills">recent.design/skills</a></td>
+<td>Каталог дизайн-скиллов с числом установок</td>
+<td>Следить, что обновилось (impeccable, emilkowalski, vercel web-design-guidelines)</td>
+<td>200</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vercel-labs/web-interface-guidelines">github.com/vercel-labs/web-interface-guidelines</a></td>
+<td>Правила интерфейсов: фокус, формы, состояния</td>
+<td>Короткий чек-лист для site-tech и site-forms</td>
+<td><code>gh api</code>, ★1,2 тыс.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/emilkowalski/skills">github.com/emilkowalski/skills</a></td>
+<td>Скиллы по анимации и отделке, ★56,8 тыс.</td>
+<td>Анимации на островах Preact без «прыжков»</td>
+<td><code>gh api</code></td>
+</tr>
+<tr>
+<td><a href="https://minimal.gallery">minimal.gallery</a>, <a href="https://httpster.net">httpster.net</a>, <a href="https://onepagelove.com">onepagelove.com</a>, <a href="https://www.landingfolio.com">landingfolio.com</a>, <a href="https://www.awwwards.com">awwwards.com</a></td>
+<td>Обычные галереи сайтов</td>
+<td>Для Артёма: найти «нравится» и кинуть ссылку</td>
+<td>200</td>
+</tr>
+</tbody>
+</table></div>
+<p>Через curl не открылись: land-book.com и saaspo.com (403 Cloudflare), lapa.ninja (403), siteinspire.com (429). Смотреть только в браузере. Русских галерей с DESIGN.md не нашёл. Для РФ-ниш лучший референс по-прежнему живые сайты лидеров ниши в городе, их уже снимает агент <code>analitik-rynka</code>.</p>
+<h2>2. Как тебе со мной работать по этим сайтам</h2>
+<ol>
+<li><strong>«Вот стиль с Refero – сделай так же».</strong> Кидаешь ссылку <code>styles.refero.design/style/...</code>. Я забираю DESIGN.md, меняю шрифты на кириллические, переношу токены в DESIGN.md проекта (скилл design-md) и показываю палитру и шрифты одним экраном. После твоего «да» верстаю первый экран, потом остальное.</li>
+<li><strong>«Хочу как у BMW / Tesla / Apple».</strong> Беру готовый DESIGN.md из awesome-design-md (бесплатно, без входа) и делаю то же самое. Бренд целиком не копирую: берём материал (бумага, шрифт, один акцент), логотипы и фирменные шрифты чужого бренда не используем.</li>
+<li><strong>«Вот сайт, который нравится» (с Recent / Awwwards / любой).</strong> Кидаешь ссылку на живой сайт. Если он есть в Refero, беру оттуда. Если нет, открываю в vps-browser на 1440 и 390, снимаю цвета, шрифты, отступы и сетку и собираю DESIGN.md сам. Помечаю «снято с сайта, не официальный гайд».</li>
+<li><strong>«Проверь, не ИИ-слоп ли».</strong> Прогоняю готовую страницу по нашему списку: четыре приметы из рилса, выдуманные цифры, «отправлено» без отправки, шапка и подвал по шаблону. Даю список «где – что – чем заменить», вместе с проверкой site-landing и site-tech. Нужен скрипт <code>proverka-slopa.sh</code>: после твоего «да» внесу его (раздел 5).</li>
+</ol>
+<p>Источники: <a href="https://doc.refero.design/help/plans.md">Refero plans</a>, <a href="https://doc.refero.design/mcp/getting-started.md">Refero MCP</a>, <a href="https://refero.design/pricing">refero.design/pricing</a>, <a href="https://help.21st.dev/ai/pricing.md">21st pricing</a>, <a href="https://help.21st.dev/ai/mcp.md">21st MCP</a>, <a href="https://help.21st.dev/cli/find.md">21st CLI</a>, <a href="https://www.deck.gallery/pricing/">deck.gallery/pricing</a>, <a href="https://recent.design/info">recent.design/info</a>, <a href="https://github.com/nutlope/hallmark">nutlope/hallmark</a>.</p>
+<h2>3. Hallmark: правила анти-слопа</h2>
+<p>Источник: <code>skills/hallmark/SKILL.md</code> (The Floor) и <code>references/gates.md</code>. <strong>Floor</strong> не нарушается никогда. <strong>Reflex</strong> можно нарушить, если записать причину.</p>
+<h3>Четыре приметы из рилса: какие это правила</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Примета из рилса</th>
+<th>Правило Hallmark</th>
+<th>Уровень</th>
+<th>Что ставить вместо</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Надзаголовок над каждым заголовком</td>
+<td>54 «The eyebrow»: короткая строка перед заголовком, которая его объявляет. Под запрет попадает любая форма: строкой сверху, сбоку, плашкой, номером «01», «TRUSTED BY» над логотипами</td>
+<td>Floor</td>
+<td>Открыть секцию иначе. Можно: подпись к фото, шапка таблицы, label поля, пункт меню, автор, дата, единица после числа</td>
+</tr>
+<tr>
+<td>Капс с разрядкой в подписях</td>
+<td>67 «Tracked-caps label»: текст до 15px капсом, капителью или с разрядкой больше 0.03em</td>
+<td>Floor</td>
+<td>Тот же шрифт, на ступень меньше, обычный регистр, без разрядки</td>
+</tr>
+<tr>
+<td>Одно цветное слово в заголовке</td>
+<td>38iii «The accented word»: слово выделено цветом, жирностью, подсветкой или подчёркиванием. Плюс 38i: одно курсивное слово в прямом заголовке (Floor)</td>
+<td>Reflex / Floor</td>
+<td>Заголовок целиком одним стилем. Или перенос строки, или вторая строка другим кеглем</td>
+</tr>
+<tr>
+<td>Подписка в конце каждой страницы</td>
+<td>85 «The stock close»: форма e-mail перед подвалом, когда задача страницы не «подписаться»</td>
+<td>Reflex</td>
+<td>Закончить тем, ради чего пришли: запись, покупка, адрес и ближайшая дата. <strong>Форма заявки, записи или заказа в конце правилу не противоречит</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>Остальные правила Floor (16 штук, коротко)</h3>
+<ol>
+<li>Все цвета и шрифты только через токены в <code>:root</code>, без цветов и <code>font-family</code> в коде.</li>
+<li>Никакого <code>transition: all</code>. Не анимировать width, height, top, left.</li>
+<li>Не выделять одно курсивное слово в заголовке.</li>
+<li><code>overflow-x: clip</code> на html и body. Не <code>hidden</code> и не <code>100vw</code>.</li>
+<li>В сетках с картинками <code>minmax(0, 1fr)</code>, у крупных заголовков <code>overflow-wrap: break-word; min-width: 0</code>.</li>
+<li><code>:focus-visible</code> у каждого интерактивного элемента, появляется сразу.</li>
+<li>У каждой анимации запасной вариант для <code>prefers-reduced-motion</code>. Без JS контент всё равно виден.</li>
+<li>Никаких выдуманных цифр, отзывов, стен логотипов, «200+ кейсов».</li>
+<li>Никаких надзаголовков и подписей капсом с разрядкой.</li>
+<li>Никаких строк «A · B · C», стрелок, приклеенных к ссылке («Подробнее →»), декоративных точек-статусов.</li>
+<li>Никаких градиентов фиолетовый→синий, карточек в карточке, эмодзи вместо иконок, нарисованных окон браузера.</li>
+<li>Заголовок, одна фраза и главная кнопка первого экрана видны на 1280×800 без прокрутки.</li>
+<li>≈80 слов на экран; в первом экране только заголовок, одна фраза и кнопки.</li>
+<li>Контейнер ограничен и стоит по центру: на 1920 растут поля, сетка не растёт.</li>
+<li>«Штамп» решений в первой строке CSS.</li>
+<li>Прогнать <code>sloplint --render</code> и исправить все FAIL.</li>
+</ol>
+<h3>Reflex и прочее, что полезно нам (выборка)</h3>
+<ul>
+<li>3 – три одинаковые карточки «иконка над заголовком». 8 – шаблон «герой, три фичи, призыв, подвал». 9 – все секции разделены одинаково.</li>
+<li>19 – словесные штампы. 42 – «ИИ-шапка» (лого слева, ссылки, кнопка справа) и «ИИ-подвал» (4 колонки ссылок, соцсети, копирайт) по привычке, а не по решению.</li>
+<li>46a и 70 – выдуманные факты; «Спасибо, отправлено» без реальной отправки.</li>
+<li>63 – meta-строки через точку, стрелки в кнопках. 66 – декоративный текст: «BETA», «scroll», «01 / 4».</li>
+<li>65 – «кремовая бумага + контрастная антиква + терракотовый акцент» как вкус модели по умолчанию.</li>
+<li>74 – стандартная палитра Tailwind (indigo-500, slate-900).</li>
+<li>77–79 – тонкие секции, мелкие h2 (меньше 40px на 1440), пустая полоса под первым экраном.</li>
+<li>80–83 – нарисованные SVG-иллюстрации, пустые плашки вместо фото, ряды одинаковых значков вместо числа, стена фото.</li>
+<li>84 – макет продукта, когда можно снять настоящий скриншот.</li>
+<li>Анатомия страницы (<code>anatomy.md</code>): страницу строить от того, что посетитель пришёл сделать (записаться, купить, приехать), и заканчивать этим действием.</li>
+</ul>
+<h2>4. Сверка с нашими скиллами: где они спорят</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Что</th>
+<th>design-md</th>
+<th>stop-slop</th>
+<th>impeccable 4.3.1</th>
+<th>design-taste-frontend</th>
+<th>high-end-visual-design</th>
+<th>minimalist-ui</th>
+<th>redesign-existing-projects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>О чём скилл</td>
+<td>Ведёт DESIGN.md проекта. Порядок власти: слово владельца &gt; Figma &gt; DESIGN.md. Внешние каталоги по умолчанию не тянет и npx не запускает</td>
+<td>Только <strong>текст</strong>: штампы, наречия, пассив, тире. Вёрстку не трогает</td>
+<td>Полный дизайн-скилл с запретами в craft-floor и детектором-хуком</td>
+<td>Анти-слоп для лендингов: «прочитай бриф», предполётная проверка</td>
+<td>Агентский люкс: шрифты, тени, «бенто»</td>
+<td>Бумажный минимализм, пастель</td>
+<td>Аудит и апгрейд готового сайта</td>
+</tr>
+<tr>
+<td>Надзаголовок</td>
+<td>–</td>
+<td>–</td>
+<td><strong>Запрет без исключений</strong> (craft-floor: «ban, not a default»)</td>
+<td>Не больше 1 на 3 секции, предпочтительно убрать</td>
+<td><strong>Требует</strong> (п. 52: «Eyebrow Tags… uppercase tracking-[0.2em]»)</td>
+<td><strong>Предлагает</strong> плашки капсом, разрядка 0.05em</td>
+<td>Советует «вместо капса везде – курсив, капитель»</td>
+</tr>
+<tr>
+<td>Капс с разрядкой</td>
+<td>–</td>
+<td>–</td>
+<td>Не прямо</td>
+<td>Считает надзаголовки по <code>uppercase tracking</code></td>
+<td>Требует</td>
+<td>Предлагает</td>
+<td>Частично</td>
+</tr>
+<tr>
+<td>Цветное слово в заголовке</td>
+<td>–</td>
+<td>–</td>
+<td>Только градиентный текст</td>
+<td>Только градиент</td>
+<td>–</td>
+<td>Запрещает градиенты</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Подписка в конце</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Выдуманные цифры и отзывы</td>
+<td>–</td>
+<td>–</td>
+<td>Да</td>
+<td>Да</td>
+<td>–</td>
+<td>Запрещает «John Doe»</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Работа от референса</td>
+<td><strong>Да</strong>: это и есть место для DESIGN.md с Refero</td>
+<td>–</td>
+<td>Читает DESIGN.md проекта</td>
+<td>Да («Reference signals: URLs»)</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+</tbody>
+</table></div>
+<p>Чего нет нигде:
+- машинной проверки четырёх примет на готовом сайте (у impeccable есть детектор, но он не ловит цветное слово и подписку в конце);
+- шага «референс → DESIGN.md» в <code>site-lead</code>: вёрстка начинается с прототипа, источник стиля нигде не назван;
+- проверки кириллицы у шрифта из референса.</p>
+<h2>5. Нужно от тебя: что внести в скиллы (только после «да»)</h2>
+<ol>
+<li><strong>Убрать противоречие про надзаголовок.</strong> Одна строка в <code>site-lead/references/standarty.md</code>: «Дизайн-запреты: верх – impeccable craft-floor; правила <code>high-end-visual-design</code> п. 52 и <code>minimalist-ui</code> про плашки капсом на наших сайтах не применять».
+   - Сами чужие скиллы не трогать: при обновлении правка затрётся.
+   - Карточку <code>marketolog/znaniya/tekst/nadzagolovok-produkt-zagolovok-cennost.md</code> сузить: смысловая строка «что и где» допустима <strong>один раз, в первом экране</strong>, обычным регистром, без разрядки, и несёт запрос для SEO. Над секциями – нет.</li>
+<li><strong>Новый файл <code>site-lead/references/anti-slop-dizayn.md</code></strong> (≈40 строк). Четыре приметы из рилса плюс Hallmark 46a, 63, 66, 70, 85 и 42, переведённые на русский. С поправками под нас:
+   - тире «–» разрешено;
+   - лимит слов не для SEO-страниц;
+   - форма заявки в конце – это задача страницы, а не слоп.</li>
+<li><strong>Проверка, которая ловит сама</strong> (правило «одна ошибка – один раз»): <code>site-lead/scripts/proverka-slopa.sh &lt;dist&gt;</code>. Это grep по собранному HTML:
+   - классы eyebrow / kicker / overline / section-label перед h2;
+   - <code>text-transform: uppercase</code> вместе с <code>letter-spacing</code> больше 0.03em на тексте до 15px;
+   - <code>&lt;span&gt;</code>, <code>&lt;em&gt;</code> или <code>&lt;mark&gt;</code> внутри h1–h3;
+   - форма с одним полем e-mail перед <code>&lt;footer&gt;</code>;
+   - « · » в мета-строках, «→» внутри кнопок.</li>
+</ol>
+<p>Шаг в <code>site-landing</code> и <code>site-tech</code> перед показом. Hallmark <code>sloplint.mjs</code> как есть не годится: падает на русском тире.
+4. <strong><code>design-md</code>: добавить источник.</strong> «Если Артём дал ссылку на стиль Refero или файл из awesome-design-md, это референс уровня 1 (слово владельца). Взять токены и правила, шрифты проверить на кириллицу и заменить, записать в DESIGN.md проекта как <em>принятые</em> только после его “да”». Запрет «не тянуть каталоги по умолчанию» оставить: тянем только по ссылке.
+5. <strong><code>site-lead</code> шаг вёрстки:</strong> перед вёрсткой спросить или предложить 1–2 референса стиля, собрать DESIGN.md (скилл design-md), потом верстать. Сейчас этого шага нет.</p>
+<p><strong>Ерунда или не нам:</strong>
+- Ставить Hallmark целиком: конфликт с русским языком, SEO-объёмом, фотобанком клиента и Astro.
+- 21st.dev как источник «красоты»: анимированные героические блоки на React – тот же слоп, плюс перенос под Preact.
+- deck.gallery для сайтов.
+- Платный Refero MCP: DESIGN.md и так берётся по ссылке бесплатно. Pro имеет смысл, только если нужны 145 тыс. экранов и пользовательских сценариев для ЛК и админок.
+- «Скиллы ставить не надо» из рилса – полуправда. Скилл без референса даёт средний вкус модели, референс без правил даёт копию. Нужны оба.</p>
+<p>Смежное, в сторону не уходил: локальный <code>impeccable</code> 4.3.1, на GitHub уже 4.9.1 (pbakaus/impeccable обновлён 14.11.2026).</p></main><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>

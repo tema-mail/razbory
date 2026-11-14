@@ -1,0 +1,156 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Пять рилсов и фитнес-бот: что берём в работу</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}
+.crumbs{font-size:14px;color:var(--mut);margin-bottom:14px}audio{width:100%;margin-top:6px}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Пять рилсов и фитнес-бот: что берём в работу</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Из пяти роликов один уже работает: пирамида Минто стала скиллом, и мои ответы тебе теперь строятся по ней. Под три твоих задачи нашлись готовые основы, писать с нуля не нужно: трекер на полгода – модуль в Еве, фитнес-бот – открытый SnapCaloriesAI, сайты – референсы Refero плюс правила против ИИ-вида. Ещё два ролика – реклама услуг, но один из них показал у нас лишний расход: Ева отвечает на самой дорогой модели.</p>
+<p><strong>Нужно от тебя:</strong> выбрать, что запускаем первым. Советую минимальный трекер в Еве (8–12 ч) и перевод Евы на дешёвую модель по эталонам (6–9 ч). Вопросы, без которых не начать, – в конце каждого файла.</p>
+<h2>1. Файл по каждому рилсу</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Рилс</th>
+<th>О чём</th>
+<th>Что берём</th>
+<th>Файл</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://www.instagram.com/reels/DfILUDuzTy2/">harsh.times</a></td>
+<td>Пирамида Минто (McKinsey): сначала вывод, потом доводы и факты</td>
+<td>Уже сделано: скилл <code>minto</code>, правило в CLAUDE.md, проверка <code>proverka.py</code></td>
+<td><a href="minto/">Минто</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://www.instagram.com/reels/DfreeBcs3Ju/">valeriyasigma</a></td>
+<td>«Теория 6 месяцев»: 1–3 цели, точки А и Б, что мешает и что даёт энергию, ежедневная отметка</td>
+<td>Трекер-наставник модулем в Еве, механики от momo и Duolingo</td>
+<td><a href="treker-6-mesyacev/">Трекер на полгода</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Не рилс, твоя задача</td>
+<td>Фитнес-тренер в боте: фото еды → калории, вес, замеры, тренировки</td>
+<td>Форк SnapCaloriesAI на русском, граммы подтверждаются кнопкой или весами</td>
+<td><a href="fitnes-bot/">Фитнес-бот</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://www.instagram.com/reels/Dfj1L8Dtf9a/">kalter_db</a></td>
+<td>Сайт, собранный ИИ, видно сразу; бери референсы: Refero, 21st.dev, Godly, deck.gallery, Hallmark</td>
+<td>DESIGN.md с Refero и awesome-design-md, приметы слопа из Hallmark, проверка-скрипт</td>
+<td><a href="sayty-referensy/">Сайты и референсы</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://www.instagram.com/reels/DfVCLnWsVi_/">karpov.kz</a></td>
+<td>«Контент-завод» сам пишет, монтирует, публикует рилсы, с ним можно говорить голосом</td>
+<td>Почти всё есть у нас, кроме Instagram API и цикла «цифры → темы». Начинать с полуавтомата</td>
+<td><a href="kontent-zavod/">Контент-завод</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://www.instagram.com/reels/DfpWsCfsZ4n/">tinroi</a></td>
+<td>7 правил разработки ИИ-агентов: сначала схема под дешёвую модель, дорогая только на сложное</td>
+<td>Ева и автостатьи на Opus, у 50 из 55 агентов модель не задана, эталонов нет нигде</td>
+<td><a href="arhitektura-agentov/">Архитектура агентов</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2>2. Что можно запустить и сколько это стоит</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Что</th>
+<th>Минимум</th>
+<th>Полностью</th>
+<th>Первый шаг</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Трекер на полгода в Еве</td>
+<td>8–12 ч: анкета целей, вечерние кнопки, серия с заморозкой, разбор недели</td>
+<td>50–70 ч: очки, ставка, свидетель, страница прогресса, данные с iPhone</td>
+<td>Ответить на 6 вопросов: цели, точки А и Б в цифрах, когда день 1</td>
+</tr>
+<tr>
+<td>Фитнес-бот</td>
+<td>20–25 ч: форк, граммы кнопками, штрихкод, вес, замеры, тренировки, итоги дня и недели</td>
+<td>–</td>
+<td>Цель (сушка или масса), есть ли весы и браслет, отдельный бот или в Еве</td>
+</tr>
+<tr>
+<td>Ева на дешёвую модель</td>
+<td>6–9 ч: 25–30 эталонных реплик, сравнение haiku и sonnet с opus, журнал вызовов</td>
+<td>8–13 ч: плюс модели всем механическим агентам и проверка-скрипт</td>
+<td>Твоё «да»</td>
+</tr>
+<tr>
+<td>Сайты без ИИ-вида</td>
+<td>3–5 ч: убрать спор скиллов о надзаголовке, файл примет, скрипт проверки</td>
+<td>–</td>
+<td>Твоё «да» на 5 правок в скиллы</td>
+</tr>
+<tr>
+<td>Контент-завод</td>
+<td>25–35 ч: ролики из наших сценариев, публикуешь руками, цифры по API</td>
+<td>60–80 ч: вето кнопкой в Еве и публикация через API</td>
+<td>Ответ юриста по Instagram и аккаунт TEYES</td>
+</tr>
+</tbody>
+</table></div>
+<p>Часы – оценка до работы. Деньги сверх подписок почти нулевые: распознавание фото еды стоит меньше рубля в месяц (оценка по ценам моделей, не замер).</p>
+<h2>3. Что в роликах ерунда</h2>
+<ul>
+<li>Три ролика из пяти собирают комментарии приёмом «напиши слово – пришлю ссылку»: «Минто», «плюсик», интенсив. Берём сами приёмы, их обещания не берём.</li>
+<li>«Учат в Гарварде и MIT» – зацепка. Метод из McKinsey, а Гарвард – только место учёбы автора метода.</li>
+<li>«Завод сам улучшается» – при одном ролике в день за неделю набирается 7 замеров, статистикой это не назвать.</li>
+<li>«Скиллы ставить не надо, бери референс» – полуправда. Без правил референс превращается в копию, без референса правила дают средний вкус модели. Нужны оба.</li>
+<li>godly.website закрыт: адрес перенаправляет на recent.design.</li>
+</ul>
+<p><strong>Что раскрыть:</strong> 1 – трекер по шагам, 2 – как Еву перевести на дешёвую модель, 3 – фитнес-бот по шагам.</p></main><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
