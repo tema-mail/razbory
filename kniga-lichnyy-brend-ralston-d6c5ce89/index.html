@@ -9,6 +9,7 @@
 <script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
 if(!t){var h=new Date().getHours();t=(h>=19||h<7||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
 document.documentElement.setAttribute('data-theme',t);
+if(location.hash==='#audio')document.documentElement.className+=' listen';
 var f;try{f=localStorage.getItem('kniga-fs')}catch(e){}if(f)document.documentElement.style.setProperty('--fs',f+'px');})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +18,10 @@ var f;try{f=localStorage.getItem('kniga-fs')}catch(e){}if(f)document.documentEle
 :root{--bg:#f7f4ee;--paper:#fffdf9;--ink:#1e1d1a;--muted:#6d6a63;--line:#e4dfd5;--accent:#a8462a;--accent-soft:#f6e7df;--ex:#eef3ea;--ex-line:#5c7a4c;--pr:#f1efe9;--fs:19px;--sans:'Golos Text',system-ui,sans-serif;--serif:'Literata',Georgia,serif}
 html[data-theme=dark]{color-scheme:dark;--bg:#141518;--paper:#1a1b1f;--ink:#e6e4df;--muted:#a3a19b;--line:#2f3136;--accent:#e58b6a;--accent-soft:#33241f;--ex:#1f2a1d;--ex-line:#86ad73;--pr:#222428}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:24px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:var(--fs);line-height:1.68;-webkit-text-size-adjust:100%}
 a{color:var(--accent)}
+button{font-family:var(--sans)}
 #bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:50}
 .wrap{display:grid;grid-template-columns:300px minmax(0,1fr);max-width:1240px;margin:0 auto}
 nav.toc{position:sticky;top:0;height:100vh;overflow:auto;padding:28px 18px 40px 24px;border-right:1px solid var(--line);font-family:var(--sans);font-size:14px;line-height:1.4}
@@ -30,17 +32,21 @@ nav.toc li a:hover{background:var(--accent-soft);opacity:1}
 nav.toc li a.on{background:var(--accent-soft);color:var(--accent);opacity:1;font-weight:600}
 nav.toc li.tp a{margin-top:14px;font-weight:700;opacity:1;color:var(--muted);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
 main{padding:0 40px 120px;min-width:0}
+/* вкладки сверху */
+.tabs{position:sticky;top:0;z-index:40;display:flex;gap:6px;justify-content:center;padding:12px 0 10px;background:var(--bg);border-bottom:1px solid var(--line);margin:0 -40px}
+.tabs button{border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:15px;font-weight:600;border-radius:999px;padding:8px 18px;cursor:pointer}
+.tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 article{max-width:700px;margin:0 auto}
-.cover{min-height:78vh;display:flex;flex-direction:column;justify-content:center;padding:60px 0 40px;border-bottom:1px solid var(--line);margin-bottom:20px}
-.cover .kicker{font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+.cover{min-height:74vh;display:flex;flex-direction:column;justify-content:center;padding:50px 0 40px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.kicker{font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
 .cover h1{font-family:var(--sans);font-weight:700;font-size:clamp(38px,6vw,64px);line-height:1.05;letter-spacing:-.02em;margin:0 0 20px}
 .cover .sub{font-size:1.1em;color:var(--muted);margin:0 0 30px;max-width:560px}
 .cover .meta{font-family:var(--sans);font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 18px}
 .cover .meta b{color:var(--ink);font-weight:600}
 .cover .note{margin-top:28px;font-size:15px;color:var(--muted);font-family:var(--sans);line-height:1.5;max-width:600px}
-#listen{display:none;margin-top:26px;font-family:var(--sans);font-weight:600;font-size:15px;background:var(--ink);color:var(--bg);border:0;border-radius:10px;padding:13px 20px;cursor:pointer;align-self:flex-start}
+#listen{display:none;margin-top:26px;font-weight:600;font-size:15px;background:var(--ink);color:var(--bg);border:0;border-radius:10px;padding:13px 20px;cursor:pointer;align-self:flex-start}
 .cover .anote{margin-top:22px;font-family:var(--sans);font-size:15px;color:var(--ink)}
-#resume{display:none;margin-top:12px;font-family:var(--sans);font-weight:600;font-size:15px;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:13px 20px;cursor:pointer;align-self:flex-start}
+#resume{display:none;margin-top:12px;font-weight:600;font-size:15px;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:13px 20px;cursor:pointer;align-self:flex-start}
 h1.part{font-family:var(--sans);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:110px 0 0;padding-top:30px;border-top:2px solid var(--accent)}
 h2{font-family:var(--sans);font-weight:700;font-size:clamp(28px,3.6vw,36px);line-height:1.15;letter-spacing:-.01em;margin:70px 0 26px}
 h1.part+h2{margin-top:18px}
@@ -56,12 +62,38 @@ blockquote.ex{background:var(--ex);border-left:4px solid var(--ex-line)}
 blockquote.pr,blockquote.q{background:var(--pr);border-left:4px solid var(--line)}
 h3.kratko{background:var(--accent-soft);color:var(--accent);display:inline-block;padding:4px 12px;border-radius:6px;font-size:.85em;letter-spacing:.04em;text-transform:uppercase;margin-top:48px}
 h3.kratko+ul{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 20px 16px 40px;font-size:.95em}
-.audio{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:-10px 0 28px;padding:10px 14px;background:var(--paper);border:1px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--accent)}
-.audio audio{flex:1;min-width:220px;height:40px}
+.audio{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:-10px 0 28px;padding:10px 14px;background:var(--paper);border:1px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--accent)}
+.audio audio{flex:1;min-width:200px;height:40px}
+.rate{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:6px 11px;font-size:13px;font-weight:700;cursor:pointer;min-width:52px}
 code{font-size:.85em;background:var(--pr);padding:1px 5px;border-radius:4px}
 .end{margin-top:90px;padding-top:26px;border-top:1px solid var(--line);font-family:var(--sans);font-size:14px;color:var(--muted)}
+/* вкладка «Аудиокнига» */
+#lv{display:none;max-width:700px;margin:0 auto;padding:34px 0 40px;font-family:var(--sans)}
+#lv h1{font-size:clamp(30px,4.6vw,44px);line-height:1.08;letter-spacing:-.02em;margin:0 0 8px}
+#lv .lmeta{color:var(--muted);font-size:15px;margin:0 0 24px}
+.player{position:sticky;top:62px;z-index:30;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:0 6px 24px rgba(0,0,0,.06);margin-bottom:22px}
+.player .lbl{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.player .np{font-size:19px;font-weight:700;line-height:1.25;margin:0 0 12px}
+.player audio{width:100%;height:44px}
+.pctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.pctl button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:8px 12px;font-size:14px;font-weight:600;cursor:pointer}
+.pctl .sp{margin-left:auto;display:flex;gap:6px;align-items:center;color:var(--muted);font-size:13px}
+.pctl .sp button{border-radius:999px;padding:7px 11px}
+.pctl .sp button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+#lresume{display:none;width:100%;margin:0 0 18px;border:0;border-radius:12px;background:var(--accent);color:#fff;font-size:15px;font-weight:600;padding:13px 16px;cursor:pointer;text-align:left}
+.alist{list-style:none;margin:0;padding:0}
+.alist li.ap{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:22px 0 6px}
+.alist button{display:flex;width:100%;gap:12px;align-items:baseline;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);padding:12px 6px;font-size:16px;cursor:pointer;line-height:1.3}
+.alist button:hover{background:var(--accent-soft)}
+.alist .t{flex:1}
+.alist .d{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.alist .ok{width:18px;color:var(--ex-line);font-weight:700}
+.alist button.on{background:var(--accent-soft);color:var(--accent);font-weight:700;border-radius:8px}
+html.listen nav.toc,html.listen article,html.listen #bar,html.listen #toc-btn,html.listen #fs-minus,html.listen #fs-plus{display:none!important}
+html.listen .wrap{grid-template-columns:minmax(0,1fr)}
+html.listen #lv{display:block}
 .tools{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;gap:8px}
-.tools button,#tema-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.tools button,#tema-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.12)}
 #toc-btn{display:none}
 @media (max-width:1000px){
   .wrap{display:block}
@@ -69,10 +101,12 @@ code{font-size:.85em;background:var(--pr);padding:1px 5px;border-radius:4px}
   nav.toc.open{transform:none}
   #toc-btn{display:block}
   main{padding:0 16px 110px}
+  .tabs{margin:0 -16px}
   :root{--fs:18px}
+  .pctl .sp{margin-left:0;width:100%}
 }
-@media (max-width:420px){.tools button,#tema-btn{width:42px;height:42px}}
-@media print{nav.toc,.tools,#bar,#resume{display:none!important}.wrap{display:block}body{background:#fff;color:#000}}
+@media (max-width:420px){.tools button,#tema-btn{width:42px;height:42px}.tabs button{padding:8px 14px;font-size:14px}}
+@media print{nav.toc,.tools,#bar,#resume,.tabs,#lv,.audio{display:none!important}.wrap{display:block}body{background:#fff;color:#000}}
 </style>
 </head>
 <body>
@@ -118,14 +152,37 @@ code{font-size:.85em;background:var(--pr);padding:1px 5px;border-radius:4px}
   </ol>
 </nav>
 <main>
+<div class="tabs" role="tablist">
+  <button type="button" data-m="read" role="tab">📖 Книга</button>
+  <button type="button" data-m="listen" role="tab">🎧 Аудиокнига</button>
+</div>
+<section id="lv" aria-label="Аудиокнига">
+  <p class="kicker">Аудиокнига</p>
+  <h1>Как построить личный бренд</h1>
+  <p class="lmeta" id="lmeta"></p>
+  <button id="lresume" type="button"></button>
+  <div class="player">
+    <p class="lbl">Сейчас</p>
+    <p class="np" id="np">Выбери главу или нажми ▶</p>
+    <audio id="ap" controls preload="none"></audio>
+    <div class="pctl">
+      <button type="button" id="prev" aria-label="Предыдущая глава">⏮</button>
+      <button type="button" id="back">−15 с</button>
+      <button type="button" id="fwd">+15 с</button>
+      <button type="button" id="next" aria-label="Следующая глава">⏭</button>
+      <div class="sp" id="sp"><span>Скорость</span><button type="button" data-r="1">1×</button><button type="button" data-r="1.25">1,25×</button><button type="button" data-r="1.5">1,5×</button><button type="button" data-r="2">2×</button></div>
+    </div>
+  </div>
+  <ol class="alist" id="alist"></ol>
+</section>
 <article>
 <header class="cover" id="top">
   <p class="kicker">Книга по курсу</p>
   <h1>Как построить личный бренд</h1>
   <p class="sub">Полный курс Калеба Ралстона «How to Build a Personal Brand» – на русском, связным текстом: бренд, контент, команда, деньги.</p>
-  <div class="meta"><span><b>4</b> части</span><span><b>27</b> глав</span><span>чтение ~<b>5 ч</b></span><span>курс на YouTube: <b>6 ч 22 мин</b></span></div>
+  <div class="meta"><span><b>4</b> части</span><span><b>27</b> глав</span><span>чтение ~<b>5 ч</b></span><span>аудио <b>6 ч 9 мин</b></span><span>видео: <b>6 ч 22 мин</b></span></div>
   <p class="note">Пересказ от лица автора по полной расшифровке ролика. Реклама и самопродвижение вырезаны, методика, примеры и истории сохранены. Имена взяты из автосубтитров и могут быть искажены; цифры – слова автора, мы их не проверяли. Источник: <a href="https://www.youtube.com/watch?v=Ch4Sl0POBhU" target="_blank" rel="noopener">youtube.com/watch?v=Ch4Sl0POBhU</a>.</p>
-  <p class="anote">🎧 Есть аудиоверсия: 29 из 29 разделов, 6 ч 9 мин. Плеер под заголовком каждой главы, после конца главы сама включается следующая.</p>
+  <p class="anote">🎧 Есть аудиоверсия: 29 из 29 разделов, 6 ч 9 мин, голос Уэстон. Слушать – вкладка «Аудиокнига» сверху или плеер под заголовком каждой главы.</p>
   <button id="listen" type="button">▶ Слушать книгу</button>
   <button id="resume" type="button">Продолжить с места, где остановился</button>
 </header>
@@ -1337,42 +1394,109 @@ code{font-size:.85em;background:var(--pr);padding:1px 5px;border-radius:4px}
   <button id="fs-plus" type="button" aria-label="Крупнее">A+</button>
   <button id="tema-btn" type="button" aria-label="Сменить тему"></button>
 </div>
+<script id="adata" type="application/json">[{"part": "Часть I. Бренд"}, {"id": "g-vstuplenie", "title": "Вступление. Два пути", "src": "audio/g-vstuplenie.mp3", "dur": 98}, {"id": "g-1", "title": "Глава 1. Что такое бренд", "src": "audio/g-1.mp3", "dur": 176}, {"id": "g-2", "title": "Глава 2. Определи свой бренд", "src": "audio/g-2.mp3", "dur": 526}, {"id": "g-3", "title": "Глава 3. Позиционирование", "src": "audio/g-3.mp3", "dur": 862}, {"id": "g-4", "title": "Глава 4. История бренда", "src": "audio/g-4.mp3", "dur": 486}, {"id": "g-5", "title": "Глава 5. Выбор темы", "src": "audio/g-5.mp3", "dur": 1038}, {"part": "Часть II. Контент"}, {"id": "g-6", "title": "Глава 6. Выбор формата контента", "src": "audio/g-6.mp3", "dur": 971}, {"id": "g-7", "title": "Глава 7. Выбор площадок", "src": "audio/g-7.mp3", "dur": 950}, {"id": "g-8", "title": "Глава 8. Частота публикаций", "src": "audio/g-8.mp3", "dur": 2465}, {"id": "g-9", "title": "Глава 9. Сторителлинг в контенте", "src": "audio/g-9.mp3", "dur": 1559}, {"id": "g-10", "title": "Глава 10. Контент из сообщества", "src": "audio/g-10.mp3", "dur": 668}, {"id": "g-11", "title": "Глава 11. Масштабирование контента", "src": "audio/g-11.mp3", "dur": 1480}, {"id": "g-12", "title": "Глава 12. Место для экспериментов", "src": "audio/g-12.mp3", "dur": 501}, {"part": "Часть III. Команда"}, {"id": "g-13", "title": "Глава 13. Определи потребность до найма", "src": "audio/g-13.mp3", "dur": 753}, {"id": "g-14", "title": "Глава 14. Процесс найма", "src": "audio/g-14.mp3", "dur": 1852}, {"id": "g-15", "title": "Глава 15. Нанимай за культуру, учи навыкам", "src": "audio/g-15.mp3", "dur": 492}, {"id": "g-16", "title": "Глава 16. Начинай компактно, расти осознанно", "src": "audio/g-16.mp3", "dur": 391}, {"id": "g-17", "title": "Глава 17. Штат, подрядчики или агентство", "src": "audio/g-17.mp3", "dur": 875}, {"id": "g-18", "title": "Глава 18. Онбординг", "src": "audio/g-18.mp3", "dur": 940}, {"id": "g-19", "title": "Глава 19. Развитие и удержание сильной команды", "src": "audio/g-19.mp3", "dur": 1496}, {"id": "g-20", "title": "Глава 20. Сильная культура команды", "src": "audio/g-20.mp3", "dur": 1028}, {"id": "g-21", "title": "Глава 21. Удалённо, в офисе или гибрид", "src": "audio/g-21.mp3", "dur": 1333}, {"part": "Часть IV. Деньги"}, {"id": "g-22", "title": "Глава 22. Доверие раньше сделки", "src": "audio/g-22.mp3", "dur": 164}, {"id": "g-23", "title": "Глава 23. Модель монетизации", "src": "audio/g-23.mp3", "dur": 229}, {"id": "g-24", "title": "Глава 24. Делись знанием, продавай исполнение", "src": "audio/g-24.mp3", "dur": 159}, {"id": "g-25", "title": "Глава 25. Линейка предложений", "src": "audio/g-25.mp3", "dur": 161}, {"id": "g-26", "title": "Глава 26. Пусть продаёт контент", "src": "audio/g-26.mp3", "dur": 113}, {"id": "g-27", "title": "Глава 27. Длинная игра", "src": "audio/g-27.mp3", "dur": 222}, {"id": "g-zakl", "title": "Заключение. Твой ход", "src": "audio/g-zakl.mp3", "dur": 153}]</script>
 <script>
 (function(){
-var d=document.documentElement,K='kniga-ralston-pos';
+var d=document.documentElement,SLUG='ralston',K='kniga-'+SLUG+'-pos';
 function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+function $(id){return document.getElementById(id)}
 // тема
-var tb=document.getElementById('tema-btn');
+var tb=$('tema-btn');
 function ico(){tb.textContent=d.getAttribute('data-theme')==='dark'?'☀':'☾'}ico();
 tb.onclick=function(){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);ls('tema',t);ico()};
 // размер шрифта
 function fs(delta){var cur=parseFloat(getComputedStyle(d).getPropertyValue('--fs'))||19;var n=Math.min(26,Math.max(15,cur+delta));d.style.setProperty('--fs',n+'px');ls('kniga-fs',String(n))}
-document.getElementById('fs-minus').onclick=function(){fs(-1)};
-document.getElementById('fs-plus').onclick=function(){fs(1)};
+$('fs-minus').onclick=function(){fs(-1)};
+$('fs-plus').onclick=function(){fs(1)};
 // оглавление на телефоне
-var toc=document.getElementById('toc');
-document.getElementById('toc-btn').onclick=function(e){e.stopPropagation();toc.classList.toggle('open')};
+var toc=$('toc');
+$('toc-btn').onclick=function(e){e.stopPropagation();toc.classList.toggle('open')};
 toc.addEventListener('click',function(e){if(e.target.tagName==='A')toc.classList.remove('open')});
 document.addEventListener('click',function(e){if(toc.classList.contains('open')&&!toc.contains(e.target))toc.classList.remove('open')});
 // прогресс и место чтения
-var bar=document.getElementById('bar'),tmr;
-function prog(){var h=d.scrollHeight-innerHeight;var p=h>0?scrollY/h:0;bar.style.width=(p*100)+'%';clearTimeout(tmr);tmr=setTimeout(function(){if(scrollY>innerHeight)ls(K,String(p))},400)}
+var bar=$('bar'),tmr;
+function prog(){if(d.classList.contains('listen'))return;var h=d.scrollHeight-innerHeight;var p=h>0?scrollY/h:0;bar.style.width=(p*100)+'%';clearTimeout(tmr);tmr=setTimeout(function(){if(scrollY>innerHeight)ls(K,String(p))},400)}
 addEventListener('scroll',prog,{passive:true});
-var saved=parseFloat(ls(K)||'0'),rb=document.getElementById('resume');
+var saved=parseFloat(ls(K)||'0'),rb=$('resume');
 if(saved>0.01&&!location.hash){rb.style.display='block';rb.textContent+=' ('+Math.round(saved*100)+'%)';rb.onclick=function(){scrollTo(0,saved*(d.scrollHeight-innerHeight))}}
-// аудио: одна глава играет за раз, по окончании включается следующая
-var aus=[].slice.call(document.querySelectorAll('.audio audio'));
-aus.forEach(function(a,i){
-  a.addEventListener('play',function(){aus.forEach(function(b){if(b!==a)b.pause()});ls('kniga-ralston-audio',String(i))});
-  a.addEventListener('ended',function(){var n=aus[i+1];if(n){n.closest('.audio').previousElementSibling.scrollIntoView({behavior:'smooth'});n.play()}});
+
+// ---------- аудио: скорость общая для всех плееров ----------
+var RATES=[1,1.25,1.5,2],R=parseFloat(ls('kniga-rate'))||1;
+function rlabel(r){return String(r).replace('.',',')+'×'}
+var ap=$('ap'),inl=[].slice.call(document.querySelectorAll('.audio audio')),all=inl.concat([ap]);
+function applyRate(){all.forEach(function(a){a.defaultPlaybackRate=R;a.playbackRate=R});
+  document.querySelectorAll('.rate').forEach(function(b){b.textContent=rlabel(R)});
+  document.querySelectorAll('#sp button').forEach(function(b){b.classList.toggle('on',parseFloat(b.dataset.r)===R)})}
+function setRate(r){R=r;ls('kniga-rate',String(r));applyRate()}
+inl.forEach(function(a){var b=document.createElement('button');b.type='button';b.className='rate';b.title='Скорость';
+  b.onclick=function(){setRate(RATES[(RATES.indexOf(R)+1)%RATES.length])};a.parentNode.appendChild(b)});
+document.querySelectorAll('#sp button').forEach(function(b){b.onclick=function(){setRate(parseFloat(b.dataset.r))}});
+all.forEach(function(a){
+  a.addEventListener('loadedmetadata',function(){a.playbackRate=R});
+  a.addEventListener('play',function(){a.playbackRate=R;all.forEach(function(b){if(b!==a)b.pause()})});
 });
-var ab=document.getElementById('listen');
-if(ab&&aus.length){ab.style.display='block';var li=parseInt(ls('kniga-ralston-audio')||'0',10)||0;if(li>0)ab.textContent='Продолжить слушать';
-ab.onclick=function(){var a=aus[Math.min(li,aus.length-1)];a.closest('.audio').previousElementSibling.scrollIntoView();a.play()}}
+applyRate();
+// плееры в тексте: по окончании главы включается следующая
+inl.forEach(function(a,i){
+  a.addEventListener('play',function(){ls('kniga-'+SLUG+'-audio',String(i))});
+  a.addEventListener('ended',function(){var n=inl[i+1];if(n){n.closest('.audio').previousElementSibling.scrollIntoView({behavior:'smooth'});n.play()}});
+});
+
+// ---------- вкладка «Аудиокнига» ----------
+var A=[];try{A=JSON.parse($('adata').textContent)}catch(e){}
+var tracks=A.filter(function(x){return x.id}),ci=-1,AK='kniga-'+SLUG+'-ap',DK='kniga-'+SLUG+'-done';
+var done={};try{(JSON.parse(ls(DK)||'[]')).forEach(function(id){done[id]=1})}catch(e){}
+function mmss(s){s=Math.round(s);var h=Math.floor(s/3600),m=Math.floor(s%3600/60),c=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(c).padStart(2,'0')}
+var tot=tracks.reduce(function(s,t){return s+t.dur},0);
+$('lmeta').textContent=tracks.length?(tracks.length+' глав · '+Math.floor(tot/3600)+' ч '+Math.floor(tot%3600/60)+' мин · после конца главы сама включается следующая'):'Аудиоверсии пока нет';
+var al=$('alist'),btns=[];
+A.forEach(function(x){
+  var li=document.createElement('li');
+  if(!x.id){li.className='ap';li.textContent=x.part;al.appendChild(li);return}
+  var b=document.createElement('button');b.type='button';
+  b.innerHTML='<span class="ok"></span><span class="t"></span><span class="d"></span>';
+  b.querySelector('.t').textContent=x.title;b.querySelector('.d').textContent=mmss(x.dur);
+  var i=btns.length;b.onclick=function(){load(i,0,true)};btns.push(b);li.appendChild(b);al.appendChild(li)});
+function marks(){btns.forEach(function(b,i){b.classList.toggle('on',i===ci);b.querySelector('.ok').textContent=done[tracks[i].id]?'✓':''})}
+function load(i,t,play){if(i<0||i>=tracks.length)return;ci=i;var tr=tracks[i];
+  if(ap.getAttribute('src')!==tr.src){ap.src=tr.src}
+  $('np').textContent=tr.title;marks();
+  var seek=function(){if(t)ap.currentTime=t;ap.playbackRate=R};
+  if(ap.readyState>=1)seek();else ap.addEventListener('loadedmetadata',seek,{once:true});
+  if('mediaSession' in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:tr.title,artist:'Калеб Ралстон',album:'Как построить личный бренд'})}catch(e){}}
+  if(play)ap.play();save()}
+function save(){if(ci>=0)ls(AK,JSON.stringify({i:ci,t:Math.floor(ap.currentTime||0)}))}
+var st=0;ap.addEventListener('timeupdate',function(){var n=Date.now();if(n-st>4000){st=n;save()}});
+ap.addEventListener('pause',save);
+ap.addEventListener('ended',function(){if(ci>=0){done[tracks[ci].id]=1;ls(DK,JSON.stringify(Object.keys(done)))}
+  if(ci+1<tracks.length)load(ci+1,0,true);else marks()});
+$('prev').onclick=function(){if(ap.currentTime>5&&ci>=0)ap.currentTime=0;else load(Math.max(0,ci-1),0,true)};
+$('next').onclick=function(){load(Math.min(tracks.length-1,ci+1),0,true)};
+$('back').onclick=function(){ap.currentTime=Math.max(0,ap.currentTime-15)};
+$('fwd').onclick=function(){ap.currentTime=Math.min(ap.duration||1e9,ap.currentTime+15)};
+if('mediaSession' in navigator){try{
+  navigator.mediaSession.setActionHandler('previoustrack',function(){$('prev').onclick()});
+  navigator.mediaSession.setActionHandler('nexttrack',function(){$('next').onclick()});
+  navigator.mediaSession.setActionHandler('seekbackward',function(){$('back').onclick()});
+  navigator.mediaSession.setActionHandler('seekforward',function(){$('fwd').onclick()});}catch(e){}}
+var sv=null;try{sv=JSON.parse(ls(AK)||'null')}catch(e){}
+if(sv&&tracks[sv.i]){load(sv.i,sv.t,false);var lr=$('lresume');lr.style.display='block';
+  lr.textContent='▶ Продолжить: '+tracks[sv.i].title+', с '+mmss(sv.t);lr.onclick=function(){load(sv.i,sv.t,true);lr.style.display='none'}}
+// вкладки
+var tabs=[].slice.call(document.querySelectorAll('.tabs button'));
+if(!tracks.length)tabs[1].style.display='none';
+function mode(m,keep){d.classList.toggle('listen',m==='listen');tabs.forEach(function(b){b.classList.toggle('on',b.dataset.m===m)});
+  if(!keep){history.replaceState(null,'',m==='listen'?'#audio':location.pathname+location.search);scrollTo(0,0)}}
+tabs.forEach(function(b){b.onclick=function(){mode(b.dataset.m)}});
+mode(d.classList.contains('listen')?'listen':'read',true);
+var ab=$('listen');
+if(ab&&tracks.length){ab.style.display='block';if(sv)ab.textContent='▶ Продолжить слушать';
+  ab.onclick=function(){mode('listen');if(ci<0)load(0,0,true);else ap.play()}}
+
 // текущая глава в оглавлении
 var links={};toc.querySelectorAll('a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
 var hs=[].slice.call(document.querySelectorAll('h2[id]'));
-function cur(){var id=null;for(var i=0;i<hs.length;i++){if(hs[i].getBoundingClientRect().top<innerHeight*0.35)id=hs[i].id;else break}
+function cur(){if(d.classList.contains('listen'))return;var id=null;for(var i=0;i<hs.length;i++){if(hs[i].getBoundingClientRect().top<innerHeight*0.35)id=hs[i].id;else break}
 for(var k in links)links[k].classList.toggle('on',k===id);
 if(id&&links[id]&&!toc.classList.contains('open')&&innerWidth>1000){var a=links[id],r=a.getBoundingClientRect();if(r.top<60||r.bottom>innerHeight-60)toc.scrollTop+=r.top-innerHeight/2}}
 addEventListener('scroll',function(){requestAnimationFrame(cur)},{passive:true});cur();
