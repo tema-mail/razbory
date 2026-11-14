@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Клип-лендинг: разбор</title>
+<style>
+:root{--bg:#f6f5f1;--ink:#17181b;--mut:#5d6068;--line:#dedcd5;--card:#fff;--acc:#d48a00;--acc2:#1f6feb;--ok:#1d8a55;--bad:#b3402f}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:6px 0 14px;letter-spacing:-.02em}
+h2{font-size:clamp(22px,3.4vw,30px);line-height:1.2;margin:56px 0 12px;letter-spacing:-.01em}
+h3{font-size:19px;margin:26px 0 8px}
+p{margin:0 0 12px}
+.meta{color:var(--mut);font-size:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 8px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.note{background:#fff4dc;border-radius:12px;padding:14px 16px;margin:14px 0}
+.flag{background:#fde8e4;border-radius:12px;padding:14px 16px;margin:14px 0}
+.ready{background:#e6f4ea;border-radius:12px;padding:14px 16px;margin:14px 0}
+.lead{font-size:20px;line-height:1.45;font-weight:600}
+.grid{display:grid;gap:12px}
+@media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+th{background:#efede6;font-weight:600}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:0 16px}
+.tw table{min-width:640px}
+figure{margin:14px 0}
+figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);cursor:zoom-in;display:block}
+figcaption{font-size:14px;color:var(--mut);margin-top:6px}
+.shots{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.shots{grid-template-columns:repeat(3,1fr)}}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.flow span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:15px}
+.flow b.ar{color:var(--acc);font-size:20px}
+.chip{display:inline-block;background:#efede6;border-radius:999px;padding:2px 10px;font-size:13px;margin:0 4px 4px 0}
+ol li,ul li{margin-bottom:6px}
+code{background:#efede6;border-radius:5px;padding:1px 5px;font-size:14px}
+.toc a{color:var(--acc2);text-decoration:none}
+.toc{columns:2;column-gap:24px;font-size:15px}
+@media(max-width:600px){.toc{columns:1}}
+audio{width:100%;margin:8px 0 4px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:8px}
+#lb button{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#000;font-size:22px;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--ink:#e4e4e2;--mut:#a9abb0;--line:#33363c;--card:#1f2125}
+html[data-theme=dark] th{background:#2a2d33}
+</style>
+<style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head>
+<body>
+<div class="wrap">
+<p class="meta">Разбор для Артёма · 14.11.2026 · снято с живых страниц на 1440 и 390 px из браузера на сервере</p>
+<h1>Клип-лендинг: что это, как устроен у Струговца и как сделаем свой</h1>
+
+<div class="box">
+<p><b>Голосовой итог</b> (1,5 мин)</p>
+<audio controls preload="none" src="golos.mp3"></audio>
+</div>
+
+<p class="lead">Вывод: клип-лендинг – короткая страница-«клип» на 3–10 минут с одним сюжетом и одним действием. Струговец сделал сильный клип-трейлер кейса: доказательства скринами и умная кнопка в Telegram. Брать каркас и кнопку, но без его завышенных цифр и с запасным путём в форму.</p>
+
+<div class="grid g3">
+<div class="card"><b>1. Понятие.</b> Не лендинг «обо всём», а трейлер или сторис: экран = один вопрос + крючок на следующий, в конце одна кнопка. Два вида: трейлер к длинному кейсу (Струговец) и 5 страниц-сторис с квизом (ReloSpain).</div>
+<div class="card"><b>2. Струговец.</b> 4 блока: «вложили 27 450 – получили 1,14 млн», 2 «дыры» с ценой ошибки, отрывок статьи с обрывом, 4 факта скринами. Кнопка ведёт через пост в канале в статью на Телетайпе, оттуда в личку на диагностику.</div>
+<div class="card"><b>3. Для нас.</b> Клип по нашему кейсу на Astro: 5 кадров, кнопка-шлюз в Telegram с обходом блокировки t.me, форма-запаска, цели с отсевом ботов. Нужен кейс с документами – выбираешь ты.</div>
+</div>
+
+<div class="box toc">
+<a href="#ponyatie">1. Понятие клип-лендинга</a><br>
+<a href="#voronka">2. Струговец: вся воронка</a><br>
+<a href="#ekrany">3. Струговец: экран за экраном</a><br>
+<a href="#knopka">4. Кнопка-шлюз в Telegram</a><br>
+<a href="#statya">5. Статья, куда ведёт клип</a><br>
+<a href="#cifry">6. Цифры: что правда, что раздуто</a><br>
+<a href="#slabo">7. Слабые места</a><br>
+<a href="#nash">8. Как сделаем свой</a><br>
+<a href="#relo-clip">9. ReloSpain: клип-сторис</a><br>
+<a href="#relo-seg">10. ReloSpain: сегментация</a><br>
+<a href="#baza">11. Что внесено в базу</a><br>
+<a href="#raskryt">12. Что раскрыть дальше</a>
+</div>
+
+<h2 id="ponyatie">1. Понятие: клип-лендинг</h2>
+<p><b>Клип-лендинг</b> – короткая посадочная, собранная как клип: один сюжет, 4–6 «кадров», в каждом один вопрос клиента и крючок на следующий кадр, в конце одно действие. Читается за 3–10 минут, время чтения написано на первом экране. Задача – не рассказать всё, а довести тёплого человека из рекламы или канала до следующего шага.</p>
+<div class="tw"><table>
+<tr><th></th><th>Обычный лендинг</th><th>Квиз-лендинг</th><th>Клип-лендинг</th></tr>
+<tr><td>Длина</td><td>10–20 блоков</td><td>1 экран + вопросы</td><td>4–6 кадров, 3–10 мин</td></tr>
+<tr><td>Логика</td><td>отвечает на все вопросы подряд</td><td>сразу к расчёту</td><td>сюжет: результат → почему у других не так → что сделали → доказательства → шаг</td></tr>
+<tr><td>Действия</td><td>несколько форм и кнопок</td><td>один квиз</td><td>одна кнопка, повторена после каждого куска</td></tr>
+<tr><td>Переходы</td><td>прокрутка</td><td>шаги квиза</td><td>крючок-вопрос в конце кадра: «Какие 5 деталей?», «Как пересобрать за 26 дней?»</td></tr>
+<tr><td>Трафик</td><td>поиск, реклама</td><td>реклама</td><td>тёплый: реклама на аудиторию, канал, пересылка</td></tr>
+</table></div>
+<div class="grid g2">
+<div class="card"><b>Вид 1. Клип-трейлер</b> (Струговец). Выжимка большого кейса. Цель – переход к полной версии (статья, пост, видео). Заявку собирает длинный текст.</div>
+<div class="card"><b>Вид 2. Клип-сторис</b> (ReloSpain). 5 полноэкранных страниц стопкой, выезжают снизу, сверху полоска прогресса. Пятая – квиз и контакт. Заявка прямо в клипе.</div>
+</div>
+
+<h2 id="voronka">2. Струговец: вся воронка</h2>
+<p>Кто: Алексей Струговец, агентство, продаёт владельцам детейлингов «клиентов на дорогие услуги». Клип – реклама агентства, а кейс студии оклейки – доказательство. Сайт на Flexbe, Метрика с вебвизором.</p>
+<div class="flow">
+<span>Реклама на владельцев студий <small>(не подтверждено)</small></span><b class="ar">→</b>
+<span><b>Клип</b> strugovec-detailing.ru/case_detailing</span><b class="ar">→</b>
+<span>Кнопка-шлюз, цель <code>go_to_telegram</code></span><b class="ar">→</b>
+<span>Пост №121 в канале @a_strugovec</span><b class="ar">→</b>
+<span>Статья 28 тыс. знаков на Телетайпе</span><b class="ar">→</b>
+<span>«Получить диагностику» – личка t.me/m/…</span><b class="ar">→</b>
+<span>Диагностика 30–60 мин</span><b class="ar">→</b>
+<span>Внедрение 55–70 тыс. ₽</span>
+</div>
+<div class="note">Пост №121 набрал <b>46 просмотров</b> на 14.11.2026. Значит, клип либо недавно запущен, либо трафика мало. Результат самого клипа неизвестен – мы видим механику, а не доказанную конверсию.</div>
+<p>Зачем ступенька через канал: человек попадает в канал и может подписаться, дальше его греют постами. Закреплённый пост №104 «База знаний для владельцев детейлинга» – это ещё и страница «спасибо» после заявки с основного сайта: «данные переданы, специалист свяжется за 15–30 минут, а пока – вот всё про систему».</p>
+
+<h2 id="ekrany">3. Струговец: экран за экраном</h2>
+<p>4 блока + подвал. 7 330 px на компьютере, 9 750 px на телефоне. Тёмный фон, жёлтый акцент, заголовки Montserrat Black капсом. Нажмите на снимок – откроется целиком.</p>
+
+<h3>Блок 1. Первый экран</h3>
+<div class="grid g2">
+<figure><img loading="lazy" src="img/strug-d00.webp" alt="Первый экран клипа Струговца на компьютере"><figcaption>Компьютер 1440</figcaption></figure>
+<figure><img loading="lazy" src="img/strug-m00.webp" alt="Первый экран клипа Струговца на телефоне"><figcaption>Телефон 390: сначала цифры и скрин, потом подзаголовок и кнопка. Плашка cookie закрывает кнопку.</figcaption></figure>
+</div>
+<div class="tw"><table>
+<tr><th>Элемент</th><th>Что написано</th><th>Зачем</th></tr>
+<tr><td>Шапка</td><td>Фото автора, «Струговец. Клиенты в детейлинг на дорогие услуги»</td><td>Лицо и позиционирование одной строкой</td></tr>
+<tr><td>Дескриптор</td><td>«Реальный кейс-практикум»</td><td>Жанр: не реклама, а разбор</td></tr>
+<tr><td>H1</td><td>«Вложили 27 450 ₽ – получили 1,14 млн ₽»</td><td>Две цифры: вход и выход. Владелец сразу считает окупаемость</td></tr>
+<tr><td>Подзаголовок</td><td>«Пошаговый разбор, как за 26 дней забить детейлинг клиентами на оклейку с бюджетом 27 450 ₽ в любом городе РФ»</td><td>Срок + бюджет + «в любом городе» снимает «у нас так не выйдет»</td></tr>
+<tr><td>4 плитки</td><td>Результат октябрь 2026 · все цифры проекта · кейс = схема, 10 мин · данные с выпиской, CRM, отзывом</td><td>Свежесть, полнота, польза, доказуемость</td></tr>
+<tr><td>Враг</td><td>«Пока рынок жалуется на несезон, а маркетологи – на Яндекс и что "ваш менеджер не умеет продавать"»</td><td>Владелец узнаёт свои разговоры с подрядчиками</td></tr>
+<tr><td>Справа</td><td>Скрин отчёта менеджера в Telegram: 7 машин, суммы, телефоны размыты; под ним 1,14 млн · 7 авто · 163 642 ₽</td><td>Документ вместо картинки</td></tr>
+<tr><td>Кнопка</td><td>«Читать кейс в Telegram» + «без подписки в бота и спама: вас сразу перебросит на статью»</td><td>Одно действие, страх «ботов» снят</td></tr>
+</table></div>
+
+<h3>Блок 2. «Почему заявки есть, а боксы простаивают»</h3>
+<figure><img loading="lazy" src="img/strug-d01.webp" alt="Блок дыр в клипе Струговца"></figure>
+<p>Вход: «до нас Директ работал, но 96,7% заявок уходили в молоко: из 47 заявок доехало 2 машины». Дальше две карточки одного вида: плашка «Дыра №N» + заголовок + 3 абзаца + скрин + строка «Цена ошибки» внизу.</p>
+<ul>
+<li><b>Дыра №1 – слив 47% клиентов в первые 5 минут.</b> Менеджер-эксперт работал как «справочное бюро»: называл 250 000 ₽ в лоб и слышал «я подумаю». Скрин – таблица CRM с жёлтыми «узнал стоимость, думает». Цена ошибки: 170 000–300 000 ₽ за каждого.</li>
+<li><b>Дыра №2 – армия скидочников.</b> Старый сайт: «оклейка от 50 000 ₽ + подарок» и технические слова. Скрин – заявка «230 тысяч за оклейку?! Рассчитывали уложиться в 100». Цена ошибки: 97% заявок – мусор.</li>
+</ul>
+<figure><img loading="lazy" src="img/strug-d02.webp" alt="Повтор кнопки и отрывок статьи"></figure>
+<p>После дыр – карточка-повтор: «Как пересобрать всё и за 26 дней сделать +1 145 500 ₽?» и кнопка. Вопрос в карточке – тот, который возникает у читателя после дыр.</p>
+
+<h3>Блок 3. Отрывок из кейса</h3>
+<figure><img loading="lazy" src="img/strug-d03.webp" alt="Отрывок статьи с видео и обрывом"></figure>
+<p>Оформлен как пост Телетайпа: автор, «blog.strugovec.ru · Статья в Teletype», «Отрывок · 1 мин чтения». Заголовок «Как мы отсекли 95% халявщиков с рекламы». Внутри два приёма: жёсткий ценовой фильтр «Полная оклейка полиуретаном – от 170 000 ₽» (выделен маркером) и 2-минутное видео мастера «почему так дорого». Текст обрывается на полуслове: «принесло первые 573 500 ₽ в кассу студии с рек…» → плашка «Полный разбор + готовая схема – внутри статьи» → кнопка.</p>
+
+<h3>Блок 4. Внутрянка и цифры</h3>
+<div class="grid g2">
+<figure><img loading="lazy" src="img/strug-d04.webp" alt="Факты 1 и 2"></figure>
+<figure><img loading="lazy" src="img/strug-d05.webp" alt="Факты 3 и 4"></figure>
+</div>
+<p>Заголовок «Для тех, кто привык верить цифрам, а не словам маркетологов». Подпись: «никаких рисованных графиков – живые выгрузки CRM, отчёты менеджера, счёт Директа. Нажмите на скриншот». 4 карточки «Факт №N · тема»:</p>
+<ol>
+<li><b>Поток заявок</b> – «стабильно 2–3 заявки в день» после фильтра, скрин CRM с источником «квиз 2-й экран / конец лендинга».</li>
+<li><b>Деньги в кассе</b> – список 7 машин с суммами, «подтверждённая выручка 1,14 млн ₽».</li>
+<li><b>Очередь</b> – ещё 3 клиента ждут машины из салона, «потенциал до 1,5 млн ₽».</li>
+<li><b>Закрытый доступ</b> – «готовая схема + скрипт назначения осмотров», картинка размыта, замок, «доступно в статье в Telegram-канале». Синяя плашка вместо жёлтой – отличается от фактов.</li>
+</ol>
+<figure><img loading="lazy" src="img/strug-d06.webp" alt="Финальный призыв и подвал"></figure>
+<p>Финал: «Заберите готовую схему и примерьте её на свою студию. Математика проекта, структура сайта и скрипт – в статье». Подвал: ИП, ИНН, ОГРНИП, телефон, политика. Формы на странице нет.</p>
+
+<h3>Смысловая цепочка клипа</h3>
+<div class="tw"><table>
+<tr><th>Кадр</th><th>Вопрос владельца студии</th><th>Ответ клипа</th><th>Какой вопрос рождает дальше</th></tr>
+<tr><td>1</td><td>Это мне? Сколько вложить и получить?</td><td>27 450 → 1,14 млн, 26 дней, любой город</td><td>Почему у меня не так?</td></tr>
+<tr><td>2</td><td>Почему у меня заявки есть, а машин нет?</td><td>Менеджер-справочник и сайт со скидками</td><td>Как это починить?</td></tr>
+<tr><td>3</td><td>Что конкретно сделали?</td><td>Ценовой фильтр + видео «почему дорого», остальное – обрыв</td><td>Это правда работает?</td></tr>
+<tr><td>4</td><td>Не врут?</td><td>Скрины CRM, отчёт менеджера, очередь; схема и скрипт – только в статье</td><td>Где взять схему? → кнопка</td></tr>
+</table></div>
+
+<h2 id="knopka">4. Кнопка-шлюз в Telegram – главная техническая находка</h2>
+<p>Кнопка – не ссылка, а скрипт. Причина: в РФ t.me в браузере без VPN часто не открывается, а приложение Telegram работает. Автор пишет это прямо в окне: «без VPN ссылки t.me могут тормозить».</p>
+<ol>
+<li><b>Цель в Метрику</b> <code>go_to_telegram</code> – один раз за визит и только если человек пробыл 8+ секунд или прокрутил 150+ px. Отсев ботов, чтобы Директ учился на людях.</li>
+<li><b>Зовёт приложение</b> диплинком <code>tg://resolve?domain=a_strugovec&amp;post=121</code>. На компьютере – через скрытый iframe, на телефоне – переходом. Для Android есть <code>intent://…package=org.telegram.messenger</code> с запасным адресом.</li>
+<li><b>Проверяет VPN:</b> грузит картинку-логотип с telegram.org. Загрузилась – веб доступен.</li>
+<li><b>Через 1,3 с решает:</b> вкладка ушла в фон – приложение открылось, всё. Веб доступен – открывает t.me/a_strugovec/121.</li>
+<li><b>Иначе окно-страховка:</b> «Откройте статью в Telegram любым способом» – большая кнопка приложения, для Android «через систему (обход браузера)», ник <code>@a_strugovec</code> с кнопкой «Скопировать» и подсказкой «статья закреплена, пост №121», на компьютере QR-код «наведите камеру телефона», мелко «у меня VPN – открыть в браузере».</li>
+</ol>
+<div class="ready"><b>Берём целиком</b>, но своим кодом: один Preact-остров на все наши сайты, QR рисуем у себя (у Струговца в одном варианте QR берётся с чужого api.qrserver.com), рядом запасной путь – короткая форма или Макс.</div>
+
+<h2 id="statya">5. Статья, куда ведёт клип</h2>
+<p>blog.strugovec.ru/str-case-okleyka, 28 тыс. знаков, 59 картинок, видео. Заголовок «Мой клиент опозорил 93% маркетологов…». Тон – разговорный, с шутками и личной позицией («терпеть не могу слово кейс»).</p>
+<div class="tw"><table>
+<tr><th>Часть</th><th>Что внутри</th></tr>
+<tr><td>Вход</td><td>«Без манипуляций», сам предприниматель, оглавление из 6 пунктов</td></tr>
+<tr><td>Вводные</td><td>Студия в миллионнике, средний сегмент, заявка по 800 ₽, но 47 заявок → 2 клиента</td></tr>
+<tr><td>Дыра №1</td><td>Прослушали звонки: менеджер-эксперт называл цену в лоб. Лечение – скрипт «приглашение на осмотр»</td></tr>
+<tr><td>Дыра №2</td><td>Сайт: скидки + техническая вода («клипсы строго по VIN», «25 лет суммарного опыта»), кнопка первого экрана кидает в середину на квиз, схемы квиза не совпадают с выбором</td></tr>
+<tr><td>Пересборка, 4 шага</td><td>Ценовой фильтр «от 170 000» · выгоды и гарантия «один раз на 10 лет» · видео «почему так дорого» · окно на выходе «Сколько стоит оклейка в 2026» → страница с видео</td></tr>
+<tr><td>Дыра №3</td><td>Директ: поиск, РСЯ и смешанные кампании отдельно; креативы из других городов; «удвоили бюджет» партнёрскими бонусами (55 000 на кабинет за 27 450)</td></tr>
+<tr><td>Цифры</td><td>Цена заявки 1 417 → 1 138 → 982 ₽ по неделям; для владельца с бонусом 528 ₽</td></tr>
+<tr><td>Итог</td><td>Оплачено 4 машины на 573 500 ₽, брони на 572 000 ₽, ещё 3 клиента ждут машины</td></tr>
+<tr><td>Продажа</td><td>Кнопка «Получить диагностику и рассчитать план загрузки студии – 30–60 минут лично со мной» дважды; цена работы 55–70 тыс. ₽ «сопоставимо с зарплатой администратора»; гарантия «минимум 35 заявок за месяц» в договоре</td></tr>
+</table></div>
+<p>Приём «прячу ссылки, чтобы не растащили»: на посадочную и ролики прямых ссылок нет – «увидеть живую архитектуру можно на диагностике». Любопытство превращается в созвон.</p>
+
+<h2 id="cifry">6. Цифры: что правда, что раздуто</h2>
+<div class="tw"><table>
+<tr><th>Что</th><th>На клипе</th><th>В статье</th></tr>
+<tr><td>Выручка</td><td>«Подтверждённая выручка 1,14 млн ₽», «выручка за 1-й месяц»</td><td>Оплачено 573 500 ₽ (4 машины), 572 000 ₽ – брони</td></tr>
+<tr><td>Машины</td><td>«7 машин в работе»</td><td>4 оплачены, 3 записаны на даты</td></tr>
+<tr><td>Средний чек</td><td>163 642 ₽ = 1 145 500 / 7</td><td>У Changan взят нижний край 260 000 из «260–400 тыс.»</td></tr>
+<tr><td>Мусор</td><td>«97% заявок – мусор», «отсекли 95%»</td><td>2 машины из 47 заявок – это доля сделок, а не мусора</td></tr>
+<tr><td>Достоверность</td><td>«100% подтверждённые данные»</td><td>Скрины есть, но выписки и счёта Директа на клипе не видно</td></tr>
+</table></div>
+<div class="flag">У нас так нельзя: закон о рекламе, правило «без выдумок», и это бьёт по доверию, когда клиент дочитает статью. Пишем «оплачено X, в записи Y» – раздельно.</div>
+
+<h2 id="slabo">7. Слабые места</h2>
+<ul>
+<li><b>4 ступени до заявки:</b> клип → пост → статья → личка. На каждой теряются люди. У поста 46 просмотров.</li>
+<li><b>Только Telegram.</b> Нет формы и телефона-кнопки на клипе: кто не в Telegram или с рабочего ПК – уходит.</li>
+<li><b>Плашка cookie на телефоне закрывает кнопку первого экрана.</b></li>
+<li><b>Одинаковые тексты 6 кнопок.</b> Можно менять под кадр: «Забрать схему», «Посмотреть скрипт».</li>
+<li><b>Flexbe дублирует блоки</b> для ПК и телефона – страница тяжёлая (487 КБ HTML).</li>
+<li><b>Видео в отрывке</b> – кадр с кнопкой; на клипе само видео не смотрели, работает ли просмотр – не проверено.</li>
+</ul>
+
+<h2 id="nash">8. Как сделаем свой клип-лендинг</h2>
+<p>Предложение. Делаем после твоего «да» и выбора кейса, через site-lead (карта → прототип → вёрстка).</p>
+<h3>Каркас: 5 кадров</h3>
+<div class="tw"><table>
+<tr><th>Кадр</th><th>Вопрос клиента</th><th>Содержание</th><th>Опора</th></tr>
+<tr><td>1. Результат</td><td>Это мне? Что получу?</td><td>H1 «вложили → получили» или «было → стало», срок, город; справа документ; «читать 5 минут»</td><td>запросить: цифры с документами</td></tr>
+<tr><td>2. Дыры</td><td>Почему у меня не выходит?</td><td>2–3 причины с ценой ошибки в рублях и скрином</td><td>запросить: записи звонков, старый сайт, заявки</td></tr>
+<tr><td>3. Что сделали</td><td>Как починили?</td><td>2 приёма открыто, остальное – обрыв «полностью в разборе»</td><td>есть: наши методики</td></tr>
+<tr><td>4. Доказательства</td><td>Не врут?</td><td>3 факта скринами (CRM, Метрика, отчёт клиента), 4-й закрыт</td><td>запросить: разрешение клиента</td></tr>
+<tr><td>5. Шаг</td><td>Как получить так же?</td><td>Кнопка-шлюз в Telegram + форма «пришлите разбор» (телефон или ник, мессенджер)</td><td>есть: шлюз, форма</td></tr>
+</table></div>
+<h3>Техника</h3>
+<ul>
+<li>Astro, острова Preact: кнопка-шлюз, лайтбокс скринов, форма. Картинки WebP до 400 КБ, ленивая загрузка.</li>
+<li>Цели: <code>tg_go</code> (с отсевом ботов), <code>lead_sent</code> по ответу сервера, параметры <code>variant</code> и источник заявки.</li>
+<li>Скрины: телефоны и госномера размыты по контуру, имена клиентов – с разрешения.</li>
+<li>Цифры клипа = цифры статьи. Оплачено и в записи – раздельно.</li>
+<li>Куда ведёт кнопка: пост в канале с разбором (Telegram) или сразу статья у нас на сайте – решаем по цели: подписчики или заявки.</li>
+<li>Догоняющая кнопка с 3-го кадра, cookie-плашка не перекрывает кнопку.</li>
+</ul>
+<h3>Нужно от тебя</h3>
+<ol>
+<li>Какой кейс первым и для кого клип: Дефорд (владельцы бизнеса) или клиент (например, TEYES – владельцы машин)?</li>
+<li>Куда ведём: наш Telegram-канал (какой) или статья на сайте + личка?</li>
+<li>Цифры кейса с документами и согласие клиента на показ.</li>
+</ol>
+
+<h2 id="relo-clip">9. ReloSpain: клип-сторис</h2>
+<p>relospain.com/lp/clip – ВНЖ Испании для удалёнщиков. Второй вид клипа: 5 страниц-сторис, заявка внутри.</p>
+<div class="shots">
+<figure><img loading="lazy" src="img/rs-clip1.webp" alt="ReloSpain клип, страница 1"><figcaption>Стр. 1: полоска прогресса из 5 штрихов, «3 минуты чтения»</figcaption></figure>
+<figure><img loading="lazy" src="img/rs-clip1b.webp" alt="ReloSpain клип, конец страницы 1"><figcaption>Конец стр. 1: крючок «Шаг 2 из 5 – Какие 5 деталей?»</figcaption></figure>
+<figure><img loading="lazy" src="img/rs-clip2.webp" alt="ReloSpain клип, страница 2"><figcaption>Стр. 2 выехала снизу, стрелка назад</figcaption></figure>
+</div>
+<div class="tw"><table>
+<tr><th>Стр.</th><th>Вопрос</th><th>Ответ</th><th>Крючок на следующую</th></tr>
+<tr><td>1</td><td>Подхожу ли я?</td><td>4 ситуации, порог дохода, «решают по документам», 92% · 20 дней · 2 800+</td><td>«Какие 5 деталей?»</td></tr>
+<tr><td>2</td><td>Что собрать?</td><td>5 условий, «испанский не нужен», «всё это делаем мы»</td><td>«Что даёт ВНЖ?»</td></tr>
+<tr><td>3</td><td>Ради чего?</td><td>Жизнь у моря, Шенген 29 стран, 3 → 5 → 10 лет, 2 отзыва</td><td>«А кто вы такие?»</td></tr>
+<tr><td>4</td><td>Кому доверить, сколько?</td><td>Путь по неделям, ≈ €4 000 с составом, юрлицо, истории с датами</td><td>«Получить мой план»</td></tr>
+<tr><td>5</td><td>Что дальше?</td><td>Квиз 3 вопроса кнопками → телефон или ник, мессенджер, имя → пример первого сообщения эксперта, «звонить не будем»</td><td>заявка</td></tr>
+</table></div>
+<p>Сильные детали: догоняющая кнопка с 3-й страницы; квиз сам определяет сегмент и отправляет его в цель; «так выглядит первое сообщение»; своя запись визитов (rrweb), потому что в коде написано «у Метрики нет записей вебвизора с 11.10.2026» – это стоит проверить у нас.</p>
+
+<h2 id="relo-seg">10. ReloSpain: как устроена сегментация</h2>
+<p>Два слоя. <b>Слой 1</b> – одно обещание, 5 механик первого экрана (тест, что вовлекает). <b>Слой 2</b> – 3 сегмента × 2 угла на одном каркасе.</p>
+<div class="tw"><table>
+<tr><th>Вариант</th><th>Механика первого экрана</th></tr>
+<tr><td>v1</td><td>Кнопки «моя ситуация» + список «что проверяем до оплаты»</td></tr>
+<tr><td>v2</td><td>Полный длинный лендинг: план ВНЖ, квиз 4 вопроса, видео клиентов, продление</td></tr>
+<tr><td>v3</td><td>Кнопки ситуации + шкала пути + цена</td></tr>
+<tr><td>v4</td><td>«Когда хотите начать?» → «карта у вас примерно к 7 февраля 2027» (дата от сегодня)</td></tr>
+<tr><td>v5</td><td>Мини-конфигуратор (чем занимаетесь, кто едет) + макет карты резидента</td></tr>
+</table></div>
+<div class="shots">
+<figure><img loading="lazy" src="img/rs-v4.webp" alt="ReloSpain v4"><figcaption>v4 – дата карты</figcaption></figure>
+<figure><img loading="lazy" src="img/rs-v5.webp" alt="ReloSpain v5"><figcaption>v5 – мини-конфигуратор</figcaption></figure>
+<figure><img loading="lazy" src="img/rs-family-a.webp" alt="ReloSpain family-a"><figcaption>family-a – семьи, рациональный угол</figcaption></figure>
+</div>
+<div class="tw"><table>
+<tr><th>Сегмент</th><th>Угол А (рассудок)</th><th>Угол Б (страх или мечта)</th></tr>
+<tr><td>Удалёнщики</td><td>nomad-a «Проходите ли вы» (сейчас отдаёт ту же страницу, что v2)</td><td>nomad-b «Честно до оплаты»: вердикт и смета до договора, «откажут – подадим заново»</td></tr>
+<tr><td>Семьи</td><td>family-a «€3 334 в месяц на всех, хоть вас шестеро»</td><td>family-b «Переезд с детьми по плану», школы, 1 000+ семей</td></tr>
+<tr><td>Бизнес</td><td>biz-b «Сначала налоги, потом документы», дивиденды не в счёт</td><td>biz-a «Хватит просить визу», Шенген без визовых центров</td></tr>
+</table></div>
+<p>Каркас сегментной страницы: свой H1 + 3 буллета с цифрой + кнопка-результат («Получить вердикт и смету», «Разобрать мою структуру и налоги») → общий калькулятор даты → общие цифры → «Узнаёте себя?» с цитатами боли этого сегмента → дальше общее. 6 страниц по цене одной.</p>
+<div class="flag">У них разнобой: «92% одобряют» в клипе и v2, «99% одобрений» на остальных. Одна цифра на бренд – обязательно.</div>
+<div class="ready"><b>Для нас:</b> сегменты брать из скилла auditoriya. Пример TEYES: «китайский кроссовер», «японец 2008–2015», «такси и каршеринг»; угол А – «подойдёт ли на мою машину», угол Б – «не сломаем штатное». Начинать с 1 клипа и 2 сегментов: на 6 страниц трафика не хватит.</div>
+
+<h2 id="baza">11. Что внесено в базу маркетолога</h2>
+<ul>
+<li>Знание <code>klip-lending</code> – понятие, два вида, каркас кадров, риски.</li>
+<li>Знание <code>tg-shlyuz-perekhod</code> – кнопка-шлюз в Telegram и цель с отсевом ботов.</li>
+<li>Знание <code>segmentnye-lendingi-segment-ugol</code> – сегмент × угол и тест механик первого экрана.</li>
+<li>Знание <code>cenovoy-filtr-i-video-dorogo</code> – ценовой фильтр, видео «почему дорого», окно на выходе.</li>
+<li>Прототипы <code>strugovec-001</code> и <code>relospain-001</code> в базе прототипов.</li>
+</ul>
+
+<h2 id="raskryt">12. Что раскрыть дальше</h2>
+<ul>
+<li>Прототип нашего клипа по выбранному кейсу (чёрно-белый, 390 и 1440).</li>
+<li>Модуль кнопки-шлюза для всех наших сайтов (Astro + Preact).</li>
+<li>Проверить, пишет ли у нас вебвизор Метрики после 11.10.2026.</li>
+<li>Сегменты и углы для TEYES под клип-сторис.</li>
+</ul>
+<p class="meta">Источники: живые страницы strugovec-detailing.ru/case_detailing, t.me/a_strugovec/121 и /104, blog.strugovec.ru/str-case-okleyka, relospain.com/lp/* – сняты 14.11.2026. Результаты и цифры – со слов авторов, не проверены.</p>
+</div>
+<div id="lb"><button type="button" aria-label="Закрыть">✕</button><img alt=""></div>
+<script>
+(function(){var lb=document.getElementById('lb'),im=lb.querySelector('img');
+document.querySelectorAll('figure img').forEach(function(i){i.addEventListener('click',function(){im.src=i.src;im.alt=i.alt;lb.classList.add('on')})});
+lb.addEventListener('click',function(e){if(e.target!==im)lb.classList.remove('on')});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});})();
+</script>
+<script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body>
+</html>
