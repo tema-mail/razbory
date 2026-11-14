@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Лупа: разбор и план</title>
+<style>
+:root{--bg:#f6f5f1;--ink:#17181b;--mut:#5d6068;--line:#dedcd5;--card:#fff;--acc:#d48a00;--acc2:#1f6feb;--ok:#1d8a55;--bad:#b3402f}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:6px 0 14px;letter-spacing:-.02em}
+h2{font-size:clamp(22px,3.4vw,30px);line-height:1.2;margin:56px 0 12px;letter-spacing:-.01em}
+h3{font-size:19px;margin:26px 0 8px}
+p{margin:0 0 12px}
+.meta{color:var(--mut);font-size:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 8px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.note{background:#fff4dc;border-radius:12px;padding:14px 16px;margin:14px 0}
+.flag{background:#fde8e4;border-radius:12px;padding:14px 16px;margin:14px 0}
+.ready{background:#e6f4ea;border-radius:12px;padding:14px 16px;margin:14px 0}
+.lead{font-size:20px;line-height:1.45;font-weight:600}
+.grid{display:grid;gap:12px}
+@media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+th{background:#efede6;font-weight:600}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:0 16px}
+.tw table{min-width:640px}
+figure{margin:14px 0}
+figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);cursor:zoom-in;display:block}
+figcaption{font-size:14px;color:var(--mut);margin-top:6px}
+.shots{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.shots{grid-template-columns:repeat(3,1fr)}}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.flow span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:15px}
+.flow b.ar{color:var(--acc);font-size:20px}
+.chip{display:inline-block;background:#efede6;border-radius:999px;padding:2px 10px;font-size:13px;margin:0 4px 4px 0}
+ol li,ul li{margin-bottom:6px}
+code{background:#efede6;border-radius:5px;padding:1px 5px;font-size:14px}
+.toc a{color:var(--acc2);text-decoration:none}
+.toc{columns:2;column-gap:24px;font-size:15px}
+@media(max-width:600px){.toc{columns:1}}
+audio{width:100%;margin:8px 0 4px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:8px}
+#lb button{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#000;font-size:22px;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--ink:#e4e4e2;--mut:#a9abb0;--line:#33363c;--card:#1f2125}
+html[data-theme=dark] th{background:#2a2d33}
+</style>
+<style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head>
+<body>
+<div class="wrap">
+<p class="meta">Разбор для Артёма · 14.11.2026 · ролик «Я навайбкодил вебвизор» (Игнат PRO, 06.11.2026) + живой сайт ignat-pro.ru + код и прод Лупы</p>
+<h1>Лупа: что у Игната, чего нам не хватает и как сделать лучше</h1>
+
+<div class="box">
+<p><b>Голосовой итог</b> (1,3 мин)</p>
+<audio controls preload="none" src="golos.mp3"></audio>
+</div>
+
+<p class="lead">У Игната то же, что уже есть у Лупы, плюс три вещи: ИИ разбирает каждый визит, данные поиска лежат в том же окне, а ИИ-маркетологу можно задать вопрос словами. Вывода по странице на каждые 100 заходов нет ни у него, ни у нас: это и будет наше «лучше».</p>
+
+<div class="toc box">
+<a href="#u-nego">1. Что у него на самом деле</a><br>
+<a href="#u-nas">2. Чего не хватает Лупе</a><br>
+<a href="#plan">3. План по шагам</a><br>
+<a href="#eshche">4. Что ещё взять у Игната</a><br>
+<a href="#reshit">Нужно от тебя</a>
+</div>
+
+<h2 id="u-nego">1. Что у него на самом деле: вебвизор на rrweb, разбор каждого визита ИИ и всё в одном окне</h2>
+<div class="tw"><table>
+<tr><th>Что показал</th><th>Как устроено</th><th>Есть у Лупы</th></tr>
+<tr><td>Запись каждого визита</td><td>Открытая технология записи экрана – это rrweb. Повод: после атаки на Яндекс Вебвизор в Метрике так и не вернулся</td><td><span class="chip">есть</span> rec.js на том же rrweb, просмотр записей</td></tr>
+<tr><td>Каждый визит разобран агентом, рядом источник</td><td>ИИ даёт вывод по конкретному визиту</td><td><span class="chip">нет</span> разбираем только сайт целиком за период</td></tr>
+<tr><td>Карта кликов «как в Метрике»</td><td>Смотрит, как ведут себя на странице мастер-класса</td><td><span class="chip">есть</span> карта кликов, прокрутка, блоки</td></tr>
+<tr><td>Search Console и Вебмастер в том же окне</td><td>Подтягивает «все данные, которые только имеются»</td><td><span class="chip">нет</span></td></tr>
+<tr><td>ИИ-маркетолог</td><td>Отвечает на вопросы словами: какие статьи растут, сколько показов в Google и Яндексе, сколько кликов с Директа и Google Ads, какие объявления зашли. Он называет это «сквозняк»</td><td><span class="chip">нет</span></td></tr>
+<tr><td>Свои срезы и цели голосом</td><td>Например «сколько дочитывают статью»: диктует агенту в терминал</td><td><span class="chip">частично</span> цели правим кодом, дочитывание не считаем</td></tr>
+</table></div>
+
+<div class="note"><b>Проверено на ignat-pro.ru 14.11.</b> На главной стоят обычные Метрика и GA4, цели уходят в обе одинаково (<code>messenger_click</code>). Записи rrweb на главной нет: запись, видимо, стоит на других страницах. Есть свой чат-консультант «Полина» с бэкендом s.ignat-pro.online (/chat/start, /send, /poll), в коде написано: «Claude Haiku, без инструментов, с лимитами».</div>
+
+<h2 id="u-nas">2. Чего не хватает Лупе: разбора визита, выводов по странице и места в админках</h2>
+<div class="grid g2">
+<div class="card"><b>Разбор</b><br>ИИ сейчас смотрит сайт целиком за период и ищет 4–8 проблем. Ни каждый визит отдельно, ни каждую страницу он не разбирает.</div>
+<div class="card"><b>Где живёт</b><br>Лупа – отдельный кабинет. Ни на одном нашем сайте её нет: в базе только демо-сайт «Окна Север», 261 визит, 9 разборов (снято с прода 14.11).</div>
+<div class="card"><b>Данные</b><br>Нет Метрики, Вебмастера, Search Console и Директа. Нет ИИ-маркетолога.</div>
+<div class="card"><b>Обработчик ИИ</b><br>На маке последние 10 попыток упали с ошибкой связи («fetch failed»), хотя из терминала сервер открывается. Причину не копал: по плану обработчик всё равно переезжает на claude-vps.</div>
+</div>
+
+<h2 id="plan">3. План по шагам: от ярлыка на каждом визите до вывода по каждой сотне заходов на страницу</h2>
+<p>Каждый шаг – не больше 3 файлов кода, тест и коммит. План лежит в репо Лупы: <code>docs/ПЛАН-2-визиты-и-страницы.md</code> (коммит 82afe58).</p>
+<div class="tw"><table>
+<tr><th>#</th><th>Что получаем</th><th>Как проверяем</th></tr>
+<tr><td>0</td><td>Обработчик ИИ переезжает на claude-vps</td><td>задание демо проходит «взято → готово»</td></tr>
+<tr><td>1</td><td><b>Каждый визит получает ярлык от кода, без ИИ:</b> бот, ушёл сразу, читал, дошёл до формы, бросил поле, клик впустую, заявка. Плюс где именно ушёл: блок и последнее действие</td><td>ярлык есть у 100% визитов</td></tr>
+<tr><td>2</td><td><b>ИИ пишет строку на визит:</b> «кто, откуда, что искал, почему ушёл». Пачками по 25 визитов, без ботов и заходов короче 10 секунд</td><td>3 пачки на демо; в ответе только визиты из пачки</td></tr>
+<tr><td>3</td><td><b>Каждые 100 заходов на страницу – вывод по этой странице.</b> На входе: блоки, прокрутка и дочитывание, клики впустую, поля форм, источники, устройства, скорость, 100 строк по визитам и прошлый вывод. На выходе: что поправить и «было – стало» после прошлых правок</td><td>сотый заход ставит разбор, 99-й – нет; цифры сверяет код</td></tr>
+<tr><td>4</td><td>Карточка страницы: лента выводов по сотням, визиты со строкой-выводом и кнопкой «смотреть запись»</td><td>снимок 1440 / 390</td></tr>
+<tr><td>5</td><td><b>Вкладка «Поведение» в админке каждого сайта</b> и модуль для admin-builder. Первыми – сайты в бою на нашем коде: EV Sibir → Газ-маг → Автобалл. Счётчик только на боевом домене и после согласия на cookie</td><td>живой визит виден во вкладке админки</td></tr>
+<tr><td>6</td><td>Метрика, Вебмастер и Search Console по каждому сайту в Лупе</td><td>цифры совпадают с кабинетами</td></tr>
+<tr><td>7</td><td>ИИ-маркетолог: вопрос словами → код делает выборку → модель только формулирует</td><td>5 вопросов, цифры сверены с базой</td></tr>
+</table></div>
+<div class="ready"><b>Чем лучше, чем у него:</b> вывод по каждой странице на каждые 100 заходов с проверкой, помогли ли прошлые правки, и Лупа внутри админки каждого сайта, а не отдельным сервисом. Модель цифры не считает, их даёт код: так ИИ не может соврать в числах.</div>
+
+<h2 id="eshche">4. Что ещё взять у Игната: консультант на сайте и свой аналог BotHelp</h2>
+<ul>
+<li><b>ИИ-консультант на сайте</b> с лимитами и передачей в Telegram или Макс. Подходит в наш «Модуль виджетов».</li>
+<li><b>Свой BotHelp:</b> рассылки по ботам, воронки, мини-лендинги. Он отказался от BotHelp за 5 000 ₽ в месяц. Можно собрать на базе бота Евы, если понадобится клиентам.</li>
+<li><b>Агент настраивает рекламу ВК и лид-форму.</b> Это отдельная тема рекламы, к Лупе не относится.</li>
+<li><b>Запасной ИИ</b> (у него Kimi). У Лупы уже есть переключатель на OpenRouter.</li>
+</ul>
+
+<h2 id="reshit">Нужно от тебя: три решения</h2>
+<ol>
+<li><b>ИИ для сайтов клиентов.</b> 22.10 ты решил, что подписку Claude используем только для своих сайтов. Для клиентских два варианта: платный ключ через OpenRouter (цену назову после пробы на 3 пачках) или только ярлыки от кода, без ИИ.</li>
+<li><b>Как Лупа выглядит в админке.</b> Сначала окно Лупы по гостевой ссылке (быстро, без нового API) или сразу свои блоки в «Цифрах страницы» (дольше).</li>
+<li><b>Порядок сайтов:</b> EV → Газ-маг → Автобалл – подходит?</li>
+</ol>
+<p><b>Что раскрыть:</b> сравнение с роликом подробно, шаг 3 (вывод по странице) или вкладку в админке.</p>
+<p class="meta">Источники: расшифровка ролика youtube.com/watch?v=P5ys3u-5Z0c (Scrape Creators, 1 кредит), страница и скрипты ignat-pro.ru, база и журнал Лупы – сняты 14.11.2026. Слова автора о своём сервисе не проверены.</p>
+</div>
+<script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body>
+</html>
