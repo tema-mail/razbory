@@ -40,8 +40,8 @@ html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!impor
 </style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
 if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
 document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Пять рилсов и фитнес-бот: что берём в работу</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
-<p>Из пяти роликов один уже работает: пирамида Минто стала скиллом, и мои ответы тебе теперь строятся по ней. Под три твоих задачи нашлись готовые основы, писать с нуля не нужно: трекер на полгода – модуль в Еве, фитнес-бот – открытый SnapCaloriesAI, сайты – референсы Refero плюс правила против ИИ-вида. Ещё два ролика – реклама услуг, но один из них показал у нас лишний расход: Ева отвечает на самой дорогой модели.</p>
-<p><strong>Нужно от тебя:</strong> выбрать, что запускаем первым. Советую минимальный трекер в Еве (8–12 ч) и перевод Евы на дешёвую модель по эталонам (6–9 ч). Вопросы, без которых не начать, – в конце каждого файла.</p>
+<p>Из пяти роликов один уже работает: пирамида Минто стала скиллом, и мои ответы тебе теперь строятся по ней. Под три твоих задачи нашлись готовые основы, писать с нуля не нужно: трекер на полгода – модуль в Еве, фитнес-бот – открытый SnapCaloriesAI, сайты – референсы Refero плюс правила против ИИ-вида. Ещё два ролика – реклама услуг. <strong>Дополнено 14.11 вечером:</strong> по твоим ответам трекер вырос в отдельного жёсткого наставника с персонажем-тамагочи, демо уже работает; все агенты на Opus 5.5; контент-завод отложен.</p>
+<p><strong>Нужно от тебя:</strong> 7 ответов на странице <a href="nastavnik-personazh/">Наставник и персонаж</a> – имя наставника, один бот или два, время вечерней отметки и день разбора, путь персонажа. Демо: <a href="vidzhety/">виджеты наставника</a>.</p>
 <h2>1. Файл по каждому рилсу</h2>
 <div class="tw"><table>
 <thead>
@@ -86,15 +86,22 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 <td>5</td>
 <td><a href="https://www.instagram.com/reels/DfVCLnWsVi_/">karpov.kz</a></td>
 <td>«Контент-завод» сам пишет, монтирует, публикует рилсы, с ним можно говорить голосом</td>
-<td>Почти всё есть у нас, кроме Instagram API и цикла «цифры → темы». Начинать с полуавтомата</td>
+<td><strong>Отложен 14.11</strong>, страница – справка на будущее</td>
 <td><a href="kontent-zavod/">Контент-завод</a></td>
 </tr>
 <tr>
 <td>6</td>
 <td><a href="https://www.instagram.com/reels/DfpWsCfsZ4n/">tinroi</a></td>
 <td>7 правил разработки ИИ-агентов: сначала схема под дешёвую модель, дорогая только на сложное</td>
-<td>Ева и автостатьи на Opus, у 50 из 55 агентов модель не задана, эталонов нет нигде</td>
+<td><strong>Решение 14.11: Opus 5.5 везде</strong>, совет про дешёвую модель отменён, агенты переведены</td>
 <td><a href="arhitektura-agentov/">Архитектура агентов</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Твои ответы 14.11 + виджеты Telegram</td>
+<td>Персонаж-тамагочи, жёсткий наставник, еда, Здоровье iPhone и Huawei, фиолетовые задачи АСБ</td>
+<td>Отдельный бот-наставник, персонаж на графике Kenney (CC0), демо работает</td>
+<td><a href="nastavnik-personazh/">Наставник и персонаж</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -110,7 +117,13 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 </thead>
 <tbody>
 <tr>
-<td>Трекер на полгода в Еве</td>
+<td>Наставник + персонаж (путь A)</td>
+<td>20–30 ч: персонаж, магазин, здоровье и монеты от бота</td>
+<td>+ еда по фото, данные Здоровья</td>
+<td>Твои 7 ответов</td>
+</tr>
+<tr>
+<td>Трекер на полгода (минимум)</td>
 <td>8–12 ч: анкета целей, вечерние кнопки, серия с заморозкой, разбор недели</td>
 <td>50–70 ч: очки, ставка, свидетель, страница прогресса, данные с iPhone</td>
 <td>Ответить на 6 вопросов: цели, точки А и Б в цифрах, когда день 1</td>
@@ -122,22 +135,10 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 <td>Цель (сушка или масса), есть ли весы и браслет, отдельный бот или в Еве</td>
 </tr>
 <tr>
-<td>Ева на дешёвую модель</td>
-<td>6–9 ч: 25–30 эталонных реплик, сравнение haiku и sonnet с opus, журнал вызовов</td>
-<td>8–13 ч: плюс модели всем механическим агентам и проверка-скрипт</td>
-<td>Твоё «да»</td>
-</tr>
-<tr>
 <td>Сайты без ИИ-вида</td>
 <td>3–5 ч: убрать спор скиллов о надзаголовке, файл примет, скрипт проверки</td>
 <td>–</td>
 <td>Твоё «да» на 5 правок в скиллы</td>
-</tr>
-<tr>
-<td>Контент-завод</td>
-<td>25–35 ч: ролики из наших сценариев, публикуешь руками, цифры по API</td>
-<td>60–80 ч: вето кнопкой в Еве и публикация через API</td>
-<td>Ответ юриста по Instagram и аккаунт TEYES</td>
 </tr>
 </tbody>
 </table></div>
@@ -150,7 +151,7 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 <li>«Скиллы ставить не надо, бери референс» – полуправда. Без правил референс превращается в копию, без референса правила дают средний вкус модели. Нужны оба.</li>
 <li>godly.website закрыт: адрес перенаправляет на recent.design.</li>
 </ul>
-<p><strong>Что раскрыть:</strong> 1 – трекер по шагам, 2 – как Еву перевести на дешёвую модель, 3 – фитнес-бот по шагам.</p></main><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+<p><strong>Что раскрыть:</strong> 1 – как говорит наставник, 2 – экономика монет и шмота, 3 – фитнес и еда по шагам.</p></main><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
 function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
 b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
 upd();document.body.appendChild(b)})();</script></body></html>
