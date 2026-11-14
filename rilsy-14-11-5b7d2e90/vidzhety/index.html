@@ -1,0 +1,161 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Виджеты наставника</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{--tg-theme-bg-color:#fff;--tg-theme-text-color:#111;--tg-theme-hint-color:#8e8e93;--tg-theme-secondary-bg-color:#efeff4;--tg-theme-section-separator-color:#e0e0e5;--tg-theme-button-color:#3390ec;--tg-theme-button-text-color:#fff;--page:#e9eef3}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--tg-theme-bg-color:#212d3b;--tg-theme-text-color:#fff;--tg-theme-hint-color:#7d8b99;--tg-theme-secondary-bg-color:#2c3a4a;--tg-theme-section-separator-color:#33414f;--tg-theme-button-color:#5288c1;--page:#0e1621}}
+:root[data-theme=dark]{--tg-theme-bg-color:#212d3b;--tg-theme-text-color:#fff;--tg-theme-hint-color:#7d8b99;--tg-theme-secondary-bg-color:#2c3a4a;--tg-theme-section-separator-color:#33414f;--tg-theme-button-color:#5288c1;--page:#0e1621}
+body{margin:0;background:var(--page);color:var(--tg-theme-text-color);font:15px/1.4 system-ui,sans-serif}
+main{max-width:440px;margin:0 auto;padding:12px 16px 40px}
+h1{font-size:20px;margin:6px 0}p{color:var(--tg-theme-hint-color);margin:0 0 8px}h2{font-size:14px;color:var(--tg-theme-hint-color);margin:16px 0 6px;font-weight:600}
+iframe{display:block;width:100%;border:0;border-radius:14px;background:var(--tg-theme-bg-color);height:200px}
+</style></head><body><main>
+<h1>Виджеты наставника – демо</h1><p>Так они будут выглядеть в сообщениях бота. Прогресс хранится на этом устройстве.</p>
+<h2>Трекер полугода</h2><iframe data-f="treker" srcdoc="&lt;meta charset=&#x27;utf-8&#x27;&gt;&lt;style&gt;:root{}html{background:transparent;color:var(--tg-theme-text-color)}body{color:var(--tg-theme-text-color)}button{background:var(--tg-theme-button-color);color:var(--tg-theme-button-text-color);border:0;border-radius:8px;font:inherit;padding:6px 10px;cursor:pointer}&lt;/style&gt;&lt;script&gt;(function(){var t=parent.Telegram&amp;&amp;parent.Telegram.WebApp;window.TelegramWidget={chatData:&quot;{\&quot;g\&quot;: [\&quot;\u0421\u043f\u043e\u0440\u0442: 3 \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0438 \u0432 \u043d\u0435\u0434\u0435\u043b\u044e\&quot;, \&quot;\u0421\u0442\u0443\u0434\u0438\u044f: 1 \u043f\u0440\u043e\u0434\u0430\u0436\u0430 \u0432 \u043d\u0435\u0434\u0435\u043b\u044e\&quot;, \&quot;\u0411\u043b\u043e\u0433: \u0440\u043e\u043b\u0438\u043a \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c\&quot;]}&quot;,HapticFeedback:t&amp;&amp;t.HapticFeedback,onEvent:function(){},ready:function(){}};})()&lt;/script&gt;&lt;style&gt;
+body{margin:0;padding:10px 12px max(12px,env(safe-area-inset-bottom));font:15px/1.35 system-ui;position:relative}
+.top{display:flex;justify-content:space-between;align-items:baseline}
+.f{font-size:19px;font-weight:700;white-space:nowrap}
+.h{color:var(--tg-theme-hint-color);font-size:13px}
+.bar{height:8px;border-radius:4px;background:var(--tg-theme-secondary-bg-color);margin:6px 0 8px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff9f0a,#ff375f);transition:width .6s}
+.g{display:flex;align-items:center;gap:6px;padding:7px 0;border-top:1px solid var(--tg-theme-section-separator-color)}
+.g span{flex:1}
+.g button{min-width:40px;padding:6px 0;margin:0}
+.g.v2 span{color:#30b158}.g.v1 span{color:#ff9f0a}.g.v0 span{color:var(--tg-theme-hint-color);text-decoration:line-through}
+.wk{display:flex;gap:4px;margin:8px 0}
+.wk b{flex:1;text-align:center;font-size:12px;padding:5px 0;border-radius:7px;background:var(--tg-theme-secondary-bg-color);color:var(--tg-theme-hint-color);font-weight:600}
+.wk b.on{background:#ff9f0a;color:#fff}.wk b.fz{background:#5ac8fa;color:#fff}
+.pop{position:absolute;right:14px;font-weight:700;color:#ff9f0a;animation:up 1.1s forwards;pointer-events:none}
+@keyframes up{to{transform:translateY(-34px);opacity:0}}
+.lvup{animation:pulse .8s 2}
+@keyframes pulse{50%{transform:scale(1.12)}}
+#nx{width:100%;margin:2px 0 0}
+&lt;/style&gt;
+&lt;div class=&quot;top&quot;&gt;&lt;div class=&quot;f&quot; id=&quot;st&quot;&gt;&lt;/div&gt;&lt;div class=&quot;h&quot; id=&quot;dy&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;top&quot;&gt;&lt;b id=&quot;lv&quot;&gt;&lt;/b&gt;&lt;span class=&quot;h&quot; id=&quot;xp&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;bar&quot;&gt;&lt;i id=&quot;br&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;div id=&quot;gs&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;wk&quot; id=&quot;wk&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;h&quot; id=&quot;msg&quot;&gt;&lt;/div&gt;
+&lt;button id=&quot;nx&quot; hidden&gt;Следующий день ▶&lt;/button&gt;
+&lt;script&gt;
+const W=window.TelegramWidget||{onEvent(){}},H=W.HapticFeedback,$=i=&gt;document.getElementById(i);
+let G=[&quot;Спорт: 3 тренировки в неделю&quot;,&quot;Студия: 1 продажа в неделю&quot;,&quot;Блог: ролик каждый день&quot;];
+try{const c=JSON.parse(W.chatData);if(c&amp;&amp;c.g)G=c.g}catch(e){}
+const LV=[0,60,150,270,420,600,820,1100],NM=[&quot;Новичок&quot;,&quot;Ученик&quot;,&quot;Практик&quot;,&quot;Боец&quot;,&quot;Мастер&quot;,&quot;Наставник&quot;,&quot;Легенда&quot;,&quot;Полгода!&quot;];
+let s=null;try{s=JSON.parse(localStorage.getItem(&quot;s&quot;))}catch(e){}
+s=s||{xp:0,st:0,fz:2,d:1,m:[],wk:[]};
+const sv=()=&gt;{try{localStorage.setItem(&quot;s&quot;,JSON.stringify(s))}catch(e){}};
+const lv=x=&gt;{let i=0;while(i&lt;LV.length-1&amp;&amp;x&gt;=LV[i+1])i++;return i};
+function pop(t,y){const p=document.createElement(&quot;div&quot;);p.className=&quot;pop&quot;;p.textContent=t;p.style.top=y+&quot;px&quot;;document.body.appendChild(p);setTimeout(()=&gt;p.remove(),1200)}
+function hap(t){try{t?H.notificationOccurred(t):H.impactOccurred(&quot;light&quot;)}catch(e){}}
+function draw(){
+const l=lv(s.xp),a=LV[l],b=LV[l+1]||a+1;
+$(&quot;st&quot;).textContent=&quot;🔥 Серия: &quot;+s.st+&quot; дн.&quot;;
+$(&quot;dy&quot;).textContent=&quot;день &quot;+s.d+&quot;/182 · ❄️&quot;+s.fz;
+$(&quot;lv&quot;).textContent=&quot;Ур. &quot;+(l+1)+&quot; · &quot;+NM[l];
+$(&quot;xp&quot;).textContent=s.xp+&quot; / &quot;+b+&quot; XP&quot;;
+$(&quot;br&quot;).style.width=Math.min(100,(s.xp-a)/(b-a)*100)+&quot;%&quot;;
+$(&quot;gs&quot;).innerHTML=G.map((g,i)=&gt;{const v=s.m[i];return &#x27;&lt;div class=&quot;g&#x27;+(v==null?&quot;&quot;:&quot; v&quot;+v)+&#x27;&quot;&gt;&lt;span&gt;&#x27;+g+&quot;&lt;/span&gt;&quot;+(v==null?&#x27;&lt;button data-i=&quot;&#x27;+i+&#x27;&quot; data-v=&quot;2&quot;&gt;✓&lt;/button&gt;&lt;button data-i=&quot;&#x27;+i+&#x27;&quot; data-v=&quot;1&quot;&gt;½&lt;/button&gt;&lt;button data-i=&quot;&#x27;+i+&#x27;&quot; data-v=&quot;0&quot;&gt;✕&lt;/button&gt;&#x27;:&quot;&lt;b&gt;&quot;+[&quot;✕&quot;,&quot;½&quot;,&quot;✓&quot;][v]+&quot;&lt;/b&gt;&quot;)+&quot;&lt;/div&gt;&quot;}).join(&quot;&quot;);
+const w=s.wk.slice(-7);$(&quot;wk&quot;).innerHTML=[&quot;Пн&quot;,&quot;Вт&quot;,&quot;Ср&quot;,&quot;Чт&quot;,&quot;Пт&quot;,&quot;Сб&quot;,&quot;Вс&quot;].map((d,i)=&gt;&#x27;&lt;b class=&quot;&#x27;+(w[i]==1?&quot;on&quot;:w[i]==2?&quot;fz&quot;:&quot;&quot;)+&#x27;&quot;&gt;&#x27;+(w[i]==1?&quot;🔥&quot;:w[i]==2?&quot;❄️&quot;:d)+&quot;&lt;/b&gt;&quot;).join(&quot;&quot;);
+const done=G.every((g,i)=&gt;s.m[i]!=null);$(&quot;nx&quot;).hidden=!done;
+if(!done)$(&quot;msg&quot;).textContent=&quot;Отметь цели за сегодня: ✓ сделал, ½ частично, ✕ нет&quot;;}
+document.body.addEventListener(&quot;click&quot;,e=&gt;{
+const t=e.target;if(t.id==&quot;nx&quot;){s.d++;s.m=[];if(s.wk.length&gt;=7)s.wk=[];sv();draw();hap();return}
+if(t.dataset.i==null)return;
+const i=+t.dataset.i,v=+t.dataset.v,l0=lv(s.xp),y=t.getBoundingClientRect().top;s.m[i]=v;const add=[0,5,10][v];s.xp+=add;if(add)pop(&quot;+&quot;+add+&quot; XP&quot;,y);hap();
+if(G.every((g,k)=&gt;s.m[k]!=null)){const any=s.m.some(x=&gt;x&gt;0),all=s.m.every(x=&gt;x==2);
+if(any){s.st++;s.wk.push(1);if(all){s.xp+=20;pop(&quot;+20 бонус&quot;,y-24)}$(&quot;msg&quot;).textContent=all?&quot;Идеальный день! Серия растёт 🔥&quot;:&quot;День засчитан, серия растёт&quot;}
+else if(s.fz&gt;0){s.fz--;s.wk.push(2);$(&quot;msg&quot;).textContent=&quot;Плохой день бывает. Заморозка спасла серию ❄️&quot;}
+else{s.st=0;s.wk.push(0);$(&quot;msg&quot;).textContent=&quot;Серия сгорела. Завтра начнём заново – это нормально&quot;}hap(&quot;success&quot;)}
+if(lv(s.xp)&gt;l0){hap(&quot;success&quot;);setTimeout(()=&gt;{$(&quot;lv&quot;).className=&quot;lvup&quot;;pop(&quot;Новый уровень!&quot;,40)},50)}
+sv();draw()});
+draw();W.onEvent(&quot;chatDataChanged&quot;,draw);if(W.ready)W.ready();
+&lt;/script&gt;
+"></iframe><h2>Дневник еды</h2><iframe data-f="eda" srcdoc="&lt;meta charset=&#x27;utf-8&#x27;&gt;&lt;style&gt;:root{}html{background:transparent;color:var(--tg-theme-text-color)}body{color:var(--tg-theme-text-color)}button{background:var(--tg-theme-button-color);color:var(--tg-theme-button-text-color);border:0;border-radius:8px;font:inherit;padding:6px 10px;cursor:pointer}&lt;/style&gt;&lt;script&gt;(function(){var t=parent.Telegram&amp;&amp;parent.Telegram.WebApp;window.TelegramWidget={chatData:&quot;{\&quot;k\&quot;: 1240, \&quot;kn\&quot;: 2200, \&quot;b\&quot;: 78, \&quot;bn\&quot;: 150, \&quot;m\&quot;: [[\&quot;\u0417\u0430\u0432\u0442\u0440\u0430\u043a\&quot;, \&quot;\u043e\u043c\u043b\u0435\u0442 \u0438\u0437 3 \u044f\u0438\u0446\&quot;, 420], [\&quot;\u041e\u0431\u0435\u0434\&quot;, \&quot;\u043a\u0443\u0440\u0438\u0446\u0430 \u0441 \u0440\u0438\u0441\u043e\u043c\&quot;, 820]]}&quot;,HapticFeedback:t&amp;&amp;t.HapticFeedback,onEvent:function(){},ready:function(){}};})()&lt;/script&gt;&lt;style&gt;
+body{margin:0;padding:10px 12px max(12px,env(safe-area-inset-bottom));font:15px/1.35 system-ui;position:relative}
+.r{display:flex;justify-content:space-around;margin:4px 0 6px}
+.c{text-align:center;font-size:12px;color:var(--tg-theme-hint-color)}
+.c b{display:block;font-size:14px;color:var(--tg-theme-text-color)}
+svg circle{fill:none;stroke-width:8}
+.bg{stroke:var(--tg-theme-secondary-bg-color)}
+.fg{stroke-linecap:round;transition:stroke-dashoffset .8s;transform:rotate(-90deg);transform-origin:50% 50%}
+.m{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid var(--tg-theme-section-separator-color)}
+.m i{color:var(--tg-theme-hint-color);font-style:normal}
+.q{margin:8px 0;padding:8px 10px;border-radius:10px;background:var(--tg-theme-secondary-bg-color);font-size:14px}
+.btns{display:flex;gap:6px}.btns button{flex:1;margin:0;padding:8px 0}
+.pop{position:absolute;right:14px;font-weight:700;color:#30b158;animation:up 1.1s forwards;pointer-events:none}
+@keyframes up{to{transform:translateY(-34px);opacity:0}}
+&lt;/style&gt;
+&lt;div class=&quot;r&quot; id=&quot;rg&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;ml&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;q&quot; id=&quot;q&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;btns&quot;&gt;&lt;button id=&quot;wa&quot;&gt;💧 +стакан&lt;/button&gt;&lt;button id=&quot;tr&quot;&gt;🏋️ Тренировка&lt;/button&gt;&lt;/div&gt;
+&lt;script&gt;
+const W=window.TelegramWidget||{onEvent(){}},H=W.HapticFeedback,$=i=&gt;document.getElementById(i);
+let D={k:1240,kn:2200,b:78,bn:150,m:[[&quot;Завтрак&quot;,&quot;омлет из 3 яиц&quot;,420],[&quot;Обед&quot;,&quot;курица с рисом&quot;,820]]};
+function ld(){try{const c=JSON.parse(W.chatData);if(c)D=c}catch(e){}}
+let s=null;try{s=JSON.parse(localStorage.getItem(&quot;e&quot;))}catch(e){}s=s||{w:0,t:0};
+const sv=()=&gt;{try{localStorage.setItem(&quot;e&quot;,JSON.stringify(s))}catch(e){}};
+function ring(v,n,col,lab,u){const C=2*Math.PI*30,p=Math.min(1,v/n);
+return &#x27;&lt;div class=&quot;c&quot;&gt;&lt;svg width=&quot;76&quot; height=&quot;76&quot; viewBox=&quot;0 0 76 76&quot;&gt;&lt;circle class=&quot;bg&quot; cx=&quot;38&quot; cy=&quot;38&quot; r=&quot;30&quot;/&gt;&lt;circle class=&quot;fg&quot; cx=&quot;38&quot; cy=&quot;38&quot; r=&quot;30&quot; stroke=&quot;&#x27;+col+&#x27;&quot; stroke-dasharray=&quot;&#x27;+C+&#x27;&quot; stroke-dashoffset=&quot;&#x27;+C*(1-p)+&#x27;&quot;/&gt;&lt;/svg&gt;&lt;b&gt;&#x27;+v+&quot; / &quot;+n+&quot;&lt;/b&gt;&quot;+lab+(u||&quot;&quot;)+&quot;&lt;/div&gt;&quot;}
+function pop(t){const p=document.createElement(&quot;div&quot;);p.className=&quot;pop&quot;;p.textContent=t;p.style.top=&quot;150px&quot;;document.body.appendChild(p);setTimeout(()=&gt;p.remove(),1200)}
+function hap(t){try{t?H.notificationOccurred(t):H.impactOccurred(&quot;light&quot;)}catch(e){}}
+function draw(){
+$(&quot;rg&quot;).innerHTML=ring(D.k,D.kn,&quot;#ff9f0a&quot;,&quot;ккал&quot;)+ring(D.b,D.bn,&quot;#ff375f&quot;,&quot;белок, г&quot;)+ring(s.w,8,&quot;#5ac8fa&quot;,&quot;вода&quot;);
+$(&quot;ml&quot;).innerHTML=D.m.map(x=&gt;&#x27;&lt;div class=&quot;m&quot;&gt;&lt;span&gt;&#x27;+x[0]+&#x27; &lt;i&gt;· &#x27;+x[1]+&quot;&lt;/i&gt;&lt;/span&gt;&lt;b&gt;&quot;+x[2]+&quot;&lt;/b&gt;&lt;/div&gt;&quot;).join(&quot;&quot;);
+const left=D.bn-D.b;$(&quot;q&quot;).textContent=left&gt;0?&quot;🎯 Квест дня: добрать &quot;+left+&quot; г белка → +30 XP&quot;:&quot;🏆 Квест выполнен: белок закрыт, +30 XP&quot;;
+$(&quot;tr&quot;).textContent=s.t?&quot;✅ Тренировка&quot;:&quot;🏋️ Тренировка&quot;;}
+$(&quot;wa&quot;).addEventListener(&quot;click&quot;,()=&gt;{if(s.w&lt;8){s.w++;sv();draw();hap(s.w==8?&quot;success&quot;:0);pop(s.w==8?&quot;Норма воды ✓&quot;:&quot;+1 💧&quot;)}});
+$(&quot;tr&quot;).addEventListener(&quot;click&quot;,()=&gt;{if(!s.t){s.t=1;sv();draw();hap(&quot;success&quot;);pop(&quot;+25 XP&quot;)}});
+ld();draw();W.onEvent(&quot;chatDataChanged&quot;,()=&gt;{ld();draw()});if(W.ready)W.ready();
+&lt;/script&gt;
+"></iframe><h2>Сундук дня</h2><iframe data-f="sunduk" srcdoc="&lt;meta charset=&#x27;utf-8&#x27;&gt;&lt;style&gt;:root{}html{background:transparent;color:var(--tg-theme-text-color)}body{color:var(--tg-theme-text-color)}button{background:var(--tg-theme-button-color);color:var(--tg-theme-button-text-color);border:0;border-radius:8px;font:inherit;padding:6px 10px;cursor:pointer}&lt;/style&gt;&lt;script&gt;(function(){var t=parent.Telegram&amp;&amp;parent.Telegram.WebApp;window.TelegramWidget={chatData:null,HapticFeedback:t&amp;&amp;t.HapticFeedback,onEvent:function(){},ready:function(){}};})()&lt;/script&gt;&lt;style&gt;
+body{margin:0;padding:12px 12px max(14px,env(safe-area-inset-bottom));font:15px/1.35 system-ui;text-align:center;position:relative;overflow:hidden}
+#ch{width:120px;height:128px;margin:0 auto;touch-action:none;cursor:pointer}
+.shake{animation:sh .5s 2}
+@keyframes sh{20%{transform:rotate(-8deg)}40%{transform:rotate(8deg)}60%{transform:rotate(-5deg)}80%{transform:rotate(5deg)}}
+#lid{transition:transform .5s;transform-origin:20px 50px}
+.open #lid{transform:rotate(-28deg) translateY(-8px)}
+h3{margin:6px 0 2px}
+.h{color:var(--tg-theme-hint-color);font-size:13px}
+.rw{font-size:20px;font-weight:700;margin:6px 0;animation:in .6s}
+@keyframes in{from{transform:scale(.3)}}
+.sp{position:absolute;width:8px;height:8px;border-radius:2px;left:50%;top:70px;animation:fly 1.2s ease-out forwards;pointer-events:none}
+@keyframes fly{to{transform:translate(var(--x),var(--y)) rotate(400deg);opacity:0}}
+button{margin-top:8px}
+&lt;/style&gt;
+&lt;svg id=&quot;ch&quot; viewBox=&quot;0 -18 120 128&quot;&gt;&lt;rect x=&quot;18&quot; y=&quot;50&quot; width=&quot;84&quot; height=&quot;52&quot; rx=&quot;6&quot; fill=&quot;#b5651d&quot;/&gt;&lt;rect x=&quot;18&quot; y=&quot;50&quot; width=&quot;84&quot; height=&quot;10&quot; fill=&quot;#8b4513&quot;/&gt;&lt;rect x=&quot;54&quot; y=&quot;56&quot; width=&quot;12&quot; height=&quot;16&quot; rx=&quot;2&quot; fill=&quot;#ffd60a&quot;/&gt;&lt;g id=&quot;lid&quot;&gt;&lt;path d=&quot;M18 50 Q18 22 60 22 Q102 22 102 50 Z&quot; fill=&quot;#cd7f32&quot;/&gt;&lt;rect x=&quot;54&quot; y=&quot;22&quot; width=&quot;12&quot; height=&quot;28&quot; fill=&quot;#ffd60a&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;div id=&quot;tx&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const W=window.TelegramWidget||{onEvent(){}},H=W.HapticFeedback,$=i=&gt;document.getElementById(i);
+const R=[[&quot;❄️ Заморозка серии&quot;,&quot;спасёт серию в плохой день&quot;,30],[&quot;⚡ ×2 опыта до вечера&quot;,&quot;все отметки сегодня в двойном размере&quot;,25],[&quot;🎯 +50 XP&quot;,&quot;просто так, за то что зашёл&quot;,30],[&quot;☕ Выходной без штрафа&quot;,&quot;один день можно пропустить&quot;,10],[&quot;🏆 Редкий значок «Ранняя пташка»&quot;,&quot;выпадает в 5% случаев&quot;,5]];
+const today=()=&gt;new Date().toDateString();
+let s=null;try{s=JSON.parse(localStorage.getItem(&quot;c&quot;))}catch(e){}s=s||{};
+const sv=()=&gt;{try{localStorage.setItem(&quot;c&quot;,JSON.stringify(s))}catch(e){}};
+function hap(t){try{t?H.notificationOccurred(t):H.impactOccurred(&quot;heavy&quot;)}catch(e){}}
+function left(){const n=new Date(),m=new Date(n);m.setHours(24,0,0,0);const d=Math.floor((m-n)/1e3),p=x=&gt;String(x).padStart(2,&quot;0&quot;);return p(Math.floor(d/3600))+&quot;:&quot;+p(Math.floor(d%3600/60))+&quot;:&quot;+p(d%60)}
+function draw(){const o=s.d==today();$(&quot;ch&quot;).classList.toggle(&quot;open&quot;,o);
+$(&quot;tx&quot;).innerHTML=o?&#x27;&lt;div class=&quot;rw&quot;&gt;&#x27;+R[s.r][0]+&#x27;&lt;/div&gt;&lt;div class=&quot;h&quot;&gt;&#x27;+R[s.r][1]+&#x27;&lt;/div&gt;&lt;div class=&quot;h&quot;&gt;Следующий сундук через &lt;b id=&quot;cd&quot;&gt;&#x27;+left()+&#x27;&lt;/b&gt;&lt;/div&gt;&lt;button id=&quot;rs&quot;&gt;Демо: открыть ещё раз&lt;/button&gt;&#x27;:&quot;&lt;h3&gt;Сундук дня&lt;/h3&gt;&lt;div class=&#x27;h&#x27;&gt;Нажми на сундук. Внутри награда за то, что ты здесь&lt;/div&gt;&quot;}
+function burst(){const c=[&quot;#ffd60a&quot;,&quot;#ff375f&quot;,&quot;#30b158&quot;,&quot;#5ac8fa&quot;,&quot;#ff9f0a&quot;];for(let i=0;i&lt;14;i++){const p=document.createElement(&quot;i&quot;);p.className=&quot;sp&quot;;p.style.background=c[i%5];p.style.setProperty(&quot;--x&quot;,(Math.random()*240-120)+&quot;px&quot;);p.style.setProperty(&quot;--y&quot;,(Math.random()*-90-10)+&quot;px&quot;);document.body.appendChild(p);setTimeout(()=&gt;p.remove(),1300)}}
+function roll(){let x=Math.random()*100;for(let i=0;i&lt;R.length;i++){x-=R[i][2];if(x&lt;0)return i}return 0}
+let busy=0;
+$(&quot;ch&quot;).addEventListener(&quot;click&quot;,()=&gt;{if(s.d==today()||busy)return;busy=1;hap();$(&quot;ch&quot;).classList.add(&quot;shake&quot;);
+setTimeout(()=&gt;{$(&quot;ch&quot;).classList.remove(&quot;shake&quot;);s={d:today(),r:roll()};sv();draw();burst();hap(&quot;success&quot;);busy=0},1000)});
+document.body.addEventListener(&quot;click&quot;,e=&gt;{if(e.target.id==&quot;rs&quot;){s={};sv();draw()}});
+setInterval(()=&gt;{const c=$(&quot;cd&quot;);if(c)c.textContent=left()},1000);
+draw();if(W.ready)W.ready();
+&lt;/script&gt;
+"></iframe>
+</main><script>
+var T=window.Telegram&&Telegram.WebApp;
+if(T&&T.initData!==undefined&&T.platform!=="unknown"){T.ready();T.expand();var p=T.themeParams||{};
+ document.documentElement.dataset.theme=T.colorScheme||"light";
+ var map={"bg-color":p.bg_color,"text-color":p.text_color,"hint-color":p.hint_color,"secondary-bg-color":p.secondary_bg_color,"section-separator-color":p.section_separator_color,"button-color":p.button_color,"button-text-color":p.button_text_color};
+ for(var k in map)if(map[k])document.documentElement.style.setProperty("--tg-theme-"+k,map[k]);
+ document.documentElement.style.setProperty("--page",p.secondary_bg_color||"");}
+function fit(fr){try{var d=fr.contentDocument;var cs=getComputedStyle(document.documentElement);
+ ["bg-color","text-color","hint-color","secondary-bg-color","section-separator-color","button-color","button-text-color"].forEach(function(k){d.documentElement.style.setProperty("--tg-theme-"+k,cs.getPropertyValue("--tg-theme-"+k))});
+ fr.style.height=Math.min(600,d.body.scrollHeight+4)+"px";}catch(e){}}
+document.querySelectorAll("iframe").forEach(function(fr){fr.addEventListener("load",function(){fit(fr);new ResizeObserver(function(){fit(fr)}).observe(fr.contentDocument.body)})});
+</script></body></html>
