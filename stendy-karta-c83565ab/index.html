@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Стенды Дефорда: карта</title>
+<style>
+:root{--bg:#f6f5f1;--ink:#17181b;--mut:#5d6068;--line:#dedcd5;--card:#fff;--acc:#d48a00;--acc2:#1f6feb;--ok:#1d8a55;--bad:#b3402f}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:6px 0 14px;letter-spacing:-.02em}
+h2{font-size:clamp(22px,3.4vw,30px);line-height:1.2;margin:56px 0 12px;letter-spacing:-.01em}
+h3{font-size:19px;margin:26px 0 8px}
+p{margin:0 0 12px}
+.meta{color:var(--mut);font-size:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 8px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.note{background:#fff4dc;border-radius:12px;padding:14px 16px;margin:14px 0}
+.flag{background:#fde8e4;border-radius:12px;padding:14px 16px;margin:14px 0}
+.ready{background:#e6f4ea;border-radius:12px;padding:14px 16px;margin:14px 0}
+.lead{font-size:20px;line-height:1.45;font-weight:600}
+.grid{display:grid;gap:12px}
+@media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+th{background:#efede6;font-weight:600}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:0 16px}
+.tw table{min-width:640px}
+figure{margin:14px 0}
+figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);cursor:zoom-in;display:block}
+figcaption{font-size:14px;color:var(--mut);margin-top:6px}
+.shots{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.shots{grid-template-columns:repeat(3,1fr)}}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.flow span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:15px}
+.flow b.ar{color:var(--acc);font-size:20px}
+.chip{display:inline-block;background:#efede6;border-radius:999px;padding:2px 10px;font-size:13px;margin:0 4px 4px 0}
+ol li,ul li{margin-bottom:6px}
+code{background:#efede6;border-radius:5px;padding:1px 5px;font-size:14px}
+.toc a{color:var(--acc2);text-decoration:none}
+.toc{columns:2;column-gap:24px;font-size:15px}
+@media(max-width:600px){.toc{columns:1}}
+audio{width:100%;margin:8px 0 4px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:8px}
+#lb button{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#000;font-size:22px;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--ink:#e4e4e2;--mut:#a9abb0;--line:#33363c;--card:#1f2125}
+html[data-theme=dark] th{background:#2a2d33}
+</style>
+<style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head>
+<body>
+<div class="wrap">
+<p class="meta">Для Артёма · 15.11.2026 · карта стендов до вёрстки (правило site-lead) + что сделано по Метрике EV и скиллам</p>
+<h1>Стенды Дефорда: карта страниц на «да» и пять коротких решений</h1>
+
+<div class="box">
+<p><b>Голосовой итог</b> (<span>1,1</span> мин)</p>
+<audio controls preload="none" src="golos.mp3"></audio>
+</div>
+
+<p class="lead">Карта двух стендов готова: SEO-сайт – 22 страницы, магазин – 30, плюс общая страница stend.deford.ru. По каждому вопросу ниже есть моя рекомендация. Хватит ответа «да по рекомендациям», и я начинаю вёрстку. Метрику на EV и правила в скиллах уже сделал.</p>
+
+<div class="toc box">
+<a href="#adresa">1. Где и как закрыты</a><br>
+<a href="#seo">2. Стенд 1 – SEO-сайт</a><br>
+<a href="#shop">3. Стенд 2 – магазин</a><br>
+<a href="#sdelano">4. Что уже сделано: Метрика EV и скиллы</a><br>
+<a href="#reshit">Нужно от тебя</a>
+</div>
+
+<h2 id="adresa">1. Где и как закрыты: три поддомена Дефорда, без индекса, админки под паролем</h2>
+<div class="tw"><table>
+<tr><th>Адрес</th><th>Что</th><th>Закрыто</th></tr>
+<tr><td>stend.deford.ru</td><td>Общая страница: три карточки – SEO-сайт, магазин, «Лендинг + реклама – в разработке»</td><td>noindex, robots Disallow</td></tr>
+<tr><td>seo.stend.deford.ru</td><td>SEO-сайт техцентра + админка /admin (как у EV, с «Поведением»)</td><td>noindex, robots Disallow, админка – пароль</td></tr>
+<tr><td>shop.stend.deford.ru</td><td>Магазин цветов; админка – admin.shop.stend.deford.ru</td><td>то же</td></tr>
+</table></div>
+<p>Записи домена заведу через API reg.ru, доступ работает. Сервер – наш FirstVDS в Москве, рядом с уже живыми store.deford.ru и milovini.deford.ru. Их я не трогаю. Визиты на стендах будут как в демо Лупы: правдоподобные заходы плюс настоящие записи прогонов, чтобы выводы по страницам появились сразу.</p>
+
+<h2 id="seo">2. Стенд 1 – SEO-сайт: 22 страницы, все типы страниц EV на двух марках</h2>
+<p>Основа – EV Sibir: две марки (Zeekr, LiXiang) и две услуги (ТО, русификация). У каждого типа страниц есть пример. Адреса английскими словами, по правилу 28.10.</p>
+<div class="tw"><table>
+<tr><th>Адрес</th><th>Тип страницы</th></tr>
+<tr><td>/</td><td>Главная</td></tr>
+<tr><td>/service/ · /russification/ · /brands/</td><td>Хабы: ТО, русификация, марки</td></tr>
+<tr><td>/service/zeekr/ · /service/lixiang/ · /russification/zeekr/</td><td>Каталоги марок</td></tr>
+<tr><td>/service/zeekr/001/ · /service/zeekr/7x/ · /service/lixiang/l7/ · /russification/zeekr/001/</td><td>Карточки моделей</td></tr>
+<tr><td>/prices/ · /contacts/</td><td>Страницы (у EV их отдельно нет – новые)</td></tr>
+<tr><td>/blog/ + 3 статьи</td><td>Лента и статьи</td></tr>
+<tr><td>/legal/privacy/ · /legal/cookies/ · /legal/terms/</td><td>Юридические</td></tr>
+<tr><td>/thanks/ · 404</td><td>Технические</td></tr>
+</table></div>
+<p><b>Админка /admin:</b> Страницы, Заявки, Метрика, <b>Поведение (Лупа)</b>, Настройки. SEO, Позиции, Точка А и Рекомендации – под замком, как у EV.</p>
+
+<h2 id="shop">3. Стенд 2 – магазин: 30 страниц, три раздела каталога и кабинет покупателя</h2>
+<p>Основа – наш шаблон Milovini. Разделы: букеты, композиции, шары, по 4 товара в каждом.</p>
+<div class="tw"><table>
+<tr><th>Адрес</th><th>Тип страницы</th></tr>
+<tr><td>/ · /catalog/</td><td>Главная, общий каталог</td></tr>
+<tr><td>/catalog/bouquets/ · /catalog/compositions/ · /catalog/balloons/</td><td>Разделы каталога</td></tr>
+<tr><td>/catalog/&lt;раздел&gt;/&lt;товар&gt;/ – 12 штук</td><td>Карточки товара</td></tr>
+<tr><td>/cart/ · /order/ · /favorites/ · /thanks/ · 404</td><td>Корзина, оформление, избранное, технические</td></tr>
+<tr><td>/account/ · /account/orders/ · /account/profile/ · /account/points/</td><td>Кабинет покупателя</td></tr>
+<tr><td>/delivery/ · /contacts/ · /privacy-policy/ · /user-agreement/</td><td>Страницы и юридические</td></tr>
+</table></div>
+<p><b>Админка admin.shop.stend.deford.ru:</b> вход сотрудника, Заказы, Клиенты, а также Страницы, Товары, Метрика и <b>Поведение (Лупа)</b>.</p>
+
+<h2 id="sdelano">4. Что уже сделано: Метрика EV считает всех, новые цели, правила в скиллах</h2>
+<ul>
+<li><b>Защита сайта EV</b> пускает все адреса Метрики по официальному списку Яндекса. Проверил из Нидерландов: визит ушёл в Метрику через mc.yandex.com, ошибок 0 (до правки было 7 блокировок). Кабинет Метрики теперь может открыть сайт для карты кликов и аналитики форм, админку – нет.</li>
+<li><b>4 новые цели в Метрике EV:</b> «Окно скидки: показ», «время вышло», «заявка» (сайт слал эти события, а целей не было) и «Клик по почте». Всего целей 12. Считают с сегодняшнего дня. Фильтров, которые резали бы трафик, в счётчике нет (проверил агент yandex-dannye).</li>
+<li><b>Ограничение, которое не обойти по закону:</b> кто не нажал «Принимаю» на cookie, того не видят ни Метрика, ни Лупа. Таких считает только собственный счётчик EV без cookie: входы и клики по телефону и мессенджерам.</li>
+<li><b>Скиллы:</b> «Поведение (Лупа)» вписано в стандартную админку (admin-builder, образец EV). Правило «скрипты на все страницы – кодом в head» – в стандарт сайтов. Правило «Метрика в защите – полным списком» – в стандарт и в проверку site-tech. В выкладку EV добавил стража: если разом меняется больше половины страниц, она останавливается.</li>
+<li><b>Та же дыра с Метрикой есть ещё у двух проектов</b>, их не правил: Ю-Клуб (deploy/Caddyfile.yu-club) и Анжела Краснодар (server/site_server.py). Сказать их чатам?</li>
+</ul>
+
+<h2 id="reshit">Нужно от тебя: «да по рекомендациям» или правка по номеру</h2>
+<ol>
+<li><b>Названия брендов.</b> Техцентр: «Обская тяга» или «Индукция». Магазин: «Лист и лента» или «Тёплый пион». <i>Рекомендую «Индукция» и «Тёплый пион».</i></li>
+<li><b>Фото и названия букетов.</b> Это товары живого клиента Milovini. <i>Рекомендую своё:</i> сгенерировать фото и дать свои названия, чтобы не показывать чужой товар под вымышленным брендом. Марки машин (Zeekr, LiXiang) оставить: это продукты, а не чужая компания.</li>
+<li><b>Английские адреса</b> (/russification/, /brands/, /account/) вместо транслита EV. <i>Рекомендую да</i>, по твоему правилу 28.10.</li>
+<li><b>Корзина – отдельной страницей /cart/.</b> <i>Рекомендую да</i>: тогда Лупа даёт вывод по корзине как по отдельной странице, а в шторке видно только событие.</li>
+<li><b>Админка магазина</b> дополняется Страницами, Товарами, Метрикой и Поведением. <i>Рекомендую да</i>, иначе стенд магазина не покажет Лупу.</li>
+</ol>
+<p><b>Что раскрыть:</b> полную таблицу страниц с файлами-образцами, как будут сделаны визиты на стендах, срок вёрстки по шагам.</p>
+</div>
+<div id="lb"><button type="button" aria-label="Закрыть">✕</button><img alt=""></div>
+<script>
+(function(){var lb=document.getElementById('lb'),im=lb.querySelector('img');
+document.querySelectorAll('figure img').forEach(function(i){i.addEventListener('click',function(){im.src=i.src;im.alt=i.alt;lb.classList.add('on')})});
+lb.addEventListener('click',function(e){if(e.target!==im)lb.classList.remove('on')});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});})();
+</script>
+<script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body>
+</html>
