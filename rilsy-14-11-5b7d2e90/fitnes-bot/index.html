@@ -39,7 +39,7 @@ html[data-theme=dark] img{filter:brightness(.92)}
 html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
 </style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
 if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
-document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><div class="crumbs"><a href="../">← Все разборы рилсов 14.11</a></div><h1>Фитнес-тренер в Telegram: что взять готовым</h1>
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><div class="crumbs"><a href="../">← Все разборы рилсов 14.11</a></div><h1>Фитнес-тренер в Telegram: что взять готовым</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
 <p>Готового бота «фото еды + вес + замеры + тренировки» на русском с большим сообществом нет: берём за основу небольшой русский бот <strong>SnapCaloriesAI</strong> (фото → КБЖУ, Gemini или любой OpenAI-совместимый ключ, то есть OpenRouter), дописываем вес, замеры и журнал тренировок, граммовку подтверждаем кнопками или весами. Тяжёлые трекеры (wger, SparkyFitness, NutriTrace) – вариант хранилища позже, не для MVP.</p>
 <blockquote>
 <p><strong>Откуда задача:</strong> не из рилсов – Артём 14.11.2026: «фитнес-тренер в боте, который считал бы мой прогресс и, очень важно, что я ем: скидываю фото, он распознаёт». Только чтение: звёзды, коммиты и лицензии через <code>gh api</code> 14.11.2026, ничего не ставили.</p>
