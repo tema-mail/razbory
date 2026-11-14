@@ -25,6 +25,13 @@ details{background:var(--card);border:1px solid var(--line);margin:10px 0;paddin
 h3+details,details details{margin-top:6px}
 .nt{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--y);padding:14px 18px;margin:14px 0}
 .formula{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--card);border:1px solid var(--line);padding:12px 14px;overflow-x:auto}
+.ab{border:1px solid var(--line);background:var(--line);display:grid;gap:1px;margin:14px 0}
+.ab .row{background:var(--card);padding:16px 18px}.ab .row.b{border-left:3px solid var(--y)}
+.tag2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--y);font-weight:700;margin-bottom:8px}
+.ab .cells{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.ab .cells div{display:flex;flex-direction:column}.ab small{color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.ab b{font-size:32px;font-weight:800;line-height:1.15}.ab .row.b b{color:var(--y)}.ab span{color:var(--mute);font-size:13px}
+.down{margin:22px 0 0;padding:14px 0;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
 code{font-size:13px;background:var(--card2);padding:1px 5px}
 ol li,ul li{margin:7px 0}audio{width:100%;margin:16px 0 4px}a{color:var(--y)}
 .cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:14px 0}
@@ -63,14 +70,22 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 <audio controls preload="none" src="itog.mp3"></audio><div class="sub">Итог голосом</div>
 <div class="bx y" style="font-size:18px;margin-top:18px"><b>Вот ссылка на КП, которое мы отправляли:</b> <a href="https://tema-mail.github.io/deford-kp/mds/">https://tema-mail.github.io/deford-kp/mds/</a></div>
 
-<h2 data-k="итог">Коротко</h2>
-<div class="grid">
-<div class="k"><small>Google за 30 дней</small><div class="big">865</div><small>кликов из 10 019 показов, позиция 5,1. Месяцем раньше 1 049 (−18 %)</small></div>
-<div class="k"><small>Органика за 30 дней</small><div class="big">1 195</div><small>визитов: Google 763, Яндекс 426. Месяцем раньше 1 350 (−11 %)</small></div>
-<div class="k"><small>Обращения из органики за 30 дней</small><div class="big">153</div><small>визиты с целевыми действиями: Google 121, Яндекс 32. Месяцем раньше 143</small></div>
-<div class="k"><small>Через 6 месяцев, цель</small><div class="big">153 → 438</div><small>обращений в месяц (максимум 523); визитов 1 195 → 5 008; страниц и статей: 345</small></div>
+<h2 data-k="итог">Главное</h2>
+<div class="ab">
+<div class="row"><div class="tag2">Точка А · сейчас</div><div class="cells">
+<div><small>Визиты из поиска</small><b>1 195</b><span>Google 763 · Яндекс 426</span></div>
+<div><small>Обращения из поиска</small><b>153</b><span>формы, звонки, мессенджеры</span></div>
+<div><small>Страниц на сайте</small><b>44</b><span>по карте сайта mds.by</span></div></div></div>
+<div class="row b"><div class="tag2">Точка Б · через 6 месяцев</div><div class="cells">
+<div><small>Визиты из поиска</small><b>5 008</b><span>Google ≈ 3 100 · Яндекс ≈ 2 000</span></div>
+<div><small>Обращения из поиска</small><b>438</b><span>цель; максимум – 523</span></div>
+<div><small>Страниц и статей</small><b>345</b><span>услуги, разделы, блог</span></div></div></div>
 </div>
-
+<div class="bx y" style="font-size:17px"><b>Предложение.</b> Переносим mds.by на код и ведём: новые страницы услуг по спросу Минска, доработка существующих, блог, ссылки, Метрика и позиции каждую неделю.
+<br>Стоимость: перенос 30 000 ₽ разово, ведение 35 000 ₽ в месяц, со 2-го месяца ссылки – 15 000 ₽ на аудит и карту и по 10 000 ₽ в месяц. <b>Полгода – 305 000 ₽.</b>
+<br>Тот же путь на Тильде (релизы 2–5 по смете, SEO-продвижение и ссылки) – 635 000 ₽. <b>Выгоднее на 330 000 ₽</b>, а страниц и статей в 7 раз больше.
+<br><b>Цена обращения:</b> за полгода около 300 ₽ за каждое дополнительное обращение, к 6-му месяцу – около 160 ₽ (по максимуму – 230 и 120 ₽).</div>
+<div class="down">↓ Дальше подробно: как растут обращения по месяцам, что выкладываем, срез Яндекса и Google, сравнение с Тильдой</div>
 <h2 data-k="прогноз">Рост обращений по месяцам</h2>
 <div class="tw"><table><thead><tr><th>Органика</th><th class="r">Визитов в мес</th><th class="r">Обращений в мес, цель</th><th class="r">Прирост за месяц, цель</th><th class="r">Обращений, максимум</th><th class="r">Прирост, максимум</th></tr></thead><tbody>
 <tr><td>Сейчас (14.10–12.11)</td><td class="r"><b>1 195</b></td><td class="r"><b>153</b></td><td class="r">–</td><td class="r">153</td><td class="r">–</td></tr><tr><td>Конец месяца 1</td><td class="r">1 453</td><td class="r"><b>179</b></td><td class="r">+26</td><td class="r">186</td><td class="r">+33</td></tr><tr><td>Конец месяца 2</td><td class="r">2 147</td><td class="r"><b>234</b></td><td class="r">+55</td><td class="r">257</td><td class="r">+71</td></tr><tr><td>Конец месяца 3</td><td class="r">2 981</td><td class="r"><b>298</b></td><td class="r">+64</td><td class="r">341</td><td class="r">+84</td></tr><tr><td>Конец месяца 4</td><td class="r">3 870</td><td class="r"><b>365</b></td><td class="r">+67</td><td class="r">428</td><td class="r">+87</td></tr><tr><td>Конец месяца 5</td><td class="r">4 609</td><td class="r"><b>416</b></td><td class="r">+51</td><td class="r">494</td><td class="r">+66</td></tr><tr><td>Конец месяца 6</td><td class="r">5 008</td><td class="r"><b>438</b></td><td class="r">+22</td><td class="r">523</td><td class="r">+29</td></tr></tbody></table></div>
