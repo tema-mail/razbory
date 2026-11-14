@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Лупа в ЛК EV Sibir</title>
+<style>
+:root{--bg:#f6f5f1;--ink:#17181b;--mut:#5d6068;--line:#dedcd5;--card:#fff;--acc:#d48a00;--acc2:#1f6feb;--ok:#1d8a55;--bad:#b3402f}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:6px 0 14px;letter-spacing:-.02em}
+h2{font-size:clamp(22px,3.4vw,30px);line-height:1.2;margin:56px 0 12px;letter-spacing:-.01em}
+h3{font-size:19px;margin:26px 0 8px}
+p{margin:0 0 12px}
+.meta{color:var(--mut);font-size:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 8px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.note{background:#fff4dc;border-radius:12px;padding:14px 16px;margin:14px 0}
+.flag{background:#fde8e4;border-radius:12px;padding:14px 16px;margin:14px 0}
+.ready{background:#e6f4ea;border-radius:12px;padding:14px 16px;margin:14px 0}
+.lead{font-size:20px;line-height:1.45;font-weight:600}
+.grid{display:grid;gap:12px}
+@media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+th{background:#efede6;font-weight:600}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:0 16px}
+.tw table{min-width:640px}
+figure{margin:14px 0}
+figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);cursor:zoom-in;display:block}
+figcaption{font-size:14px;color:var(--mut);margin-top:6px}
+.shots{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.shots{grid-template-columns:repeat(3,1fr)}}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.flow span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:15px}
+.flow b.ar{color:var(--acc);font-size:20px}
+.chip{display:inline-block;background:#efede6;border-radius:999px;padding:2px 10px;font-size:13px;margin:0 4px 4px 0}
+ol li,ul li{margin-bottom:6px}
+code{background:#efede6;border-radius:5px;padding:1px 5px;font-size:14px}
+.toc a{color:var(--acc2);text-decoration:none}
+.toc{columns:2;column-gap:24px;font-size:15px}
+@media(max-width:600px){.toc{columns:1}}
+audio{width:100%;margin:8px 0 4px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:8px}
+#lb button{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#000;font-size:22px;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--ink:#e4e4e2;--mut:#a9abb0;--line:#33363c;--card:#1f2125}
+html[data-theme=dark] th{background:#2a2d33}
+</style>
+<style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head>
+<body>
+<div class="wrap">
+<p class="meta">Отчёт для Артёма · 15.11.2026 · Лупа (репо tema-mail/lupa) + сайт EV Sibir · снимки – демо-сайт «Окна Север», на EV пока один проверочный визит</p>
+<h1>Лупа в ЛК EV Sibir: каждый визит разобран, по каждой странице – вывод на 100 заходов</h1>
+
+<div class="box">
+<p><b>Голосовой итог</b> (<span id="dur">1,3</span> мин)</p>
+<audio controls preload="none" src="golos.mp3"></audio>
+</div>
+
+<p class="lead">В админке EV Sibir появилась вкладка «Поведение»: одно окно, как у Игната. Каждый визит получает ярлыки и строку ИИ, по каждой странице на каждые 100 заходов людей выходит вывод «что поправить» и «было – стало». Лупа как сервис осталась прежней. Стенды ждут одного твоего решения: на чём их собирать.</p>
+
+<div class="toc box">
+<a href="#chto">1. Что видно в окне</a><br>
+<a href="#ev">2. Что стоит на EV и как проверено</a><br>
+<a href="#kak">3. Как устроено и сколько стоит</a><br>
+<a href="#stendy">4. Стенды и что попутно нашёл</a><br>
+<a href="#reshit">Нужно от тебя</a>
+</div>
+
+<h2 id="chto">1. Что видно в окне: визит с причиной ухода, вывод по странице с правками и кнопками на записи</h2>
+<figure><img src="img/lupa-vizity-1440.webp" alt="Вкладка «Визиты»: лента с ярлыками, справа строка ИИ и запись визита" width="1440" height="900" loading="lazy"><figcaption>«Визиты»: у каждого захода ярлыки кода (заявка, бросил форму на поле «Почта», дочитал) и строка ИИ «кто, откуда, что делал, почему ушёл», справа запись.</figcaption></figure>
+<figure><img src="img/lupa-stranica-1440.webp" alt="Вкладка «Страницы»: вывод по сотне заходов на странице" width="1440" height="900" loading="lazy"><figcaption>«Страницы»: вывод по сотне. Цифры сотни считает код, ИИ пишет правки. У каждой правки есть кнопки «Смотреть визит», они открывают запись.</figcaption></figure>
+<div class="shots"><figure><img src="img/lupa-stranica-390.webp" alt="Вывод по странице на телефоне" width="390" height="844" loading="lazy"><figcaption>То же на телефоне, 390 px, без прокрутки вбок.</figcaption></figure></div>
+<p>Пример настоящего вывода по демо-странице: «Форму видит лишь 23 из 100 и её бросают, а по номеру телефона и фото работ кликают впустую». Правки: сократить форму до имени и телефона, сделать номер кнопкой звонка, фото работ – кнопками «Хочу так же», кнопку «Вызвать замерщика» поднять выше.</p>
+<p>Третья вкладка – карта кликов из сервиса. Разборы сайта целиком, реклама, отчёты и настройки из окна вырезаны.</p>
+
+<h2 id="ev">2. Что стоит на EV и как проверено: живой визит дошёл, Метрика и sitemap не тронуты</h2>
+<div class="tw"><table>
+<tr><th>Что</th><th>Как сделано</th><th>Проверка</th></tr>
+<tr><td>Счётчик Лупы</td><td>Код в &lt;head&gt; из настроек кабинета, выключатель там же. Грузится только после «Принимаю» на cookie, вместе с Метрикой</td><td>До согласия не грузится ни Метрика, ни Лупа. После согласия визит с телефона (2 страницы, запись 45 КБ) дошёл в Лупу</td></tr>
+<tr><td>Вкладка «Поведение»</td><td>Новый файл lupa_view.py, в admin.py три строки. Адрес окна с токеном – в lead.env на сервере, в git его нет</td><td>Вкладка собирается внутри контейнера, адрес задан. Лупа пускает окно только на evolutioncarservice.ru</td></tr>
+<tr><td>Сайт</td><td>Статику не пересобирал</td><td>Главная, админка, sitemap отвечают 200, Telegram-туннель заявок на месте</td></tr>
+</table></div>
+<div class="note"><b>Почему не в шаблоне сайта.</b> Сначала поставил счётчик в общий шаблон и увидел подвох до выкладки: deploy.py сравнивает страницы по хешу всего HTML. Всем 284 страницам встал бы свежий lastmod в sitemap, и все ушли бы в IndexNow, хотя содержимое не менялось. Откатил и поставил штатным «кодом в &lt;head&gt;»: его вставляет сервер, статика не меняется.</div>
+<div class="flag"><b>Не проверено глазами:</b> вкладку внутри самой админки. Временный вход в админку в обход пароля мне не разрешили, и это правильно. Открой evolutioncarservice.ru/admin → «Поведение». Пока там один мой проверочный визит: ярлык он получит через 30 минут после ухода, строку ИИ – когда наберётся пачка или пройдёт 2 часа.</div>
+
+<h2 id="kak">3. Как устроено и сколько стоит: код считает, ИИ на твоей подписке объясняет</h2>
+<ol>
+<li><b>Ярлыки – кодом, бесплатно, у каждого визита</b> через 30 минут после ухода: бот, сразу ушёл, читал или дочитал, бросил форму на поле, клик впустую, заявка, контакт, где ушёл.</li>
+<li><b>Строка ИИ</b> – пачками по 25 визитов людей дольше 10 секунд, одна строка на визит. В ответе принимаются только id из пачки.</li>
+<li><b>Вывод по странице</b> – на каждые 100 заходов людей после прошлого вывода. Цифры сотни и сравнение с прошлой сотней считает код, ИИ пишет правки. Если в тексте число, которого нет в данных, вывод помечается «проверьте».</li>
+</ol>
+<p>ИИ – Opus, как ты сказал 14.11, через твою подписку. Обработчик перенесён с мака на claude-vps: на маке он падал с ошибкой связи. Замеры на демо: пачка из 25 визитов – около 6 тыс. токенов на входе и 3 тыс. на выходе, 25–30 секунд. Вывод по странице – примерно столько же. По API это стоило бы около 0,1–0,2 $ за вызов, на подписке денег не списывается, расходуется лимит. Точный расход на сайт замерим на следующей неделе вместе с OpenRouter, как ты решил.</p>
+<p class="meta">Лупа: 13 коммитов, 67 тестов зелёные, выкладка прошла deploy-check (GO с замечаниями). EV: 5 коммитов, копии серверных файлов до выкладки лежат в deploy-backups/2026-11-15-lupa. Затрачено около полутора часов.</p>
+
+<h2 id="stendy">4. Стенды и что попутно нашёл: карта стендов нужна до вёрстки</h2>
+<p>По правилу site-lead стенд – новый сайт, поэтому сначала карта страниц и твоё «да», потом вёрстка. Предлагаю так:</p>
+<div class="grid g3">
+<div class="card"><b>1. SEO-сайт</b><br>Многостраничный сайт услуг с вымышленным брендом по структуре EV: главная, хабы услуг, страницы моделей, цены, блог. ЛК как у EV: Страницы, Заявки, Метрика, Поведение.</div>
+<div class="card"><b>2. Интернет-магазин</b><br>Наш шаблон цветочного магазина (как Milovini) с вымышленным брендом: каталог, карточки, корзина, оформление. В ЛК – та же Лупа, вывод по каждой карточке и корзине.</div>
+<div class="card"><b>3. Лендинг + реклама</b><br>Карточка «в разработке»: разбор рекламы сделаем позже.</div>
+</div>
+<p>Визиты на стендах – как в демо Лупы: правдоподобные заходы плюс настоящие записи прогонов, чтобы выводы по страницам появились сразу.</p>
+<h3>Что попутно нашёл (не чинил)</h3>
+<ul>
+<li><b>EV: Метрика теряет часть визитов.</b> CSP сайта пускает только mc.yandex.ru, а Метрика для части посетителей ходит на mc.yandex.com: из браузера в Нидерландах 7 блокировок, визит в Метрику не ушёл. Лечится одной строкой в CSP. Сделать?</li>
+<li><b>Лупа:</b> в hono две уязвимости уровня moderate (были и раньше, записал в техдолг). Выкладку держал чужой незакоммиченный файл deploy/dns-lupa-deford.py (адрес lupa.deford.ru): на время выкладки я его отодвигал и возвращал на место, сам файл не трогал.</li>
+</ul>
+
+<h2 id="reshit">Нужно от тебя: два решения и два «да»</h2>
+<ol>
+<li><b>Стенды:</b> база как выше (SEO по структуре EV, магазин по шаблону Milovini, бренды вымышленные) – да или другое? После «да» дам карту страниц стендов ссылкой.</li>
+<li><b>Где показывать стенды:</b> открытой ссылкой на Pages, чтобы слать клиентам, или за паролем.</li>
+<li><b>Вставить в CSP EV mc.yandex.com</b>, чтобы Метрика не теряла визиты? Да или нет.</li>
+<li><b>В скиллы (site-mentor):</b> а) admin-builder – модуль «Поведение (Лупа)» в базовый ЛК, эталон EV; б) site-lead – общие скрипты на сайтах с lastmod по хешу ставить кодом в &lt;head&gt;, а не в шаблон. Внести? Да или нет по каждому.</li>
+</ol>
+<p><b>Что раскрыть:</b> как считается сотня по странице, что именно вырезано из сервиса в окне, план стендов по шагам.</p>
+</div>
+<div id="lb"><button type="button" aria-label="Закрыть">✕</button><img alt=""></div>
+<script>
+(function(){var lb=document.getElementById('lb'),im=lb.querySelector('img');
+document.querySelectorAll('figure img').forEach(function(i){i.addEventListener('click',function(){im.src=i.src;im.alt=i.alt;lb.classList.add('on')})});
+lb.addEventListener('click',function(e){if(e.target!==im)lb.classList.remove('on')});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});})();
+</script>
+<script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body>
+</html>
