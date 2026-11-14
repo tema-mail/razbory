@@ -1,0 +1,24 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ева: аватар бота</title><meta name="robots" content="noindex,nofollow">
+<style>
+:root{--bg:#f6f6f4;--card:#fff;--text:#16171a;--muted:#5f6470;--line:#e2e2de}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--text:#e4e4e2;--muted:#9aa0ab;--line:#33363c;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:32px 16px 64px}
+h1{font-size:30px;margin:0 0 8px}p{color:var(--muted);margin:0 0 24px;max-width:720px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+figure img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;cursor:zoom-in}
+#z{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:9}#z img{max-width:96vw;max-height:90vh}#z button{position:absolute;right:14px;top:14px;font-size:28px;line-height:1;background:none;border:0;color:#fff;cursor:pointer}
+figcaption{padding:10px 14px}figcaption b{display:inline-block;min-width:28px;color:#4f8cff}
+#t{position:fixed;right:14px;top:14px;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:10px;padding:8px 12px;cursor:pointer}
+</style>
+<script>(function(){var s;try{s=localStorage.getItem('tema')}catch(e){}var h=new Date().getHours();var d=s?s==='dark':(h>=19||h<7||matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.theme=d?'dark':'light'})();</script>
+</head><body><button id="t" type="button">Тема</button><main>
+<h1>Ева для бота: выбери, какой она будет</h1>
+<p>10 разных киборгов на белом фоне, без deford.: другой тип корпуса, цвет волос, одежда. Напиши номер – поставлю аватаркой бота. Понравятся черты из разных вариантов – скажи, соберу из них новый.</p>
+<div class="g"><figure><img src="img/b01.webp" alt="Ева, вариант 01" loading="lazy"><figcaption><b>01</b> Графитовая кожа, синие кольца в глазах, тёмный пучок. Ближе всего к нынешней Еве</figcaption></figure><figure><img src="img/b02.webp" alt="Ева, вариант 02" loading="lazy"><figcaption><b>02</b> Белый фарфор, светлые линии на висках, платиновое каре. Серая водолазка</figcaption></figure><figure><img src="img/b03.webp" alt="Ева, вариант 03" loading="lazy"><figcaption><b>03</b> Слоновая кость с медью на шее и скулах, длинные рыжие волны. Кремовый свитер</figcaption></figure><figure><img src="img/b04.webp" alt="Ева, вариант 04" loading="lazy"><figcaption><b>04</b> Чёрное лицо с белыми швами, светящиеся белые глаза, чёрные волосы с чёлкой. Белая рубашка</figcaption></figure><figure><img src="img/b05.webp" alt="Ева, вариант 05" loading="lazy"><figcaption><b>05</b> Почти человек: тонкие швы на щеках, синяя точка на виске, розовая короткая стрижка. Серое худи</figcaption></figure><figure><img src="img/b06.webp" alt="Ева, вариант 06" loading="lazy"><figcaption><b>06</b> Хром на скулах и ушах, фиолетовые глаза, серебристый высокий хвост. Чёрный пиджак</figcaption></figure><figure><img src="img/b07.webp" alt="Ева, вариант 07" loading="lazy"><figcaption><b>07</b> Стеклянный затылок, внутри светится схема, лицо живое, тёмные кудри. Джинсовая рубашка</figcaption></figure><figure><img src="img/b08.webp" alt="Ева, вариант 08" loading="lazy"><figcaption><b>08</b> Золотые детали на шее и ключицах, светлые косы. Белая футболка</figcaption></figure><figure><img src="img/b09.webp" alt="Ева, вариант 09" loading="lazy"><figcaption><b>09</b> Белые панели, бирюзовые глаза, бирюзовые волосы с выбритым виском. Синий бомбер</figcaption></figure><figure><img src="img/b10.webp" alt="Ева, вариант 10" loading="lazy"><figcaption><b>10</b> Половина лица – белая с серебром механика, каштановый хвост. Бежевый пиджак</figcaption></figure></div></main>
+<div id="z"><button type="button" aria-label="Закрыть">✕</button><img alt=""></div>
+<script>document.getElementById('t').onclick=function(){var n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('tema',n)}catch(e){}};
+var z=document.getElementById('z');document.querySelectorAll('figure img').forEach(function(i){i.onclick=function(){z.querySelector('img').src=i.src;z.style.display='flex'}});z.onclick=function(){z.style.display='none'};document.addEventListener('keydown',function(e){if(e.key==='Escape')z.style.display='none'});</script>
+</body></html>
