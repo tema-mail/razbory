@@ -1,0 +1,130 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>MDS: конкуренты и страницы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0b;--card:#141414;--card2:#1d1d1d;--ink:#fff;--mute:#9a9a9a;--line:rgba(255,255,255,.12);--y:#ffcb00;--ok:rgba(255,203,0,.16);--warn:rgba(255,255,255,.08);--bad:rgba(255,80,60,.18)}
+html[data-theme=light]{--bg:#f4f4f2;--card:#fff;--card2:#f0f0ee;--ink:#0b0b0b;--mute:#5e5e5e;--line:rgba(0,0,0,.12);--y:#d9a900;--ok:rgba(255,203,0,.28);--warn:rgba(0,0,0,.05);--bad:rgba(220,60,40,.14)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:36px 16px 90px}
+.brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--y);font-weight:700}
+h1{font-size:clamp(28px,4.4vw,46px);line-height:1.08;margin:10px 0 10px;font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(22px,2.6vw,30px);margin:56px 0 14px;font-weight:800;letter-spacing:-.01em}
+h2::before{content:"[ " attr(data-k) " ]";display:block;font-size:12px;letter-spacing:.14em;color:var(--y);font-weight:600;margin-bottom:6px}
+h3{font-size:19px;font-weight:700}
+.sub{color:var(--mute);font-size:14px}b{font-weight:700}
+.bx{background:var(--card);border:1px solid var(--line);padding:18px 20px;margin:14px 0}
+.bx.y{border-left:3px solid var(--y)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.k{background:var(--card);padding:18px 18px 16px}.k .big{font-size:34px;font-weight:800;line-height:1.1;color:var(--y);margin:6px 0}.k small{color:var(--mute);font-size:13px}
+.k > small:first-child{text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+.tw{overflow-x:auto;border:1px solid var(--line)}table{border-collapse:collapse;width:100%;font-size:14px;background:var(--card)}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}th{background:var(--card2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mute)}
+td.r,th.r{text-align:right;white-space:nowrap}td small{color:var(--mute)}tr.tot td{font-weight:700;background:var(--card2)}
+.tag{display:inline-block;padding:2px 8px;font-size:12px;white-space:nowrap;border:1px solid var(--line)}.tag.ready{background:var(--ok)}.tag.flag{background:var(--warn)}.tag.stop{background:var(--bad)}.tag.chip{background:var(--card2)}
+details{background:var(--card);border:1px solid var(--line);margin:10px 0;padding:4px 16px}summary{cursor:pointer;padding:12px 0}summary b{color:var(--ink)}
+h3+details,details details{margin-top:6px}
+.nt{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--y);padding:14px 18px;margin:14px 0}
+.formula{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--card);border:1px solid var(--line);padding:12px 14px;overflow-x:auto}
+code{font-size:13px;background:var(--card2);padding:1px 5px}
+ol li,ul li{margin:7px 0}audio{width:100%;margin:16px 0 4px}a{color:var(--y)}
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:14px 0}
+.cmp > div{background:var(--card);padding:18px 20px}.cmp .big{font-size:30px;font-weight:800}.cmp .us .big{color:var(--y)}
+</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main>
+<div class="brand">MDS · Minsk Detailing Studio</div>
+<h1>Конкуренты в поиске Минска<br>и сколько страниц нужно MDS</h1>
+<div class="sub">mds.by · 14.11.2026 · выдача Яндекса (Минск) и Google (Беларусь), топ-10 по 17 главным запросам · подготовил Deford</div>
+<audio controls preload="none" src="itog.mp3"></audio><div class="sub">Итог голосом</div>
+
+<h2 data-k="итог">Коротко</h2>
+<div class="grid">
+<div class="k"><small>Страниц на сайте MDS</small><div class="big">44</div><small>по карте сайта, вместе со служебными</small></div>
+<div class="k"><small>У сильных конкурентов</small><div class="big">100–500</div><small>vinylstudio.by – 498, detailing4me.by – 312, krown.by – 305, antikor-centr.by – 259</small></div>
+<div class="k"><small>MDS в топ-10</small><div class="big">3 из 31</div><small>выдач по главным запросам: оклейка (8-е), детейлинг (3-е), керамика (5-е) – все в Яндексе</small></div>
+</div>
+<div class="bx y">Мы разобрали, кто стоит в первой десятке Минска по оклейке, антикору, ателье, мойке, химчистке, полировке, тонировке и шумоизоляции. У тех, кто стабильно наверху, на каждую услугу не одна страница, а десятки: по элементам машины, по плёнкам и составам, по маркам и моделям, плюс кейсы и статьи. Поисковик видит у них ответ на любой вариант запроса – и показывает их. Чтобы встать рядом, MDS нужно в 3–4 раза больше страниц, чем в текущем плане.</div>
+
+<h2 data-k="выдача">Кто стоит в выдаче Минска</h2>
+<div class="tw"><table><thead><tr><th>Сайт и как он устроен</th><th class="r">В топ-10</th><th class="r">Ср. место</th><th class="r">Страниц</th></tr></thead><tbody><tr><td><b>megamoika.by</b><br><small>услуга × элемент и × марка («оклейка крыши», «полировка дверей», «оклейка Geely»), виды мойки</small></td><td class="r">13 из 31</td><td class="r">3.8</td><td class="r">135</td></tr><tr><td><b>avtotop.by</b><br><small></small></td><td class="r">12 из 31</td><td class="r">6.0</td><td class="r"><small>карта не отдалась</small></td></tr><tr><td><b>nicecar-center.by</b><br><small>оклейка, тонировка, керамика по видам, блог</small></td><td class="r">7 из 31</td><td class="r">6.4</td><td class="r">118</td></tr><tr><td><b>mxauto.by</b><br><small>кейс на каждую машину («оклейка Zeekr 007», «BMW X5 G05»)</small></td><td class="r">6 из 31</td><td class="r">6.8</td><td class="r">130</td></tr><tr><td><b>krown.by</b><br><small>антикор по классам машин (рамные внедорожники, электромобили), статьи по моделям</small></td><td class="r">6 из 31</td><td class="r">3.5</td><td class="r">305</td></tr><tr><td><b>texx.by</b><br><small>мойка и салон, блог</small></td><td class="r">6 из 31</td><td class="r">5.0</td><td class="r">122</td></tr><tr><td><b>okleika.by</b><br><small>оклейка по маркам (62 страницы марок)</small></td><td class="r">5 из 31</td><td class="r">5.0</td><td class="r">104</td></tr><tr><td><b>vinylstudio.by</b><br><small>услуга × марка × модель («антигравийная защита Lexus LX»), магазин плёнок</small></td><td class="r">5 из 31</td><td class="r">3.6</td><td class="r">498</td></tr><tr><td><b>detailing4me.by</b><br><small>оклейка по элементам и маркам, сравнения плёнок, статьи</small></td><td class="r">5 из 31</td><td class="r">5.8</td><td class="r">312</td></tr><tr><td><b>avtoshik.by</b><br><small>перетяжка и ателье</small></td><td class="r">5 из 31</td><td class="r">4.4</td><td class="r">43</td></tr><tr><td><b>glossguru.by</b><br><small></small></td><td class="r">5 из 31</td><td class="r">6.8</td><td class="r">13</td></tr><tr><td><b>antikorim.by</b><br><small></small></td><td class="r">4 из 31</td><td class="r">4.2</td><td class="r">14</td></tr><tr><td><b>wurth-antikor.by</b><br><small>антикор, статьи</small></td><td class="r">4 из 31</td><td class="r">4.8</td><td class="r">32</td></tr><tr><td><b>megaservice.by</b><br><small></small></td><td class="r">4 из 31</td><td class="r">4.2</td><td class="r"><small>карта не отдалась</small></td></tr><tr><td><b>antikorr.by</b><br><small></small></td><td class="r">4 из 31</td><td class="r">5.0</td><td class="r"><small>карта не отдалась</small></td></tr><tr><td><b>rulevoy.by</b><br><small></small></td><td class="r">4 из 31</td><td class="r">3.2</td><td class="r"><small>карта не отдалась</small></td></tr><tr><td><b>d2.by</b><br><small></small></td><td class="r">4 из 31</td><td class="r">6.8</td><td class="r"><small>карта не отдалась</small></td></tr><tr><td><b>mds.by</b><br><small>все основные услуги, по одной странице</small></td><td class="r">3 из 31</td><td class="r">5.3</td><td class="r">44</td></tr><tr><td><b>antikor-centr.by</b><br><small>антикор: составы (Dinitrol), зоны, статьи «как часто делать»</small></td><td class="r">3 из 31</td><td class="r">8.0</td><td class="r">259</td></tr><tr><td><b>rs-auto.by</b><br><small>ателье и салон</small></td><td class="r">3 из 31</td><td class="r">7.3</td><td class="r">116</td></tr><tr><td><b>remont-salonov.by</b><br><small></small></td><td class="r">3 из 31</td><td class="r">7.7</td><td class="r">32</td></tr><tr><td><b>remont-salona.by</b><br><small>ателье по элементам и материалам: руль, КПП и ручник, потолок, ткань и велюр</small></td><td class="r">3 из 31</td><td class="r">4.7</td><td class="r">43</td></tr></tbody></table></div>
+<div class="sub">«В топ-10» – сколько раз сайт попал в первую десятку из 31 собранных выдач (17 запросов в Яндексе и Google, 3 выдачи Яндекса не ответили). Каталоги и агрегаторы (Onliner, Kufar, 2ГИС, Яндекс Карты) убраны. Страниц – по карте сайта на 14.11.2026; где карта закрыта, число не сняли.</div>
+
+<h2 data-k="разрыв">Где MDS отстаёт по направлениям</h2>
+<div class="tw"><table><thead><tr><th>Направление</th><th class="r">У MDS</th><th>У конкурентов, страниц</th></tr></thead><tbody><tr><td><b>Оклейка и плёнки</b></td><td class="r">5</td><td>vinylstudio.by – 215, detailing4me.by – 102, mxauto.by – 70, megamoika.by – 40, nicecar-center.by – 31</td></tr><tr><td><b>Антикор</b></td><td class="r">2</td><td>antikor-centr.by – 138, krown.by – 57, mxauto.by – 18, wurth-antikor.by – 12</td></tr><tr><td><b>Ателье и салон</b></td><td class="r">11</td><td>remont-salona.by – 30, detailing4me.by – 29, rs-auto.by – 24, avtoshik.by – 23</td></tr><tr><td><b>Мойка</b></td><td class="r">2</td><td>megamoika.by – 23, texx.by – 20, vinylstudio.by – 11</td></tr></tbody></table></div>
+
+<h2 data-k="оклейка">Оклейка – главная услуга, отдельный кластер</h2>
+<p>Оклейка у MDS – самый дорогой чек (полная от 7 500 BYN), а страниц под неё пять. У vinylstudio.by их 215, у detailing4me.by – 102, у mxauto.by – 70. Они забирают не только «оклейка авто минск», но и все варианты вокруг. Что поднимаем, спрос Яндекса по Минску в месяц:</p>
+<ul>
+<li><b>По элементам:</b> оклейка кузова – 30, оклейка капота пленкой – 27, оклейка бампера пленкой – 16, оклейка порогов – 14, оклейка салона пленкой – 13, оклейка багажника – 9, оклейка крыши пленкой – 6, оклейка зеркал – 5. Каждая – своя страница: цена за элемент, какой плёнкой, сколько держится.</li>
+<li><b>По типу плёнки:</b> полиуретановая пленка – 141, оклейка матовой пленкой – 18, карбоновая пленка – 10, сатиновая пленка – 7, цветной полиуретан – 4, антигравийная пленка на капот – 3.</li>
+<li><b>По маркам плёнок:</b> suntek – 46, hexis – 17, llumar – 11, пленка 3m – 6, oraguard – 5, stek – 2 – страница на каждую плёнку, с которой работает MDS.</li>
+<li><b>Кейсы по моделям:</b> «оклейка Zeekr 007», «оклейка Geely Monjaro» – как у mxauto.by и vinylstudio.by. Прямого спроса по каждой модели немного, но такие страницы собирают хвосты «марка + плёнка» и показывают живые работы. Делаем из фотобанка MDS: одна сделанная машина – одна страница.</li>
+</ul>
+
+<h2 data-k="ателье">Ателье – то, чего нет у большинства детейлингов</h2>
+<p>В выдаче по перетяжке и пошиву стоят отдельные мастерские (remont-salona.by, remont-salonov.by, rs-auto.by, avtoshik.by), а не детейлинг-центры. У MDS ателье своё – это редкость, и под неё можно собрать полный раздел:</p>
+<ul>
+<li><b>По элементам:</b> руль, сиденья, потолок (в т.ч. чёрный и звёздное небо), дверные карты, торпедо, подлокотник, ручка КПП и ручник – часть уже в плане.</li>
+<li><b>По материалам:</b> кожа, экокожа, алькантара (алькантара в салон – 27), перетяжка руля кожей – 19, ремонт кожаных сидений – 19.</li>
+<li><b>Рядом с ателье:</b> пошив чехлов на заказ (≈110), ковры в салон – 31, коврики ЭВА – 274, подогрев сидений – 37 – если MDS это делает.</li>
+</ul>
+
+<h2 data-k="антикор">Антикор – там, где надо лезть под машину</h2>
+<p>У antikor-centr.by 138 страниц про антикор, у krown.by – 57 плюс статьи по моделям. У MDS – две. Спрос вокруг антикора большой, и он не только «антикор минск»:</p>
+<ul>
+<li><b>По составам:</b> динитрол – 816, dinitrol – 381, мовиль – 372, антикор цена – 166, меркасол – 153, mercasol – 116, антикоррозийная обработка днища – 105. Часть – покупка банки, но страница «Чем обрабатываем: Dinitrol, Mercasol, Noxudol» забирает тех, кто выбирает состав и ищет, где нанести.</li>
+<li><b>По зонам:</b> днище, арки, пороги, скрытые полости, подвеска – уже в плане, добавляем пороги.</li>
+<li><b>По классам машин:</b> рамные внедорожники, кроссоверы, электромобили, новые машины – как у krown.by.</li>
+</ul>
+
+<h2 data-k="мойка">Автомойка</h2>
+<p>У megamoika.by 23 страницы про мойку, у texx.by – 20. Спрос по видам мойки: бесконтактная мойка – 168, мойка днища – 157, мойка салона – 28, мойка премиум – 27, мойка радиатора – 23, автомойка лошица – 14. По районам Минска в Вордстате почти пусто: Лошица 14, Малиновка 9, остальные районы – 0. Страницы «автомойка в каждом районе» без точки в этом районе поисковик считает дорвеями – делаем одну страницу под район, где стоит MDS, и страницы по видам мойки.</p>
+
+<h2 data-k="ответ">Почему можно в 3 раза больше страниц – и как</h2>
+<p>Можно. Ограничение не в том, сколько страниц мы успеваем сделать, а в том, чтобы у каждой был свой запрос и своя польза. Страница, которая отличается от соседней только названием, – мусор: поисковик режет за такие весь сайт. Конкуренты набирают сотни страниц не копиями, а пятью типами страниц, и у каждого есть своя польза:</p>
+<ol>
+<li><b>Услуга × элемент</b> – оклейка капота, перетяжка руля, антикор порогов: своя цена и свой срок.</li>
+<li><b>Услуга × материал</b> – плёнки SunTek, Hexis, LLumar, составы Dinitrol, Mercasol, алькантара, кожа: чем отличаются, что выбрать.</li>
+<li><b>Услуга × класс машины</b> – антикор рамного внедорожника, оклейка электромобиля: другая работа и цена.</li>
+<li><b>Кейс по модели</b> – реальная машина MDS: фото, что сделали, сколько стоило. Число таких страниц ограничено только фотобанком.</li>
+<li><b>Статьи и сравнения</b> – «керамика или плёнка», «как часто делать антикор».</li>
+</ol>
+<div class="bx y"><b>Что это даёт в цифрах.</b> В текущем плане на полгода – 53 страницы услуг. С новыми типами: по элементам, плёнкам и составам – ещё около 25 страниц со своим спросом, ателье – около 10, мойка – около 5, кейсы по моделям – по 10 в месяц, 60 за полгода. Итого около 150 страниц услуг и кейсов за полгода – в 3 раза больше, на уровне detailing4me.by и krown.by, плюс статьи.</div>
+
+<h2 data-k="нужно">Что нужно от MDS</h2>
+<ul>
+<li>Фото работ по машинам: марка, модель, что сделали – это кейсы.</li>
+<li>С какими плёнками и составами работаете: SunTek, Hexis, LLumar, Dinitrol, Mercasol и т.д.</li>
+<li>Что делает ателье сверх прайса: ковры, коврики ЭВА, подогрев и вентиляция сидений.</li>
+<li>Где стоит мойка: район и ближайшее метро.</li>
+</ul>
+<div class="sub" style="margin-top:36px">Источники: выдача Яндекса (Минск, lr 157) и Google (Беларусь) через XMLRiver, топ-10, снято 14.11.2026; карты сайтов конкурентов, 14.11.2026; Вордстат Яндекса по Минску (регион 157) через XMLRiver, 14.11.2026. Спрос – только горячие запросы, без «своими руками» и покупки материалов.</div>
+</main><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
