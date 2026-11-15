@@ -405,3 +405,8 @@ html[data-theme=light] .v4 .vi{background:#efefec}
   .vs-cards dd{font-size:15px;margin:0 0 4px}
   .vs-cards .hi{border-color:var(--acc)}
 }
+@media (max-width:760px){
+  .kicker{font-size:13px;letter-spacing:.08em}
+  .v4 .tg,.v4 .cn small,.cmp thead th small,.cmp thead .go,.vtag,.ask{font-size:13px}
+  .w-btn.sm{font-size:13px;min-height:46px}
+}
