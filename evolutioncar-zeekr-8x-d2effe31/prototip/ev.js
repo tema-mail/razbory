@@ -151,7 +151,7 @@
 
   /* тест-драйв и лизинг */
   function chips(id, key, after) { $$('#' + id + ' button').forEach(function (b) { b.addEventListener('click', function () { $$('#' + id + ' button').forEach(function (x) { x.classList.toggle('on', x === b) }); var k = Object.keys(b.dataset)[0]; S[key] = b.dataset[k]; if (after) after() }) }) }
-  chips('td-m', 'td'); chips('lz-a', 'lzA', lz); chips('lz-t', 'lzT', lz);
+  chips('lz-a', 'lzA', lz); chips('lz-t', 'lzT', lz);
   function lz() { $('#lz-s').textContent = 'аванс ' + S.lzA + ' %, ' + ({ 24: '2 года', 36: '3 года', 60: '5 лет' })[S.lzT] }
 
   /* форма: кнопка активна только с галочкой; цель, версия, цвет и сборка уходят в заявку */
