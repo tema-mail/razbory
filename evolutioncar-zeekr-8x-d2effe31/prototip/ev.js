@@ -50,7 +50,7 @@
     var old = $('img.on', stage); if (old && old.dataset.c === code) return;
     var im = new Image(); im.src = 'img/c-' + code + '.webp'; im.alt = 'Zeekr 8X 2026, ' + c[1].toLowerCase() + ', официальный рендер'; im.width = 1600; im.height = 725; im.dataset.c = code;
     stage.appendChild(im); requestAnimationFrame(function () { requestAnimationFrame(function () { im.classList.add('on'); if (old) { old.classList.remove('on'); setTimeout(function () { old.remove() }, 700) } }) });
-    $('#cv-img').src = 'img/c-' + code + '.webp'; formNote(); store.set('ev8x-color', code);
+    formNote(); store.set('ev8x-color', code);
   }
   dots.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) paint(b.dataset.c) });
   var sc = store.get('ev8x-color'); if (sc && sc !== '008') paint(sc);
@@ -156,8 +156,8 @@
 
   /* форма: кнопка активна только с галочкой; цель, версия, цвет и сборка уходят в заявку */
   var fm = $('#fm'), tel = fm.tel, sub = $('button[type=submit]', fm);
-  var GOAL = { raschet: 'Получить расчёт Zeekr 8X', test: 'Уточнить наличие и тест-драйв', lizing: 'Получить график лизинга' };
-  function setGoal(g) { S.goal = g; $$('#goal button').forEach(function (b) { b.classList.toggle('on', b.dataset.g === g) }); $('.t', fm).textContent = GOAL[g] }
+  var GOAL = { raschet: 'Получить расчёт Zeekr 8X', test: 'Уточнить наличие и тест-драйв', lizing: 'Получить график лизинга', kredit: 'Получить расчёт кредита' };
+  function setGoal(g) { S.goal = g; $$('#goal button').forEach(function (b) { b.classList.toggle('on', b.dataset.g === g) }); $('.t', fm).textContent = GOAL[g]; $('#goal-w').hidden = g === 'test' }
   function formNote() { $('#cv-t').textContent = 'Zeekr 8X' + (S.ver ? ' ' + S.ver + ' ' + S.bat + ' кВт·ч' : '') + ' · ' + S.color.toLowerCase() + (S.build ? ' · сборка из конфигуратора приложена' : ' · сборка из конфигуратора будет приложена') }
   $$('#goal button').forEach(function (b) { b.addEventListener('click', function () { setGoal(b.dataset.g) }) });
   d.addEventListener('click', function (e) { var a = e.target.closest('[data-goal]'); if (a) setGoal(a.dataset.goal) });
@@ -176,7 +176,7 @@
     if (tel.value.replace(/\D/g, '').length < 12) { tel.closest('.w-field').classList.add('bad'); tel.focus(); return }
     if (fm.website.value) return;
     var utm = []; new URLSearchParams(location.search).forEach(function (v, k) { if (/^utm_|yclid|gclid/.test(k)) utm.push(k + '=' + v) });
-    var parts = [({ raschet: 'Расчёт под ключ', test: 'Тест-драйв: ' + S.td, lizing: 'Лизинг: аванс ' + S.lzA + ' %, ' + S.lzT + ' мес' })[S.goal],
+    var parts = [({ raschet: 'Расчёт под ключ', test: 'Тест-драйв: ' + S.td, lizing: 'Лизинг: аванс ' + S.lzA + ' %, ' + S.lzT + ' мес', kredit: 'Кредит' })[S.goal],
       S.ver ? 'Zeekr 8X ' + S.ver + ' ' + S.bat + ' кВт·ч' : 'версия не выбрана', S.color, S.build ? 'сборка: ' + S.build : '', tel.value];
     $('.w-success', fm).hidden = false; sub.hidden = true;
     $('#done-v').textContent = 'В заявке: ' + parts.filter(Boolean).join(' · ') + ' · страница ' + location.pathname + (utm.length ? ' · ' + utm.join(', ') : '') + ' (в прототипе никуда не уходит)';
@@ -202,20 +202,11 @@
   });
 })();
 
-/* ===== Мобильная вёрстка: ленты со счётчиком, сравнение двух версий, конфигуратор на весь экран, карточки моделей ===== */
+/* ===== Мобильная вёрстка: ленты со счётчиком, сравнение двух версий, конфигуратор на весь экран ===== */
 (function () {
   var d = document, $ = function (s, r) { return (r || d).querySelector(s) }, $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)) };
   var mob = function () { return innerWidth <= 760 };
-  // «8X, 9X или L9»: карточки моделей из таблицы (одни данные, без дублей в HTML)
-  var t = $('#vs table');
-  if (t) {
-    var rows = $$('tr', t), heads = $$('th', rows[0]).slice(1).map(function (x) { return x.textContent.trim() });
-    var wrap = d.createElement('div'); wrap.className = 'vs-cards m-lane'; wrap.setAttribute('data-mob', 'lenta');
-    wrap.innerHTML = heads.map(function (h, i) {
-      return '<div class="w-card' + (i ? '' : ' hi') + '"><h3>' + h + '</h3><dl>' + rows.slice(1).map(function (r) { var c = $$('td', r); return '<dt>' + c[0].textContent.trim() + '</dt><dd>' + c[i + 1].innerHTML + '</dd>' }).join('') + '</dl></div>';
-    }).join('');
-    t.closest('.w-table-wrap').after(wrap);
-  }
+  // «8X, 9X или L9» на телефоне не показываем (владелец 15.11.2026), таблица только на десктопе
   // счётчик «1 / N» и точки под каждой лентой
   $$('.m-lane').forEach(function (lane) {
     var items = [].slice.call(lane.children); if (items.length < 2) return;

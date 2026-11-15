@@ -355,7 +355,7 @@ html[data-theme=light] .v4 .vi{background:#efefec}
 @media (max-width:760px){.srv-g{grid-template-columns:1fr}}
 
 /* ===== Мобильная вёрстка по правилам 15.11.2026: ленты вбок, крупный текст, конфигуратор на весь экран ===== */
-.lane-meta,.cfg-open,.cfg-x,.vs-cards{display:none}
+.lane-meta,.cfg-open,.cfg-x{display:none}
 @media (max-width:760px){
   /* текст не мельче 13 px, основной 15–16 */
   body{font-size:16px}
@@ -395,15 +395,6 @@ html[data-theme=light] .v4 .vi{background:#efefec}
   .cfg.full{display:block;position:fixed;inset:0;z-index:150;border-radius:0;border:0}
   .cfg.full iframe{height:100%!important}
   .cfg-x{display:grid;place-items:center;position:absolute;top:10px;right:10px;z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:26px}
-  /* «8X, 9X или L9»: на телефоне карточки моделей лентой вместо узкой таблицы */
-  #vs .w-table-wrap{display:none}
-  .vs-cards{display:flex}
-  .vs-cards .w-card{padding:16px}
-  .vs-cards h3{font-size:18px;margin-bottom:10px}
-  .vs-cards dl{display:grid;gap:8px}
-  .vs-cards dt{font-size:13px;color:var(--tx3)}
-  .vs-cards dd{font-size:15px;margin:0 0 4px}
-  .vs-cards .hi{border-color:var(--acc)}
 }
 @media (max-width:760px){
   .kicker{font-size:13px;letter-spacing:.08em}
@@ -423,4 +414,11 @@ html[data-theme=light] .v4 .vi{background:#efefec}
   .cfg-open .cfg-shot img{display:block;width:100%;height:auto;margin:0;border-radius:10px;background:#f2f3f5}
   .cfg-tag{position:absolute;left:8px;bottom:8px;padding:6px 10px;border-radius:999px;background:rgba(0,4,12,.82);color:#fff;font-size:13px;font-weight:600;line-height:1.2}
   .cfg-tag::before{content:"";display:inline-block;width:8px;height:8px;margin-right:7px;border-radius:50%;background:#6fb7b2;vertical-align:1px}
+}
+
+/* 15.11.2026, владелец: видео на телефоне – горизонтальное и не больше трети экрана; «8X, 9X или L9» на телефоне не показываем */
+.of.vid video{height:auto}
+@media (max-width:760px){
+  .of.vid video,.og .of.vid video,.ob .og .of.vid video{aspect-ratio:16/9!important;height:auto!important;max-height:34svh}
+  [data-mob="skryt"]{display:none!important}
 }
