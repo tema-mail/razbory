@@ -329,7 +329,6 @@ html[data-theme=light] .v4 .vi{background:#efefec}
 .og .of.vid video{aspect-ratio:4/3.4}
 .of.vid .vplay{position:absolute;left:16px;top:16px;display:none;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;background:rgba(0,0,0,.6);color:#fff;font:600 13px var(--fb);cursor:pointer;border:1px solid rgba(255,255,255,.2)}
 .of.vid.manual .vplay{display:inline-flex}
-.of.vid .vtag{position:absolute;right:14px;top:14px;padding:4px 10px;border-radius:99px;background:rgba(0,0,0,.55);color:#fff;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
 @media (max-width:760px){.of.vid video,.og .of.vid video{aspect-ratio:4/3}}
 
 /* плитки цифр под видео */
@@ -398,10 +397,10 @@ html[data-theme=light] .v4 .vi{background:#efefec}
 }
 @media (max-width:760px){
   .kicker{font-size:13px;letter-spacing:.08em}
-  .v4 .tg,.v4 .cn small,.cmp thead th small,.cmp thead .go,.vtag,.ask{font-size:13px}
+  .v4 .tg,.v4 .cn small,.cmp thead th small,.cmp thead .go,.ask{font-size:13px}
   .w-btn.sm{font-size:13px;min-height:46px}
 }
-@media (max-width:760px){.cmp.two thead th small,.cmp.two thead .go,.of.vid .vtag{font-size:13px}}
+@media (max-width:760px){.cmp.two thead th small,.cmp.two thead .go{font-size:13px}}
 
 .hd-short{display:none}
 @media (max-width:760px){.hd-full{display:none}.hd-short{display:inline}}
