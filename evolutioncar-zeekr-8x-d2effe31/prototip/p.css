@@ -535,3 +535,7 @@ table.kw th{color:var(--mut);font-weight:600}
 }
 .cmp tr.gh td:first-child{width:auto}
 @media (max-width:760px){.cmp tr.gh td:first-child{width:100%}.cmp .gh button{padding:18px 4px 10px}}
+
+.td .core{display:flex;flex-direction:column}
+.td img{min-height:0;height:auto;aspect-ratio:16/7;object-position:50% 62%}
+@media (max-width:760px){.td img{aspect-ratio:4/3}}
