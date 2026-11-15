@@ -341,3 +341,15 @@ html[data-theme=light] .v4 .vi{background:#efefec}
 @media (max-width:900px){.stats{grid-template-columns:1fr 1fr}}
 
 .ob .og .of.vid video{aspect-ratio:21/9!important}
+
+/* собственный сервис */
+.srv{display:grid;grid-template-columns:.9fr 1.6fr;gap:16px;margin-top:28px;align-items:stretch}
+.srv-ph{margin:0}
+.srv-ph img{height:100%;aspect-ratio:auto;object-fit:cover;min-height:420px}
+.srv-ph figcaption{font-size:13px;padding:10px 14px}
+.srv-g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.srv-g .w-card{padding:18px}
+.srv-g h3{font-size:17px;margin-bottom:8px}
+.srv-g p{font-size:14.5px;color:var(--tx2)}
+@media (max-width:900px){.srv{grid-template-columns:1fr}.srv-ph img{min-height:0;aspect-ratio:4/3}}
+@media (max-width:760px){.srv-g{grid-template-columns:1fr}}
