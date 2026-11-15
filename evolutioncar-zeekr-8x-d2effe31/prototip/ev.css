@@ -339,3 +339,5 @@ html[data-theme=light] .v4 .vi{background:#efefec}
 .stats span{display:block;font-size:13.5px;color:var(--tx2);margin-top:8px}
 .og .of.vid video{aspect-ratio:21/9}
 @media (max-width:900px){.stats{grid-template-columns:1fr 1fr}}
+
+.ob .og .of.vid video{aspect-ratio:21/9!important}
