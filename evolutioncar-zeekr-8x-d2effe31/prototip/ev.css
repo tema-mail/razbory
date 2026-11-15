@@ -416,3 +416,11 @@ html[data-theme=light] .v4 .vi{background:#efefec}
 @media (max-width:760px){.hd-full{display:none}.hd-short{display:inline}}
 
 @media (max-width:760px){.hero-i .tiles{order:4}.hero-i .w-actions{order:5;margin-top:14px}.hero-i .ans{order:6;margin-top:16px}.hero-i .tiles{margin-top:0}.hero-m{margin-bottom:12px}.sw{margin-top:8px}}
+
+/* карточка конфигуратора на телефоне: снимок самого конфигуратора + метка «нажмите, чтобы открыть» (владелец 15.11.2026) */
+@media (max-width:760px){
+  .cfg-shot{position:relative;display:block;margin-bottom:12px}
+  .cfg-open .cfg-shot img{display:block;width:100%;height:auto;margin:0;border-radius:10px;background:#f2f3f5}
+  .cfg-tag{position:absolute;left:8px;bottom:8px;padding:6px 10px;border-radius:999px;background:rgba(0,4,12,.82);color:#fff;font-size:13px;font-weight:600;line-height:1.2}
+  .cfg-tag::before{content:"";display:inline-block;width:8px;height:8px;margin-right:7px;border-radius:50%;background:#6fb7b2;vertical-align:1px}
+}
