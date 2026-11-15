@@ -321,3 +321,21 @@ html[data-theme=light] .v4 .vi{background:#efefec}
 @media (max-width:1439px){.hd-ic{display:none}}
 @media (max-width:1280px){.hd-ph{display:none}.hd-cta{margin-left:auto}}
 @media (max-width:760px){.logo img{height:11px}}
+
+.td-note{font-size:14px;color:var(--tx3);border-left:3px solid var(--acc);padding:6px 0 6px 12px;margin:14px 0 0}
+/* видео в обзоре: лёгкий постер, ролик грузится только у экрана */
+.of.vid{position:relative}
+.of.vid video{display:block;width:100%;aspect-ratio:21/9;object-fit:cover;background:#05070c}
+.og .of.vid video{aspect-ratio:4/3.4}
+.of.vid .vplay{position:absolute;left:16px;top:16px;display:none;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;background:rgba(0,0,0,.6);color:#fff;font:600 13px var(--fb);cursor:pointer;border:1px solid rgba(255,255,255,.2)}
+.of.vid.manual .vplay{display:inline-flex}
+.of.vid .vtag{position:absolute;right:14px;top:14px;padding:4px 10px;border-radius:99px;background:rgba(0,0,0,.55);color:#fff;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:760px){.of.vid video,.og .of.vid video{aspect-ratio:4/3}}
+
+/* плитки цифр под видео */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:0 0 16px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--line)}
+.stats div{background:var(--sf);padding:18px 18px 20px}
+.stats b{display:block;font:700 26px/1.1 var(--fd);color:var(--acc)}
+.stats span{display:block;font-size:13.5px;color:var(--tx2);margin-top:8px}
+.og .of.vid video{aspect-ratio:21/9}
+@media (max-width:900px){.stats{grid-template-columns:1fr 1fr}}

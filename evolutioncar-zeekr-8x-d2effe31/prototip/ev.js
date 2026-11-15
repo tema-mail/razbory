@@ -156,7 +156,7 @@
 
   /* форма: кнопка активна только с галочкой; цель, версия, цвет и сборка уходят в заявку */
   var fm = $('#fm'), tel = fm.tel, sub = $('button[type=submit]', fm);
-  var GOAL = { raschet: 'Получить расчёт Zeekr 8X', test: 'Записаться на тест-драйв', lizing: 'Получить график лизинга' };
+  var GOAL = { raschet: 'Получить расчёт Zeekr 8X', test: 'Уточнить наличие и тест-драйв', lizing: 'Получить график лизинга' };
   function setGoal(g) { S.goal = g; $$('#goal button').forEach(function (b) { b.classList.toggle('on', b.dataset.g === g) }); $('.t', fm).textContent = GOAL[g] }
   function formNote() { $('#cv-t').textContent = 'Zeekr 8X' + (S.ver ? ' ' + S.ver + ' ' + S.bat + ' кВт·ч' : '') + ' · ' + S.color.toLowerCase() + (S.build ? ' · сборка из конфигуратора приложена' : ' · сборка из конфигуратора будет приложена') }
   $$('#goal button').forEach(function (b) { b.addEventListener('click', function () { setGoal(b.dataset.g) }) });
@@ -187,4 +187,17 @@
   $$('[data-sheet]').forEach(function (b) { b.addEventListener('click', function () { var s = $('#sh-' + b.dataset.sheet); s.classList.add('open'); s.setAttribute('aria-hidden', 'false'); lock(true) }) });
   $$('.sheet [data-close]').forEach(function (b) { b.addEventListener('click', closeS) });
   addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeS(); seoOpen(false) } });
+})();
+
+/* видео: preload="none" + постер; src ставится, когда блок в 300 px от экрана; вне экрана – пауза.
+   Экономия трафика или «меньше движения» – без автозапуска, кнопка «смотреть». */
+(function () {
+  var vids = [].slice.call(document.querySelectorAll('video[data-src]')); if (!vids.length) return;
+  var save = navigator.connection && navigator.connection.saveData, still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function load(v) { if (!v.src) { v.src = v.dataset.src; v.load() } }
+  vids.forEach(function (v) {
+    var fig = v.closest('.vid'), btn = fig && fig.querySelector('.vplay');
+    if (save || still) { fig.classList.add('manual'); if (btn) btn.addEventListener('click', function () { load(v); v.play(); fig.classList.remove('manual') }); return }
+    new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { load(v); var p = v.play(); if (p && p.catch) p.catch(function () { fig.classList.add('manual') }) } else if (v.src) v.pause() }) }, { rootMargin: '300px 0px', threshold: 0 }).observe(v);
+  });
 })();
