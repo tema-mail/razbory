@@ -201,3 +201,63 @@
     new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { load(v); var p = v.play(); if (p && p.catch) p.catch(function () { fig.classList.add('manual') }) } else if (v.src) v.pause() }) }, { rootMargin: '300px 0px', threshold: 0 }).observe(v);
   });
 })();
+
+/* ===== Мобильная вёрстка: ленты со счётчиком, сравнение двух версий, конфигуратор на весь экран, карточки моделей ===== */
+(function () {
+  var d = document, $ = function (s, r) { return (r || d).querySelector(s) }, $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)) };
+  var mob = function () { return innerWidth <= 760 };
+  // «8X, 9X или L9»: карточки моделей из таблицы (одни данные, без дублей в HTML)
+  var t = $('#vs table');
+  if (t) {
+    var rows = $$('tr', t), heads = $$('th', rows[0]).slice(1).map(function (x) { return x.textContent.trim() });
+    var wrap = d.createElement('div'); wrap.className = 'vs-cards m-lane'; wrap.setAttribute('data-mob', 'lenta');
+    wrap.innerHTML = heads.map(function (h, i) {
+      return '<div class="w-card' + (i ? '' : ' hi') + '"><h3>' + h + '</h3><dl>' + rows.slice(1).map(function (r) { var c = $$('td', r); return '<dt>' + c[0].textContent.trim() + '</dt><dd>' + c[i + 1].innerHTML + '</dd>' }).join('') + '</dl></div>';
+    }).join('');
+    t.closest('.w-table-wrap').after(wrap);
+  }
+  // счётчик «1 / N» и точки под каждой лентой
+  $$('.m-lane').forEach(function (lane) {
+    var items = [].slice.call(lane.children); if (items.length < 2) return;
+    var meta = d.createElement('div'); meta.className = 'lane-meta';
+    meta.innerHTML = '<span><b>1</b> / ' + items.length + ' · листайте вбок →</span><span class="lane-dots">' + items.map(function (_, i) { return '<i' + (i ? '' : ' class="on"') + '></i>' }).join('') + '</span>';
+    lane.after(meta);
+    var tick = false;
+    lane.addEventListener('scroll', function () { if (tick) return; tick = true; requestAnimationFrame(function () {
+      tick = false; var w = items[0].getBoundingClientRect().width + 12, k = Math.min(items.length - 1, Math.round(lane.scrollLeft / w));
+      $('b', meta).textContent = k + 1; $$('.lane-dots i', meta).forEach(function (x, j) { x.classList.toggle('on', j === k) });
+    }) }, { passive: true });
+  });
+  // сравнение комплектаций: на телефоне две версии рядом
+  var cmp = $('#cmp');
+  if (cmp) {
+    var names = $$('thead th', cmp).slice(1).map(function (th) { return $('b', th).textContent });
+    var pick = d.createElement('div'); pick.className = 'cmp-pick';
+    pick.innerHTML = '<span class="lb" style="width:100%;margin:0 0 4px">Сравнить две версии</span>' + names.map(function (n, i) { return '<button type="button" data-i="' + i + '"' + (i < 2 ? ' class="on"' : '') + '>' + n + '</button>' }).join('');
+    cmp.before(pick);
+    var sel = [0, 1];
+    function apply() {
+      cmp.classList.toggle('two', mob());
+      $$('tr', cmp).forEach(function (tr) {
+        if (tr.classList.contains('gh')) return;
+        var cells = [].slice.call(tr.children).slice(1);
+        cells.forEach(function (c, i) { c.classList.toggle('off', cells.length === 4 && sel.indexOf(i) < 0) });
+      });
+      $$('button', pick).forEach(function (b) { b.classList.toggle('on', sel.indexOf(+b.dataset.i) > -1) });
+    }
+    pick.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; var i = +b.dataset.i; if (sel.indexOf(i) > -1) return; sel = [sel[1], i]; apply() });
+    apply(); addEventListener('resize', apply);
+  }
+  // конфигуратор на весь экран: фрейм грузится только по нажатию
+  var open = $('#cfg-open'), cfg = $('#cfg'), x = $('#cfg-x');
+  if (open && cfg) {
+    open.addEventListener('click', function () { cfg.classList.add('full'); d.documentElement.style.overflow = 'hidden'; var b = $('#cfg-seg button.on'); if (b) b.click(); else if (!$('iframe', cfg)) { var s = $('[data-cfg="68"]'); if (s) s.click() } });
+    x.addEventListener('click', function () { cfg.classList.remove('full'); d.documentElement.style.overflow = ''; });
+  }
+})();
+/* нижняя панель на телефоне появляется, когда первый экран ушёл вверх – не закрывает его кнопки */
+(function () {
+  var hero = document.getElementById('hero'); if (!hero) return;
+  function upd() { document.body.classList.toggle('tb', hero.getBoundingClientRect().bottom < innerHeight * 0.4) }
+  addEventListener('scroll', upd, { passive: true }); upd();
+})();
