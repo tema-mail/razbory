@@ -194,7 +194,7 @@
 (function () {
   var vids = [].slice.call(document.querySelectorAll('video[data-src]')); if (!vids.length) return;
   var save = navigator.connection && navigator.connection.saveData, still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function load(v) { if (!v.src) { v.src = v.dataset.src; v.load() } }
+  function load(v) { if (!v.src) { v.src = (innerWidth <= 760 && v.dataset.srcM) ? v.dataset.srcM : v.dataset.src; v.load() } }
   vids.forEach(function (v) {
     var fig = v.closest('.vid'), btn = fig && fig.querySelector('.vplay');
     if (save || still) { fig.classList.add('manual'); if (btn) btn.addEventListener('click', function () { load(v); v.play(); fig.classList.remove('manual') }); return }
