@@ -168,7 +168,8 @@
   function hook() {
     try {
       var w = frame.contentWindow, doc = frame.contentDocument; if (!doc || !doc.body) return;
-      var fit = function () { frame.style.height = Math.max(640, doc.documentElement.scrollHeight) + 'px' };
+      var fit = function () { frame.style.height = mob() ? Math.max(640, doc.documentElement.scrollHeight) + 'px' : Math.min(900, Math.max(700, innerHeight - 110)) + 'px' };
+      addEventListener('resize', fit);
       fit(); if (w.ResizeObserver) new w.ResizeObserver(fit).observe(doc.body);
       var take = function (det) { if (!det) return; S.build = det.text || ''; $('#build-t').textContent = (det.lines || []).map(function (l) { return l[1] }).join(' · ') || det.text; $('#cv-b').textContent = 'Сборка из конфигуратора приложена к заявке' };
       doc.addEventListener('zeekr:change', function (e) { take(e.detail) });
