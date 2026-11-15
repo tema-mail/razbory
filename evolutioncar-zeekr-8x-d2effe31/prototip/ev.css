@@ -314,3 +314,10 @@ html[data-theme=light] .v4 .vi{background:#efefec}
   #tema{bottom:84px}
   .seo-in{padding:28px 16px 60px}
 }
+.logo img{height:14px}
+.hd-nav a,.hd-ph a{white-space:nowrap}
+.hd-nav a{padding:8px 9px}
+.w-btn{white-space:nowrap}
+@media (max-width:1439px){.hd-ic{display:none}}
+@media (max-width:1280px){.hd-ph{display:none}.hd-cta{margin-left:auto}}
+@media (max-width:760px){.logo img{height:11px}}
