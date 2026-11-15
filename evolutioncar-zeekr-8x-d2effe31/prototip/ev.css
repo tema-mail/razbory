@@ -414,3 +414,5 @@ html[data-theme=light] .v4 .vi{background:#efefec}
 
 .hd-short{display:none}
 @media (max-width:760px){.hd-full{display:none}.hd-short{display:inline}}
+
+@media (max-width:760px){.hero-i .tiles{order:4}.hero-i .w-actions{order:5;margin-top:14px}.hero-i .ans{order:6;margin-top:16px}.hero-i .tiles{margin-top:0}.hero-m{margin-bottom:12px}.sw{margin-top:8px}}
