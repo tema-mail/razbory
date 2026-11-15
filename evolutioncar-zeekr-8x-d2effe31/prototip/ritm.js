@@ -2,7 +2,8 @@
    Включается только параметром ?ritm=a|b|c, без него страница не меняется.
    a – зебра: блоки чередуют фон, ключевые (цена, сервис) – светлые;
    b – главы: страница делится на 4 главы, перед каждой – кадр на всю ширину с номером и названием;
-   c – удары: между текстовыми блоками – крупная цифра на зелёном фоне. */
+   c – удары: между текстовыми блоками – крупная цифра на зелёном фоне.
+   Кадры глав – только те, которых больше нет на странице (одна картинка – один раз). */
 (function () {
   var m = (location.search.match(/[?&]ritm=([abc])/) || [])[1]; if (!m) return;
   var d = document, $ = function (s) { return d.querySelector(s) };
@@ -14,10 +15,10 @@
       '.sec{border-top:1px solid var(--line)}';
   }
   if (m === 'b') {
-    var G = [['obzor', '01', 'Машина', 'Что умеет Zeekr 8X и какую версию взять', 'img/o/ext-front.webp'],
+    var G = [['obzor', '01', 'Машина', 'Что умеет Zeekr 8X и какую версию взять', 'img/o/ext-light.webp'],
       ['cena', '02', 'Цена и оплата', 'Из чего складывается цена, лизинг и кредит', 'img/o/int-cabin.webp'],
-      ['zakaz', '03', 'Заказ и гарантии', 'Как машина едет из Китая и что, если что-то пойдёт не так', 'img/o/td-fasad.webp'],
-      ['servis', '04', 'После покупки', 'Свой сервис, вопросы и расчёт', 'img/o/serv-lift.webp']];
+      ['zakaz', '03', 'Заказ и гарантии', 'Как машина едет из Китая и что, если что-то пойдёт не так', 'img/o/ext-rear.webp'],
+      ['servis', '04', 'После покупки', 'Свой сервис, вопросы и расчёт', 'img/o/serv-zona.webp']];
     css += '.glava{position:relative;margin-top:96px;min-height:46vh;display:flex;align-items:flex-end;overflow:hidden}' +
       '.glava img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}' +
       '.glava::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,4,12,.1) 30%,rgba(0,4,12,.92))}' +
