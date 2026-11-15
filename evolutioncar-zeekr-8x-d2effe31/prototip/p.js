@@ -171,7 +171,8 @@
       var fit = function () { frame.style.height = mob() ? Math.max(640, doc.documentElement.scrollHeight) + 'px' : Math.min(900, Math.max(700, innerHeight - 110)) + 'px' };
       addEventListener('resize', fit);
       fit(); if (w.ResizeObserver) new w.ResizeObserver(fit).observe(doc.body);
-      var take = function (det) { if (!det) return; S.build = det.text || ''; $('#build-t').textContent = (det.lines || []).map(function (l) { return l[1] }).join(' · ') || det.text; $('#cv-b').textContent = 'Сборка из конфигуратора приложена к заявке' };
+      var take = function (det) { if (!det) return; S.build = det.text || '';
+        V.forEach(function (v, k) { if (v.id === String(det.version)) { var bl = (det.lines || []).filter(function (l) { return /батаре/i.test(l[0]) })[0], bb = bl && (bl[1].match(/55|70/) || [])[0]; if (bb && cards[k]) cardUpd(cards[k], bb); pickVer(k, bb || cards[k].dataset.b) } }); $('#build-t').textContent = (det.lines || []).map(function (l) { return l[1] }).join(' · ') || det.text; $('#cv-b').textContent = 'Сборка из конфигуратора приложена к заявке' };
       doc.addEventListener('zeekr:change', function (e) { take(e.detail) });
       if (w.ZeekrCfg) take(w.ZeekrCfg.get());
     } catch (e) { /* другой домен – фрейм работает сам по себе, без связи с формой */ }
