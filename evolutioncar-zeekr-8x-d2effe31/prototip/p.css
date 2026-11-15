@@ -533,3 +533,5 @@ table.kw th{color:var(--mut);font-weight:600}
   .seo-in{padding:28px 18px 60px}
   .seo dl{grid-template-columns:1fr}
 }
+.cmp tr.gh td:first-child{width:auto}
+@media (max-width:760px){.cmp tr.gh td:first-child{width:100%}.cmp .gh button{padding:18px 4px 10px}}
