@@ -411,3 +411,6 @@ html[data-theme=light] .v4 .vi{background:#efefec}
   .w-btn.sm{font-size:13px;min-height:46px}
 }
 @media (max-width:760px){.cmp.two thead th small,.cmp.two thead .go,.of.vid .vtag{font-size:13px}}
+
+.hd-short{display:none}
+@media (max-width:760px){.hd-full{display:none}.hd-short{display:inline}}
