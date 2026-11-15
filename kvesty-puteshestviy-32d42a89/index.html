@@ -1,0 +1,242 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>«Побывать в стране» не проверить. Превращаем список в 56 квестов: по 4 на страну</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>«Побывать в стране» не проверить. Превращаем список в 56 квестов: по 4 на страну</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>15 строк твоего списка – это 14 стран (Колизей ушёл в Италию). У каждой страны четыре квеста по одному шаблону: <strong>кадр, вкус, опыт, рилс</strong>. Страна закрыта, когда закрыты все четыре и есть доказательство: фото, видео или чек.</p>
+<h2>1. Формула квеста: глагол + конкретное место + доказательство</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Было</th>
+<th>Стало</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Побывать во Франции</td>
+<td>Снять рилс у Эйфелевой башни, когда она мерцает (первые 5 минут каждого часа после заката)</td>
+</tr>
+<tr>
+<td>Побывать в Грузии</td>
+<td>Выпить вино из квеври прямо на винодельне в Кахетии</td>
+</tr>
+<tr>
+<td>Побывать в Нью-Йорке</td>
+<td>Сфотографироваться ночью на Таймс-сквер</td>
+</tr>
+</tbody>
+</table></div>
+<p>Четыре типа, чтобы поездка не свелась к одной фотке:</p>
+<ul>
+<li><strong>Кадр</strong> – главная открытка страны, фото тебя на фоне.</li>
+<li><strong>Вкус</strong> – блюдо или напиток в том месте, где его придумали.</li>
+<li><strong>Опыт</strong> – то, что надо прожить телом: поезд, баня, гора, море.</li>
+<li><strong>Рилс</strong> – одно видео, которое потом идёт в соцсети.</li>
+</ul>
+<h2>2. Квесты по странам</h2>
+<h3>Вьетнам – зимовка (декабрь–март, юг и центр)</h3>
+<ul>
+<li><strong>Кадр:</strong> бухта Халонг с палубы лодки.</li>
+<li><strong>Вкус:</strong> фо бо утром на улице в Ханое и кофе с яйцом.</li>
+<li><strong>Опыт:</strong> прожить месяц в одном городе у моря (Нячанг, Фукуок или Муйне) и проехать на байке перевал Хайван.</li>
+<li><strong>Рилс:</strong> «день зимовки»: утро у моря, кофе, работа с ноутбуком, закат.</li>
+</ul>
+<h3>Китай (апрель–май, сентябрь–октябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> Великая стена, участок Мутяньюй.</li>
+<li><strong>Вкус:</strong> утка по-пекински в Пекине.</li>
+<li><strong>Опыт:</strong> скоростной поезд Пекин – Шанхай, 350 км/ч, табло со скоростью в кадре.</li>
+<li><strong>Рилс:</strong> набережная Бунд в Шанхае ночью, напротив небоскрёбы Пудуна.</li>
+</ul>
+<h3>Япония (конец марта – начало апреля ради сакуры или ноябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> пагода Тюрэйто с Фудзи на фоне.</li>
+<li><strong>Вкус:</strong> суши на внешнем рынке Цукидзи в Токио.</li>
+<li><strong>Опыт:</strong> ночь в рёкане с горячим источником (онсэн).</li>
+<li><strong>Рилс:</strong> тоннель красных ворот Фусими Инари в Киото на рассвете, пока нет толпы.</li>
+</ul>
+<h3>Корея (апрель или октябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> дворец Кёнбоккун в Сеуле в ханбоке (в ханбоке вход бесплатный).</li>
+<li><strong>Вкус:</strong> корейское барбекю с соджу.</li>
+<li><strong>Опыт:</strong> ночь в корейской бане-джимджильбане.</li>
+<li><strong>Рилс:</strong> уличная еда на рынке Кванджан.</li>
+</ul>
+<h3>Италия + Рим, Колизей (май–июнь, сентябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> ты на фоне Колизея.</li>
+<li><strong>Вкус:</strong> карбонара в Трастевере и джелато.</li>
+<li><strong>Опыт:</strong> бросить монетку в фонтан Треви через левое плечо.</li>
+<li><strong>Рилс:</strong> Позитано на Амальфитанском побережье.</li>
+</ul>
+<h3>Испания (май–июнь, сентябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> Саграда Фамилия в Барселоне.</li>
+<li><strong>Вкус:</strong> паэлья в Валенсии, где её придумали.</li>
+<li><strong>Опыт:</strong> живое фламенко в таблао Севильи.</li>
+<li><strong>Рилс:</strong> парк Гуэль.</li>
+</ul>
+<h3>Португалия (май–июнь, сентябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> жёлтый трамвай 28 в Лиссабоне.</li>
+<li><strong>Вкус:</strong> паштел-де-ната в Белене и портвейн в погребе Порту.</li>
+<li><strong>Опыт:</strong> мыс Рока – самая западная точка континентальной Европы.</li>
+<li><strong>Рилс:</strong> Порту на закате с моста Луиша I.</li>
+</ul>
+<h3>Франция (май–июнь, сентябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> Эйфелева башня с площади Трокадеро.</li>
+<li><strong>Вкус:</strong> круассан утром в кафе и сыр с вином вечером.</li>
+<li><strong>Опыт:</strong> Монмартр, вид на Париж от Сакре-Кёр.</li>
+<li><strong>Рилс:</strong> Эйфелева башня мерцает: первые 5 минут каждого часа после заката.</li>
+</ul>
+<h3>Грузия (сентябрь–октябрь, сбор винограда)</h3>
+<ul>
+<li><strong>Кадр:</strong> церковь Гергети на фоне Казбека.</li>
+<li><strong>Вкус:</strong> вино из квеври на винодельне в Кахетии.</li>
+<li><strong>Опыт:</strong> серные бани в Тбилиси (Абанотубани).</li>
+<li><strong>Рилс:</strong> как правильно есть хинкали руками.</li>
+</ul>
+<h3>Армения (май–июнь, сентябрь–октябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> монастырь Хор Вирап на фоне Арарата.</li>
+<li><strong>Вкус:</strong> армянский коньяк на экскурсии по заводу в Ереване.</li>
+<li><strong>Опыт:</strong> канатная дорога «Крылья Татева» над ущельем.</li>
+<li><strong>Рилс:</strong> языческий храм Гарни и пещерный монастырь Гегард.</li>
+</ul>
+<h3>Кипр (май–октябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> камень Афродиты (Петра-ту-Ромиу).</li>
+<li><strong>Вкус:</strong> жареный халлуми и мезе в таверне.</li>
+<li><strong>Опыт:</strong> нырнуть к затонувшему парому «Зенобия» у Ларнаки.</li>
+<li><strong>Рилс:</strong> морские пещеры у мыса Каво Греко.</li>
+</ul>
+<h3>Узбекистан (апрель–май, сентябрь–октябрь)</h3>
+<ul>
+<li><strong>Кадр:</strong> площадь Регистан в Самарканде.</li>
+<li><strong>Вкус:</strong> плов из казана в Центре плова в Ташкенте.</li>
+<li><strong>Опыт:</strong> ночь внутри стен старой Хивы (Ичан-Кала).</li>
+<li><strong>Рилс:</strong> Бухара на закате.</li>
+</ul>
+<h3>Нью-Йорк (май–июнь, сентябрь–октябрь или декабрь ради ёлки)</h3>
+<ul>
+<li><strong>Кадр:</strong> Таймс-сквер ночью.</li>
+<li><strong>Вкус:</strong> пицца кусками на улице и бейгл утром.</li>
+<li><strong>Опыт:</strong> пройти Бруклинский мост пешком на рассвете.</li>
+<li><strong>Рилс:</strong> Манхэттен со смотровой площадки над Центральным парком.</li>
+</ul>
+<h3>Мексика (ноябрь–апрель)</h3>
+<ul>
+<li><strong>Кадр:</strong> пирамида Кукулькана в Чичен-Ице.</li>
+<li><strong>Вкус:</strong> тако аль пастор с уличного лотка в Мехико.</li>
+<li><strong>Опыт:</strong> искупаться в сеноте на Юкатане.</li>
+<li><strong>Рилс:</strong> руины Тулума над бирюзовым морем.</li>
+</ul>
+<h2>3. 14 стран – это 8 поездок, если склеить соседей</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Поездка</th>
+<th>Страны</th>
+<th>Когда</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Зимовка</td>
+<td>Вьетнам</td>
+<td>декабрь–март</td>
+</tr>
+<tr>
+<td>Кавказ</td>
+<td>Грузия + Армения</td>
+<td>сентябрь–октябрь</td>
+</tr>
+<tr>
+<td>Юг Европы</td>
+<td>Испания + Португалия</td>
+<td>май–июнь или сентябрь</td>
+</tr>
+<tr>
+<td>Классика Европы</td>
+<td>Франция + Италия</td>
+<td>май–июнь или сентябрь</td>
+</tr>
+<tr>
+<td>Азия</td>
+<td>Япония + Корея</td>
+<td>апрель или октябрь–ноябрь</td>
+</tr>
+<tr>
+<td>Китай</td>
+<td>Китай</td>
+<td>апрель–май или осень</td>
+</tr>
+<tr>
+<td>Короткие</td>
+<td>Кипр, Узбекистан</td>
+<td>весна, осень</td>
+</tr>
+<tr>
+<td>Америка</td>
+<td>Нью-Йорк + Мексика</td>
+<td>ноябрь–декабрь</td>
+</tr>
+</tbody>
+</table></div>
+<p>Так за год реально закрыть 2–3 поездки, а не держать 15 строк «когда-нибудь».</p>
+<h2>Нужно от тебя</h2>
+<ol>
+<li>Пройтись по квестам: что не твоё – вычеркнуть, своё – дописать.</li>
+<li>Сказать, какая поездка первая. Тогда соберу её до дня: маршрут, даты, бюджет.</li>
+</ol>
+<h2>Что раскрыть</h2>
+<ul>
+<li>Трекер с галочками и фото-доказательствами (в «Задачах» на маке или отдельной страницей).</li>
+<li>Визы и въезд по каждой стране на сегодня.</li>
+<li>Бюджет каждой из 8 поездок.</li>
+<li>Маршрут первой поездки по дням.</li>
+</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
