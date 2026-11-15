@@ -1,0 +1,225 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Мобильная вёрстка: как мы раскладываем блоки на телефоне</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Мобильная вёрстка: как мы раскладываем блоки на телефоне</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод: портянка была потому, что у нас не было правила, куда девать каждый блок на телефоне – только техника (поля, кегль, нет прокрутки вбок). Теперь у каждого блока свой режим: вниз, лента вбок, закреплённая прокрутка, гармошка, вкладки или на весь экран. Режим выбирается по таблице из исследований NN/g и Baymard и пяти разобранных сайтов, проверка сама ловит длинный блок без режима, а твои решения по блокам копятся в журнале и правят таблицу. Карточка 8X уже переделана: 26 экранов → 17,8. Ниже – все 16 её блоков на 390 px, по каждому нужно твоё слово.</strong></p>
+<p>15.11.2026 · Evolution Car BY, карточка Zeekr 8X · <a href="https://tema-mail.github.io/razbory/evolutioncar-zeekr-8x-d2effe31/prototip/">открыть карточку на телефоне</a></p>
+<h2>1. Почему было криво</h2>
+<ul>
+<li><strong>Правила были только технические</strong>: 16 px в полях, вырезы экрана, 100svh, нет прокрутки всей страницы вбок (скилл <code>adaptive-web-layout</code>). Какой блок вниз, какой вбок – не решалось вообще, поэтому всё шло вниз.</li>
+<li><strong>Карточка 8X до правки:</strong> 26 экранов, текст 12 px, кнопка тест-драйва вылезала за край, сравнение в 4 колонки по 85 px, конфигуратор во фрейме на 5 экранов, нижняя панель закрывала вторую кнопку первого экрана.</li>
+<li><strong>Проверка этого не ловила</strong> – она смотрела только прокрутку вбок.</li>
+</ul>
+<h2>2. Что говорят исследования и рынок</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Блок</th>
+<th>На телефоне</th>
+<th>Почему</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Первый экран</td>
+<td>Вниз, не больше ~1 экрана: модель, цена, кнопка</td>
+<td>57 % времени – выше сгиба, 74 % – в первых двух экранах (NN/g, 2018)</td>
+</tr>
+<tr>
+<td>Ключевые цифры</td>
+<td>Сетка 2×2, до 0,4 экрана</td>
+<td>zeekr.com.ru – 4 цифры на 0,4 экрана</td>
+</tr>
+<tr>
+<td>Галерея, пары фото</td>
+<td>Лента: край следующей карточки + «3 / 12»</td>
+<td>Одни точки люди пропускают (NN/g Mobile carousels, Baymard)</td>
+</tr>
+<tr>
+<td>Преимущества</td>
+<td>До 5 – вниз; 6–12 – лента; больше 12 – гармошка группами</td>
+<td>zeekr-avto: ~25 карточек вниз, 19 экранов</td>
+</tr>
+<tr>
+<td>Этапы, шаги</td>
+<td>Лента вбок, до конца 3–4 свайпа</td>
+<td>NN/g; лента «Путь» на 87.242.100.185 – 12 шагов в 0,67 экрана</td>
+</tr>
+<tr>
+<td>Характеристики</td>
+<td>Гармошка по группам, 4–6 главных строк открыты</td>
+<td>Горизонтальные вкладки на телефоне пропускают (Baymard)</td>
+</tr>
+<tr>
+<td>Сравнение комплектаций</td>
+<td>Не больше 2 колонок, первый столбец и шапка закреплены</td>
+<td>NN/g Mobile tables; voltauto – 6 колонок, 949 px</td>
+</tr>
+<tr>
+<td>Сравнение моделей</td>
+<td>Карточки лентой, в каждой 4–5 отличий</td>
+<td>–</td>
+</tr>
+<tr>
+<td>«Что входит» картинкой с выносками</td>
+<td>Картинка целиком с метками 1–5, под ней лента карточек 1–5</td>
+<td>Выноски, сложенные в столбик, теряют связь с картинкой</td>
+</tr>
+<tr>
+<td>Похожие, в наличии</td>
+<td>Лента: видно 1,5 карточки + «Смотреть все»</td>
+<td>NN/g</td>
+</tr>
+<tr>
+<td>Вопросы</td>
+<td>Гармошка, первый открыт</td>
+<td>NN/g Accordions on mobile</td>
+</tr>
+<tr>
+<td>Форма</td>
+<td>Вниз, до 1 экрана, поля 16 px</td>
+<td>Digital.gov</td>
+</tr>
+<tr>
+<td>SEO-текст</td>
+<td>3–4 строки + «Читать дальше»</td>
+<td>Baymard</td>
+</tr>
+<tr>
+<td>Закреплённая прокрутка</td>
+<td>Только 3–5 шагов «вау», без длинного текста, ниже первого экрана</td>
+<td>Перехват прокрутки на телефоне путает сильнее всего (NN/g, 2023)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Пять сайтов на 390 px:</strong>
+- <strong>zeekr-avto.ru</strong> – 25,2 экрана, однотипные карточки «фото + абзац» вниз, серый текст с контрастом 2,4:1.
+- <strong>voltauto.by</strong> – 20,8 экрана, сравнение в 6 колонок без закреплённого столбца.
+- <strong>zeekr.com.ru</strong> – закреплённая галерея: 6 фото листаются 5,4 экрана.
+- <strong>Atlant-M</strong> – 13,2 экрана, ленты и вкладки (лучший из пяти), но половина кнопок ниже 32 px.
+- <strong>87.242.100.185</strong> – 20,6 экрана, в нём уже есть хорошая лента «Путь» – разбор ниже.</p>
+<p><img loading="lazy" alt="zeekr-avto.ru на телефоне" src="img/sheet-zeekravto-a.webp" />
+<img loading="lazy" alt="voltauto.by на телефоне" src="img/sheet-voltauto.webp" />
+<img loading="lazy" alt="Atlant-M на телефоне" src="img/sheet-atlantm.webp" /></p>
+<h2>3. Как система работает дальше</h2>
+<ol>
+<li><strong>Режим каждого блока</strong> пишется в разметку (<code>data-mob</code>) с причиной – по таблице режимов в <code>site-lead/references/mobilka.md</code>.</li>
+<li><strong>Проверка</strong> <code>proverka.mjs</code> на 390 px валит прототип, если блок выше 1,5 экрана без режима, если текст мельче 13 px или если вся страница едет вбок. Старая карточка 8X падала на двух правилах, новая проходит.</li>
+<li><strong>Твой просмотр.</strong> Я показываю снимки по блокам, как ниже. Ты говоришь по каждому: «ок», «вниз», «вбок», «закрепить», «гармошка», «урезать», «криво».</li>
+<li><strong>Журнал</strong> <code>mobilka-zhurnal.md</code>: каждое твоё слово – строка с датой, проектом и блоком. Если решение общее – правлю таблицу режимов, и на следующем сайте делаю уже так.</li>
+<li>Правило подключено в стандарты <code>site-lead</code>, скилл маркетолога, агента прототипов и скилл адаптива – ими собирается любой новый прототип.</li>
+</ol>
+<h2>4. Карточка Zeekr 8X по блокам – нужно твоё слово</h2>
+<p>Ответь одной строкой, например: «1 урезать, 2 гармошка, 12 вниз, остальное ок».</p>
+<h3>1. Первый экран – вниз, 1,4 экрана</h3>
+<p><img loading="lazy" alt="Первый экран" src="img/8x-01-hero.webp" />
+Порядок: заголовок → машина → цвета → цены → кнопки → описание → цифры. По исследованию первый экран – около одного экрана. <strong>Предлагаю:</strong> описание под кнопками убрать в «Обзор», останется ~1 экран.</p>
+<h3>2. Обзор – вкладки, 1,9 экрана</h3>
+<p><img loading="lazy" alt="Обзор" src="img/8x-02-obzor.webp" />
+Вкладки «Экстерьер / Салон / Экраны и звук», внутри высокое видео и пары фото лентой. Baymard: горизонтальные вкладки на телефоне часто не замечают. <strong>Вопрос:</strong> оставить вкладки или сделать гармошку разделов; видео сделать ниже (16:9 вместо высокого).</p>
+<h3>3. Тест-драйв – вниз, 1 экран</h3>
+<p><img loading="lazy" alt="Тест-драйв" src="img/8x-03-test-drive.webp" /></p>
+<h3>4. Цены по комплектациям – лента, 1 экран</h3>
+<p><img loading="lazy" alt="Цены" src="img/8x-04-versii.webp" />
+Комплектации лентой, следующая выглядывает.</p>
+<h3>5. Чем отличаются комплектации – две версии + гармошка, 1,5 экрана</h3>
+<p><img loading="lazy" alt="Сравнение" src="img/8x-05-sravnenie.webp" />
+Сравниваются две версии на выбор, группы свёрнуты, первая открыта.</p>
+<h3>6. Конфигуратор – на весь экран, 0,8 экрана</h3>
+<p><img loading="lazy" alt="Конфигуратор" src="img/8x-06-konfigurator.webp" />
+В потоке – карточка с кнопкой. Конфигуратор грузится только по нажатию, открывается на весь экран, закрывается крестиком.</p>
+<h3>7. Из чего складывается цена – вниз, 1,3 экрана</h3>
+<p><img loading="lazy" alt="Цена" src="img/8x-07-cena.webp" />
+Чек читают целиком, поэтому вниз.</p>
+<h3>8. Лизинг – вниз, 0,9 экрана</h3>
+<p><img loading="lazy" alt="Лизинг" src="img/8x-08-lizing.webp" /></p>
+<h3>9. Как заказать – лента, 0,5 экрана</h3>
+<p><img loading="lazy" alt="Этапы заказа" src="img/8x-09-zakaz.webp" />
+6 шагов вбок, как ты сказал про «четыре этапа». <strong>Вопрос:</strong> лента или закреплённая прокрутка – шаги обязательные.</p>
+<h3>10. Если что-то пойдёт не так – лента, 0,6 экрана</h3>
+<p><img loading="lazy" alt="Риски" src="img/8x-10-riski.webp" /></p>
+<h3>11. Выдачи клиентам – лента, 0,6 экрана</h3>
+<p><img loading="lazy" alt="Выдачи" src="img/8x-11-vydachi.webp" />
+Пока места под фото – ждём реальные выдачи с размытыми номерами.</p>
+<h3>12. Свой сервис – лента, 1,3 экрана</h3>
+<p><img loading="lazy" alt="Сервис" src="img/8x-12-servis.webp" />
+Ты назвал этот блок главным преимуществом. По твоему же правилу важное идёт вниз. <strong>Вопрос:</strong> 6 карточек сервиса оставить лентой или развернуть вниз.</p>
+<h3>13. 8X, 9X или L9 – лента карточек моделей, 1,3 экрана</h3>
+<p><img loading="lazy" alt="Сравнение моделей" src="img/8x-13-vs.webp" />
+В каждой карточке 13 строк. По исследованию хватает 4–5 отличий. <strong>Предлагаю:</strong> оставить 5 (мощность, запас хода, мест, цена в Китае, кому подходит), остальное – ссылкой на карточку модели.</p>
+<h3>14. Вопросы – гармошка, 1 экран</h3>
+<p><img loading="lazy" alt="Вопросы" src="img/8x-14-voprosy.webp" /></p>
+<h3>15. Расчёт – форма вниз, 1,3 экрана</h3>
+<p><img loading="lazy" alt="Расчёт" src="img/8x-15-raschet.webp" />
+<strong>Предлагаю:</strong> на телефоне убрать картинку машины над формой, останется ~1 экран.</p>
+<h3>16. Похожие автомобили – лента, 0,7 экрана</h3>
+<p><img loading="lazy" alt="Похожие" src="img/8x-16-pohozhie.webp" /></p>
+<h2>5. Образец 87.242.100.185: два блока, которые ты назвал</h2>
+<p><strong>«Четыре этапа».</strong> Блока с таким названием на странице нет. Ближе всего – «Четыре способа проверить нас до договора» (шаги 01–04): 4 карточки вниз по ~400 px, всего 2,1 экрана. <strong>Решение:</strong> тот же компонент, что у ленты «Путь» на этом же сайте – карточка ~280 px, край следующей, полоса прогресса. Будет ~0,7 экрана и 3 свайпа.</p>
+<p><img loading="lazy" alt="Четыре способа – сейчас" src="img/obrazec_08.webp" />
+<img loading="lazy" alt="Лента «Путь» – так и надо" src="img/obrazec_11.webp" /></p>
+<p><strong>«Что вы получаете»</strong>, 1,84 экрана. Что криво:
+1. Картинка дома шириной 647 px стоит в рамке 342 px – крыша обрезана.
+2. Пять точек-выносок с десктопа сложены списком под картинкой: точку и её описание нельзя увидеть вместе.
+3. Первым идёт «Считается отдельно» – то, что не входит в цену, раньше того, что входит.
+4. Карточки проявляются с задержкой, при быстрой прокрутке видны пустоты.
+5. Шапка, нижняя панель и окно cookie вместе занимают около 30 % экрана.</p>
+<p><strong>Решение:</strong> картинка целиком по ширине с метками 1–5, под ней лента карточек 1–5, нажал метку – лента едет к нужной карточке. «Не входит» – одной строкой в конце.</p>
+<p><img loading="lazy" alt="Что вы получаете – сейчас" src="img/obrazec_04.webp" />
+<img loading="lazy" alt="Что вы получаете при прокрутке" src="img/obrazec-poluchaete_svodka.webp" /></p>
+<p>Сайт Анжелы мы не трогали: правка – по твоему слову.</p>
+<h2>Нужно от тебя</h2>
+<ol>
+<li>Слово по блокам карточки 8X одной строкой – раздел 4.</li>
+<li>«Четыре этапа» на 87.242.100.185 – это «Четыре способа проверить нас до договора»?</li>
+<li>Править ли сам сайт 87.242.100.185 по этим двум блокам.</li>
+</ol>
+<h2>Что раскрыть</h2>
+<ul>
+<li>Разбор одного сайта-образца блок за блоком.</li>
+<li>«Что вы получаете» – прототипом, как будет на телефоне.</li>
+<li>Полный список источников: NN/g, Baymard, web.dev, Lighthouse, Digital.gov.</li>
+</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
