@@ -410,3 +410,4 @@ html[data-theme=light] .v4 .vi{background:#efefec}
   .v4 .tg,.v4 .cn small,.cmp thead th small,.cmp thead .go,.vtag,.ask{font-size:13px}
   .w-btn.sm{font-size:13px;min-height:46px}
 }
+@media (max-width:760px){.cmp.two thead th small,.cmp.two thead .go,.of.vid .vtag{font-size:13px}}
