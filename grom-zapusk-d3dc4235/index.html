@@ -1,0 +1,117 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Гром берёт всё сам: еда, тренировки, задачи</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Гром берёт всё сам: еда, тренировки, задачи</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод:</strong> руками больше ничего не отмечаешь. Гром сам смотрит в Тренера (еда, тренировки, шаги, вес) и в контроль Евы (закрытые задачи с доказательством) и сам начисляет монеты. Кнопки «Зелёная», «Тренировка», «Закрыть день» убраны. Руками остались только магазин и разговор.</p>
+<h2>1. Откуда Гром берёт данные</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Что</th>
+<th>Откуда</th>
+<th>Что даёт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Еда</td>
+<td>Тренер (@trener_artem_bot): ты кидаешь туда фото</td>
+<td>день с едой +10, челлендж «Еда 5 из 5»</td>
+</tr>
+<tr>
+<td>День закрыт</td>
+<td>Тренер: 2 и больше приёмов пищи за день</td>
+<td>серия дней, без урона ночью</td>
+</tr>
+<tr>
+<td>Тренировки</td>
+<td>Тренер, таблица тренировок</td>
+<td>+20, челлендж «Зал 3 из 3», форма тела растёт</td>
+</tr>
+<tr>
+<td>Шаги, сон</td>
+<td>Тренер, с трекера через «Здоровье»</td>
+<td>видно в «Сегодня»</td>
+</tr>
+<tr>
+<td>Вес</td>
+<td>Тренер</td>
+<td>удары по боссу «Жир»</td>
+</tr>
+<tr>
+<td>Задачи</td>
+<td>Ева: закрыта кнопкой «Сделано» или /gotovo с доказательством</td>
+<td>ключевая +50, обычная +15, отдых +20 и лечит</td>
+</tr>
+</tbody>
+</table></div>
+<p>Проверка встроена в источник: Тренер видит фото еды, Ева закрывает задачу только с твоим подтверждением. «Снята» монет не даёт, задачи, закрытые до 15.11, тоже.</p>
+<p>Кнопка внизу теперь <strong>«📋 Сегодня»</strong> – Гром показывает, что увидел сам за день и чего не хватает, чтобы день закрылся.</p>
+<p><img loading="lazy" alt="Так было – ручные кнопки, их больше нет" src="knopki-bylo.webp" /></p>
+<h2>2. Что такое «зелёная»</h2>
+<p>Это из курса Колмакова (АСБ), план недели:
+- <strong>Ключевая задача недели</strong> («зелёная») – их 2, ведут к результату. +50 монет.
+- <strong>Обычная</strong> («жёлтая») – до 5 в неделю. +15.
+- <strong>Отдых</strong> («фиолетовая») – 1 в неделю: хобби, отдых, подарок близким. +20 и лечит героя.</p>
+<p>В боте теперь написано словами, без цветов. Цвет задаче ставишь ты на разборе с Евой в воскресенье, она пишет его в контроль. Задачи без цвета считаются обычными. Ева подтвердила: с сегодняшнего разбора в 18:00 ставит цвет каждой новой задаче. Задачи, которые ты ставишь ей прямо в боте, Гром тоже видит.</p>
+<h2>3. Что проверено вживую</h2>
+<ul>
+<li>Сегодня в 14:44 Гром сам увидел в Тренере 2 приёма пищи (~970 ккал) и сам закрыл день: серия 1, сообщение пришло тебе.</li>
+<li>«Сегодня» на живых данных: еда 2 приёма, тренировок 0, шаги 16 (это проба Быстрой команды), задач у Евы с 15.11 пока ни одной.</li>
+<li>Тесты бота: 46 из 46.</li>
+<li>Нашёл и починил: бой с Черепахой страница запускала по словам «Зелёная задача», а бот теперь пишет «Ключевая задача недели». Поправил на странице и в приложении на маке. На скрине бой запущен именно новым текстом.</li>
+</ul>
+<p><img loading="lazy" alt="Бой с Черепахой по событию «Ключевая задача недели»" src="boy.webp" /></p>
+<p><img loading="lazy" alt="Герой на рабочем столе: выходной, очки" src="stol.webp" /></p>
+<h2>4. Чего пока нет и что нужно от тебя</h2>
+<ul>
+<li><strong>Тренировки с трекера в Тренера не приходят.</strong> Быстрая команда шлёт шаги, калории и сон, а тренировки нет – таблица тренировок пустая. Пока не придут, «Зал 3 из 3» и форма тела стоят. Это работа чата «Тренер»: он сейчас закрыт, задача – научить Быструю команду отдавать тренировки из «Здоровья».</li>
+<li><strong>Вес в Тренере пустой</strong> – босс «Жир» стартует с первого взвешивания в Тренере.</li>
+<li><strong>Сегодня в 18:00 – разбор с Евой:</strong> назови 2 ключевые задачи недели и 1 отдых, Ева поставит цвет.</li>
+<li><strong>Фото для внешности</strong> героя: лицо анфас, если есть – в полный рост.</li>
+</ul>
+<h2>Что раскрыть</h2>
+<p>1 – как Гром решает, что день закрыт, 2 – что делать чату «Тренер» с тренировками, 3 – цены и награды в магазине.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
