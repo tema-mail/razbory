@@ -1,0 +1,122 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Бриф для одного видео готов, старые замечания прототипа исправлены, дизайну переданы тексты первого экрана</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Бриф для одного видео готов, старые замечания прототипа исправлены, дизайну переданы тексты первого экрана</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<h2>1. Бриф: один разговор закрывает все 4 247 пустых мест на сайте</h2>
+<p><strong>Ссылка для клиента:</strong> <a href="https://tema-mail.github.io/razbory/evolution-minsk-brif-video-cd67a376/">tema-mail.github.io/razbory/evolution-minsk-brif-video-cd67a376</a>. На странице голосом объяснено, как записывать.</p>
+<ul>
+<li>На 136 страницах прототипа 4 247 красных меток, разных – 363. Все разложены по 19 вопросам для видео и 6 файлам. Скрипт проверил: неразложенных 0.</li>
+<li><strong>Девять сцен в порядке разговора:</strong></li>
+<li>владелец: о сервисе, гарантия, запчасти, регионы, цены, первый экран;</li>
+<li>мастер: батарея в кадре, марки и модели, как проходит работа.</li>
+</ul>
+<p>Около 70–90 минут, можно в два захода.
+- <strong>Номер вопроса – вслух.</strong> Расшифровка разложит ответы по страницам сама.
+- <strong>Больше всего мест закрывают:</strong>
+  - цены и время – 1 580;
+  - отзывы и рейтинг с карт – 824;
+  - часы работы и ссылки на Telegram и Макс – по 267;
+  - марки и модели – 266.
+- <strong>Цены можно не говорить, а прислать прайсом.</strong> В брифе готовые таблицы: 16 услуг и 35 моделей.
+- <strong>Файлами, не на видео:</strong> ссылки, реквизиты, ссылка на карты с разрешением на отзывы, фото, кто согласится на видеоотзыв, выгрузка статей старого сайта.
+- <strong>Сделаем сами:</strong> юридические тексты, оценку и отзывы с карт.
+- <strong>Приложение для мастера</strong> – вопросы по каждой из 35 моделей из паспортов: регламент, батареи, частые поломки, вопросы владельцев.
+- Технические вопросы (домен, реклама, доступы) в видео не вошли – пришлю отдельным списком.</p>
+<p>В проекте: <code>docs/brif/2026-11-16-video-brif.md</code>. Пересчёт, сколько мест осталось: <code>docs/brif/metki-po-voprosam.py</code>.</p>
+<h2>2. Старые замечания прототипа исправлены – проверка проходит на всех типах страниц</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Было</th>
+<th>Стало</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Длинные блоки на телефоне в 2 экрана: марки, услуги, «Почему сюда», особенности модели, отзывы</td>
+<td>Лента вбок: видно край следующей карточки, под лентой «1 / 8 – листайте вбок». Ставится сама на любой блок с 3 и больше однородными карточками</td>
+</tr>
+<tr>
+<td>«Связаться с нами» наезжала на кнопку первого экрана</td>
+<td>Нижняя панель и «Связаться с нами» появляются, когда первый экран ушёл вверх (правило мобилки)</td>
+</tr>
+<tr>
+<td>Подпись в шапке 11,5 px</td>
+<td>13 px</td>
+</tr>
+<tr>
+<td>Надзаголовок «Видеоотзывы клиентов» без ключа</td>
+<td>Заголовок «Видеоотзывы клиентов о нашей работе», без надзаголовка</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Проверка:</strong> <code>proverka.mjs</code> – PASS на 14 типах страниц из 14 (было от 1 до 3 FAIL на каждой). Снимки 390 px смотрел глазами.</p>
+<p><strong>Живой адрес:</strong> <a href="https://tema-mail.github.io/evolution-service-minsk-proto/">прототип</a> обновлён, <code>/design/</code> на месте.</p>
+<p><img loading="lazy" alt="Первый экран без панелей поверх кнопок" src="glavnaya-390.webp" /></p>
+<p><img loading="lazy" alt="Услуги лентой вбок со счётчиком" src="lenta-uslugi-390.webp" /></p>
+<p><img loading="lazy" alt="Шапка: подпись 13 px" src="shapka-390.webp" /></p>
+<h2>3. Дизайн главной: вид с Фигмы, тексты первого экрана – по правилу</h2>
+<p>Твоё «да» понял так: макет из Фигмы остаётся, тексты меняем по правилу.</p>
+<p>Чат дизайна сейчас сам переделывает первый экран: в 19:49 появилась новая картинка. Если править параллельно, мы перезапишем друг друга. Поэтому передал ему задание напрямую:</p>
+<ul>
+<li>H1 – по SEO-заданию;</li>
+<li>надзаголовок «EVOLUTION CAR SERVICE / МИНСК» – убрать;</li>
+<li>подзаголовок – одна фраза вместо перечня с длинным тире;</li>
+<li>главная кнопка – «Позвонить мастеру»;</li>
+<li>все 11 марок по спросу.</li>
+</ul>
+<p>Проверка задана той же <code>proverka.mjs</code>. Он должен ответить строкой «сделано». Пока ответа нет – <strong>не проверено</strong>.</p>
+<h2>Нужно от тебя</h2>
+<ol>
+<li><strong>Отправить бриф клиенту</strong> и назначить видео (можно на meet.deford.ru, будет расшифровка). Запись или расшифровку – мне, разложу ответы по сайту.</li>
+<li><strong>Глянуть первый экран дизайна</strong>, когда чат дизайна ответит.</li>
+</ol>
+<p>Затрачено на этот шаг – около 1,5 ч.</p>
+<h2>Что раскрыть</h2>
+<ul>
+<li>Какие ещё блоки стали лентой на других типах страниц.</li>
+<li>Как после видео ответы попадут на сайт: номер вопроса → поле данных → страницы.</li>
+</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
