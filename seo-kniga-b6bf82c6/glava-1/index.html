@@ -1,0 +1,349 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Глава 1. Почему сайт забирает топ, а потом вылетает</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Глава 1. Почему сайт забирает топ, а потом вылетает</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод.</strong> Топ, который новый сайт берёт в первые недели, – это аванс от поисковика, а не результат. Удерживают его три вещи, и только в таком порядке: поисковик <strong>видит</strong> сайт (техника), страница <strong>лучше соседей</strong> по сути (контент), сайту <strong>доверяют снаружи</strong> (ссылки, упоминания, отзывы). У EV Sibir в ноябре 2026 провалились все три этажа сразу. Ни одна наша проверка этого не поймала, потому что работа шла как «написали страницы и ждём», а не как конвейер с контролем на выходе.</p>
+<blockquote>
+<p><strong>Ситуация.</strong> evolutioncarservice.ru переехал с Тильды на код в октябре 2026, 340 страниц, в конце октября страницы Zeekr были в топе Google.
+<strong>Что пошло не так.</strong> 16.11 Артём увидел, что нас «вышибло с первой строки» и из ответов нейросетей, а заявок с формы стало в 6 раз меньше.
+<strong>Вопрос главы.</strong> Почему так происходит и как строить работу, чтобы это не повторилось ни на одном проекте.</p>
+</blockquote>
+<h3>Нужно от тебя</h3>
+<ol>
+<li><strong>Кто ведёт drive2, auto.ru и отзывы в 2ГИС для EV.</strong> Без аккаунтов компании ссылок и упоминаний с этих площадок не будет, а это главные площадки нашей ниши.</li>
+<li><strong>Календарь ссылок с 03.11 делал кто-нибудь?</strong> План на 3 размещения в день лежит, а реестра сделанного нет. Если не делали – запускаем с завтрашнего дня: бесплатные площадки, публикуешь ты в своём Chrome.</li>
+<li><strong>Бюджет на платные размещения</strong> 5–15 тыс. ₽ в месяц на EV – да или нет. Только на страницы с 11–25 места и только с пометкой «реклама».</li>
+</ol>
+<h3>Схема: три этажа и что из них вырастает</h3>
+<pre><code> ЭТАЖ 1  ТЕХНИКА        поисковик видит сайт: зеркало, индекс, карта сайта
+    │                   сломано → страниц нет в поиске вообще
+    ▼
+ ЭТАЖ 2  СТРАНИЦА       ответ лучше, чем у соседей по выдаче
+    │                   слабая → поисковик пробует и опускает
+    ▼
+ ЭТАЖ 3  РЕПУТАЦИЯ      ссылки, упоминания, отзывы, карты
+    │                   нет → топ не удержать, особенно в Google
+    ▼
+ ПОЗИЦИИ  ──►  ОТВЕТЫ НЕЙРОСЕТЕЙ (берут из верха выдачи и доверенных площадок)
+    │
+    ▼
+ ЗАЯВКИ   ◄── форма, телефон, мессенджеры: последний шаг, где тоже теряем
+</code></pre>
+<p>Этажи строятся снизу вверх. Третий этаж без первого не работает: ссылки на страницу, которой нет в индексе, ничего не дают. Но и первый без третьего даёт только аванс.</p>
+<h2>1. Этаж техники: Яндекс почти не видел сайт, а мы смотрели не туда</h2>
+<p>Почему так: поисковик хранит сайт под одним «главным» адресом. Если он считает главным старый адрес, а мы с него уводим редиректом на новый, робот теряет страницы и не берёт новые.</p>
+<p><strong>Что было у EV:</strong>
+- Яндекс считал главным старый <code>http://</code>, а сайт жил на <code>https://</code> с редиректом. Инструмент «Переезд сайта», который это лечит, Яндекс выключил после аварии своих дата-центров в октябре 2026.
+- Живой поиск <code>site:evolutioncarservice.ru</code> 16.11 показал <strong>1 страницу из 340</strong>. Вебмастер в это время показывал 23: его данные застыли на 07.10 и не обновляются ни у одного нашего сайта.
+- Ещё 24.10 разбор показал то же самое (23 страницы у Яндекса из 206), рецепт записан. Но рецепт ждал кнопку, которая не работала, и обхода никто не сделал до 16.11.</p>
+<p><strong>Что сделали 16.11:</strong> по <code>http</code> теперь отдаётся сам сайт без редиректа, ссылки на страницах и карта сайта стоят на <code>http</code>, все 355 адресов отправлены в Яндекс через IndexNow, он ответил «принято». Возвращение проверяем 19.11 и 23.11.</p>
+<p><strong>Урок для работы:</strong>
+- Число страниц в Яндексе считаем по <strong>живой выдаче</strong> <code>site:домен</code>, а не по Вебмастеру. Кабинет может врать неделями.
+- Инструмент поисковика выключен – не ждём, обходим своими силами в тот же день.
+- После любого переезда сайта первые 30 дней раз в неделю сверяем: сколько страниц в индексе Яндекса и Google и какой адрес главный.</p>
+<h2>2. Этаж страницы: поисковик сравнивал нас с соседями, и мы проигрывали</h2>
+<p>Почему так: поисковик ставит рядом 10 ответов на один запрос и оставляет наверху тот, который полнее и надёжнее решает задачу человека. Ключевые слова в заголовке – это только вход в сравнение, а не победа.</p>
+<p><strong>Что было у EV (данные агента усиления, 16.11):</strong>
+- У конкурентов из топа по «русификация zeekr 9x» (carsalding, kibercar, russification.ru) были перечень экранов, «что не переводится», про SIM и мастер-аккаунт, сроки, гарантия, вопросы и ответы. У нас этого не было.
+- Фото работ у конкурентов – от 4 до 17 на странице, у нас ни одного.
+- Страница 9X на <strong>73 %</strong> совпадала со страницей 7X. Поисковик видит такие страницы как почти дубли и не понимает, какую показывать. После правки 16.11 совпадение – 24 %.
+- Ещё 07–08.11 мы записали план усиления Zeekr и то, что страницы моделей слишком похожи. План до 16.11 не выполнили.</p>
+<p><strong>Что сделали 16.11:</strong> переписаны Zeekr 9X, раздел Zeekr, RAV4 и главная: таблицы, «что не переводится», сроки и гарантия, по 8 вопросов с ответами, запросы разведены между страницами. Фото работ и разделы про eSIM, CarPlay, RuStore добавляются (агент работает на момент написания главы).</p>
+<p><strong>Урок для работы:</strong>
+- Перед тем как писать страницу, открываем топ-5 по её главному запросу и выписываем, что есть у каждого. Наша страница должна закрыть <strong>всё это плюс своё</strong>: цену, фото своих работ, свой опыт.
+- Страницы одного типа (модели, марки) не делаем по одному шаблону с заменой названия. Наша норма (допущение, проверим на практике) – не больше 30–40 % совпадения текста.
+- План, записанный и не выполненный неделю, – это потеря позиций. У каждого плана есть срок и ответственный.</p>
+<h2>3. Этаж репутации: Google проверил, кто за нас ручается, и почти никого не нашёл</h2>
+<p>Это главный узел для Google, и про него ты спрашивал. Разберём как основу, потому что дальше вся работа по ссылкам строится на этом.</p>
+<h3>Как поисковик понимает «доверие»</h3>
+<ul>
+<li><strong>Ссылка с другого сайта – это голос за тебя.</strong> Идея, с которой начинался Google (PageRank): страница важна, если на неё ссылаются важные страницы. Голоса весят по-разному: ссылка с крупного клуба Zeekr или новостей Новосибирска весит больше, чем сотня ссылок с каталогов-пустышек.</li>
+<li><strong>Тема и место важны.</strong> Для автосервиса в Новосибирске сильнее всего работают автомобильные площадки (drive2, клубы марок, auto.ru), местные сайты и карты своего города.</li>
+<li><strong>Упоминание без ссылки тоже работает.</strong> Особенно для нейросетей: они собирают ответ из верха выдачи и с площадок, которым доверяют (2ГИС, Flamp, drive2). Если о нас там не говорят, нас не назовут в ответе.</li>
+</ul>
+<h3>Что произошло с EV в Google</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Запрос</th>
+<th>27.10–06.11</th>
+<th>07–15.11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zeekr русификация</td>
+<td>9,4</td>
+<td><strong>20,7</strong></td>
+</tr>
+<tr>
+<td>zeekr 9x русификация</td>
+<td>7,9</td>
+<td><strong>12,2</strong></td>
+</tr>
+<tr>
+<td>русификация zeekr 9x цена</td>
+<td>4,9</td>
+<td><strong>8,2</strong></td>
+</tr>
+<tr>
+<td>русификация китайской тойоты</td>
+<td>10,4</td>
+<td><strong>15,4</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Средняя позиция, Google Search Console, снято 16.11.2026.</em></p>
+<ul>
+<li>Все страницы Zeekr опустились разом на 3–4 места, хотя мы их с 07.11 не трогали. Когда падает целая группа без правок, причина обычно на уровне сайта, а не страницы.</li>
+<li><strong>Внешних ссылок у EV – 8, с 7 сайтов</strong> (Яндекс Вебмастер, последняя точка 03.10.2026). Почти все – свои: evolutioncarservice.com, наш канал на Дзене, наша карточка на Яндекс Картах. Независимых голосов за нас почти нет.</li>
+<li>Ссылочный профиль конкурентов не снят: Ahrefs и Semrush у нас нет. То, что у drive2, auto.ru и сетей русификаторов ссылок больше, – очевидно по их размеру, но в цифрах <strong>не проверено</strong>.</li>
+</ul>
+<p><strong>Механика, гипотеза (Google официально её не описывает):</strong> новые страницы поисковик часто ставит высоко на пробу и смотрит, как на них реагируют люди. Через 2–4 недели он сравнивает сайт с соседями по совокупности сигналов, включая доверие. Слабая страница плюс сайт без репутации – и аванс забирают. У EV на это наложились почти-дубли из второго этажа, поэтому что из двух весит больше, сказать нельзя.</p>
+<h3>«Выкупать ссылочную массу» – поправка к самой формулировке</h3>
+<p>Покупать ссылки пачкой ради позиций – прямой путь под фильтр:</p>
+<ul>
+<li><strong>Google:</strong> покупка и продажа ссылок ради позиций – нарушение правил о спаме. Разрешено, только если у платной ссылки стоит пометка <code>rel="sponsored"</code> или <code>rel="nofollow"</code> (<a href="https://developers.google.com/search/docs/essentials/spam-policies">правила Google о спаме</a>, проверено 16.11.2026). Такая ссылка позиций напрямую не двигает, но даёт переходы и упоминание.</li>
+<li><strong>Яндекс:</strong> с 2015 года фильтр «Минусинск» понижает сайты за покупные SEO-ссылки. Отклонить плохие ссылки в Яндексе нельзя, так что пачка с биржи-помойки остаётся с сайтом надолго.</li>
+</ul>
+<p>Правильная задача звучит не «нарастить массу», а <strong>«заработать репутацию»</strong>: чтобы о нас говорили там, где это видят поисковики, нейросети и живые люди Новосибирска. Деньги в этом участвуют, но последними и понемногу.</p>
+<h3>Лестница: в каком порядке строить репутацию</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Ступень</th>
+<th>Что даёт</th>
+<th>Деньги</th>
+<th>У EV сейчас</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Готовность: страница в индексе, техника чистая, цели стоят</td>
+<td>без этого ссылки уходят в пустоту</td>
+<td>0</td>
+<td>Яндекс чинится с 16.11</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Вернуть потерянное: внешние ссылки на старые адреса → 301</td>
+<td>вес, который уже был</td>
+<td>0</td>
+<td>проверено 29.10, потерь нет</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Карты и справочники города: 2ГИС, Яндекс, Zoon, Flamp, одинаковые название, адрес, телефон</td>
+<td>звонки, доверие, источник для нейросетей</td>
+<td>0</td>
+<td>не сверено (в календаре на 03.11)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Партнёры: «где установить» у поставщиков, клубы марок</td>
+<td>сильные естественные ссылки</td>
+<td>0</td>
+<td>не сделано</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Экспертные материалы: drive2, Дзен, местные СМИ, ответы в клубах</td>
+<td>упоминания для людей и нейросетей</td>
+<td>время</td>
+<td>не сделано, нужен ответственный</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Платные размещения на биржах, только с пометкой «реклама»</td>
+<td>вес для позиций в Google</td>
+<td>5–15 тыс. ₽ в месяц</td>
+<td>не начато</td>
+</tr>
+<tr>
+<td>✕</td>
+<td>Прогоны по каталогам, сетки сайтов, накрутка отзывов</td>
+<td>фильтр или ноль</td>
+<td>никогда</td>
+<td>–</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Правила, которые держим на каждой ступени:</strong>
+- Ссылки ставим на страницы с <strong>11–25 места</strong>, которые уже в индексе и под которые есть спрос. На страницу с 50-го места ссылка не поднимет её в топ, на страницу в топ-3 – уже не нужна.
+- <strong>Анкоры</strong> (текст ссылки): голый адрес 50–60 %, название компании 25–30 %, разбавленные фразы 10–15 %, точные «русификация зикр цена» – не больше 5 %. Много точных коммерческих анкоров – прямой сигнал покупки.
+- <strong>Темп:</strong> платных ссылок с весом – 2–4 в месяц на сайт, ровно, а не пачкой.
+- <strong>Каждое размещение – в реестр</strong> с датой, страницей, анкором и меткой UTM. Через 7, 30 и 90 дней проверяем: жива ли ссылка, в индексе ли, двинулась ли страница.
+- Эффект ждём через 1–3 месяца. Гарантий не даёт никто, а кто обещает «топ-3 за месяц» – мошенник.</p>
+<p><strong>Что мы делали не так:</strong> календарь на 3 размещения в день с 03.11 по 02.12 подготовлен 01.11 (<code>~/Documents/linkbilding/evolutioncarservice/kalendar-noyabr-2026.md</code>). Реестра выполненного нет, коротких адресов <code>/go/</code> для меток на сайте тоже нет – похоже, план не исполнялся. И в нём платные темы в клубах стоят почти каждый день. Там это ссылки <code>nofollow</code>, фильтра за них не будет, но и веса для позиций они почти не дают: это реклама и упоминания, а не репутация для Google.</p>
+<h2>4. Как строить работу, чтобы это не повторилось</h2>
+<p>Почему так: все три поломки EV были видны заранее. Зеркало – с 24.10, похожие страницы – с 08.11, нулевая репутация – с 29.10. Не было <strong>конвейера с ответственным на каждой станции</strong> и <strong>тревоги</strong>, которая сработает сама.</p>
+<h3>Конвейер SEO для любого нашего сайта</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Станция</th>
+<th>Что на выходе</th>
+<th>Кто</th>
+<th>Проверка, без которой дальше нельзя</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Спрос и карта</td>
+<td>запросы, сгруппированные по страницам, порог спроса</td>
+<td>seo-lead, analitik-rynka</td>
+<td>у каждой страницы свой спрос, пересечений нет</td>
+</tr>
+<tr>
+<td>2. Техника</td>
+<td>зеркало, индекс, карта сайта, robots</td>
+<td>site-tech</td>
+<td>живой <code>site:</code> в Яндексе и Google совпадает с картой сайта ±10 %</td>
+</tr>
+<tr>
+<td>3. Страница</td>
+<td>текст лучше топ-5, фото своих работ, вопросы и ответы</td>
+<td>marketolog, site-seo</td>
+<td>сравнение с топ-5 по таблице, совпадение с соседними страницами ≤ 40 %</td>
+</tr>
+<tr>
+<td>4. Репутация</td>
+<td>карты, партнёры, площадки, платные – по лестнице</td>
+<td>linkbilding, glavred</td>
+<td>реестр размещений, проверка 7/30/90 дней</td>
+</tr>
+<tr>
+<td>5. Замер</td>
+<td>позиции, показы, ответы нейросетей</td>
+<td>yandex-dannye, сторож</td>
+<td>сравнение двух соседних недель по Search Console</td>
+</tr>
+<tr>
+<td>6. Заявка</td>
+<td>форма, телефон, мессенджеры доходят</td>
+<td>site-forms</td>
+<td>тестовая заявка раз в неделю, сверка Метрики с базой заявок</td>
+</tr>
+<tr>
+<td>7. Тревога</td>
+<td>сообщение тебе и Еве в тот же час</td>
+<td>seo-lead</td>
+<td>падение по порогам ниже – авария, а не вопрос</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Пороги тревоги (предложение, утверди или поправь)</h3>
+<ul>
+<li>Средняя позиция группы страниц ухудшилась на <strong>3+ места</strong> за неделю.</li>
+<li>Страниц в живом <code>site:</code> Яндекса или Google стало меньше на <strong>20 %</strong>.</li>
+<li>Заявок с формы за неделю меньше, чем <strong>половина</strong> прошлой недели, при том же числе визитов.</li>
+<li>Нас перестал называть ИИ-обзор Google или Нейро Яндекса по главному запросу проекта.</li>
+</ul>
+<h3>Ритм</h3>
+<ul>
+<li><strong>Каждый день:</strong> сторож по страницам (индекс, показы, позиция, заявки), бесплатно.</li>
+<li><strong>Каждую неделю:</strong> сравнение недель по Search Console, живой <code>site:</code>, реестр ссылок, тестовая заявка. Итог – в субботнюю сводку.</li>
+<li><strong>Каждый месяц:</strong> топ-5 конкурентов по главным запросам – кто поднялся и что у них появилось.</li>
+</ul>
+<h3>Что ещё мы делали не так (всплыло на этом разборе)</h3>
+<ul>
+<li><strong>Верили кабинету, а не выдаче.</strong> Вебмастер показывал 23 страницы, а на деле была 1.</li>
+<li><strong>Сдавали «нет обвала» при падении.</strong> 16.11 в первом ответе было «7-е место, провала нет». Правило теперь в скилле seo-lead: потеря позиций – это авария.</li>
+<li><strong>Не смотрели на заявки как на результат SEO.</strong> Форма молча выбрасывала часть заявок: скрытое поле-ловушка для ботов срабатывало от автозаполнения браузера. Было 13 заявок за неделю, стало 2, а визитов и звонков столько же (Метрика, 02–09.11 против 10–16.11). Исправлено 16.11.</li>
+<li><strong>Потеряли историю позиций</strong> при переезде с Бегета: «было» по Яндексу сравнить не с чем.</li>
+</ul>
+<h3>Словарь главы</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Слово</th>
+<th>Что значит</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Главное зеркало</td>
+<td>адрес сайта, под которым поисковик его хранит и показывает</td>
+</tr>
+<tr>
+<td>Индекс</td>
+<td>список страниц, которые поисковик знает и может показать</td>
+</tr>
+<tr>
+<td><code>site:домен</code></td>
+<td>запрос в поиске, который показывает страницы сайта в индексе</td>
+</tr>
+<tr>
+<td>Внешняя ссылка, донор</td>
+<td>ссылка на нас с чужого сайта; донор – этот сайт</td>
+</tr>
+<tr>
+<td>Анкор</td>
+<td>текст, на котором стоит ссылка</td>
+</tr>
+<tr>
+<td><code>nofollow</code>, <code>sponsored</code></td>
+<td>пометки ссылки «не передавать вес» и «платная»; позиций почти не дают, переходы и упоминание дают</td>
+</tr>
+<tr>
+<td>ИКС</td>
+<td>индекс качества сайта у Яндекса, грубая мера авторитета донора</td>
+</tr>
+<tr>
+<td>Каннибализация</td>
+<td>две свои страницы борются за один запрос и мешают друг другу</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Что раскрыть</h3>
+<ol>
+<li>План ссылок EV на декабрь по лестнице: какие страницы, где, анкоры, цена.</li>
+<li>Глава 2 книги: спрос и карта сайта – как решить, нужна ли странице своя страница.</li>
+<li>Как работает сторож и как к нему прикрутить пороги тревоги из этой главы.</li>
+</ol>
+<p><a href="../">← Оглавление книги</a></p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
