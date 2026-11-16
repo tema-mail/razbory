@@ -1,0 +1,407 @@
+[
+ {
+  "proj": "avatr-06-konfigurator",
+  "slug": "avatr-06",
+  "name": "Avatr 06",
+  "min": 219900,
+  "max": 229900,
+  "versions": 2,
+  "ask": 22
+ },
+ {
+  "proj": "avatr-06t-konfigurator",
+  "slug": "avatr-06t",
+  "name": "Avatr 06T",
+  "min": 219900,
+  "max": 279900,
+  "versions": 6,
+  "ask": 22
+ },
+ {
+  "proj": "avatr-07-konfigurator",
+  "slug": "avatr-07",
+  "name": "Avatr 07",
+  "min": 229900,
+  "max": 229900,
+  "versions": 1,
+  "ask": 22
+ },
+ {
+  "proj": "avatr-07l-konfigurator",
+  "slug": "avatr-07l",
+  "name": "Avatr 07L",
+  "min": 229900,
+  "max": 279900,
+  "versions": 4,
+  "ask": 22
+ },
+ {
+  "proj": "avatr-12-konfigurator",
+  "slug": "avatr-12",
+  "name": "Avatr 12",
+  "min": 293900,
+  "max": 433900,
+  "versions": 7,
+  "ask": 22
+ },
+ {
+  "proj": "geely-e5-konfigurator",
+  "slug": "geely-e5",
+  "name": "Geely Galaxy E5",
+  "min": 107800,
+  "max": 147800,
+  "versions": 6,
+  "ask": 22
+ },
+ {
+  "proj": "geely-starshine-6-konfigurator",
+  "slug": "geely-starshine-6",
+  "name": "Geely Galaxy Starshine 6",
+  "min": 86800,
+  "max": 106800,
+  "versions": 3,
+  "ask": 22
+ },
+ {
+  "proj": "geely-starship-7-konfigurator",
+  "slug": "geely-starship-7",
+  "name": "Geely Galaxy Starship 7",
+  "min": 109800,
+  "max": 129800,
+  "versions": 4,
+  "ask": 22
+ },
+ {
+  "proj": "geely-xingyuan-konfigurator",
+  "slug": "geely-xingyuan",
+  "name": "Geely Xingyuan",
+  "min": 64800,
+  "max": 94800,
+  "versions": 8,
+  "ask": 22
+ },
+ {
+  "proj": "lixiang-i6-konfigurator",
+  "slug": "lixiang-i6",
+  "name": "Li Auto i6",
+  "min": 249800,
+  "max": 249800,
+  "versions": 1,
+  "ask": 22
+ },
+ {
+  "proj": "lixiang-i8-konfigurator",
+  "slug": "lixiang-i8",
+  "name": "Li Auto i8",
+  "min": 309800,
+  "max": 339800,
+  "versions": 2,
+  "ask": 22
+ },
+ {
+  "proj": "lixiang-i9-konfigurator",
+  "slug": "lixiang-i9",
+  "name": "Li Auto i9",
+  "min": 369800,
+  "max": 369800,
+  "versions": 1,
+  "ask": 22
+ },
+ {
+  "proj": "lixiang-l6-konfigurator",
+  "slug": "lixiang-l6",
+  "name": "Li Auto L6",
+  "min": 249800,
+  "max": 249800,
+  "versions": 1,
+  "ask": 22
+ },
+ {
+  "proj": "lixiang-l8-konfigurator",
+  "slug": "lixiang-l8",
+  "name": "Li Auto L8",
+  "min": 369800,
+  "max": 429800,
+  "versions": 2,
+  "ask": 22
+ },
+ {
+  "proj": "lixiang-l9-konfigurator",
+  "slug": "lixiang-l9",
+  "name": "Li Auto L9",
+  "min": 459800,
+  "max": 509800,
+  "versions": 2,
+  "ask": 22
+ },
+ {
+  "proj": "lixiang-mega-konfigurator",
+  "slug": "lixiang-mega",
+  "name": "Li Auto MEGA",
+  "min": 509800,
+  "max": 509800,
+  "versions": 1,
+  "ask": 22
+ },
+ {
+  "proj": "lynkco-07-konfigurator",
+  "slug": "lynkco-07",
+  "name": "Lynk & Co 07",
+  "min": 155800,
+  "max": 175800,
+  "versions": 3,
+  "ask": 27
+ },
+ {
+  "proj": "lynkco-08-konfigurator",
+  "slug": "lynkco-08",
+  "name": "Lynk & Co 08",
+  "min": 171800,
+  "max": 198800,
+  "versions": 3,
+  "ask": 27
+ },
+ {
+  "proj": "lynkco-09-konfigurator",
+  "slug": "lynkco-09",
+  "name": "Lynk & Co 09",
+  "min": 275800,
+  "max": 275800,
+  "versions": 1,
+  "ask": 22
+ },
+ {
+  "proj": "lynkco-900-konfigurator",
+  "slug": "lynkco-900",
+  "name": "Lynk & Co 900",
+  "min": 299800,
+  "max": 416900,
+  "versions": 7,
+  "ask": 22
+ },
+ {
+  "proj": "lynkco-z20-konfigurator",
+  "slug": "lynkco-z20",
+  "name": "Lynk & Co Z20",
+  "min": 123800,
+  "max": 163800,
+  "versions": 5,
+  "ask": 39
+ },
+ {
+  "proj": "xiaomi-su7-konfigurator",
+  "slug": "xiaomi-su7",
+  "name": "Xiaomi SU7",
+  "min": 219900,
+  "max": 303900,
+  "versions": 3,
+  "ask": 28
+ },
+ {
+  "proj": "xiaomi-su7-ultra-konfigurator",
+  "slug": "xiaomi-su7-ultra",
+  "name": "Xiaomi SU7 Ultra",
+  "min": 529900,
+  "max": 814900,
+  "versions": 3,
+  "ask": 22
+ },
+ {
+  "proj": "xiaomi-yu7-konfigurator",
+  "slug": "xiaomi-yu7",
+  "name": "Xiaomi YU7",
+  "min": 233500,
+  "max": 389900,
+  "versions": 5,
+  "ask": 46
+ },
+ {
+  "proj": "xpeng-g6-konfigurator",
+  "slug": "xpeng-g6",
+  "name": "Xpeng G6",
+  "min": 176800,
+  "max": 186800,
+  "versions": 3,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-g7-konfigurator",
+  "slug": "xpeng-g7",
+  "name": "Xpeng G7",
+  "min": 195800,
+  "max": 205800,
+  "versions": 4,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-g9-konfigurator",
+  "slug": "xpeng-g9",
+  "name": "Xpeng G9",
+  "min": 248800,
+  "max": 278800,
+  "versions": 3,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-g9l-konfigurator",
+  "slug": "xpeng-g9l",
+  "name": "Xpeng G9L",
+  "min": 241800,
+  "max": 319800,
+  "versions": 6,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-gx-konfigurator",
+  "slug": "xpeng-gx",
+  "name": "Xpeng GX",
+  "min": 279800,
+  "max": 359800,
+  "versions": 8,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-l03-konfigurator",
+  "slug": "xpeng-l03",
+  "name": "Xpeng L03",
+  "min": 123800,
+  "max": 156800,
+  "versions": 9,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-l05-konfigurator",
+  "slug": "xpeng-l05",
+  "name": "Xpeng L05",
+  "min": 144800,
+  "max": 176800,
+  "versions": 6,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-m03-konfigurator",
+  "slug": "xpeng-m03",
+  "name": "Xpeng M03",
+  "min": 119800,
+  "max": 151800,
+  "versions": 6,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-p7-konfigurator",
+  "slug": "xpeng-p7",
+  "name": "Xpeng P7",
+  "min": 203800,
+  "max": 301800,
+  "versions": 4,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-p7-plus-konfigurator",
+  "slug": "xpeng-p7-plus",
+  "name": "Xpeng P7+",
+  "min": 186800,
+  "max": 198800,
+  "versions": 4,
+  "ask": 22
+ },
+ {
+  "proj": "xpeng-x9-konfigurator",
+  "slug": "xpeng-x9",
+  "name": "Xpeng X9",
+  "min": 309800,
+  "max": 369800,
+  "versions": 8,
+  "ask": 22
+ },
+ {
+  "proj": "zeekr-001-fr-konfigurator",
+  "slug": "zeekr-001-fr",
+  "name": "Zeekr 001 FR",
+  "min": 769000,
+  "max": 769000,
+  "versions": 1,
+  "ask": 22
+ },
+ {
+  "proj": "zeekr-001-konfigurator",
+  "slug": "zeekr-001",
+  "name": "Zeekr 001",
+  "min": 269800,
+  "max": 365000,
+  "versions": 4,
+  "ask": 22
+ },
+ {
+  "proj": "zeekr-007-gt-konfigurator",
+  "slug": "zeekr-007-gt",
+  "name": "Zeekr 007 GT",
+  "min": 203900,
+  "max": 243900,
+  "versions": 3,
+  "ask": 22
+ },
+ {
+  "proj": "zeekr-007-konfigurator",
+  "slug": "zeekr-007",
+  "name": "Zeekr 007",
+  "min": 203900,
+  "max": 243900,
+  "versions": 3,
+  "ask": 22
+ },
+ {
+  "proj": "zeekr-009-grand-konfigurator",
+  "slug": "zeekr-009-grand",
+  "name": "Zeekr 009 Grand",
+  "min": 789000,
+  "max": 899000,
+  "versions": 2,
+  "ask": 22
+ },
+ {
+  "proj": "zeekr-009-konfigurator",
+  "slug": "zeekr-009",
+  "name": "Zeekr 009",
+  "min": 439800,
+  "max": 469800,
+  "versions": 3,
+  "ask": 24
+ },
+ {
+  "proj": "zeekr-7x-konfigurator",
+  "slug": "zeekr-7x",
+  "name": "Zeekr 7X",
+  "min": 229800,
+  "max": 269800,
+  "versions": 3,
+  "ask": 26
+ },
+ {
+  "proj": "zeekr-9x-konfigurator",
+  "slug": "zeekr-9x",
+  "name": "Zeekr 9X",
+  "min": 465900,
+  "max": 599900,
+  "versions": 7,
+  "ask": 22
+ },
+ {
+  "proj": "zeekr-mix-konfigurator",
+  "slug": "zeekr-mix",
+  "name": "Zeekr MIX",
+  "min": 279900,
+  "max": 299900,
+  "versions": 2,
+  "ask": 22
+ },
+ {
+  "proj": "zeekr-x-konfigurator",
+  "slug": "zeekr-x",
+  "name": "Zeekr X",
+  "min": 155800,
+  "max": 175800,
+  "versions": 3,
+  "ask": 24
+ }
+]
