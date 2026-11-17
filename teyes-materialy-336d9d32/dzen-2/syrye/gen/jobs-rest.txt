@@ -1,0 +1,22 @@
+note-night p/note-night.txt note-posle.jpg
+lc200-night p/lc200-night.txt lc200-posle.jpg
+solaris-night p/solaris-night.txt solaris-posle.jpg
+juke-night p/juke-night.txt juke-posle.jpg
+shuttle-night p/shuttle-night.txt shuttle-posle.jpg
+k1 p/k1.txt
+k2 p/k2.txt h9-rabota.jpg
+k3 p/k3.txt
+k4 p/k4.txt h9-rabota.jpg
+k5 p/k5.txt h9-rabota.jpg
+k7 p/k7.txt
+s1 p/s1.txt
+s2 p/s2.txt
+s3 p/s3.txt
+s4 p/s4.txt
+s5 p/s5.txt
+s7 p/s7.txt
+p1 p/p1.txt solaris-do.jpg
+p2 p/p2.txt solaris-do.jpg
+p3 p/p3.txt solaris-do.jpg
+p4 p/p4.txt
+p7 p/p7.txt solaris-do.jpg

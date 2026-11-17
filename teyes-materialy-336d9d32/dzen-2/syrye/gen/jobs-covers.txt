@@ -1,0 +1,11 @@
+note-vs p/note-vs.txt note-do.jpg note-posle.jpg
+lc200-vs p/lc200-vs.txt lc200-do.jpg lc200-posle.jpg
+solaris-vs p/solaris-vs.txt solaris-do.jpg solaris-posle.jpg
+juke-vs p/juke-vs.txt juke-do.jpg juke-posle.jpg
+shuttle-vs p/shuttle-vs.txt shuttle-do.png shuttle-posle.jpg
+xtrail-night p/xtrail-night.txt xtrail-posle.jpg
+note-night p/note-night.txt note-posle.jpg
+lc200-night p/lc200-night.txt lc200-posle.jpg
+solaris-night p/solaris-night.txt solaris-posle.jpg
+juke-night p/juke-night.txt juke-posle.jpg
+shuttle-night p/shuttle-night.txt shuttle-posle.jpg

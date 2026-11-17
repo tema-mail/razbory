@@ -1,0 +1,10 @@
+# сырьё тяжёлое или чужое: в git не нужно
+syrye/gen/out/
+syrye/gen/ref/
+syrye/ref/
+syrye/kitay/
+syrye/sayt/
+syrye/ws-raw/
+karusel-*/istochniki/*.png
+karusel-*/istochniki/*.jpg
+karusel-*/istochniki/*.webp

@@ -1,0 +1,9 @@
+k1 p/k1.txt
+k3 p/k3.txt
+k7 p/k7.txt
+s1 p/s1.txt
+s2 p/s2.txt
+s3 p/s3.txt
+s4 p/s4.txt
+s5 p/s5.txt
+p4 p/p4.txt

@@ -1,0 +1,37 @@
+OK juke-vs
+OK note-vs
+OK lc200-vs
+OK solaris-vs
+OK xtrail-night
+FAIL lc200-night
+
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+tokens used
+21 510
+FAIL note-night
+Генерация запущена с reference image 1; жду завершения встроенного imagegen, после чего проверю формат и сохраню файл по точному пути.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+tokens used
+19 293
+OK shuttle-vs
+FAIL solaris-night
+Сохрани результат как /Users/artemgalimov/Sites/razbory/teyes-materialy-336d9d32/dzen-2/syrye/gen/out/solaris-night.png (PNG). Затем приведи точную строку, которую передал в imagegen.
+2026-11-17T17:31:06.904414Z ERROR codex_models_manager::manager: failed to refresh available models: timeout waiting for child process to exit
+warning: Skill descriptions were shortened to fit the skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+FAIL juke-night
+=== КОНЕЦ ПРОМТА ===
+Сохрани результат как /Users/artemgalimov/Sites/razbory/teyes-materialy-336d9d32/dzen-2/syrye/gen/out/juke-night.png (PNG). Затем приведи точную строку, которую передал в imagegen.
+warning: Skill descriptions were shortened to fit the skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+FAIL shuttle-night
+=== КОНЕЦ ПРОМТА ===
+Сохрани результат как /Users/artemgalimov/Sites/razbory/teyes-materialy-336d9d32/dzen-2/syrye/gen/out/shuttle-night.png (PNG). Затем приведи точную строку, которую передал в imagegen.
+warning: Skill descriptions were shortened to fit the skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:58 AM.
+DONE
