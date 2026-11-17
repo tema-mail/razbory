@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru" data-brand="cd">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Карточка сделки – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>C</i>COMMUNITY</span>
+  <a class="tab" href="#">Диалоги<span class="n">4</span></a>
+  <a class="tab on" href="#">Сделки</a>
+  <a class="tab" href="#">Автомобили</a>
+  <a class="tab" href="#">Клиенты</a>
+  <a class="tab" href="#">Аналитика</a>
+  <span class="me"><b>Владимир</b> · продажи</span>
+</nav>
+<main>
+  <p class="demo-note">Макет. Клиент, машины, VIN и суммы – пример, не факт. VIN показан не полностью.</p>
+  <div class="tools">
+    <h1>Сделка №114 · Игорь Л. · Mercedes-AMG G 63<small>Пришёл с auto.ru, объявление №1093 · первая линия Марина → ведёт Владимир · <i class="ch ch--tg">TG</i> <i class="ch ch--au">auto</i></small></h1>
+    <button class="btn hide-m">Передать</button>
+    <button class="btn acc">Оформить</button>
+  </div>
+
+  <section class="card">
+    <div class="axis">
+      <p class="axis__t">Сделка <b>· 9 дней с заявки</b></p>
+      <ol class="steps">
+        <li class="done">Заявка<small>08.11</small></li>
+        <li class="done">Подбор<small>08.11</small></li>
+        <li class="done">Просмотр<small>10.11, 12.11</small></li>
+        <li class="now">Бронь<small>до 21.11</small></li>
+        <li>Оформление</li>
+        <li>Выдача</li>
+        <li class="off">Отказ<small>с причиной</small></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="lay lay--deal">
+    <div class="stack">
+      <section class="card car">
+        <div class="card__h"><h2>Машина из каталога</h2><span class="chip hot">бронь до 21.11</span></div>
+        <div class="car__pic"><b>Mercedes-AMG G 63 2025</b><small>Чёрный обсидиан · салон чёрный с красным · 28 км</small></div>
+        <dl class="kv">
+          <div><dt>VIN</dt><dd>W1N4632761X••••••</dd></div>
+          <div><dt>Комплектация</dt><dd>AMG Night, Burmester 3D</dd></div>
+          <div><dt>Наличие</dt><dd>в салоне</dd></div>
+          <div><dt>Объявления</dt><dd class="auto">сняты 17.11 ✓</dd></div>
+        </dl>
+      </section>
+      <section class="card">
+        <div class="card__h"><h2>Расчёт</h2></div>
+        <dl class="sum">
+          <div><dt>Цена по прайсу</dt><dd>28 900 000 ₽</dd></div>
+          <div><dt>Скидка · согласовал РОП</dt><dd>− 300 000 ₽</dd></div>
+          <div><dt>Цена сделки</dt><dd>28 600 000 ₽</dd></div>
+          <div><dt>Зачёт трейд-ина</dt><dd>− 7 600 000 ₽</dd></div>
+          <div><dt>Предоплата 17.11</dt><dd>− 500 000 ₽</dd></div>
+          <div class="total"><dt>Остаток · лизинг</dt><dd>20 500 000 ₽</dd></div>
+        </dl>
+        <div class="lock">
+          <h3>Маржа · видят РОП и главный</h3>
+          <dl class="sum">
+            <div><dt>Закупка с доставкой</dt><dd>26 100 000 ₽</dd></div>
+            <div><dt>Подготовка и расходы</dt><dd>− 240 000 ₽</dd></div>
+            <div><dt>Допы: оклейка, КАСКО</dt><dd>+ 310 000 ₽</dd></div>
+            <div><dt>Комиссия лизинга</dt><dd>+ 180 000 ₽</dd></div>
+            <div class="total"><dt>Маржа сделки</dt><dd>2 750 000 ₽ · 9,6%</dd></div>
+          </dl>
+          <p class="dim">Трейд-ин считается отдельной сделкой: выкупили за 7,6 млн, продадим – маржа запишется туда.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Трейд-ин</h2><span class="chip info">согласование до 20.11</span></div>
+        <dl class="kv">
+          <div><dt>Машина клиента</dt><dd>Porsche Cayenne S 2021</dd></div>
+          <div><dt>Пробег</dt><dd>48 200 км</dd></div>
+          <div><dt>VIN</dt><dd>WP1ZZZ9Y•••••4471</dd></div>
+          <div><dt>Осмотр</dt><dd>16.11 · Глеб · без окрасов</dd></div>
+          <div><dt>Рынок auto.ru</dt><dd class="auto">12 аналогов · 7,9–8,6 млн</dd></div>
+          <div><dt>Предложили</dt><dd class="big">7 600 000 ₽</dd></div>
+          <div><dt>Клиент хочет</dt><dd>8 000 000 ₽</dd></div>
+        </dl>
+        <ol class="ev">
+          <li><time>15.11</time><p>Фото и ПТС прислал в Telegram</p></li>
+          <li><time>16.11</time><p>Осмотр состоялся<small>Глеб: кузов родной, шины под замену</small></p></li>
+        </ol>
+      </section>
+      <section class="card">
+        <div class="card__h"><h2>Оплата</h2></div>
+        <div class="seg"><b>Наличные</b><b>Кредит</b><b class="on">Лизинг</b></div>
+        <div class="rows">
+          <p class="row"><b>Лизинговая компания А</b><span class="okx">одобрено</span><small>Аванс 20%, 36 мес · ответ 14.11</small></p>
+          <p class="row"><b>Лизинговая компания Б</b><span class="dim">на рассмотрении</span><small>Подано 13.11</small></p>
+        </div>
+        <ul class="chk">
+          <li>Карточка компании и ИНН</li>
+          <li>Паспорт директора</li>
+          <li class="no">Бухгалтерская отчётность – ждём до 20.11</li>
+        </ul>
+      </section>
+    </div>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Переписка · Telegram</h2></div>
+        <div class="chat">
+          <p class="m m--in">Владимир, по Cayenne 7,6 мало. Аналоги на auto.ru от 8,2<small>10:41</small></p>
+          <p class="m m--note">Заметка: у аналогов от 8,2 пробег до 30 тыс. Можно дойти до 7,8 с согласия РОП<small>Владимир · только для своих</small></p>
+          <p class="m m--out">Игорь, посчитаю с руководителем и вернусь до 16:00<small>10:52 · Владимир</small></p>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card__h"><h2>Задачи</h2></div>
+        <ul class="chk">
+          <li>Снять G 63 с auto.ru и Авито</li>
+          <li class="no">Ответ по трейд-ину до 20.11</li>
+          <li class="no">Пакет в лизинг до 21.11</li>
+        </ul>
+      </section>
+      <section class="card">
+        <div class="card__h"><h2>История</h2></div>
+        <ol class="ev">
+          <li><time>08.11</time><p>Заявка с auto.ru<small>Марина ответила за 3 мин, бюджет до 30 млн, лизинг на компанию</small></p></li>
+          <li><time>08.11</time><p>Марина передала Владимиру<small>«Хочет G 63 чёрный, трейд-ин Cayenne, лизинг»</small></p></li>
+          <li><time>12.11</time><p>Тест-драйв</p></li>
+          <li><time>17.11</time><p>Бронь, предоплата 500 000 ₽</p></li>
+        </ol>
+      </section>
+    </aside>
+  </div>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги<em>4</em></a><a class="on" href="#"><i>◈</i>Сделки</a><a href="#"><i>▣</i>Машины</a><a href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

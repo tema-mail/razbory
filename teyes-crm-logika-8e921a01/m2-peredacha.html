@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Передача диалога – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab on" href="#">Диалоги<span class="n">6</span></a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab" href="#">Клиенты</a>
+  <a class="tab" href="#">Аналитика</a>
+  <span class="me"><b>Алина</b> · 1 линия</span>
+</nav>
+<main>
+  <p class="demo-note">Макет. Разговор и имена – пример. Окно открывается кнопкой «Передать» в разговоре.</p>
+  <div class="cv">
+    <section class="card only-d">
+      <div class="card__h"><h2>Мои · 6</h2></div>
+      <div>
+        <p class="li on"><i class="ch ch--wa">WA</i><b>Мария</b><span class="dim">ждёт 1:40</span><span class="mut">RAV4 2019 · CC3 и камера</span></p>
+        <p class="li"><i class="ch ch--max">M</i><b>Андрей</b><span class="dim">2 мин</span><span class="mut">LiXiang L7 · русификация</span></p>
+        <p class="li"><i class="ch ch--vk">ВК</i><b>Павел</b><span class="dim">1 ч</span><span class="mut">Outlander · StarLine S96</span></p>
+      </div>
+    </section>
+    <section class="card">
+      <div class="card__h"><h2>Мария · Toyota RAV4 2019<small>WhatsApp · Назвали цену · узнала из ВКонтакте</small></h2><button class="btn acc">Передать</button></div>
+      <div class="chat">
+        <p class="m m--in">Teyes CC3 под ключ сколько выйдет? Чтобы камера осталась и руль работал<small>13:52</small></p>
+        <p class="m m--out">Мария, на RAV4 2019 – CC3 4/64 с рамкой и канбусом, камера и кнопки руля остаются. Под ключ 38 900 ₽<small>13:55 · Алина</small></p>
+        <p class="m m--in">А камеру можно поменять на круговую? И будет ли работать задняя с разметкой?<small>14:03</small></p>
+      </div>
+    </section>
+    <section class="card only-d">
+      <div class="card__h"><h2>Клиент</h2></div>
+      <dl class="kv"><div><dt>Машина</dt><dd>Toyota RAV4 2019</dd></div><div><dt>Стадия</dt><dd>Назвали цену</dd></div><div><dt>Сумма</dt><dd>38 900 ₽</dd></div></dl>
+    </section>
+  </div>
+</main>
+
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="mh">
+  <div class="modal__bg"></div>
+  <section class="modal__box">
+    <header class="modal__head"><div><small class="dim">Мария · Toyota RAV4 2019 · WhatsApp</small><h2 id="mh">Передать разговор</h2></div><button class="x" aria-label="Закрыть">×</button></header>
+
+    <div class="mcol">
+    <div class="fld"><span>Кому</span>
+      <div class="seg"><b class="on">Вторая линия</b><b>Коллеге на 1 линии</b><b>Главному</b></div>
+    </div>
+    <div class="who">
+      <label class="on"><i></i><b>Денис · мастер</b><span class="okx">на смене</span><small>3 открытых · принимает в среднем за 3 мин · камеры и совместимость</small></label>
+      <label><i></i><b>Олег · подбор и крупный чек</b><span class="dim">занят</span><small>7 открытых · принимает за 6 мин</small></label>
+      <label><i></i><b>Любой со второй линии</b><span class="dim">по кругу</span><small>Кто первый на смене освободится</small></label>
+    </div>
+
+    <div class="fld"><span>Причина</span>
+      <div class="chips"><span class="chip on">Технический вопрос</span><span class="chip">Сложный подбор</span><span class="chip">Крупный чек</span><span class="chip">Жалоба</span><span class="chip">Конец смены</span></div>
+    </div>
+
+    <div class="toast" aria-label="Так увидит Денис">
+      <p class="dim">Так увидит Денис – в окне и пушем в приложении</p>
+      <p><b>Алина передала вам Марию · Toyota RAV4 2019</b></p>
+      <p>Технический вопрос: «CC3 + круговой обзор… ответ сегодня до 16:00»</p>
+      <div class="foot"><span class="timer">4:32</span><button class="btn">Вернуть с заметкой</button><button class="btn acc">Принять</button></div>
+    </div>
+    </div>
+
+    <div class="mcol">
+
+    <label class="fld"><span>Заметка для Дениса <em>обязательно</em></span>
+      <textarea>Что хочет: CC3 + круговой обзор вместо штатной камеры, задняя с разметкой.
+Что уже сказали: CC3 под ключ 38 900 ₽ со штатной камерой.
+Что обещали и когда: ответ по круговой сегодня до 16:00.</textarea>
+      <small>Клиент заметку не видит. Без трёх строк «Что хочет / Что сказали / Что обещали» кнопка не активна <span class="src src--code">наш код</span></small>
+    </label>
+
+    <div class="fld"><span>Клиенту</span>
+      <p class="opt"><i class="on">✓</i><span>Ничего не писать – Денис ответит из того же WhatsApp, клиент шва не заметит <small>По умолчанию так</small></span></p>
+      <p class="preview">Если включить: «Мария, подключаю нашего мастера Дениса – по круговой камере он подскажет точнее».</p>
+    </div>
+
+    <div class="rows">
+      <p class="row"><span>Если Денис не принял за</span><b class="num">5 мин</b><small>Разговор вернётся Алине и уйдёт главному в Telegram <span class="src src--code">наш код</span></small></p>
+      <p class="row"><span>Кто отвечает клиенту дальше</span><b>Денис</b><small>Ответственный в Chatwoot меняется на Дениса, команда – «Вторая линия» <span class="src src--box">Chatwoot</span></small></p>
+      <p class="row"><span>Чей лид в отчёте</span><b>Алина</b><small>«Привёл» – первый менеджер, «закрыл» – тот, кто записал. В аналитике видны оба</small></p>
+    </div>
+
+    <div class="foot"><span>Передача запишется в историю: кто, кому, когда, почему</span><button class="btn ghost">Отмена</button><button class="btn primary">Передать Денису</button></div>
+    </div>
+  </section>
+</div>
+
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a class="on" href="#"><i>✉</i>Диалоги<em>6</em></a><a href="#"><i>◷</i>Записи</a><a href="#"><i>☺</i>Клиенты</a><a href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

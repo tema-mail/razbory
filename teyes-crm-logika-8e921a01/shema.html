@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Схема потоков CRM</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR · EV</span>
+  <span class="me"><b>Схема потоков</b></span>
+</nav>
+<main>
+  <div class="tools"><h1>Путь клиента через CRM<small>Слева направо (на телефоне – сверху вниз). Над всем – главный, под всем – контролёр</small></h1></div>
+
+  <p class="band band--boss"><b>Главный</b><span>выдаёт каналы ● / ○</span><span>видит все разговоры</span><span>перекидывает любой диалог и пачкой</span><span>ведёт справочник меток и причин</span><span>видит аналитику и деньги</span></p>
+
+  <ol class="flow">
+    <li><h2>Каналы<small>клиент пишет или звонит</small></h2>
+      <ul><li>Max, Telegram, WhatsApp</li><li>ВК, чат на сайте</li><li>заявки сайта</li><li>звонки – кнопкой</li><li>Instagram – позже</li><li>метка ссылки → «откуда узнал»</li></ul></li>
+    <li><h2>Распределение<small>кому упадёт новый</small></h2>
+      <ul><li>повторный → прежнему менеджеру</li><li>иначе по кругу среди ● на смене</li><li>никто за 3 мин → общая очередь + главному</li><li>вне часов → автоответ, дежурный</li></ul></li>
+    <li><h2>Первая линия<small>ответ, машина, цена, запись</small></h2>
+      <ul><li>ответ до 5 мин</li><li>марка, модель, год</li><li>цена по прайсу</li><li>метка услуги, источник</li><li>сама записывает простое</li></ul></li>
+    <li class="xfer"><h2>Передача<small>в обе стороны</small></h2>
+      <ul><li>заметка: хочет / сказали / обещали</li><li>принять за 5 мин, иначе назад и главному</li><li>клиент шва не видит</li></ul></li>
+    <li><h2>Вторая линия<small>мастер · подбор · крупный чек</small></h2>
+      <ul><li>техвопрос, совместимость</li><li>сложный подбор, дорогой заказ</li><li>записывает или возвращает с заметкой</li></ul></li>
+    <li><h2>Запись → деньги<small>стадии сделки</small></h2>
+      <ul><li>Записан + дата</li><li>Приехал</li><li>Оплатил + сумма</li><li>или Отказ + причина</li></ul></li>
+    <li class="an"><h2>Аналитика<small>сквозная</small></h2>
+      <ul><li>источник × канал</li><li>менеджер × линия</li><li>скорость, конверсии</li><li>деньги и потери</li></ul></li>
+  </ol>
+
+  <p class="band band--ai"><b>Контролёр</b><span>клиент ждёт дольше 5 мин</span><span>передачу не приняли</span><span>закрыто без метки и стадии</span><span>«Отложен» просрочен</span><span>«Назвали цену» без касания 3 дня</span><span class="src src--ai">потом: ИИ-бот ночью на первой линии</span></p>
+</main>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Каналы и менеджеры – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR · EV</span>
+  <a class="tab" href="#">Диалоги</a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab" href="#">Клиенты</a>
+  <a class="tab" href="#">Аналитика</a>
+  <a class="tab on" href="#">Настройки</a>
+  <span class="me"><b>Артём</b> · главный</span>
+</nav>
+<main>
+  <p class="demo-note">Макет экрана главного. Имена, часы и цифры – пример. Зелёная пометка – Chatwoot умеет сам, синяя – наш код поверх него.</p>
+  <div class="tools">
+    <h1>Каналы и менеджеры<small>Кто принимает новые из какого канала, кто только видит переданные, кто дежурит</small></h1>
+    <button class="btn hide-m">＋ Менеджер</button>
+    <button class="btn primary">Сохранить</button>
+  </div>
+
+  <div class="lay lay--side">
+    <div class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Каналы у менеджеров<small>Нажатие по клетке меняет: ● принимает новые → ○ видит переданные → – нет доступа</small></h2><span class="src src--box">участники канала – Chatwoot</span><span class="src src--code">● / ○ – наш код</span></div>
+        <div class="legend"><span><i class="c c--in">●</i>принимает новые</span><span><i class="c c--see">○</i>видит только переданные ему</span><span><i class="c c--no">–</i>канала не видит вовсе</span></div>
+        <div class="scroll-x">
+          <table class="mx">
+            <thead><tr>
+              <th>Менеджер</th>
+              <th><i class="ch ch--max">M</i>TEYES Max</th>
+              <th><i class="ch ch--tg">TG</i>TEYES Telegram</th>
+              <th><i class="ch ch--vk">ВК</i>TEYES ВК</th>
+              <th><i class="ch ch--site">Ч</i>Чат на сайте</th>
+              <th><i class="ch ch--form">З</i>Заявки сайта</th>
+              <th><i class="ch ch--call">☎</i>Звонки</th>
+              <th><i class="ch ch--wa">WA</i>EV WhatsApp</th>
+              <th><i class="ch ch--vk">ВК</i>EV ВК</th>
+              <th><i class="ch ch--ig">IG</i>Instagram</th>
+            </tr></thead>
+            <tbody>
+              <tr><td><b><i class="dot dot--on"></i>Алина</b><small>1 линия · на смене до 19:00 · 6 открытых</small></td>
+                <td><i class="c c--in">●</i></td><td><i class="c c--in">●</i></td><td><i class="c c--in">●</i></td><td><i class="c c--in">●</i></td><td><i class="c c--in">●</i></td><td><i class="c c--in">●</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--no">–</i></td></tr>
+              <tr><td><b><i class="dot dot--on"></i>Ксения</b><small>1 линия · на смене до 19:00 · 4 открытых</small></td>
+                <td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--in">●</i></td><td><i class="c c--in">●</i></td><td><i class="c c--in">●</i></td><td><i class="c c--in">●</i></td><td><i class="c c--in">●</i></td><td><i class="c c--no">–</i></td></tr>
+              <tr><td><b><i class="dot dot--busy"></i>Денис</b><small>2 линия · мастер · в боксе, 3 открытых</small></td>
+                <td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--no">–</i></td></tr>
+              <tr><td><b><i class="dot dot--on"></i>Олег</b><small>2 линия · подбор и крупный чек · 2 открытых</small></td>
+                <td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--no">–</i></td></tr>
+              <tr><td><b><i class="dot"></i>Артём</b><small>главный · видит всё, новые не получает</small></td>
+                <td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--see">○</i></td><td><i class="c c--in">●</i></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__h"><h2>Как раздаём новые разговоры<small>Работает по порядку сверху вниз</small></h2></div>
+        <div class="seg" role="radiogroup" aria-label="Способ раздачи"><b class="on">По кругу</b><b>Самому свободному</b><b>Вручную главный</b></div>
+        <p class="opt"><i class="on">✓</i><span>Повторный клиент – к прежнему менеджеру, если тот на смене и у него есть канал <span class="src src--code">наш код</span><small>Иначе – как новый. Чтобы клиент не объяснял всё заново</small></span></p>
+        <p class="opt"><i class="on">✓</i><span>По кругу – только среди тех, у кого ● на этом канале и кто на смене <span class="src src--box">Chatwoot</span><small>Команда «Первая линия», авто-назначение по кругу среди тех, кто в сети</small></span></p>
+        <p class="opt"><i class="on">✓</i><span>Не больше 12 открытых разговоров на одного <span class="src src--code">проверить в 4.19</span><small>Если в бесплатном Chatwoot потолка нет – считает наш код</small></span></p>
+        <p class="opt"><i class="on">✓</i><span>Никто не взял за 3 минуты – в общую очередь «Без ответственного» и главному в Telegram <span class="src src--code">наш код</span></span></p>
+      </section>
+    </div>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Часы и дежурный</h2><span class="src src--box">часы канала – Chatwoot</span></div>
+        <div class="rows">
+          <p class="row"><b>TEYES</b><span class="num">пн–пт 11–19</span><small>Сб, вс – выходной (уточнить)</small></p>
+          <p class="row"><b>EV Service</b><span class="num">пн–сб 10–20</span><small>Пример, уточнить у EV</small></p>
+          <p class="row"><b>Дежурный вечером</b><span>Алина / Ксения</span><small>По графику через день, 19–22, пуш в приложение на «срочно» <span class="src src--code">наш код</span></small></p>
+          <p class="row"><b>Вне часов</b><span>автоответ</span><small>«Здравствуйте! Ответим завтра с 11:00. Напишите марку, год и что нужно – подготовим цену к утру»</small></p>
+        </div>
+      </section>
+      <section class="card card--note">
+        <div class="card__h"><h2>Что видит менеджер без канала</h2></div>
+        <ul>
+          <li><b>○ видит переданные:</b> в очереди «Новые» этого канала у него пусто, но разговор, который передали лично ему, открывается целиком – с историей и заметкой.</li>
+          <li><b>– нет доступа:</b> канал закрыт и в приложении Chatwoot. Так держим личный Telegram или Instagram владельца.</li>
+          <li><b>Почему так:</b> Chatwoot показывает разговор только участникам канала. Поэтому участниками делаем всех, кому могут передать, а кому падают новые – решает наш список ●.</li>
+        </ul>
+      </section>
+      <section class="card card--note">
+        <div class="card__h"><h2>Массовая передача</h2></div>
+        <p>Менеджер ушёл со смены или заболел – «Передать все открытые Алины → Первая линия» одной кнопкой. Заметка ставится сама: «передано главным, конец смены». <span class="src src--box">Chatwoot: массовые действия</span></p>
+      </section>
+    </aside>
+  </div>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги</a><a href="#"><i>◷</i>Записи</a><a href="#"><i>☺</i>Клиенты</a><a href="#"><i>▥</i>Цифры</a><a class="on" href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Сквозная аналитика – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR · EV</span>
+  <a class="tab" href="#">Диалоги</a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab" href="#">Клиенты</a>
+  <a class="tab on" href="#">Аналитика</a>
+  <a class="tab" href="#">Настройки</a>
+  <span class="me"><b>Артём</b> · главный</span>
+</nav>
+<main>
+  <p class="demo-note">Макет. Все цифры – пример, не факт. Имён и телефонов клиентов на этой странице нет – только числа.</p>
+  <div class="tools">
+    <h1>Сквозная аналитика<small>Откуда пришёл → кто вёл → записался ли → сколько заплатил</small></h1>
+    <span class="sel">30 дней</span>
+    <span class="sel hide-m">TEYES</span>
+    <span class="sel hide-m">Все каналы</span>
+    <button class="btn hide-m">Ввести расходы</button>
+  </div>
+
+  <ol class="chain" aria-label="Цепочка">
+    <li><span>Обращения</span><b>412</b></li>
+    <li><span>Лиды</span><b>351</b><small>85% · без «не_лид»</small></li>
+    <li><span>Назвали цену</span><b>244</b><small>70% лидов</small></li>
+    <li><span>Записаны</span><b>118</b><small>34% лидов</small></li>
+    <li><span>Приехали</span><b>96</b><small>81% записанных</small></li>
+    <li><span>Оплатили</span><b>91</b><small>средний чек 37 600 ₽</small></li>
+    <li class="money"><span>Деньги</span><b>3,42 млн ₽</b></li>
+  </ol>
+
+  <div class="tiles">
+    <div class="tl"><span>Первый ответ, медиана</span><b>3 мин</b><small>в рабочие часы</small></div>
+    <div class="tl tl--hot"><span>Ответили не в срок</span><b>17%</b><small>дольше 5 минут</small></div>
+    <div class="tl"><span>Передано на 2 линию</span><b>38</b><small>принимают за 4 мин</small></div>
+    <div class="tl"><span>Записаны, но не приехали</span><b>22</b><small>19% записей</small></div>
+    <div class="tl"><span>Расход на рекламу</span><b>135 000 ₽</b><small>ввели вручную</small></div>
+    <div class="tl"><span>Стоимость записи</span><b>1 470 ₽</b><small>по платным источникам</small></div>
+  </div>
+
+  <section class="card">
+    <div class="card__h"><h2>Источники: откуда узнали<small>Поле «Откуда узнал» + метка ссылки. Расход – ручной ввод раз в месяц</small></h2><span class="src src--code">наш код</span></div>
+    <div class="scroll-x">
+      <table class="tbl">
+        <thead><tr><th>Источник</th><th>Лиды</th><th>Записи</th><th>Конв.</th><th>Оплатили</th><th>Деньги</th><th>Расход</th><th>Цена записи</th><th>₽ на 1 ₽ расхода</th></tr></thead>
+        <tbody>
+          <tr><td>Яндекс Карты</td><td>112</td><td>41</td><td>37%</td><td>33</td><td>1 240 000</td><td>25 000</td><td>610</td><td>49,6</td></tr>
+          <tr><td>Сайт (поиск и Директ)</td><td>64</td><td>22</td><td>34%</td><td>17</td><td>655 000</td><td>60 000</td><td>2 730</td><td>10,9</td></tr>
+          <tr><td>ВКонтакте</td><td>58</td><td>15</td><td>26%</td><td>11</td><td>402 000</td><td>30 000</td><td>2 000</td><td>13,4</td></tr>
+          <tr><td>Сарафан и повторные</td><td>49</td><td>21</td><td>43%</td><td>17</td><td>690 000</td><td>–</td><td>–</td><td>–</td></tr>
+          <tr><td>2ГИС</td><td>31</td><td>10</td><td>32%</td><td>7</td><td>251 000</td><td>12 000</td><td>1 200</td><td>20,9</td></tr>
+          <tr><td>Авито</td><td>19</td><td>4</td><td>21%</td><td>3</td><td>98 000</td><td>8 000</td><td>2 000</td><td>12,3</td></tr>
+          <tr><td>Дзен</td><td>9</td><td>2</td><td>22%</td><td>1</td><td>31 000</td><td>–</td><td>–</td><td>–</td></tr>
+          <tr><td class="hotx">Не указан</td><td>9</td><td>3</td><td>33%</td><td>2</td><td>53 000</td><td>–</td><td>–</td><td>–</td></tr>
+          <tr class="tot"><td>Всего</td><td>351</td><td>118</td><td>34%</td><td>91</td><td>3 420 000</td><td>135 000</td><td>1 470</td><td>19,6</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="lay lay--2">
+    <section class="card">
+      <div class="card__h"><h2>Менеджеры и линии<small>«Записал» – кто поставил стадию «Записан»</small></h2><span class="src src--code">наш код</span></div>
+      <div class="scroll-x">
+        <table class="tbl">
+          <thead><tr><th>Менеджер</th><th>Лиды</th><th>Ответ</th><th>В срок</th><th>Передал / принял</th><th>Записал</th><th>Деньги</th></tr></thead>
+          <tbody>
+            <tr><td>Алина · 1 линия</td><td>186</td><td>2 мин</td><td>91%</td><td>21 / –</td><td>52 · 28%</td><td>1 610 000</td></tr>
+            <tr><td>Ксения · 1 линия</td><td>165</td><td>4 мин</td><td class="hotx">74%</td><td>17 / –</td><td>41 · 25%</td><td>1 180 000</td></tr>
+            <tr><td>Денис · 2 линия, мастер</td><td>–</td><td>3 мин</td><td>–</td><td>– / 22</td><td>14 · 64%</td><td>390 000</td></tr>
+            <tr><td>Олег · 2 линия, подбор</td><td>–</td><td>6 мин</td><td>–</td><td>– / 16</td><td>11 · 69%</td><td>240 000</td></tr>
+            <tr class="tot"><td>Всего</td><td>351</td><td>3 мин</td><td>83%</td><td>38 / 38</td><td>118 · 34%</td><td>3 420 000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="dim">У второй линии «Ответ» – сколько ждал разговор, пока его приняли после передачи.</p>
+    </section>
+
+    <section class="card">
+      <div class="card__h"><h2>Потери: 233 лида без записи<small>Где уходят деньги</small></h2></div>
+      <div class="bars">
+        <div><span>Отказ с причиной</span><b class="num">97</b><progress value="97" max="233"></progress></div>
+        <div><span>Пропал – клиент не ответил 3 дня</span><b class="num">74</b><progress value="74" max="233"></progress></div>
+        <div><span>Ещё в работе</span><b class="num">62</b><progress class="calm" value="62" max="233"></progress></div>
+      </div>
+      <div class="card__h"><h2>Причины отказа · 97</h2></div>
+      <div class="bars">
+        <div><span>Дорого</span><b class="num">34</b><progress value="34" max="97"></progress></div>
+        <div><span>Не подходит к машине</span><b class="num">18</b><progress value="18" max="97"></progress></div>
+        <div><span>Выбрал другой сервис</span><b class="num">15</b><progress value="15" max="97"></progress></div>
+        <div><span>Сроки</span><b class="num">12</b><progress value="12" max="97"></progress></div>
+        <div><span>Не наш профиль</span><b class="num">9</b><progress value="9" max="97"></progress></div>
+        <div><span>Другое</span><b class="num">9</b><progress value="9" max="97"></progress></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="card__h"><h2>Каналы: куда написали</h2><span class="src src--box">канал – Chatwoot</span><span class="src src--code">разрез – уже считает /hooks/analitika</span></div>
+    <div class="scroll-x">
+      <table class="tbl">
+        <thead><tr><th>Канал</th><th>Лиды</th><th>Записи</th><th>Приехали</th><th>Первый ответ</th></tr></thead>
+        <tbody>
+          <tr><td><i class="ch ch--max">M</i> Max</td><td>104</td><td>38</td><td>31</td><td>2 мин</td></tr>
+          <tr><td><i class="ch ch--wa">WA</i> WhatsApp</td><td>96</td><td>33</td><td>27</td><td>3 мин</td></tr>
+          <tr><td><i class="ch ch--vk">ВК</i> ВКонтакте</td><td>71</td><td>20</td><td>16</td><td>4 мин</td></tr>
+          <tr><td><i class="ch ch--site">Ч</i> Чат на сайте</td><td>38</td><td>13</td><td>11</td><td>2 мин</td></tr>
+          <tr><td><i class="ch ch--form">З</i> Заявки сайта</td><td>27</td><td>9</td><td>7</td><td>11 мин</td></tr>
+          <tr><td><i class="ch ch--call">☎</i> Звонки</td><td>15</td><td>5</td><td>4</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги</a><a href="#"><i>◷</i>Записи</a><a href="#"><i>☺</i>Клиенты</a><a class="on" href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

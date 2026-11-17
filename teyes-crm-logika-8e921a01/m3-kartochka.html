@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Карточка клиента – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab" href="#">Диалоги<span class="n">6</span></a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab on" href="#">Клиенты</a>
+  <a class="tab" href="#">Аналитика</a>
+  <span class="me"><b>Денис</b> · 2 линия</span>
+</nav>
+<main>
+  <p class="demo-note">Макет. Клиент, суммы и история – пример. Наверху две разные строки: «Разговор» – чей сейчас ход, «Сделка» – где клиент в воронке.</p>
+  <div class="tools">
+    <h1>Мария К. · Toyota RAV4 2019<small>+7 913 ··· 07 55 · пишет в <i class="ch ch--wa">WA</i> и <i class="ch ch--max">M</i> · клиент с марта 2025, 3-е обращение</small></h1>
+    <button class="btn hide-m">Передать</button>
+    <button class="btn acc">Записать</button>
+  </div>
+
+  <section class="card">
+    <div class="axis">
+      <p class="axis__t">Разговор <b>· кто должен ответить</b> <span class="src src--box">статус Chatwoot</span></p>
+      <div class="st"><b>Новый</b><b class="on">В работе · ход наш</b><b>Ждём клиента</b><b>Отложен до даты</b><b>Закрыт</b></div>
+      <p class="dim">Меняется сам: клиент написал – «В работе», ответили и ждём – «Ждём клиента», назначили «перезвонить в пт 10:00» – «Отложен» и вернётся в очередь сам.</p>
+    </div>
+    <div class="axis">
+      <p class="axis__t">Сделка <b>· где клиент в воронке</b> <span class="src src--box">поле «Стадия»</span> <span class="src src--code">шаги и отказ – наш экран</span></p>
+      <ol class="steps">
+        <li class="done">Новый<small>12.11</small></li>
+        <li class="done">Узнали машину<small>12.11</small></li>
+        <li class="now">Назвали цену<small>38 900 ₽</small></li>
+        <li>Записан<small>дата</small></li>
+        <li>Приехал</li>
+        <li>Оплатил</li>
+        <li class="off">Отказ<small>с причиной</small></li>
+      </ol>
+      <p class="dim">Двигает только человек (или запись и оплата). Закрытый разговор не закрывает сделку: «Закрыт + Записан» – нормально.</p>
+    </div>
+  </section>
+
+  <div class="lay lay--card">
+    <div class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Клиент и машина</h2><span class="src src--box">поля Chatwoot</span></div>
+        <dl class="kv">
+          <div><dt>Марка</dt><dd>Toyota</dd></div>
+          <div><dt>Модель и год</dt><dd>RAV4 2019</dd></div>
+          <div><dt>Услуга</dt><dd>Teyes CC3 + круговой обзор</dd></div>
+          <div><dt>Назвали цену</dt><dd class="big">38 900 ₽</dd></div>
+          <div><dt>Дата записи</dt><dd>–</dd></div>
+          <div><dt>Оплачено</dt><dd>–</dd></div>
+          <div><dt>Откуда узнала</dt><dd>ВКонтакте</dd></div>
+          <div><dt>Метка ссылки</dt><dd class="auto">vk_post_1411</dd></div>
+          <div><dt>Привёл (1 линия)</dt><dd class="auto">Алина</dd></div>
+          <div><dt>Ведёт сейчас</dt><dd class="auto">Денис · 2 линия</dd></div>
+        </dl>
+        <p class="dim">Серые поля ставятся сами: метка – из ссылки, «Привёл» – первый назначенный, «Ведёт» – текущий ответственный.</p>
+      </section>
+
+      <section class="card">
+        <div class="card__h"><h2>Метки</h2><span class="src src--box">метки Chatwoot</span><span class="src src--code">группы и обязательность – наш экран</span></div>
+        <div class="tg">
+          <div><h3>Услуга · хотя бы одна</h3><p class="chips"><span class="t t--u">усл_магнитола</span><span class="t t--u">усл_камера</span><span class="t t--add">＋</span></p></div>
+          <div><h3>Тип клиента</h3><p class="chips"><span class="t t--k">кл_повторный</span><span class="t t--add">＋</span></p></div>
+          <div><h3>Повод</h3><p class="chips"><span class="t t--p">пов_хочу_больше_функций</span><span class="t t--p">пов_сравнивает_цены</span><span class="t t--add">＋</span></p></div>
+          <div><h3>Служебные</h3><p class="chips"><span class="t t--s">не_лид</span><span class="t t--s">дубль</span><span class="t t--s">жалоба</span></p></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Перед закрытием</h2><span class="src src--code">наш код</span></div>
+        <ul class="chk">
+          <li>Метка услуги или «не_лид»</li>
+          <li>Откуда узнала</li>
+          <li>Стадия выбрана</li>
+          <li class="no">Следующий шаг: дата записи, «Отложен до…» или отказ с причиной</li>
+        </ul>
+        <p class="dim">Пока есть красное – кнопка «Закрыть» серая. Закрыли из приложения Chatwoot в обход – контролёр откроет разговор обратно и напишет заметку.</p>
+        <button class="btn" disabled>Закрыть разговор</button>
+      </section>
+
+      <section class="card">
+        <div class="card__h"><h2>История клиента</h2></div>
+        <ol class="ev">
+          <li><time>сегодня 14:06</time><p>Алина передала Денису<small>Технический вопрос · «CC3 + круговой обзор… ответ до 16:00»</small></p></li>
+          <li><time>сегодня 13:55</time><p>Стадия: Назвали цену · 38 900 ₽<small>Алина</small></p></li>
+          <li><time>12.11</time><p>Разговор №214 открыт · WhatsApp<small>Повторный → назначен прежнему менеджеру (Алина)</small></p></li>
+          <li><time>06.2025</time><p>Разговор №88 · Max · Оплатил 6 500 ₽<small>Регистратор, Ксения</small></p></li>
+          <li><time>03.2025</time><p>Разговор №41 · ВК · Оплатил 24 000 ₽<small>StarLine A63, Алина · откуда узнала: Яндекс Карты</small></p></li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги<em>6</em></a><a href="#"><i>◷</i>Записи</a><a class="on" href="#"><i>☺</i>Клиенты</a><a href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>
