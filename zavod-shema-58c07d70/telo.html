@@ -19,6 +19,9 @@
 @keyframes zsb{to{stroke-dashoffset:-12}}
 @media (prefers-reduced-motion:reduce){.zs-svg path.on{animation:none}}
 .zs-kto{display:inline-flex;align-items:center;gap:5px;border:1px solid color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:7px;padding:1px 7px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+
+.zs-kto.plan{border-style:dashed;background:none}
+.zs-kto.plan:after{content:"в плане";font-weight:500;font-size:11px;color:var(--zm);margin-left:2px}
 .zs-kto:before{content:"";width:8px;height:8px;border-radius:2px;background:var(--c)}
 /* карта */
 .zs-km{position:relative;display:grid;grid-template-columns:1fr auto 1fr;gap:10px 56px;align-items:center;min-height:440px}
@@ -100,7 +103,7 @@ D.vetki.forEach(function(v){v.stancii.forEach(function(k){VET[k]=v})});
 var T={vid:"karta",otkr:{},vybr:null},VIDY=[["karta","Карта"],["provoda","Узлы и провода"],["dorozhki","Кто когда подключается"]];
 if(D.vetki[0])T.otkr[D.vetki[0].kod]=true;
 function cvet(kod){var i=ISP[kod];return !i?"var(--zm)":i.tip==="agent"?"var(--za)":i.tip==="robot"?"var(--zr)":kod==="klient"?"var(--zk)":"var(--zv)"}
-function kto(kod){var i=ISP[kod]||{imya:kod};return '<span class="zs-kto" style="--c:'+cvet(kod)+'" data-isp="'+esc(kod)+'" role="button" tabindex="0">'+esc(i.imya)+"</span>"}
+function kto(kod){var i=ISP[kod]||{imya:kod};return '<span class="zs-kto'+(i.plan?" plan":"")+'" style="--c:'+cvet(kod)+'" data-isp="'+esc(kod)+'" role="button" tabindex="0">'+esc(i.imya)+"</span>"}
 function chislo(n,f){var a=n%100,b=n%10;return a>10&&a<20?f[2]:b===1?f[0]:b>1&&b<5?f[1]:f[2]}
 var SCH=[["stancii",["станция","станции","станций"]],["agenty",["агент","агента","агентов"]],["roboty",["робот","робота","роботов"]],["mehaniki",["механика","механики","механик"]],["vorota",["ворота","ворот","ворот"]],["kanaly",["канал","канала","каналов"]]];
 $("#zs-ch").innerHTML=SCH.map(function(x){var n=D.schetchiki[x[0]]||0;return '<button type="button" data-sp="'+x[0]+'"><b>'+n+"</b><span>"+chislo(n,x[1])+"</span></button>"}).join("");
@@ -137,7 +140,7 @@ function gdeRabotaet(kod){var out=[];D.stancii.forEach(function(s){s.shagi.forEa
 function pokIsp(kod){var i=ISP[kod];if(!i)return;var g=gdeRabotaet(kod),tip={agent:"Агент – нейросеть со своей ролью",robot:"Робот – код без нейросети",chelovek:"Человек"}[i.tip];
 det("<h4>"+esc(i.imya)+"</h4><p>"+kto(kod)+" "+tip+(i.imya_predlozheno?" · имя роли предложено, в коде она без названия":"")+"</p><p>"+esc(i.chto)+"</p><h5>Где работает – "+g.length+"</h5><ul>"+g.map(function(x){return '<li><button type="button" data-st="'+esc(x[0].kod)+'" style="border:0;background:none;padding:0;font-weight:700;text-decoration:underline">'+x[0].nomer+". "+esc(x[0].imya)+"</button> – "+esc(x[1])+"<small>"+esc(x[2])+"</small></li>"}).join("")+"</ul>"+(i.gde?'<p style="color:var(--zm);font-size:12.5px;margin-top:12px">Код: '+esc(i.gde)+"</p>":""))}
 function pokSpisok(chto){var h="";
-if(chto==="agenty"||chto==="roboty"){var tip=chto==="agenty"?"agent":"robot",sp=D.ispolniteli.filter(function(i){return i.tip===tip});h="<h4>"+(tip==="agent"?"Агенты":"Роботы")+" – "+sp.length+"</h4><p>"+(tip==="agent"?"Каждый агент – это нейросеть со своим заданием. Нажми на имя – увидишь, где он работает.":"Роботы работают без нейросети: это код, он не выдумывает и не тратит деньги на модель.")+"</p><ul>"+sp.map(function(i){return "<li>"+kto(i.kod)+"<small>"+esc(i.chto)+"</small></li>"}).join("")+"</ul>"}
+if(chto==="agenty"||chto==="roboty"){var tip=chto==="agenty"?"agent":"robot",sp=D.ispolniteli.filter(function(i){return i.tip===tip&&!i.plan}).concat(D.ispolniteli.filter(function(i){return i.tip===tip&&i.plan}));h="<h4>"+(tip==="agent"?"Агенты":"Роботы")+" – "+sp.length+"</h4><p>"+(tip==="agent"?"Каждый агент – это нейросеть со своим заданием. Нажми на имя – увидишь, где он работает.":"Роботы работают без нейросети: это код, он не выдумывает и не тратит деньги на модель.")+"</p><ul>"+sp.map(function(i){return "<li>"+kto(i.kod)+"<small>"+esc(i.chto)+"</small></li>"}).join("")+"</ul>"}
 else if(chto==="mehaniki"){var po={};(D.mehaniki||[]).forEach(function(m){(po[m.stanciya]=po[m.stanciya]||[]).push(m)});h="<h4>Механики – "+(D.mehaniki||[]).length+"</h4><p>Механика – одно правило или механизм в коде: проверка, запрет, ограничитель, повтор, расписание.</p>"+Object.keys(po).map(function(k){return "<h5>"+esc(ST[k]?ST[k].nomer+". "+ST[k].imya:"Общие для всего завода")+" – "+po[k].length+"</h5><ul>"+po[k].map(function(m){return "<li><b>"+esc(m.imya)+"</b><small>"+esc(m.chto)+" · "+esc(m.gde)+"</small></li>"}).join("")+"</ul>"}).join("")}
 else if(chto==="vorota"){h="<h4>Ворота – "+D.schetchiki.vorota+"</h4><p>Здесь завод останавливается и ждёт человека. Пока «да» нет, дальше работа не идёт.</p><ul>"+D.stancii.map(function(s){return (s.vorota||[]).map(function(v){return '<li><b>'+esc(v.imya)+"</b> "+kto(v.kto)+' · <button type="button" data-st="'+esc(s.kod)+'" style="border:0;background:none;padding:0;text-decoration:underline">'+s.nomer+". "+esc(s.imya)+"</button><small>"+esc(v.chto)+"</small></li>"}).join("")}).join("")+"</ul>"}
 else if(chto==="kanaly"){h="<h4>Каналы – "+(D.kanaly||[]).length+"</h4><ul>"+(D.kanaly||[]).map(function(k){return "<li><b>"+esc(k.imya)+"</b><small>"+esc(k.status)+"</small></li>"}).join("")+"</ul>"}
