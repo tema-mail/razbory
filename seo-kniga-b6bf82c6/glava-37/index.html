@@ -1,0 +1,661 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Глава 37. Bing Webmaster и Brave Search: два входа, о которых забывают</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Глава 37. Bing Webmaster и Brave Search: два входа, о которых забывают</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод.</strong> Нейросетей с поиском много, а поисковых индексов, из которых они берут страницы, всего несколько: Яндекс, Google, Bing, Brave и собственный индекс Perplexity. В России привыкли работать с первыми двумя, поэтому Bing и Brave остаются пустыми – а через Bing получают выдачу ChatGPT, Copilot и DuckDuckGo, через Brave, по открытым данным, ищет Claude и ряд других ИИ-сервисов. Bing подключается за пятнадцать минут импортом из Search Console и даёт отчёт о цитировании в ИИ-ответах Microsoft. У Brave кабинета нет: в его индекс попадают косвенно, а проверяют себя оператором <code>site:</code>.</p>
+<blockquote>
+<p><strong>Ситуация.</strong> Допустим, компания продаёт и обслуживает кофемашины для офисов в трёх городах. В Яндексе и Google сайт стоит уверенно, в оба кабинета вебмастера маркетолог заходит каждую неделю. Руководитель одного из клиентов рассказывает, что искал поставщика через Copilot на рабочем компьютере и компании там не увидел.
+<strong>Что пошло не так.</strong> Проверка в Bing показывает четыре страницы из трёхсот пятидесяти, и среди них нет ни одной страницы услуг. В Brave Search сайт не находится вовсе. Никто ничего не ломал: в Bing сайт просто не добавляли, а про Brave в компании не слышали.
+<strong>Вопрос главы.</strong> Зачем российскому сайту Bing и Brave, как подключить первый и попасть во второй и где вообще нужно регистрироваться, чтобы тебя видели нейросети.</p>
+</blockquote>
+<h3>Схема: кто у кого берёт выдачу</h3>
+<pre><code> ИНДЕКС            КТО ИЗ НЕГО БЕРЁТ                      КАБИНЕТ ВЛАДЕЛЬЦА
+ ---------------------------------------------------------------------------
+ Яндекс    -----&gt;  Алиса, ответы в поиске Яндекса         Яндекс Вебмастер
+
+ Google    -----&gt;  ИИ-обзоры, AI Mode, Gemini             Search Console
+
+ Bing      -----&gt;  Copilot, ИИ-ответы Bing,               Bing Webmaster
+                   ChatGPT (назван официально),           Tools
+                   DuckDuckGo (большая часть ссылок)
+
+ Brave     -----&gt;  поиск и ответы Brave,                  кабинета нет:
+                   Claude (по открытым данным),           форма отправки
+                   ИИ-сервисы через программный доступ    адреса и site:
+
+ Perplexity ----&gt;  Perplexity                             кабинета нет:
+ (свой)                                                   robots.txt
+</code></pre>
+<p>Верхние две строки у большинства сайтов закрыты. Глава – про третью и четвёртую.</p>
+<h2>1. Bing – вход сразу в ChatGPT, Copilot и DuckDuckGo, и открывается он за пятнадцать минут</h2>
+<h3>Зачем российскому сайту Bing</h3>
+<p>Доля самого Bing в российском поиске мала, и ради прямого трафика заниматься им не стоило бы. Причина в другом: его индекс служит сырьём для чужих продуктов.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Кто берёт у Bing</th>
+<th>Откуда известно</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChatGPT с поиском</td>
+<td>Справка OpenAI называет Bing поставщиком поиска, упоминая и других</td>
+<td>Официально</td>
+</tr>
+<tr>
+<td>Copilot – ассистент Microsoft в Windows, браузере и офисных программах</td>
+<td>Microsoft сама считает цитаты Copilot в кабинете Bing</td>
+<td>Официально</td>
+</tr>
+<tr>
+<td>ИИ-ответы в самом Bing</td>
+<td>Тот же отчёт</td>
+<td>Официально</td>
+</tr>
+<tr>
+<td>DuckDuckGo</td>
+<td>В справке DuckDuckGo сказано, что обычные ссылки и картинки в основном получены от Bing, плюс есть свой робот</td>
+<td>Официально</td>
+</tr>
+</tbody>
+</table></div>
+<p>Сайт, которого Bing не знает, для всех четырёх почти не существует. При этом Bing находит новые сайты заметно медленнее Google, особенно небольшие и русскоязычные, поэтому «само проиндексируется» здесь работает плохо.</p>
+<h3>Шаг 0. Проверить, что Bing знает о сайте сейчас</h3>
+<p>Откройте bing.com и введите:</p>
+<pre><code>site:example.ru
+</code></pre>
+<p>Запишите, сколько страниц найдено и есть ли среди них главные страницы услуг. Это точка отсчёта: через месяц сравните.</p>
+<h3>Шаг 1. Регистрация и импорт из Search Console</h3>
+<p>Самый быстрый путь – взять подтверждённые сайты из Google. По описанию Bing, шаги такие.</p>
+<ol>
+<li>Откройте Bing Webmaster Tools (bing.com/webmasters) и войдите с учётной записью Microsoft или Google.</li>
+<li>На странице «My Sites» нажмите «Import».</li>
+<li>Войдите в учётную запись Google, где подтверждён сайт, и нажмите «Allow»: Bing получит доступ к списку ваших подтверждённых сайтов и их карт сайта.</li>
+<li>Bing покажет сайты из Search Console, число карт сайта у каждого и вашу роль. Отметьте нужные и нажмите «Import».</li>
+</ol>
+<p>Что важно знать:</p>
+<ul>
+<li>сайт считается подтверждённым сразу, без файлов и тегов;</li>
+<li>карты сайта переносятся вместе с сайтом;</li>
+<li>за раз можно импортировать до 100 сайтов, всего в одном кабинете – до 1 000;</li>
+<li>Bing периодически сверяется с Search Console. Если отозвать доступ или потерять права в Google, подтверждение в Bing слетит, и его придётся делать вручную;</li>
+<li>данные о кликах и запросах из Google не переносятся: импортируются только сайты и карты.</li>
+</ul>
+<p>Первые цифры в отчётах появляются не сразу: обычно на это уходит от пары дней до пары недель.</p>
+<h3>Шаг 1-б. Ручное подтверждение, если Search Console нет</h3>
+<p>В Bing Webmaster нажмите добавление сайта, введите адрес и выберите один из трёх способов.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Способ</th>
+<th>Что сделать</th>
+<th>Кому удобен</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Файл</td>
+<td>Скачать <code>BingSiteAuth.xml</code> и положить в корень сайта, чтобы он открывался по адресу <code>https://example.ru/BingSiteAuth.xml</code></td>
+<td>Сайтам на своём сервере</td>
+</tr>
+<tr>
+<td>Мета-тег</td>
+<td>Вставить в раздел <code>&lt;head&gt;</code> главной страницы строку <code>&lt;meta name="msvalidate.01" content="ВАШ_КОД"&gt;</code></td>
+<td>Конструкторам и системам управления, где есть поле «код в head»</td>
+</tr>
+<tr>
+<td>Запись в DNS</td>
+<td>Добавить запись типа CNAME с кодом, который выдаст Bing</td>
+<td>Тем, у кого доступ есть только к домену</td>
+</tr>
+</tbody>
+</table></div>
+<p>Файл или тег после подтверждения не удаляйте: Bing проверяет их повторно.</p>
+<h3>Шаг 2. Карта сайта</h3>
+<p>Откройте раздел «Sitemaps». После импорта карта обычно уже там. Если нет – нажмите «Submit sitemap» и укажите адрес, например <code>https://example.ru/sitemap.xml</code>.</p>
+<p>Проверьте три вещи: статус «Success», число найденных адресов похоже на правду, дата последнего чтения свежая. Ещё один способ сообщить о карте – строка в robots.txt, её читают все поисковики:</p>
+<pre><code>Sitemap: https://example.ru/sitemap.xml
+</code></pre>
+<h3>Шаг 3. IndexNow: сообщать о новых страницах сразу</h3>
+<p>IndexNow – открытый протокол, по которому сайт сам сообщает поисковикам: этот адрес появился, изменился или удалён. Его приняли Bing, Яндекс и ещё несколько поисковиков; Google в списке участников нет. По правилам протокола, адрес, отправленный одному участнику, автоматически передаётся остальным. То есть один запрос уведомляет и Bing, и Яндекс.</p>
+<p>Подключение своими руками:</p>
+<ol>
+<li><strong>Получите ключ</strong> – строку от 8 до 128 знаков из латинских букв и цифр. Его можно сгенерировать в разделе «IndexNow» кабинета Bing.</li>
+<li><strong>Положите файл с ключом в корень сайта.</strong> Имя файла – сам ключ с расширением <code>.txt</code>, внутри – тот же ключ:</li>
+</ol>
+<pre><code>https://example.ru/3f9a1c7e5b2d4f60a8c1e9b7d5f30214.txt
+</code></pre>
+<ol start="3">
+<li><strong>Отправляйте адрес при каждой выкладке.</strong> Один адрес – простым запросом:</li>
+</ol>
+<pre><code>https://api.indexnow.org/indexnow?url=https://example.ru/arenda-kofemashin/&amp;key=3f9a1c7e5b2d4f60a8c1e9b7d5f30214
+</code></pre>
+<p>Несколько адресов – одним запросом со списком, до 10 000 за раз:</p>
+<pre><code>POST https://api.indexnow.org/indexnow
+Content-Type: application/json; charset=utf-8
+
+{
+  &quot;host&quot;: &quot;example.ru&quot;,
+  &quot;key&quot;: &quot;3f9a1c7e5b2d4f60a8c1e9b7d5f30214&quot;,
+  &quot;urlList&quot;: [
+    &quot;https://example.ru/arenda-kofemashin/&quot;,
+    &quot;https://example.ru/obsluzhivanie/&quot;,
+    &quot;https://example.ru/blog/kak-vybrat-kofemashinu-v-ofis/&quot;
+  ]
+}
+</code></pre>
+<ol start="4">
+<li><strong>Смотрите на код ответа.</strong></li>
+</ol>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Что значит</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Адрес принят</td>
+</tr>
+<tr>
+<td>202</td>
+<td>Адрес получен, ключ ещё проверяется</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Ключ не найден или не совпадает с файлом</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Адрес не с этого сайта или ключ не по формату</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Слишком много запросов, похоже на спам</td>
+</tr>
+</tbody>
+</table></div>
+<p>Для популярных систем управления сайтом есть готовые модули IndexNow – тогда шаги 1–3 делает модуль. На конструкторах, куда нельзя положить файл в корень, подключить протокол часто невозможно; остаются карта сайта и ручная отправка в разделе «URL Submission». Как IndexNow вписывается в общую схему обхода – в <a href="../glava-14/">главе 14</a>.</p>
+<p>Отправлять нужно только настоящие изменения. Ежедневная отправка всех адресов сайта «на всякий случай» учит поисковик не верить сигналам.</p>
+<h3>Шаг 4. Какие отчёты смотреть</h3>
+<p>Названия разделов приведены на осень 2026 года; Microsoft их иногда переименовывает.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Раздел</th>
+<th>Что показывает</th>
+<th>Как часто смотреть</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Search Performance</strong></td>
+<td>Показы, клики, запросы и страницы в обычном поиске Bing</td>
+<td>Раз в месяц</td>
+</tr>
+<tr>
+<td><strong>AI Performance</strong></td>
+<td>Как часто сайт цитируют в ИИ-ответах Microsoft</td>
+<td>Раз в месяц</td>
+</tr>
+<tr>
+<td><strong>URL Inspection</strong></td>
+<td>Что Bing знает о конкретном адресе: в индексе ли, когда обойдён, какие проблемы</td>
+<td>Когда страницы нет в поиске</td>
+</tr>
+<tr>
+<td><strong>Site Explorer</strong></td>
+<td>Дерево сайта глазами Bing: сколько страниц в индексе, с ошибками, с перенаправлениями</td>
+<td>После запуска и после переделок</td>
+</tr>
+<tr>
+<td><strong>Sitemaps</strong></td>
+<td>Статус карт сайта</td>
+<td>После выкладок</td>
+</tr>
+<tr>
+<td><strong>IndexNow</strong></td>
+<td>Какие адреса получены по протоколу и откуда</td>
+<td>После настройки, потом по необходимости</td>
+</tr>
+<tr>
+<td><strong>Recommendations</strong> и <strong>Site Scan</strong></td>
+<td>Технические замечания: заголовки, описания, ошибки</td>
+<td>Раз в квартал</td>
+</tr>
+</tbody>
+</table></div>
+<p>Через две недели после подключения вернитесь к шагу 0 и повторите запрос <code>site:</code>. Если число страниц не выросло, откройте «URL Inspection» для двух-трёх важных адресов: там будет причина.</p>
+<h3>Отчёт AI Performance: первый официальный замер цитирования</h3>
+<p>В феврале 2026 года Microsoft открыла в кабинете Bing отчёт «AI Performance» в статусе публичной предварительной версии. Это первый случай, когда крупный поисковик показывает владельцу сайта цифры по ИИ-ответам.</p>
+<p>Что в нём есть:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Показатель</th>
+<th>Что означает</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Citations</td>
+<td>Сколько раз страницы сайта были показаны как источник в ИИ-ответах за период</td>
+</tr>
+<tr>
+<td>Average Cited Pages</td>
+<td>Сколько разных страниц сайта в среднем цитируется за день</td>
+</tr>
+<tr>
+<td>Grounding Queries</td>
+<td>Ключевые фразы, по которым система находила ваши страницы для ответа. Это выборка, и это не дословные вопросы людей</td>
+</tr>
+<tr>
+<td>Цитирование по страницам</td>
+<td>Какие адреса цитируются и как часто</td>
+</tr>
+<tr>
+<td>График по времени</td>
+<td>Как меняется число цитат</td>
+</tr>
+</tbody>
+</table></div>
+<p>Какие продукты он охватывает: Copilot, ИИ-ответы в Bing и, по формулировке Microsoft, отдельные партнёрские интеграции.</p>
+<p>Три ограничения, о которых нужно помнить:</p>
+<ol>
+<li><strong>Это не ChatGPT.</strong> Отчёт показывает цитирование в продуктах Microsoft. Что происходит с вашим сайтом в ChatGPT, из него не видно, хотя общий источник у них отчасти один.</li>
+<li><strong>Нет кликов.</strong> Отчёт считает показы в качестве источника, а не переходы.</li>
+<li><strong>Нет места в ответе.</strong> Microsoft прямо оговаривает: цифры не говорят, где и как страница была показана в ответе и насколько она была важна.</li>
+</ol>
+<p>По сообщениям отраслевых изданий, позже в отчёт добавили доли цитирования и темы; сверяйтесь с тем, что видите у себя.</p>
+<p>Как использовать отчёт на деле. Фразы из «Grounding Queries» – это подсказка, по каким темам система считает ваш сайт источником. Если там только блог, а страницы услуг не цитируются ни разу, значит, им не хватает прямых ответов (<a href="../glava-30/">Глава 30</a>). Если отчёт пуст через месяц – проверьте сначала обычный индекс: без него цитировать нечего.</p>
+<h3>Два мета-тега Bing для тех, кто хочет ограничить использование</h3>
+<p>Bing описал два тега, которые управляют использованием страницы в своих ИИ-ответах. Обычную выдачу Bing они не затрагивают.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Тег</th>
+<th>Что разрешено</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Тегов нет</td>
+<td>Страница может использоваться в ИИ-ответах целиком</td>
+</tr>
+<tr>
+<td><code>NOCACHE</code></td>
+<td>В ответах используются только адрес, заголовок и фрагмент</td>
+</tr>
+<tr>
+<td><code>NOARCHIVE</code></td>
+<td>Страница не используется в ИИ-ответах и не получает там ссылок</td>
+</tr>
+</tbody>
+</table></div>
+<p>Бизнесу, который хочет, чтобы его называли, эти теги не нужны. Знать о них стоит по другой причине: <code>noarchive</code> иногда остаётся в шаблонах сайта со старых времён, и тогда сайт сам себя исключает.</p>
+<h2>2. Brave Search – независимый индекс без кабинета вебмастера, и попасть в него можно только косвенно</h2>
+<h3>Что это и почему о нём заговорили</h3>
+<p>Brave Search – поисковик компании, выпускающей браузер Brave. В нём он стоит поиском по умолчанию. Особенность, ради которой его включили в эту главу: с 2023 года Brave, по собственному заявлению, отдаёт результаты только из своего индекса, без обращения к Bing или Google.</p>
+<p>Собственных индексов интернета в мире немного, и каждый стал товаром: ИИ-сервисам нужен поиск, а строить свой долго и дорого. Brave продаёт программный доступ к своему индексу и на странице этого продукта пишет, что каждый результат приходит из собственного независимого индекса, а среди клиентов – крупные разработчики ИИ.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Что известно</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>У Brave свой индекс, результаты Bing и Google не подмешиваются</td>
+<td>Заявление Brave</td>
+</tr>
+<tr>
+<td>Программный доступ к индексу покупают ИИ-компании; на странице продукта показаны их логотипы</td>
+<td>Заявление Brave</td>
+</tr>
+<tr>
+<td>Среди клиентов есть разработчик одной из трёх крупнейших моделей, не названный по имени</td>
+<td>Заявление Brave</td>
+</tr>
+<tr>
+<td>За веб-поиском Claude стоит Brave</td>
+<td>Косвенно: Brave появился в перечне обработчиков данных Anthropic, а проверки показали совпадение выдачи. Подробно – в <a href="../glava-34/">главе 34</a></td>
+</tr>
+<tr>
+<td>В самом Brave Search есть ответы с ИИ, в браузере – встроенный ассистент</td>
+<td>Возможности продукта</td>
+</tr>
+</tbody>
+</table></div>
+<p>Вывод: сам по себе Brave Search российскому бизнесу трафика не даст. Он важен как склад, из которого берут страницы чужие ассистенты.</p>
+<h3>Как страницы попадают в индекс Brave</h3>
+<p>По справке Brave, работают два источника.</p>
+<p><strong>Собственный робот.</strong> У него три особенности:</p>
+<ul>
+<li>он не представляется отдельным именем и выглядит как обычный браузер. Brave объясняет это тем, что многие сайты пускают только робота Google;</li>
+<li>он не обходит страницы, которые закрыты для обхода роботу Google;</li>
+<li>robots.txt не убирает страницу из индекса Brave. Для этого нужен <code>noindex</code> на самой странице, и робот должен зайти на неё ещё раз, чтобы запрет подействовал.</li>
+</ul>
+<p><strong>Данные браузера.</strong> Пользователи Brave могут добровольно включить участие в проекте сбора адресов (Web Discovery Project). Тогда браузер в обезличенном виде сообщает, какие страницы посещались и по каким запросам. По умолчанию это выключено. Так Brave узнаёт о страницах, на которые ходят живые люди.</p>
+<p>Отсюда понятно, почему российских местных сайтов в Brave мало: пользователей браузера в России немного, а робот без подсказок до небольшого сайта доходит не скоро. К тому же, по сообщениям, в индекс Brave попадает лишь небольшая часть адресов, о которых он знает.</p>
+<p>Чего у Brave нет:</p>
+<ul>
+<li>кабинета вебмастера;</li>
+<li>отправки карты сайта;</li>
+<li>участия в IndexNow: в официальном списке участников протокола его нет.</li>
+</ul>
+<p>Есть только форма отправки адреса на повторный обход или удаление.</p>
+<h3>Как проверить, есть ли сайт в Brave</h3>
+<ol>
+<li>Откройте search.brave.com.</li>
+<li>Введите <code>site:example.ru</code>. Оператор поддерживается и показывает страницы только с указанного сайта.</li>
+<li>Затем проверьте важные разделы по отдельности:</li>
+</ol>
+<pre><code>site:example.ru/arenda-kofemashin/
+site:example.ru/obsluzhivanie/
+site:example.ru кофемашина в офис аренда
+</code></pre>
+<ol start="4">
+<li>Введите название компании без оператора и посмотрите, что Brave показывает первым: ваш сайт, карточку в справочнике или чужую страницу.</li>
+</ol>
+<p>Как читать результат:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Что видите</th>
+<th>Что делать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сайт не найден</td>
+<td>Проходить все шаги следующего раздела</td>
+</tr>
+<tr>
+<td>Есть главная и случайные страницы</td>
+<td>Отправить важные страницы через форму, усилить внутренние ссылки на них</td>
+</tr>
+<tr>
+<td>Страницы есть, заголовки и описания старые</td>
+<td>Отправить на повторный обход</td>
+</tr>
+<tr>
+<td>По названию компании первым идёт справочник, а не сайт</td>
+<td>Проверить, верны ли там данные: именно их увидит ассистент</td>
+</tr>
+<tr>
+<td>Всё на месте</td>
+<td>Вернуться через месяц</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Как попасть в Brave, если вас там нет</h3>
+<ol>
+<li><strong>Откройте сайт для Googlebot.</strong> Проверьте robots.txt и отсутствие <code>noindex</code> на нужных страницах. Что закрыто для Google – закрыто и для Brave.</li>
+<li><strong>Проверьте защиту сайта.</strong> Если она показывает проверку всем, кто не входит в список известных роботов, робот Brave её не пройдёт: он выглядит как обычный посетитель без отметки «я робот». Правила должны пропускать обычные браузерные запросы к страницам.</li>
+<li><strong>Отдавайте текст в коде страницы.</strong> Если содержимое рисует скрипт, взять с неё нечего (<a href="../glava-13/">Глава 13</a>).</li>
+<li><strong>Отправьте адреса через форму Brave.</strong> Ссылка на неё есть в справке Brave о роботе. Отправляйте главную и 5–10 важнейших страниц. Это просьба, а не гарантия.</li>
+<li><strong>Получите ссылки с сайтов, которые в Brave уже есть.</strong> Проверьте оператором <code>site:</code> площадки, где вы представлены или можете быть: отраслевые каталоги, справочники, профильные издания, партнёры. Ссылка с такой страницы приводит робота к вам.</li>
+<li><strong>Ждите и перепроверяйте</strong> через две-три недели, затем раз в месяц.</li>
+</ol>
+<p>Чего делать не надо: накручивать посещения через браузер Brave и покупать пачки ссылок ради индекса. Первое бессмысленно и нарушает правила, второе несёт те же риски, что в любом поисковике (<a href="../glava-27/">Глава 27</a>).</p>
+<h2>3. Индексов мало, а нейросетей много: одна таблица закрывает вопрос «где регистрироваться»</h2>
+<h3>Таблица: нейросеть – чей индекс – что делать владельцу</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Нейросеть</th>
+<th>Чей индекс и роботы</th>
+<th>Где регистрироваться и что сделать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Алиса, ответы в поиске Яндекса</td>
+<td>Индекс Яндекса</td>
+<td>Яндекс Вебмастер, карта сайта, IndexNow, Яндекс Бизнес (<a href="../glava-32/">Глава 32</a>)</td>
+</tr>
+<tr>
+<td>ИИ-обзоры Google, AI Mode</td>
+<td>Индекс Google, робот Googlebot</td>
+<td>Search Console, карта сайта; не ставить случайный <code>nosnippet</code> (<a href="../glava-36/">Глава 36</a>)</td>
+</tr>
+<tr>
+<td>Gemini (приложение)</td>
+<td>Память модели и поиск Google</td>
+<td>То же, плюс не закрывать Google-Extended</td>
+</tr>
+<tr>
+<td>ChatGPT</td>
+<td>Bing (официально) и другие поставщики; свой робот OAI-SearchBot</td>
+<td>Bing Webmaster Tools, IndexNow; открыть OAI-SearchBot (<a href="../glava-33/">Глава 33</a>)</td>
+</tr>
+<tr>
+<td>Copilot и ИИ-ответы Bing</td>
+<td>Индекс Bing, робот Bingbot</td>
+<td>Bing Webmaster Tools; отчёт AI Performance</td>
+</tr>
+<tr>
+<td>DuckDuckGo</td>
+<td>В основном Bing, плюс свой робот</td>
+<td>Bing Webmaster Tools</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>По открытым данным – Brave; свои роботы Claude-User и Claude-SearchBot</td>
+<td>Проверка <code>site:</code> в Brave, форма отправки адреса; открыть роботов (<a href="../glava-34/">Глава 34</a>)</td>
+</tr>
+<tr>
+<td>Perplexity</td>
+<td>Собственный индекс, робот PerplexityBot</td>
+<td>Кабинета нет; открыть PerplexityBot и проверить защиту (<a href="../glava-35/">Глава 35</a>)</td>
+</tr>
+<tr>
+<td>Поиск и ответы Brave</td>
+<td>Индекс Brave</td>
+<td>Кабинета нет; <code>site:</code> и форма отправки</td>
+</tr>
+<tr>
+<td>Ассистенты без поиска</td>
+<td>Только память модели</td>
+<td>Напрямую никак; работает многолетнее присутствие бренда в интернете</td>
+</tr>
+</tbody>
+</table></div>
+<p>Про ассистентов, которых в таблице нет, действует простое правило: если компания не публикует, чей поиск использует и как называется её робот, угадывать не нужно. Достаточно держать сайт открытым и быть в четырёх главных индексах.</p>
+<h3>Что из таблицы следует</h3>
+<p><strong>Кабинетов всего три.</strong> Яндекс Вебмастер, Search Console, Bing Webmaster. Четвёртого и пятого не существует, что бы ни обещали продавцы «регистрации сайта в нейросетях».</p>
+<p><strong>Сигнал о новых страницах – один.</strong> IndexNow уведомляет Bing и Яндекс сразу. Google узнаёт из карты сайта и Search Console. Brave и Perplexity узнают сами, по ссылкам и обходу.</p>
+<p><strong>Роботов нужно не закрывать, а не «подключать».</strong> Никакой регистрации у OpenAI, Anthropic или Perplexity для владельца сайта нет. Есть robots.txt и защита сайта, которые либо пускают роботов, либо нет.</p>
+<h3>Один robots.txt для всех</h3>
+<p>Самый надёжный вариант – ничего не писать про роботов нейросетей и держать общую группу открытой:</p>
+<pre><code>User-agent: *
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /search/
+
+Sitemap: https://example.ru/sitemap.xml
+</code></pre>
+<p>Вариант для тех, кто хочет быть в ответах, но не отдавать тексты в обучение:</p>
+<pre><code># Поиск и ответы нейросетей: открыто
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /search/
+
+# Обучение моделей: закрыто
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+Disallow: /
+
+# Все остальные, включая Яндекс, Google и Bing
+User-agent: *
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /search/
+
+Sitemap: https://example.ru/sitemap.xml
+</code></pre>
+<p>Два предупреждения к второму варианту. Запрет Google-Extended убирает сайт и из ответов приложения Gemini, а не только из обучения (<a href="../glava-36/">Глава 36</a>). И запреты служебных разделов приходится повторять в каждой группе: робот, нашедший своё имя, общую группу не читает.</p>
+<h3>Порядок работ на один вечер</h3>
+<ol>
+<li>Проверить <code>site:</code> в Bing и в Brave, записать числа.</li>
+<li>Импортировать сайт в Bing Webmaster из Search Console.</li>
+<li>Проверить карту сайта в разделе «Sitemaps».</li>
+<li>Подключить IndexNow или убедиться, что он уже работает для Яндекса: тогда Bing получает те же сигналы.</li>
+<li>Открыть robots.txt и настройки защиты: роботы нейросетей не закрыты.</li>
+<li>Отправить главные страницы через форму Brave.</li>
+<li>Поставить напоминание: через две недели и дальше раз в месяц повторять шаг 1 и смотреть отчёты Bing.</li>
+</ol>
+<h3>Как правильно: чек-лист</h3>
+<ul>
+<li>[ ] Записать, сколько страниц сайта находит <code>site:</code> в Bing и в Brave.</li>
+<li>[ ] Подключить Bing Webmaster Tools импортом из Search Console или вручную.</li>
+<li>[ ] Убедиться, что карта сайта в Bing прочитана без ошибок.</li>
+<li>[ ] Подключить IndexNow: файл с ключом в корне, отправка при выкладке, ответ с кодом 200.</li>
+<li>[ ] Проверить в «URL Inspection» две-три главные страницы.</li>
+<li>[ ] Проверить, что в шаблоне сайта нет случайного тега <code>noarchive</code>.</li>
+<li>[ ] Через месяц открыть «AI Performance» и выписать цитируемые страницы и фразы.</li>
+<li>[ ] Проверить, что важные страницы открыты для Googlebot и не закрыты защитой от обычных посетителей.</li>
+<li>[ ] Отправить главную и ключевые страницы через форму Brave.</li>
+<li>[ ] Найти площадки, которые уже есть в Brave, и получить с них ссылки и упоминания.</li>
+<li>[ ] Свести robots.txt к одному из двух образцов выше.</li>
+<li>[ ] Раз в месяц повторять проверку <code>site:</code> в обоих поисковиках.</li>
+</ul>
+<h3>Частые ошибки</h3>
+<ul>
+<li>Считать Bing ненужным из-за малой доли в России – и выпасть из источника ChatGPT, Copilot и DuckDuckGo.</li>
+<li>Импортировать сайт в Bing и больше не заходить: карта сайта с ошибкой, в индексе десять страниц, никто не знает.</li>
+<li>Отозвать доступ Bing к учётной записи Google – подтверждение сайта слетает.</li>
+<li>Удалить файл или тег подтверждения после проверки.</li>
+<li>Каждый день отправлять по IndexNow весь сайт, а не изменения.</li>
+<li>Читать отчёт AI Performance как «видимость в ChatGPT» – он про продукты Microsoft.</li>
+<li>Искать кабинет вебмастера Brave или платить за «добавление в Brave».</li>
+<li>Искать робота Brave в журналах по имени – он не представляется.</li>
+<li>Закрыть страницу для Google и ждать её в Brave.</li>
+<li>Покупать услугу «регистрация сайта в нейросетях» – регистрироваться негде, кроме трёх кабинетов поисковиков.</li>
+</ul>
+<h3>Где мнения расходятся</h3>
+<ul>
+<li><strong>Насколько ChatGPT зависит от Bing.</strong> Официально Bing назван поставщиком. Эксперименты практиков показывают и следы Google. Одни из этого делают вывод, что Bing можно не заниматься; другие – что без него нельзя. Подключение занимает пятнадцать минут, так что спор дешевле закрыть действием.</li>
+<li><strong>Стоит ли малому бизнесу думать о Brave.</strong> Скептики говорят: аудитории нет, кабинета нет, влияния не измерить. Сторонники отвечают: проверка занимает пять минут, а индекс питает ассистентов, которыми пользуются люди, принимающие решения. Разумно проверить, отправить форму и не тратить на это больше часа в квартал.</li>
+<li><strong>Чему верить в отчёте AI Performance.</strong> Часть специалистов считает его прорывом, часть – витриной без кликов и без сравнения с конкурентами. Обе оценки верны: это первый официальный замер, и он показывает меньше, чем хотелось бы. Как сочетать его с ручными проверками – в <a href="../glava-38/">главе 38</a>.</li>
+<li><strong>Нужно ли закрывать роботов обучения.</strong> Доводы те же, что в главах о каждой нейросети. Здесь добавим одно: какой бы вариант вы ни выбрали, он должен быть записан одним файлом и понятен тому, кто придёт после вас.</li>
+</ul>
+<h3>Что подтверждено официально, а что – наблюдения</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Утверждение</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Импорт из Search Console: шаги, перенос карт сайта, лимиты 100 и 1 000, периодическая сверка</td>
+<td>Официально: <a href="https://blogs.bing.com/webmaster/september-2019/Import-sites-from-Search-Console-to-Bing-Webmaster-Tools">блог Bing для вебмастеров</a></td>
+</tr>
+<tr>
+<td>Отчёт AI Performance: показатели, охват Copilot и ИИ-ответов Bing, оговорки</td>
+<td>Официально: <a href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview">анонс Bing от февраля 2026 года</a></td>
+</tr>
+<tr>
+<td>Доли цитирования и темы в отчёте</td>
+<td>Сообщения отраслевых изданий</td>
+</tr>
+<tr>
+<td>Теги <code>NOCACHE</code> и <code>NOARCHIVE</code></td>
+<td>Официально: <a href="https://blogs.bing.com/webmaster/september-2023/Announcing-new-options-for-webmasters-to-control-usage-of-their-content-in-Bing-Chat">блог Bing, 2023 год</a></td>
+</tr>
+<tr>
+<td>IndexNow: ключ, формат запросов, коды ответа, до 10 000 адресов, обмен между участниками, список участников</td>
+<td>Официально: <a href="https://www.indexnow.org/documentation">документация IndexNow</a></td>
+</tr>
+<tr>
+<td>Способы ручного подтверждения в Bing; названия разделов кабинета</td>
+<td>Сложившаяся практика; сверяйте с текущей справкой Bing</td>
+</tr>
+<tr>
+<td>DuckDuckGo берёт ссылки в основном у Bing</td>
+<td>Официально: <a href="https://duckduckgo.com/duckduckgo-help-pages/results/sources">справка DuckDuckGo</a></td>
+</tr>
+<tr>
+<td>Робот Brave, правило Googlebot, <code>noindex</code>, проект сбора адресов, форма отправки</td>
+<td>Официально: <a href="https://search.brave.com/help/brave-search-crawler">справка Brave о роботе</a></td>
+</tr>
+<tr>
+<td>Независимость индекса Brave, клиенты программного доступа</td>
+<td>Заявления Brave: <a href="https://brave.com/search/api/">страница продукта</a></td>
+</tr>
+<tr>
+<td>Оператор <code>site:</code> в Brave</td>
+<td>Официально: <a href="https://search.brave.com/help/operators">справка Brave об операторах</a></td>
+</tr>
+<tr>
+<td>Bing медленнее находит небольшие русскоязычные сайты; российских сайтов в Brave мало</td>
+<td>Наблюдение</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Что раскрыть дальше</h3>
+<ul>
+<li><a href="../glava-11/">Глава 11. Индекс и зеркала: видит ли поисковик сайт</a> – robots.txt и <code>noindex</code>.</li>
+<li><a href="../glava-14/">Глава 14. Обход и обновление: как сообщать поисковику о новом</a> – IndexNow и карта сайта в общей схеме.</li>
+<li><a href="../glava-33/">Глава 33. ChatGPT: как попасть в его ответы</a> – зачем ему Bing.</li>
+<li><a href="../glava-34/">Глава 34. Claude: как попасть в его ответы</a> – зачем ему Brave.</li>
+<li><a href="../glava-35/">Глава 35. Perplexity: как попасть в его ответы</a> – нейросеть со своим индексом.</li>
+<li><a href="../glava-36/">Глава 36. Google: ИИ-обзоры, AI Mode и Gemini</a> – что делает Google-Extended.</li>
+<li><a href="../glava-38/">Глава 38. Как измерять видимость в нейросетях</a> – как сочетать отчёты и ручные проверки.</li>
+</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
