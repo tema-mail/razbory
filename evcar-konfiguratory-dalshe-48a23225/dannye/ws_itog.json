@@ -1,0 +1,2717 @@
+{
+ "models": [
+  {
+   "brand": "Zeekr",
+   "model": "9x",
+   "ours": true,
+   "total": 489,
+   "err": false,
+   "det": {
+    "zeekr 9x": 464,
+    "зикр 9x": 25
+   }
+  },
+  {
+   "brand": "Zeekr",
+   "model": "8x",
+   "ours": true,
+   "total": 555,
+   "err": false,
+   "det": {
+    "zeekr 8x": 519,
+    "зикр 8x": 36
+   }
+  },
+  {
+   "brand": "Zeekr",
+   "model": "7x",
+   "ours": true,
+   "total": 619,
+   "err": false,
+   "det": {
+    "zeekr 7x": 583,
+    "зикр 7x": 36
+   }
+  },
+  {
+   "brand": "Zeekr",
+   "model": "001",
+   "ours": true,
+   "total": 1521,
+   "err": false,
+   "det": {
+    "zeekr 001": 923,
+    "зикр 001": 598
+   }
+  },
+  {
+   "brand": "Zeekr",
+   "model": "009",
+   "ours": true,
+   "total": 249,
+   "err": false,
+   "det": {
+    "zeekr 009": 175,
+    "зикр 009": 74
+   }
+  },
+  {
+   "brand": "Zeekr",
+   "model": "007",
+   "ours": true,
+   "total": 393,
+   "err": false,
+   "det": {
+    "zeekr 007": 266,
+    "зикр 007": 127
+   }
+  },
+  {
+   "brand": "Zeekr",
+   "model": "x",
+   "ours": true,
+   "total": 237,
+   "err": false,
+   "det": {
+    "zeekr x": 218,
+    "зикр x": 19
+   }
+  },
+  {
+   "brand": "Zeekr",
+   "model": "mix",
+   "ours": true,
+   "total": 41,
+   "err": false,
+   "det": {
+    "zeekr mix": 41,
+    "зикр mix": 0
+   }
+  },
+  {
+   "brand": "Li Auto",
+   "model": "l9",
+   "ours": true,
+   "total": 288,
+   "err": false,
+   "det": {
+    "lixiang l9": 176,
+    "li auto l9": 93,
+    "лисян l9": 19,
+    "ликсян l9": 0
+   }
+  },
+  {
+   "brand": "Li Auto",
+   "model": "l8",
+   "ours": true,
+   "total": 45,
+   "err": false,
+   "det": {
+    "lixiang l8": 26,
+    "li auto l8": 16,
+    "лисян l8": 3,
+    "ликсян l8": 0
+   }
+  },
+  {
+   "brand": "Li Auto",
+   "model": "l6",
+   "ours": true,
+   "total": 366,
+   "err": false,
+   "det": {
+    "lixiang l6": 265,
+    "li auto l6": 63,
+    "лисян l6": 38,
+    "ликсян l6": 0
+   }
+  },
+  {
+   "brand": "Li Auto",
+   "model": "l7",
+   "ours": false,
+   "total": 321,
+   "err": false,
+   "det": {
+    "lixiang l7": 256,
+    "li auto l7": 38,
+    "лисян l7": 27,
+    "ликсян l7": 0
+   }
+  },
+  {
+   "brand": "Li Auto",
+   "model": "i6",
+   "ours": true,
+   "total": 75,
+   "err": false,
+   "det": {
+    "lixiang i6": 23,
+    "li auto i6": 39,
+    "лисян i6": 13,
+    "ликсян i6": 0
+   }
+  },
+  {
+   "brand": "Li Auto",
+   "model": "i8",
+   "ours": true,
+   "total": 27,
+   "err": false,
+   "det": {
+    "lixiang i8": 6,
+    "li auto i8": 14,
+    "лисян i8": 7,
+    "ликсян i8": 0
+   }
+  },
+  {
+   "brand": "Li Auto",
+   "model": "mega",
+   "ours": true,
+   "total": 19,
+   "err": false,
+   "det": {
+    "lixiang mega": 5,
+    "li auto mega": 14,
+    "лисян mega": 0,
+    "ликсян mega": 0
+   }
+  },
+  {
+   "brand": "Xiaomi",
+   "model": "su7",
+   "ours": true,
+   "total": 449,
+   "err": false,
+   "det": {
+    "xiaomi su7": 429,
+    "сяоми su7": 20
+   }
+  },
+  {
+   "brand": "Xiaomi",
+   "model": "yu7",
+   "ours": true,
+   "total": 289,
+   "err": false,
+   "det": {
+    "xiaomi yu7": 272,
+    "сяоми yu7": 17
+   }
+  },
+  {
+   "brand": "Xiaomi",
+   "model": "yu9",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "xiaomi yu9": 0,
+    "сяоми yu9": 0
+   }
+  },
+  {
+   "brand": "Avatr",
+   "model": "07",
+   "ours": true,
+   "total": 241,
+   "err": false,
+   "det": {
+    "avatr 07": 241,
+    "аватр 07": "15?"
+   }
+  },
+  {
+   "brand": "Avatr",
+   "model": "12",
+   "ours": true,
+   "total": 77,
+   "err": false,
+   "det": {
+    "avatr 12": 74,
+    "аватр 12": 3
+   }
+  },
+  {
+   "brand": "Avatr",
+   "model": "06",
+   "ours": true,
+   "total": 62,
+   "err": false,
+   "det": {
+    "avatr 06": 62,
+    "аватр 06": "1?"
+   }
+  },
+  {
+   "brand": "Avatr",
+   "model": "11",
+   "ours": false,
+   "total": 104,
+   "err": false,
+   "det": {
+    "avatr 11": 102,
+    "аватр 11": 2
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "900",
+   "ours": true,
+   "total": 141,
+   "err": false,
+   "det": {
+    "lynk co 900": 141,
+    "линк ко 900": "17?"
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "09",
+   "ours": true,
+   "total": 46,
+   "err": false,
+   "det": {
+    "lynk co 09": 46,
+    "линк ко 09": "3?"
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "08",
+   "ours": true,
+   "total": 46,
+   "err": false,
+   "det": {
+    "lynk co 08": 32,
+    "линк ко 08": 14
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "07",
+   "ours": true,
+   "total": 33,
+   "err": false,
+   "det": {
+    "lynk co 07": 26,
+    "линк ко 07": 7
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "z20",
+   "ours": true,
+   "total": 32,
+   "err": false,
+   "det": {
+    "lynk co z20": 32,
+    "линк ко z20": 0
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "03",
+   "ours": false,
+   "total": 16,
+   "err": false,
+   "det": {
+    "lynk co 03": 12,
+    "линк ко 03": 4
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "05",
+   "ours": false,
+   "total": 10,
+   "err": false,
+   "det": {
+    "lynk co 05": 10,
+    "линк ко 05": "12?"
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "06",
+   "ours": false,
+   "total": 26,
+   "err": false,
+   "det": {
+    "lynk co 06": 26,
+    "линк ко 06": "25?"
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "z10",
+   "ours": false,
+   "total": 7,
+   "err": false,
+   "det": {
+    "lynk co z10": 7,
+    "линк ко z10": "1?"
+   }
+  },
+  {
+   "brand": "Lynk & Co",
+   "model": "01",
+   "ours": false,
+   "total": 21,
+   "err": false,
+   "det": {
+    "lynk co 01": 21,
+    "линк ко 01": "2?"
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "galaxy e5",
+   "ours": true,
+   "total": 561,
+   "err": false,
+   "det": {
+    "geely galaxy e5": 561,
+    "джили галакси e5": 0
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "xingyuan",
+   "ours": true,
+   "total": 205,
+   "err": false,
+   "det": {
+    "geely xingyuan": 194,
+    "джили xingyuan": 11
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "starship 7",
+   "ours": true,
+   "total": 1118,
+   "err": false,
+   "det": {
+    "geely starship 7": 1081,
+    "джили starship 7": 37
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "monjaro",
+   "ours": false,
+   "total": 8925,
+   "err": false,
+   "det": {
+    "geely monjaro": 2202,
+    "джили монжаро": 6723
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "galaxy m9",
+   "ours": false,
+   "total": 169,
+   "err": false,
+   "det": {
+    "geely galaxy m9": 169,
+    "джили галакси m9": 0
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "galaxy l7",
+   "ours": false,
+   "total": 248,
+   "err": false,
+   "det": {
+    "geely galaxy l7": 208,
+    "джили галакси l7": 40
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "galaxy e8",
+   "ours": false,
+   "total": 173,
+   "err": false,
+   "det": {
+    "geely galaxy e8": 173,
+    "джили галакси e8": 0
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "galaxy a7",
+   "ours": false,
+   "total": 18,
+   "err": false,
+   "det": {
+    "geely galaxy a7": 18,
+    "джили галакси a7": 0
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "starship 8",
+   "ours": false,
+   "total": 4,
+   "err": false,
+   "det": {
+    "geely starship 8": 4,
+    "джили starship 8": 0
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "galaxy starship",
+   "ours": false,
+   "total": 1080,
+   "err": false,
+   "det": {
+    "geely galaxy starship": 823,
+    "джили галакси старшип": 257
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "ex5",
+   "ours": false,
+   "total": 7536,
+   "err": false,
+   "det": {
+    "geely ex5": 6025,
+    "джили ex5": 1511
+   }
+  },
+  {
+   "brand": "Geely",
+   "model": "xingyue l",
+   "ours": false,
+   "total": 739,
+   "err": false,
+   "det": {
+    "geely xingyue l": 638,
+    "джили xingyue l": 101
+   }
+  },
+  {
+   "brand": "Xpeng",
+   "model": "g6",
+   "ours": true,
+   "total": 115,
+   "err": false,
+   "det": {
+    "xpeng g6": 104,
+    "хпенг g6": 11,
+    "сяопэн g6": 0
+   }
+  },
+  {
+   "brand": "Xpeng",
+   "model": "g9",
+   "ours": true,
+   "total": 123,
+   "err": false,
+   "det": {
+    "xpeng g9": 121,
+    "хпенг g9": 2,
+    "сяопэн g9": 0
+   }
+  },
+  {
+   "brand": "Xpeng",
+   "model": "p7",
+   "ours": true,
+   "total": 111,
+   "err": false,
+   "det": {
+    "xpeng p7": 111,
+    "хпенг p7": 0,
+    "сяопэн p7": 0
+   }
+  },
+  {
+   "brand": "Xpeng",
+   "model": "x9",
+   "ours": true,
+   "total": 64,
+   "err": false,
+   "det": {
+    "xpeng x9": 64,
+    "хпенг x9": 0,
+    "сяопэн x9": 0
+   }
+  },
+  {
+   "brand": "Xpeng",
+   "model": "g7",
+   "ours": true,
+   "total": 7,
+   "err": false,
+   "det": {
+    "xpeng g7": 7,
+    "хпенг g7": 0,
+    "сяопэн g7": 0
+   }
+  },
+  {
+   "brand": "Xpeng",
+   "model": "m03",
+   "ours": true,
+   "total": 141,
+   "err": false,
+   "det": {
+    "xpeng m03": 141,
+    "хпенг m03": 0,
+    "сяопэн m03": 0
+   }
+  },
+  {
+   "brand": "Xpeng",
+   "model": "gx",
+   "ours": true,
+   "total": 85,
+   "err": false,
+   "det": {
+    "xpeng gx": 85,
+    "хпенг gx": 0,
+    "сяопэн gx": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "song plus",
+   "ours": false,
+   "total": 3550,
+   "err": false,
+   "det": {
+    "byd song plus": 3419,
+    "бид сонг плюс": 131
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "song l",
+   "ours": false,
+   "total": 371,
+   "err": false,
+   "det": {
+    "byd song l": 371,
+    "бид сонг l": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "song pro",
+   "ours": false,
+   "total": 65,
+   "err": false,
+   "det": {
+    "byd song pro": 64,
+    "бид сонг про": 1
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "seal",
+   "ours": false,
+   "total": 438,
+   "err": false,
+   "det": {
+    "byd seal": 438,
+    "бид сил": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "han",
+   "ours": false,
+   "total": 952,
+   "err": false,
+   "det": {
+    "byd han": 932,
+    "бид хан": 20
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "tang",
+   "ours": false,
+   "total": 982,
+   "err": false,
+   "det": {
+    "byd tang": 937,
+    "бид танг": 45
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "tang l",
+   "ours": false,
+   "total": 390,
+   "err": false,
+   "det": {
+    "byd tang l": 390,
+    "бид tang l": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "yuan plus",
+   "ours": false,
+   "total": 615,
+   "err": false,
+   "det": {
+    "byd yuan plus": 615,
+    "бид юань плюс": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "yuan up",
+   "ours": false,
+   "total": 1280,
+   "err": false,
+   "det": {
+    "byd yuan up": 1269,
+    "бид юань ап": 11
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "seagull",
+   "ours": false,
+   "total": 335,
+   "err": false,
+   "det": {
+    "byd seagull": 335,
+    "бид seagull": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "dolphin",
+   "ours": false,
+   "total": 599,
+   "err": false,
+   "det": {
+    "byd dolphin": 589,
+    "бид дельфин": 10
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "sealion 07",
+   "ours": false,
+   "total": 20,
+   "err": false,
+   "det": {
+    "byd sealion 07": 20,
+    "бид sealion 07": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "sealion 06",
+   "ours": false,
+   "total": 58,
+   "err": false,
+   "det": {
+    "byd sealion 06": 58,
+    "бид sealion 06": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "sealion 05",
+   "ours": false,
+   "total": 23,
+   "err": false,
+   "det": {
+    "byd sealion 05": 23,
+    "бид sealion 05": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "sealion 8",
+   "ours": false,
+   "total": 2,
+   "err": false,
+   "det": {
+    "byd sealion 8": 2,
+    "бид sealion 8": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "qin plus",
+   "ours": false,
+   "total": 865,
+   "err": false,
+   "det": {
+    "byd qin plus": 865,
+    "бид qin plus": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "qin l",
+   "ours": false,
+   "total": 49,
+   "err": false,
+   "det": {
+    "byd qin l": 49,
+    "бид цинь l": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "seal 06",
+   "ours": false,
+   "total": 89,
+   "err": false,
+   "det": {
+    "byd seal 06": 89,
+    "бид seal 06": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "seal 05",
+   "ours": false,
+   "total": 51,
+   "err": false,
+   "det": {
+    "byd seal 05": 51,
+    "бид seal 05": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "destroyer 05",
+   "ours": false,
+   "total": 212,
+   "err": false,
+   "det": {
+    "byd destroyer 05": 212,
+    "бид destroyer 05": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "xia",
+   "ours": false,
+   "total": 41,
+   "err": false,
+   "det": {
+    "byd xia": 41,
+    "бид ся": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "leopard 5",
+   "ours": false,
+   "total": 45,
+   "err": false,
+   "det": {
+    "byd leopard 5": 44,
+    "бид леопард 5": 1
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "leopard 8",
+   "ours": false,
+   "total": 25,
+   "err": false,
+   "det": {
+    "byd leopard 8": 25,
+    "бид леопард 8": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "yangwang u8",
+   "ours": false,
+   "total": 18,
+   "err": false,
+   "det": {
+    "byd yangwang u8": 18,
+    "бид yangwang u8": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "e2",
+   "ours": false,
+   "total": 1049,
+   "err": false,
+   "det": {
+    "byd e2": 1049,
+    "бид e2": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "atto 3",
+   "ours": false,
+   "total": 60,
+   "err": false,
+   "det": {
+    "byd atto 3": 60,
+    "бид atto 3": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "titanium 7",
+   "ours": false,
+   "total": 4,
+   "err": false,
+   "det": {
+    "byd titanium 7": 4,
+    "бид titanium 7": 0
+   }
+  },
+  {
+   "brand": "BYD",
+   "model": "han l",
+   "ours": false,
+   "total": 131,
+   "err": false,
+   "det": {
+    "byd han l": 131,
+    "бид han l": 0
+   }
+  },
+  {
+   "brand": "Fangchengbao",
+   "model": "bao 5",
+   "ours": false,
+   "total": 1,
+   "err": false,
+   "det": {
+    "fangchengbao bao 5": 1
+   }
+  },
+  {
+   "brand": "Fangchengbao",
+   "model": "bao 8",
+   "ours": false,
+   "total": 1,
+   "err": false,
+   "det": {
+    "fangchengbao bao 8": 1
+   }
+  },
+  {
+   "brand": "Fangchengbao",
+   "model": "tai 7",
+   "ours": false,
+   "total": 1,
+   "err": false,
+   "det": {
+    "fangchengbao tai 7": 1
+   }
+  },
+  {
+   "brand": "Fangchengbao",
+   "model": "tai 3",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "fangchengbao tai 3": 0
+   }
+  },
+  {
+   "brand": "Yangwang",
+   "model": "u8",
+   "ours": false,
+   "total": 58,
+   "err": false,
+   "det": {
+    "yangwang u8": 58,
+    "янгван u8": 0
+   }
+  },
+  {
+   "brand": "Yangwang",
+   "model": "u7",
+   "ours": false,
+   "total": 31,
+   "err": false,
+   "det": {
+    "yangwang u7": 31,
+    "янгван u7": 0
+   }
+  },
+  {
+   "brand": "Yangwang",
+   "model": "u9",
+   "ours": false,
+   "total": 66,
+   "err": false,
+   "det": {
+    "yangwang u9": 66,
+    "янгван u9": 0
+   }
+  },
+  {
+   "brand": "Denza",
+   "model": "d9",
+   "ours": false,
+   "total": 38,
+   "err": false,
+   "det": {
+    "denza d9": 37,
+    "денза d9": 1
+   }
+  },
+  {
+   "brand": "Denza",
+   "model": "n9",
+   "ours": false,
+   "total": 33,
+   "err": false,
+   "det": {
+    "denza n9": 30,
+    "денза n9": 3
+   }
+  },
+  {
+   "brand": "Denza",
+   "model": "n8l",
+   "ours": false,
+   "total": 6,
+   "err": false,
+   "det": {
+    "denza n8l": 6,
+    "денза n8l": 0
+   }
+  },
+  {
+   "brand": "Denza",
+   "model": "z9",
+   "ours": false,
+   "total": 59,
+   "err": false,
+   "det": {
+    "denza z9": 59,
+    "денза z9": 0
+   }
+  },
+  {
+   "brand": "Denza",
+   "model": "z9 gt",
+   "ours": false,
+   "total": 22,
+   "err": false,
+   "det": {
+    "denza z9 gt": 22,
+    "денза z9 gt": 0
+   }
+  },
+  {
+   "brand": "Denza",
+   "model": "n7",
+   "ours": false,
+   "total": 63,
+   "err": false,
+   "det": {
+    "denza n7": 61,
+    "денза n7": 2
+   }
+  },
+  {
+   "brand": "Denza",
+   "model": "b5",
+   "ours": false,
+   "total": 1,
+   "err": false,
+   "det": {
+    "denza b5": 1,
+    "денза b5": 0
+   }
+  },
+  {
+   "brand": "Denza",
+   "model": "b8",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "denza b8": 0,
+    "денза b8": 0
+   }
+  },
+  {
+   "brand": "Voyah",
+   "model": "free",
+   "ours": false,
+   "total": 5575,
+   "err": false,
+   "det": {
+    "voyah free": 2294,
+    "воя фри": 2530,
+    "вояж фри": 751
+   }
+  },
+  {
+   "brand": "Voyah",
+   "model": "dream",
+   "ours": false,
+   "total": 384,
+   "err": false,
+   "det": {
+    "voyah dream": 215,
+    "воя дрим": 90,
+    "вояж дрим": 79
+   }
+  },
+  {
+   "brand": "Voyah",
+   "model": "courage",
+   "ours": false,
+   "total": 981,
+   "err": false,
+   "det": {
+    "voyah courage": 507,
+    "воя кураж": 330,
+    "вояж кураж": 144
+   }
+  },
+  {
+   "brand": "Voyah",
+   "model": "taishan",
+   "ours": false,
+   "total": 121,
+   "err": false,
+   "det": {
+    "voyah taishan": 120,
+    "воя тайшань": 1,
+    "вояж тайшань": 0
+   }
+  },
+  {
+   "brand": "Voyah",
+   "model": "passion",
+   "ours": false,
+   "total": 243,
+   "err": false,
+   "det": {
+    "voyah passion": 194,
+    "воя пассион": 43,
+    "вояж пассион": 6
+   }
+  },
+  {
+   "brand": "Deepal",
+   "model": "s07",
+   "ours": false,
+   "total": 3400,
+   "err": false,
+   "det": {
+    "deepal s07": 2506,
+    "дипал s07": 894
+   }
+  },
+  {
+   "brand": "Deepal",
+   "model": "s09",
+   "ours": false,
+   "total": 249,
+   "err": false,
+   "det": {
+    "deepal s09": 219,
+    "дипал s09": 30
+   }
+  },
+  {
+   "brand": "Deepal",
+   "model": "s05",
+   "ours": false,
+   "total": 3613,
+   "err": false,
+   "det": {
+    "deepal s05": 2779,
+    "дипал s05": 834
+   }
+  },
+  {
+   "brand": "Deepal",
+   "model": "l07",
+   "ours": false,
+   "total": 104,
+   "err": false,
+   "det": {
+    "deepal l07": 78,
+    "дипал l07": 26
+   }
+  },
+  {
+   "brand": "Deepal",
+   "model": "l06",
+   "ours": false,
+   "total": 26,
+   "err": false,
+   "det": {
+    "deepal l06": 26,
+    "дипал l06": 0
+   }
+  },
+  {
+   "brand": "Deepal",
+   "model": "g318",
+   "ours": false,
+   "total": 327,
+   "err": false,
+   "det": {
+    "deepal g318": 266,
+    "дипал g318": 61
+   }
+  },
+  {
+   "brand": "Leapmotor",
+   "model": "c11",
+   "ours": false,
+   "total": 226,
+   "err": false,
+   "det": {
+    "leapmotor c11": 226,
+    "липмотор c11": "1?"
+   }
+  },
+  {
+   "brand": "Leapmotor",
+   "model": "c10",
+   "ours": false,
+   "total": 135,
+   "err": false,
+   "det": {
+    "leapmotor c10": 135,
+    "липмотор c10": 0
+   }
+  },
+  {
+   "brand": "Leapmotor",
+   "model": "c16",
+   "ours": false,
+   "total": 182,
+   "err": false,
+   "det": {
+    "leapmotor c16": 182,
+    "липмотор c16": 0
+   }
+  },
+  {
+   "brand": "Leapmotor",
+   "model": "c01",
+   "ours": false,
+   "total": 13,
+   "err": false,
+   "det": {
+    "leapmotor c01": 13,
+    "липмотор c01": 0
+   }
+  },
+  {
+   "brand": "Leapmotor",
+   "model": "b10",
+   "ours": false,
+   "total": 80,
+   "err": false,
+   "det": {
+    "leapmotor b10": 80,
+    "липмотор b10": 0
+   }
+  },
+  {
+   "brand": "Leapmotor",
+   "model": "b01",
+   "ours": false,
+   "total": 31,
+   "err": false,
+   "det": {
+    "leapmotor b01": 31,
+    "липмотор b01": 0
+   }
+  },
+  {
+   "brand": "Leapmotor",
+   "model": "d19",
+   "ours": false,
+   "total": 30,
+   "err": false,
+   "det": {
+    "leapmotor d19": 30,
+    "липмотор d19": 0
+   }
+  },
+  {
+   "brand": "Aito",
+   "model": "m5",
+   "ours": false,
+   "total": 69,
+   "err": false,
+   "det": {
+    "aito m5": 69,
+    "аито m5": 0
+   }
+  },
+  {
+   "brand": "Aito",
+   "model": "m7",
+   "ours": false,
+   "total": 50,
+   "err": false,
+   "det": {
+    "aito m7": 50,
+    "аито m7": 0
+   }
+  },
+  {
+   "brand": "Aito",
+   "model": "m8",
+   "ours": false,
+   "total": 39,
+   "err": false,
+   "det": {
+    "aito m8": 39,
+    "аито m8": 0
+   }
+  },
+  {
+   "brand": "Aito",
+   "model": "m9",
+   "ours": false,
+   "total": 49,
+   "err": false,
+   "det": {
+    "aito m9": 49,
+    "аито m9": 0
+   }
+  },
+  {
+   "brand": "Nio",
+   "model": "es8",
+   "ours": false,
+   "total": 19,
+   "err": false,
+   "det": {
+    "nio es8": 19,
+    "нио es8": 0
+   }
+  },
+  {
+   "brand": "Nio",
+   "model": "es6",
+   "ours": false,
+   "total": 34,
+   "err": false,
+   "det": {
+    "nio es6": 34,
+    "нио es6": 0
+   }
+  },
+  {
+   "brand": "Nio",
+   "model": "et5",
+   "ours": false,
+   "total": 7,
+   "err": false,
+   "det": {
+    "nio et5": 7,
+    "нио et5": 0
+   }
+  },
+  {
+   "brand": "Nio",
+   "model": "et7",
+   "ours": false,
+   "total": 17,
+   "err": false,
+   "det": {
+    "nio et7": 17,
+    "нио et7": 0
+   }
+  },
+  {
+   "brand": "Nio",
+   "model": "ec6",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "nio ec6": 0,
+    "нио ec6": 0
+   }
+  },
+  {
+   "brand": "Nio",
+   "model": "et9",
+   "ours": false,
+   "total": 11,
+   "err": false,
+   "det": {
+    "nio et9": 11,
+    "нио et9": 0
+   }
+  },
+  {
+   "brand": "Onvo",
+   "model": "l60",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "onvo l60": 0
+   }
+  },
+  {
+   "brand": "Onvo",
+   "model": "l90",
+   "ours": false,
+   "total": 2,
+   "err": false,
+   "det": {
+    "onvo l90": 2
+   }
+  },
+  {
+   "brand": "Onvo",
+   "model": "l80",
+   "ours": false,
+   "total": 6,
+   "err": false,
+   "det": {
+    "onvo l80": 6
+   }
+  },
+  {
+   "brand": "Hongqi",
+   "model": "hs5",
+   "ours": false,
+   "total": 75,
+   "err": false,
+   "det": {
+    "hongqi hs5": 73,
+    "хунци hs5": 0,
+    "хонгчи hs5": 2
+   }
+  },
+  {
+   "brand": "Hongqi",
+   "model": "hs7",
+   "ours": false,
+   "total": 16,
+   "err": false,
+   "det": {
+    "hongqi hs7": 16,
+    "хунци hs7": 0,
+    "хонгчи hs7": 0
+   }
+  },
+  {
+   "brand": "Hongqi",
+   "model": "hs3",
+   "ours": false,
+   "total": 22,
+   "err": false,
+   "det": {
+    "hongqi hs3": 22,
+    "хунци hs3": 0,
+    "хонгчи hs3": 0
+   }
+  },
+  {
+   "brand": "Hongqi",
+   "model": "h9",
+   "ours": false,
+   "total": 64,
+   "err": false,
+   "det": {
+    "hongqi h9": 64,
+    "хунци h9": 0,
+    "хонгчи h9": 0
+   }
+  },
+  {
+   "brand": "Hongqi",
+   "model": "h5",
+   "ours": false,
+   "total": 180,
+   "err": false,
+   "det": {
+    "hongqi h5": 174,
+    "хунци h5": 3,
+    "хонгчи h5": 3
+   }
+  },
+  {
+   "brand": "Hongqi",
+   "model": "eh7",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "hongqi eh7": 0,
+    "хунци eh7": 0,
+    "хонгчи eh7": 0
+   }
+  },
+  {
+   "brand": "Hongqi",
+   "model": "ehs7",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "hongqi ehs7": 0,
+    "хунци ehs7": 0,
+    "хонгчи ehs7": 0
+   }
+  },
+  {
+   "brand": "Hongqi",
+   "model": "ehs9",
+   "ours": false,
+   "total": 13,
+   "err": false,
+   "det": {
+    "hongqi ehs9": 13,
+    "хунци ehs9": 0,
+    "хонгчи ehs9": 0
+   }
+  },
+  {
+   "brand": "Hongqi",
+   "model": "guoya",
+   "ours": false,
+   "total": 13,
+   "err": false,
+   "det": {
+    "hongqi guoya": 13,
+    "хунци guoya": 0,
+    "хонгчи guoya": 0
+   }
+  },
+  {
+   "brand": "Tank",
+   "model": "300",
+   "ours": false,
+   "total": 843,
+   "err": false,
+   "det": {
+    "tank 300": 283,
+    "танк 300": 560
+   }
+  },
+  {
+   "brand": "Tank",
+   "model": "400",
+   "ours": false,
+   "total": 128,
+   "err": false,
+   "det": {
+    "tank 400": 41,
+    "танк 400": 87
+   }
+  },
+  {
+   "brand": "Tank",
+   "model": "500",
+   "ours": false,
+   "total": 562,
+   "err": false,
+   "det": {
+    "tank 500": 216,
+    "танк 500": 346
+   }
+  },
+  {
+   "brand": "Tank",
+   "model": "700",
+   "ours": false,
+   "total": 151,
+   "err": false,
+   "det": {
+    "tank 700": 75,
+    "танк 700": 76
+   }
+  },
+  {
+   "brand": "Wey",
+   "model": "07",
+   "ours": false,
+   "total": 21,
+   "err": false,
+   "det": {
+    "wey 07": 20,
+    "вей 07": 1
+   }
+  },
+  {
+   "brand": "Wey",
+   "model": "05",
+   "ours": false,
+   "total": 32,
+   "err": false,
+   "det": {
+    "wey 05": 26,
+    "вей 05": 6
+   }
+  },
+  {
+   "brand": "Wey",
+   "model": "gaoshan",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "wey gaoshan": 0,
+    "вей gaoshan": 0
+   }
+  },
+  {
+   "brand": "IM",
+   "model": "ls6",
+   "ours": false,
+   "total": 27,
+   "err": false,
+   "det": {
+    "im motors ls6": 0,
+    "im ls6": 27
+   }
+  },
+  {
+   "brand": "IM",
+   "model": "ls7",
+   "ours": false,
+   "total": 6,
+   "err": false,
+   "det": {
+    "im motors ls7": 1,
+    "im ls7": 5
+   }
+  },
+  {
+   "brand": "IM",
+   "model": "ls9",
+   "ours": false,
+   "total": 6,
+   "err": false,
+   "det": {
+    "im motors ls9": 0,
+    "im ls9": 6
+   }
+  },
+  {
+   "brand": "IM",
+   "model": "l6",
+   "ours": false,
+   "total": 8,
+   "err": false,
+   "det": {
+    "im motors l6": 2,
+    "im l6": 6
+   }
+  },
+  {
+   "brand": "Luxeed",
+   "model": "r7",
+   "ours": false,
+   "total": 26,
+   "err": false,
+   "det": {
+    "luxeed r7": 26
+   }
+  },
+  {
+   "brand": "Luxeed",
+   "model": "s7",
+   "ours": false,
+   "total": 7,
+   "err": false,
+   "det": {
+    "luxeed s7": 7
+   }
+  },
+  {
+   "brand": "Stelato",
+   "model": "s9",
+   "ours": false,
+   "total": 5,
+   "err": false,
+   "det": {
+    "stelato s9": 5
+   }
+  },
+  {
+   "brand": "Maextro",
+   "model": "s800",
+   "ours": false,
+   "total": 1,
+   "err": false,
+   "det": {
+    "maextro s800": 1
+   }
+  },
+  {
+   "brand": "Exlantix",
+   "model": "et",
+   "ours": false,
+   "total": 76,
+   "err": false,
+   "det": {
+    "exlantix et": 70,
+    "exeed exlantix et": 6
+   }
+  },
+  {
+   "brand": "Exlantix",
+   "model": "es",
+   "ours": false,
+   "total": 2,
+   "err": false,
+   "det": {
+    "exlantix es": 2,
+    "exeed exlantix es": 0
+   }
+  },
+  {
+   "brand": "Changan",
+   "model": "uni k",
+   "ours": false,
+   "total": 203,
+   "err": false,
+   "det": {
+    "changan uni k": 173,
+    "чанган uni k": 30
+   }
+  },
+  {
+   "brand": "Changan",
+   "model": "uni z",
+   "ours": false,
+   "total": 302,
+   "err": false,
+   "det": {
+    "changan uni z": 212,
+    "чанган uni z": 90
+   }
+  },
+  {
+   "brand": "Changan",
+   "model": "cs75 plus",
+   "ours": false,
+   "total": 740,
+   "err": false,
+   "det": {
+    "changan cs75 plus": 508,
+    "чанган cs75 plus": 232
+   }
+  },
+  {
+   "brand": "Changan",
+   "model": "q07",
+   "ours": false,
+   "total": 257,
+   "err": false,
+   "det": {
+    "changan q07": 155,
+    "чанган q07": 102
+   }
+  },
+  {
+   "brand": "Changan",
+   "model": "a07",
+   "ours": false,
+   "total": 142,
+   "err": false,
+   "det": {
+    "changan a07": 137,
+    "чанган a07": 5
+   }
+  },
+  {
+   "brand": "Changan",
+   "model": "e07",
+   "ours": false,
+   "total": 23,
+   "err": false,
+   "det": {
+    "changan e07": 23,
+    "чанган e07": 0
+   }
+  },
+  {
+   "brand": "GAC",
+   "model": "aion y",
+   "ours": false,
+   "total": 365,
+   "err": false,
+   "det": {
+    "gac aion y": 365,
+    "гак aion y": 0
+   }
+  },
+  {
+   "brand": "GAC",
+   "model": "aion v",
+   "ours": false,
+   "total": 134,
+   "err": false,
+   "det": {
+    "gac aion v": 134,
+    "гак aion v": 0
+   }
+  },
+  {
+   "brand": "GAC",
+   "model": "gs8",
+   "ours": false,
+   "total": 292,
+   "err": false,
+   "det": {
+    "gac gs8": 274,
+    "гак gs8": 18
+   }
+  },
+  {
+   "brand": "GAC",
+   "model": "m8",
+   "ours": false,
+   "total": 156,
+   "err": false,
+   "det": {
+    "gac m8": 155,
+    "гак m8": 1
+   }
+  },
+  {
+   "brand": "GAC",
+   "model": "hyptec ht",
+   "ours": false,
+   "total": 37,
+   "err": false,
+   "det": {
+    "gac hyptec ht": 37,
+    "гак hyptec ht": 0
+   }
+  },
+  {
+   "brand": "GAC",
+   "model": "s7",
+   "ours": false,
+   "total": 102,
+   "err": false,
+   "det": {
+    "gac s7": 97,
+    "гак s7": 5
+   }
+  },
+  {
+   "brand": "Dongfeng",
+   "model": "mhero",
+   "ours": false,
+   "total": 2,
+   "err": false,
+   "det": {
+    "dongfeng mhero": 2,
+    "донгфенг mhero": 0
+   }
+  },
+  {
+   "brand": "Dongfeng",
+   "model": "007",
+   "ours": false,
+   "total": 116,
+   "err": false,
+   "det": {
+    "dongfeng 007": 116,
+    "донгфенг 007": 0
+   }
+  },
+  {
+   "brand": "Dongfeng",
+   "model": "nammi",
+   "ours": false,
+   "total": 257,
+   "err": false,
+   "det": {
+    "dongfeng nammi": 257,
+    "донгфенг nammi": 0
+   }
+  },
+  {
+   "brand": "Dongfeng",
+   "model": "box",
+   "ours": false,
+   "total": 3730,
+   "err": false,
+   "det": {
+    "dongfeng box": 3730,
+    "донгфенг box": 0
+   }
+  },
+  {
+   "brand": "Jetour",
+   "model": "traveller",
+   "ours": false,
+   "total": 8,
+   "err": false,
+   "det": {
+    "jetour traveller": 8,
+    "джетур тревеллер": 0
+   }
+  },
+  {
+   "brand": "Jetour",
+   "model": "t2",
+   "ours": false,
+   "total": 261,
+   "err": false,
+   "det": {
+    "jetour t2": 261,
+    "джетур t2": 0
+   }
+  },
+  {
+   "brand": "Jetour",
+   "model": "g700",
+   "ours": false,
+   "total": 34,
+   "err": false,
+   "det": {
+    "jetour g700": 34,
+    "джетур g700": 0
+   }
+  },
+  {
+   "brand": "Jetour",
+   "model": "shanhai l7",
+   "ours": false,
+   "total": 1,
+   "err": false,
+   "det": {
+    "jetour shanhai l7": 1,
+    "джетур shanhai l7": 0
+   }
+  },
+  {
+   "brand": "Jetour",
+   "model": "shanhai t2",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "jetour shanhai t2": "9?",
+    "джетур shanhai t2": 0
+   }
+  },
+  {
+   "brand": "iCar",
+   "model": "03",
+   "ours": false,
+   "total": 94,
+   "err": false,
+   "det": {
+    "icar 03": 94
+   }
+  },
+  {
+   "brand": "iCar",
+   "model": "v23",
+   "ours": false,
+   "total": 104,
+   "err": false,
+   "det": {
+    "icar v23": 104
+   }
+  },
+  {
+   "brand": "iCar",
+   "model": "v27",
+   "ours": false,
+   "total": 14,
+   "err": false,
+   "det": {
+    "icar v27": 14
+   }
+  },
+  {
+   "brand": "BAIC",
+   "model": "bj40",
+   "ours": false,
+   "total": 56,
+   "err": false,
+   "det": {
+    "baic bj40": 56,
+    "баик bj40": 0
+   }
+  },
+  {
+   "brand": "BAIC",
+   "model": "bj60",
+   "ours": false,
+   "total": 32,
+   "err": false,
+   "det": {
+    "baic bj60": 32,
+    "баик bj60": 0
+   }
+  },
+  {
+   "brand": "Volkswagen (Китай)",
+   "model": "id4",
+   "ours": false,
+   "total": 264,
+   "err": false,
+   "det": {
+    "volkswagen id4": 92,
+    "vw id4": 64,
+    "фольксваген id4": 108
+   }
+  },
+  {
+   "brand": "Volkswagen (Китай)",
+   "model": "id 4",
+   "ours": false,
+   "total": 157,
+   "err": false,
+   "det": {
+    "volkswagen id 4": 84,
+    "vw id 4": 31,
+    "фольксваген id 4": 42
+   }
+  },
+  {
+   "brand": "Volkswagen (Китай)",
+   "model": "id6",
+   "ours": false,
+   "total": 41,
+   "err": false,
+   "det": {
+    "volkswagen id6": 20,
+    "vw id6": 8,
+    "фольксваген id6": 13
+   }
+  },
+  {
+   "brand": "Volkswagen (Китай)",
+   "model": "id 6",
+   "ours": false,
+   "total": 44,
+   "err": false,
+   "det": {
+    "volkswagen id 6": 15,
+    "vw id 6": 16,
+    "фольксваген id 6": 13
+   }
+  },
+  {
+   "brand": "Volkswagen (Китай)",
+   "model": "id7",
+   "ours": false,
+   "total": 15,
+   "err": false,
+   "det": {
+    "volkswagen id7": 1,
+    "vw id7": 8,
+    "фольксваген id7": 6
+   }
+  },
+  {
+   "brand": "Volkswagen (Китай)",
+   "model": "id 7",
+   "ours": false,
+   "total": 9,
+   "err": false,
+   "det": {
+    "volkswagen id 7": 9,
+    "vw id 7": 0,
+    "фольксваген id 7": 0
+   }
+  },
+  {
+   "brand": "Volkswagen (Китай)",
+   "model": "id unyx",
+   "ours": false,
+   "total": 26,
+   "err": false,
+   "det": {
+    "volkswagen id unyx": "6?",
+    "vw id unyx": 26,
+    "фольксваген id unyx": 0
+   }
+  },
+  {
+   "brand": "Volkswagen (Китай)",
+   "model": "id3",
+   "ours": false,
+   "total": 51,
+   "err": false,
+   "det": {
+    "volkswagen id3": 29,
+    "vw id3": 7,
+    "фольксваген id3": 15
+   }
+  },
+  {
+   "brand": "Volkswagen (Китай)",
+   "model": "id 3",
+   "ours": false,
+   "total": 55,
+   "err": false,
+   "det": {
+    "volkswagen id 3": 35,
+    "vw id 3": 9,
+    "фольксваген id 3": 11
+   }
+  },
+  {
+   "brand": "Toyota (Китай)",
+   "model": "bz4x",
+   "ours": false,
+   "total": 118,
+   "err": false,
+   "det": {
+    "toyota bz4x": 70,
+    "тойота bz4x": 48
+   }
+  },
+  {
+   "brand": "Toyota (Китай)",
+   "model": "bz3x",
+   "ours": false,
+   "total": 562,
+   "err": false,
+   "det": {
+    "toyota bz3x": 383,
+    "тойота bz3x": 179
+   }
+  },
+  {
+   "brand": "Toyota (Китай)",
+   "model": "bz3",
+   "ours": false,
+   "total": 55,
+   "err": false,
+   "det": {
+    "toyota bz3": 36,
+    "тойота bz3": 19
+   }
+  },
+  {
+   "brand": "Toyota (Китай)",
+   "model": "bz5",
+   "ours": false,
+   "total": 174,
+   "err": false,
+   "det": {
+    "toyota bz5": 77,
+    "тойота bz5": 97
+   }
+  },
+  {
+   "brand": "Toyota (Китай)",
+   "model": "bz7",
+   "ours": false,
+   "total": 33,
+   "err": false,
+   "det": {
+    "toyota bz7": 30,
+    "тойота bz7": 3
+   }
+  },
+  {
+   "brand": "Honda (Китай)",
+   "model": "ens1",
+   "ours": false,
+   "total": 122,
+   "err": false,
+   "det": {
+    "honda ens1": 85,
+    "хонда ens1": 37
+   }
+  },
+  {
+   "brand": "Honda (Китай)",
+   "model": "e ns1",
+   "ours": false,
+   "total": 59,
+   "err": false,
+   "det": {
+    "honda e ns1": 57,
+    "хонда e ns1": 2
+   }
+  },
+  {
+   "brand": "Honda (Китай)",
+   "model": "enp2",
+   "ours": false,
+   "total": 65,
+   "err": false,
+   "det": {
+    "honda enp2": 59,
+    "хонда enp2": 6
+   }
+  },
+  {
+   "brand": "Honda (Китай)",
+   "model": "ens2",
+   "ours": false,
+   "total": 10,
+   "err": false,
+   "det": {
+    "honda ens2": 10,
+    "хонда ens2": 0
+   }
+  },
+  {
+   "brand": "Honda (Китай)",
+   "model": "s7",
+   "ours": false,
+   "total": 36,
+   "err": false,
+   "det": {
+    "honda s7": 27,
+    "хонда s7": 9
+   }
+  },
+  {
+   "brand": "Nissan (Китай)",
+   "model": "n7",
+   "ours": false,
+   "total": 582,
+   "err": false,
+   "det": {
+    "nissan n7": 426,
+    "ниссан n7": 156
+   }
+  },
+  {
+   "brand": "Nissan (Китай)",
+   "model": "n6",
+   "ours": false,
+   "total": 11,
+   "err": false,
+   "det": {
+    "nissan n6": 11,
+    "ниссан n6": 0
+   }
+  },
+  {
+   "brand": "Mazda (Китай)",
+   "model": "ez 6",
+   "ours": false,
+   "total": 374,
+   "err": false,
+   "det": {
+    "mazda ez 6": 286,
+    "мазда ez 6": 88
+   }
+  },
+  {
+   "brand": "Mazda (Китай)",
+   "model": "ez 60",
+   "ours": false,
+   "total": 386,
+   "err": false,
+   "det": {
+    "mazda ez 60": 290,
+    "мазда ez 60": 96
+   }
+  },
+  {
+   "brand": "Mazda (Китай)",
+   "model": "ez6",
+   "ours": false,
+   "total": 139,
+   "err": false,
+   "det": {
+    "mazda ez6": 86,
+    "мазда ez6": 53
+   }
+  },
+  {
+   "brand": "Mazda (Китай)",
+   "model": "ez60",
+   "ours": false,
+   "total": 196,
+   "err": false,
+   "det": {
+    "mazda ez60": 106,
+    "мазда ez60": 90
+   }
+  },
+  {
+   "brand": "Audi (Китай)",
+   "model": "q4 e tron",
+   "ours": false,
+   "total": 129,
+   "err": false,
+   "det": {
+    "audi q4 e tron": 93,
+    "ауди q4 e tron": 36
+   }
+  },
+  {
+   "brand": "Audi (Китай)",
+   "model": "q5 e tron",
+   "ours": false,
+   "total": 25,
+   "err": false,
+   "det": {
+    "audi q5 e tron": 12,
+    "ауди q5 e tron": 13
+   }
+  },
+  {
+   "brand": "Audi (Китай)",
+   "model": "q6l e tron",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "audi q6l e tron": 0,
+    "ауди q6l e tron": 0
+   }
+  },
+  {
+   "brand": "Audi (Китай)",
+   "model": "e5 sportback",
+   "ours": false,
+   "total": 41,
+   "err": false,
+   "det": {
+    "audi e5 sportback": 41,
+    "ауди e5 sportback": 0
+   }
+  },
+  {
+   "brand": "BMW (Китай)",
+   "model": "ix3",
+   "ours": false,
+   "total": 290,
+   "err": false,
+   "det": {
+    "bmw ix3": 197,
+    "бмв ix3": 93
+   }
+  },
+  {
+   "brand": "BMW (Китай)",
+   "model": "ix1",
+   "ours": false,
+   "total": 154,
+   "err": false,
+   "det": {
+    "bmw ix1": 95,
+    "бмв ix1": 59
+   }
+  },
+  {
+   "brand": "BMW (Китай)",
+   "model": "i3",
+   "ours": false,
+   "total": 1372,
+   "err": false,
+   "det": {
+    "bmw i3": 781,
+    "бмв i3": 591
+   }
+  },
+  {
+   "brand": "BMW (Китай)",
+   "model": "i5",
+   "ours": false,
+   "total": 187,
+   "err": false,
+   "det": {
+    "bmw i5": 135,
+    "бмв i5": 52
+   }
+  },
+  {
+   "brand": "Mercedes (Китай)",
+   "model": "eqe",
+   "ours": false,
+   "total": 149,
+   "err": false,
+   "det": {
+    "mercedes eqe": 68,
+    "мерседес eqe": 81
+   }
+  },
+  {
+   "brand": "Mercedes (Китай)",
+   "model": "eqb",
+   "ours": false,
+   "total": 49,
+   "err": false,
+   "det": {
+    "mercedes eqb": 30,
+    "мерседес eqb": 19
+   }
+  },
+  {
+   "brand": "Mercedes (Китай)",
+   "model": "eqa",
+   "ours": false,
+   "total": 35,
+   "err": false,
+   "det": {
+    "mercedes eqa": 23,
+    "мерседес eqa": 12
+   }
+  },
+  {
+   "brand": "Mercedes (Китай)",
+   "model": "eqs",
+   "ours": false,
+   "total": 156,
+   "err": false,
+   "det": {
+    "mercedes eqs": 97,
+    "мерседес eqs": 59
+   }
+  },
+  {
+   "brand": "Kia (Китай)",
+   "model": "ev5",
+   "ours": false,
+   "total": 82,
+   "err": false,
+   "det": {
+    "kia ev5": 54,
+    "киа ev5": 28
+   }
+  },
+  {
+   "brand": "Tesla",
+   "model": "model y",
+   "ours": false,
+   "total": 750,
+   "err": false,
+   "det": {
+    "tesla model y": 724,
+    "тесла model y": 26
+   }
+  },
+  {
+   "brand": "Tesla",
+   "model": "model 3",
+   "ours": false,
+   "total": 1085,
+   "err": false,
+   "det": {
+    "tesla model 3": 1032,
+    "тесла model 3": 53
+   }
+  },
+  {
+   "brand": "Smart",
+   "model": "1",
+   "ours": false,
+   "total": 864,
+   "err": false,
+   "det": {
+    "smart 1": 556,
+    "смарт 1": 308
+   }
+  },
+  {
+   "brand": "Smart",
+   "model": "3",
+   "ours": false,
+   "total": 1477,
+   "err": false,
+   "det": {
+    "smart 3": 700,
+    "смарт 3": 777
+   }
+  },
+  {
+   "brand": "Smart",
+   "model": "5",
+   "ours": false,
+   "total": 1822,
+   "err": false,
+   "det": {
+    "smart 5": 396,
+    "смарт 5": 1426
+   }
+  },
+  {
+   "brand": "Buick",
+   "model": "electra e5",
+   "ours": false,
+   "total": 11,
+   "err": false,
+   "det": {
+    "buick electra e5": 11
+   }
+  },
+  {
+   "brand": "Buick",
+   "model": "electra e4",
+   "ours": false,
+   "total": 2,
+   "err": false,
+   "det": {
+    "buick electra e4": 2
+   }
+  },
+  {
+   "brand": "Buick",
+   "model": "e5",
+   "ours": false,
+   "total": 0,
+   "err": false,
+   "det": {
+    "buick e5": "11?"
+   }
+  }
+ ],
+ "brands": [
+  {
+   "q": "zeekr",
+   "v": 4456,
+   "ok": true
+  },
+  {
+   "q": "зикр",
+   "v": 3363,
+   "ok": true
+  },
+  {
+   "q": "lixiang",
+   "v": 1722,
+   "ok": true
+  },
+  {
+   "q": "лисян|ликсян",
+   "v": 0,
+   "ok": true
+  },
+  {
+   "q": "avatr",
+   "v": 1271,
+   "ok": true
+  },
+  {
+   "q": "аватр",
+   "v": 496,
+   "ok": true
+  },
+  {
+   "q": "xpeng",
+   "v": 1775,
+   "ok": true
+  },
+  {
+   "q": "хпенг",
+   "v": 69,
+   "ok": true
+  },
+  {
+   "q": "byd",
+   "v": 27732,
+   "ok": true
+  },
+  {
+   "q": "denza",
+   "v": 385,
+   "ok": true
+  },
+  {
+   "q": "денза",
+   "v": 181,
+   "ok": true
+  },
+  {
+   "q": "voyah",
+   "v": 5765,
+   "ok": true
+  },
+  {
+   "q": "вояж|воях",
+   "v": 0,
+   "ok": true
+  },
+  {
+   "q": "deepal",
+   "v": 8301,
+   "ok": true
+  },
+  {
+   "q": "дипал",
+   "v": 5042,
+   "ok": true
+  },
+  {
+   "q": "leapmotor",
+   "v": 2003,
+   "ok": true
+  },
+  {
+   "q": "липмотор",
+   "v": 356,
+   "ok": true
+  },
+  {
+   "q": "aito",
+   "v": 382,
+   "ok": true
+  },
+  {
+   "q": "аито",
+   "v": 187,
+   "ok": true
+  },
+  {
+   "q": "hongqi",
+   "v": 2103,
+   "ok": true
+  },
+  {
+   "q": "хунци|хонгчи",
+   "v": 0,
+   "ok": true
+  },
+  {
+   "q": "onvo",
+   "v": 18,
+   "ok": true
+  },
+  {
+   "q": "yangwang",
+   "v": 178,
+   "ok": true
+  },
+  {
+   "q": "fangchengbao",
+   "v": 113,
+   "ok": true
+  },
+  {
+   "q": "luxeed",
+   "v": 105,
+   "ok": true
+  },
+  {
+   "q": "stelato",
+   "v": 38,
+   "ok": true
+  },
+  {
+   "q": "maextro",
+   "v": 6,
+   "ok": true
+  },
+  {
+   "q": "exlantix",
+   "v": 190,
+   "ok": true
+  },
+  {
+   "q": "jetour",
+   "v": 1807,
+   "ok": true
+  },
+  {
+   "q": "джетур",
+   "v": 1648,
+   "ok": true
+  },
+  {
+   "q": "exeed",
+   "v": 598,
+   "ok": true
+  },
+  {
+   "q": "эксид",
+   "v": 390,
+   "ok": true
+  },
+  {
+   "q": "changan",
+   "v": 13335,
+   "ok": true
+  },
+  {
+   "q": "чанган",
+   "v": 25029,
+   "ok": true
+  },
+  {
+   "q": "haval",
+   "v": 6697,
+   "ok": true
+  },
+  {
+   "q": "хавал",
+   "v": 15342,
+   "ok": true
+  },
+  {
+   "q": "chery",
+   "v": 3213,
+   "ok": true
+  },
+  {
+   "q": "чери",
+   "v": 10825,
+   "ok": true
+  },
+  {
+   "q": "jaecoo",
+   "v": 409,
+   "ok": true
+  },
+  {
+   "q": "джейку",
+   "v": 4830,
+   "ok": true
+  },
+  {
+   "q": "omoda",
+   "v": 410,
+   "ok": true
+  },
+  {
+   "q": "омода",
+   "v": 692,
+   "ok": true
+  },
+  {
+   "q": "dongfeng",
+   "v": 22896,
+   "ok": true
+  },
+  {
+   "q": "донгфенг",
+   "v": 1713,
+   "ok": false
+  },
+  {
+   "q": "mhero",
+   "v": 163,
+   "ok": true
+  },
+  {
+   "q": "wey",
+   "v": 436,
+   "ok": true
+  }
+ ],
+ "spent": 102
+}

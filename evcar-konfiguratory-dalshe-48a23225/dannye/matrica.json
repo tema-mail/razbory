@@ -1,0 +1,1968 @@
+{
+ "nashi": [
+  "Zeekr 9X",
+  "Zeekr 8X",
+  "Zeekr 7X",
+  "Zeekr X",
+  "Zeekr 001",
+  "Zeekr 001 FR",
+  "Zeekr 007",
+  "Zeekr 007 GT",
+  "Zeekr 009",
+  "Zeekr 009 Grand",
+  "Zeekr MIX",
+  "Li L9",
+  "Li L8",
+  "Li L6",
+  "Li i6",
+  "Li i8",
+  "Li i9",
+  "Li MEGA",
+  "Xiaomi SU7",
+  "Xiaomi SU7 Ultra",
+  "Xiaomi YU7",
+  "Avatr 07L",
+  "Avatr 07",
+  "Avatr 06",
+  "Avatr 06T",
+  "Avatr 12",
+  "Lynk & Co 900",
+  "Lynk & Co 09 EM-P",
+  "Lynk & Co 08 EM-P",
+  "Lynk & Co 07 EM-P",
+  "Lynk & Co Z20",
+  "Geely Galaxy E5 (EX5)",
+  "Geely Xingyuan (EX2)",
+  "Geely Starship 7",
+  "Geely Starshine 6",
+  "Xpeng GX",
+  "Xpeng X9",
+  "Xpeng G9L",
+  "Xpeng G9",
+  "Xpeng G7",
+  "Xpeng G6",
+  "Xpeng P7",
+  "Xpeng P7+",
+  "Xpeng M03",
+  "Xpeng L03",
+  "Xpeng L05"
+ ],
+ "katalogi": {
+  "voltauto.by": [
+   "AITO M7",
+   "AITO M8",
+   "AITO M9",
+   "AUDI E5 Sportback",
+   "AUDI E7X",
+   "Aion i60",
+   "Avatr 07",
+   "Avatr 12",
+   "BYD Da Han",
+   "BYD Da Tang",
+   "BYD Destroyer 05",
+   "BYD Sea Lion 05",
+   "BYD Sea Lion 06",
+   "BYD Seal 05",
+   "BYD Song L",
+   "BYD Song Plus",
+   "BYD Song Ultra",
+   "BYD Tang L",
+   "Changan CS55 Plus",
+   "Changan CS75 Plus",
+   "Changan CS75 Pro",
+   "Changan Qiyuan A07",
+   "Changan Qiyuan Q05",
+   "Changan Qiyuan Q06",
+   "Changan X5 Plus",
+   "Deepal G318",
+   "Deepal S05",
+   "Deepal S07",
+   "Deepal S09",
+   "Deepal SL03",
+   "Denza N9",
+   "Denza Z9 GT",
+   "Dongfeng e\u03c0 007",
+   "Dongfeng e\u03c0 008",
+   "Fangchengbao Tai 3",
+   "Fangchengbao Tai 7",
+   "GAC S7",
+   "Geely Atlas",
+   "Geely Coolray",
+   "Geely Emgrand",
+   "Geely Galaxy E5 (EX5)",
+   "Geely Galaxy M7",
+   "Geely Monjaro",
+   "Geely Okavango",
+   "Geely Starship 7",
+   "Leapmotor A10",
+   "Leapmotor B10",
+   "Leapmotor C10",
+   "Leapmotor C11",
+   "Leapmotor C16",
+   "Li L6",
+   "Li L7",
+   "Li L9",
+   "Li i6",
+   "Li i8",
+   "Lynk & Co 900",
+   "Maextro S800",
+   "Mazda EZ-60",
+   "Polar Stone 01",
+   "Tank 300",
+   "Tank 500",
+   "Tank 700",
+   "Tesla Model Y",
+   "Voyah Courage",
+   "Voyah Free",
+   "Voyah Passion",
+   "Xiaomi N90",
+   "Xiaomi SU7",
+   "Xiaomi SU7 Ultra",
+   "Xiaomi YU7",
+   "Zeekr 001",
+   "Zeekr 007",
+   "Zeekr 007 GT",
+   "Zeekr 009",
+   "Zeekr 7X",
+   "Zeekr 8X",
+   "Zeekr 9X",
+   "Zeekr X"
+  ],
+  "cncars.by": [
+   "AITO M9",
+   "Aion i60",
+   "Avatr 11",
+   "BYD Destroyer 05",
+   "BYD Dolphin",
+   "BYD Han",
+   "BYD Qin L",
+   "BYD Qin Plus",
+   "BYD Sea Lion 06",
+   "BYD Sea Lion 07",
+   "BYD Seagull",
+   "BYD Seal",
+   "BYD Seal 05",
+   "BYD Song Plus",
+   "BYD Song Ultra",
+   "BYD Tang L",
+   "BYD Yuan Plus",
+   "BYD Yuan Up",
+   "BYD e2",
+   "Bestune Joyee 03",
+   "Changan CS35 Plus",
+   "Changan CS55 Plus",
+   "Changan CS75 Plus",
+   "Changan Eado Plus",
+   "Changan Qiyuan A06",
+   "Changan Qiyuan A07",
+   "Changan Qiyuan Q05",
+   "Changan Qiyuan Q06",
+   "Changan Qiyuan Q07",
+   "Changan UNI-K",
+   "Changan UNI-V",
+   "Changan UNI-Z",
+   "Changan X5 Plus",
+   "Chery Arrizo 8",
+   "Chery Tiggo 7 Pro",
+   "Chery Tiggo 8 Pro Max",
+   "Chery Tiggo 9",
+   "Deepal G318",
+   "Deepal S05",
+   "Deepal S07",
+   "Deepal SL03",
+   "Denza D9",
+   "Dongfeng Box (Nammi 01)",
+   "Dongfeng Fengshen L7",
+   "Dongfeng Vigo (Nammi 06)",
+   "Dongfeng e\u03c0 008",
+   "Exeed RX",
+   "Exeed VX",
+   "Geely Atlas",
+   "Geely Cityray",
+   "Geely Coolray",
+   "Geely Emgrand",
+   "Geely Galaxy A7",
+   "Geely Galaxy E5 (EX5)",
+   "Geely Galaxy E8",
+   "Geely Galaxy M7",
+   "Geely Galaxy M9",
+   "Geely Monjaro",
+   "Geely Okavango",
+   "Geely Starshine 6",
+   "Geely Starship 7",
+   "Geely Xingyuan (EX2)",
+   "Haval Dargo",
+   "Haval H6",
+   "Haval H9",
+   "Haval Jolion",
+   "Haval M6",
+   "Hongqi E-QM5",
+   "Hongqi H5",
+   "Hongqi HS5",
+   "Jaecoo J7",
+   "Jetour T2",
+   "Jetour X70 Plus",
+   "Leapmotor A10",
+   "Leapmotor C01",
+   "Leapmotor C10",
+   "Leapmotor C11",
+   "Leapmotor C16",
+   "Li L6",
+   "Li L7",
+   "Li L8",
+   "Li L9",
+   "Li MEGA",
+   "Li i6",
+   "Li i8",
+   "Lotus Eletre",
+   "Luxeed R7",
+   "Lynk & Co 06",
+   "Lynk & Co 900",
+   "Mazda EZ-60",
+   "NIO ES6",
+   "NIO ES8",
+   "NIO ES9",
+   "NIO ET5",
+   "NIO ET5T",
+   "NIO ET7",
+   "Nissan N7",
+   "Nissan NX8",
+   "Omoda C5",
+   "Tank 300",
+   "Tank 400",
+   "Tank 500",
+   "Tank 700",
+   "Tesla Model 3",
+   "Tesla Model Y",
+   "Toyota bZ3X",
+   "Voyah Courage",
+   "Voyah Dreamer",
+   "Voyah Free",
+   "Xiaomi SU7",
+   "Xiaomi YU7",
+   "Xpeng G6",
+   "Xpeng G9",
+   "Xpeng M03",
+   "Xpeng P7",
+   "Xpeng P7+",
+   "Xpeng X9",
+   "Zeekr 001",
+   "Zeekr 001 FR",
+   "Zeekr 007",
+   "Zeekr 007 GT",
+   "Zeekr 009",
+   "Zeekr 009 Grand",
+   "Zeekr 7X",
+   "Zeekr 8X",
+   "Zeekr 9X",
+   "Zeekr MIX",
+   "Zeekr X"
+  ],
+  "valiant.by": [
+   "AITO M5",
+   "AITO M6",
+   "AITO M7",
+   "AITO M8",
+   "AITO M9",
+   "AUDI E5 Sportback",
+   "AUDI E7X",
+   "Aion Y",
+   "Aion i60",
+   "Arcfox S5",
+   "Arcfox T5",
+   "Avatr 06",
+   "Avatr 06T",
+   "Avatr 07",
+   "Avatr 07L",
+   "Avatr 11",
+   "Avatr 12",
+   "BYD Da Tang",
+   "BYD Destroyer 05",
+   "BYD Dolphin",
+   "BYD Han",
+   "BYD Han L",
+   "BYD Qin L",
+   "BYD Qin Plus",
+   "BYD Sea Lion 05",
+   "BYD Sea Lion 06",
+   "BYD Sea Lion 07",
+   "BYD Seagull",
+   "BYD Seal",
+   "BYD Seal 05",
+   "BYD Seal 06",
+   "BYD Seal 07",
+   "BYD Seal 08",
+   "BYD Song L",
+   "BYD Song Plus",
+   "BYD Song Pro",
+   "BYD Song Ultra",
+   "BYD Tang",
+   "BYD Tang L",
+   "BYD Xia",
+   "BYD Yuan Plus",
+   "BYD Yuan Up",
+   "BYD e2",
+   "Bestune Joyee 03",
+   "Changan CS75 Plus",
+   "Changan Qiyuan Q06",
+   "Changan UNI-V",
+   "Chery Tiggo 8",
+   "Deepal G318",
+   "Deepal L06",
+   "Deepal S05",
+   "Deepal S07",
+   "Deepal S09",
+   "Deepal SL03",
+   "Denza D9",
+   "Denza N8L",
+   "Denza Z9 GT",
+   "Fangchengbao Tai 3",
+   "Fangchengbao Tai 7",
+   "Firefly",
+   "Geely Atlas",
+   "Geely Cityray",
+   "Geely Coolray",
+   "Geely Galaxy L6",
+   "Geely Galaxy L7",
+   "Geely Galaxy M9",
+   "Geely Monjaro",
+   "Geely Okavango",
+   "Geely Panda",
+   "Geely Starshine 6",
+   "Geely Starship 7",
+   "Geely Xingyuan (EX2)",
+   "Haval H10",
+   "Haval H6",
+   "Hongqi E-QM5",
+   "Hongqi H5",
+   "Hongqi HS5",
+   "Jetour Traveller",
+   "Leapmotor A10",
+   "Leapmotor B01",
+   "Leapmotor B10",
+   "Leapmotor C10",
+   "Leapmotor C11",
+   "Leapmotor C16",
+   "Leapmotor D19",
+   "Leapmotor Lafa5",
+   "Li L6",
+   "Li L7",
+   "Li L9",
+   "Li i6",
+   "Lotus Eletre",
+   "Lotus Emeya",
+   "Luxeed S7",
+   "Lynk & Co 03",
+   "Lynk & Co 06",
+   "Lynk & Co 07 EM-P",
+   "Lynk & Co 07 GT",
+   "Lynk & Co 08 EM-P",
+   "Lynk & Co 09 EM-P",
+   "Lynk & Co 10",
+   "Lynk & Co 900",
+   "Lynk & Co Z20",
+   "MG Cyberster",
+   "MG4",
+   "Maextro S800",
+   "Maextro V800",
+   "Mazda EZ-6",
+   "Mazda EZ-60",
+   "NIO EC6",
+   "NIO ES6",
+   "NIO ES8",
+   "NIO ES9",
+   "NIO ET5",
+   "NIO ET5T",
+   "NIO ET7",
+   "Nissan NX8",
+   "Onvo L90",
+   "Polestar 4",
+   "Shangjie Z7",
+   "Stelato S9",
+   "Tank 300",
+   "Tank 500",
+   "Tesla Model 3",
+   "Tesla Model Y",
+   "Toyota bZ3X",
+   "Voyah Courage",
+   "Voyah Dreamer",
+   "Voyah Free",
+   "Voyah Passion",
+   "Voyah Taishan",
+   "Wey Lanshan",
+   "Wuling Bingo",
+   "Wuling Mini EV",
+   "Xiaomi N70",
+   "Xiaomi N90",
+   "Xiaomi SU7",
+   "Xiaomi SU7 Ultra",
+   "Xiaomi YU7",
+   "Xpeng G6",
+   "Xpeng G9",
+   "Xpeng GX",
+   "Xpeng L03",
+   "Xpeng M03",
+   "Xpeng P7",
+   "Xpeng P7+",
+   "Zeekr 001",
+   "Zeekr 007",
+   "Zeekr 007 GT",
+   "Zeekr 7X",
+   "Zeekr 8X",
+   "Zeekr 9X",
+   "iCAR 03",
+   "iCAR V23",
+   "iCAR V27"
+  ],
+  "evocars.by": [
+   "AITO M5",
+   "AITO M7",
+   "AITO M8",
+   "AITO M9",
+   "AUDI E7X",
+   "Aion Y",
+   "Avatr 06",
+   "Avatr 07",
+   "Avatr 11",
+   "Avatr 12",
+   "BYD Destroyer 05",
+   "BYD Dolphin",
+   "BYD Han",
+   "BYD Han L",
+   "BYD Qin L",
+   "BYD Qin Plus",
+   "BYD Sea Lion 05",
+   "BYD Sea Lion 06",
+   "BYD Sea Lion 07",
+   "BYD Seagull",
+   "BYD Seal",
+   "BYD Seal 05",
+   "BYD Seal 06",
+   "BYD Song L",
+   "BYD Song Plus",
+   "BYD Tang",
+   "BYD Tang L",
+   "BYD Yuan Plus",
+   "BYD Yuan Up",
+   "BYD e2",
+   "Bestune Joyee 03",
+   "Changan CS55 Plus",
+   "Changan CS75 Plus",
+   "Changan CS75 Pro",
+   "Changan Qiyuan A06",
+   "Changan Qiyuan Q05",
+   "Changan Qiyuan Q07",
+   "Changan UNI-T",
+   "Changan UNI-Z",
+   "Changan X5 Plus",
+   "Deepal G318",
+   "Deepal L06",
+   "Deepal L07",
+   "Deepal S05",
+   "Deepal S07",
+   "Deepal S09",
+   "Deepal SL03",
+   "Denza D9",
+   "Denza N7",
+   "Denza N9",
+   "Denza Z9 GT",
+   "Dongfeng Box (Nammi 01)",
+   "Dongfeng Vigo (Nammi 06)",
+   "Dongfeng e\u03c0 007",
+   "Dongfeng e\u03c0 008",
+   "Fangchengbao Tai 3",
+   "Geely Atlas",
+   "Geely Coolray",
+   "Geely Galaxy E5 (EX5)",
+   "Geely Galaxy E8",
+   "Geely Galaxy L7",
+   "Geely Galaxy M7",
+   "Geely Galaxy M9",
+   "Geely Monjaro",
+   "Geely Okavango",
+   "Geely Starshine 6",
+   "Geely Starship 7",
+   "Geely Xingyuan (EX2)",
+   "Hongqi E-HS9",
+   "Hongqi E-QM5",
+   "Hongqi EH7",
+   "Jetour Traveller",
+   "Leapmotor B10",
+   "Leapmotor C01",
+   "Leapmotor C10",
+   "Leapmotor C11",
+   "Leapmotor C16",
+   "Leapmotor D19",
+   "Leapmotor T03",
+   "Li L6",
+   "Li L7",
+   "Li L8",
+   "Li L9",
+   "Li MEGA",
+   "Li i6",
+   "Li i8",
+   "Lynk & Co 08 EM-P",
+   "Lynk & Co 900",
+   "Mazda EZ-6",
+   "Mazda EZ-60",
+   "NIO EC6",
+   "NIO ES6",
+   "NIO ES8",
+   "NIO ES9",
+   "NIO ET5",
+   "NIO ET5T",
+   "NIO ET7",
+   "Nissan N7",
+   "Nissan NX8",
+   "Polar Stone 01",
+   "Tank 300",
+   "Tank 500",
+   "Tesla Model 3",
+   "Tesla Model Y",
+   "Toyota bZ3X",
+   "Voyah Courage",
+   "Voyah Dreamer",
+   "Voyah Free",
+   "Voyah Passion",
+   "Voyah Taishan",
+   "Wuling Mini EV",
+   "Xiaomi N70",
+   "Xiaomi SU7",
+   "Xiaomi SU7 Ultra",
+   "Xiaomi YU7",
+   "Xpeng G6",
+   "Xpeng G7",
+   "Xpeng G9",
+   "Xpeng M03",
+   "Xpeng P7",
+   "Xpeng P7+",
+   "Xpeng X9",
+   "Zeekr 001",
+   "Zeekr 007",
+   "Zeekr 007 GT",
+   "Zeekr 009",
+   "Zeekr 7X",
+   "Zeekr 8X",
+   "Zeekr 9X",
+   "Zeekr MIX",
+   "Zeekr X"
+  ],
+  "eastmotors.by": [
+   "Avatr 06",
+   "BYD Dolphin",
+   "BYD Han",
+   "BYD Han L",
+   "BYD Qin L",
+   "BYD Sea Lion 05",
+   "BYD Sea Lion 06",
+   "BYD Sea Lion 07",
+   "BYD Seal 06",
+   "BYD Seal 07",
+   "BYD Song L",
+   "BYD Song Plus",
+   "BYD Song Pro",
+   "BYD Tang L",
+   "BYD Xia",
+   "BYD Yuan Plus",
+   "BYD Yuan Up",
+   "BYD e7",
+   "Changan Qiyuan A07",
+   "Changan Qiyuan Q05",
+   "Deepal S05",
+   "IM LS7",
+   "Li i8",
+   "Lotus Eletre",
+   "Nissan N7",
+   "Onvo L90",
+   "Polestar 4",
+   "Toyota bZ3X",
+   "Voyah Free",
+   "Xiaomi SU7",
+   "Xiaomi YU7",
+   "Zeekr 001",
+   "Zeekr 7X",
+   "Zeekr X"
+  ],
+  "bycars.by": [
+   "AITO M5",
+   "AITO M7",
+   "AITO M9",
+   "BYD Dolphin",
+   "BYD Han",
+   "BYD Qin Plus",
+   "BYD Sea Lion 07",
+   "BYD Seagull",
+   "BYD Seal",
+   "BYD Song L",
+   "BYD Song Plus",
+   "BYD Tang",
+   "BYD Yangwang U8",
+   "BYD Yuan Plus",
+   "BYD Yuan Up",
+   "BYD e2",
+   "Deepal G318",
+   "Deepal S07",
+   "Deepal SL03",
+   "Li L6",
+   "Li L7",
+   "Li L8",
+   "Li L9",
+   "Li MEGA",
+   "Polar Stone 01",
+   "Xiaomi SU7",
+   "Zeekr 001",
+   "Zeekr 007",
+   "Zeekr 009",
+   "Zeekr MIX",
+   "Zeekr X"
+  ],
+  "electro-car.by": [
+   "Avatr 07",
+   "BYD Qin L",
+   "BYD Yuan Plus",
+   "Fangchengbao Tai 7",
+   "Geely Monjaro",
+   "Geely Xingyuan (EX2)",
+   "Li i6",
+   "Nissan N7",
+   "Voyah Courage",
+   "Voyah Free",
+   "Xpeng P7",
+   "Zeekr 001",
+   "Zeekr 007"
+  ],
+  "kitmotor.by": [
+   "Changan Qiyuan A05",
+   "Changan Qiyuan Q05",
+   "Deepal S05",
+   "Deepal S07",
+   "Geely Atlas",
+   "Geely Coolray",
+   "Geely Monjaro",
+   "Li L6",
+   "Li L7",
+   "Li L9",
+   "Zeekr 001",
+   "Zeekr 7X",
+   "Zeekr 8X",
+   "Zeekr 9X"
+  ],
+  "aiauto.by": [
+   "AUDI E5 Sportback",
+   "AUDI E7X",
+   "Aion UT",
+   "Aion Y",
+   "BYD Han",
+   "BYD Han L",
+   "BYD Tang L",
+   "BYD e7",
+   "Changan Qiyuan A07",
+   "Deepal G318",
+   "Deepal L07",
+   "Deepal S05",
+   "Deepal S09",
+   "Denza N9",
+   "Dongfeng Vigo (Nammi 06)",
+   "Dongfeng e\u03c0 007",
+   "GAC Hyptec HL",
+   "Hongqi E-HS9",
+   "Hongqi E-QM5",
+   "Hongqi EH7",
+   "IM L6",
+   "IM LS6",
+   "Leapmotor B01",
+   "Nissan N7",
+   "Polar Stone 01",
+   "Toyota bZ3X",
+   "Voyah Free",
+   "Xpeng M03",
+   "Xpeng X9",
+   "Zeekr 007 GT",
+   "Zeekr 9X"
+  ]
+ },
+ "schet": {
+  "AITO M7": 4,
+  "AITO M8": 3,
+  "AITO M9": 5,
+  "AUDI E5 Sportback": 3,
+  "AUDI E7X": 4,
+  "Aion i60": 3,
+  "Avatr 07": 4,
+  "Avatr 12": 3,
+  "BYD Da Han": 1,
+  "BYD Da Tang": 2,
+  "BYD Destroyer 05": 4,
+  "BYD Sea Lion 05": 4,
+  "BYD Sea Lion 06": 5,
+  "BYD Seal 05": 4,
+  "BYD Song L": 5,
+  "BYD Song Plus": 6,
+  "BYD Song Ultra": 3,
+  "BYD Tang L": 6,
+  "Changan CS55 Plus": 3,
+  "Changan CS75 Plus": 4,
+  "Changan CS75 Pro": 2,
+  "Changan Qiyuan A07": 4,
+  "Changan Qiyuan Q05": 5,
+  "Changan Qiyuan Q06": 3,
+  "Changan X5 Plus": 3,
+  "Deepal G318": 6,
+  "Deepal S05": 7,
+  "Deepal S07": 6,
+  "Deepal S09": 4,
+  "Deepal SL03": 5,
+  "Denza N9": 3,
+  "Denza Z9 GT": 3,
+  "Dongfeng e\u03c0 007": 3,
+  "Dongfeng e\u03c0 008": 3,
+  "Fangchengbao Tai 3": 3,
+  "Fangchengbao Tai 7": 3,
+  "GAC S7": 1,
+  "Geely Atlas": 5,
+  "Geely Coolray": 5,
+  "Geely Emgrand": 2,
+  "Geely Galaxy E5 (EX5)": 3,
+  "Geely Galaxy M7": 3,
+  "Geely Monjaro": 6,
+  "Geely Okavango": 4,
+  "Geely Starship 7": 4,
+  "Leapmotor A10": 3,
+  "Leapmotor B10": 3,
+  "Leapmotor C10": 4,
+  "Leapmotor C11": 4,
+  "Leapmotor C16": 4,
+  "Li L6": 6,
+  "Li L7": 6,
+  "Li L9": 6,
+  "Li i6": 5,
+  "Li i8": 4,
+  "Lynk & Co 900": 4,
+  "Maextro S800": 2,
+  "Mazda EZ-60": 4,
+  "Polar Stone 01": 4,
+  "Tank 300": 4,
+  "Tank 500": 4,
+  "Tank 700": 2,
+  "Tesla Model Y": 4,
+  "Voyah Courage": 5,
+  "Voyah Free": 7,
+  "Voyah Passion": 3,
+  "Xiaomi N90": 2,
+  "Xiaomi SU7": 6,
+  "Xiaomi SU7 Ultra": 3,
+  "Xiaomi YU7": 5,
+  "Zeekr 001": 8,
+  "Zeekr 007": 6,
+  "Zeekr 007 GT": 5,
+  "Zeekr 009": 4,
+  "Zeekr 7X": 6,
+  "Zeekr 8X": 5,
+  "Zeekr 9X": 6,
+  "Zeekr X": 5,
+  "Avatr 11": 3,
+  "BYD Dolphin": 5,
+  "BYD Han": 6,
+  "BYD Qin L": 5,
+  "BYD Qin Plus": 4,
+  "BYD Sea Lion 07": 5,
+  "BYD Seagull": 4,
+  "BYD Seal": 4,
+  "BYD Yuan Plus": 6,
+  "BYD Yuan Up": 5,
+  "BYD e2": 4,
+  "Bestune Joyee 03": 3,
+  "Changan CS35 Plus": 1,
+  "Changan Eado Plus": 1,
+  "Changan Qiyuan A06": 2,
+  "Changan Qiyuan Q07": 2,
+  "Changan UNI-K": 1,
+  "Changan UNI-V": 2,
+  "Changan UNI-Z": 2,
+  "Chery Arrizo 8": 1,
+  "Chery Tiggo 7 Pro": 1,
+  "Chery Tiggo 8 Pro Max": 1,
+  "Chery Tiggo 9": 1,
+  "Denza D9": 3,
+  "Dongfeng Box (Nammi 01)": 2,
+  "Dongfeng Fengshen L7": 1,
+  "Dongfeng Vigo (Nammi 06)": 3,
+  "Exeed RX": 1,
+  "Exeed VX": 1,
+  "Geely Cityray": 2,
+  "Geely Galaxy A7": 1,
+  "Geely Galaxy E8": 2,
+  "Geely Galaxy M9": 3,
+  "Geely Starshine 6": 3,
+  "Geely Xingyuan (EX2)": 4,
+  "Haval Dargo": 1,
+  "Haval H6": 2,
+  "Haval H9": 1,
+  "Haval Jolion": 1,
+  "Haval M6": 1,
+  "Hongqi E-QM5": 4,
+  "Hongqi H5": 2,
+  "Hongqi HS5": 2,
+  "Jaecoo J7": 1,
+  "Jetour T2": 1,
+  "Jetour X70 Plus": 1,
+  "Leapmotor C01": 2,
+  "Li L8": 3,
+  "Li MEGA": 3,
+  "Lotus Eletre": 3,
+  "Luxeed R7": 1,
+  "Lynk & Co 06": 2,
+  "NIO ES6": 3,
+  "NIO ES8": 3,
+  "NIO ES9": 3,
+  "NIO ET5": 3,
+  "NIO ET5T": 3,
+  "NIO ET7": 3,
+  "Nissan N7": 5,
+  "Nissan NX8": 3,
+  "Omoda C5": 1,
+  "Tank 400": 1,
+  "Tesla Model 3": 3,
+  "Toyota bZ3X": 5,
+  "Voyah Dreamer": 3,
+  "Xpeng G6": 3,
+  "Xpeng G9": 3,
+  "Xpeng M03": 4,
+  "Xpeng P7": 4,
+  "Xpeng P7+": 3,
+  "Xpeng X9": 3,
+  "Zeekr 001 FR": 1,
+  "Zeekr 009 Grand": 1,
+  "Zeekr MIX": 3,
+  "AITO M5": 3,
+  "AITO M6": 1,
+  "Aion Y": 3,
+  "Arcfox S5": 1,
+  "Arcfox T5": 1,
+  "Avatr 06": 3,
+  "Avatr 06T": 1,
+  "Avatr 07L": 1,
+  "BYD Han L": 4,
+  "BYD Seal 06": 3,
+  "BYD Seal 07": 2,
+  "BYD Seal 08": 1,
+  "BYD Song Pro": 2,
+  "BYD Tang": 3,
+  "BYD Xia": 2,
+  "Chery Tiggo 8": 1,
+  "Deepal L06": 2,
+  "Denza N8L": 1,
+  "Firefly": 1,
+  "Geely Galaxy L6": 1,
+  "Geely Galaxy L7": 2,
+  "Geely Panda": 1,
+  "Haval H10": 1,
+  "Jetour Traveller": 2,
+  "Leapmotor B01": 2,
+  "Leapmotor D19": 2,
+  "Leapmotor Lafa5": 1,
+  "Lotus Emeya": 1,
+  "Luxeed S7": 1,
+  "Lynk & Co 03": 1,
+  "Lynk & Co 07 EM-P": 1,
+  "Lynk & Co 07 GT": 1,
+  "Lynk & Co 08 EM-P": 2,
+  "Lynk & Co 09 EM-P": 1,
+  "Lynk & Co 10": 1,
+  "Lynk & Co Z20": 1,
+  "MG Cyberster": 1,
+  "MG4": 1,
+  "Maextro V800": 1,
+  "Mazda EZ-6": 2,
+  "NIO EC6": 2,
+  "Onvo L90": 2,
+  "Polestar 4": 2,
+  "Shangjie Z7": 1,
+  "Stelato S9": 1,
+  "Voyah Taishan": 2,
+  "Wey Lanshan": 1,
+  "Wuling Bingo": 1,
+  "Wuling Mini EV": 2,
+  "Xiaomi N70": 2,
+  "Xpeng GX": 1,
+  "Xpeng L03": 1,
+  "iCAR 03": 1,
+  "iCAR V23": 1,
+  "iCAR V27": 1,
+  "Changan UNI-T": 1,
+  "Deepal L07": 2,
+  "Denza N7": 1,
+  "Hongqi E-HS9": 2,
+  "Hongqi EH7": 2,
+  "Leapmotor T03": 1,
+  "Xpeng G7": 1,
+  "BYD e7": 2,
+  "IM LS7": 1,
+  "BYD Yangwang U8": 1,
+  "Changan Qiyuan A05": 1,
+  "Aion UT": 1,
+  "GAC Hyptec HL": 1,
+  "IM L6": 1,
+  "IM LS6": 1
+ },
+ "kto": {
+  "AITO M7": [
+   "voltauto",
+   "valiant",
+   "evocars",
+   "bycars"
+  ],
+  "AITO M8": [
+   "voltauto",
+   "valiant",
+   "evocars"
+  ],
+  "AITO M9": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars"
+  ],
+  "AUDI E5 Sportback": [
+   "voltauto",
+   "valiant",
+   "aiauto"
+  ],
+  "AUDI E7X": [
+   "voltauto",
+   "valiant",
+   "evocars",
+   "aiauto"
+  ],
+  "Aion i60": [
+   "voltauto",
+   "cncars",
+   "valiant"
+  ],
+  "Avatr 07": [
+   "voltauto",
+   "valiant",
+   "evocars",
+   "electro-car"
+  ],
+  "Avatr 12": [
+   "voltauto",
+   "valiant",
+   "evocars"
+  ],
+  "BYD Da Han": [
+   "voltauto"
+  ],
+  "BYD Da Tang": [
+   "voltauto",
+   "valiant"
+  ],
+  "BYD Destroyer 05": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "BYD Sea Lion 05": [
+   "voltauto",
+   "valiant",
+   "evocars",
+   "eastmotors"
+  ],
+  "BYD Sea Lion 06": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors"
+  ],
+  "BYD Seal 05": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "BYD Song L": [
+   "voltauto",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "bycars"
+  ],
+  "BYD Song Plus": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "bycars"
+  ],
+  "BYD Song Ultra": [
+   "voltauto",
+   "cncars",
+   "valiant"
+  ],
+  "BYD Tang L": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "aiauto"
+  ],
+  "Changan CS55 Plus": [
+   "voltauto",
+   "cncars",
+   "evocars"
+  ],
+  "Changan CS75 Plus": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Changan CS75 Pro": [
+   "voltauto",
+   "evocars"
+  ],
+  "Changan Qiyuan A07": [
+   "voltauto",
+   "cncars",
+   "eastmotors",
+   "aiauto"
+  ],
+  "Changan Qiyuan Q05": [
+   "voltauto",
+   "cncars",
+   "evocars",
+   "eastmotors",
+   "kitmotor"
+  ],
+  "Changan Qiyuan Q06": [
+   "voltauto",
+   "cncars",
+   "valiant"
+  ],
+  "Changan X5 Plus": [
+   "voltauto",
+   "cncars",
+   "evocars"
+  ],
+  "Deepal G318": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars",
+   "aiauto"
+  ],
+  "Deepal S05": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "kitmotor",
+   "aiauto"
+  ],
+  "Deepal S07": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars",
+   "kitmotor"
+  ],
+  "Deepal S09": [
+   "voltauto",
+   "valiant",
+   "evocars",
+   "aiauto"
+  ],
+  "Deepal SL03": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars"
+  ],
+  "Denza N9": [
+   "voltauto",
+   "evocars",
+   "aiauto"
+  ],
+  "Denza Z9 GT": [
+   "voltauto",
+   "valiant",
+   "evocars"
+  ],
+  "Dongfeng e\u03c0 007": [
+   "voltauto",
+   "evocars",
+   "aiauto"
+  ],
+  "Dongfeng e\u03c0 008": [
+   "voltauto",
+   "cncars",
+   "evocars"
+  ],
+  "Fangchengbao Tai 3": [
+   "voltauto",
+   "valiant",
+   "evocars"
+  ],
+  "Fangchengbao Tai 7": [
+   "voltauto",
+   "valiant",
+   "electro-car"
+  ],
+  "GAC S7": [
+   "voltauto"
+  ],
+  "Geely Atlas": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "kitmotor"
+  ],
+  "Geely Coolray": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "kitmotor"
+  ],
+  "Geely Emgrand": [
+   "voltauto",
+   "cncars"
+  ],
+  "Geely Galaxy E5 (EX5)": [
+   "voltauto",
+   "cncars",
+   "evocars"
+  ],
+  "Geely Galaxy M7": [
+   "voltauto",
+   "cncars",
+   "evocars"
+  ],
+  "Geely Monjaro": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "electro-car",
+   "kitmotor"
+  ],
+  "Geely Okavango": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Geely Starship 7": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Leapmotor A10": [
+   "voltauto",
+   "cncars",
+   "valiant"
+  ],
+  "Leapmotor B10": [
+   "voltauto",
+   "valiant",
+   "evocars"
+  ],
+  "Leapmotor C10": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Leapmotor C11": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Leapmotor C16": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Li L6": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars",
+   "kitmotor"
+  ],
+  "Li L7": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars",
+   "kitmotor"
+  ],
+  "Li L9": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars",
+   "kitmotor"
+  ],
+  "Li i6": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "electro-car"
+  ],
+  "Li i8": [
+   "voltauto",
+   "cncars",
+   "evocars",
+   "eastmotors"
+  ],
+  "Lynk & Co 900": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Maextro S800": [
+   "voltauto",
+   "valiant"
+  ],
+  "Mazda EZ-60": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Polar Stone 01": [
+   "voltauto",
+   "evocars",
+   "bycars",
+   "aiauto"
+  ],
+  "Tank 300": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Tank 500": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Tank 700": [
+   "voltauto",
+   "cncars"
+  ],
+  "Tesla Model Y": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Voyah Courage": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "electro-car"
+  ],
+  "Voyah Free": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "electro-car",
+   "aiauto"
+  ],
+  "Voyah Passion": [
+   "voltauto",
+   "valiant",
+   "evocars"
+  ],
+  "Xiaomi N90": [
+   "voltauto",
+   "valiant"
+  ],
+  "Xiaomi SU7": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "bycars"
+  ],
+  "Xiaomi SU7 Ultra": [
+   "voltauto",
+   "valiant",
+   "evocars"
+  ],
+  "Xiaomi YU7": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors"
+  ],
+  "Zeekr 001": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "bycars",
+   "electro-car",
+   "kitmotor"
+  ],
+  "Zeekr 007": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars",
+   "electro-car"
+  ],
+  "Zeekr 007 GT": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "aiauto"
+  ],
+  "Zeekr 009": [
+   "voltauto",
+   "cncars",
+   "evocars",
+   "bycars"
+  ],
+  "Zeekr 7X": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "kitmotor"
+  ],
+  "Zeekr 8X": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "kitmotor"
+  ],
+  "Zeekr 9X": [
+   "voltauto",
+   "cncars",
+   "valiant",
+   "evocars",
+   "kitmotor",
+   "aiauto"
+  ],
+  "Zeekr X": [
+   "voltauto",
+   "cncars",
+   "evocars",
+   "eastmotors",
+   "bycars"
+  ],
+  "Avatr 11": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "BYD Dolphin": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "bycars"
+  ],
+  "BYD Han": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "bycars",
+   "aiauto"
+  ],
+  "BYD Qin L": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "electro-car"
+  ],
+  "BYD Qin Plus": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars"
+  ],
+  "BYD Sea Lion 07": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "bycars"
+  ],
+  "BYD Seagull": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars"
+  ],
+  "BYD Seal": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars"
+  ],
+  "BYD Yuan Plus": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "bycars",
+   "electro-car"
+  ],
+  "BYD Yuan Up": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "bycars"
+  ],
+  "BYD e2": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "bycars"
+  ],
+  "Bestune Joyee 03": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Changan CS35 Plus": [
+   "cncars"
+  ],
+  "Changan Eado Plus": [
+   "cncars"
+  ],
+  "Changan Qiyuan A06": [
+   "cncars",
+   "evocars"
+  ],
+  "Changan Qiyuan Q07": [
+   "cncars",
+   "evocars"
+  ],
+  "Changan UNI-K": [
+   "cncars"
+  ],
+  "Changan UNI-V": [
+   "cncars",
+   "valiant"
+  ],
+  "Changan UNI-Z": [
+   "cncars",
+   "evocars"
+  ],
+  "Chery Arrizo 8": [
+   "cncars"
+  ],
+  "Chery Tiggo 7 Pro": [
+   "cncars"
+  ],
+  "Chery Tiggo 8 Pro Max": [
+   "cncars"
+  ],
+  "Chery Tiggo 9": [
+   "cncars"
+  ],
+  "Denza D9": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Dongfeng Box (Nammi 01)": [
+   "cncars",
+   "evocars"
+  ],
+  "Dongfeng Fengshen L7": [
+   "cncars"
+  ],
+  "Dongfeng Vigo (Nammi 06)": [
+   "cncars",
+   "evocars",
+   "aiauto"
+  ],
+  "Exeed RX": [
+   "cncars"
+  ],
+  "Exeed VX": [
+   "cncars"
+  ],
+  "Geely Cityray": [
+   "cncars",
+   "valiant"
+  ],
+  "Geely Galaxy A7": [
+   "cncars"
+  ],
+  "Geely Galaxy E8": [
+   "cncars",
+   "evocars"
+  ],
+  "Geely Galaxy M9": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Geely Starshine 6": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Geely Xingyuan (EX2)": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "electro-car"
+  ],
+  "Haval Dargo": [
+   "cncars"
+  ],
+  "Haval H6": [
+   "cncars",
+   "valiant"
+  ],
+  "Haval H9": [
+   "cncars"
+  ],
+  "Haval Jolion": [
+   "cncars"
+  ],
+  "Haval M6": [
+   "cncars"
+  ],
+  "Hongqi E-QM5": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "aiauto"
+  ],
+  "Hongqi H5": [
+   "cncars",
+   "valiant"
+  ],
+  "Hongqi HS5": [
+   "cncars",
+   "valiant"
+  ],
+  "Jaecoo J7": [
+   "cncars"
+  ],
+  "Jetour T2": [
+   "cncars"
+  ],
+  "Jetour X70 Plus": [
+   "cncars"
+  ],
+  "Leapmotor C01": [
+   "cncars",
+   "evocars"
+  ],
+  "Li L8": [
+   "cncars",
+   "evocars",
+   "bycars"
+  ],
+  "Li MEGA": [
+   "cncars",
+   "evocars",
+   "bycars"
+  ],
+  "Lotus Eletre": [
+   "cncars",
+   "valiant",
+   "eastmotors"
+  ],
+  "Luxeed R7": [
+   "cncars"
+  ],
+  "Lynk & Co 06": [
+   "cncars",
+   "valiant"
+  ],
+  "NIO ES6": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "NIO ES8": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "NIO ES9": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "NIO ET5": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "NIO ET5T": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "NIO ET7": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Nissan N7": [
+   "cncars",
+   "evocars",
+   "eastmotors",
+   "electro-car",
+   "aiauto"
+  ],
+  "Nissan NX8": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Omoda C5": [
+   "cncars"
+  ],
+  "Tank 400": [
+   "cncars"
+  ],
+  "Tesla Model 3": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Toyota bZ3X": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "aiauto"
+  ],
+  "Voyah Dreamer": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Xpeng G6": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Xpeng G9": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Xpeng M03": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "aiauto"
+  ],
+  "Xpeng P7": [
+   "cncars",
+   "valiant",
+   "evocars",
+   "electro-car"
+  ],
+  "Xpeng P7+": [
+   "cncars",
+   "valiant",
+   "evocars"
+  ],
+  "Xpeng X9": [
+   "cncars",
+   "evocars",
+   "aiauto"
+  ],
+  "Zeekr 001 FR": [
+   "cncars"
+  ],
+  "Zeekr 009 Grand": [
+   "cncars"
+  ],
+  "Zeekr MIX": [
+   "cncars",
+   "evocars",
+   "bycars"
+  ],
+  "AITO M5": [
+   "valiant",
+   "evocars",
+   "bycars"
+  ],
+  "AITO M6": [
+   "valiant"
+  ],
+  "Aion Y": [
+   "valiant",
+   "evocars",
+   "aiauto"
+  ],
+  "Arcfox S5": [
+   "valiant"
+  ],
+  "Arcfox T5": [
+   "valiant"
+  ],
+  "Avatr 06": [
+   "valiant",
+   "evocars",
+   "eastmotors"
+  ],
+  "Avatr 06T": [
+   "valiant"
+  ],
+  "Avatr 07L": [
+   "valiant"
+  ],
+  "BYD Han L": [
+   "valiant",
+   "evocars",
+   "eastmotors",
+   "aiauto"
+  ],
+  "BYD Seal 06": [
+   "valiant",
+   "evocars",
+   "eastmotors"
+  ],
+  "BYD Seal 07": [
+   "valiant",
+   "eastmotors"
+  ],
+  "BYD Seal 08": [
+   "valiant"
+  ],
+  "BYD Song Pro": [
+   "valiant",
+   "eastmotors"
+  ],
+  "BYD Tang": [
+   "valiant",
+   "evocars",
+   "bycars"
+  ],
+  "BYD Xia": [
+   "valiant",
+   "eastmotors"
+  ],
+  "Chery Tiggo 8": [
+   "valiant"
+  ],
+  "Deepal L06": [
+   "valiant",
+   "evocars"
+  ],
+  "Denza N8L": [
+   "valiant"
+  ],
+  "Firefly": [
+   "valiant"
+  ],
+  "Geely Galaxy L6": [
+   "valiant"
+  ],
+  "Geely Galaxy L7": [
+   "valiant",
+   "evocars"
+  ],
+  "Geely Panda": [
+   "valiant"
+  ],
+  "Haval H10": [
+   "valiant"
+  ],
+  "Jetour Traveller": [
+   "valiant",
+   "evocars"
+  ],
+  "Leapmotor B01": [
+   "valiant",
+   "aiauto"
+  ],
+  "Leapmotor D19": [
+   "valiant",
+   "evocars"
+  ],
+  "Leapmotor Lafa5": [
+   "valiant"
+  ],
+  "Lotus Emeya": [
+   "valiant"
+  ],
+  "Luxeed S7": [
+   "valiant"
+  ],
+  "Lynk & Co 03": [
+   "valiant"
+  ],
+  "Lynk & Co 07 EM-P": [
+   "valiant"
+  ],
+  "Lynk & Co 07 GT": [
+   "valiant"
+  ],
+  "Lynk & Co 08 EM-P": [
+   "valiant",
+   "evocars"
+  ],
+  "Lynk & Co 09 EM-P": [
+   "valiant"
+  ],
+  "Lynk & Co 10": [
+   "valiant"
+  ],
+  "Lynk & Co Z20": [
+   "valiant"
+  ],
+  "MG Cyberster": [
+   "valiant"
+  ],
+  "MG4": [
+   "valiant"
+  ],
+  "Maextro V800": [
+   "valiant"
+  ],
+  "Mazda EZ-6": [
+   "valiant",
+   "evocars"
+  ],
+  "NIO EC6": [
+   "valiant",
+   "evocars"
+  ],
+  "Onvo L90": [
+   "valiant",
+   "eastmotors"
+  ],
+  "Polestar 4": [
+   "valiant",
+   "eastmotors"
+  ],
+  "Shangjie Z7": [
+   "valiant"
+  ],
+  "Stelato S9": [
+   "valiant"
+  ],
+  "Voyah Taishan": [
+   "valiant",
+   "evocars"
+  ],
+  "Wey Lanshan": [
+   "valiant"
+  ],
+  "Wuling Bingo": [
+   "valiant"
+  ],
+  "Wuling Mini EV": [
+   "valiant",
+   "evocars"
+  ],
+  "Xiaomi N70": [
+   "valiant",
+   "evocars"
+  ],
+  "Xpeng GX": [
+   "valiant"
+  ],
+  "Xpeng L03": [
+   "valiant"
+  ],
+  "iCAR 03": [
+   "valiant"
+  ],
+  "iCAR V23": [
+   "valiant"
+  ],
+  "iCAR V27": [
+   "valiant"
+  ],
+  "Changan UNI-T": [
+   "evocars"
+  ],
+  "Deepal L07": [
+   "evocars",
+   "aiauto"
+  ],
+  "Denza N7": [
+   "evocars"
+  ],
+  "Hongqi E-HS9": [
+   "evocars",
+   "aiauto"
+  ],
+  "Hongqi EH7": [
+   "evocars",
+   "aiauto"
+  ],
+  "Leapmotor T03": [
+   "evocars"
+  ],
+  "Xpeng G7": [
+   "evocars"
+  ],
+  "BYD e7": [
+   "eastmotors",
+   "aiauto"
+  ],
+  "IM LS7": [
+   "eastmotors"
+  ],
+  "BYD Yangwang U8": [
+   "bycars"
+  ],
+  "Changan Qiyuan A05": [
+   "kitmotor"
+  ],
+  "Aion UT": [
+   "aiauto"
+  ],
+  "GAC Hyptec HL": [
+   "aiauto"
+  ],
+  "IM L6": [
+   "aiauto"
+  ],
+  "IM LS6": [
+   "aiauto"
+  ]
+ }
+}
