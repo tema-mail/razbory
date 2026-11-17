@@ -1,0 +1,168 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Задачи: день «1 главная + 3 рабочие + 3 денежные», остальное – свалка, внизу виджета тайминг дня</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Задачи: день «1 главная + 3 рабочие + 3 денежные», остальное – свалка, внизу виджета тайминг дня</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Предлагаю собрать виджет из трёх готовых методов: <strong>лимит задач на день</strong> (1-3-5), <strong>главная задача первым делом</strong> («Съешь лягушку», «Единственная главная задача») и <strong>день по часам</strong> (тайм-блокинг + помидоры). Срочность и сложность, которые уже стоят плашками, остаются.</p>
+<h2>Что берём из методов</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Суть</th>
+<th>Что берём в виджет</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1-3-5</strong> (The Muse)</td>
+<td>На день 1 большая, 3 средние, 5 мелких – всего 9, больше не влезает</td>
+<td>Жёсткий лимит дня: у нас 1 + 3 + 3. Не влезло – в свалку</td>
+</tr>
+<tr>
+<td><strong>Главная задача</strong> («The ONE Thing», Келлер)</td>
+<td>Одна задача, после которой остальное проще или не нужно</td>
+<td>Слот «Главная» – ровно одна, сверху, крупно</td>
+</tr>
+<tr>
+<td><strong>«Съешь лягушку»</strong> (Брайан Трейси)</td>
+<td>Самое тяжёлое – первым, с утра</td>
+<td>Главная встаёт первым блоком в тайминге – 10:00</td>
+</tr>
+<tr>
+<td><strong>Помидоры</strong> (Франческо Чирилло)</td>
+<td>25 минут работы + 5 отдыха, после 4 – длинный перерыв</td>
+<td>Таймер у задачи: нажал – пошёл помидор, в тайминге видно, сколько сделано</td>
+</tr>
+<tr>
+<td><strong>Тайм-блокинг</strong> (Кэл Ньюпорт)</td>
+<td>Каждый час дня отдан под задачу, план можно двигать</td>
+<td>Нижняя половина виджета – день 10:00–22:00 по часам</td>
+</tr>
+<tr>
+<td><strong>Айви Ли</strong></td>
+<td>Вечером – список на завтра, утром сразу делать</td>
+<td>В 20:00 Ева предлагает главную и 3 + 3 на завтра, ты жмёшь «да»</td>
+</tr>
+<tr>
+<td><strong>Эйзенхауэр</strong> (срочно / важно)</td>
+<td>Важное и срочное – разные оси</td>
+<td>Срочность – уже плашка; важность – слой: главная, деньги, работа, свалка</td>
+</tr>
+<tr>
+<td><strong>Канбан</strong> (лимит «в работе»)</td>
+<td>Не больше N дел одновременно</td>
+<td>Лимит 3 в каждом слое</td>
+</tr>
+<tr>
+<td><strong>АСБ</strong> (ключевые недели)</td>
+<td>2 ключевые задачи недели, обычные, отдых</td>
+<td>Главная дня берётся из ключевых задач недели; Гром даёт монеты так же</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Четыре слоя вместо одного списка</h2>
+<ul>
+<li><strong>⭐ Главная – 1.</strong> Одна на день. Крупно, сверху, с таймером.</li>
+<li><strong>💼 Рабочие – 3.</strong> Проекты студии и клиентов.</li>
+<li><strong>💰 Денежные – 3.</strong> Всё, что приносит деньги прямо: счёт, КП, оплата, продажа, договор.</li>
+<li><strong>🗑 Свалка – всё остальное.</strong> Свёрнута, число в заголовке. Задача с плашкой «горит» в свалке подсвечивается красным, чтобы не потерялась.</li>
+</ul>
+<p>Слой полный – новая задача не встаёт молча: виджет спрашивает, что из трёх убрать в свалку.</p>
+<h2>Как выглядит: сверху задачи, снизу день</h2>
+<div style="max-width:640px;margin:16px 0;border-radius:14px;overflow:hidden;border:1px solid #3a3d44;background:#1d1f24;color:#e8e8e8;font:13px/1.45 -apple-system,system-ui,sans-serif">
+<div style="display:flex;gap:6px;padding:8px 10px;background:#25282e;font-size:12px"><b style="background:#3d6fd8;color:#fff;padding:2px 9px;border-radius:7px">Мои</b><span style="padding:2px 9px">Команда</span><span style="padding:2px 9px">Штаб</span><span style="padding:2px 9px">Тайминг</span></div>
+<div style="padding:10px 12px">
+<div style="color:#f5c84b;font-weight:600">⭐ Главная</div>
+<div style="background:#2c2f36;border-radius:9px;padding:8px 10px;margin:4px 0 10px;font-size:15px">Графит – структура страниц, показать заказчику <span style="float:right;color:#e66">🍅 2 из 4 · ▶︎</span></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<div style="flex:1;min-width:230px"><div style="color:#8ab4ff;font-weight:600">💼 Рабочие · 3 из 3</div><div>· Alex Krown – доступ Ирине к стенду</div><div>· Баланс – обсудить решение</div><div>· Флора – интеграция баллов</div></div>
+<div style="flex:1;min-width:230px"><div style="color:#6fd38a;font-weight:600">💰 Денежные · 2 из 3</div><div>· КП MDS – отправить клиенту</div><div>· Графит – цены для франчайзи</div><div style="color:#777">+ добавить</div></div>
+</div>
+<div style="margin-top:8px;color:#999">🗑 Свалка · 14 <span style="color:#e66">(1 горит)</span> ▸</div>
+</div>
+<div style="height:10px;background:#2a2d33;border-top:1px solid #3a3d44;border-bottom:1px solid #3a3d44;text-align:center;line-height:6px;color:#777;cursor:row-resize">═══</div>
+<div style="padding:8px 12px;font-size:12px">
+<div style="display:flex;gap:8px;padding:3px 0"><span style="width:42px;color:#888">10:00</span><span style="flex:1;background:#5a4a12;border-left:3px solid #f5c84b;padding:2px 8px;border-radius:5px">⭐ Графит – структура 🍅🍅</span></div>
+<div style="display:flex;gap:8px;padding:3px 0"><span style="width:42px;color:#888">11:00</span><span style="flex:1;background:#5a4a12;border-left:3px solid #f5c84b;padding:2px 8px;border-radius:5px">⭐ Графит – структура 🍅🍅</span></div>
+<div style="display:flex;gap:8px;padding:3px 0;position:relative"><span style="width:42px;color:#e66">12:00</span><span style="flex:1;background:#173a24;border-left:3px solid #6fd38a;padding:2px 8px;border-radius:5px">💰 КП MDS – отправить</span></div>
+<div style="height:2px;background:#e66;margin:0 0 0 50px"></div>
+<div style="display:flex;gap:8px;padding:3px 0"><span style="width:42px;color:#888">13:00</span><span style="flex:1;color:#666;padding:2px 8px">обед</span></div>
+<div style="display:flex;gap:8px;padding:3px 0"><span style="width:42px;color:#888">14:00</span><span style="flex:1;background:#1c2f52;border-left:3px solid #8ab4ff;padding:2px 8px;border-radius:5px">💼 Alex Krown – доступ к стенду</span></div>
+<div style="display:flex;gap:8px;padding:3px 0"><span style="width:42px;color:#888">15:00</span><span style="flex:1;background:#2a2d33;padding:2px 8px;border-radius:5px">📞 планёрка Евы</span></div>
+<div style="padding:3px 0 0 50px;color:#666">… до 22:00</div>
+</div></div>
+
+<p><em>Набросок: задачи взяты из твоего списка для примера. Красная линия – сейчас.</em></p>
+<ul>
+<li><strong>Сверху – задачи, снизу – день.</strong> Разделитель между ними тянется мышкой вверх-вниз, положение запоминается.</li>
+<li><strong>Задачу – в час:</strong> перетащил задачу на 14:00 – она там встала. Двигается так же.</li>
+<li><strong>Растянул виджет на весь экран</strong> – видно и задачи, и день целиком, от 10:00 до 22:00 (твой рабочий день).</li>
+<li><strong>Вкладка «Тайминг»</strong> рядом с «Командой» и «Штабом» – тот же день на всё окно, когда список не нужен.</li>
+<li>Встречи из календаря и планёрки Евы встают в день сами, серым.</li>
+</ul>
+<h2>Как делаем – 5 шагов, каждый работает сам</h2>
+<ol>
+<li><strong>Слои и лимиты:</strong> главная, 3 рабочие, 3 денежные, свалка; выбор слоя в окне правки и голосом через Еву. ~2 ч.</li>
+<li><strong>Тайминг внизу и разделитель:</strong> шкала 10–22, задача в час перетаскиванием, линия «сейчас». ~3 ч.</li>
+<li><strong>Вкладка «Тайминг»</strong> на всё окно. ~1 ч.</li>
+<li><strong>Помидоры:</strong> таймер у задачи, 25 + 5, звук, счёт в тайминге. ~1,5 ч.</li>
+<li><strong>Ева раскладывает:</strong> в 20:00 предлагает завтра (1 + 3 + 3) и часы, утром в 10:00 – «вот твой день». ~2 ч.</li>
+</ol>
+<p>Всего ~9–10 часов, по шагу с проверкой и коммитом.</p>
+<h2>Нужно от тебя</h2>
+<ol>
+<li><strong>Главная – одна на день</strong> или одна на неделю (ключевая из Грома)? Предлагаю: на день, выбирается из ключевых недели.</li>
+<li><strong>Лимит жёсткий?</strong> Предлагаю: да – четвёртая рабочая не встаёт, пока не уберёшь одну в свалку.</li>
+<li><strong>Помидор 25 + 5</strong> или длиннее (50 + 10)?</li>
+<li><strong>Раскладку по часам</strong> делаешь сам перетаскиванием, или Ева раскладывает утром, а ты двигаешь?</li>
+<li>Начинаю с шагов 1 и 2?</li>
+</ol>
+<h2>Что раскрыть</h2>
+<ul>
+<li>каждый метод подробнее, с примерами;</li>
+<li>как слои связаны с монетами Грома;</li>
+<li>формат задачи в файле: хвосты <code>слой:</code> и <code>время:</code>.</li>
+</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
