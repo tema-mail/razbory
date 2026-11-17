@@ -1,0 +1,230 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Схема завода: выбери, как её рисовать</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Схема завода: выбери, как её рисовать</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Восемь видов одной и той же схемы, все на настоящих станциях завода. Ответь буквой. Можно двумя: одна для общего вида, вторая для подробного. Синяя рамка – мой совет.</p>
+<style>
+.lg{display:flex;gap:8px 16px;flex-wrap:wrap;margin:12px 0 4px;font-size:14px}
+.lg span{display:inline-flex;align-items:center;gap:6px}.lg i{width:12px;height:12px;border-radius:4px;display:inline-block}
+.vr{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:14px 0 30px;width:min(1240px,calc(100vw - 32px));position:relative;left:50%;transform:translateX(-50%)}
+@media(max-width:860px){.vr{grid-template-columns:1fr}}
+.v{border:1px solid var(--ln);border-radius:14px;background:var(--card);padding:12px}
+.v.rec{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
+.v h4{margin:0 0 10px;font-size:17px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.v h4 b{display:inline-flex;width:30px;height:30px;border-radius:9px;background:var(--ac);color:#fff;align-items:center;justify-content:center;font-size:16px;flex:none}
+.v h4 em{flex-basis:100%;order:-1;font-style:normal;font-size:12px;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.04em}
+.v>p{font-size:14px;margin:9px 0 0;color:var(--mut)}.v>p b{color:var(--tx)}
+.s{aspect-ratio:16/10;background:#0b0e11;border-radius:10px;position:relative;overflow:hidden;color:#e6efe9;container-type:inline-size;font:500 11px/1.3 system-ui,-apple-system,sans-serif;--ev:#ff8ad1;--ns:#9a8bff;--kd:#5ce1ff;--kl:#ffc24b;--ar:#39ff88}
+.s *{box-sizing:border-box}
+.s>*{font-size:max(2.35cqw,8.5px)}
+.s .a{position:absolute}
+.s svg.a{inset:0;width:100%;height:100%}
+.s small{font-size:.82em;color:#8fa39a;display:block}
+.tk{stroke:#3d4a55;stroke-width:.45;fill:none}
+.tk.bg{stroke-dasharray:1.6 1.2;animation:bg 1.4s linear infinite}
+@keyframes bg{to{stroke-dashoffset:-2.8}}
+.uz{position:absolute;border-radius:8px;background:#151b21;border:1px solid #2a343d;padding:.5em .7em .5em 1em;overflow:hidden}
+.uz:before{content:"";position:absolute;left:0;top:0;bottom:0;width:.4em;background:var(--c,#5ce1ff)}
+.uz b{display:block}
+.pp{position:absolute;border-radius:8px;background:#1d2630;border:1px solid var(--ar);padding:.5em .7em;box-shadow:0 6px 18px rgba(0,0,0,.5);animation:pp 6s infinite}
+@keyframes pp{0%,12%{opacity:0;transform:translateY(6px)}20%,92%{opacity:1;transform:none}100%{opacity:0}}
+.pl{position:absolute;border-radius:99px;padding:.35em .9em;background:#1a2129;border:1px solid #33404b;white-space:nowrap}
+.pl.c{background:#39ff88;color:#04140b;font-weight:800;border:0;padding:.5em 1.2em}
+.li{position:absolute;white-space:nowrap;opacity:0;padding:.15em .6em;border-radius:6px;background:#12171c;font-size:.88em;max-width:45%;overflow:hidden;text-overflow:ellipsis}
+.q1{animation:q1 8s infinite}.q2{animation:q2 8s infinite}.q3{animation:q3 8s infinite}.q4{animation:q4 8s infinite}
+@keyframes q1{0%{opacity:0}5%,95%{opacity:1}100%{opacity:0}}
+@keyframes q2{0%,20%{opacity:0}25%,95%{opacity:1}100%{opacity:0}}
+@keyframes q3{0%,40%{opacity:0}45%,95%{opacity:1}100%{opacity:0}}
+@keyframes q4{0%,60%{opacity:0}65%,95%{opacity:1}100%{opacity:0}}
+.dr{position:absolute;inset:5% 4%;overflow:auto}
+.dr details{margin:0 0 .35em}
+.dr summary{cursor:pointer;padding:.35em .6em;border-radius:7px;background:#151b21;border:1px solid #2a343d;list-style:none;display:flex;gap:.6em;align-items:center}
+.dr summary::-webkit-details-marker{display:none}
+.dr summary:before{content:"▸";color:#8fa39a}.dr details[open]>summary:before{content:"▾"}
+.dr summary:hover{border-color:#39ff88}
+.dr ul{list-style:none;margin:.3em 0 .5em 1.1em;padding:0 0 0 .9em;border-left:1px solid #33404b}
+.dr li{padding:.2em 0;position:relative}.dr li:before{content:"";position:absolute;left:-.9em;top:.85em;width:.7em;border-top:1px solid #33404b}
+.kto{display:inline-block;width:.75em;height:.75em;border-radius:3px;background:var(--c);margin-right:.35em;vertical-align:-.05em}
+.dz{position:absolute;inset:6% 3%;display:grid;grid-template-columns:13% repeat(6,1fr);grid-template-rows:auto repeat(5,1fr);gap:.3em}
+.dz>div{border-radius:5px;display:flex;align-items:center;justify-content:center;text-align:center;padding:.1em .2em;line-height:1.15}
+.dz .sh{color:#8fa39a;font-size:.85em}.dz .im{justify-content:flex-start;font-weight:700;color:var(--c);font-size:.8em}
+.dz .f{background:color-mix(in srgb,var(--c) 22%,#11161b);border:1px solid color-mix(in srgb,var(--c) 55%,#11161b);font-size:.85em}
+.dz .p{background:#11161b}
+.hod{position:absolute;top:5%;bottom:4%;width:13.4%;border-radius:8px;border:1px solid #39ff88;background:rgba(57,255,136,.07);animation:hod 9s steps(1,end) infinite}
+@keyframes hod{0%{left:15.3%}16.6%{left:29%}33.3%{left:42.8%}50%{left:56.5%}66.6%{left:70.2%}83.3%{left:83.9%}}
+.st text{font-size:2.3px;fill:#cfe0d6}.st .m{fill:#8fa39a;font-size:2px}
+.sh1{position:absolute;inset:14% 9% 26%;border-radius:12px;background:#151b21;border:1px solid #2a343d;padding:1.2em 1.4em;opacity:0;animation:fd 9s infinite}
+.sh1.d2{animation-delay:3s}.sh1.d3{animation-delay:6s}
+@keyframes fd{0%{opacity:0}4%,30%{opacity:1}33.3%,100%{opacity:0}}
+.sh1 b{font-size:1.5em;display:block;margin:.2em 0 .3em}
+.tch{position:absolute;left:0;right:0;bottom:15%;display:flex;gap:.5em;justify-content:center}
+.tch u{width:.7em;height:.7em;border-radius:50%;background:#2a343d;display:block}.tch u.on{background:#39ff88}
+.kn{position:absolute;right:9%;bottom:6%;padding:.35em 1em;border-radius:8px;background:#39ff88;color:#04140b;font-weight:800;animation:pls 1.6s ease-in-out infinite}
+@keyframes pls{0%,100%{box-shadow:0 0 0 0 rgba(57,255,136,.55)}50%{box-shadow:0 0 0 .6em rgba(57,255,136,0)}}
+.bl{position:absolute;top:22%;height:34%;border-radius:8px;background:#151b21;border:1px solid #2a343d;padding:.5em .6em;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.vt{position:absolute;top:30%;width:6.2%;aspect-ratio:1;background:#ffc24b;transform:rotate(45deg);border-radius:3px}
+.vp{position:absolute;top:60%;text-align:center;color:#ffc24b;font-size:.85em;white-space:nowrap;transform:translateX(-50%)}
+.sr{position:absolute;top:78%;width:2.4%;aspect-ratio:1;border-radius:50%;background:#39ff88;box-shadow:0 0 .8em #39ff88;animation:sr 10s infinite}
+@keyframes sr{0%{left:8%}12%,26%{left:27%}38%,52%{left:50%}64%,78%{left:73%}90%,100%{left:92%}}
+</style>
+
+<div class="lg"><span><i style="background:#ff8ad1"></i>Ева</span><span><i style="background:#9a8bff"></i>нейросеть</span><span><i style="background:#5ce1ff"></i>код завода, без нейросети</span><span><i style="background:#ffc24b"></i>клиент</span><span><i style="background:#39ff88"></i>ты</span></div>
+
+<h2>Восемь видов</h2>
+<div class="vr">
+<div class="v rec"><h4><b>А</b>Узлы и провода, как в n8n и Make<em>советую для подробной схемы</em></h4>
+<div class="s">
+<svg class="a" viewBox="0 0 100 62.5" preserveAspectRatio="none"><path class="tk bg" d="M30 15H37M63 15H70M83 24V35M70 43.7H63M37 43.7H30"/></svg>
+<div class="uz" style="left:4%;top:10%;width:26%;height:28%;--c:var(--ev)"><b>Знакомство</b><small>Ева + нейросеть</small></div>
+<div class="uz" style="left:37%;top:10%;width:26%;height:28%;--c:var(--kd)"><b>Спрос</b><small>Wordstat, чистка</small></div>
+<div class="uz" style="left:70%;top:10%;width:26%;height:28%;--c:var(--kd)"><b>Карта</b><small>спрос → страница</small></div>
+<div class="uz" style="left:70%;top:56%;width:26%;height:28%;--c:var(--ns);border-color:#39ff88"><b>Статья</b><small>нейросеть пишет</small></div>
+<div class="uz" style="left:37%;top:56%;width:26%;height:28%;--c:var(--kd)"><b>Проверка</b><small>факты, запреты</small></div>
+<div class="uz" style="left:4%;top:56%;width:26%;height:28%;--c:var(--ar)"><b>Выкладка</b><small>после твоего «да»</small></div>
+<div class="pp" style="left:44%;top:30%;width:50%"><b>Статья: что внутри</b><small style="color:#cfe0d6">бриф → автор → чистка кодом → редактор, до 2 кругов</small></div>
+</div>
+<p><b>Каждая станция – карточка, между ними провода, по которым бежит работа.</b> Нажал на карточку – раскрылось, что внутри и кто делает. Привычно по n8n. На телефоне широкую схему придётся двигать. ~5 ч.</p></div>
+<div class="v rec"><h4><b>Б</b>Майндмап от центра<em>советую для общего вида</em></h4>
+<div class="s">
+<svg class="a" viewBox="0 0 100 62.5" preserveAspectRatio="none"><path class="tk" d="M50 31C40 31 40 14 30 14M50 31C40 31 40 48 30 48M50 31C60 31 60 14 70 14M50 31C60 31 60 48 70 48"/></svg>
+<div class="pl c" style="left:50%;top:50%;transform:translate(-50%,-50%)">Завод</div>
+<div class="pl" style="right:70%;top:17%;border-color:var(--ev)">Узнать клиента</div>
+<div class="pl" style="right:70%;top:71%;border-color:var(--kd)">Найти спрос</div>
+<div class="pl" style="left:70%;top:17%;border-color:var(--ns)">Написать и выпустить</div>
+<div class="pl" style="left:70%;top:71%;border-color:var(--ar)">Следить</div>
+<div class="li q1" style="left:3%;top:5%">Знакомство · Созвон · Техника</div>
+<div class="li q2" style="left:5%;top:86%">Спрос · Карта страниц</div>
+<div class="li q3" style="right:3%;top:5%">Статья · Проверка · Выкладка</div>
+<div class="li q4" style="right:3%;top:86%">Сторож · Советник · Отчёт недели</div>
+</div>
+<p><b>В центре завод, от него четыре ветки, у каждой раскрываются свои станции.</b> Весь завод виден одним взглядом. Плохо показывает порядок: что за чем идёт. ~4 ч.</p></div>
+</div>
+
+<div class="vr">
+<div class="v"><h4><b>В</b>Дерево-оглавление<em>живое – понажимай</em></h4>
+<div class="s"><div class="dr">
+<details open><summary><span class="kto" style="--c:var(--ev)"></span>1. Знакомство</summary><ul><li><span class="kto" style="--c:var(--ns)"></span>Поиск в интернете – нейросеть студии</li><li><span class="kto" style="--c:var(--ev)"></span>Созвон – Ева задаёт вопросы</li><li><span class="kto" style="--c:var(--kl)"></span>«Всё верно» – клиент</li></ul></details>
+<details><summary><span class="kto" style="--c:var(--kd)"></span>2. Спрос и карта</summary><ul><li><span class="kto" style="--c:var(--kd)"></span>Wordstat и чистка – код</li><li><span class="kto" style="--c:var(--ar)"></span>«Да» на смету – ты</li><li><span class="kto" style="--c:var(--kd)"></span>Карта: спрос → страница</li></ul></details>
+<details><summary><span class="kto" style="--c:var(--ns)"></span>3. Статья</summary><ul><li><span class="kto" style="--c:var(--ns)"></span>Бриф, автор, редактор – нейросеть</li><li><span class="kto" style="--c:var(--kd)"></span>Проверка фактов и запретов – код</li></ul></details>
+<details><summary><span class="kto" style="--c:var(--ar)"></span>4. Выкладка и площадки</summary><ul><li><span class="kto" style="--c:var(--kl)"></span>Согласовано в календаре – клиент</li><li><span class="kto" style="--c:var(--kd)"></span>Сайт, Дзен, ВК, карты – код</li></ul></details>
+<details><summary><span class="kto" style="--c:var(--kd)"></span>5. Контроль</summary><ul><li><span class="kto" style="--c:var(--kd)"></span>Сторож каждый день, советник и отчёт по понедельникам</li></ul></details>
+</div></div>
+<p><b>Список сверху вниз, каждая строка раскрывается, как папки.</b> Самый простой и одинаково удобный на телефоне. Меньше всего похож на карту: связей между ветками не видно. ~2 ч.</p></div>
+<div class="v"><h4><b>Г</b>Дорожки: кто когда подключается</h4>
+<div class="s"><div class="hod"></div><div class="dz">
+<div></div><div class="sh">Знакомство</div><div class="sh">Спрос</div><div class="sh">Статья</div><div class="sh">Проверка</div><div class="sh">Выкладка</div><div class="sh">Контроль</div>
+<div class="im" style="--c:var(--kl)">Клиент</div><div class="f" style="--c:var(--kl)">отвечает</div><div class="p"></div><div class="p"></div><div class="p"></div><div class="f" style="--c:var(--kl)">согласует</div><div class="f" style="--c:var(--kl)">читает отчёт</div>
+<div class="im" style="--c:var(--ev)">Ева</div><div class="f" style="--c:var(--ev)">спрашивает</div><div class="p"></div><div class="p"></div><div class="p"></div><div class="p"></div><div class="p"></div>
+<div class="im" style="--c:var(--ns)">Нейросеть</div><div class="f" style="--c:var(--ns)">ищет в сети</div><div class="f" style="--c:var(--ns)">чистит</div><div class="f" style="--c:var(--ns)">пишет</div><div class="p"></div><div class="p"></div><div class="f" style="--c:var(--ns)">советует</div>
+<div class="im" style="--c:var(--kd)">Код</div><div class="f" style="--c:var(--kd)">сверяет</div><div class="f" style="--c:var(--kd)">Wordstat</div><div class="p"></div><div class="f" style="--c:var(--kd)">факты, запреты</div><div class="f" style="--c:var(--kd)">на сайт</div><div class="f" style="--c:var(--kd)">сторож</div>
+<div class="im" style="--c:var(--ar)">Ты</div><div class="p"></div><div class="f" style="--c:var(--ar)">«да» на смету</div><div class="p"></div><div class="p"></div><div class="f" style="--c:var(--ar)">«да»</div><div class="p"></div>
+</div></div>
+<p><b>Строки – исполнители, столбцы – шаги.</b> Лучше всех отвечает на вопрос «какие боты подключаются на этом шаге и где жду я». Это таблица, а не дерево: раскрывать особо нечего. ~4 ч.</p></div>
+</div>
+
+<div class="vr">
+<div class="v"><h4><b>Д</b>Карта метро</h4>
+<div class="s"><svg class="a st" viewBox="0 0 100 62.5">
+<path d="M6 22H80" stroke="#39ff88" stroke-width="1.1" fill="none"/><path d="M56 22V40H92" stroke="#ff8ad1" stroke-width="1.1" fill="none"/><path d="M80 22C92 22 92 54 70 54H20C10 54 10 22 18 22" stroke="#5ce1ff" stroke-width="1.1" fill="none" stroke-dasharray="2 1"/>
+<g fill="#0b0e11" stroke="#fff" stroke-width=".7"><circle cx="6" cy="22" r="1.6"/><circle cx="18" cy="22" r="1.6"/><circle cx="31" cy="22" r="1.6"/><circle cx="43" cy="22" r="1.6"/><circle cx="56" cy="22" r="2.3"/><circle cx="68" cy="22" r="1.6"/><circle cx="80" cy="22" r="1.6"/><circle cx="68" cy="40" r="1.6"/><circle cx="80" cy="40" r="1.6"/><circle cx="92" cy="40" r="1.6"/><circle cx="62" cy="54" r="1.6"/><circle cx="45" cy="54" r="1.6"/><circle cx="28" cy="54" r="1.6"/></g>
+<text x="2" y="17">Знакомство</text><text x="15" y="28">Техника</text><text x="28" y="17">Спрос</text><text x="40" y="28">Карта</text><text x="52" y="17">Статья</text><text x="63" y="17">Проверка</text><text x="74" y="17">Выкладка</text>
+<text x="65" y="45">Дзен</text><text x="78" y="45">ВК</text><text x="88" y="45">Карты</text><text x="58" y="59.5">Сторож</text><text x="40" y="59.5">Редактор</text><text x="23" y="59.5">Советник</text>
+<text class="m" x="2" y="8">зелёная – сайт · розовая – площадки · голубая – контроль и обновления</text>
+<circle r="1.5" fill="#fff"><animateMotion dur="7s" repeatCount="indefinite" path="M6 22H80"/></circle>
+</svg></div>
+<p><b>Три линии: сайт, площадки, контроль. Станции – остановки, «Статья» – пересадка.</b> Наглядно и запоминается, хорошо видно, где ветки расходятся. Кто выполняет шаг, на самой карте не видно – только по клику. ~6 ч.</p></div>
+<div class="v"><h4><b>Е</b>Шаг за шагом, как сторис</h4>
+<div class="s">
+<div class="sh1"><small>Шаг 1 из 9</small><b>Знакомство</b>Нейросеть ищет факты о компании в интернете. Ева созванивается и задаёт вопросы.<small style="margin-top:.6em"><span class="kto" style="--c:var(--ev)"></span>Ева <span class="kto" style="--c:var(--ns);margin-left:.8em"></span>нейросеть <span class="kto" style="--c:var(--kl);margin-left:.8em"></span>клиент</small></div>
+<div class="sh1 d2"><small>Шаг 2 из 9</small><b>Спрос</b>Завод собирает запросы из Wordstat и чистит их. Перед платным сбором ждёт твоё «да» на смету.<small style="margin-top:.6em"><span class="kto" style="--c:var(--kd)"></span>код <span class="kto" style="--c:var(--ar);margin-left:.8em"></span>ты</small></div>
+<div class="sh1 d3"><small>Шаг 3 из 9</small><b>Статья</b>Нейросеть пишет по брифу, редактор правит до двух кругов, код проверяет факты и запреты.<small style="margin-top:.6em"><span class="kto" style="--c:var(--ns)"></span>нейросеть <span class="kto" style="--c:var(--kd);margin-left:.8em"></span>код</small></div>
+<div class="tch"><u class="on"></u><u class="on"></u><u class="on"></u><u></u><u></u><u></u><u></u><u></u><u></u></div>
+<div class="kn">Дальше →</div>
+</div>
+<p><b>Один шаг на экран, кнопка «Дальше».</b> Понятнее всего для человека, который видит завод впервые, и идеально на телефоне. Не видно картины целиком – только путь. ~3 ч.</p></div>
+</div>
+
+<div class="vr">
+<div class="v"><h4><b>Ж</b>Круг: клиент в центре</h4>
+<div class="s"><svg class="a st" viewBox="0 0 100 62.5">
+<circle cx="50" cy="31" r="27" fill="none" stroke="#2a343d" stroke-width=".4" stroke-dasharray="1.5 1"/><circle cx="50" cy="31" r="19" fill="none" stroke="#33404b" stroke-width=".5"/>
+<path d="M50 31L50 12A19 19 0 0 1 63.4 17.6Z" fill="rgba(57,255,136,.18)"><animateTransform attributeName="transform" type="rotate" values="0 50 31;45 50 31;90 50 31;135 50 31;180 50 31;225 50 31;270 50 31;315 50 31" dur="12s" calcMode="discrete" repeatCount="indefinite"/></path>
+<circle cx="50" cy="31" r="7" fill="#ffc24b"/><text x="50" y="32" text-anchor="middle" style="fill:#04140b;font-weight:800">Клиент</text>
+<g fill="#39ff88"><circle cx="57.3" cy="13.4" r="1.3"/><circle cx="67.6" cy="23.7" r="1.3"/><circle cx="67.6" cy="38.3" r="1.3"/><circle cx="57.3" cy="48.6" r="1.3"/><circle cx="42.7" cy="48.6" r="1.3"/><circle cx="32.4" cy="38.3" r="1.3"/><circle cx="32.4" cy="23.7" r="1.3"/><circle cx="42.7" cy="13.4" r="1.3"/></g>
+<text x="59.5" y="12">Знакомство</text><text x="70" y="24.5">Спрос</text><text x="70" y="39.5">Карта</text><text x="59.5" y="51.5">Статья</text><text x="40.5" y="51.5" text-anchor="end">Проверка</text><text x="30" y="39.5" text-anchor="end">Выкладка</text><text x="30" y="24.5" text-anchor="end">Сторож</text><text x="40.5" y="12" text-anchor="end">Отчёт</text>
+<text class="m" x="84" y="8">сайт</text><text class="m" x="86" y="56">Дзен</text><text class="m" x="10" y="56">ВК</text><text class="m" x="8" y="8">карты</text>
+</svg></div>
+<p><b>Клиент в центре, станции по кругу, площадки снаружи.</b> Показывает главное: завод – это цикл, после отчёта всё идёт заново. Подробности внутрь круга не влезают. ~5 ч.</p></div>
+<div class="v"><h4><b>З</b>Поток с воротами: где ждут человека</h4>
+<div class="s">
+<svg class="a" viewBox="0 0 100 62.5" preserveAspectRatio="none"><path class="tk" d="M4 50H96"/></svg>
+<div class="bl" style="left:3%;width:17%"><b>Знакомство</b><small>авто</small></div>
+<div class="vt" style="left:23.6%"></div><div class="vp" style="left:26.7%">«Всё верно»<br>клиент</div>
+<div class="bl" style="left:33%;width:13%"><b>Спрос</b><small>авто</small></div>
+<div class="vt" style="left:48.8%"></div><div class="vp" style="left:51.9%">«да» на смету<br>ты</div>
+<div class="bl" style="left:58%;width:11%"><b>Статья</b><small>авто</small></div>
+<div class="vt" style="left:71.6%"></div><div class="vp" style="left:74.7%">согласовано<br>клиент</div>
+<div class="bl" style="left:81%;width:16%"><b>Выкладка</b><small>авто</small></div>
+<div class="sr"></div>
+</div>
+<p><b>Серые блоки завод делает сам, жёлтые ромбы – ворота, где он стоит и ждёт человека.</b> Сразу видно, почему что-то не двигается и чьё сейчас слово. Про исполнителей внутри блока молчит. ~3 ч.</p></div>
+</div>
+
+<h2>Что будет в любой схеме</h2>
+<ul>
+<li>Нажал на станцию – раскрылось: что она делает, кто выполняет, что на входе и на выходе, где ждёт «да».</li>
+<li>Цвет исполнителя один и тот же везде: Ева, нейросеть, код, клиент, ты.</li>
+<li>Работает на телефоне и в тёмной теме, с голосовым пояснением.</li>
+<li>Всё берётся из кода завода, а не из головы: 13 станций, расписание, ворота.</li>
+</ul>
+<h2>Нужно от тебя</h2>
+<p>Одна или две буквы. Мой совет – <strong>Б и А</strong>: майндмап как общий вид, и по нажатию на ветку она раскрывается в узлы с проводами.</p>
+<h2>Что раскрыть</h2>
+<ol>
+<li>Какие 13 станций есть в заводе и что каждая делает.</li>
+<li>Чем подробная схема будет отличаться от этих макетов.</li>
+<li>Можно ли сделать схему живой: чтобы показывала, на какой станции сейчас каждый клиент.</li>
+</ol></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
