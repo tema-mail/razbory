@@ -1,0 +1,354 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Первоисточники и белый список: что это и зачем</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Первоисточники и белый список: что это и зачем</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Первоисточник – это место, где факт родился: закон, ГОСТ, сайт производителя, официальная статистика, научное исследование. Пересказ – это блог, форум или агрегатор, где этот факт повторили, часто с ошибкой. «Минимум первоисточников» – правило «информационная статья без двух ссылок на первоисточники не выходит», а «белый список» – перечень сайтов, которые для ниши считаются первоисточниками. У нас такого нет вообще: завод проверяет только факты компании (цены, гарантии, сроки). Нужно это для статей про законы, штрафы, деньги и здоровье, для продающих страниц – нет. Сделать – около 25 часов.</p>
+<p><strong>Нужно от тебя:</strong></p>
+<ol>
+<li>«Да» или «нет» на правило: информационная статья – минимум 2 первоисточника из белого списка, иначе черновик, а не публикация.</li>
+<li>Глянуть белые списки 4 ниш ниже и вычеркнуть или дописать сайты.</li>
+<li>Решить, кто у клиента подтверждает список и цифры ниши: мастер, тренер, менеджер привоза.</li>
+</ol>
+<h2>1. Первоисточник – где факт родился, пересказ – где его повторили</h2>
+<p>Простое правило: если сайт сам <strong>принимает</strong> решение, <strong>выпускает</strong> продукт или <strong>считает</strong> цифру – он первоисточник. Если он <strong>рассказывает</strong> о чужом решении – пересказ.</p>
+<p>Пять видов первоисточников:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Вид</th>
+<th>Кто его выпускает</th>
+<th>Пример сайта</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Закон и постановление</td>
+<td>Госдума, правительство, ЕЭК</td>
+<td>consultant.ru, garant.ru, pravo.gov.ru, docs.eaeunion.org</td>
+</tr>
+<tr>
+<td>Стандарт (ГОСТ, техрегламент)</td>
+<td>Росстандарт, ЕЭК</td>
+<td>protect.gost.ru, rst.gov.ru</td>
+</tr>
+<tr>
+<td>Производитель</td>
+<td>марка авто, завод оборудования</td>
+<td>haval.ru, starline.ru, alarmtrade.ru (Pandora)</td>
+</tr>
+<tr>
+<td>Официальная статистика и ведомства</td>
+<td>Росстат, ФТС, ГИБДД, Минспорт, ВОЗ</td>
+<td>rosstat.gov.ru, customs.gov.ru, gibdd.ru, who.int</td>
+</tr>
+<tr>
+<td>Исследование</td>
+<td>учёные, журналы</td>
+<td>pubmed.ncbi.nlm.nih.gov, cochranelibrary.com</td>
+</tr>
+</tbody>
+</table></div>
+<p>Как это выглядит в наших нишах:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Факт в статье</th>
+<th>Первоисточник</th>
+<th>Пересказ (так не надо)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Штраф за тонировку – 500 ₽, лобовое и передние стёкла – не меньше 70 % света</td>
+<td>ч. 3.1 ст. 12.5 КоАП, редакция 526-ФЗ от 29.12.2025, действует с 09.01.2026 (по пересказу autonews.ru, 22.12.2025 и 09.01.2026; текст закона сверить на consultant.ru)</td>
+<td>статья автоблога «штрафы 2026» без номера статьи</td>
+</tr>
+<tr>
+<td>Льготный утильсбор для физлица – машины до 160 л.с. включительно</td>
+<td>постановление правительства № 1291 в редакции № 1713 от 01.11.2025, с 01.12.2025 (по tks.ru, 01.11 и 01.12.2025)</td>
+<td>пост в Telegram «утильсбор снова подняли»</td>
+</tr>
+<tr>
+<td>Взрослым нужно 150–300 минут умеренной нагрузки в неделю</td>
+<td>рекомендации ВОЗ по физической активности, 2020, who.int</td>
+<td>фитнес-блогер «врачи советуют час в день»</td>
+</tr>
+<tr>
+<td>Магнитола Teyes сохраняет штатную камеру на этой модели</td>
+<td>сайт производителя или карта совместимости + слово мастера</td>
+<td>отзыв на форуме «у меня всё работало»</td>
+</tr>
+</tbody>
+</table></div>
+<p>Пересказ не запрещён, но <strong>ссылаться</strong> надо туда, откуда пересказ взят. В примере с тонировкой у меня самого сейчас пересказ (autonews.ru): до публикации статьи его надо заменить ссылкой на текст КоАП. Ровно это и делает правило.</p>
+<h2>2. Поисковикам и нейросетям ссылки нужны как знак доверия, но прямого фактора «есть ссылки» никто не объявлял</h2>
+<p><strong>Google.</strong> В официальной справке «Creating helpful, reliable, people-first content» (developers.google.com, прочитано 17.11.2026) среди вопросов к странице прямо стоит: подаёт ли она информацию так, чтобы ей хотелось верить, «например, с понятными источниками» (clear sourcing). Там же: из четырёх частей E-E-A-T (опыт, экспертиза, авторитетность, доверие) <strong>доверие важнее всего</strong>, а для тем, где ошибка бьёт по здоровью, деньгам и безопасности (YMYL), системы «дают ещё больший вес» сильному E-E-A-T. И честная оговорка Google: сам E-E-A-T «не отдельный фактор ранжирования». Руководство для асессоров обновлено 11.09.2025 (по searchengineland и seroundtable; сам PDF я открыть не смог – не подтверждено дословно).</p>
+<p><strong>Яндекс.</strong> Справка Вебмастера «Как измеряется и улучшается качество Поиска» (прочитано 17.11.2026): метрика качества страниц <strong>Проксима</strong> строится из оценок асессоров и учитывает «качество, полезность и оригинальность контента» и «авторитетность автора в сложных тематиках (медицина, юридические и финансовые услуги)». В обновлении «Вега» (vc.ru, 17.12.2019) Яндекс сказал, что часть асессоров – практикующие врачи и юристы, они оценивают около 15 % запросов. Слова «источники» в справке нет: что Яндекс отдельно учитывает ссылки на первоисточники – <strong>не подтверждено</strong>.</p>
+<p><strong>Нейросети.</strong> Единственная серьёзная цифра – работа «GEO: Generative Engine Optimization» (Принстон и др., конференция KDD 2024, arxiv.org/abs/2311.09735): приёмы вроде «добавить ссылки на источники», «добавить цитаты» и «добавить статистику» поднимали видимость страницы в ответах нейросетей <strong>до 40 %</strong>, причём по-разному в разных темах. Это опыт 2023–2024 годов на западных движках, не на Яндексе. По Яндексу самая свежая открытая проверка (Т-Ж, 21.08.2026, 12 000 запросов одного сайта): 67,8 % цитирований Нейро – у страниц из топ-10, без места в поиске цитирования нет; ссылки на источники там не изучали.</p>
+<p>Вывод для нас: источники – не волшебная кнопка позиций. Это часть доверия (Паспорт доверия), и она важна именно в «опасных» темах: закон, деньги, здоровье, безопасность машины.</p>
+<h2>3. У Васина источники проверяет код, у нас – только факты компании</h2>
+<p>Что у Васина (vasinki.ru/ceh/, прочитано 17.11.2026):</p>
+<ul>
+<li><strong>Гейт 03 «Минимум первоисточников»</strong> – «статья без источников не выходит». В ответе 07 конкретнее: в черновик падает статья, где «меньше двух первоисточников».</li>
+<li><strong>Гейт 05 «Сверка чисел с библиотекой фактов»</strong> и <strong>гейт 06 «Живость внешних ссылок»</strong>.</li>
+<li><strong>Библиотека фактов ниши</strong> – «цифры со сроком годности и статусом».</li>
+<li><strong>Цепочка доказательства</strong> (ответ 08): «утверждение → дословный фрагмент источника → адрес». Движок скачивает страницу и ищет там фрагмент. Не нашёл – статья идёт к человеку. Размытое «по действующему законодательству» запрещено.</li>
+<li><strong>Белый список первоисточников ниши</strong> ведёт клиент: «вписываешь свои реестры, стандарты, научные базы».</li>
+<li><strong>Зарубежные доноры</strong> – опция: с сильных иностранных сайтов берутся тезисы, не текст.</li>
+</ul>
+<p>Что у нас (код ~/Sites/zavod-ai-sfera, прочитан 17.11.2026):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Часть</th>
+<th>Что делает</th>
+<th>Источники?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>engine/gejty.py</td>
+<td>каждая цена и каждый срок гарантии в тексте – из базы фактов сайта, иначе СТОП</td>
+<td>только факты компании</td>
+</tr>
+<tr>
+<td>engine/anketa.py</td>
+<td>20 вопросов знакомства: адрес, цены, гарантия, сроки, запреты; в базу идёт только подтверждённое человеком</td>
+<td>нет</td>
+</tr>
+<tr>
+<td>engine/brif.py</td>
+<td>задание автору: стратег выбирает факты <strong>номерами</strong>, выдумать не может; в слое студии есть строка «цифры со сниппетов без первоисточника» (строка 38)</td>
+<td>слово есть, проверки нет</td>
+</tr>
+<tr>
+<td>engine/krasnyy.py</td>
+<td>красный список в три слоя: студия, площадка, сайт</td>
+<td>нет</td>
+</tr>
+</tbody>
+</table></div>
+<p>По сверке с Васиным (17.11.2026): база фактов у всех трёх клиентов завода пока пустая, а внешних источников статья не требует вовсе. Для продающих страниц это нормально: их правда – цены и гарантии компании. Для статей «штраф за тонировку в 2026» или «сколько стоит растаможка» – дыра: цифру из головы нейросети никто не сверит.</p>
+<h2>4. Как сделать у нас: правило, белые списки по нишам, библиотека фактов ниши</h2>
+<h3>Правило «Минимум первоисточников»</h3>
+<ul>
+<li><strong>Кому:</strong> информационные статьи про закон, деньги, здоровье, технику и безопасность. Продающая страница услуги – как сейчас, правда из базы фактов компании.</li>
+<li><strong>Сколько:</strong> минимум 2 первоисточника из белого списка (как у Васина). Если в статье есть закон, штраф, налог или сбор – один из двух обязательно текст закона или сайт ведомства.</li>
+<li><strong>Где в статье:</strong> ссылка прямо у утверждения («штраф 500 ₽ – ч. 3.1 ст. 12.5 КоАП») и блок «Источники» внизу: название документа по-русски, дата редакции, дата нашей проверки.</li>
+<li><strong>Как проверяет код:</strong><ol>
+<li>домен ссылки – из белого списка ниши или общего;</li>
+<li>ссылка открывается. Важно: госсайты режут зарубежные адреса. 17.11 с нашего нидерландского адреса не ответили pravo.gov.ru, fas.gov.ru, government.ru, kremlin.ru. Проверять надо с московского сервера (FirstVDS). А научные базы отвечают ботам 403 и 412 (acsm.org, cochranelibrary.com) – это «закрыто для робота», не «мёртвая ссылка»;</li>
+<li>цитата: для каждой цифры код скачивает страницу и ищет дословный фрагмент – как у Васина;</li>
+<li>номер исследования PubMed (PMID) проверяется бесплатным сервисом PubMed: такой номер есть или выдуман;</li>
+<li>«по действующему законодательству» без номера статьи – в красный список, на проверку глазами.</li>
+</ol>
+</li>
+<li><strong>Не прошло</strong> – статья в черновик с причиной, не в публикацию.</li>
+</ul>
+<h3>Белые списки по нишам</h3>
+<p>Проверены 17.11.2026: код ответа и заголовок главной страницы. Сначала общий слой для всех ниш, потом своё по нише.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Слой</th>
+<th>Сайты</th>
+<th>Зачем</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Общий</td>
+<td>consultant.ru, garant.ru, pravo.gov.ru, government.ru, rosstat.gov.ru, fas.gov.ru, rospotrebnadzor.ru, cbr.ru, docs.eaeunion.org, eec.eaeunion.org</td>
+<td>законы, постановления, разъяснения о рекламе и правах потребителя, решения ЕЭК</td>
+</tr>
+<tr>
+<td>Автосервис и мультимедиа</td>
+<td>gibdd.ru, mvd.ru, protect.gost.ru и rst.gov.ru (Росстандарт, ГОСТ 32565-2013 о стёклах), docs.eaeunion.org (ТР ТС 018/2011), autostat.ru, starline.ru, alarmtrade.ru (Pandora), teyes.ru (заголовок просто «Teyes» – сверить, что это официальный представитель), сайты марок авто (lada.ru, toyota.ru, haval.ru и др.)</td>
+<td>штрафы и ПДД, стандарты, изменения конструкции, парк машин, совместимость оборудования</td>
+</tr>
+<tr>
+<td>Фитнес</td>
+<td>minsport.gov.ru, gto.ru, who.int, pubmed.ncbi.nlm.nih.gov, cochranelibrary.com, cr.minzdrav.gov.ru (клинические рекомендации), minzdrav.gov.ru, rospotrebnadzor.ru, cyberleninka.ru и elibrary.ru (российские научные статьи – вторым сортом, качество разное)</td>
+<td>нормы нагрузки, ГТО, доказательства пользы, права клиента по абонементу</td>
+</tr>
+<tr>
+<td>Продажа и привоз авто</td>
+<td>customs.gov.ru (ФТС: пошлины, утильсбор физлиц), minpromtorg.gov.ru (утильсбор, параллельный импорт), government.ru (постановления 1291 и 1713), eec.eaeunion.org (ставки пошлин для личного пользования), cbr.ru (кредит), fas.gov.ru (реклама кредита), nalog.gov.ru (транспортный налог), gibdd.ru (регистрация, ЭПТС), fsa.gov.ru (реестры Росаккредитации), autostat.ru</td>
+<td>цена «под ключ», расчёт платежей, документы, кредит</td>
+</tr>
+<tr>
+<td>Китайские авто</td>
+<td>официальные сайты в России: haval.ru, chery.ru, geely-motors.com, exeed.ru, omoda.ru, tank.ru, changanauto.ru, voyah.su, tenet.ru, belgee.ru; в Китае: lixiang.com (Li Auto), zeekrlife.com (Zeekr); плюс minpromtorg.gov.ru, customs.gov.ru, gibdd.ru</td>
+<td>комплектации, гарантия дистрибьютора, параллельный импорт</td>
+</tr>
+</tbody>
+</table></div>
+<p>Две ловушки, которые нашлись при проверке:</p>
+<ul>
+<li><strong>changan.ru – это сайт дилера в Москве</strong>, а не марки (заголовок «на сайте официального дилера в Москве»). Официальный – changanauto.ru. Поэтому список проверяет человек, а не только код.</li>
+<li><strong>Китайские сайты</strong> (lixiang.com) – на китайском. Факт берём и пересказываем по-русски, в блоке «Источники» пишем «Li Auto, официальный сайт», ни одного иероглифа на страницу не переносим (твоё правило от 12.11, оно уже в красном списке студии).</li>
+</ul>
+<h3>Библиотека фактов ниши – не то же самое, что база фактов компании</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>База фактов компании (есть)</th>
+<th>Библиотека фактов ниши (нет)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Что в ней</td>
+<td>что <strong>мы</strong> обещаем: цены, гарантия, сроки, адреса</td>
+<td>как устроен <strong>мир</strong>: законы, штрафы, нормы, сборы</td>
+</tr>
+<tr>
+<td>Откуда</td>
+<td>знакомство, прайс, слово владельца</td>
+<td>первоисточник из белого списка, с цитатой</td>
+</tr>
+<tr>
+<td>Кто подтверждает</td>
+<td>владелец клиента</td>
+<td>код (цитата найдена) + человек раз в срок</td>
+</tr>
+<tr>
+<td>На кого</td>
+<td>на одного клиента</td>
+<td>на всю нишу: одна на всех автосервисов</td>
+</tr>
+<tr>
+<td>Срок годности</td>
+<td>пока владелец не поменял</td>
+<td>до даты: «утильсбор – проверить до 01.01.2027»</td>
+</tr>
+</tbody>
+</table></div>
+<p>Пример трёх строк библиотеки:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Факт</th>
+<th>Значение</th>
+<th>Источник</th>
+<th>Действует с</th>
+<th>Проверить до</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Штраф за тонировку</td>
+<td>500 ₽</td>
+<td>ч. 3.1 ст. 12.5 КоАП</td>
+<td>09.01.2026</td>
+<td>раз в квартал</td>
+</tr>
+<tr>
+<td>Льготный утильсбор физлица</td>
+<td>до 160 л.с. включительно</td>
+<td>постановление № 1291, ред. № 1713</td>
+<td>01.12.2025</td>
+<td>01.01.2027</td>
+</tr>
+<tr>
+<td>Нагрузка взрослому</td>
+<td>150–300 мин умеренной в неделю</td>
+<td>ВОЗ, 2020</td>
+<td>2020</td>
+<td>при новой редакции ВОЗ</td>
+</tr>
+</tbody>
+</table></div>
+<p>Срок вышел – статьи с этим фактом идут на перепроверку. Это и есть сверка Васина «гейт 05», только с напоминанием.</p>
+<h3>Как это ложится на «Паспорт доверия»</h3>
+<p>Паспорт доверия – наша механика E-E-A-T из пяти частей: автор с именем и опытом, дата и обновление, <strong>источники</strong>, реквизиты компании, отзывы. Первоисточники и белый список – это часть «источники» целиком. Библиотека фактов ниши – её основа: из неё берутся проверенные цифры и ссылки. Без этой части Паспорт закрывает «кто написал», но не «откуда цифра».</p>
+<h3>Оценка в часах</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Часы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Белый список как файл-данные по нишам (как красный список) + настройка сайта «ниша»</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Подбор источников в задании автору: пакет 3–6 ссылок с цитатами, выбор номерами, как факты</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Гейт «минимум 2 первоисточника» + живость с московского сервера + цитата на странице + PMID</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Блок «Источники» в шаблоне статьи на сайтах клиентов</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Библиотека фактов ниши: таблица со сроком годности, сверка чисел, напоминание «срок вышел»</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Наполнить 4 белых списка и 30–40 фактов ниш, прогнать на 3–5 реальных статьях</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Итого</strong></td>
+<td><strong>25</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Что раскрыть:</strong></p>
+<ol>
+<li>Белый список одной ниши подробно: каждый сайт – что с него брать и что нельзя.</li>
+<li>Как код ищет цитату на странице и что делать с сайтами, которые закрыты для роботов.</li>
+<li>Библиотека фактов автосервиса: первые 20 фактов со сроками.</li>
+<li>Паспорт доверия целиком: все пять частей и что из них уже есть на сайтах клиентов.</li>
+</ol></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
