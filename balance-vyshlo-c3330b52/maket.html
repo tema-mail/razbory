@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Макет: вышедшее в кабинете</title>
+<style>
+:root{--bg:#060807;--pan:#0d1210;--pan2:#111916;--fg:#e9f7ef;--mut:#8ea397;--line:rgba(57,255,136,.16);--line2:rgba(57,255,136,.42);--acc:#39ff88;--acc-soft:rgba(57,255,136,.1);--acc-text:#39ff88;--warn:#ffc24b;--warn-soft:rgba(255,194,75,.1);--info:#5ce1ff;--done:#6f7a74}
+@media (prefers-color-scheme:light){:root{--bg:#eef8f2;--pan:#fff;--pan2:#f5fbf7;--fg:#0b1a12;--mut:#4f675a;--line:rgba(0,170,85,.22);--line2:rgba(0,170,85,.6);--acc:#00c463;--acc-soft:rgba(0,196,99,.1);--acc-text:#00964b;--warn:#c47f00;--warn-soft:#fff3d6;--info:#0088b8;--done:#9aa49e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 Inter,-apple-system,system-ui,sans-serif;padding:16px}
+h2{font-size:17px;margin:18px 0 8px}.mut{color:var(--mut);font-size:13px}
+.kal{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.dn{font-size:12px;color:var(--mut);text-align:center}
+.kl{min-height:150px;border:1px solid var(--line);border-radius:12px;background:var(--pan);padding:6px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.kl .ch{font-weight:700;font-size:13px;color:var(--mut)}.kl.seg{border-color:var(--acc)}
+.ke{display:flex;align-items:center;gap:5px;width:100%;font:500 12px/1.25 Inter,sans-serif;color:var(--fg);background:var(--pan2);border:1px solid var(--line);border-left:3px solid var(--sc);border-radius:8px;padding:4px 5px;min-width:0}
+.ke .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+.kz{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:var(--kc);color:#fff;font:700 10.5px/1 Inter,sans-serif;flex:none}
+.s-zhdyot{--sc:var(--warn)}.s-soglasovano{--sc:var(--acc)}
+/* вышедшее: серое, как неактивное */
+.ke.s-vyshlo{--sc:var(--done);background:transparent;color:var(--mut);opacity:.6}
+.ke.s-vyshlo .kz{filter:grayscale(1);opacity:.7}
+.ok{flex:none;width:16px;height:16px;border-radius:50%;background:var(--acc);color:#04120a;font:800 11px/16px Inter,sans-serif;text-align:center}
+.lbl{flex:none;font-size:10px;font-weight:700;padding:1px 6px;border-radius:10px;border:1px solid var(--line2);color:var(--acc-text)}
+.wrap{display:grid;grid-template-columns:1fr;gap:14px}
+.var{border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--pan2)}
+.var>b{display:block;margin-bottom:8px}
+.ov{border:1px solid var(--line2);border-radius:16px;background:var(--pan);padding:16px;max-width:640px}
+.ov h3{margin:0 0 8px;font-size:18px;line-height:1.3}
+.sub{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--mut);margin:0 0 10px}
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:2px 9px;border-radius:20px;border:1px solid var(--line2);color:var(--acc-text);background:var(--acc-soft)}
+.tag.w{border-color:var(--warn);color:var(--warn);background:var(--warn-soft)}
+a.link{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--acc-text);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.post{border:1px solid var(--line);border-radius:12px;background:var(--pan2);padding:12px;color:var(--mut);font-size:13px}
+.vst{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.vst input{flex:1;min-width:200px;background:var(--pan2);color:var(--fg);border:1px solid var(--line2);border-radius:10px;padding:8px 10px;font:inherit}
+.btn{border:1px solid var(--acc);background:var(--acc);color:#04120a;border-radius:10px;padding:8px 14px;font-weight:700}
+.btn2{border:1px solid var(--line2);background:transparent;color:var(--fg);border-radius:10px;padding:8px 14px}
+.knopki{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+@media (max-width:700px){.kal{grid-template-columns:repeat(2,minmax(0,1fr))}.kl{min-height:0}}
+</style></head><body>
+
+<h2>1. Месяц: вышедшее серое и с отметкой</h2>
+<p class="mut">Ноябрь Баланса, реальные материалы. Вышло на самом деле: 15.11 – 3 статьи сайта, 16.11 – 3 новости Яндекс Карт. Остальное ждёт.</p>
+<div class="wrap">
+<div class="var"><b>Вариант А – галочка ✓</b>
+<div class="kal">
+ <div class="kl"><span class="ch">15</span>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#00c463">С</span><span class="t">Инфракрасная сауна</span><span class="ok">✓</span></div>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#00c463">С</span><span class="t">Клуб с бассейном</span><span class="ok">✓</span></div>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#00c463">С</span><span class="t">Сколько раз в зал</span><span class="ok">✓</span></div></div>
+ <div class="kl"><span class="ch">16</span>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#fc3f1d">ЯК</span><span class="t">Cycle-студия</span><span class="ok">✓</span></div>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#fc3f1d">ЯК</span><span class="t">Акватермальный вечером</span><span class="ok">✓</span></div>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#fc3f1d">ЯК</span><span class="t">Детский клуб</span><span class="ok">✓</span></div>
+  <div class="ke s-zhdyot"><span class="kz" style="--kc:#7a5cff">Д</span><span class="t">Дзен: тренировка до работы</span></div></div>
+ <div class="kl"><span class="ch">17</span>
+  <div class="ke s-soglasovano"><span class="kz" style="--kc:#00c463">С</span><span class="t">Массаж спины</span></div>
+  <div class="ke s-soglasovano"><span class="kz" style="--kc:#00c463">С</span><span class="t">Как начать ходить в зал</span></div></div>
+ <div class="kl seg"><span class="ch">18 · сегодня</span>
+  <div class="ke s-zhdyot"><span class="kz" style="--kc:#2787f5">ВК</span><span class="t">ВК: пост сети</span></div>
+  <div class="ke s-soglasovano"><span class="kz" style="--kc:#00c463">С</span><span class="t">Тренировки после 40</span></div></div>
+ <div class="kl"><span class="ch">19</span>
+  <div class="ke s-zhdyot"><span class="kz" style="--kc:#fc3f1d">ЯК</span><span class="t">Новость Адмирала</span></div>
+  <div class="ke s-zhdyot"><span class="kz" style="--kc:#00c463">С</span><span class="t">Как убрать живот</span></div></div>
+</div></div>
+
+<div class="var"><b>Вариант Б – надпись «выложено»</b>
+<div class="kal">
+ <div class="kl"><span class="ch">15</span>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#00c463">С</span><span class="t">Инфракрасная сауна</span><span class="lbl">выложено</span></div>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#00c463">С</span><span class="t">Клуб с бассейном</span><span class="lbl">выложено</span></div>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#00c463">С</span><span class="t">Сколько раз в зал</span><span class="lbl">выложено</span></div></div>
+ <div class="kl"><span class="ch">16</span>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#fc3f1d">ЯК</span><span class="t">Cycle-студия</span><span class="lbl">выложено</span></div>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#fc3f1d">ЯК</span><span class="t">Акватермальный вечером</span><span class="lbl">выложено</span></div>
+  <div class="ke s-vyshlo"><span class="kz" style="--kc:#fc3f1d">ЯК</span><span class="t">Детский клуб</span><span class="lbl">выложено</span></div>
+  <div class="ke s-zhdyot"><span class="kz" style="--kc:#7a5cff">Д</span><span class="t">Дзен: тренировка до работы</span></div></div>
+ <div class="kl"><span class="ch">17</span>
+  <div class="ke s-soglasovano"><span class="kz" style="--kc:#00c463">С</span><span class="t">Массаж спины</span></div>
+  <div class="ke s-soglasovano"><span class="kz" style="--kc:#00c463">С</span><span class="t">Как начать ходить в зал</span></div></div>
+ <div class="kl seg"><span class="ch">18 · сегодня</span>
+  <div class="ke s-zhdyot"><span class="kz" style="--kc:#2787f5">ВК</span><span class="t">ВК: пост сети</span></div>
+  <div class="ke s-soglasovano"><span class="kz" style="--kc:#00c463">С</span><span class="t">Тренировки после 40</span></div></div>
+ <div class="kl"><span class="ch">19</span>
+  <div class="ke s-zhdyot"><span class="kz" style="--kc:#fc3f1d">ЯК</span><span class="t">Новость Адмирала</span></div>
+  <div class="ke s-zhdyot"><span class="kz" style="--kc:#00c463">С</span><span class="t">Как убрать живот</span></div></div>
+</div></div>
+</div>
+
+<h2>2. Окно вышедшего: рядом с «выложено» – ссылка</h2>
+<div class="ov">
+ <h3>Инфракрасная сауна в Краснодаре: как отдыхать в акватермальном комплексе</h3>
+ <p class="sub"><span class="kz" style="--kc:#00c463">С</span> Сайт · Абрикосово · 15 ноября
+  <span class="tag">✓ выложено</span>
+  <a class="link" href="https://balance-fit.ru/abricosovo/blog/infrakrasnaya-sauna-krasnodar" target="_blank" rel="noopener">balance-fit.ru/abricosovo/blog/infrakrasnaya-sauna… ↗</a></p>
+ <div class="post">Блок «Зачем этот материал» и текст – как сейчас.</div>
+ <div class="knopki"><span class="btn">Открыть, где вышло ↗</span><span class="btn2">Комментарий</span><span class="btn2">Закрыть</span></div>
+</div>
+
+<h2>3. Вышло, а ссылки ещё нет (новости Яндекс Карт 16.11)</h2>
+<p class="mut">Только в твоём окне. Клиент видит просто «✓ выложено». Ссылку вставляешь один раз, дальше её найдёт автосверка.</p>
+<div class="ov">
+ <h3>Адмирал · Cycle-студия: 45 минут вместо вечера на диване</h3>
+ <p class="sub"><span class="kz" style="--kc:#fc3f1d">ЯК</span> Яндекс Карты · Адмирал · 16 ноября
+  <span class="tag">✓ выложено</span> <span class="tag w">ссылки нет</span></p>
+ <div class="vst"><input placeholder="Вставь ссылку на вышедший пост"><span class="btn">Сохранить ссылку</span></div>
+</div>
+</body></html>
