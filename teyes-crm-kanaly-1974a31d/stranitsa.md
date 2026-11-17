@@ -48,7 +48,7 @@
 .shag{counter-reset:s;list-style:none;padding:0}.shag li{counter-increment:s;background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:10px 12px 10px 46px;position:relative;margin:8px 0}
 .shag li:before{content:counter(s);position:absolute;left:12px;top:10px;width:24px;height:24px;border-radius:50%;background:#2fb39a;color:#04201c;font-weight:700;text-align:center;line-height:24px}
 .shag .min{color:var(--mut);font-size:13px}
-main code{overflow-wrap:anywhere;white-space:normal}
+main code{overflow-wrap:anywhere;white-space:normal}main li{overflow-wrap:anywhere}
 </style>
 
 
@@ -212,9 +212,9 @@ main code{overflow-wrap:anywhere;white-space:normal}
 
 ## Что раскрыть
 
-- Страница аналитики: https://crm.168.113.179.49.nip.io/hooks/analitika – логин и пароль лежат на маке в `~/.config/teyes-crm/admin.txt`, скажи – продиктую в чате.
+- Страница аналитики: <https://crm.168.113.179.49.nip.io/hooks/analitika> – логин и пароль лежат на маке в `~/.config/teyes-crm/admin.txt`, скажи – продиктую в чате.
 - Полный отчёт проверяющего: 3 критичные находки, 7 на первую неделю, 10 «потом» – всё в `docs/ТЕХДОЛГ.md` проекта.
 - Телефония дешевле МегаФона: Новофон от 0 до 340 ₽ в месяц плюс номер от 240 ₽ – если захочешь автомат, но не за 2 500.
 - Почему ключ CRM не работает снаружи и почему это не страшно.
-- ТЗ проекта: https://tema-mail.github.io/teyes-sibir-site/drafts/crm-pervaya-liniya/
+- ТЗ проекта: <https://tema-mail.github.io/teyes-sibir-site/drafts/crm-pervaya-liniya/>
 - Цена: час 1 000 ₽ себестоимости, минимум продажи 3 000 ₽/ч. Часы – моя оценка без запаса. Факты о блокировках, Max и тарифах – из открытых источников на 17.11, цены МегаФона – со страницы Новосибирска.

@@ -89,7 +89,7 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 .shag{counter-reset:s;list-style:none;padding:0}.shag li{counter-increment:s;background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:10px 12px 10px 46px;position:relative;margin:8px 0}
 .shag li:before{content:counter(s);position:absolute;left:12px;top:10px;width:24px;height:24px;border-radius:50%;background:#2fb39a;color:#04201c;font-weight:700;text-align:center;line-height:24px}
 .shag .min{color:var(--mut);font-size:13px}
-main code{overflow-wrap:anywhere;white-space:normal}
+main code{overflow-wrap:anywhere;white-space:normal}main li{overflow-wrap:anywhere}
 </style>
 
 <h2>Где мы сейчас – по каждому каналу</h2>
@@ -245,11 +245,11 @@ main code{overflow-wrap:anywhere;white-space:normal}
 </ul>
 <h2>Что раскрыть</h2>
 <ul>
-<li>Страница аналитики: https://crm.168.113.179.49.nip.io/hooks/analitika – логин и пароль лежат на маке в <code>~/.config/teyes-crm/admin.txt</code>, скажи – продиктую в чате.</li>
+<li>Страница аналитики: <a href="https://crm.168.113.179.49.nip.io/hooks/analitika">https://crm.168.113.179.49.nip.io/hooks/analitika</a> – логин и пароль лежат на маке в <code>~/.config/teyes-crm/admin.txt</code>, скажи – продиктую в чате.</li>
 <li>Полный отчёт проверяющего: 3 критичные находки, 7 на первую неделю, 10 «потом» – всё в <code>docs/ТЕХДОЛГ.md</code> проекта.</li>
 <li>Телефония дешевле МегаФона: Новофон от 0 до 340 ₽ в месяц плюс номер от 240 ₽ – если захочешь автомат, но не за 2 500.</li>
 <li>Почему ключ CRM не работает снаружи и почему это не страшно.</li>
-<li>ТЗ проекта: https://tema-mail.github.io/teyes-sibir-site/drafts/crm-pervaya-liniya/</li>
+<li>ТЗ проекта: <a href="https://tema-mail.github.io/teyes-sibir-site/drafts/crm-pervaya-liniya/">https://tema-mail.github.io/teyes-sibir-site/drafts/crm-pervaya-liniya/</a></li>
 <li>Цена: час 1 000 ₽ себестоимости, минимум продажи 3 000 ₽/ч. Часы – моя оценка без запаса. Факты о блокировках, Max и тарифах – из открытых источников на 17.11, цены МегаФона – со страницы Новосибирска.</li>
 </ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
 function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
