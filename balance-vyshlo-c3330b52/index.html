@@ -1,4 +1,4 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Вышедшее в кабинете: серое, «выложено» и ссылка – выложено в бой</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Ссылки на вышедшее завод теперь ставит сам – после выкладки и каждые 2 часа</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
 main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
 h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
@@ -41,33 +41,39 @@ html[data-theme=dark] img{filter:brightness(.92)}
 html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
 </style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
 if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
-document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Вышедшее в кабинете: серое, «выложено» и ссылка – выложено в бой</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
-<p>Вариант Б в кабинете завода: вышедшее серое с надписью «выложено», но открывается как раньше; в окне рядом с «✓ выложено» – ссылка прямо на пост или страницу. Проверил глазами на живом заводе.</p>
-<h2>Что видно сейчас</h2>
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Ссылки на вышедшее завод теперь ставит сам – после выкладки и каждые 2 часа</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Руками ссылки больше не вставляем. Завод сам находит, что реально вышло, ставит «✓ выложено» и ссылку как «Поделиться». На Балансе уже сработало: 3 новости Яндекс Карт 16.11 получили ссылки сами.</p>
+<h2>Как это работает</h2>
 <ul>
-<li><strong>Месяц.</strong> Плашки вышедшего серые, полупрозрачные, справа «выложено». Клик открывает окно, как раньше, – старые открываются. На телефоне в сетке только значки, в списке под сеткой – «выложено» и «где вышло ↗».</li>
-<li><strong>Окно (и у тебя, и у клиента).</strong> Ярлык «✓ выложено», рядом кликабельный адрес, например balance-fit.ru/abricosovo/blog/infrakrasnaya-sauna… ↗, и кнопка «Открыть, где вышло ↗».</li>
-<li><strong>Вышло, а ссылки нет</strong> (новости Яндекс Карт 16.11). У тебя жёлтая «ссылки нет» и поле «вставь ссылку» + «Сохранить ссылку». Клиент видит просто «✓ выложено».</li>
-<li>Это общий интерфейс завода – у всех клиентов.</li>
+<li><strong>Яндекс Карты:</strong> мак снимает ленту новостей каждой карточки филиала, завод сопоставляет со своими постами по тексту и вписывает ссылку на саму новость – как твоя из «Поделиться» (Империал, Детский клуб – ровно та же новость).</li>
+<li><strong>Статьи сайта:</strong> настал день – завод сам открывает адрес статьи; страница живая и на ней текст именно этой статьи – «выложено» со ссылкой.</li>
+<li><strong>Когда:</strong> сразу после выкладки (вписано в скилл Яндекс Карт) и каждые 2 часа на маке. Сбой – сразу авария тебе и Еве.</li>
+<li><strong>Защита от ложных «вышло»:</strong> новость старше поста не считается; без твоего «да» – не ставим «вышло», а говорим тебе; статья – только по точному адресу и куску её текста.</li>
+<li>Это общий механизм завода – для всех клиентов.</li>
+</ul>
+<h2>Почему на 16.11 не всё закрыто – потому что не всё вышло</h2>
+<ul>
+<li><strong>Вышло и закрыто:</strong> 3 новости Яндекс Карт (Адмирал, Абрикосово, Империал) – серые, «выложено», со ссылками.</li>
+<li><strong>Не вышло – 3 статьи сайта 16.11 (и ещё 6 за 17–18.11):</strong> на сайте их нет, адреса отдают 404. Причина: часовая выкладка на Тильду так и не включена с 15.11 – ждала твоего слова. Завод правильно не ставит им «вышло».</li>
+<li><strong>Не вышло – Дзен 16.11:</strong> пост в Дзен Баланса никто не выкладывает – канал и кто постит до сих пор не решены.</li>
+<li><strong>Дубль у Адмирала:</strong> новость про Cycle-студию висит на карточке дважды. Удалить лишнюю можно только в твоём кабинете Яндекс Бизнеса.</li>
 </ul>
 <h2>Проверено</h2>
 <ul>
-<li>796 тестов на той сборке, что ушла на сервер, плюс новые на ссылку: только вышедшему, только https, ссылка статьи – только на домене сайта.</li>
-<li>Независимая проверка правок – PASS; три мелочи из неё поправил до выкладки (окно не теряет введённую ссылку при ошибке и др.).</li>
-<li>После выкладки: завод 200, без входа 401, копия базы снята. В Chrome: месяц и окно клиента со ссылкой, окно владельца с полем.</li>
-</ul>
-<h2>Выложил только своё</h2>
-<ul>
-<li>Завод параллельно правит чат «AIЗавод»: у него в коде автопилот и другое, ждущее твоего «да». На сервер ушли только мои 3 коммита поверх того, что там уже стояло. Чужое не выкладывал.</li>
+<li>847 тестов, независимая проверка – её замечания закрыл до выкладки (ложные совпадения, обход «да», статья по редиректу, зависание ssh).</li>
+<li>Боевой прогон: ссылки 3 новостям записаны; повторный прогон по расписанию – чисто.</li>
+<li>Выложил только своё: на сервере уже стоял автопилот второго чата, добавились только файлы сверки.</li>
 </ul>
 <h2>Нужно от тебя</h2>
 <ul>
-<li>Ссылки на 3 новости Яндекс Карт от 16.11 (Адмирал, Абрикосово, Империал) – вставь в поле в окне или скинь мне.</li>
+<li>Выложить на сайт 9 статей 16–18.11 сейчас (Тильда)? Скажи «да» – выложу, завод сам их закроет.</li>
+<li>Дзен Баланса: кто выкладывает – мы через твой браузер или клиент?</li>
+<li>Удалить дубль Cycle-студии у Адмирала в Яндекс Бизнесе.</li>
 </ul>
 <h2>Что раскрыть</h2>
 <ul>
-<li>Названия в узких клетках месяца коротко обрезаются из-за метки – полное название в окне и во всплывающей подсказке. Если мешает – сделаю метку второй строкой.</li>
-<li>Автосверка, которая сама находит ссылки вышедших постов, – следующий шаг.</li>
+<li>ВК в сверку – с первым постом 19.11.</li>
+<li>Как это выглядит у клиента в кабинете.</li>
 </ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
 function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
 b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
