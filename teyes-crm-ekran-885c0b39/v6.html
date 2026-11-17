@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Вариант 6 – в нашем стиле</title>
+<style>
+/* Стиль кабинетов Elite Rose / EV SIBIR / ALEX KROWN: тёмная шапка-вкладки, золото, бордо, светлые панели */
+:root{
+  --bg:#f3f4f3;--panel:#ffffff;--panel-2:#f6f7f6;--col:#eceeed;--line:#e2e5e3;--line-soft:#f0f2f1;--field:#d9dedc;
+  --tx:#1e1e1e;--mut:#55605d;--dim:#6f7a76;
+  --nav:#1c201f;--nav-tx:#ffffff;--gold:#c9a96e;--on-gold:#1c201f;--bordo:#7a1f2b;--bordo-soft:#fbe5e7;
+  --ok:#2e7d4f;--ok-soft:#e3f4ea;--warnbg:#fffaf0;--warnline:#f0d9a8;--warntx:#6b5a33;
+  --shade:rgba(20,22,21,.28);
+  --font:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#111413;--panel:#1a1e1d;--panel-2:#202523;--col:#161a19;--line:#2c3331;--line-soft:#242a28;--field:#333b38;
+  --tx:#ecefed;--mut:#aeb7b3;--dim:#95a09b;
+  --nav:#0a0c0b;--nav-tx:#ffffff;--gold:#d4b57c;--on-gold:#1c201f;--bordo:#e7808e;--bordo-soft:#3a1d22;
+  --ok:#6fcf97;--ok-soft:#173326;--warnbg:#2a2417;--warnline:#5a4a26;--warntx:#e6cf9d;
+  --shade:rgba(0,0,0,.5);
+}}
+:root[data-theme=dark]{
+  --bg:#111413;--panel:#1a1e1d;--panel-2:#202523;--col:#161a19;--line:#2c3331;--line-soft:#242a28;--field:#333b38;
+  --tx:#ecefed;--mut:#aeb7b3;--dim:#95a09b;
+  --nav:#0a0c0b;--nav-tx:#ffffff;--gold:#d4b57c;--on-gold:#1c201f;--bordo:#e7808e;--bordo-soft:#3a1d22;
+  --ok:#6fcf97;--ok-soft:#173326;--warnbg:#2a2417;--warnline:#5a4a26;--warntx:#e6cf9d;
+  --shade:rgba(0,0,0,.5);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:14px/1.45 var(--font);-webkit-font-smoothing:antialiased;padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+button{font:inherit;color:inherit;cursor:pointer}
+:where(a,button,input,select,textarea):focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+.ch{font-style:normal;display:inline-grid;place-items:center;min-width:26px;height:20px;padding:0 5px;border-radius:6px;font-size:11px;font-weight:700;color:#fff;flex:none}
+.ch--max{background:#6c4cf5}.ch--wa{background:#1fa855}.ch--vk{background:#0a6cf0}.ch--site{background:#5b6472}.ch--call{background:#c26a00}.ch--form{background:#0e7fa8}
+/* Шапка-вкладки как в эталоне */
+.topnav{position:sticky;top:0;z-index:30;background:var(--nav);color:var(--nav-tx);padding:0 60px 0 16px;display:flex;align-items:center;gap:22px;min-height:52px;font-size:14px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:600;letter-spacing:.06em}
+.brand i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--on-gold);display:grid;place-items:center;font-size:12px;font-weight:800;letter-spacing:0}
+.tab{display:none;color:rgba(255,255,255,.7);text-decoration:none;padding:16px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.tab.on{color:#fff;border-bottom-color:var(--gold);font-weight:600}
+.tab .n{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:10px;background:var(--gold);color:var(--on-gold);font-size:11px;font-weight:700}
+.me{margin-left:auto;color:rgba(255,255,255,.6);font-size:13px;white-space:nowrap}
+.me b{color:#fff;font-weight:500}
+main{padding:14px 16px 24px;max-width:1500px;margin:0 auto}
+.demo-note{display:flex;gap:10px;padding:10px 14px;margin:0 0 12px;border:1px solid var(--warnline);background:var(--warnbg);border-radius:10px;font-size:13px;color:var(--warntx)}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+.tools h1{margin:0 auto 0 0;font-size:22px;font-weight:600}
+.tools input,.tools select{height:36px;padding:0 12px;border:1px solid var(--field);border-radius:8px;font:inherit;font-size:16px;background:var(--panel);color:var(--tx);min-width:0}
+.tools input{flex:1 1 220px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border:1px solid var(--field);border-radius:8px;background:var(--panel);color:var(--tx);font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap}
+.btn.primary{background:var(--nav);border-color:var(--nav);color:#fff}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--on-gold);font-weight:600}
+.f-hide{display:none}
+/* Плитки */
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 12px}
+.tl{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:2px;min-width:0}
+.tl span{font-size:12px;color:var(--dim)}
+.tl b{font-size:24px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.tl small{font-size:12px;color:var(--mut)}
+.tl--hot{border-color:var(--bordo);background:var(--bordo-soft)}
+.tl--hot b,.tl--hot span{color:var(--bordo)}
+.tl:last-child{grid-column:1/-1}
+.tl--txt b{font-size:18px;line-height:1.6}
+/* Доска как в эталоне */
+.kb{display:grid;grid-auto-flow:column;grid-auto-columns:260px;gap:12px;overflow-x:auto;align-items:start;padding-bottom:6px}
+.kb__col{background:var(--col);border-radius:10px;padding:10px;display:grid;gap:10px;min-width:0}
+.kb__col h2{margin:4px 4px 2px;font-size:13px;font-weight:600}
+.kb__col h2 span{color:var(--dim);font-weight:400;margin-left:4px}
+.kb__card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13px;display:grid;gap:4px;min-width:0}
+.kb__card.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(201,169,110,.35)}
+.kb__card p{margin:0}
+.kb__top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.kb__top b{font-weight:600}
+.kb__who{font-weight:600}
+.kb__meta{display:flex;justify-content:space-between;gap:8px;color:var(--dim);font-size:12px;margin-top:4px}
+.kb__meta b{color:var(--tx)}
+.kb__late{color:var(--bordo);font-weight:600}
+.chip{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:11px;background:var(--panel-2);border:1px solid var(--line-soft);color:var(--mut);font-size:12px}
+.empty{font-size:12.5px;text-align:center;padding:14px 0;color:var(--dim);margin:0}
+/* Панель справа, как карточка товара в эталоне */
+.ed{display:none}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(5,1fr);background:var(--nav);padding-bottom:env(safe-area-inset-bottom)}
+.tabbar a{display:grid;justify-items:center;gap:2px;min-height:58px;padding-top:8px;font-size:11.5px;color:rgba(255,255,255,.65);text-decoration:none;position:relative}
+.tabbar a i{font-style:normal;font-size:18px;line-height:1}
+.tabbar a.on{color:var(--gold);font-weight:600}
+.tabbar a em{position:absolute;top:5px;left:calc(50% + 6px);font-style:normal;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--gold);color:var(--on-gold);font-size:11px;font-weight:700;display:grid;place-items:center}
+.theme{position:fixed;right:10px;top:8px;z-index:40;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;font-size:16px}
+@media (min-width:600px){
+  .tiles{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .tl:last-child{grid-column:auto}
+}
+@media (min-width:1100px){
+  body{padding-bottom:0}
+  .topnav{padding:0 20px}
+  .tab{display:inline}
+  .me{margin-right:44px}
+  main{padding:18px 20px 40px}
+  .f-hide{display:inline-flex}
+  .kb{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}
+  .ed{display:block;position:fixed;inset:52px 0 0 0;z-index:25}
+  .ed__bg{position:absolute;inset:0;background:var(--shade)}
+  .ed__panel{position:absolute;top:0;right:0;bottom:0;width:min(600px,100%);display:flex;flex-direction:column;background:var(--panel);box-shadow:-20px 0 50px rgba(0,0,0,.18)}
+  .ed__head{display:flex;align-items:center;gap:10px;padding:14px 22px;border-bottom:1px solid var(--line-soft)}
+  .ed__head>div{margin-right:auto;min-width:0}
+  .ed__head small{font-size:12px;color:var(--dim)}
+  .ed__head h2{margin:2px 0 0;font-size:19px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ed__x{width:36px;height:36px;border:1px solid var(--field);border-radius:8px;background:var(--panel);font-size:18px}
+  .ed__tabs{display:flex;gap:4px;padding:0 22px;border-bottom:1px solid var(--line-soft)}
+  .ed__tabs button{padding:12px 10px;border:0;border-bottom:2px solid transparent;background:none;font-size:13.5px;color:var(--mut);white-space:nowrap}
+  .ed__tabs button.on{color:var(--tx);border-bottom-color:var(--bordo);font-weight:600}
+  .ed__grid{display:grid;grid-template-columns:minmax(0,1fr) 210px;flex:1;min-height:0}
+  .ed__body{overflow:auto;padding:18px 22px;display:flex;flex-direction:column;gap:9px;background:var(--panel-2)}
+  .m{max-width:86%;padding:9px 12px;border-radius:10px;font-size:13.5px;line-height:1.45}
+  .m small{display:block;font-size:11.5px;color:var(--dim);margin-top:2px}
+  .m--in{align-self:flex-start;background:var(--panel);border:1px solid var(--line)}
+  .m--out{align-self:flex-end;background:var(--nav);color:#fff}
+  .m--out small{color:rgba(255,255,255,.6)}
+  .m--sys{align-self:center;background:none;color:var(--dim);font-size:12px;padding:0}
+  .ed__side{padding:16px;border-left:1px solid var(--line-soft);display:grid;gap:10px;align-content:start;font-size:13px}
+  .ed__side h3{margin:0;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);font-weight:600}
+  .f{display:grid;gap:4px;font-size:12px;color:var(--mut)}
+  .f span{height:34px;padding:0 10px;border:1px solid var(--field);border-radius:8px;display:flex;align-items:center;color:var(--tx);font-size:13.5px;background:var(--panel)}
+  .ed__foot{display:grid;gap:8px;padding:12px 22px 16px;border-top:1px solid var(--line-soft)}
+  .ed__tpl{display:flex;gap:6px;flex-wrap:wrap}
+  .ed__foot textarea{width:100%;min-height:64px;padding:10px 11px;border:1px solid var(--field);border-radius:8px;font:inherit;font-size:14px;color:var(--tx);background:var(--panel);resize:none}
+  .ed__row{display:flex;gap:8px;align-items:center}
+  .ed__row span{margin-right:auto;font-size:12px;color:var(--dim)}
+  .tabbar{display:none}
+  .theme{top:8px;right:14px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab on" href="#">Диалоги<span class="n">7</span></a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab" href="#">Клиенты</a>
+  <a class="tab" href="#">Аналитика</a>
+  <a class="tab" href="#">Шаблоны и прайс</a>
+  <a class="tab" href="#">Настройки</a>
+  <span class="me"><b>Алина</b> · Выйти</span>
+</nav>
+<main>
+  <p class="demo-note">Макет. Разговоры и цифры – пример. В работе всё приходит из Chatwoot: Max, WhatsApp, ВК, сайт, звонки.</p>
+  <div class="tools">
+    <h1>Диалоги</h1>
+    <input type="search" placeholder="Имя, телефон, машина">
+    <select class="f-hide"><option>Все каналы</option><option>Max</option><option>WhatsApp</option><option>ВК</option><option>Сайт</option><option>Звонки</option></select>
+    <select class="f-hide"><option>Все источники</option><option>Яндекс Карты</option><option>ВК</option><option>Сайт</option><option>Сарафан</option></select>
+    <button class="btn">＋ Звонок</button>
+    <button class="btn primary f-hide">＋ Заявка</button>
+  </div>
+  <div class="tiles">
+    <div class="tl"><span>Обращений сегодня</span><b>23</b><small>Max 7 · WA 6 · ВК 4</small></div>
+    <div class="tl tl--hot"><span>Ждут больше 5 мин</span><b>3</b><small>Мария, Сергей, Ольга</small></div>
+    <div class="tl"><span>Записей</span><b>6</b><small>26% обращений</small></div>
+    <div class="tl"><span>Сумма записей</span><b>241 600 ₽</b><small>средний чек 40 300 ₽</small></div>
+    <div class="tl tl--txt"><span>Больше всего</span><b>Яндекс Карты</b><small>9 из 23</small></div>
+  </div>
+  <div class="kb">
+    <section class="kb__col"><h2>Новые <span>4</span></h2>
+      <article class="kb__card on"><p class="kb__top"><b>Мария</b><i class="ch ch--wa">WA</i></p><p>Toyota RAV4 2019 · Teyes CC3</p><p class="kb__meta"><span class="kb__late">ждёт 7:12</span><b>38 900 ₽</b></p><p><span class="chip">ВКонтакте</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Сергей</b><i class="ch ch--vk">ВК</i></p><p>Zeekr 001 2024 · навигатор</p><p class="kb__meta"><span class="kb__late">ждёт 6:40</span><b>–</b></p><p><span class="chip">Сайт</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Ольга</b><i class="ch ch--call">☎</i></p><p>Kia Rio 2017 · сигнализация</p><p class="kb__meta"><span class="kb__late">перезвонить</span><b>–</b></p><p><span class="chip">Сарафан</span></p></article>
+    </section>
+    <section class="kb__col"><h2>Узнали машину <span>2</span></h2>
+      <article class="kb__card"><p class="kb__top"><b>Андрей</b><i class="ch ch--max">M</i></p><p>LiXiang L7 2023 · русификация</p><p class="kb__meta"><span>2 мин назад</span><b>45 000 ₽</b></p><p><span class="chip">Яндекс Карты</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Наталья</b><i class="ch ch--wa">WA</i></p><p>Toyota Camry 2018 · магнитола</p><p class="kb__meta"><span>3 ч назад</span><b>36 500 ₽</b></p><p><span class="chip">Сарафан</span></p></article>
+    </section>
+    <section class="kb__col"><h2>Назвали цену <span>2</span></h2>
+      <article class="kb__card"><p class="kb__top"><b>Виктор</b><i class="ch ch--max">M</i></p><p>LiXiang L9 2024 · русиф. + CarPlay</p><p class="kb__meta"><span>1 ч назад</span><b>61 000 ₽</b></p><p><span class="chip">Яндекс Карты</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Павел</b><i class="ch ch--vk">ВК</i></p><p>Outlander 2016 · StarLine S96</p><p class="kb__meta"><span>вчера</span><b>27 500 ₽</b></p><p><span class="chip">ВКонтакте</span></p></article>
+    </section>
+    <section class="kb__col"><h2>Записаны <span>2</span></h2>
+      <article class="kb__card"><p class="kb__top"><b>Игорь</b><i class="ch ch--wa">WA</i></p><p>Hyundai Creta 2020 · CC3 2K + камера</p><p class="kb__meta"><span>сб 21.11, 10:00</span><b>42 300 ₽</b></p><p><span class="chip">Яндекс Карты</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Екатерина</b><i class="ch ch--site">С</i></p><p>Zeekr 7X 2025 · русификация</p><p class="kb__meta"><span>сб 21.11, 12:00</span><b>52 000 ₽</b></p><p><span class="chip">Сайт</span></p></article>
+    </section>
+    <section class="kb__col"><h2>Приехали <span>1</span></h2>
+      <article class="kb__card"><p class="kb__top"><b>Руслан</b><i class="ch ch--max">M</i></p><p>LiXiang L6 2024 · русификация</p><p class="kb__meta"><span>сегодня, у мастера</span><b>45 000 ₽</b></p><p><span class="chip">Сарафан</span></p></article>
+    </section>
+  </div>
+</main>
+
+<div class="ed" aria-label="Диалог">
+  <div class="ed__bg"></div>
+  <section class="ed__panel">
+    <header class="ed__head"><div><small>WhatsApp · Новые · узнала из ВКонтакте</small><h2>Мария · Toyota RAV4 2019</h2></div><button class="btn gold">Записать</button><button class="ed__x" aria-label="Закрыть">×</button></header>
+    <nav class="ed__tabs"><button class="on">Переписка</button><button>Клиент и машина</button><button>История</button><button>Заметки</button></nav>
+    <div class="ed__grid">
+      <div class="ed__body">
+        <p class="m m--sys">Сегодня · назначен менеджер Алина</p>
+        <div class="m m--in">Добрый день! RAV4 2019, штатная магнитола с маленьким экраном<small>13:51</small></div>
+        <div class="m m--in">Teyes CC3 под ключ сколько выйдет? Чтобы камера осталась и руль работал<small>13:52</small></div>
+      </div>
+      <aside class="ed__side">
+        <h3>Карточка</h3>
+        <label class="f">Машина<span>Toyota RAV4</span></label>
+        <label class="f">Год<span>2019</span></label>
+        <label class="f">Услуга<span>Teyes CC3 под ключ</span></label>
+        <label class="f">Сумма<span>38 900 ₽</span></label>
+        <label class="f">Откуда узнала<span>ВКонтакте</span></label>
+        <label class="f">Телефон<span>+7 913 ··· 07 55</span></label>
+      </aside>
+    </div>
+    <footer class="ed__foot">
+      <div class="ed__tpl"><span class="chip">Цена CC3 на RAV4</span><span class="chip">Свободные окна</span><span class="chip">Адрес</span><span class="chip">Что входит</span></div>
+      <textarea>Мария, здравствуйте! На RAV4 2019 – Teyes CC3 4/64 с рамкой и канбусом, камера и кнопки руля остаются. Под ключ 38 900 ₽, установка около 3 часов.</textarea>
+      <div class="ed__row"><span>Уйдёт в WhatsApp · клиент ждёт 7:12</span><button class="btn">Закрыть диалог</button><button class="btn primary">Отправить</button></div>
+    </footer>
+  </section>
+</div>
+
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a class="on" href="#"><i>✉</i>Диалоги<em>7</em></a><a href="#"><i>◷</i>Записи</a><a href="#"><i>☺</i>Клиенты</a><a href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script>(()=>{const r=document.documentElement,k='crm-theme';try{const s=localStorage.getItem(k);if(s)r.dataset.theme=s}catch(e){}document.getElementById('th').onclick=()=>{const d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem(k,r.dataset.theme)}catch(e){}}})()</script>
+</body>
+</html>

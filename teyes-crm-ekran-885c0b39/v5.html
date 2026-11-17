@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Вариант 5 – пульт владельца</title>
+<style>
+:root{
+  --bg:#f3f5f4;--panel:#ffffff;--panel-2:#f6f8f7;--line:#dfe4e1;--line-soft:#ebefed;
+  --tx:#121815;--mut:#526059;--dim:#62716a;
+  --ac:#047857;--ac-soft:#e2f3ec;--on-ac:#ffffff;
+  --crit:#b42318;--crit-soft:#fdecea;--warn:#a15c07;
+  --c1:#6c4cf5;--c2:#1fa855;--c3:#0a6cf0;--c4:#c26a00;--c5:#0e7fa8;
+  --seq:#047857;--seq-soft:#9fd6c0;
+  --r-s:8px;--r-m:12px;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#0e1311;--panel:#151b18;--panel-2:#1b231f;--line:#2a3430;--line-soft:#212a26;
+  --tx:#e8f0ec;--mut:#a5b4ad;--dim:#8d9c95;
+  --ac:#34d399;--ac-soft:#163126;--on-ac:#06140e;
+  --crit:#ff8a7a;--crit-soft:#3a1d1a;--warn:#f0a548;
+  --c1:#8b74ff;--c2:#22a95c;--c3:#3d8bff;--c4:#c97a14;--c5:#29a3cc;
+  --seq:#34d399;--seq-soft:#1f5c46;
+}}
+:root[data-theme=dark]{
+  --bg:#0e1311;--panel:#151b18;--panel-2:#1b231f;--line:#2a3430;--line-soft:#212a26;
+  --tx:#e8f0ec;--mut:#a5b4ad;--dim:#8d9c95;
+  --ac:#34d399;--ac-soft:#163126;--on-ac:#06140e;
+  --crit:#ff8a7a;--crit-soft:#3a1d1a;--warn:#f0a548;
+  --c1:#8b74ff;--c2:#22a95c;--c3:#3d8bff;--c4:#c97a14;--c5:#29a3cc;
+  --seq:#34d399;--seq-soft:#1f5c46;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:15px/1.45 var(--font);-webkit-font-smoothing:antialiased;padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+button{font:inherit;color:inherit;cursor:pointer}
+:where(a,button):focus-visible{outline:2px solid var(--ac);outline-offset:2px;border-radius:6px}
+.ch{font-style:normal;display:inline-grid;place-items:center;min-width:26px;height:20px;padding:0 5px;border-radius:6px;font-size:11px;font-weight:700;color:#fff;flex:none}
+.ch--max{background:#6c4cf5}.ch--wa{background:#1fa855}.ch--vk{background:#0a6cf0}.ch--site{background:#5b6472}.ch--call{background:#c26a00}.ch--form{background:#0e7fa8}
+.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 60px 12px 16px}
+.top h1{margin:0 auto 0 0;font-size:22px;letter-spacing:-.02em}
+.top h1 span{font-weight:500;color:var(--mut);font-size:15px;margin-left:6px}
+.per{display:inline-flex;padding:3px;border-radius:10px;background:var(--panel);border:1px solid var(--line)}
+.per button{height:32px;padding:0 12px;border:0;border-radius:7px;background:none;font-size:13.5px;color:var(--mut)}
+.per button.on{background:var(--tx);color:var(--panel);font-weight:700}
+.upd{font-size:12.5px;color:var(--dim)}
+.grid{display:grid;gap:12px;padding:0 16px 20px}
+.grid>*{min-width:0}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tile{padding:14px;border-radius:var(--r-m);background:var(--panel);border:1px solid var(--line);display:grid;gap:2px;min-width:0}
+.tile span{font-size:13px;color:var(--mut)}
+.tile b{font-size:30px;line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tile small{font-size:12.5px;color:var(--dim)}
+.tile small.up{color:var(--ac)}
+.tiles .tile:last-child{grid-column:1/-1}
+.tile--crit{border-color:var(--crit);background:var(--crit-soft)}
+.tile--crit b,.tile--crit span{color:var(--crit)}
+.tile--crit span::before{content:"! ";font-weight:800}
+.pn{padding:14px 16px;border-radius:var(--r-m);background:var(--panel);border:1px solid var(--line);min-width:0}
+.pn h2{margin:0 0 10px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;gap:8px}
+.pn h2 span{font-weight:500;color:var(--dim);font-size:13px}
+.stack{display:flex;gap:2px;height:14px;margin-bottom:12px}
+.stack i{display:block;height:100%;border-radius:4px}
+.f7{flex:7}.f6{flex:6}.f4{flex:4}.f3{flex:3}
+.s1{background:var(--c1)}.s2{background:var(--c2)}.s3{background:var(--c3)}.s4{background:var(--c4)}.s5{background:var(--c5)}
+.leg{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:14px}
+.leg li{display:grid;grid-template-columns:12px minmax(0,1fr) auto auto;gap:8px;align-items:center}
+.leg li i{width:12px;height:12px;border-radius:3px}
+.leg li b{font-variant-numeric:tabular-nums}
+.leg li em{font-style:normal;color:var(--dim);font-size:12.5px;min-width:52px;text-align:right}
+.src{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14px}
+.src li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px}
+.src li b{font-variant-numeric:tabular-nums}
+.src li i{grid-column:1/-1;height:6px;border-radius:3px;background:var(--seq)}
+.w9{width:100%}.w5{width:56%}.w4{width:44%}.w3{width:33%}.w2{width:22%}
+.hours{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:4px;align-items:end;height:110px;padding-bottom:2px;border-bottom:1px solid var(--line)}
+.hours i{display:block;border-radius:4px 4px 0 0;background:var(--seq-soft)}
+.hours i.pk{background:var(--seq)}
+.h1{height:9%}.h2{height:18%}.h3{height:27%}.h4{height:36%}.h5{height:45%}.h6{height:55%}.h7{height:64%}.h8{height:73%}.h10{height:91%}.h11{height:100%}
+.hl{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:4px;margin-top:4px;font-size:12px;color:var(--dim);text-align:center}
+.hnote{margin:8px 0 0;font-size:13px;color:var(--mut)}
+.feed{margin:0;padding:0;list-style:none}
+.feed li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line-soft)}
+.feed li>*{min-width:0}
+.feed b{display:block;font-size:14px}
+.feed span{display:block;font-size:13px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st{font-size:12.5px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.st--crit{background:var(--crit-soft);color:var(--crit)}
+.st--ok{background:var(--ac-soft);color:var(--ac)}
+.st--n{background:var(--panel-2);color:var(--mut)}
+.feed .col-m,.feed .col-s{display:none}
+.mgr{width:100%;border-collapse:collapse;font-size:14px}
+.mgr th{text-align:left;font-size:12px;font-weight:600;color:var(--dim);padding:0 0 6px}
+.mgr td{padding:8px 0;border-top:1px solid var(--line-soft);font-variant-numeric:tabular-nums}
+.mgr th+th,.mgr td+td{text-align:right}
+.mock{margin:0;font-size:12.5px;color:var(--dim)}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);background:var(--panel);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.tabbar a{display:grid;justify-items:center;gap:2px;min-height:58px;padding-top:8px;font-size:12px;color:var(--dim);text-decoration:none;position:relative}
+.tabbar a i{font-style:normal;font-size:18px;line-height:1}
+.tabbar a.on{color:var(--ac);font-weight:700}
+.theme{position:fixed;right:12px;top:12px;z-index:30;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--panel);font-size:16px}
+@media (min-width:1100px){
+  body{padding-bottom:0}
+  .top{padding:16px 24px 12px}
+  .grid{padding:0 24px 16px;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px}
+  .tiles{grid-column:1/-1;grid-template-columns:repeat(5,minmax(0,1fr))}
+  .c4{grid-column:span 4}.c8{grid-column:span 8}
+  .feed .col-m,.feed .col-s{display:block}
+  .feed li{grid-template-columns:30px minmax(0,1.5fr) minmax(0,.6fr) minmax(0,.7fr) 120px}
+  .feed .st{justify-self:end}
+  .tiles .tile:last-child{grid-column:auto}
+  .tabbar{display:none}
+  .theme{right:24px;top:auto;bottom:16px}
+  .top{padding-right:24px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Пульт<span>среда, 18 ноября</span></h1>
+  <span class="upd">обновлено 14:12</span>
+  <div class="per"><button class="on">Сегодня</button><button>Неделя</button><button>Месяц</button></div>
+</header>
+<main class="grid">
+  <div class="tiles">
+    <div class="tile"><span>Обращений</span><b>23</b><small class="up">+5 к среде прошлой недели</small></div>
+    <div class="tile tile--crit"><span>Ждут больше 5 мин</span><b>3</b><small>Мария, Сергей, Ольга</small></div>
+    <div class="tile"><span>Первый ответ</span><b>2:40</b><small>в среднем, цель 3:00</small></div>
+    <div class="tile"><span>Записей</span><b>6</b><small>на 241 600 ₽</small></div>
+    <div class="tile"><span>В запись</span><b>26%</b><small>6 из 23 обращений</small></div>
+  </div>
+
+  <section class="pn c4" aria-label="По каналам">
+    <h2>По каналам <span>23 обращения</span></h2>
+    <div class="stack" role="img" aria-label="Max 7, WhatsApp 6, ВК 4, звонки 3, сайт 3"><i class="s1 f7"></i><i class="s2 f6"></i><i class="s3 f4"></i><i class="s4 f3"></i><i class="s5 f3"></i></div>
+    <ul class="leg">
+      <li><i class="s1"></i>Max<b>7</b><em>2 записи</em></li>
+      <li><i class="s2"></i>WhatsApp<b>6</b><em>2 записи</em></li>
+      <li><i class="s3"></i>ВКонтакте<b>4</b><em>1 запись</em></li>
+      <li><i class="s4"></i>Звонки<b>3</b><em>0</em></li>
+      <li><i class="s5"></i>Сайт и заявки<b>3</b><em>1 запись</em></li>
+    </ul>
+  </section>
+
+  <section class="pn c4" aria-label="Откуда узнали">
+    <h2>Откуда узнали <span>со слов клиента</span></h2>
+    <ul class="src">
+      <li>Яндекс Карты<b>9</b><i class="w9"></i></li>
+      <li>ВКонтакте<b>5</b><i class="w5"></i></li>
+      <li>Сайт<b>4</b><i class="w4"></i></li>
+      <li>Сарафан<b>3</b><i class="w3"></i></li>
+      <li>Не указали<b>2</b><i class="w2"></i></li>
+    </ul>
+  </section>
+
+  <section class="pn c4" aria-label="По часам">
+    <h2>По часам <span>обращений в час</span></h2>
+    <div class="hours" role="img" aria-label="Пик в 12 и 13 часов"><i class="h2"></i><i class="h4"></i><i class="h7"></i><i class="h11 pk"></i><i class="h10 pk"></i><i class="h6"></i><i class="h5"></i><i class="h1"></i><i class="h1"></i><i class="h1"></i><i class="h1"></i><i class="h1"></i><i class="h1"></i></div>
+    <div class="hl"><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span></div>
+    <p class="hnote">Пик 12–13 часов: в обед лучше двое на линии.</p>
+  </section>
+
+  <section class="pn c8" aria-label="Разговоры сейчас">
+    <h2>Разговоры сейчас <span>открытых 11</span></h2>
+    <ul class="feed">
+      <li><i class="ch ch--wa">WA</i><div><b>Мария · Toyota RAV4 2019</b><span>Teyes CC3 под ключ сколько выйдет?</span></div><span class="col-m">Алина</span><span class="col-s">ВКонтакте</span><span class="st st--crit">ждёт 7:12</span></li>
+      <li><i class="ch ch--vk">ВК</i><div><b>Сергей · Zeekr 001 2024</b><span>Встанет ли Яндекс Навигатор</span></div><span class="col-m">не взят</span><span class="col-s">Сайт</span><span class="st st--crit">ждёт 6:40</span></li>
+      <li><i class="ch ch--call">☎</i><div><b>Ольга · Kia Rio 2017</b><span>Пропущенный звонок</span></div><span class="col-m">Кирилл</span><span class="col-s">Сарафан</span><span class="st st--crit">перезвон</span></li>
+      <li><i class="ch ch--max">M</i><div><b>Андрей · LiXiang L7 2023</b><span>Русификация, назвали 45 000 ₽</span></div><span class="col-m">Алина</span><span class="col-s">Яндекс Карты</span><span class="st st--n">цена</span></li>
+      <li><i class="ch ch--wa">WA</i><div><b>Игорь · Hyundai Creta 2020</b><span>Teyes CC3 2K + камера</span></div><span class="col-m">Кирилл</span><span class="col-s">Яндекс Карты</span><span class="st st--ok">записан 21.11</span></li>
+    </ul>
+  </section>
+
+  <section class="pn c4" aria-label="Менеджеры">
+    <h2>Менеджеры <span>сегодня</span></h2>
+    <table class="mgr">
+      <thead><tr><th>Кто</th><th>Чатов</th><th>Ответ</th><th>Записей</th></tr></thead>
+      <tbody><tr><td>Алина</td><td>14</td><td>1:50</td><td>4</td></tr><tr><td>Кирилл</td><td>9</td><td>3:55</td><td>2</td></tr></tbody>
+    </table>
+    <p class="mock">Макет. Цифры – пример, в работе считаются из Chatwoot.</p>
+  </section>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a class="on" href="#"><i>▥</i>Пульт</a><a href="#"><i>✉</i>Чаты</a><a href="#"><i>◷</i>Записи</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script>(()=>{const r=document.documentElement,k='crm-theme';try{const s=localStorage.getItem(k);if(s)r.dataset.theme=s}catch(e){}document.getElementById('th').onclick=()=>{const d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem(k,r.dataset.theme)}catch(e){}}})()</script>
+</body>
+</html>

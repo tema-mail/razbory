@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Вариант 2 – воронка</title>
+<style>
+:root{
+  --bg:#f3f2ef;--col:#e9e7e2;--panel:#ffffff;--panel-2:#f8f7f4;--line:#dedbd4;--line-soft:#ece9e3;
+  --tx:#1d1b18;--mut:#5f5a52;--dim:#6e695f;
+  --ac:#c2410c;--ac-soft:#fbebe2;--on-ac:#ffffff;
+  --warn:#b42318;--warn-soft:#fdecea;--ok:#15803d;--ok-soft:#e6f4ea;
+  --shade:rgba(29,27,24,.28);
+  --r-s:8px;--r-m:12px;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#141311;--col:#1c1a17;--panel:#23211d;--panel-2:#2a2723;--line:#3a3631;--line-soft:#2f2c27;
+  --tx:#efebe4;--mut:#b4ada2;--dim:#9c958a;
+  --ac:#fb8a4c;--ac-soft:#3a2416;--on-ac:#1a0d05;
+  --warn:#ff8a7a;--warn-soft:#3d1f1b;--ok:#6fd697;--ok-soft:#1a3324;
+  --shade:rgba(0,0,0,.45);
+}}
+:root[data-theme=dark]{
+  --bg:#141311;--col:#1c1a17;--panel:#23211d;--panel-2:#2a2723;--line:#3a3631;--line-soft:#2f2c27;
+  --tx:#efebe4;--mut:#b4ada2;--dim:#9c958a;
+  --ac:#fb8a4c;--ac-soft:#3a2416;--on-ac:#1a0d05;
+  --warn:#ff8a7a;--warn-soft:#3d1f1b;--ok:#6fd697;--ok-soft:#1a3324;
+  --shade:rgba(0,0,0,.45);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:15px/1.45 var(--font);-webkit-font-smoothing:antialiased;padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+button{font:inherit;color:inherit;cursor:pointer}
+:where(a,button,input,select,textarea):focus-visible{outline:2px solid var(--ac);outline-offset:2px;border-radius:6px}
+.ch{font-style:normal;display:inline-grid;place-items:center;min-width:26px;height:20px;padding:0 5px;border-radius:6px;font-size:11px;font-weight:700;color:#fff;flex:none}
+.ch--max{background:#6c4cf5}.ch--wa{background:#1fa855}.ch--vk{background:#0a6cf0}.ch--site{background:#5b6472}.ch--call{background:#c26a00}.ch--form{background:#0e7fa8}
+.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 60px 12px 16px;background:var(--panel);border-bottom:1px solid var(--line)}
+.top h1{margin:0 auto 0 0;font-size:20px;font-weight:750;letter-spacing:-.01em}
+.top__sum{display:none;color:var(--mut);font-size:14px}
+.top__sum b{color:var(--tx)}
+.sel{height:36px;padding:0 12px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--panel);font-size:13.5px}
+.btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--panel);font-size:13.5px;font-weight:650;white-space:nowrap}
+.btn--ac{background:var(--ac);border-color:var(--ac);color:var(--on-ac)}
+.stages{display:flex;gap:6px;overflow-x:auto;padding:12px 16px 4px;scrollbar-width:none}
+.stages button{flex:none;height:36px;padding:0 13px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:13.5px;color:var(--mut)}
+.stages button.on{background:var(--tx);border-color:var(--tx);color:var(--panel)}
+.stages b{margin-left:5px}
+.board{display:grid;gap:12px;padding:12px 16px 24px}
+.col{display:grid;gap:8px;align-content:start;min-width:0}
+.col:not(:first-child){display:none}
+.col__head{display:none}
+.lc{display:grid;gap:6px;padding:12px;border:1px solid var(--line);border-radius:var(--r-m);background:var(--panel);min-width:0}
+.lc.on{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac-soft)}
+.lc__top{display:flex;align-items:center;gap:8px}
+.lc__top b{margin-right:auto;font-size:15px}
+.lc__time{font-size:12.5px;color:var(--dim)}
+.lc__car{margin:0;font-weight:650;font-size:14px}
+.lc__what{margin:0;color:var(--mut);font-size:13.5px}
+.lc__foot{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--dim)}
+.lc__foot b{color:var(--tx);font-size:14px}
+.late{display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;background:var(--warn-soft);color:var(--warn);font-weight:700;font-size:12px}
+.src{display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;background:var(--panel-2);border:1px solid var(--line-soft);font-size:12px;color:var(--mut)}
+.drawer{display:none}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);background:var(--panel);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.tabbar a{display:grid;justify-items:center;gap:2px;min-height:58px;padding-top:8px;font-size:12px;color:var(--dim);text-decoration:none;position:relative}
+.tabbar a i{font-style:normal;font-size:18px;line-height:1}
+.tabbar a.on{color:var(--ac);font-weight:700}
+.tabbar a em{position:absolute;top:5px;left:calc(50% + 6px);font-style:normal;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--warn);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+.theme{position:fixed;right:12px;top:12px;z-index:40;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--panel);font-size:16px}
+.mock{margin:0 16px 16px;color:var(--dim);font-size:12.5px}
+@media (min-width:1100px){
+  body{padding-bottom:0;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+  .top{padding-right:490px}
+  .top__sum{display:block}
+  .stages,.tabbar{display:none}
+  .board{flex:1;min-height:0;grid-template-columns:repeat(5,minmax(230px,1fr));padding:16px 20px;overflow:auto}
+  .col,.col:not(:first-child){display:grid;background:var(--col);border-radius:var(--r-m);padding:10px;align-content:start}
+  .col__head{display:block;padding:2px 4px 6px}
+  .col__head h2{margin:0;font-size:14px;font-weight:750;display:flex;gap:6px;align-items:baseline}
+  .col__head h2 span{color:var(--dim);font-weight:500}
+  .col__head p{margin:2px 0 0;font-size:12.5px;color:var(--mut)}
+  .drawer{display:flex;position:fixed;top:0;right:0;bottom:0;width:470px;z-index:30;flex-direction:column;background:var(--panel);border-left:1px solid var(--line);box-shadow:-24px 0 48px var(--shade)}
+  .drawer__head{display:flex;gap:10px;align-items:flex-start;padding:16px 20px;border-bottom:1px solid var(--line)}
+  .drawer__head>div{margin-right:auto;min-width:0}
+  .drawer__head h2{margin:0;font-size:18px}
+  .drawer__head p{margin:2px 0 0;color:var(--mut);font-size:13.5px}
+  .x{width:36px;height:36px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--panel);font-size:18px}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:12px 20px;border-bottom:1px solid var(--line-soft)}
+  .steps span{display:grid;gap:5px;font-size:12px;color:var(--dim);text-align:center}
+  .steps span::before{content:"";height:5px;border-radius:3px;background:var(--line)}
+  .steps span.on{color:var(--tx);font-weight:700}
+  .steps span.on::before,.steps span.done::before{background:var(--ac)}
+  .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .facts div{background:var(--panel);padding:10px 14px;font-size:12.5px;color:var(--dim)}
+  .facts b{display:block;color:var(--tx);font-size:14px}
+  .msgs{flex:1;overflow:auto;padding:16px 20px;display:flex;flex-direction:column;gap:9px;background:var(--panel-2)}
+  .m{max-width:82%;padding:9px 12px;border-radius:13px;font-size:14px;line-height:1.45}
+  .m small{display:block;font-size:12px;opacity:.7;margin-top:2px}
+  .m--in{align-self:flex-start;background:var(--panel);border:1px solid var(--line-soft);border-bottom-left-radius:4px}
+  .m--out{align-self:flex-end;background:var(--ac);color:var(--on-ac);border-bottom-right-radius:4px}
+  .composer{display:grid;gap:8px;padding:12px 20px 16px;border-top:1px solid var(--line)}
+  .composer textarea{min-height:100px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-m);background:var(--panel-2);color:var(--tx);font:15px/1.4 var(--font);resize:none}
+  .composer div{display:flex;gap:8px;justify-content:flex-end;align-items:center}
+  .composer span{margin-right:auto;font-size:12.5px;color:var(--dim)}
+  .theme{top:auto;bottom:16px;right:486px}
+  .mock{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Воронка</h1>
+  <span class="top__sum">В работе <b>11</b> · на сумму <b>372 200 ₽</b> · без ответа <b>3</b></span>
+  <select class="sel"><option>Все каналы</option><option>Max</option><option>WhatsApp</option><option>ВК</option><option>Сайт</option><option>Звонки</option></select>
+  <select class="sel"><option>Все менеджеры</option><option>Алина</option><option>Кирилл</option></select>
+  <button class="btn btn--ac">＋ Звонок</button>
+</header>
+<nav class="stages" aria-label="Этапы">
+  <button class="on">Новый<b>4</b></button><button>Узнали машину<b>2</b></button><button>Назвали цену<b>2</b></button><button>Записан<b>2</b></button><button>Приехал<b>1</b></button>
+</nav>
+<main class="board">
+  <section class="col">
+    <header class="col__head"><h2>Новый <span>4</span></h2><p>2 ждут ответа больше 5 минут</p></header>
+    <article class="lc on"><div class="lc__top"><i class="ch ch--wa">WA</i><b>Мария</b><span class="late">ждёт 7:12</span></div><p class="lc__car">Toyota RAV4 · 2019</p><p class="lc__what">Teyes CC3 под ключ сколько выйдет?</p><div class="lc__foot"><span class="src">ВКонтакте</span><b>≈ 38 900 ₽</b></div></article>
+    <article class="lc"><div class="lc__top"><i class="ch ch--vk">ВК</i><b>Сергей</b><span class="late">ждёт 6:40</span></div><p class="lc__car">Zeekr 001 · 2024</p><p class="lc__what">Встанет ли Яндекс Навигатор после обновления</p><div class="lc__foot"><span class="src">Сайт</span><b>–</b></div></article>
+    <article class="lc"><div class="lc__top"><i class="ch ch--call">☎</i><b>Ольга</b><span class="lc__time">14 мин</span></div><p class="lc__car">Kia Rio · 2017</p><p class="lc__what">Пропущенный звонок, перезвонить</p><div class="lc__foot"><span class="src">Сарафан</span><b>–</b></div></article>
+    <article class="lc"><div class="lc__top"><i class="ch ch--form">Ф</i><b>Денис</b><span class="lc__time">32 мин</span></div><p class="lc__car">Haval Jolion · 2022</p><p class="lc__what">Сабвуфер в багажник, заявка с сайта</p><div class="lc__foot"><span class="src">Сайт</span><b>≈ 24 000 ₽</b></div></article>
+  </section>
+  <section class="col">
+    <header class="col__head"><h2>Узнали машину <span>2</span></h2><p>на 81 500 ₽</p></header>
+    <article class="lc"><div class="lc__top"><i class="ch ch--max">M</i><b>Андрей</b><span class="lc__time">2 мин</span></div><p class="lc__car">LiXiang L7 · 2023</p><p class="lc__what">Русификация, китайская версия</p><div class="lc__foot"><span class="src">Яндекс Карты</span><b>45 000 ₽</b></div></article>
+    <article class="lc"><div class="lc__top"><i class="ch ch--wa">WA</i><b>Наталья</b><span class="lc__time">3 ч</span></div><p class="lc__car">Toyota Camry · 2018</p><p class="lc__what">Магнитола, есть ли рамка под приборку</p><div class="lc__foot"><span class="src">Сарафан</span><b>≈ 36 500 ₽</b></div></article>
+  </section>
+  <section class="col">
+    <header class="col__head"><h2>Назвали цену <span>2</span></h2><p>на 88 500 ₽</p></header>
+    <article class="lc"><div class="lc__top"><i class="ch ch--max">M</i><b>Виктор</b><span class="lc__time">1 ч</span></div><p class="lc__car">LiXiang L9 · 2024</p><p class="lc__what">Русификация + CarPlay</p><div class="lc__foot"><span class="src">Яндекс Карты</span><b>61 000 ₽</b></div></article>
+    <article class="lc"><div class="lc__top"><i class="ch ch--vk">ВК</i><b>Павел</b><span class="lc__time">вчера</span></div><p class="lc__car">Mitsubishi Outlander · 2016</p><p class="lc__what">StarLine S96 с автозапуском</p><div class="lc__foot"><span class="src">ВКонтакте</span><b>27 500 ₽</b></div></article>
+  </section>
+  <section class="col">
+    <header class="col__head"><h2>Записан <span>2</span></h2><p>на 94 300 ₽</p></header>
+    <article class="lc"><div class="lc__top"><i class="ch ch--wa">WA</i><b>Игорь</b><span class="lc__time">21.11 10:00</span></div><p class="lc__car">Hyundai Creta · 2020</p><p class="lc__what">Teyes CC3 2K + камера заднего вида</p><div class="lc__foot"><span class="src">Яндекс Карты</span><b>42 300 ₽</b></div></article>
+    <article class="lc"><div class="lc__top"><i class="ch ch--site">С</i><b>Екатерина</b><span class="lc__time">22.11 12:00</span></div><p class="lc__car">Zeekr 7X · 2025</p><p class="lc__what">Русификация и Яндекс Музыка</p><div class="lc__foot"><span class="src">Сайт</span><b>52 000 ₽</b></div></article>
+  </section>
+  <section class="col">
+    <header class="col__head"><h2>Приехал <span>1</span></h2><p>на 45 000 ₽</p></header>
+    <article class="lc"><div class="lc__top"><i class="ch ch--max">M</i><b>Руслан</b><span class="lc__time">сегодня</span></div><p class="lc__car">LiXiang L6 · 2024</p><p class="lc__what">Русификация, в работе у мастера</p><div class="lc__foot"><span class="src">Сарафан</span><b>45 000 ₽</b></div></article>
+  </section>
+</main>
+<p class="mock">Макет. Имена, цены и цифры – пример.</p>
+
+<aside class="drawer" aria-label="Карточка лида">
+  <header class="drawer__head"><div><h2>Мария · Toyota RAV4 2019</h2><p>WhatsApp · откуда узнала: ВКонтакте · ждёт ответа 7:12</p></div><button class="x" aria-label="Закрыть">×</button></header>
+  <div class="steps"><span class="on">Новый</span><span>Машина</span><span>Цена</span><span>Записан</span><span>Приехал</span></div>
+  <div class="facts"><div>Услуга<b>Teyes CC3</b></div><div>Сумма<b>≈ 38 900 ₽</b></div><div>Менеджер<b>Алина</b></div></div>
+  <div class="msgs">
+    <div class="m m--in">Добрый день! RAV4 2019, штатная магнитола с маленьким экраном<small>13:51</small></div>
+    <div class="m m--in">Teyes CC3 под ключ сколько выйдет? Чтобы камера осталась и руль работал<small>13:52</small></div>
+  </div>
+  <div class="composer">
+    <textarea>Мария, здравствуйте! На RAV4 2019 – Teyes CC3 4/64 с рамкой и проводкой, камера и кнопки руля сохраняются. Под ключ 38 900 ₽, установка 3 часа. Подобрать время?</textarea>
+    <div><span>Отправка в WhatsApp</span><button class="btn">Шаблоны</button><button class="btn btn--ac">Отправить, этап «Цена»</button></div>
+  </div>
+</aside>
+
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Чаты<em>3</em></a><a class="on" href="#"><i>▤</i>Воронка</a><a href="#"><i>◷</i>Записи</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script>(()=>{const r=document.documentElement,k='crm-theme';try{const s=localStorage.getItem(k);if(s)r.dataset.theme=s}catch(e){}document.getElementById('th').onclick=()=>{const d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem(k,r.dataset.theme)}catch(e){}}})()</script>
+</body>
+</html>

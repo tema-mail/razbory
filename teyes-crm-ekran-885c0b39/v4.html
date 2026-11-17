@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Вариант 4 – телефон</title>
+<style>
+:root{
+  --bg:#f6f4f5;--stage:#ebe6e9;--panel:#ffffff;--panel-2:#f7f3f5;--line:#e4dde1;--line-soft:#f0eaed;
+  --tx:#1c1519;--mut:#5f5259;--dim:#6f626a;
+  --ac:#be185d;--ac-soft:#fce7f0;--on-ac:#ffffff;
+  --ok:#15803d;--ok-soft:#e3f4e8;--warn:#b42318;--warn-soft:#fdecea;
+  --frame:#1c1519;
+  --r-s:10px;--r-m:16px;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#141013;--stage:#0e0b0d;--panel:#1d171b;--panel-2:#251e23;--line:#382d34;--line-soft:#2b2228;
+  --tx:#f3ecf0;--mut:#b9aab2;--dim:#a0919a;
+  --ac:#f472b6;--ac-soft:#3b1a2b;--on-ac:#1f0612;
+  --ok:#6fd697;--ok-soft:#173326;--warn:#ff8a7a;--warn-soft:#3d1f1b;
+  --frame:#3a3036;
+}}
+:root[data-theme=dark]{
+  --bg:#141013;--stage:#0e0b0d;--panel:#1d171b;--panel-2:#251e23;--line:#382d34;--line-soft:#2b2228;
+  --tx:#f3ecf0;--mut:#b9aab2;--dim:#a0919a;
+  --ac:#f472b6;--ac-soft:#3b1a2b;--on-ac:#1f0612;
+  --ok:#6fd697;--ok-soft:#173326;--warn:#ff8a7a;--warn-soft:#3d1f1b;
+  --frame:#3a3036;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.45 var(--font);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+:where(a,button,textarea):focus-visible{outline:2px solid var(--ac);outline-offset:2px;border-radius:6px}
+.ch{font-style:normal;display:inline-grid;place-items:center;min-width:26px;height:20px;padding:0 5px;border-radius:6px;font-size:11px;font-weight:700;color:#fff;flex:none}
+.ch--max{background:#6c4cf5}.ch--wa{background:#1fa855}.ch--vk{background:#0a6cf0}.ch--site{background:#5b6472}.ch--call{background:#c26a00}.ch--form{background:#0e7fa8}
+.legend,.p2,.p3{display:none}
+.phone{position:relative;background:var(--panel);min-height:100dvh;padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+.scr{display:flex;flex-direction:column;min-height:100%}
+.ph-head{display:flex;align-items:center;gap:10px;padding:14px 60px 8px 16px}
+.ph-head h1,.ph-head h2{margin:0 auto 0 0;font-size:26px;font-weight:800;letter-spacing:-.02em}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:4px 16px 10px;padding:4px;border-radius:12px;background:var(--panel-2)}
+.seg button{height:36px;border:0;border-radius:9px;background:none;font-size:14px;color:var(--mut)}
+.seg button.on{background:var(--panel);color:var(--tx);font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.seg b{color:var(--ac);margin-left:4px}
+.it{position:relative;overflow:hidden;border-top:1px solid var(--line-soft)}
+.it__body{position:relative;z-index:1;display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:12px;padding:12px 16px;background:var(--panel);align-items:center}
+.it__body>*{min-width:0}
+.it.swiped .it__body{transform:translateX(-148px)}
+.it__acts{position:absolute;inset:0 0 0 auto;display:flex}
+.it__acts button{width:74px;border:0;color:#fff;font-size:12.5px;font-weight:700;display:grid;place-content:center;gap:2px;text-align:center}
+.it__acts button i{font-style:normal;font-size:18px}
+.a-book{background:var(--ok)}.a-close{background:#6b7280}
+.av{width:44px;height:44px;border-radius:50%;background:var(--ac-soft);color:var(--ac);display:flex;align-items:center;justify-content:center;font-weight:800;position:relative}
+.av .ch{position:absolute;right:-5px;bottom:-3px;min-width:20px;height:16px;font-size:9.5px;padding:0 3px;border:2px solid var(--panel);box-sizing:content-box}
+.it b{display:block;font-size:16px}
+.it p{margin:1px 0 0;font-size:14px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.it__side{display:grid;justify-items:end;gap:4px;font-size:12.5px;color:var(--dim)}
+.late{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;background:var(--warn-soft);color:var(--warn);font-weight:800;font-size:12px}
+.dot{display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:999px;background:var(--ac);color:var(--on-ac);font-weight:800;font-size:12px}
+.hint{margin:8px 16px;padding:10px 12px;border-radius:12px;background:var(--panel-2);font-size:13px;color:var(--mut)}
+.fab{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:15;display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 20px;border:0;border-radius:999px;background:var(--ac);color:var(--on-ac);font-weight:800;font-size:15px;box-shadow:0 10px 24px rgba(190,24,93,.35)}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(5,1fr);background:var(--panel);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.tabbar a{display:grid;justify-items:center;gap:2px;min-height:62px;padding-top:9px;font-size:11.5px;color:var(--dim);text-decoration:none;position:relative}
+.tabbar a i{font-style:normal;font-size:20px;line-height:1}
+.tabbar a.on{color:var(--ac);font-weight:800}
+.tabbar a em{position:absolute;top:5px;left:calc(50% + 6px);font-style:normal;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--warn);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+.theme{position:fixed;right:12px;top:12px;z-index:30;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--panel);font-size:16px}
+/* Переписка (телефон 2) */
+.ch-head{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.ch-head .back{font-size:22px;color:var(--ac);border:0;background:none;width:32px;height:44px}
+.ch-head div{min-width:0;margin-right:auto}
+.ch-head b{display:block;font-size:16px}
+.ch-head span{font-size:12.5px;color:var(--mut)}
+.ch-head .call{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--panel)}
+.car{display:flex;gap:6px;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid var(--line-soft);background:var(--panel-2)}
+.car span{height:28px;display:inline-flex;align-items:center;padding:0 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-size:13px}
+.car span.ac{border-color:var(--ac);color:var(--ac);font-weight:700}
+.bub{display:flex;flex-direction:column;gap:8px;padding:12px 14px;flex:1}
+.m{max-width:84%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4}
+.m small{display:block;font-size:12px;opacity:.7}
+.m--in{align-self:flex-start;background:var(--panel-2);border-bottom-left-radius:5px}
+.m--out{align-self:flex-end;background:var(--ac);color:var(--on-ac);border-bottom-right-radius:5px}
+.quick{display:flex;gap:6px;overflow-x:auto;padding:8px 14px;scrollbar-width:none}
+.quick button{flex:none;height:36px;padding:0 13px;border:1px solid var(--ac);border-radius:999px;background:var(--panel);color:var(--ac);font-size:13.5px;font-weight:700}
+.input{display:flex;gap:8px;align-items:center;padding:8px 14px 12px}
+.input span{flex:1;height:44px;border-radius:22px;border:1px solid var(--line);display:flex;align-items:center;padding:0 14px;color:var(--dim);font-size:15px}
+.input button{width:44px;height:44px;border-radius:50%;border:0;background:var(--ac);color:var(--on-ac);font-size:18px}
+/* Запись (телефон 3) */
+.sheet-bg{position:absolute;inset:0;background:rgba(20,10,16,.4);z-index:3}
+.sheet{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:10px 16px 18px;border-radius:22px 22px 0 0;background:var(--panel);display:grid;gap:12px}
+.sheet::before{content:"";justify-self:center;width:40px;height:5px;border-radius:3px;background:var(--line)}
+.sheet h3{margin:0;font-size:20px}
+.sheet p{margin:0;color:var(--mut);font-size:14px}
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.days button{height:58px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:12.5px;color:var(--mut);display:grid;place-content:center}
+.days button b{font-size:17px;color:var(--tx)}
+.days button.on{border-color:var(--ac);background:var(--ac-soft)}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.times button{height:44px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:15px}
+.times button.on{background:var(--ac);border-color:var(--ac);color:var(--on-ac);font-weight:800}
+.times button[disabled]{opacity:.4;text-decoration:line-through}
+.sum{display:flex;justify-content:space-between;padding:10px 12px;border-radius:12px;background:var(--panel-2);font-size:14px}
+.big{height:52px;border:0;border-radius:14px;background:var(--ac);color:var(--on-ac);font-weight:800;font-size:16px}
+@media (min-width:1100px){
+  body{min-height:100dvh;background:var(--stage);display:grid;grid-template-columns:220px repeat(3,340px);gap:28px;justify-content:center;align-content:center;padding:40px 24px}
+  .legend{display:grid;gap:16px;align-content:center}
+  .legend h1{margin:0;font-size:26px;letter-spacing:-.02em;line-height:1.2}
+  .legend ol{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+  .legend li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;font-size:14.5px;color:var(--mut)}
+  .legend li b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ac);color:var(--on-ac);font-size:13px}
+  .legend p{margin:0;font-size:13px;color:var(--dim)}
+  .p2,.p3{display:block}
+  .phone{min-height:0;height:770px;border:10px solid var(--frame);border-radius:46px;overflow:hidden;padding-bottom:0;box-shadow:0 30px 60px rgba(28,21,25,.22)}
+  .scr{height:100%;padding-bottom:72px}
+  .ph-head{padding-right:16px}
+  .tabbar,.fab{position:absolute}
+  .fab{bottom:84px}
+  .theme{top:16px;right:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<aside class="legend">
+  <h1>Менеджер работает с телефона</h1>
+  <ol>
+    <li><b>1</b><span>Список чатов: горящие сверху, свайп влево – записать или закрыть.</span></li>
+    <li><b>2</b><span>Переписка: машина и сумма над чатом, быстрые ответы одним касанием.</span></li>
+    <li><b>3</b><span>Запись: день и время в шторке, клиенту уходит подтверждение.</span></li>
+  </ol>
+  <p>Ставится на телефон как приложение, пуш – если клиент ждёт больше 3 минут. Макет, данные – пример.</p>
+</aside>
+
+<section class="phone p1" aria-label="Список чатов">
+  <div class="scr">
+    <header class="ph-head"><h1>Чаты</h1></header>
+    <div class="seg"><button class="on">Новые<b>4</b></button><button>Мои<b>9</b></button><button>Все</button></div>
+    <div class="it"><div class="it__acts"><button class="a-book"><i>◷</i>Записать</button><button class="a-close"><i>✓</i>Закрыть</button></div>
+      <div class="it__body"><span class="av">М<i class="ch ch--wa">WA</i></span><div><b>Мария · RAV4 2019</b><p>Teyes CC3 под ключ сколько выйдет?</p></div><div class="it__side">7 мин<span class="late">7:12</span></div></div></div>
+    <div class="it swiped"><div class="it__acts"><button class="a-book"><i>◷</i>Записать</button><button class="a-close"><i>✓</i>Закрыть</button></div>
+      <div class="it__body"><span class="av">С<i class="ch ch--vk">ВК</i></span><div><b>Сергей · Zeekr 001</b><p>Встанет ли Яндекс Навигатор?</p></div><div class="it__side">11 мин<span class="late">6:40</span></div></div></div>
+    <div class="it"><div class="it__acts"><button class="a-book"><i>◷</i>Записать</button><button class="a-close"><i>✓</i>Закрыть</button></div>
+      <div class="it__body"><span class="av">О<i class="ch ch--call">☎</i></span><div><b>Ольга · Kia Rio 2017</b><p>Пропущенный звонок</p></div><div class="it__side">14 мин<span class="late">перезвон</span></div></div></div>
+    <div class="it"><div class="it__acts"><button class="a-book"><i>◷</i>Записать</button><button class="a-close"><i>✓</i>Закрыть</button></div>
+      <div class="it__body"><span class="av">А<i class="ch ch--max">M</i></span><div><b>Андрей · LiXiang L7</b><p>Сколько стоит русификация?</p></div><div class="it__side">2 мин<span class="dot">2</span></div></div></div>
+    <div class="it"><div class="it__acts"><button class="a-book"><i>◷</i>Записать</button><button class="a-close"><i>✓</i>Закрыть</button></div>
+      <div class="it__body"><span class="av">Д<i class="ch ch--form">Ф</i></span><div><b>Денис · Haval Jolion</b><p>Заявка с сайта: сабвуфер</p></div><div class="it__side">32 мин</div></div></div>
+    <div class="it"><div class="it__acts"><button class="a-book"><i>◷</i>Записать</button><button class="a-close"><i>✓</i>Закрыть</button></div>
+      <div class="it__body"><span class="av">Н<i class="ch ch--wa">WA</i></span><div><b>Наталья · Camry 2018</b><p>А рамка под мою приборку есть?</p></div><div class="it__side">3 ч</div></div></div>
+    <p class="hint">Свайп влево – записать или закрыть. Свайп вправо – взять себе.</p>
+  </div>
+  <button class="fab">☎ Звонок</button>
+  <nav class="tabbar" aria-label="Нижнее меню"><a class="on" href="#"><i>✉</i>Чаты<em>3</em></a><a href="#"><i>▤</i>Воронка</a><a href="#"><i>◷</i>Записи</a><a href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a></nav>
+</section>
+
+<section class="phone p2" aria-label="Переписка">
+  <div class="scr">
+    <header class="ch-head"><button class="back" aria-label="Назад">‹</button><div><b>Андрей</b><span>Max · с Яндекс Карт</span></div><button class="call" aria-label="Позвонить">☎</button></header>
+    <div class="car"><span>LiXiang L7</span><span>2023, Китай</span><span class="ac">Русификация · 45 000 ₽</span></div>
+    <div class="bub">
+      <div class="m m--in">Здравствуйте! LiXiang L7 2023. Сколько стоит русификация?<small>14:02</small></div>
+      <div class="m m--in">И сколько по времени?<small>14:03</small></div>
+      <div class="m m--out">Андрей, здравствуйте! Русификация L7 – 45 000 ₽, около 4 часов. Завтра есть окно в 10:00 – записать?<small>14:05</small></div>
+      <div class="m m--in">Давайте на завтра<small>14:07</small></div>
+    </div>
+    <div class="quick"><button>Записать</button><button>Адрес</button><button>Что входит</button><button>Телефон?</button></div>
+    <div class="input"><span>Сообщение в Max</span><button aria-label="Отправить">↑</button></div>
+  </div>
+  <nav class="tabbar" aria-label="Нижнее меню"><a class="on" href="#"><i>✉</i>Чаты<em>3</em></a><a href="#"><i>▤</i>Воронка</a><a href="#"><i>◷</i>Записи</a><a href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a></nav>
+</section>
+
+<section class="phone p3" aria-label="Запись">
+  <div class="scr">
+    <header class="ch-head"><button class="back" aria-label="Назад">‹</button><div><b>Андрей</b><span>Max · с Яндекс Карт</span></div><button class="call" aria-label="Позвонить">☎</button></header>
+    <div class="car"><span>LiXiang L7</span><span>2023, Китай</span><span class="ac">Русификация · 45 000 ₽</span></div>
+    <div class="bub"><div class="m m--in">Давайте на завтра<small>14:07</small></div></div>
+  </div>
+  <div class="sheet-bg"></div>
+  <div class="sheet">
+    <h3>Записать Андрея</h3>
+    <p>Русификация LiXiang L7 · около 4 часов</p>
+    <div class="days"><button class="on">чт<b>19</b></button><button>пт<b>20</b></button><button>сб<b>21</b></button><button>пн<b>23</b></button></div>
+    <div class="times"><button class="on">10:00</button><button>11:00</button><button disabled>13:00</button><button>14:00</button><button disabled>15:00</button><button>16:00</button></div>
+    <div class="sum"><span>Сумма</span><b>45 000 ₽</b></div>
+    <button class="big">Записать и отправить адрес</button>
+  </div>
+</section>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script>(()=>{const r=document.documentElement,k='crm-theme';try{const s=localStorage.getItem(k);if(s)r.dataset.theme=s}catch(e){}document.getElementById('th').onclick=()=>{const d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem(k,r.dataset.theme)}catch(e){}}})()</script>
+</body>
+</html>

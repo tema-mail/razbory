@@ -1,0 +1,168 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Экран оператора CRM: 6 вариантов, советую наш стиль с перепиской в три колонки</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Экран оператора CRM: 6 вариантов, советую наш стиль с перепиской в три колонки</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод.</strong> Нарисовал 6 живых макетов экрана менеджера первой линии поверх Chatwoot. Основой советую вариант 6 «в нашем стиле» (как кабинеты Elite Rose и EV), а внутрь взять переписку из варианта 1, таймер и горячие клавиши из 3, пульт из 5 и телефонную шторку записи из 4. Первый рабочий шаг – около 11 дней, весь набор – около 18 дней (оценка, час = 1000 ₽, день = 8 часов).</p>
+<p>Все макеты статичные, данные в них – пример. Каждый открывается по ссылке, работает на 1440 и 390 px, есть светлая и тёмная тема (кнопка ◐).</p>
+<h2>Нужно от тебя</h2>
+<ul>
+<li><strong>Выбрать букву</strong> в вопросе внизу страницы.</li>
+<li><strong>Подтвердить этапы воронки:</strong> Новый → Узнали машину → Назвали цену → Записан → Приехал. Если этапы другие – назови.</li>
+<li><strong>Прайс для черновиков ответа:</strong> откуда брать цены (таблица, сайт, 1С), чтобы менеджеру не набирать цену руками.</li>
+</ul>
+<h2>1. Пять вариантов по известным приёмам – у каждого свой сильный ход</h2>
+<h3>Вариант 1. Три колонки: список · переписка · карточка клиента</h3>
+<p><img loading="lazy" alt="Вариант 1 на 1440" src="v1-1440.webp" /></p>
+<p><img loading="lazy" src="v1-390.webp" width="260" alt="Вариант 1 на телефоне"></p>
+<p><a href="v1.html">Открыть живой макет</a></p>
+<ul>
+<li><strong>Идея:</strong> привычный мессенджер. Слева все каналы в одном списке с фильтрами и «ждёт 7:12», в центре переписка с готовыми ответами, справа машина, этап, сумма, откуда узнал и кнопка записи на свободное окно.</li>
+<li><strong>Кому удобно:</strong> менеджеру, который весь день в чатах. Не теряется контекст клиента.</li>
+<li><strong>Минус:</strong> не видно воронку целиком, владельцу нужен отдельный экран цифр.</li>
+<li><strong>Срок:</strong> около 8 дней (≈ 64 000 ₽).</li>
+</ul>
+<h3>Вариант 2. Воронка-канбан, переписка боковой панелью</h3>
+<p><img loading="lazy" alt="Вариант 2 на 1440" src="v2-1440.webp" /></p>
+<p><img loading="lazy" src="v2-390.webp" width="260" alt="Вариант 2 на телефоне"></p>
+<p><a href="v2.html">Открыть живой макет</a></p>
+<ul>
+<li><strong>Идея:</strong> лиды карточками по этапам с суммой в каждом столбце. Нажал на карточку – справа переписка, ответ сразу двигает лида на следующий этап.</li>
+<li><strong>Кому удобно:</strong> тому, кто ведёт лида до записи и следит за деньгами в работе.</li>
+<li><strong>Минус:</strong> при 20+ новых в час доска захламляется, отвечать удобнее из списка.</li>
+<li><strong>Срок:</strong> около 9 дней (≈ 72 000 ₽), перетаскивание карточек – основная работа.</li>
+</ul>
+<h3>Вариант 3. Одна очередь: один разговор на весь экран</h3>
+<p><img loading="lazy" alt="Вариант 3 на 1440, тёмная тема" src="v3-1440.webp" /></p>
+<p><img loading="lazy" src="v3-390.webp" width="260" alt="Вариант 3 на телефоне"></p>
+<p><a href="v3.html">Открыть живой макет</a></p>
+<ul>
+<li><strong>Идея:</strong> менеджер видит только следующий разговор: крупно вопрос клиента, таймер ожидания, что уже известно (машина, год, телефон), черновик ответа с ценой из прайса и 5 кнопок шага с цифрами 1–5 на клавиатуре. Справа – кто следующий.</li>
+<li><strong>Кому удобно:</strong> при потоке обращений, когда важна скорость первого ответа.</li>
+<li><strong>Минус:</strong> нужен прайс в таблице, иначе черновик пустой. Не видно общей картины.</li>
+<li><strong>Срок:</strong> около 9 дней (≈ 72 000 ₽) с черновиком из прайса.</li>
+</ul>
+<h3>Вариант 4. Телефон как основной инструмент</h3>
+<p><img loading="lazy" alt="Вариант 4: три экрана телефона" src="v4-1440.webp" /></p>
+<p><img loading="lazy" src="v4-390.webp" width="260" alt="Вариант 4 на телефоне"></p>
+<p><a href="v4.html">Открыть живой макет</a></p>
+<ul>
+<li><strong>Идея:</strong> приложение на телефон (ставится с сайта, без магазина приложений). Таб-бар внизу, свайп влево по чату – «Записать» или «Закрыть», кнопка «＋ Звонок», запись в шторке: день, время, сумма, клиенту уходит адрес. Пуш, если клиент ждёт больше 3 минут.</li>
+<li><strong>Кому удобно:</strong> менеджеру не за столом и тебе – ответить с телефона.</li>
+<li><strong>Минус:</strong> длинную переписку и цифры на телефоне читать хуже, компьютерный экран всё равно нужен.</li>
+<li><strong>Срок:</strong> около 10 дней (≈ 80 000 ₽), пуши и свайпы – основная работа.</li>
+</ul>
+<h3>Вариант 5. Пульт владельца</h3>
+<p><img loading="lazy" alt="Вариант 5 на 1440" src="v5-1440.webp" /></p>
+<p><img loading="lazy" src="v5-390.webp" width="260" alt="Вариант 5 на телефоне"></p>
+<p><a href="v5.html">Открыть живой макет</a></p>
+<ul>
+<li><strong>Идея:</strong> сверху цифры дня: обращения, кто ждёт больше 5 минут (красным, с именами), средний первый ответ, записи и сумма, доля в запись. Ниже – каналы, «откуда узнали», нагрузка по часам, живые разговоры и менеджеры.</li>
+<li><strong>Кому удобно:</strong> тебе – за 10 секунд понять, как работает линия.</li>
+<li><strong>Минус:</strong> это не рабочий экран менеджера, а дополнение к любому из вариантов.</li>
+<li><strong>Срок:</strong> около 6 дней отдельно (≈ 48 000 ₽) или +3 дня вкладкой к другому варианту.</li>
+</ul>
+<h2>2. Шестой вариант – в нашем стиле, его быстрее всего довести</h2>
+<h3>Вариант 6. Кабинет как Elite Rose и EV: шапка-вкладки, плитки, доска</h3>
+<p><img loading="lazy" alt="Вариант 6 на 1440" src="v6-1440.webp" /></p>
+<p><img loading="lazy" src="v6-390.webp" width="260" alt="Вариант 6 на телефоне"></p>
+<p><a href="v6.html">Открыть живой макет</a></p>
+<ul>
+<li><strong>Идея:</strong> тёмная шапка с вкладками и золотом, плитки цифр дня, доска диалогов по этапам и правая панель как карточка товара в эталоне: переписка, карточка клиента с машиной и источником, шаблоны ответов, «Записать».</li>
+<li><strong>Кому удобно:</strong> всем, кто уже видел наши кабинеты, – учить заново нечего. Шапка, плитки и доска переносятся с готового кода Elite Rose, вход – как у EV, с СВЕРХ админом.</li>
+<li><strong>Минус:</strong> панель переписки узкая, при долгой переписке тесно. Лечится перепиской из варианта 1.</li>
+<li><strong>Срок:</strong> около 9 дней (≈ 72 000 ₽).</li>
+</ul>
+<h2>3. Лучше совместить: оболочка 6, переписка 1, куски 3–5</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Что делаем</th>
+<th>Срок</th>
+<th>Деньги</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Оболочка 6 + переписка в три колонки из 1 при открытии диалога + таймер «ждёт» и клавиши из 3</td>
+<td>≈ 11 дней</td>
+<td>≈ 88 000 ₽</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Вкладка «Аналитика» – пульт из 5</td>
+<td>≈ 3 дня</td>
+<td>≈ 24 000 ₽</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Телефон: таб-бар, свайпы, шторка записи и пуши из 4</td>
+<td>≈ 4 дня</td>
+<td>≈ 32 000 ₽</td>
+</tr>
+<tr>
+<td></td>
+<td>Итого</td>
+<td>≈ 18 дней</td>
+<td>≈ 144 000 ₽</td>
+</tr>
+</tbody>
+</table></div>
+<p>Это оценка, не смета: точнее скажу после проверки API Chatwoot на наших каналах (Max и звонки). Во всех сроках уже заложена общая основа: вход, связь с Chatwoot, отправка в каналы, поля «машина, источник, сумма, этап».</p>
+<p><strong>Вопрос: какой берём?</strong></p>
+<ul>
+<li><strong>А</strong> – совмещаем, как советую: оболочка 6, переписка 1, дальше шаги 2 и 3.</li>
+<li><strong>Б</strong> – только вариант 6 как есть.</li>
+<li><strong>В</strong> – другой вариант основой (назови номер).</li>
+<li><strong>Г</strong> – ни один не зашёл, рисую заново (скажи, что мимо).</li>
+</ul>
+<h2>Что раскрыть</h2>
+<ul>
+<li>Как каждый экран ходит в Chatwoot по API и что придётся хранить у себя (этап, сумма, источник).</li>
+<li>Черновик ответа с ценой из прайса: просто подстановка или ИИ, и сколько стоит ИИ на обращение.</li>
+<li>Как считать «ждёт больше 5 минут» ночью и в выходные.</li>
+</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>

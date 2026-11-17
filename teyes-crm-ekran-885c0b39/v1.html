@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Вариант 1 – три колонки</title>
+<style>
+:root{
+  --bg:#f4f5f7;--panel:#ffffff;--panel-2:#f8f9fb;--line:#e3e6eb;--line-soft:#eef0f3;
+  --tx:#14171c;--mut:#5b6472;--dim:#6f7886;
+  --ac:#2457d6;--ac-soft:#e8eefc;--on-ac:#ffffff;
+  --warn:#b42318;--warn-soft:#fdecea;--ok:#127a46;--ok-soft:#e5f5ec;
+  --bubble-in:#f1f3f6;--bubble-out:#2457d6;--bubble-out-tx:#ffffff;
+  --r-s:8px;--r-m:12px;--tap:44px;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#0f1217;--panel:#161a21;--panel-2:#1b2029;--line:#2a313c;--line-soft:#222832;
+  --tx:#e9edf3;--mut:#a4adbb;--dim:#8d97a6;
+  --ac:#6f9bff;--ac-soft:#1d2a47;--on-ac:#0b1220;
+  --warn:#ff8a7a;--warn-soft:#3a1e1c;--ok:#5ad08f;--ok-soft:#173326;
+  --bubble-in:#202632;--bubble-out:#3567e0;--bubble-out-tx:#ffffff;
+}}
+:root[data-theme=dark]{
+  --bg:#0f1217;--panel:#161a21;--panel-2:#1b2029;--line:#2a313c;--line-soft:#222832;
+  --tx:#e9edf3;--mut:#a4adbb;--dim:#8d97a6;
+  --ac:#6f9bff;--ac-soft:#1d2a47;--on-ac:#0b1220;
+  --warn:#ff8a7a;--warn-soft:#3a1e1c;--ok:#5ad08f;--ok-soft:#173326;
+  --bubble-in:#202632;--bubble-out:#3567e0;--bubble-out-tx:#ffffff;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:15px/1.45 var(--font);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+:where(a,button,input,select,textarea):focus-visible{outline:2px solid var(--ac);outline-offset:2px;border-radius:6px}
+.app{display:block;min-height:100dvh;padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+.ch{font-style:normal;display:inline-grid;place-items:center;min-width:26px;height:20px;padding:0 5px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:.02em;color:#fff;flex:none}
+.ch--max{background:#6c4cf5}.ch--wa{background:#1fa855}.ch--vk{background:#0a6cf0}.ch--site{background:#5b6472}.ch--call{background:#c26a00}.ch--form{background:#0e7fa8}
+/* Рейл */
+.rail{display:none}
+/* Список */
+.list{background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.list__head{display:flex;align-items:center;gap:8px;padding:14px 60px 10px 16px}
+.list__head h1{margin:0 auto 0 0;font-size:18px;font-weight:700;letter-spacing:-.01em}
+.iconbtn{display:inline-grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--panel);font-size:15px}
+.search{margin:0 16px 10px;display:flex}
+.search input{width:100%;height:38px;padding:0 12px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--panel-2);color:var(--tx);font-size:16px}
+.filters{display:flex;gap:6px;padding:0 16px 10px;overflow-x:auto;scrollbar-width:none}
+.filters button{flex:none;height:30px;padding:0 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:13px;color:var(--mut)}
+.filters button.on{background:var(--tx);border-color:var(--tx);color:var(--panel)}
+.filters b{font-weight:700;margin-left:4px}
+.rows{overflow:auto;flex:1}
+.row{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:10px;padding:11px 16px;border-top:1px solid var(--line-soft);align-items:start;text-decoration:none;color:inherit}
+.row>*{min-width:0}
+.row.on{background:var(--ac-soft)}
+.av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;background:var(--panel-2);border:1px solid var(--line);position:relative}
+.av .ch{position:absolute;right:-6px;bottom:-4px;min-width:20px;height:16px;font-size:9.5px;padding:0 3px;border:2px solid var(--panel);box-sizing:content-box}
+.row__name{display:flex;gap:6px;align-items:baseline;font-weight:650}
+.row__name span{color:var(--dim);font-weight:400;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row__msg{margin:2px 0 0;color:var(--mut);font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row__side{display:grid;justify-items:end;gap:4px;font-size:12px;color:var(--dim)}
+.late{display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;background:var(--warn-soft);color:var(--warn);font-weight:700;font-size:12px}
+.unread{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:999px;background:var(--ac);color:var(--on-ac);font-weight:700;font-size:12px}
+/* Переписка */
+.chat{display:none;min-width:0;flex-direction:column;background:var(--panel-2)}
+.chat__head{display:flex;align-items:center;gap:12px;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+.chat__head>div{min-width:0;margin-right:auto}
+.chat__head h2{margin:0;font-size:16px;font-weight:700}
+.chat__head p{margin:0;color:var(--mut);font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 13px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--panel);font-size:13.5px;font-weight:600;white-space:nowrap}
+.btn--ac{background:var(--ac);border-color:var(--ac);color:var(--on-ac)}
+.msgs{flex:1;overflow:auto;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.day{align-self:center;font-size:12px;color:var(--dim);padding:2px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line)}
+.m{max-width:min(520px,80%);padding:9px 13px;border-radius:14px;font-size:14.5px;line-height:1.45}
+.m small{display:block;margin-top:3px;font-size:12px;opacity:.75}
+.m--in{align-self:flex-start;background:var(--bubble-in);border-bottom-left-radius:4px}
+.m--out{align-self:flex-end;background:var(--bubble-out);color:var(--bubble-out-tx);border-bottom-right-radius:4px}
+.m--sys{align-self:center;max-width:none;background:none;color:var(--dim);font-size:12.5px;padding:0}
+.photo{display:block;width:180px;aspect-ratio:4/3;border-radius:10px;margin-bottom:6px;background:linear-gradient(135deg,#3a4250,#1d222b);position:relative;overflow:hidden}
+.photo::after{content:"фото приборки";position:absolute;left:8px;bottom:6px;font-size:12px;color:#d6dbe3}
+.tpl{display:flex;gap:6px;padding:10px 20px 0;overflow-x:auto;scrollbar-width:none;background:var(--panel);border-top:1px solid var(--line)}
+.tpl button{flex:none;height:30px;padding:0 11px;border:1px dashed var(--line);border-radius:999px;background:var(--panel-2);font-size:13px;color:var(--mut)}
+.composer{display:flex;gap:10px;align-items:flex-end;padding:10px 20px 14px;background:var(--panel)}
+.composer .btn{height:44px}
+.composer textarea{flex:1;min-height:92px;max-height:120px;padding:11px 12px;border:1px solid var(--line);border-radius:var(--r-m);background:var(--panel-2);color:var(--tx);font:16px/1.4 var(--font);resize:none}
+.composer__via{font-size:12.5px;color:var(--dim);padding:0 20px 0;background:var(--panel)}
+/* Карточка */
+.card{display:none;background:var(--panel);border-left:1px solid var(--line);overflow:auto;min-width:0}
+.card section{padding:16px 18px;border-bottom:1px solid var(--line-soft)}
+.card h3{margin:0 0 10px;font-size:12px;font-weight:700;color:var(--dim);letter-spacing:.04em;text-transform:uppercase}
+.who{display:flex;gap:12px;align-items:center}
+.who .av{width:48px;height:48px;font-size:18px}
+.who b{display:block;font-size:17px}
+.who span{color:var(--mut);font-size:13.5px}
+.kv{display:grid;grid-template-columns:96px minmax(0,1fr);gap:7px 10px;margin:0;font-size:14px}
+.kv dt{color:var(--dim)}.kv dd{margin:0;font-weight:550}
+.stage{display:flex;gap:4px}
+.stage span{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.stage span.on{background:var(--ac)}
+.stage-l{display:flex;justify-content:space-between;margin-top:6px;font-size:12px;color:var(--dim)}
+.stage-l b{color:var(--tx)}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:10px}
+.slots button{height:40px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--panel-2);font-size:13px}
+.slots button.on{border-color:var(--ac);background:var(--ac-soft);color:var(--ac);font-weight:700}
+.wide{width:100%;justify-content:center;height:42px}
+.hist{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:13.5px}
+.hist li{display:flex;justify-content:space-between;gap:10px}
+.hist span{color:var(--dim);white-space:nowrap}
+.note{margin:0;padding:10px 12px;border-radius:var(--r-s);background:var(--panel-2);font-size:13.5px;color:var(--mut)}
+/* Таб-бар */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);background:var(--panel);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.tabbar a{display:grid;justify-items:center;gap:2px;min-height:58px;padding-top:8px;font-size:12px;color:var(--dim);text-decoration:none;position:relative}
+.tabbar a i{font-style:normal;font-size:18px;line-height:1}
+.tabbar a.on{color:var(--ac);font-weight:700}
+.tabbar a em{position:absolute;top:5px;left:calc(50% + 6px);font-style:normal;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--warn);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+.theme{position:fixed;right:12px;top:12px;z-index:30;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--panel);font-size:16px}
+.mock{font-size:12px;color:var(--dim)}
+@media (min-width:1100px){
+  .app{display:grid;grid-template-columns:68px 360px minmax(0,1fr) 340px;height:100dvh;padding-bottom:0}
+  .rail{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 0;background:var(--tx);color:var(--panel)}
+  .rail__logo{width:38px;height:38px;border-radius:10px;background:var(--ac);color:var(--on-ac);display:grid;place-items:center;font-weight:800;margin-bottom:12px}
+  .rail a{position:relative;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;color:inherit;opacity:.6;text-decoration:none;font-size:18px}
+  .rail a.on{opacity:1;background:rgba(255,255,255,.12)}
+  .rail a em{position:absolute;top:4px;right:2px;font-style:normal;min-width:17px;height:17px;padding:0 4px;border-radius:999px;background:#e5484d;color:#fff;font-size:10.5px;font-weight:700;display:grid;place-items:center}
+  .list__head{padding-right:16px}
+  .rail__me{margin-top:auto;margin-bottom:52px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15);display:grid;place-items:center;font-size:13px;font-weight:700}
+  .chat{display:flex;min-height:0}
+  .list,.card{min-height:0}
+  .card{display:block}
+  .tabbar{display:none}
+  .theme{top:auto;bottom:14px;right:auto;left:16px;background:transparent;color:var(--panel);border-color:rgba(255,255,255,.25)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="rail" aria-label="Разделы">
+    <span class="rail__logo">T</span>
+    <a class="on" href="#" title="Входящие">✉<em>7</em></a>
+    <a href="#" title="Воронка">▤</a>
+    <a href="#" title="Записи">◷</a>
+    <a href="#" title="Клиенты">☺</a>
+    <a href="#" title="Аналитика">▥</a>
+    <span class="rail__me" title="Алина">АЛ</span>
+  </nav>
+
+  <aside class="list" aria-label="Разговоры">
+    <div class="list__head"><h1>Входящие</h1><button class="iconbtn" title="Записать звонок">☎</button><button class="iconbtn" title="Новый разговор">＋</button></div>
+    <div class="search"><input type="search" placeholder="Имя, телефон, машина"></div>
+    <div class="filters">
+      <button class="on">Все<b>18</b></button><button>Без ответа<b>3</b></button><button>Мои<b>9</b></button><button>Max</button><button>WhatsApp</button><button>ВК</button><button>Сайт</button><button>Звонки</button>
+    </div>
+    <div class="rows">
+      <a class="row on" href="#"><span class="av">А<i class="ch ch--max">M</i></span><div><div class="row__name">Андрей <span>LiXiang L7 · 2023</span></div><p class="row__msg">Сколько стоит русификация? И сколько по времени</p></div><div class="row__side">2 мин<span class="unread">2</span></div></a>
+      <a class="row" href="#"><span class="av">М<i class="ch ch--wa">WA</i></span><div><div class="row__name">Мария <span>Toyota RAV4 · 2019</span></div><p class="row__msg">Teyes CC3 под ключ сколько выйдет?</p></div><div class="row__side">7 мин<span class="late">ждёт 7:12</span></div></a>
+      <a class="row" href="#"><span class="av">С<i class="ch ch--vk">ВК</i></span><div><div class="row__name">Сергей <span>Zeekr 001 · 2024</span></div><p class="row__msg">Яндекс Навигатор встанет после обновления?</p></div><div class="row__side">11 мин<span class="late">ждёт 6:40</span></div></a>
+      <a class="row" href="#"><span class="av">О<i class="ch ch--call">☎</i></span><div><div class="row__name">Ольга <span>Kia Rio · 2017</span></div><p class="row__msg">Пропущенный звонок, 0:00. Перезвонить</p></div><div class="row__side">14 мин<span class="late">перезвон</span></div></a>
+      <a class="row" href="#"><span class="av">Д<i class="ch ch--form">Ф</i></span><div><div class="row__name">Денис <span>Haval Jolion · 2022</span></div><p class="row__msg">Заявка с сайта: автозвук, сабвуфер в багажник</p></div><div class="row__side">32 мин</div></a>
+      <a class="row" href="#"><span class="av">В<i class="ch ch--max">M</i></span><div><div class="row__name">Виктор <span>LiXiang L9 · 2024</span></div><p class="row__msg">Вы: Русификация 49 000 ₽, CarPlay ещё 12 000 ₽</p></div><div class="row__side">1 ч</div></a>
+      <a class="row" href="#"><span class="av">И<i class="ch ch--wa">WA</i></span><div><div class="row__name">Игорь <span>Hyundai Creta · 2020</span></div><p class="row__msg">Вы: Записал на 21.11, 10:00. Адрес отправил</p></div><div class="row__side">2 ч</div></a>
+      <a class="row" href="#"><span class="av">Н<i class="ch ch--wa">WA</i></span><div><div class="row__name">Наталья <span>Toyota Camry · 2018</span></div><p class="row__msg">А рамка под мою приборку есть?</p></div><div class="row__side">3 ч</div></a>
+      <a class="row" href="#"><span class="av">П<i class="ch ch--vk">ВК</i></span><div><div class="row__name">Павел <span>Mitsubishi Outlander · 2016</span></div><p class="row__msg">Вы: Сигнализация StarLine S96 от 27 500 ₽</p></div><div class="row__side">вчера</div></a>
+    </div>
+  </aside>
+
+  <main class="chat" aria-label="Переписка">
+    <header class="chat__head">
+      <div><h2>Андрей · LiXiang L7 2023</h2><p>Max · первое обращение · пришёл с Яндекс Карт</p></div>
+      <button class="btn">Передать</button><button class="btn">Закрыть разговор</button>
+    </header>
+    <div class="msgs">
+      <span class="day">Сегодня</span>
+      <p class="m--sys m">Разговор открыт · канал Max · назначен на Алину</p>
+      <div class="m m--in">Здравствуйте! LiXiang L7 2023 года, китайская версия. Сколько стоит русификация?<small>14:02</small></div>
+      <div class="m m--in"><span class="photo"></span>Вот приборка, если нужно. И сколько по времени займёт?<small>14:03</small></div>
+      <p class="m--sys m">Машина распознана: LiXiang L7 · 2023 · рынок Китай. Записано в карточку</p>
+    </div>
+    <div class="tpl"><button>Цена русификации L7</button><button>Что входит в русификацию</button><button>Свободные окна</button><button>Адрес и как доехать</button><button>Попросить телефон</button></div>
+    <p class="composer__via">Ответ уйдёт в Max · клиент ждёт 2 мин</p>
+    <div class="composer">
+      <textarea rows="2">Андрей, здравствуйте! Русификация L7 2023 – 45 000 ₽, занимает около 4 часов. Ближайшее окно – завтра в 10:00. Записать вас?</textarea>
+      <button class="btn btn--ac">Отправить</button>
+    </div>
+  </main>
+
+  <aside class="card" aria-label="Карточка клиента">
+    <section>
+      <div class="who"><span class="av">А</span><div><b>Андрей</b><span>+7 913 ··· 42 18 · Max</span></div></div>
+    </section>
+    <section>
+      <h3>Этап</h3>
+      <div class="stage"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div>
+      <div class="stage-l"><span>Новый</span><b>Узнали машину</b><span>Цена</span><span>Записан</span><span>Приехал</span></div>
+    </section>
+    <section>
+      <h3>Машина и услуга</h3>
+      <dl class="kv"><dt>Марка</dt><dd>LiXiang</dd><dt>Модель</dt><dd>L7</dd><dt>Год</dt><dd>2023, Китай</dd><dt>Услуга</dt><dd>Русификация</dd><dt>Сумма</dt><dd>45 000 ₽</dd><dt>Откуда</dt><dd>Яндекс Карты</dd></dl>
+    </section>
+    <section>
+      <h3>Записать на установку</h3>
+      <div class="slots"><button class="on">Чт 10:00</button><button>Чт 14:00</button><button>Пт 11:00</button></div>
+      <button class="btn btn--ac wide">Записать на четверг 10:00</button>
+    </section>
+    <section>
+      <h3>История</h3>
+      <ul class="hist"><li>Первое обращение<span>сегодня</span></li><li>Других машин нет<span></span></li></ul>
+    </section>
+    <section><p class="note">Макет. Имена, цены и цифры – пример.</p></section>
+  </aside>
+</div>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a class="on" href="#"><i>✉</i>Чаты<em>3</em></a><a href="#"><i>▤</i>Воронка</a><a href="#"><i>◷</i>Записи</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script>(()=>{const r=document.documentElement,k='crm-theme';try{const s=localStorage.getItem(k);if(s)r.dataset.theme=s}catch(e){}document.getElementById('th').onclick=()=>{const d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem(k,r.dataset.theme)}catch(e){}}})()</script>
+</body>
+</html>
