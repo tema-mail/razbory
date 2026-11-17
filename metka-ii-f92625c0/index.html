@@ -1,0 +1,359 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Невидимая метка ИИ: правда или нет</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Невидимая метка ИИ: правда или нет</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Наполовину правда: с 14 августа 2026 года Claude действительно метит свой текст, но это не символы, а статистика в выборе слов – наша чистка её не снимет, поисковики её не читают и за неё не наказывают. Писателя менять не нужно. Чистку символов стоит расширить: сейчас она ловит 18 невидимых и особых знаков, а нужно закрыть весь класс – 13 правил ниже. Окно публикации «как у человека» не делаем, смысловую группировку берём только подсказкой.</p>
+<p><strong>Нужно от тебя:</strong> 1) «да» на 13 правил чистки (часа 2–3 кода с тестами); 2) «да» на смысловую группировку подсказкой рядом с группировкой по выдаче (часа 4); 3) окно публикации как маскировку не делаем – подтверди.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Ответ коротко</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ставит ли Claude метку</td>
+<td>Да, с 14.08.2026: статистическая, в выборе слов, по всему миру, отключить нельзя</td>
+</tr>
+<tr>
+<td>Это невидимые символы</td>
+<td>Нет. Anthropic: «не добавляет токенов и скрытых символов»</td>
+</tr>
+<tr>
+<td>Снимет ли её наша чистка</td>
+<td>Нет, и никакая замена символов не снимет. Снимает только полный пересказ другой моделью</td>
+</tr>
+<tr>
+<td>Видят ли метку Яндекс и Google</td>
+<td>Проверяющий метку сервис закрыт, доступ у регуляторов, СМИ, исследователей. Заявлений, что поиск её читает, нет</td>
+</tr>
+<tr>
+<td>Наказывает ли поиск за ИИ-текст</td>
+<td>Нет: оба поисковика наказывают за массовость и бесполезность, не за способ написания</td>
+</tr>
+<tr>
+<td>Есть ли «писатель без метки»</td>
+<td>Из списка Васина без заявленной метки остался только DeepSeek. Codex в ЕС метится с 05.10.2026, Grok в API – с 07.11.2026 (по умолчанию включена или нет – источники спорят)</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Метка у Claude есть, но она в выборе слов, а не в символах</h2>
+<p>Есть два разных вида «метки», и их путают.</p>
+<p><strong>Статистическая метка.</strong> Модель из нескольких почти равных слов выбирает то, на которое указывает секретный ключ. Глазом и кодом без ключа её не видно. Проверка возможна только у владельца ключа и только на длинном тексте. Лёгкая правка метку не снимает, полный пересказ снимает.</p>
+<p><strong>Символьная «метка».</strong> Невидимые знаки Unicode внутри текста: узкий пробел U+202F, пробел нулевой ширины U+200B и т. п. Это не водяной знак, а мусор, который виден любому, кто ищет его кодом. Его мы и чистим.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Чья модель</th>
+<th>Статистическая метка</th>
+<th>С какого числа</th>
+<th>Источник</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Claude</strong> (наш писатель)</td>
+<td>Да, вариант SynthID-Text, по всему миру: приложение, API, Claude Code, облака. Выключателя нет</td>
+<td>Новые модели – с 02.08.2026, объявлено 14.08.2026; старые (Opus 4.6, Sonnet 4.6) – добавляются, по словам pasqualepillitteri.it с 03.11.2026 – у Anthropic даты нет, не подтверждено</td>
+<td><a href="https://www.anthropic.com/news/claude-text-watermark">anthropic.com, 14.08.2026</a>, <a href="https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content">support.claude.com</a>, <a href="https://platform.claude.com/docs/en/build-with-claude/text-watermark">документация</a></td>
+</tr>
+<tr>
+<td><strong>Gemini</strong> (Google)</td>
+<td>Да, SynthID-Text</td>
+<td>Приложение и сайт – с 14.05.2024; API – сотрудник Google на форуме 19.08.2026 сказал «да», в документации на 13.10.2026 нет</td>
+<td><a href="https://www.nature.com/articles/s41586-024-08025-4">Nature, 2024</a>, <a href="https://pasqualepillitteri.it/en/news/23344/chatgpt-claude-gemini-watermark-ai-text">обзор 13.10.2026</a></td>
+</tr>
+<tr>
+<td><strong>ChatGPT и Codex</strong> (OpenAI)</td>
+<td>Да, textGrain, только для пользователей в ЕС. В API – по желанию, выключена по умолчанию</td>
+<td>Объявлено 05.10.2026</td>
+<td><a href="https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu">TechCrunch, 05.10.2026</a></td>
+</tr>
+<tr>
+<td><strong>Grok</strong> (xAI)</td>
+<td>В API: документация – включена по умолчанию; TeslaNorth 11.11.2026 – уже выключена по умолчанию. Источники спорят</td>
+<td>07.11.2026</td>
+<td><a href="https://cryptobriefing.com/xai-grok-text-watermarking-api/">Cryptobriefing</a>, <a href="https://teslanorth.com/2026/11/11/grok-api-watermarks-off-default-docs/">TeslaNorth, 11.11.2026</a></td>
+</tr>
+<tr>
+<td><strong>DeepSeek</strong></td>
+<td>Не заявлена. Нет в списке подписавших кодекс ЕС</td>
+<td>–</td>
+<td><a href="https://digital-strategy.ec.europa.eu/en/news/strong-backing-code-practice-transparency-ai-generated-content">Еврокомиссия, 24.09.2026</a></td>
+</tr>
+<tr>
+<td><strong>Meta AI, Llama</strong></td>
+<td>Для текста не заявлена (только картинки, C2PA)</td>
+<td>–</td>
+<td><a href="https://about.fb.com/news/2026/07/meta-is-signing-the-eu-ai-act-code-of-practice-on-transparency-of-ai-generated-content/">Meta, 28.07.2026</a></td>
+</tr>
+<tr>
+<td><strong>Mistral</strong></td>
+<td>Не описана; у открытых весов метку ставить некому</td>
+<td>–</td>
+<td>Еврокомиссия, 24.09.2026</td>
+</tr>
+<tr>
+<td><strong>YandexGPT, GigaChat</strong></td>
+<td>Ни заявлений, ни документации не нашёл – не подтверждено</td>
+<td>Проект закона №131978-8 (август 2026) обязывает маркировать, форму задаст правительство; не принят</td>
+<td><a href="https://www.comnews.ru/content/246954/2026-08-19/2026-w34/1008/gosduma-rf-pometit-kontent">ComNews, 19.08.2026</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3>Что было с символами в 2024–2025</h3>
+<ul>
+<li><strong>OpenAI, август 2024.</strong> WSJ: у OpenAI есть статистическая метка ChatGPT с точностью 99,9% на длинном тексте, но её не выпустили: 30% пользователей в опросе обещали уйти, а перевод туда-обратно метку снимает (<a href="https://www.searchenginejournal.com/openai-scraps-chatgpt-watermarking-plans">SEJ</a>, <a href="https://the-decoder.com/openai-has-a-highly-accurate-chatgpt-text-detector-but-wont-release-it-for-now/">The Decoder</a>).</li>
+<li><strong>o3 и o4-mini, апрель 2025.</strong> Компания Rumi нашла в длинных ответах узкий неразрывный пробел U+202F; у GPT-4o его не было. OpenAI ответила Rumi: «никакой водяной метки здесь нет», знаки появляются из-за обучения с подкреплением, их уберут (<a href="https://www.securitylab.ru/news/558636.php">SecurityLab, 23.04.2025</a>). Пользователи писали о том же у GPT-5 – их догадка, не заявление OpenAI (<a href="https://community.openai.com/t/gpt-5-non-reasoning-outputs-u-202f-narrow-no-break-space-instead-of-normal-spaces-breaks-text-rendering-on-macos-apps/1362321">форум OpenAI</a>).</li>
+<li><strong>Видимые следы чатов.</strong> В скопированных из ChatGPT текстах встречаются <code>:contentReference[oaicite:0]{index=0}</code> и ссылки с <code>utm_source=chatgpt.com</code> – такие хвосты находили даже в отчётах для SEC (<a href="https://originality.ai/blog/sec-filings-chatgpt-links-study">Originality.ai</a>, <a href="https://community.openai.com/t/unexpected-metadata-tags-appear-in-gpt-response-output/1264070">форум OpenAI</a>).</li>
+</ul>
+<p><strong>Итог по Васину.</strong> «Писатель без невидимой метки: Grok, Codex или DeepSeek; Claude – там, где его текст не попадает в статью» – верно про Claude с 14.08.2026, но устарело про Codex (ЕС, 05.10.2026) и, возможно, про Grok (07.11.2026). Наш писатель – Claude по подписке (<code>claude -p</code>, <code>engine/ispolniteli.py</code>), значит наши статьи метку несут. Мы ходим в Claude из Нидерландов, но метка Claude от страны не зависит.</p>
+<h2>Поисковики метку не читают: они ловят массовость и бесполезность</h2>
+<p><strong>Google.</strong> Официально: уместное использование ИИ правилам не противоречит; нарушение – «создавать много страниц без пользы для людей» (scaled content abuse), «как бы контент ни был сделан» (<a href="https://developers.google.com/search/docs/fundamentals/using-gen-ai-content">Search Central</a>, <a href="https://developers.google.com/search/docs/essentials/spam-policies">политика спама</a>). Заявлений, что Google читает SynthID в тексте для ранжирования, не нашёл. Seer Interactive 04.09.2026: Google два года метит Gemini и ни разу не использовал метку в ранжировании (<a href="https://www.seerinteractive.com/insights/anthropic-watermark-update">Seer</a>) – это мнение агентства, не Google.</p>
+<p><strong>Яндекс.</strong> 28.03.2025: «использование нейросетей не является негативным фактором, если публикуемый контент качественный», нужны проверка экспертом и отсутствие обмана; точность выявления некачественных материалов, включая сгенерированные, – 99% по словам Яндекса (<a href="https://habr.com/ru/news/895414/">Хабр, 28.03.2025</a>). Метрика Проксима оценивает пользу ответа; «Вега» (17.12.2019) – про асессоров-экспертов, к ИИ-текстам отношения не имеет (<a href="https://vc.ru/services/97638">vc.ru</a>). Справка: страницу убирают из выдачи за спам, вред или нарушение закона (<a href="https://yandex.ru/support/webmaster/ru/search-quality">Вебмастер</a>).</p>
+<p><strong>Кто вообще может проверить метку Claude.</strong> Проверка в закрытом доступе: регуляторы, полиция, СМИ, фактчекеры, исследователи, школы и вузы, отдельные компании для своих текстов (<a href="https://www.anthropic.com/news/claude-text-watermark">Anthropic, обновлено 01.09.2026</a>). Поисковиков в списке нет. Anthropic сама пишет: метка не доказывает авторство и не отличает «написал Claude» от «Claude сильно правил».</p>
+<p><strong>Детекторы ИИ на русском – слабые.</strong></p>
+<ul>
+<li>«Антиплагиат» заявил 98% точности (12.05.2025), но без данных о языке и ложных срабатываниях (<a href="https://tproger.ru/news/-antiplagiat--nauchilsya-s-tochnostyu-98--raspoznavat-teksty--napisannye-ii">Tproger</a>).</li>
+<li>GPTZero сам оговаривает, что лучшая точность – на английском, на русском хуже (<a href="https://toolfox.ru/services/s/gptzero">toolfox</a>).</li>
+<li>OpenAI закрыла свой детектор 20.07.2023 из-за низкой точности: он ловил 26% ИИ-текстов и ошибочно метил 9% человеческих (<a href="https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/">OpenAI</a>).</li>
+<li>Независимой проверки детекторов на русском не нашёл – не подтверждено.</li>
+</ul>
+<p><strong>Что ловят на деле.</strong> Эксперимент АЙNET (опубликован 30.10.2026): 10 новых доменов, 5 текстов экспертов и 5 текстов нейросетей, 8 месяцев. Итог по средней позиции: в Яндексе 4 у экспертов против 8,2 у ИИ, в Google 3,6 против 7,4. Но текст Manus вышел на 1-е место в Яндексе (<a href="https://ppc.world/news/vidimost-avtorskih-tekstov-v-poiske-vdvoe-vyshe-chem-neyrosetevyh/">ppc.world</a>). Выборка крошечная, метки никто не проверял. Вывод: выигрывает польза и экспертиза, а не отсутствие метки.</p>
+<h2>Что реально чистить кодом: весь класс невидимых знаков, а не 18 штук</h2>
+<p>Что уже чистит <code>chistka()</code> в <code>engine/st_stati.py</code> (строки 81–127), каждая строка статьи вглубь:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Что</th>
+<th>Коды</th>
+<th>Как</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Невидимые</td>
+<td>U+200B, 200C, 200D, 2060, FEFF, 00AD (мягкий перенос), 180E, 061C, 200E, 200F</td>
+<td>Удаляем</td>
+</tr>
+<tr>
+<td>Особые пробелы</td>
+<td>U+00A0, 2002, 2003, 2007, 2008, 2009, 202F, 3000</td>
+<td>В обычный пробел</td>
+</tr>
+<tr>
+<td>Нормализация</td>
+<td>NFC</td>
+<td>Склеивает «е» + знак в «ё» и т. п.</td>
+</tr>
+<tr>
+<td>Длинное тире</td>
+<td>U+2014</td>
+<td>В «–»</td>
+</tr>
+<tr>
+<td>Перепутанные буквы</td>
+<td>Латиница в русском слове и наоборот</td>
+<td>К большинству в слове</td>
+</tr>
+<tr>
+<td>Служебные пометки</td>
+<td>[TODO], [уточнить], [нет данных], TODO, ПРОВЕРИТЬ, ???</td>
+<td>Удаляем и пишем в журнал</td>
+</tr>
+<tr>
+<td>Кавычки, пробелы</td>
+<td>Прямые кавычки, двойные пробелы, пробел перед знаком</td>
+<td>«», один пробел</td>
+</tr>
+</tbody>
+</table></div>
+<p>Что добавить – правилами, готовыми под код:</p>
+<ol>
+<li><strong>Остальные пробелы → обычный пробел:</strong> U+2000, 2001, 2004, 2005, 2006, 200A, 205F, 1680.</li>
+<li><strong>Невидимые операторы и заполнители → удалить:</strong> U+2061–2064, U+034F, U+17B4, U+17B5, U+115F, U+1160, U+3164, U+FFA0.</li>
+<li><strong>Управление направлением текста → удалить:</strong> U+202A–202E, U+2066–2069 (на этом строится подмена текста «Trojan Source»).</li>
+<li><strong>Знаки-теги U+E0000–E007F → удалить.</strong> Ими прячут текст от людей и фильтров («ASCII smuggling», <a href="https://www.microsoft.com/en-us/security/blog/2026/09/03/ascii-smuggling/">Microsoft, 03.09.2026</a>).</li>
+<li><strong>Селекторы вариантов U+FE00–FE0F и U+E0100–E01EF → удалить.</strong> Через них после любой буквы можно спрятать байты (<a href="https://paulbutler.org/2025/smuggling-arbitrary-data-through-an-emoji/">Paul Butler, февраль 2025</a>); в статьях эмодзи нет.</li>
+<li><strong>Служебные знаки U+FFF9–FFFC → удалить; U+FFFD (знак-ошибка «�») → стоп:</strong> значит, текст побит кодировкой.</li>
+<li><strong>Управляющие знаки → удалить:</strong> U+0000–0008, 000B, 000C, 000E–001F, 007F, 0080–009F; U+2028 и U+2029 → перевод строки.</li>
+<li><strong>Частная зона U+E000–F8FF → удалить и предупредить</strong> (значки шрифтов, мусор из копипаста).</li>
+<li><strong>Дефисы:</strong> U+2010, U+2011 → «-»; U+2012, U+2015 → «–». Минус U+2212 оставляем.</li>
+<li><strong>Буквы-двойники не только латиницы:</strong> греческие ο α ε ρ (U+03BF, 03B1, 03B5, 03C1) внутри русского слова → о а е р; украинские і ї ј ѕ (U+0456, 0457, 0458, 0455) в русском слове → предупреждение, не автозамена.</li>
+<li><strong>Полноширинные знаки U+FF01–FF5E → обычные</strong> (NFKC только для этого блока, не для всего текста).</li>
+<li><strong>Видимые следы чатов → стоп с причиной:</strong> <code>oaicite</code>, <code>contentReference[</code>, <code>【</code>, <code>turn0search</code>, <code>&lt;cite</code>, <code>&lt;/cite&gt;</code>, «как языковая модель», «Конечно! Вот», «Надеюсь, это поможет», остатки разметки <code>**</code>, <code>##</code>, <code>```</code>. Из ссылок – вырезать параметры <code>utm_source=chatgpt.com</code> и <code>utm_source=openai</code>.</li>
+<li><strong>Белый список вместо чёрного (главное правило).</strong> После чистки любой знак вне набора «табуляция, перевод строки, U+0020–007E, U+00A0–024F, U+0400–04FF, – … « » „ “ № ₽ ° × −» → предупреждение с кодом знака. Так ловим и те знаки, о которых ещё не знаем.</li>
+</ol>
+<p><strong>Тесты.</strong> На каждое правило – строка с этим знаком внутри слова, внутри числа «10 000» и в ссылке (ссылки <code>href</code> и <code>id</code> чистка сейчас не трогает – так и оставить). Проверка, что «ё», «№», «₽» и короткое тире целы.</p>
+<p><strong>Чего чисткой не сделать.</strong> Статистическую метку Claude символами не снять. Снять её можно только полным пересказом другой моделью – и это ровно то, что Васин называет «писатель без метки». Делать так не советую: лишний проход съедает факты, а выгоды в поиске нет.</p>
+<h2>Окно публикации: нормальное расписание – да, маскировка под человека – нет</h2>
+<p><strong>Что это.</strong> У Васина опция: статья выходит не ровно в 09:00:00 каждый день, а в случайную минуту внутри окна. В его журнале 07.10: «ритм текста как у человека, статья выходит не минута в минуту».</p>
+<p><strong>Как работает по шагам.</strong></p>
+<ol>
+<li>План: одна статья в день.</li>
+<li>Окно: 10:00–13:00 МСК.</li>
+<li>Планировщик берёт случайную минуту – сегодня 10:47, завтра 12:13.</li>
+<li>Публикует, ставит дату в разметке (<code>datePublished</code>), <code>lastmod</code> в карте сайта, шлёт IndexNow.</li>
+</ol>
+<p><strong>Зачем Васину.</strong> Продаёт «ритм как у человека»: чтобы ровный шаг робота не бросался в глаза. Плюс по делу: ноутбук может быть выключен, и «выкладка наперёд» сама открывает статьи в их день.</p>
+<p><strong>Что видят поисковики.</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Сигнал</th>
+<th>Что это</th>
+<th>Что о нём известно</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Время обнаружения</td>
+<td>Когда робот впервые увидел адрес: обход, карта сайта, IndexNow</td>
+<td>Знает поисковик; что точная минута влияет на ранжирование – не подтверждено</td>
+</tr>
+<tr>
+<td><code>datePublished</code></td>
+<td>Дата в разметке страницы</td>
+<td>Должна быть правдой; подделка дат – прямой путь к недоверию</td>
+</tr>
+<tr>
+<td><code>lastmod</code> в карте сайта</td>
+<td>Дата изменения страницы</td>
+<td>Google берёт её, только если она «последовательно и проверяемо» точна, а priority и changefreq игнорирует (<a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap">Google</a>)</td>
+</tr>
+<tr>
+<td>IndexNow</td>
+<td>Сообщение Яндексу и Bing о новом адресе</td>
+<td>Ускоряет обход. У нас в <code>obhodchik.py</code>: один адрес не чаще раза в 7 дней</td>
+</tr>
+<tr>
+<td>Объём</td>
+<td>Сколько страниц появилось за раз</td>
+<td>Вот что видно и важно: 50 статей за ночь – признак массовости по политике спама</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где грань.</strong></p>
+<ul>
+<li><strong>Нормальное расписание:</strong> выходить, когда читают; держать объём, который успеваем проверить; даты честные (<code>datePublished</code> = реальный выход, <code>lastmod</code> = реальная правка).</li>
+<li><strong>Маскировка:</strong> случайные минуты, чтобы скрыть конвейер, задним числом проставленные даты, поддельное «обновлено» без правок, выдуманные авторы. Это против нашего правила от 12.10.2026: без дорвеев, слопа и масок.</li>
+</ul>
+<p><strong>Нужно ли нам.</strong> Как маскировка – нет: выгоды в поиске не доказано, а с правилом конфликтует. Сейчас у нас статья выходит после проверки и «да», а не по таймеру, так что «минута в минуту» нам не грозит. Разброс ±30 минут можно сделать только ради нагрузки, если десятки сайтов выходят разом: около 1 часа кода, риск нулевой, пользы для поиска нет.</p>
+<h2>Группировка моделью по смыслу: хорошая подсказка, плохое решение</h2>
+<p><strong>Что это.</strong> Два способа решить, какие фразы идут на одну страницу:</p>
+<ul>
+<li><strong>по выдаче</strong> – две фразы на одной странице, если у них в топ-10 совпадают адреса;</li>
+<li><strong>по смыслу</strong> – нейросеть читает фразы и склеивает близкие по значению.</li>
+</ul>
+<p><strong>Как сейчас у нас</strong> (<code>engine/spros.py</code>, функция <code>gruppirovat</code>):</p>
+<ol>
+<li>Фразы идут по убыванию частоты.</li>
+<li>Фраза входит в группу, только если у неё не меньше 3 общих адресов в топ-10 с каждым участником группы и тот же интент. Шумные сайты (Авито, YouTube, ВК, Дзен, маркетплейсы) не считаются.</li>
+<li>Мостов нет: А похожа на Б, Б на В – А с В не склеится, если сами не похожи.</li>
+<li>Фразы без выдачи входят в группу только при тех же словах (по основам, без предлогов и своего города).</li>
+</ol>
+<p><strong>Пример на фразах автосервиса.</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Фразы</th>
+<th>Модель по смыслу</th>
+<th>Выдача</th>
+<th>Кто прав</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>«замена масла в двигателе» + «поменять моторное масло цена»</td>
+<td>Одна группа</td>
+<td>Совпадает</td>
+<td>Оба</td>
+</tr>
+<tr>
+<td>«развал схождение» + «регулировка углов установки колёс»</td>
+<td>Одна группа (синонимы)</td>
+<td>Совпадает</td>
+<td>Оба</td>
+</tr>
+<tr>
+<td>«замена масла в двигателе» + «замена масла в АКПП»</td>
+<td>Одна тема «замена масла»</td>
+<td>Разные сайты в топе</td>
+<td>Выдача: это две услуги, две страницы</td>
+</tr>
+<tr>
+<td>«замена масла в двигателе» + «как поменять масло самому»</td>
+<td>Один смысл</td>
+<td>Сервисы против статей</td>
+<td>Выдача: разный интент, у нас его режет ещё и <code>intent()</code></td>
+</tr>
+<tr>
+<td>«замена ремня ГРМ» + «замена цепи ГРМ»</td>
+<td>Одна группа</td>
+<td>Частично разные</td>
+<td>Выдача: разные работы и цены</td>
+</tr>
+<tr>
+<td>«стучит подвеска на кочках веста» (частота мала, выдачу не снимали)</td>
+<td>«К диагностике подвески»</td>
+<td>Нет данных</td>
+<td>Модель полезна: у нас фраза осталась бы одна</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Плюсы смысловой.</strong> Дёшево, без XMLRiver. Работает на редких фразах без выдачи. Даёт понятное имя группе. Ловит синонимы с разными словами.</p>
+<p><strong>Минусы.</strong> Не знает, как поисковик понимает намерение. Склеивает по теме, а не по странице. Яндекс и Google могут видеть по-разному. От запуска к запуску ответ плавает.</p>
+<p><strong>Когда ошибается – каннибализация.</strong> Модель склеила «масло в двигателе» и «масло в АКПП»: одна страница пытается ответить на два намерения и не берёт ни одно. Обратная ошибка: модель разделила синонимы – и две наши страницы бьются за один запрос. Сам Васин пишет: тема, которую модель сгруппировала по смыслу, а не по выдаче, «в автопрогон вообще не идёт» – у него это тоже подсказка.</p>
+<p><strong>Что предлагаю.</strong> Добавить подсказкой только для групп «одна фраза» и «без выдачи»: модель пишет «похоже на группу X, потому что…» с пометкой «предложение модели». Сама ничего не склеивает. Решает выдача (если для этой фразы её снимем) или ты на приёмке ядра. Цена – около 4 часов (функция, тест на 10 фразах, вывод в отчёт станции). Модель – наша подписка, без доплат. Риск низкий, пока это подсказка.</p>
+<hr />
+<p><strong>Что раскрыть:</strong></p>
+<ol>
+<li>Как устроена статистическая метка Claude и почему её не снять символами – на пальцах.</li>
+<li>Код 13 правил чистки и тесты – показать перед вставкой.</li>
+<li>Смысловая подсказка в «Семантике» – как будет выглядеть в отчёте станции.</li>
+<li>Закон о маркировке в России (№131978-8) – чем грозит сайтам клиентов.</li>
+</ol></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
