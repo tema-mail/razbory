@@ -1,0 +1,353 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Сборщик отзывов и форумов: язык аудитории</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Сборщик отзывов и форумов: язык аудитории</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Сборщик нужен, но одним, а не третьим по счёту: куски уже есть в первом заводе, у Codex, в исследовании бренда и в знакомстве нашего завода, и ни один не даёт базы живых цитат. Предлагаю одну станцию завода «Язык аудитории» и скилл для сайтов с общим форматом базы. Автоматом собираем только там, где площадка разрешает (Отзовик, IRecommend, форумы марок, YouTube). Карты и drive2 – только «найти и короткая цитата руками» или выгрузка из своего кабинета. Работа – около 66 часов один раз, деньги – меньше 50 ₽ на клиента за квартальный прогон. Сейчас это техдолг, агента не делаю.</p>
+<p><strong>Нужно от тебя:</strong> «да», что ставим в техдолг завода по этому плану, и что делать с drive2: он закрыт для роботов целиком, поэтому там только ручные цитаты. Если нужен автоматом – это разговор с самим drive2.</p>
+<p>Сверено 17.11.2026: код старого завода, документы Codex, агенты студии, код нашего завода, страница Цеха Васина, правила площадок и их robots.txt.</p>
+<h2>Что у нас уже было: пять кусков, ни одного целого</h2>
+<p>Голос аудитории поднимали трижды, и каждый раз останавливались на полпути: модель пересказывала отзывы, а базы цитат с адресом и датой так и не появилось.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Где</th>
+<th>Что делало</th>
+<th>Чем кончилось</th>
+<th>Путь</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Первый завод (бэкап 12.11)</td>
+<td>Ресёрч моделью Perplexity по темам «отзывы» и «вопросы»: Яндекс Карты, 2ГИС, Отзовик, Фламп, форумы. Пункты брифа «Заполняем мы»: вопросы, сомнения, страхи, «какими словами клиенты называют», за что хвалят, почему уходят к другим</td>
+<td>Пересказ модели с ссылками в корпус брифа, цитаты кодом не сверялись</td>
+<td><code>~/Archive/bekap-zavoda-2026-11-12/бэкап-завода-2026-11-12/проект-SEO/factory/src/autobrief.py</code> (функция research, ~строка 624), <code>brief_questions.py</code> (строки 96–107, 187)</td>
+</tr>
+<tr>
+<td>Первый завод, выдача</td>
+<td>Тип результата «ugc»: drive2, форум drom, Пикабу, Отзовик, IRecommend, vc, Дзен</td>
+<td>Только метка в выдаче, без сбора</td>
+<td><code>…/factory/src/seodata.py:290</code></td>
+</tr>
+<tr>
+<td>Codex, июль 2026</td>
+<td>Проект «Голос клиента без новых API» (17.07.2026): реестр площадок (сам / импорт владельца / только найти / нельзя), три сборщика (свои отзывы, конкуренты, форумы), ворота качества, имена вырезать, автора хэшем</td>
+<td>Сделан только каркас. Старые сборщики находили 12/40/30 адресов и вставали на 40 %, текстов отзывов Balance так и не собрали</td>
+<td><code>~/.claude/znaniya/seo-content-factory/originaly/VOC_NO_API_DESIGN.md</code>, <code>PRINCIP.md</code></td>
+</tr>
+<tr>
+<td>Студия сейчас</td>
+<td>Агенты «бренд-сбор-отзывы» (карточки, 5–15 отзывов, цитата до 40 слов, без имён) и «бренд-анализ-голос-клиента» (тема засчитана при 3+ отзывах или 2+ площадках); скилл auditoriya (свидетельства → сегменты)</td>
+<td>Работает только внутри исследования бренда, в завод не попадает</td>
+<td><code>~/.claude/agents/бренд-сбор-отзывы.md</code>, <code>бренд-анализ-голос-клиента.md</code>, <code>~/.claude/skills/auditoriya</code></td>
+</tr>
+<tr>
+<td>Наш завод сейчас</td>
+<td>Знакомство по интернету ищет три пункта анкеты по отзывам: «С чем приходят», «Сомнения клиентов», «Почему выбирают нас» – строкой факта с дословной цитатой и сверкой кодом</td>
+<td>Это факты о компании, а не вопросы людей; форумов нет вовсе</td>
+<td><code>~/Sites/zavod-ai-sfera/engine/znakomstvo_internet.py</code>, <code>engine/anketa.py:49–55</code></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Цех Васина</strong> (vasinki.ru/ceh/, снято 17.11): «Язык аудитории с отзовиков и форумов – вопросы людей в подсказку писателю и в новые темы · опция». В нашей сверке с ним 17.11 это строка «у нас нет».</li>
+<li><strong>Что брать.</strong> У Codex – реестр площадок и ворота качества. У студии – формат цитаты и правило «тема от 3 отзывов или 2 площадок». У нашего завода – сверку цитаты кодом (функция <code>sverit</code>), она уже работает.</li>
+<li><strong>Чего не повторять.</strong> Пересказ моделью вместо цитаты (первый завод) и «стадия 40 %» без текстов (Codex).</li>
+</ul>
+<h2>Откуда брать: автоматом можно меньшинство площадок</h2>
+<p>Самое ценное – карты и drive2 – как раз закрыто для автоматического сбора. Поэтому сборщик гибридный: сам собирает там, где разрешено, а карты берёт из своего кабинета или короткими цитатами руками.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Площадка</th>
+<th>Каким нишам</th>
+<th>Правила на 17.11.2026</th>
+<th>Режим</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Яндекс Карты</td>
+<td>все: автосервис, установка, фитнес, автосалоны</td>
+<td>Условия Карт (ред. 23.09.2026), п. 4.6: копирование данных без письменного разрешения запрещено, кроме функций сервиса. Соглашение Яндекса (ред. 10.10.2026): п. 3.1 «может запретить автоматическое обращение», п. 5.2.7 нельзя «несанкционированно собирать… персональные данные»</td>
+<td>Свои отзывы – из кабинета Яндекс Бизнеса (владелец видит до 600, Codex 17.07). Конкуренты – прочитать и короткие цитаты руками</td>
+</tr>
+<tr>
+<td>2ГИС</td>
+<td>все, в Новосибирске сильная площадка</td>
+<td>Соглашение 2ГИС, п. 2.13: запрет автоматических запросов и сбора (по разбору Codex 17.07, сам не перечитывал)</td>
+<td>Нельзя автоматом</td>
+</tr>
+<tr>
+<td>Google Карты</td>
+<td>все, отзывов меньше</td>
+<td>FAQ Google Maps Platform: запрет скрапинга (Codex 17.07)</td>
+<td>Только найти</td>
+</tr>
+<tr>
+<td>drive2</td>
+<td>установка мультимедиа, китайские авто, вариаторы, марки</td>
+<td>robots.txt (17.11): <code>User-Agent: * Disallow: /</code>, открыт только поисковикам, ClaudeBot закрыт отдельной строкой</td>
+<td>Найти через выдачу поисковика, цитату – руками</td>
+</tr>
+<tr>
+<td>auto.ru «Отзывы»</td>
+<td>продажа и привоз авто, китайские авто</td>
+<td>robots пускает к отзывам, но это сервис Яндекса – те же п. 3.1 и 5.2.10</td>
+<td>Вручную, пока не проверим условия auto.ru</td>
+</tr>
+<tr>
+<td>Отзовик</td>
+<td>автосалоны, фитнес-клубы, услуги</td>
+<td>robots (17.11): отзывы открыты, закрыты профили и поиск. Правила сообщества запрещают копировать чужой контент для публикации</td>
+<td>Сам, медленно, короткие цитаты только для внутреннего разбора, не публикуем</td>
+</tr>
+<tr>
+<td>IRecommend</td>
+<td>фитнес, товары</td>
+<td>robots (17.11) закрывает только служебные папки</td>
+<td>Сам, как Отзовик</td>
+</tr>
+<tr>
+<td>Форумы марок (forums.drom.ru и клубы)</td>
+<td>вариаторы, китайские авто, мультимедиа</td>
+<td>robots forums.drom.ru (17.11): закрыты профили, поиск, личка; темы открыты</td>
+<td>Сам, один запрос в несколько секунд</td>
+</tr>
+<tr>
+<td>Пикабу</td>
+<td>истории «как меня развели в сервисе»</td>
+<td>robots (17.11): закрыты api, ajax, имена пользователей</td>
+<td>Сам, осторожно</td>
+</tr>
+<tr>
+<td>Telegram</td>
+<td>чаты владельцев Zeekr, Li Auto, марок</td>
+<td>Чаты читаются только из аккаунта. Scrape Creators берёт только публичные каналы, 20 постов за кредит</td>
+<td>Каналы – Scrape Creators, чаты – вручную и без имён</td>
+</tr>
+<tr>
+<td>YouTube-комментарии</td>
+<td>обзоры машин и магнитол Teyes</td>
+<td>Scrape Creators: <code>/v1/youtube/video/comments</code>, 20 комментариев за 1 кредит (скилл scrapecreators, проверено 14.09)</td>
+<td>Сам</td>
+</tr>
+<tr>
+<td>ВК, Дзен-комментарии</td>
+<td>группы марок, сервисов, клубов</td>
+<td>У ВК официальный API есть, условия для коммерческого сбора не проверял. У Дзена API нет</td>
+<td>Вручную, ВК – не подтверждено</td>
+</tr>
+<tr>
+<td>Zoon, Фламп</td>
+<td>фитнес, услуги</td>
+<td>Соглашение Zoon запрещает копирование и коммерческое использование (Codex 17.07)</td>
+<td>Только найти</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Личные данные.</strong> Имя автора – персональные данные по 152-ФЗ. Не храним имена, аватарки, телефоны, госномера; автор – хэшем. Так уже делают Codex и «бренд-сбор-отзывы».</li>
+<li><strong>«Открыто» не значит «можно собирать».</strong> Спор ВКонтакте с Double Data о сборе открытых профилей (дело А40-18827/2017) шёл годами и кончился мировым соглашением в Суде по интеллектуальным правам (pravo.ru).</li>
+<li><strong>Как читаем правила.</strong> На 401, 403, 429 и капче – стоп, без смены адреса и обхода. Неизвестный сайт автоматом не собираем. Это наше прочтение условий, не заключение юриста.</li>
+</ul>
+<h2>Во что превращать: шесть выходов, каждый через «да»</h2>
+<p>Цитата сама по себе ничего не продаёт. Ценность – когда она становится темой, вопросом FAQ, возражением на продающей странице или правилом «чего не обещать».</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Кластер</th>
+<th>Куда идёт в заводе и на сайте</th>
+<th>Кто ставит «да»</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Вопросы («можно ли», «сколько», «что лучше»)</td>
+<td>FAQ статей и страниц; кандидаты в темы календаря. Сейчас FAQ в брифе берётся только из хвостов Wordstat (<code>engine/brif.py:145</code>)</td>
+<td>Ты или клиент</td>
+</tr>
+<tr>
+<td>Боли и страхи</td>
+<td>Возражения на продающих страницах (marketolog, hormozi); пункт анкеты «Сомнения клиентов»</td>
+<td>Ты</td>
+</tr>
+<tr>
+<td>Похвала (только свои отзывы)</td>
+<td>Пункт анкеты «Почему выбирают нас», доказательства на страницах</td>
+<td>Клиент, «верно» в анкете</td>
+</tr>
+<tr>
+<td>Жалобы на конкурентов</td>
+<td>Чем отличаемся – без названия конкурента (пункт «Не сравнивать» в красном списке)</td>
+<td>Ты</td>
+</tr>
+<tr>
+<td>Слова людей («штатка», «шумка», «магнитола на андроиде»)</td>
+<td>Подсказка писателю, заголовки; сверка с Wordstat</td>
+<td>Автоматом, со сверкой</td>
+</tr>
+<tr>
+<td>На что жалуются у нас</td>
+<td>Кандидаты в красный список: чего не обещать (например, сроки). Ставятся как «предложение» – предупреждение, а не стоп, пока нет «да» (так уже работает <code>engine/krasnyy.py</code>)</td>
+<td>Ты</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Форумная фраза – не спрос.</strong> Правило Codex: тема из форума идёт в план, только если Wordstat или подсказки показали спрос. Иначе она уходит в FAQ, а не в отдельную статью.</li>
+<li><strong>Тема, а не случай.</strong> Тема засчитывается от 3 отзывов или с 2 площадок, иначе «единичное наблюдение» (правило агента «бренд-анализ-голос-клиента»).</li>
+<li><strong>Как часто.</strong> Полный прогон – раз в квартал и при подключении клиента. Свои отзывы из кабинета Яндекс Бизнеса можно раз в месяц.</li>
+</ul>
+<h2>Проект сборщика: станция завода плюс скилл для сайтов, около 66 часов</h2>
+<p>Вход – клиент из завода, утверждённые конкуренты и группы спроса. Выход – база цитат и кандидаты на «да». Живёт в заводе станцией, для сайтов вне завода – скилл, который пишет в тот же формат.</p>
+<pre><code>Клиент в заводе: название, филиалы, сайт, город
+ + утверждённые конкуренты
+ + группы станции «Спрос»
+        │
+        ▼
+1. Поиск источников: XMLRiver и WebSearch
+   («вариатор хонда фит форум», карточки, темы)
+        │
+        ▼
+2. Реестр площадок: сам / импорт / найти / нельзя
+        │
+   ┌────┴─────────────┐
+   ▼                  ▼
+3а. Сбор сам       3б. Импорт: кабинет
+Отзовик, форумы,   Яндекс Бизнеса, цитаты
+YouTube            руками из карт и drive2
+   └────┬─────────────┘
+        ▼
+4. База цитат: до 40 слов, адрес, дата,
+   площадка, наш / конкурент / рынок,
+   автор хэшем, без имён
+        ▼
+5. Сверка цитаты кодом (sverit) и дубли
+        ▼
+6. Кластеры: боли · вопросы · похвала ·
+   страхи · слова
+        ▼
+7. Кандидаты на «да»: темы, FAQ, возражения,
+   факты анкеты, правила красного списка
+        ▼
+Бриф писателя · календарь · анкета · красный
+список · скилл для сайтов → marketolog,
+hormozi, auditoriya
+</code></pre>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Часов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Реестр площадок и формат базы (таблица, миграция)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Поиск источников через XMLRiver и WebSearch</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Сбор с разрешённых площадок: Отзовик, IRecommend, форумы, YouTube – по адаптеру</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Импорт владельца: кабинет Яндекс Бизнеса, вставка цитат руками</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Сверка цитат кодом, вырезание имён и телефонов, дубли</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Кластеры моделью и правило «3 отзыва или 2 площадки»</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Выходы: бриф, FAQ, темы, анкета, красный список – через «да»</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Экран в пульте и у клиента</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Тесты, ревизор, выкладка</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Станция в заводе</strong></td>
+<td><strong>60</strong></td>
+</tr>
+<tr>
+<td>Скилл для сайтов: обёртка и перевод «бренд-сбор-отзывы» на общий формат</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Всего</strong></td>
+<td><strong>66</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Деньги один раз.</strong> 66 часов по ставке продакта 1 000 ₽ – около 66 000 ₽ нашего времени.</li>
+<li><strong>Деньги в месяц.</strong> Поиск источников – около 300 запросов XMLRiver по 0,025 ₽, это 7,5 ₽ на клиента за прогон. YouTube через Scrape Creators – около 100 кредитов, это меньше 0,2 $ (тариф 47 $ за 25 000 кредитов, scrapecreators.com 17.11). Модель – Claude по подписке, завод на ключе Евы с 15.11, без доплаты. Итого меньше 50 ₽ на клиента в квартал, на 12 клиентов – около 200 ₽ в месяц.</li>
+<li><strong>Время человека.</strong> Импорт своих карт и цитаты с drive2 – около 30 минут на клиента в квартал.</li>
+</ul>
+<p><strong>Риски.</strong></p>
+<ul>
+<li>Правила площадок меняются – реестр с датой проверки, неизвестный сайт не собираем.</li>
+<li>Перекос: отзывы пишут те, у кого случилась проблема, и не видно денег. В пилоте auditoriya по TEYES из 6 сегментов отпали 3 после твоего взгляда (08.11).</li>
+<li>Накрученные отзывы у конкурентов – метка «подозрительно» и не считать в тему.</li>
+<li>Модель выдумает цитату – сверка кодом, несверенное не идёт дальше.</li>
+<li>Мало данных в узкой нише или малом городе (фитнес в Туапсе) – честный итог «собрано мало», без додумывания.</li>
+<li>Сайты меняют вёрстку – адаптер ломается; ошибка – «нет данных», а не ноль.</li>
+</ul>
+<p><strong>Что раскрыть:</strong> 1 – какие площадки собирать первыми по каждому клиенту; 2 – формат базы цитат и экран в заводе; 3 – как это заменит «бренд-сбор-отзывы» без поломки исследования бренда; 4 – пробный ручной прогон на одном клиенте без кода, чтобы увидеть пользу до 66 часов.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
