@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Чат TEYES – проба</title>
+<style>
+:root{--bg:#f5f7f8;--card:#fff;--text:#14212a;--muted:#5a6b75;--accent:#0C6A86;--line:#dde5e9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f171c;--card:#16232a;--text:#e6eef2;--muted:#9fb2bc;--accent:#4FB3D1;--line:#24343d}}
+:root[data-theme="dark"]{--bg:#0f171c;--card:#16232a;--text:#e6eef2;--muted:#9fb2bc;--accent:#4FB3D1;--line:#24343d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:32px 16px 120px}
+h1{font-size:28px;line-height:1.2;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+ol{padding-left:22px;margin:8px 0}li{margin:6px 0}
+.muted{color:var(--muted);font-size:15px}
+button.t{position:fixed;top:12px;right:12px;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:10px;padding:6px 10px;font-size:14px;cursor:pointer}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else{var h=new Date().getHours();if(h>=20||h<7)document.documentElement.setAttribute("data-theme","dark")}}catch(e){}})();
+</script>
+</head>
+<body>
+<button class="t" onclick="var d=document.documentElement,n=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}">Тема</button>
+<main>
+<h1>Свой чат на сайте TEYES – проба</h1>
+<p>Так чат будет выглядеть на teyes-sibir.ru. Кнопка чата – в правом нижнем углу.</p>
+<div class="card">
+<b>Что проверить</b>
+<ol>
+<li>Нажми кнопку чата, введи имя и телефон, напиши сообщение.</li>
+<li>Открой CRM: разговор появится в канале «Чат на сайте».</li>
+<li>Ответь из CRM – ответ придёт сюда, в окно чата.</li>
+<li>Закрой страницу и открой снова – переписка сохранится.</li>
+</ol>
+</div>
+<p class="muted">Тестовая страница, в поиск не попадает. На боевой сайт код ставится только после «да».</p>
+</main>
+<script>
+window.chatwootSettings={locale:"ru",position:"right",type:"standard",launcherTitle:"Чат с TEYES"};
+(function(d,t){var BASE_URL="https://crm.168.113.179.49.nip.io";var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src=BASE_URL+"/packs/js/sdk.js";g.async=true;s.parentNode.insertBefore(g,s);
+g.onload=function(){window.chatwootSDK.run({websiteToken:"rFBwyGUwQh4okV6U6koeU7F2",baseUrl:BASE_URL})}})(document,"script");
+</script>
+</body>
+</html>
