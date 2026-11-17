@@ -93,9 +93,9 @@ main code{overflow-wrap:anywhere;white-space:normal}main li{overflow-wrap:anywhe
 <div class="m"><div class="hd">Виртуальная АТС МегаФона</div><div class="line"><span class="a6" style="animation-name:ring;display:inline-block">📞</span> входящий 14:02</div><div class="card a6" style="animation-name:fadeIn">Звонок 3 мин 12 с <span class="ok">▶ запись</span><br><span class="gr">лид создан сам</span></div><div class="card a6" style="animation-name:fadeIn2"><span class="red">Пропущенный 14:40</span><br><span class="gr">тревога главному</span></div></div>
 <div class="t">Каждый звонок сам падает в CRM с записью разговора, пропущенный – тревогой. Номер Т-Банка добавляется на входящие.</div>
 <div class="pr">8 ч · себестоимость 8 000 ₽ · клиенту от 24 000 ₽ · 2 500–4 000 ₽ в месяц МегаФону</div></div>
-<div class="op"><b class="l">В</b>
+<div class="op" style="opacity:.45"><b class="l">В · отпало</b>
 <div class="m"><div class="hd">Программа на Android-телефоне</div><div class="line"><span class="dot"></span>журнал звонков телефона</div><div class="card a6" style="animation-name:fly">14:02 входящий 3 мин →</div><div class="card a6" style="animation-name:fadeIn2">В CRM: звонок 14:02, 3 мин<br><span class="gr">без записи разговора</span></div></div>
-<div class="t">Бесплатная программа сама отправляет журнал звонков в CRM. Только Android, без записи. Скажи, какие у вас телефоны.</div>
+<div class="t">Отпало: у вас iPhone, а iPhone не даёт программам читать журнал звонков. Остаются А и Б – оба работают с iPhone.</div>
 <div class="pr">5 ч · себестоимость 5 000 ₽ · клиенту от 15 000 ₽ · 0 ₽ в месяц</div></div>
 </div></div>
 
@@ -214,8 +214,8 @@ main code{overflow-wrap:anywhere;white-space:normal}main li{overflow-wrap:anywhe
 <li><b>ВКонтакте.</b> Управление сообществом → Работа с API → создать ключ (сообщения, фотографии, документы). Там же Callback API: версия 5.199, сначала сохранить секретный ключ, потом адрес. Пришли мне ключ, строку подтверждения и секрет.<div class="min">твои 15 минут · адрес дам в чате</div></li>
 <li><b>Telegram.</b> В @BotFather создать бота «TEYES Sibir», в настройках бота включить Business Mode, токен прислать мне. Потом в @teyesnsk: Настройки → Telegram для бизнеса → Чат-боты → выбрать бота.<div class="min">твои 10 минут</div></li>
 <li><b>Тильда.</b> Настройки сайта → Формы → Webhook: адрес и ключ дам в чате, подключить ко всем формам, опубликовать. Telegram и почту не удалять.<div class="min">твои 10 минут</div></li>
-<li><b>Max.</b> Ответ на вопрос 7. Если А – купить SIM под рабочий Max и завести на неё аккаунт компании. Когда мост будет готов, отсканируешь QR с этого телефона.<div class="min">твои 15 минут · мост – 2 дня</div></li>
-<li><b>Три ответа словами.</b> Рабочие телефоны – Android или iPhone? Часы работы и суббота – для тревог «клиент ждёт»? Кто операторы – имена и почты, заведу входы.<div class="min">2 минуты</div></li>
+<li><b>Max.</b> Ответ на вопрос 7. Если А – купить SIM под рабочий Max и завести на неё аккаунт компании. Когда мост будет готов, отсканируешь QR с этого телефона. Max убран из App Store (по сообщениям СМИ) – на новый iPhone его не поставить, для этой SIM нужен Android или iPhone, где Max уже стоит.<div class="min">твои 15 минут · мост – 2 дня</div></li>
+<li><b>Два ответа словами.</b> Часы работы и суббота – для тревог «клиент ждёт»? Кто операторы – имена и почты, заведу входы.<div class="min">2 минуты</div></li>
 <li><b>Буквы по семи вопросам</b> – например «1А 2А 3В 4В 5А 6А 7А».<div class="min">3 минуты</div></li>
 </ol>
 
