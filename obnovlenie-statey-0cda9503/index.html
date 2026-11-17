@@ -1,0 +1,335 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Обновление статей по возрасту: скилл и механика</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Обновление статей по возрасту: скилл и механика</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Скилл <code>obnovlenie-statey</code> готов: 90 дней – повод осмотреть статью, а править её – только по сигналу, после твоего «да» и с честной датой «обновлено». Правила «каждые 3–4 месяца» у Google и Яндекса нет, зато за новую дату без правки Google прямо считает текст сделанным ради поиска. У EV по возрасту кандидатов пока нет: все 92 статьи моложе 26 дней. Первые пять по сигналу можно брать с 21.11, и у четырёх из них сначала надо чинить сниппет, а не текст. В заводе механика уже наполовину есть, добавить – около 12 часов.</p>
+<p><strong>Нужно от тебя:</strong> 1) «да» на механику в заводе – около 12 ч, первыми два пункта на 5 ч: дата рождения статьи и честная дата; 2) после 21.11 – «да» на карточки по топ-5 EV ниже; 3) «да» отдать site-tech проверку lastmod EV: у всех статей в карте сайта одна дата 13.11.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Коротко</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Правда ли, что статью надо обновлять раз в 3–4 месяца</td>
+<td>Нет. У поисковиков срока нет, это цикл агентств и Васина. Возраст – повод осмотреть</td>
+</tr>
+<tr>
+<td>Помогает ли обновление</td>
+<td>Да, если правка настоящая: у Raptive +28 % против +9 % у необновлённых. Если правка 0–10 % слов – всего +2 %</td>
+</tr>
+<tr>
+<td>Вредит ли</td>
+<td>Новая дата без правки, переписка работающей статьи целиком, правка всего блога разом</td>
+</tr>
+<tr>
+<td>Что делает скилл</td>
+<td>Находит кандидатов, ранжирует по выгоде, даёт план правки, карточку на «да», через 28 дней – «до и после»</td>
+</tr>
+<tr>
+<td>Что у EV</td>
+<td>0 по возрасту, 33 статьи в зоне 4–15 Google, первые можно с 21.11</td>
+</tr>
+<tr>
+<td>Что в заводе</td>
+<td>Редактор обновлений и «до и после» есть. Нет возраста статей с сайта, осмотра 90+, честной даты</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Поисковики не ставят срок: они ловят поддельную дату и награждают настоящую правку</h2>
+<p><strong>Google – прямо про даты.</strong></p>
+<ul>
+<li>В самопроверке «полезного контента» Google спрашивает: «меняете дату, чтобы страница казалась свежей, хотя содержание существенно не изменилось?» Там же: массово добавлять или удалять старое ради «свежести» – «нет, не поможет» (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Search Central</a>, снято 18.11.2026). С марта 2024 эта система – часть основного ранжирования (<a href="https://developers.google.com/search/docs/appearance/ranking-systems-guide">гид по системам</a>).</li>
+<li>lastmod – это «последнее существенное изменение»: основной текст, разметка, ссылки. Подвал и боковая панель не в счёт. Если lastmod не совпадает с реальностью, Google перестаёт ему верить на всём сайте (<a href="https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping">блог Google, 26.06.2023</a>).</li>
+<li>Свежесть нужна не всем запросам, а тем, где ждут нового: новинка, событие (<a href="https://developers.google.com/search/docs/appearance/ranking-systems-guide">тот же гид</a>). «Как работает приложение Changan в России» – из таких, «что такое e-Power» – почти нет.</li>
+<li>Старое само по себе не плохо: «удалять, потому что Google не любит старое, – это не так работает» (Д. Салливан, 09.08.2023, после чистки CNET, <a href="https://searchengineland.com/google-warns-against-content-pruning-as-cnet-deletes-thousands-of-pages-430509">Search Engine Land</a>). Дж. Мюллер: новая дата без правки позиций не даёт, при существенной правке – уместна (<a href="https://www.searchenginejournal.com/googles-john-mueller-changing-dates-on-pages-wont-improve-rankings/401734/">SEJ, пересказ</a>).</li>
+</ul>
+<p><strong>Яндекс – про пользу, а не про дату.</strong></p>
+<ul>
+<li>Главная метрика – «насколько пользователю пригодились найденные результаты» (<a href="https://yandex.ru/company/rules/ranking">принципы ранжирования</a>). Про свежесть старых статей отдельно – ни слова.</li>
+<li>Проксима – метрика качества страниц по оценкам асессоров; обновлена в апреле 2024 (<a href="https://yandex.ru/support/webmaster/ru/search-quality">Вебмастер</a>, <a href="https://ppc.world/news/yandeks-obnovit-algoritm-opredeleniya-kachestvennogo-kontenta-v-poiske/">ppc.world, 25.03.2024</a>). «Вега» (2019) – про экспертов-асессоров, к датам не относится.</li>
+<li>«Свежее и актуальное» – только для материалов о событиях за последние 8 дней через RSS, к блогу не относится (<a href="https://www.yandex.ru/support/webmaster/ru/search-appearance/fresh-content">справка, 27.04.2026</a>).</li>
+</ul>
+<p><strong>Данные агентств – вторично, но с цифрами.</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Кто</th>
+<th>Что показали</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raptive.com/blog/refresh-analysis-and-google-traffic-growth/">Raptive</a>, 103 000 обновлений, 2026</td>
+<td>Обновлённые +28 % просмотров из Google, похожие необновлённые +9 %. Правка 0–10 % слов – +2 %, больше 100 % – +44 %. Самые старые статьи – не лучшие кандидаты, лучше те, что внизу первой страницы</td>
+</tr>
+<tr>
+<td><a href="https://www.workshopdigital.com/blog/content-refresh-analysis/">Workshop Digital</a>, 95 страниц, 18.05.2026</td>
+<td>90 дней до и после: сессии 610 → 3 341, контроль −20 %. Сработали ответ, структура, свежие цифры, перелинковка. Часть страниц потеряла позиции</td>
+</tr>
+<tr>
+<td><a href="https://blog.hubspot.com/marketing/historical-blog-seo-conversion-optimization">HubSpot</a>, 2015</td>
+<td>Старые посты после правки: органика +106 %, лиды больше чем вдвое (свои данные)</td>
+</tr>
+<tr>
+<td><a href="https://ahrefs.com/blog/do-ai-assistants-prefer-to-cite-fresh-content/">Ahrefs</a>, 17 млн ссылок ИИ</td>
+<td>ИИ-ассистенты цитируют страницы на 25,7 % моложе обычной выдачи; AI Overviews – нет. Средней цитате 2,9 года</td>
+</tr>
+<tr>
+<td><a href="https://www.orbitmedia.com/blog/blogging-statistics/">Orbit Media</a>, 2024</td>
+<td>Обновляющие старое в 2,5 раза чаще говорят о сильных результатах (самооценка)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Откуда «3–4 месяца».</strong> Это рабочий цикл: у агентств квартальный аудит, у Васина пункт «Обновить статью старше 3–4 месяцев». Мы берём 90 дней по другой причине: к этому сроку у статьи три полных окна по 28 дней в Search Console, и видно, куда она встала.</p>
+<h2>Скилл находит кандидатов кодом, правку ведёт агент, дату и итог проверяет замер</h2>
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0;font-size:14px">
+<div class="box" style="margin:0;flex:1 1 150px"><b>1. Данные</b><br>снимок сторожа: Search Console, Вебмастер, Метрика + даты статей из файлов</div>
+<div style="color:var(--mut)">→</div>
+<div class="box" style="margin:0;flex:1 1 150px"><b>2. Стадия</b><br>&lt; 28 дней – не трогать<br>28–89 – по сигналу<br>90+ – осмотр</div>
+<div style="color:var(--mut)">→</div>
+<div class="box" style="margin:0;flex:1 1 150px"><b>3. Выгода</b><br>лишние клики за 28 дней; топ-5 в неделю</div>
+<div style="color:var(--mut)">→</div>
+<div class="box" style="margin:0;flex:1 1 150px"><b>4. План и «да»</b><br>что меняем, зачем, цифры до, как проверим</div>
+<div style="color:var(--mut)">→</div>
+<div class="box" style="margin:0;flex:1 1 150px"><b>5. Правка</b><br>агент площадки точечно → хумонайзер → красный список → факты; дата только при настоящей правке</div>
+<div style="color:var(--mut)">→</div>
+<div class="box" style="margin:0;flex:1 1 150px"><b>6. 28 дней</b><br>«до и после»: лучше – в журнал, хуже – откат на «да»</div>
+</div>
+
+<p><strong>Сигналы и как считается выгода</strong> (допущения, калибруем по «до и после»):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Сигнал</th>
+<th>Условие</th>
+<th>Что в план</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Зона 4–15</td>
+<td>позиция 4–15, показов ≥ 30</td>
+<td>раздел или FAQ под запросы из Search Console, которых нет в тексте; ответ в первые 2–3 фразы; ссылки с 2 сильных страниц</td>
+</tr>
+<tr>
+<td>Сниппет не цепляет</td>
+<td>позиция ≤ 10, CTR &lt; 3 %</td>
+<td>сначала title и description (site-seo), текст потом</td>
+</tr>
+<tr>
+<td>Падение</td>
+<td>кликов за 28 дней ≤ 80 % прошлых 28</td>
+<td>сверить выдачу, кто обогнал; дописать недостающее</td>
+</tr>
+<tr>
+<td>Поведение</td>
+<td>визитов ≥ 20, отказы ≥ 30 % или целей 0</td>
+<td>ответ на первом экране, оглавление, призыв на денежную</td>
+</tr>
+<tr>
+<td>Факты</td>
+<td>годы меньше текущего, «закон», «пошлина», «утильсбор», цены</td>
+<td>сверить с первоисточником; история модели остаётся</td>
+</tr>
+<tr>
+<td>Осмотр 90+</td>
+<td>возраст ≥ 90 дней</td>
+<td>нашлось – править, не нашлось – не трогать и дату не менять</td>
+</tr>
+</tbody>
+</table></div>
+<p>Выгода зоны 4–15 = показы × (15 % − CTR сейчас): сколько кликов дал бы топ-3. Падение – потерянные клики. Поведение – 10 % визитов.</p>
+<p><strong>Сейчас руками, потом механикой.</strong> Сейчас скрипт <code>kandidaty.py</code> скилла выдаёт кандидатов и план, карточку пишет агент, правит агент площадки (sayt-seo, teyes-avtor). Механикой это станет в редакторе обновлений завода – раздел ниже.</p>
+<p>Где лежит: <code>~/.claude/skills/obnovlenie-statey/</code> – SKILL.md (66 строк), <code>scripts/kandidaty.py</code>, <code>references/</code> (исследование, пороги, правка, механика). В seo-lead добавлена одна строка в таблицу «Команда».</p>
+<h2>В заводе половина механики уже есть, не хватает возраста, осмотра и честной даты – около 12 часов</h2>
+<p><strong>Что уже работает.</strong> Сторож каждый день снимает три источника по страницам. Редактор обновлений по понедельникам выбирает одно действие на страницу и ставит карточку на «да», лимит 10 в неделю. «До и после» через 28 дней считается само, «хуже» – карточка «откатить?». У Васина «Дожать статью из зоны 4–15» – промпт руками, у нас – карточка сама.</p>
+<p><strong>Что добавить в <code>engine/redaktor.py</code> и соседей:</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Что</th>
+<th>Зачем</th>
+<th>Часы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Дата рождения статьи с сайта: из файла статьи или <code>datePublished</code>/<code>dateModified</code> живой страницы</td>
+<td>Редактор знает только статьи, выложенные заводом. У EV таких 0 из 92 – 16.11 он предложил дописать статью в возрасте 23 дней</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Честная дата при обновлении: <code>published</code> из старого файла, <code>updated</code> – только при существенной правке, иначе стоп</td>
+<td>Станция статей пишет файл заново с <code>published</code> = день выкладки и без <code>updated</code> – обновление выглядело бы новой статьёй</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ступень «осмотр 90+»: отдельное действие, лимит 5 в неделю</td>
+<td>Пункт Васина «старше 3–4 месяцев», но с «да» и правом «менять нечего»</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Выгода в лишних кликах вместо «максимум показов»</td>
+<td>Зона 4–15 с низким CTR идёт выше просто больших показов</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Поведение: глубина просмотра и сигнал «плохое поведение»</td>
+<td>Отказы сторож снимает, глубину – нет</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Факты по тексту: годы, законы, сборы, цены не из базы – фразами в карточку</td>
+<td>Сейчас «факты устарели» только по сроку 182 дня</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Итого около 12 часов. Пункты 1 и 2 – первыми: без них механика то трогает молодые статьи, то ставит нечестную дату. Бой – как всегда: пробный режим на EV, «до и после» первых пяти, потом техдолгом. Код завода я не трогал – это задача чату завода.</p>
+<h2>Правила: дата только за правку, решает сигнал, а не календарь</h2>
+<p><strong>Важные:</strong></p>
+<ul>
+<li>Дата «обновлено», <code>dateModified</code> и lastmod – только при существенной правке: основной текст, разметка, ссылки.</li>
+<li>Моложе 28 дней – не трогать: поисковик ещё не решил.</li>
+<li>90 дней – повод осмотреть. Осмотр без находок – нормальный итог.</li>
+<li>Каждая правка – после «да» с объяснением что и зачем (твоё правило 14.11).</li>
+<li>Точечно, а не целиком: у статьи из зоны 4–15 уже есть то, за что её показывают.</li>
+<li>Факты – из прайса, базы фактов или первоисточника с датой; нет источника – «[нужен факт]».</li>
+<li>Не больше 5 статей в неделю на сайт: иначе не успеем честно проверить «до и после».</li>
+<li>Через 28 дней – «до и после» теми же цифрами; пропуск данных – «не снято», а не ноль.</li>
+</ul>
+<p><strong>Неважные, время не тратим:</strong></p>
+<ul>
+<li>90 или 120 дней точно – окно нужно, чтобы растянуть осмотр по неделям.</li>
+<li><code>changefreq</code> и <code>priority</code> в карте сайта – Google их не читает.</li>
+<li>Повторная отправка на переобход – не ускоряет.</li>
+<li>Год в заголовке «ради свежести» без нового факта – маскировка.</li>
+<li>Удаление старых статей ради «свежести сайта» – Google прямо говорит, что не работает.</li>
+</ul>
+<h2>Проверено на блоге EV: по возрасту ноль, первые пять по сигналу – с 21.11</h2>
+<p>Прогон 18.11.2026 только на чтение: 92 статьи из <code>~/Sites/ev-sibir/src/pages/blog</code>, снимок сторожа завода №9 от 17.11.2026 (Search Console 18.10–14.11, Метрика 20.10–16.11), живая sitemap.xml. На сайте ничего не правил.</p>
+<p><strong>Топ-5 кандидатов EV.</strong> Все пятеро сейчас моложе 28 дней и стоят в очереди с датой «можно с».</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Статья</th>
+<th>Вышла</th>
+<th>Цифры (Google, 18.10–14.11)</th>
+<th>Выгода</th>
+<th>План</th>
+<th>Можно с</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>/blog/prilozhenie-changan-v-rossii</td>
+<td>24.10</td>
+<td>поз. 4,5, показов 769, кликов 47, CTR 6,1 %; Метрика: 26 визитов, 1 цель, отказы 11,5 %</td>
+<td>+68</td>
+<td>раздел или FAQ под запросы из Search Console, которых нет в тексте; ссылки с сильных</td>
+<td>21.11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>/blog/prilozhenie-geely-v-rossii</td>
+<td>24.10</td>
+<td>поз. 5,1, показов 341, кликов 6, CTR 1,8 %</td>
+<td>+45</td>
+<td>сначала title и description, потом раздел</td>
+<td>21.11</td>
+</tr>
+<tr>
+<td>3</td>
+<td>/blog/rusifikaciya-changan-chto-perevoditsya</td>
+<td>04.11</td>
+<td>поз. 7,6, показов 257, кликов 3, CTR 1,2 %</td>
+<td>+35</td>
+<td>сначала сниппет, потом раздел</td>
+<td>02.12</td>
+</tr>
+<tr>
+<td>4</td>
+<td>/blog/master-akkaunt-kitayskogo-avto</td>
+<td>24.10</td>
+<td>поз. 7,8, показов 237, кликов 5, CTR 2,1 %</td>
+<td>+31</td>
+<td>сначала сниппет, потом раздел</td>
+<td>21.11</td>
+</tr>
+<tr>
+<td>5</td>
+<td>/blog/nissan-e-power-chto-eto</td>
+<td>03.11</td>
+<td>поз. 4,6, показов 184, кликов 3, CTR 1,6 %</td>
+<td>+25</td>
+<td>сначала сниппет, потом раздел</td>
+<td>01.12</td>
+</tr>
+</tbody>
+</table></div>
+<p>Яндекс по блогу – не снято: Вебмастер оборван на 06.10.2026, в снимке у него 2 страницы. Поведение – ни у одной статьи нет 20 визитов из поиска, сигнала нет. Глубина просмотра сторожем не снимается.</p>
+<p><strong>Что ещё нашлось:</strong></p>
+<ul>
+<li>Все статьи EV вышли с 24.10 по 13.11.2026 – по возрасту первые станут кандидатами 22.01.2027. Прогон «как будто 23.01.2027» на том же снимке: 11 статей переходят в осмотр 90+, ещё 23 – по сигналу. Ступень работает.</li>
+<li>В живой sitemap.xml у всех 93 адресов блога один lastmod – 13.11.2026. Это след правки шаблона до стража в <code>deploy.py</code> (стоит с 15.11). Google такому lastmod перестаёт верить – это к site-tech.</li>
+<li>33 статьи из 92 в зоне 4–15 Google, у 15 статей есть годы прошлых лет или «закон» в тексте. В Zeekr 001 и StarLine это история моделей – не протухло, решает человек.</li>
+<li>Скрипт читает оба формата снимка: заводской и студийный от 14.11.</li>
+</ul>
+<p><strong>Как проверял сам скилл.</strong> Шапка – штатный <code>quick_validate.py</code>: «Skill is valid». Долларов перед цифрой и длинных тире нет. Граничный тест на четырёх выдуманных статьях: без даты – «выяснить»; с <code>updated</code> 01.11 – возраст от правки, не трогать; статья 170 дней с падением, поведением и пошлиной – первая в списке; страница в топ-3 – не кандидат. По ходу нашёл и починил две ошибки своего скрипта: вырезка комментариев съедала текст статьи и факты не ловились; слово «закончится» ловилось как «закон».</p>
+<p><strong>Что не проверено:</strong> живая правка и «до и после» – без твоего «да» правок не делали, первый замер возможен через 28 дней после первой выкладки. Пороги выгоды – допущения, калибруем на первых пяти.</p>
+<p><strong>Что раскрыть:</strong> 1 – механика завода по пунктам; 2 – план правки статьи про приложение Changan; 3 – чем наш «осмотр» отличается от автообновления Васина.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
