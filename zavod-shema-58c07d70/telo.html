@@ -1,0 +1,157 @@
+<style>
+.zs{--za:#8b7cf6;--zr:#22b8dc;--zk:#e0a019;--zv:#1fbf6b;--zl:var(--ln,#d9dcd6);--zc:var(--card,#fff);--zt:var(--tx,#1b1c1e);--zm:var(--mut,#6b6e74);--zf:var(--bg,#f6f6f4);width:min(1320px,calc(100vw - 24px));position:relative;left:50%;transform:translateX(-50%);margin:18px 0 28px;color:var(--zt);font-size:15px;line-height:1.4}
+.zs *{box-sizing:border-box}
+.zs button{font:inherit;color:inherit;cursor:pointer}
+.zs-ch{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.zs-ch button{border:1px solid var(--zl);background:var(--zc);border-radius:14px;padding:10px 8px;text-align:center}
+.zs-ch button:hover,.zs-ch button.on{border-color:var(--zv)}
+.zs-ch b{display:block;font-size:clamp(22px,3.4vw,34px);line-height:1.1}
+.zs-ch span{font-size:13px;color:var(--zm)}
+.zs-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 8px}
+.zs-tabs button{border:1px solid var(--zl);background:var(--zc);border-radius:99px;padding:9px 18px;font-weight:700;min-height:44px}
+.zs-tabs button[aria-selected=true]{background:var(--zv);border-color:var(--zv);color:#04140b}
+.zs-leg{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:13px;color:var(--zm);margin:0 0 10px}
+.zs-leg i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.zs-pole{position:relative;border:1px solid var(--zl);border-radius:16px;background:var(--zc);padding:18px;overflow:hidden}
+.zs-svg{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.zs-svg path{fill:none;stroke:var(--zl);stroke-width:2}
+.zs-svg path.on{stroke:var(--zv);stroke-width:2.5;stroke-dasharray:7 5;animation:zsb 1s linear infinite}
+@keyframes zsb{to{stroke-dashoffset:-12}}
+@media (prefers-reduced-motion:reduce){.zs-svg path.on{animation:none}}
+.zs-kto{display:inline-flex;align-items:center;gap:5px;border:1px solid color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:7px;padding:1px 7px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.zs-kto:before{content:"";width:8px;height:8px;border-radius:2px;background:var(--c)}
+/* карта */
+.zs-km{position:relative;display:grid;grid-template-columns:1fr auto 1fr;gap:10px 56px;align-items:center;min-height:440px}
+.zs-kl,.zs-kr{display:flex;flex-direction:column;gap:22px;justify-content:center}
+.zs-kl{align-items:flex-end}.zs-kr{align-items:flex-start}
+.zs-centr{background:var(--zv);color:#04140b;border-radius:99px;padding:16px 26px;font-weight:800;font-size:20px;text-align:center}
+.zs-centr small{display:block;font-weight:600;font-size:12px}
+.zs-vet{display:flex;align-items:center;gap:46px}
+.zs-kl .zs-vet{flex-direction:row-reverse}
+.zs-vp{border:2px solid var(--zl);background:var(--zf);border-radius:99px;padding:9px 16px;font-weight:700;white-space:nowrap;min-height:44px}
+.zs-vp i{font-style:normal;color:var(--zm);font-weight:600;margin-left:4px}
+.zs-vet.on .zs-vp,.zs-vp:hover{border-color:var(--zv)}
+.zs-vs{display:none;flex-direction:column;gap:6px}
+.zs-kl .zs-vs{align-items:flex-end}
+.zs-vet.on .zs-vs{display:flex}
+.zs-sp{border:1px solid var(--zl);background:var(--zc);border-radius:9px;padding:6px 11px;white-space:nowrap;min-height:36px}
+.zs-sp b{color:var(--zm);margin-right:4px}
+.zs-sp:hover,.zs-sp.vyb,.zs-uz:hover,.zs-uz.vyb{border-color:var(--zv);box-shadow:0 0 0 2px color-mix(in srgb,var(--zv) 30%,transparent)}
+.zs-pod{color:var(--zm);font-size:13px;margin:10px 0 0;text-align:center}
+/* провода */
+.zs-gr{margin:0 0 22px}.zs-gr>h5{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--zm)}
+.zs-ryad{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:26px 44px;align-items:start}
+.zs-uz{position:relative;border:1px solid var(--zl);background:var(--zf);border-radius:12px;padding:11px 12px;cursor:pointer;text-align:left}
+.zs-uh{display:flex;gap:8px;align-items:baseline;font-weight:800;font-size:16px}
+.zs-uh b{color:var(--zm);font-weight:700}
+.zs-uz>small{display:block;color:var(--zm);font-size:12.5px;margin:1px 0 7px}
+.zs-sh{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.zs-sh li{display:flex;gap:6px;align-items:flex-start;font-size:13.5px}
+.zs-sh li>span:last-child{min-width:0}
+.zs-sh .vor{color:var(--zk);font-weight:600}
+.zs-sh .vor:before{content:"";width:10px;height:10px;background:var(--zk);transform:rotate(45deg);border-radius:2px;margin:4px 3px 0 2px;flex:none}
+/* дорожки */
+.zs-tw{overflow:auto;max-height:76vh;border-radius:10px}
+.zs-tb{border-collapse:separate;border-spacing:4px;font-size:13px}
+.zs-tb th,.zs-tb td{padding:6px 8px;border-radius:8px;vertical-align:top;min-width:128px;text-align:left}
+.zs-tb thead th{position:sticky;top:0;z-index:2;background:var(--zc);cursor:pointer;font-size:13.5px}
+.zs-tb thead th b{color:var(--zm);margin-right:4px}
+.zs-tb tbody th{position:sticky;left:0;z-index:1;background:var(--zc);min-width:150px}
+.zs-tb thead th:first-child{left:0;z-index:3}
+.zs-tb td{background:var(--zf)}
+.zs-tb td.f{background:color-mix(in srgb,var(--c) 16%,var(--zc));border:1px solid color-mix(in srgb,var(--c) 50%,transparent);cursor:pointer}
+.zs-tb td.f div+div{margin-top:3px}
+.zs-tb tr.razd th{background:none;color:var(--zm);text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;padding-top:12px}
+/* провал внутрь */
+.zs-det{border:2px solid var(--zv);border-radius:16px;background:var(--zc);padding:16px 18px;margin-top:12px}
+.zs-det h4{margin:0 34px 4px 0;font-size:20px}
+.zs-det h5{margin:14px 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--zm)}
+.zs-det p{margin:4px 0}
+.zs-det ol,.zs-det ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.zs-det li{border:1px solid var(--zl);border-radius:10px;padding:8px 10px;background:var(--zf)}
+.zs-det li small{color:var(--zm);display:block;margin-top:2px}
+.zs-meh{display:inline-block;border:1px dashed var(--zl);border-radius:6px;padding:0 6px;font-size:12.5px;color:var(--zm);margin:4px 4px 0 0}
+.zs-zakr{float:right;border:1px solid var(--zl);background:var(--zf);border-radius:9px;width:36px;height:36px;font-size:18px;line-height:1}
+.zs-per{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.zs-per button{border:1px solid var(--zl);background:var(--zf);border-radius:9px;padding:5px 11px;min-height:36px}
+.zs-per button:hover{border-color:var(--zv)}
+.zs-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:780px){
+.zs-ch{grid-template-columns:repeat(3,1fr)}
+.zs-pole{padding:12px}
+.zs-km{grid-template-columns:1fr;gap:26px;min-height:0;justify-items:center}
+.zs-kl,.zs-kr{align-items:stretch;width:100%;gap:14px}
+.zs-vet,.zs-kl .zs-vet{flex-direction:column;align-items:stretch;gap:8px}
+.zs-vp{white-space:normal;text-align:left}
+.zs-vs,.zs-kl .zs-vs{align-items:stretch;padding-left:18px;border-left:2px solid var(--zl);margin-left:14px}
+.zs-sp{white-space:normal;text-align:left}
+.zs-ryad{grid-template-columns:1fr;gap:20px}
+.zs-2{grid-template-columns:1fr}
+}
+</style>
+<div class="zs" id="zs"><div class="zs-ch" id="zs-ch"></div><div class="zs-tabs" role="tablist" id="zs-tabs"></div><div class="zs-leg" id="zs-leg"></div><div class="zs-pole" id="zs-pole"></div><div class="zs-det" id="zs-det" hidden></div></div>
+<script type="application/json" id="zs-dannye">__DANNYE__</script>
+<script>
+(function(){
+var D=JSON.parse(document.getElementById("zs-dannye").textContent),K=document.getElementById("zs");
+var $=function(s){return K.querySelector(s)},esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
+var ISP={},ST={},VET={};D.ispolniteli.forEach(function(i){ISP[i.kod]=i});D.stancii.forEach(function(s){ST[s.kod]=s});
+D.vetki.forEach(function(v){v.stancii.forEach(function(k){VET[k]=v})});
+var T={vid:"karta",otkr:{},vybr:null},VIDY=[["karta","Карта"],["provoda","Узлы и провода"],["dorozhki","Кто когда подключается"]];
+if(D.vetki[0])T.otkr[D.vetki[0].kod]=true;
+function cvet(kod){var i=ISP[kod];return !i?"var(--zm)":i.tip==="agent"?"var(--za)":i.tip==="robot"?"var(--zr)":kod==="klient"?"var(--zk)":"var(--zv)"}
+function kto(kod){var i=ISP[kod]||{imya:kod};return '<span class="zs-kto" style="--c:'+cvet(kod)+'" data-isp="'+esc(kod)+'" role="button" tabindex="0">'+esc(i.imya)+"</span>"}
+function chislo(n,f){var a=n%100,b=n%10;return a>10&&a<20?f[2]:b===1?f[0]:b>1&&b<5?f[1]:f[2]}
+var SCH=[["stancii",["станция","станции","станций"]],["agenty",["агент","агента","агентов"]],["roboty",["робот","робота","роботов"]],["mehaniki",["механика","механики","механик"]],["vorota",["ворота","ворот","ворот"]],["kanaly",["канал","канала","каналов"]]];
+$("#zs-ch").innerHTML=SCH.map(function(x){var n=D.schetchiki[x[0]]||0;return '<button type="button" data-sp="'+x[0]+'"><b>'+n+"</b><span>"+chislo(n,x[1])+"</span></button>"}).join("");
+$("#zs-tabs").innerHTML=VIDY.map(function(v){return '<button type="button" role="tab" data-vid="'+v[0]+'">'+v[1]+"</button>"}).join("");
+$("#zs-leg").innerHTML='<span><i style="background:var(--za)"></i>агент – нейросеть со своей ролью</span><span><i style="background:var(--zr)"></i>робот – код без нейросети</span><span><i style="background:var(--zk)"></i>клиент</span><span><i style="background:var(--zv)"></i>владелец</span><span><i style="background:var(--zk);transform:rotate(45deg);border-radius:2px"></i>ворота – завод ждёт человека</span>';
+function tochka(r,p,gde){var x=r.left-p.left,y=r.top-p.top;return gde==="l"?[x,y+r.height/2]:gde==="r"?[x+r.width,y+r.height/2]:gde==="t"?[x+r.width/2,y]:[x+r.width/2,y+r.height]}
+function svyaz(a,b,p,on){var ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect(),dx=(rb.left+rb.width/2)-(ra.left+ra.width/2),dy=(rb.top+rb.height/2)-(ra.top+ra.height/2),A,B,d;
+if(rb.left>=ra.right-4){A=tochka(ra,p,"r");B=tochka(rb,p,"l")}else if(rb.right<=ra.left+4){A=tochka(ra,p,"l");B=tochka(rb,p,"r")}else if(dy>=0){A=tochka(ra,p,"b");B=tochka(rb,p,"t")}else{A=tochka(ra,p,"t");B=tochka(rb,p,"b")}
+if(Math.abs(A[1]-B[1])<2&&Math.abs(A[0]-B[0])>2||(rb.left>=ra.right-4||rb.right<=ra.left+4)){var m=(A[0]+B[0])/2;d="M"+A[0]+" "+A[1]+"C"+m+" "+A[1]+","+m+" "+B[1]+","+B[0]+" "+B[1]}else{var n=(A[1]+B[1])/2;d="M"+A[0]+" "+A[1]+"C"+A[0]+" "+n+","+B[0]+" "+n+","+B[0]+" "+B[1]}
+return '<path d="'+d+'"'+(on?' class="on"':"")+"/>"}
+function linii(){var svg=$(".zs-svg");if(!svg)return;var pole=$("#zs-pole"),p=pole.getBoundingClientRect(),out="";
+svg.setAttribute("viewBox","0 0 "+pole.clientWidth+" "+pole.clientHeight);svg.style.height=pole.clientHeight+"px";
+if(T.vid==="karta"){var c=$(".zs-centr");K.querySelectorAll(".zs-vet").forEach(function(v){var vp=v.querySelector(".zs-vp"),on=v.classList.contains("on");out+=svyaz(c,vp,p,on);if(on&&window.innerWidth>780)v.querySelectorAll(".zs-sp").forEach(function(s){out+=svyaz(vp,s,p,s.classList.contains("vyb"))})})}
+else if(T.vid==="provoda"){D.stancii.forEach(function(s){var a=K.querySelector('.zs-uz[data-st="'+s.kod+'"]');(s.dalshe||[]).forEach(function(k){var b=K.querySelector('.zs-uz[data-st="'+k+'"]');if(a&&b)out+=svyaz(a,b,p,T.vybr===s.kod||T.vybr===k)})})}
+svg.innerHTML=out}
+function karta(){var n=Math.ceil(D.vetki.length/2),lev=D.vetki.slice(0,n),prav=D.vetki.slice(n);
+function vetka(x){var on=!!T.otkr[x.kod];return '<div class="zs-vet'+(on?" on":"")+'"><button type="button" class="zs-vp" data-vet="'+esc(x.kod)+'" aria-expanded="'+on+'">'+esc(x.imya)+"<i>"+x.stancii.length+'</i></button><div class="zs-vs">'+x.stancii.map(function(k){var s=ST[k];return '<button type="button" class="zs-sp'+(T.vybr===k?" vyb":"")+'" data-st="'+esc(k)+'"><b>'+s.nomer+"</b>"+esc(s.imya)+"</button>"}).join("")+"</div></div>"}
+$("#zs-pole").innerHTML='<svg class="zs-svg"></svg><div class="zs-km"><div class="zs-kl">'+lev.map(vetka).join("")+'</div><div class="zs-kc"><div class="zs-centr">Завод<small>'+D.stancii.length+" "+chislo(D.stancii.length,SCH[0][1])+'</small></div></div><div class="zs-kr">'+prav.map(vetka).join("")+'</div></div><p class="zs-pod">Нажми на ветку – раскроются станции. Нажми на станцию – увидишь, кто и что в ней делает.</p>'}
+function shagi(s){return '<ol class="zs-sh">'+s.shagi.map(function(h){return "<li>"+kto(h.kto)+"<span>"+esc(h.imya)+"</span></li>"}).join("")+(s.vorota||[]).map(function(v){return '<li class="vor"><span>ждёт: '+esc(v.imya)+" – "+esc((ISP[v.kto]||{imya:v.kto}).imya.toLowerCase())+"</span></li>"}).join("")+"</ol>"}
+function provoda(){$("#zs-pole").innerHTML='<svg class="zs-svg"></svg>'+D.vetki.map(function(v){return '<div class="zs-gr"><h5>'+esc(v.imya)+'</h5><div class="zs-ryad">'+v.stancii.map(function(k){var s=ST[k];return '<div class="zs-uz'+(T.vybr===k?" vyb":"")+'" data-st="'+esc(k)+'" role="button" tabindex="0"><div class="zs-uh"><b>'+s.nomer+"</b><span>"+esc(s.imya)+"</span></div><small>"+esc(s.kogda)+"</small>"+shagi(s)+"</div>"}).join("")+"</div></div>"}).join("")+'<p class="zs-pod">Провода показывают, куда работа идёт дальше. Нажми на станцию – её провода загорятся, ниже раскроются подробности.</p>'}
+function dorozhki(){var por={chelovek:0,agent:1,robot:2},imena={chelovek:"Люди",agent:"Агенты – нейросеть",robot:"Роботы – код"},ryady=D.ispolniteli.slice().sort(function(a,b){return por[a.tip]-por[b.tip]}),bylo="";
+var h="<thead><tr><th>Кто</th>"+D.stancii.map(function(s){return '<th data-st="'+esc(s.kod)+'"><b>'+s.nomer+"</b>"+esc(s.imya)+"</th>"}).join("")+"</tr></thead><tbody>";
+ryady.forEach(function(i){if(i.tip!==bylo){bylo=i.tip;h+='<tr class="razd"><th colspan="'+(D.stancii.length+1)+'">'+imena[i.tip]+"</th></tr>"}
+h+="<tr><th>"+kto(i.kod)+"</th>"+D.stancii.map(function(s){var x=s.shagi.filter(function(q){return q.kto===i.kod}).map(function(q){return esc(q.imya)}).concat((s.vorota||[]).filter(function(q){return q.kto===i.kod}).map(function(q){return "ждёт: "+esc(q.imya)}));
+return x.length?'<td class="f" style="--c:'+cvet(i.kod)+'" data-st="'+esc(s.kod)+'">'+x.map(function(t){return "<div>"+t+"</div>"}).join("")+"</td>":"<td></td>"}).join("")+"</tr>"});
+$("#zs-pole").innerHTML='<div class="zs-tw"><table class="zs-tb">'+h+'</tbody></table></div><p class="zs-pod">Строка – исполнитель, столбец – станция. Таблицу можно двигать вбок. Нажми на ячейку или название станции.</p>'}
+function risovat(){K.querySelectorAll("#zs-tabs button").forEach(function(b){b.setAttribute("aria-selected",b.dataset.vid===T.vid)});({karta:karta,provoda:provoda,dorozhki:dorozhki})[T.vid]();linii()}
+function det(html){var d=$("#zs-det");d.hidden=false;d.innerHTML='<button type="button" class="zs-zakr" data-zakr aria-label="Закрыть">×</button>'+html;d.scrollIntoView({block:"nearest",behavior:"smooth"})}
+function pokSt(k){var s=ST[k];if(!s)return;T.vybr=k;if(VET[k])T.otkr[VET[k].kod]=true;risovat();
+det("<h4>"+s.nomer+". "+esc(s.imya)+"</h4><p>"+esc(s.zachem)+'</p><div class="zs-2"><div><h5>Когда</h5><p>'+esc(s.kogda)+"</p></div><div><h5>На входе → на выходе</h5><p>"+esc(s.vhod)+" → "+esc(s.vyhod)+"</p></div></div><h5>Шаги</h5><ol>"+s.shagi.map(function(h,i){return "<li><b>"+(i+1)+". "+esc(h.imya)+"</b> "+kto(h.kto)+"<small>"+esc(h.chto)+"</small>"+(h.mehaniki||[]).map(function(m){return '<span class="zs-meh">'+esc(m)+"</span>"}).join("")+"</li>"}).join("")+"</ol>"+
+((s.vorota||[]).length?"<h5>Ворота – ждёт человека</h5><ul>"+s.vorota.map(function(v){return "<li><b>"+esc(v.imya)+"</b> "+kto(v.kto)+"<small>"+esc(v.chto)+"</small></li>"}).join("")+"</ul>":"")+
+((s.dalshe||[]).length?'<h5>Дальше</h5><div class="zs-per">'+s.dalshe.map(function(d){return ST[d]?'<button type="button" data-st="'+esc(d)+'">'+ST[d].nomer+". "+esc(ST[d].imya)+" →</button>":""}).join("")+"</div>":"")+'<p style="color:var(--zm);font-size:12.5px;margin-top:12px">Код: '+esc(s.fayl)+"</p>")}
+function gdeRabotaet(kod){var out=[];D.stancii.forEach(function(s){s.shagi.forEach(function(h){if(h.kto===kod)out.push([s,h.imya,h.chto])});(s.vorota||[]).forEach(function(v){if(v.kto===kod)out.push([s,"ждёт: "+v.imya,v.chto])})});return out}
+function pokIsp(kod){var i=ISP[kod];if(!i)return;var g=gdeRabotaet(kod),tip={agent:"Агент – нейросеть со своей ролью",robot:"Робот – код без нейросети",chelovek:"Человек"}[i.tip];
+det("<h4>"+esc(i.imya)+"</h4><p>"+kto(kod)+" "+tip+(i.imya_predlozheno?" · имя роли предложено, в коде она без названия":"")+"</p><p>"+esc(i.chto)+"</p><h5>Где работает – "+g.length+"</h5><ul>"+g.map(function(x){return '<li><button type="button" data-st="'+esc(x[0].kod)+'" style="border:0;background:none;padding:0;font-weight:700;text-decoration:underline">'+x[0].nomer+". "+esc(x[0].imya)+"</button> – "+esc(x[1])+"<small>"+esc(x[2])+"</small></li>"}).join("")+"</ul>"+(i.gde?'<p style="color:var(--zm);font-size:12.5px;margin-top:12px">Код: '+esc(i.gde)+"</p>":""))}
+function pokSpisok(chto){var h="";
+if(chto==="agenty"||chto==="roboty"){var tip=chto==="agenty"?"agent":"robot",sp=D.ispolniteli.filter(function(i){return i.tip===tip});h="<h4>"+(tip==="agent"?"Агенты":"Роботы")+" – "+sp.length+"</h4><p>"+(tip==="agent"?"Каждый агент – это нейросеть со своим заданием. Нажми на имя – увидишь, где он работает.":"Роботы работают без нейросети: это код, он не выдумывает и не тратит деньги на модель.")+"</p><ul>"+sp.map(function(i){return "<li>"+kto(i.kod)+"<small>"+esc(i.chto)+"</small></li>"}).join("")+"</ul>"}
+else if(chto==="mehaniki"){var po={};(D.mehaniki||[]).forEach(function(m){(po[m.stanciya]=po[m.stanciya]||[]).push(m)});h="<h4>Механики – "+(D.mehaniki||[]).length+"</h4><p>Механика – одно правило или механизм в коде: проверка, запрет, ограничитель, повтор, расписание.</p>"+Object.keys(po).map(function(k){return "<h5>"+esc(ST[k]?ST[k].nomer+". "+ST[k].imya:"Общие для всего завода")+" – "+po[k].length+"</h5><ul>"+po[k].map(function(m){return "<li><b>"+esc(m.imya)+"</b><small>"+esc(m.chto)+" · "+esc(m.gde)+"</small></li>"}).join("")+"</ul>"}).join("")}
+else if(chto==="vorota"){h="<h4>Ворота – "+D.schetchiki.vorota+"</h4><p>Здесь завод останавливается и ждёт человека. Пока «да» нет, дальше работа не идёт.</p><ul>"+D.stancii.map(function(s){return (s.vorota||[]).map(function(v){return '<li><b>'+esc(v.imya)+"</b> "+kto(v.kto)+' · <button type="button" data-st="'+esc(s.kod)+'" style="border:0;background:none;padding:0;text-decoration:underline">'+s.nomer+". "+esc(s.imya)+"</button><small>"+esc(v.chto)+"</small></li>"}).join("")}).join("")+"</ul>"}
+else if(chto==="kanaly"){h="<h4>Каналы – "+(D.kanaly||[]).length+"</h4><ul>"+(D.kanaly||[]).map(function(k){return "<li><b>"+esc(k.imya)+"</b><small>"+esc(k.status)+"</small></li>"}).join("")+"</ul>"}
+else{h="<h4>Станции – "+D.stancii.length+'</h4><div class="zs-per">'+D.stancii.map(function(s){return '<button type="button" data-st="'+esc(s.kod)+'">'+s.nomer+". "+esc(s.imya)+"</button>"}).join("")+"</div>"}
+det(h)}
+K.addEventListener("click",function(e){var t=e.target.closest("[data-zakr],[data-isp],[data-st],[data-vet],[data-vid],[data-sp]");if(!t)return;
+if(t.hasAttribute("data-zakr")){$("#zs-det").hidden=true;T.vybr=null;risovat();return}
+if(t.dataset.isp){e.stopPropagation();pokIsp(t.dataset.isp);return}
+if(t.dataset.st){pokSt(t.dataset.st);return}
+if(t.dataset.vet){T.otkr[t.dataset.vet]=!T.otkr[t.dataset.vet];risovat();return}
+if(t.dataset.vid){T.vid=t.dataset.vid;risovat();return}
+if(t.dataset.sp)pokSpisok(t.dataset.sp)});
+K.addEventListener("keydown",function(e){if((e.key==="Enter"||e.key===" ")&&e.target.matches("[role=button]")){e.preventDefault();e.target.click()}});
+var tm;window.addEventListener("resize",function(){clearTimeout(tm);tm=setTimeout(linii,120)});
+risovat();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(linii);setTimeout(linii,600);
+})();
+</script>
