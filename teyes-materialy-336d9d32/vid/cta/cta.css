@@ -167,3 +167,17 @@
  .tcta__compare img{aspect-ratio:1/1;object-position:12% 50%}
 }
 @media(prefers-reduced-motion:reduce){.tcta *,.tcta-sticky{transition:none!important}}
+
+/* Единый ритм (правка 17.11): между блоками призыва и кнопками – 20px, как над блоком.
+   !important – стили сайта обнуляют отступы у списков (ol/ul), из-за этого кнопки липли к шагам. */
+.tcta .tcta__text,.tcta .tcta__steps,.tcta .tcta__facts,.tcta .tcta__compare,.tcta .tcta__pills,.tcta .tcta__checks,
+.tcta .tcta__code,.tcta .tcta__form,.tcta .tcta__preview,.tcta .tcta__quote,.tcta .tcta__author,.tcta .tcta__tiles{margin-bottom:20px!important}
+.tcta .tcta__status{display:flex;margin:0 0 20px!important}
+.tcta .tcta__phone{margin:0 0 12px!important}
+.tcta .tcta__actions{margin-top:0!important}
+.tcta .tcta__title + .tcta__actions{margin-top:10px!important}
+.tcta .tcta__actions + .tcta__status,.tcta .tcta__actions + .tcta__note{margin:16px 0 0!important}
+.tcta > :last-child,.tcta__body > :last-child{margin-bottom:0!important}
+.tcta--inline .tcta__text{margin-bottom:0!important}
+.tcta .tcta__title + .tcta__actions{margin-top:20px!important}
+.tcta .tcta__addr{margin-bottom:12px!important}
