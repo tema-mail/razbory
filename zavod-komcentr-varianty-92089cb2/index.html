@@ -1,0 +1,176 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Командный центр в пульте завода: выбери вид</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Командный центр в пульте завода: выбери вид</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Экран будет в твоём пульте завода, а не в Штабе: открыл – видишь всех клиентов и где нужен ты. Три варианта на наших клиентах, цифры в макетах условные. Ответь буквой, мой совет – в синей рамке.</p>
+<style>
+.kv{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin:14px 0 30px;width:min(1240px,calc(100vw - 24px));position:relative;left:50%;transform:translateX(-50%)}
+.v{min-width:0;border:1px solid var(--ln);border-radius:14px;background:var(--card);padding:14px}
+.v.rec{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
+.v h4{margin:0 0 10px;font-size:18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.v h4 b{display:inline-flex;width:32px;height:32px;border-radius:9px;background:var(--ac);color:#fff;align-items:center;justify-content:center;flex:none}
+.v h4 em{flex-basis:100%;order:-1;font-style:normal;font-size:12px;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.04em}
+.v>p{font-size:14.5px;margin:10px 0 0;color:var(--mut)}.v>p b{color:var(--tx)}
+.m{background:#0b0e11;color:#e6efe9;border-radius:12px;padding:14px;font:500 13px/1.35 Inter,system-ui,sans-serif;overflow-x:auto}
+.m *{box-sizing:border-box}
+.m small{color:#8fa39a;font-size:11.5px}
+.ok{color:#39ff88}.wa{color:#ffc24b}.bad{color:#ff5c6c}.mu{color:#8fa39a}
+.d{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:0}
+.d.g{background:#39ff88}.d.y{background:#ffc24b}.d.r{background:#ff5c6c}.d.o{background:#ff9a3d}
+.vv{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;margin-bottom:10px}
+.bx{background:#141a20;border:1px solid #232c34;border-radius:10px;padding:10px 12px}
+.bx h6{margin:0 0 6px;font-size:15px}
+.bx a{color:#e6efe9;text-decoration:underline;text-decoration-color:#3d4a55}
+.pl{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px}
+.pl .bx b{display:block;font-size:22px;color:#ffc24b}
+.tb{width:100%;border-collapse:separate;border-spacing:0 6px;min-width:860px}
+.tb th{text-align:left;font-size:11px;color:#8fa39a;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:0 8px}
+.tb td{background:#141a20;padding:9px 8px;vertical-align:middle}
+.tb td:first-child{border-radius:9px 0 0 9px}.tb td:last-child{border-radius:0 9px 9px 0}
+.kan{display:inline-flex;gap:4px}
+.kan i{font-style:normal;font-size:10.5px;font-weight:700;padding:2px 5px;border-radius:5px;background:#1d2630}
+.kan i.g{color:#04140b;background:#39ff88}.kan i.y{color:#1d1400;background:#ffc24b}.kan i.r{color:#fff;background:#ff5c6c}.kan i.n{color:#6b7a73;background:#151b20}
+.bar{display:inline-flex;gap:2px;align-items:flex-end;height:22px;vertical-align:middle}
+.bar u{display:block;width:6px;background:#3e7bff;border-radius:2px}
+.zap{display:inline-block;width:70px;height:7px;border-radius:4px;background:#232c34;overflow:hidden;vertical-align:middle;margin-right:6px}.zap u{display:block;height:100%;border-radius:4px}
+.kart{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.kk{background:#141a20;border:1px solid #232c34;border-radius:12px;padding:12px;position:relative}
+.kk.r{border-color:#ff5c6c}.kk.y{border-color:#5c4a17}
+.kk h6{margin:0;font-size:16px}
+.kk .st{font-size:12.5px;margin:2px 0 8px}
+.kk .rw{display:flex;justify-content:space-between;gap:8px;padding:4px 0;border-top:1px solid #1e262d;font-size:12.5px}
+.kk .ja{margin-top:8px;background:#2a1e09;border:1px solid #5c4a17;color:#ffd27a;border-radius:8px;padding:6px 8px;font-size:12.5px}
+.lnt{display:grid;grid-template-columns:1.25fr 1fr;gap:10px}
+.dl{display:grid;gap:6px}
+.dl .it{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;background:#141a20;border:1px solid #232c34;border-radius:9px;padding:8px 10px}
+.dl .it .kn{background:#39ff88;color:#04140b;border-radius:7px;padding:4px 10px;font-weight:700;font-size:12px;white-space:nowrap}
+.dl .it .kl{font-size:11px;color:#8fa39a}
+.cl{display:grid;gap:6px}
+.cl .it{display:flex;justify-content:space-between;align-items:center;background:#141a20;border-radius:9px;padding:9px 10px}
+.pul{animation:pul 1.8s ease-in-out infinite}@keyframes pul{0%,100%{box-shadow:0 0 0 0 rgba(255,92,108,.55)}50%{box-shadow:0 0 0 6px rgba(255,92,108,0)}}
+@media (prefers-reduced-motion:reduce){.pul{animation:none}}
+@media(max-width:820px){.vv,.lnt{grid-template-columns:1fr}.pl{grid-template-columns:repeat(2,1fr)}}
+</style>
+
+<h2>Три вида</h2>
+<div class="kv">
+
+<div class="v"><h4><b>А</b>Как у Васина: сводка сверху, клиенты строками</h4>
+<div class="m">
+<div class="vv"><div class="bx"><h6><span class="d r pul"></span>Выходит не везде</h6>11 из 14 материалов за неделю · стоит: <b>Баланс – Яндекс Карты</b> <small>(ждём, когда Яндекс поправится)</small></div>
+<div class="bx"><h6><span class="d o"></span>Нужен ты: 4</h6>
+TEYES – <a>согласовать 3 поста ВК</a> · ≈5 мин<br>EV – <a>«да» на смету спроса 120 ₽</a> · 1 мин<br>Баланс – <a>пройти знакомство: 18 вопросов</a> · ≈12 мин<br><small>и ещё 1 – в строках ниже</small></div></div>
+<div class="pl"><div class="bx"><small>ИЗ ПОИСКА · 30 ДН</small><b>4 812</b><small class="ok">▲ 18% к прошлым</small></div><div class="bx"><small>ЗАЯВКИ · 30 ДН</small><b>37</b><small class="ok">▲ 9</small></div><div class="bx"><small>В ИНДЕКСЕ Я / G</small><b>81% / 74%</b><small>из 412 страниц</small></div><div class="bx"><small>МАТЕРИАЛ В СРЕДНЕМ</small><b>41 ₽</b><small>по счёту нейросети</small></div><div class="bx"><small>ЗАПАС ТЕМ</small><b>9 дн.</b><small class="wa">у EV кончаются через 3</small></div></div>
+<table class="tb"><thead><tr><th>Клиент</th><th>Из поиска · 30 дн</th><th>Заявки</th><th>Индекс Я/G</th><th>Каналы</th><th>Выпуск · 7 дн</th><th>Запас тем</th><th>Знакомство</th></tr></thead><tbody>
+<tr><td><span class="d g"></span><b>TEYES Sibir</b><br><small class="ok">по плану</small></td><td>2 140 <small class="ok">▲ 12%</small></td><td>19</td><td>84% / 77%</td><td><span class="kan"><i class="g">Сайт</i><i class="g">Дзен</i><i class="y">ВК</i><i class="g">Я.К</i><i class="g">G.K</i></span></td><td><span class="bar"><u style="height:60%"></u><u style="height:80%"></u><u style="height:40%"></u><u style="height:90%"></u><u style="height:70%"></u><u style="height:10%"></u><u style="height:85%"></u></span> 6 из 7</td><td><span class="zap"><u style="width:70%;background:#39ff88"></u></span>21 дн.</td><td>14 из 22</td></tr>
+<tr><td><span class="d o"></span><b>Баланс</b><br><small class="wa">нужен ты: знакомство</small></td><td>1 930 <small class="ok">▲ 4%</small></td><td>11</td><td>79% / 70%</td><td><span class="kan"><i class="g">Сайт</i><i class="g">Дзен</i><i class="g">ВК</i><i class="r">Я.К</i><i class="n">G.K</i></span></td><td><span class="bar"><u style="height:70%"></u><u style="height:70%"></u><u style="height:70%"></u><u style="height:20%"></u><u style="height:70%"></u><u style="height:70%"></u><u style="height:0"></u></span> 5 из 7</td><td><span class="zap"><u style="width:40%;background:#ffc24b"></u></span>12 дн.</td><td class="wa">4 из 22</td></tr>
+<tr><td><span class="d y"></span><b>EV Sibir</b><br><small class="wa">меньше плана</small></td><td>742 <small class="bad">▼ 6%</small></td><td>7</td><td>58% / 81%</td><td><span class="kan"><i class="g">Сайт</i><i class="y">ВК</i><i class="g">Дзен</i></span></td><td><span class="bar"><u style="height:50%"></u><u style="height:0"></u><u style="height:50%"></u><u style="height:0"></u><u style="height:50%"></u><u style="height:0"></u><u style="height:0"></u></span> 3 из 7</td><td><span class="zap"><u style="width:12%;background:#ff5c6c"></u></span><span class="bad">3 дн.</span></td><td>0 из 22</td></tr>
+<tr><td><span class="d r"></span><b>Evolution Минск</b><br><small class="bad">не подключён</small></td><td class="mu">–</td><td class="mu">–</td><td class="mu">–</td><td class="mu">завести сайт</td><td class="mu">–</td><td class="mu">–</td><td class="mu">созвон 19.11</td></tr>
+</tbody></table></div></div>
+<p><b>Сверху два вывода – «выходит ли везде» и «где нужен ты», под ними пять цифр по всем клиентам, ниже строка на клиента.</b> Как у Васина, но с нашими каналами (сайт, Дзен, ВК, карты) и знакомством. Привычно и плотно; на телефоне таблицу придётся двигать вбок. ~10 ч.</p></div>
+
+<div class="v rec"><h4><b>Б</b>Карточки клиентов<em>советую – удобно и на телефоне</em></h4>
+<div class="m">
+<div class="vv"><div class="bx"><h6><span class="d r pul"></span>Выходит не везде: 1 канал</h6>Баланс – Яндекс Карты стоят 9 дней</div><div class="bx"><h6><span class="d o"></span>Нужен ты: 4 дела · ≈20 мин</h6><small>согласовать 3 поста TEYES · «да» на смету EV · знакомство Баланса · вход в Google Баланса</small></div></div>
+<div class="kart">
+<div class="kk"><h6><span class="d g"></span>TEYES Sibir</h6><div class="st ok">по плану · 6 из 7 за неделю</div>
+<div class="rw"><span>Каналы</span><span class="kan"><i class="g">Сайт</i><i class="g">Дзен</i><i class="y">ВК</i><i class="g">Я.К</i><i class="g">G.K</i></span></div>
+<div class="rw"><span>Из поиска · 30 дн</span><b>2 140 <small class="ok">▲12%</small></b></div><div class="rw"><span>Заявки</span><b>19</b></div><div class="rw"><span>Запас тем</span><span><span class="zap"><u style="width:70%;background:#39ff88"></u></span>21 дн.</span></div><div class="rw"><span>Знакомство</span><span>14 из 22</span></div>
+<div class="ja">Ждёт тебя: 3 поста ВК на согласование</div></div>
+<div class="kk y"><h6><span class="d o"></span>Баланс</h6><div class="st wa">нужен ты · Яндекс Карты стоят</div>
+<div class="rw"><span>Каналы</span><span class="kan"><i class="g">Сайт</i><i class="g">Дзен</i><i class="g">ВК</i><i class="r">Я.К</i><i class="n">G.K</i></span></div>
+<div class="rw"><span>Из поиска · 30 дн</span><b>1 930 <small class="ok">▲4%</small></b></div><div class="rw"><span>Заявки</span><b>11</b></div><div class="rw"><span>Запас тем</span><span><span class="zap"><u style="width:40%;background:#ffc24b"></u></span>12 дн.</span></div><div class="rw"><span>Знакомство</span><span class="wa">4 из 22</span></div>
+<div class="ja">Ждёт тебя: пройти знакомство · вход в Google</div></div>
+<div class="kk r"><h6><span class="d y"></span>EV Sibir</h6><div class="st bad">темы кончаются через 3 дня</div>
+<div class="rw"><span>Каналы</span><span class="kan"><i class="g">Сайт</i><i class="y">ВК</i><i class="g">Дзен</i></span></div>
+<div class="rw"><span>Из поиска · 30 дн</span><b>742 <small class="bad">▼6%</small></b></div><div class="rw"><span>Заявки</span><b>7</b></div><div class="rw"><span>Запас тем</span><span><span class="zap"><u style="width:12%;background:#ff5c6c"></u></span><span class="bad">3 дн.</span></span></div><div class="rw"><span>Знакомство</span><span>0 из 22</span></div>
+<div class="ja">Ждёт тебя: «да» на смету спроса 120 ₽</div></div>
+</div></div>
+<p><b>Сверху те же два вывода, ниже карточка на каждого клиента: светофор, каналы, цифры, запас тем и жёлтая строка «ждёт тебя».</b> Читается за секунды, на телефоне карточки встают столбиком. Сравнивать клиентов между собой чуть сложнее, чем в таблице. ~8 ч.</p></div>
+
+<div class="v"><h4><b>В</b>Сначала дела, потом клиенты</h4>
+<div class="m"><div class="lnt">
+<div><div style="font-weight:700;margin-bottom:8px">Нужен ты – 4 дела · ≈20 минут</div><div class="dl">
+<div class="it"><span class="d r pul"></span><div>EV Sibir – темы кончаются через 3 дня<div class="kl">«да» на смету спроса 120 ₽ · 1 мин</div></div><span class="kn">Да</span></div>
+<div class="it"><span class="d o"></span><div>TEYES – 3 поста ВК на согласование<div class="kl">≈5 мин</div></div><span class="kn">Открыть</span></div>
+<div class="it"><span class="d o"></span><div>Баланс – знакомство: 18 вопросов<div class="kl">созвон с Евой ≈12 мин</div></div><span class="kn">Созвон</span></div>
+<div class="it"><span class="d y"></span><div>Баланс – вход в Google-аккаунт карточки<div class="kl">без него Google Карты стоят</div></div><span class="kn">Как</span></div>
+</div></div>
+<div><div style="font-weight:700;margin-bottom:8px">Клиенты</div><div class="cl">
+<div class="it"><span><span class="d g"></span>TEYES Sibir</span><small>6 из 7 · запас 21 дн.</small></div>
+<div class="it"><span><span class="d o"></span>Баланс</span><small>5 из 7 · запас 12 дн.</small></div>
+<div class="it"><span><span class="d y"></span>EV Sibir</span><small class="bad">3 из 7 · запас 3 дн.</small></div>
+<div class="it"><span><span class="d r"></span>Evolution Минск</span><small>не подключён</small></div>
+<div class="it" style="background:none;padding:4px 10px"><small>Всего за 30 дней: 4 812 из поиска · 37 заявок · материал 41 ₽</small></div>
+</div></div></div></div>
+<p><b>Главное на экране – список дел с кнопкой прямо в строке: «Да», «Открыть», «Созвон».</b> Самый быстрый для «зашёл, сделал, ушёл». Цифр по клиентам меньше – подробности по клику в кабинет клиента. ~7 ч.</p></div>
+
+</div>
+
+<details><summary><b>Как это у Васина – его скрин 8 октября</b></summary>
+
+![Командный центр Васина](vasin.webp)
+
+Сверху «Статьи выходят не везде» и «Нужны вы: 5» с конкретными делами и временем на каждое, пять плиток по всем сайтам, ниже строка на каждого заказчика: светофор, из поиска, заявки, индекс Я/G, цена статьи, писатель, выпуск по дням, запас тем на N дней.
+
+</details>
+
+<h2>Что будет в любом виде</h2>
+<ul>
+<li><strong>Где:</strong> вкладка «Командный центр» в твоём пульте завода, первой. Клиент её не видит.</li>
+<li><strong>Каналы наши:</strong> сайт, Дзен, ВК, Яндекс Карты, Google Карты – у каждого зелёный, жёлтый или красный с причиной.</li>
+<li><strong>«Нужен ты»</strong> собирается из ворот завода: решения, сметы, знакомство, вход в аккаунты. У каждого дела время и кнопка.</li>
+<li><strong>Запас тем</strong> с предупреждением «кончаются через N дней» – тем же сигналом уходит в бот клиента, его кабинет и твой пульт (задача 22).</li>
+<li><strong>Цифры</strong> берутся из того, что завод уже снимает: Метрика, Вебмастер, Search Console, календарь, очередь.</li>
+</ul>
+<h2>Нужно от тебя</h2>
+<p>Одна буква: А, Б или В. Мой совет – <strong>Б</strong>: читается за секунды и одинаково на телефоне.</p>
+<h2>Что раскрыть</h2>
+<ol>
+<li>Откуда берётся каждая цифра и что из этого завод уже снимает.</li>
+<li>Как «Нужен ты» собирается из ворот завода.</li>
+<li>Как сделать оповещения о запасе тем в бот клиента.</li>
+</ol></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
