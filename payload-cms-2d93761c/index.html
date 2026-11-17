@@ -1,0 +1,313 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Payload CMS против нашего стека: что даёт и где пригодится заводу</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Payload CMS против нашего стека: что даёт и где пригодится заводу</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Payload не лучше нашего стека целиком: в 4 из 15 пунктов он сильнее, в 9 сильнее мы, в 2 ничья. Payload выигрывает там, где клиент сам ведёт много контента: готовая админка с черновиками, версиями, медиатекой и языками, которую мы собираем сами по кускам. Скорость, цена хостинга, российские оплаты, заявки и перенос с Тильды остаются за Astro + Preact + нашей админкой. Брать Payload стоит не вместо, а рядом: как хранилище контента для одного-двух клиентов-«писателей», а витрина остаётся на Astro. Проба – около 18 ч, адаптер завода «статья → Payload черновиком» – около 7 ч, и делать его есть смысл только под живого клиента.</p>
+<p><strong>Нужно от тебя:</strong> (1) да или нет на пробу «Payload + Astro» на одном сайте, 18 ч ≈ 18 000 ₽ себестоимости по нашему часу 1000 ₽; (2) если да – какой клиент хочет сам писать и править много (статьи, новости, товары, несколько сотрудников в админке). Нет такого клиента – пробу не делаем, а адаптер Payload кладём в техдолг рядом с WordPress, Битриксом и Тильдой (задача №19 от 17.11).</p>
+<style>
+.pl-ch{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+.pl-ch div{border:1px solid var(--ln);border-radius:12px;background:var(--card);padding:10px;text-align:center}
+.pl-ch b{display:block;font-size:clamp(20px,3.2vw,28px);line-height:1.2}.pl-ch span{font-size:13px;color:var(--mut)}
+.pl-sh{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:6px;align-items:stretch;margin:14px 0}
+.pl-st{border:1px solid var(--ln);border-radius:12px;background:var(--card);padding:10px 12px;font-size:14px;line-height:1.45}
+.pl-st b{display:block;margin-bottom:4px}.pl-st span{color:var(--mut)}
+.pl-st.pl-new{border-color:var(--ac)}
+.pl-ar{align-self:center;color:var(--mut);font-size:20px}.pl-ar:after{content:"→"}
+@media(max-width:760px){.pl-ch{grid-template-columns:repeat(2,1fr)}.pl-sh{grid-template-columns:1fr}.pl-ar{text-align:center}.pl-ar:after{content:"↓"}}
+</style>
+<div class="pl-ch"><div><b>4 : 9 : 2</b><span>Payload : мы : ничья, 15 пунктов</span></div><div><b>3.93.0</b><span>последняя версия, 04.11.2026</span></div><div><b>54</b><span>бюллетеня безопасности за 2026</span></div><div><b>0 из 29</b><span>наших сайтов на Next.js или Payload</span></div></div>
+
+<h2>Payload – это готовая админка с базой и API, которую мы сейчас собираем сами по кускам</h2>
+<p><strong>Что это.</strong> Открытая система управления контентом на TypeScript, лицензия MIT. С версии 3 ставится прямо внутрь проекта Next.js: в коде описываешь коллекции (Статьи, Товары, Заявки, Медиа), а Payload сам даёт базу, админку и API. Цифры на 17.11.2026: версия 3.93.0 от 04.11.2026 (npm), 45 865 звёзд на GitHub, 1,55 млн скачиваний за неделю 10–16.11 (api.npmjs.org). Требует Node 22.23+ или 24.22+ и Next.js 15.2.9+ или 16.3.3+ (зависимости пакета @payloadcms/next 3.93.0).</p>
+<p><strong>Что внутри из коробки</strong> (сверено по пакетам npm 17.11, все версии 3.93.0):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Возможность</th>
+<th>Как у Payload</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>База</td>
+<td>Postgres, MongoDB, SQLite, Cloudflare D1 – адаптеры db-*</td>
+</tr>
+<tr>
+<td>Админка</td>
+<td>собирается по схеме коллекций; русский язык есть (пакет translations, файл ru)</td>
+</tr>
+<tr>
+<td>Права</td>
+<td>функции доступа на коллекцию, документ и поле; пользователи и API-ключи</td>
+</tr>
+<tr>
+<td>Черновики и версии</td>
+<td>черновик, автосохранение, отложенная публикация, статусы «Черновик / Опубликовано / Изменено», откат к опубликованному (<a href="https://payloadcms.com/docs/versions/drafts">docs</a>)</td>
+</tr>
+<tr>
+<td>Согласование</td>
+<td>своего процесса нет: только права «редактор не публикует»; «Publishing Workflows» – в Enterprise</td>
+</tr>
+<tr>
+<td>Медиа</td>
+<td>загрузка, нарезка размеров, фокус-точка, кроп, перевод формата через sharp (formatOptions), хранение в S3 (<a href="https://payloadcms.com/docs/upload/overview">docs</a>)</td>
+</tr>
+<tr>
+<td>Языки</td>
+<td>локализация полей и документов</td>
+</tr>
+<tr>
+<td>Предпросмотр</td>
+<td>Live Preview: черновик виден на сайте до публикации</td>
+</tr>
+<tr>
+<td>API</td>
+<td>REST, GraphQL и Local API – вызов из своего кода без сети</td>
+</tr>
+<tr>
+<td>Хуки и задачи</td>
+<td>хуки до и после сохранения, очередь задач (Jobs)</td>
+</tr>
+<tr>
+<td>Официальные плагины</td>
+<td>SEO, конструктор форм, редиректы, поиск, вложенные страницы, магазин, мультисайт, импорт-экспорт CSV, MCP для агентов</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Payload 4.0 – бета с 19.10.2026</strong> (сейчас 4.0.0-beta.9): движок отвязывают от Next.js через адаптеры, первый – TanStack Start; админка перерисована на дизайн-системе Figma; появилась медиатека с сеткой, превью PDF и видео; MCP включён по умолчанию, в коде есть «skills» для кодинг-агентов (<a href="https://payloadcms.com/posts/releases/payload-4-beta-redesigned-admin-tanstack-mcp">анонс Payload</a>). Дата стабильного выпуска не названа.</p>
+<p><strong>Кто купил и что это значит.</strong> Figma купила Payload 17.06.2025, вся команда перешла в Figma, сумма не раскрыта (<a href="https://payloadcms.com/payload-has-joined-figma">страница Payload</a>, <a href="https://syntax.fm/show/912/why-did-figma-buy-a-cms/transcript">Syntax.fm 17.06.2025</a>). Что из этого следует:</p>
+<ul>
+<li><strong>Плюс:</strong> у проекта есть деньги и команда, ядро остаётся открытым: «Figma is committed to maintaining and investing in Payload's open source core».</li>
+<li><strong>Минус для нас:</strong> облако Payload Cloud новые проекты не принимает («deployment of new projects is currently paused»), ставить можно только на свой сервер.</li>
+<li><strong>Куда идёт Figma:</strong> 15.10.2026 Payload встроили в Figma Make как бэкенд для собранных там сайтов – база, файлы, вход, админка; хостинг в бете бесплатный, цены объявят позже (<a href="https://www.figma.com/blog/websites-with-payload-in-figma/">блог Figma</a>). Нам это не опора: Figma ограничила работу с Россией в 2022 году (общеизвестно, сегодня не перепроверял), а вот самостоятельная установка MIT-версии от Figma не зависит.</li>
+</ul>
+<p><strong>У Васина</strong> Payload – одна строка в системе 06 «Публикация и индексация», рядом с файлом в репозиторий Next.js, WordPress по REST и Битриксом. Подробностей, как устроен его адаптер, на странице нет (текст страницы Цеха, снят 17.11).</p>
+<h2>По функционалу Payload сильнее в редакторе и данных, мы – в скорости, цене, оплатах РФ и заявках</h2>
+<p>Наш стек – Astro для сайтов, Preact для островов и анимаций, админка по скиллу admin-builder с эталонов Elite Rose и EV, редактор site-editor, магазин shop-modules. На 17.11.2026 в ~/Sites 29 проектов на Astro, ни одного на Next.js или Payload (поиск по package.json).</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Что</th>
+<th>Payload 3.93</th>
+<th>Наш стек (Astro + Preact + admin-builder)</th>
+<th>Кто выигрывает и почему</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Редактор контента для клиента</td>
+<td>Админка по схеме: поля, блоки, редактор Lexical, медиатека; клиент правит записи в форме</td>
+<td>site-editor уровня 1: текст, картинки и ссылки кнопок кликом прямо на странице; блоки на Puck (уровень 4) не сделаны; сохранение через GitHub и пересборка, панель ждёт до 25 мин</td>
+<td><strong>Payload</strong>, если контента много и он однотипный (статьи, новости, товары). На лендинге наша правка «на странице» понятнее клиенту</td>
+</tr>
+<tr>
+<td>Черновики и согласование</td>
+<td>Черновики, автосохранение, отложенная публикация, версии, откат; согласования нет</td>
+<td>В заводе есть «да» владельца (approvals); в редакторе черновика нет – в плане уровень 2</td>
+<td><strong>Payload</strong>: версии и черновики готовы, у нас их надо писать</td>
+</tr>
+<tr>
+<td>Роли и вход</td>
+<td>Пользователи, права на коллекцию, документ и поле; 2FA в коробке не нашёл</td>
+<td>Весь кабинет за логином, вход СВЕРХ админа, «Запомнить меня»; в shop-modules – argon2id, 2FA, роли, журнал действий</td>
+<td><strong>Ничья</strong>: права у Payload тоньше, 2FA и журнал – у нас</td>
+</tr>
+<tr>
+<td>Медиа и WebP</td>
+<td>Нарезка размеров, фокус-точка, кроп, перевод в WebP через sharp, S3</td>
+<td>WebP при сборке Astro (правило «всегда WebP»), картинки лежат в git; медиатеки нет</td>
+<td><strong>Payload</strong>: клиент сам грузит фото, размеры режутся сами</td>
+</tr>
+<tr>
+<td>SEO-поля и разметка</td>
+<td>Плагин SEO: title, description, картинка, превью сниппета. JSON-LD, canonical, sitemap пишет сайт</td>
+<td>Мета и JSON-LD в шаблонах Astro, агенты site-seo и site-tech, гейты завода (seo_check), проверка JSON-LD станцией «Техника»</td>
+<td><strong>Мы</strong>: у Payload только поля, разметку и проверки всё равно делаем сами</td>
+</tr>
+<tr>
+<td>Редиректы</td>
+<td>Плагин: таблица 301 в админке, применять должен сайт</td>
+<td>Таблица 301 от агента site-map, правила в Caddy или конфиге</td>
+<td><strong>Ничья</strong>: у Payload клиент правит сам, у нас надёжнее, но через нас</td>
+</tr>
+<tr>
+<td>Формы и заявки</td>
+<td>Конструктор форм, хранение ответов, письма</td>
+<td>Живые заявки в ЛК, доска по этапам, источник и скрытая UTM, Telegram и Max, цели Метрики, CSV (эталоны Elite Rose и EV)</td>
+<td><strong>Мы</strong>: у Payload только «приём», у нас вся воронка</td>
+</tr>
+<tr>
+<td>Магазин и каталог</td>
+<td>Плагин магазина с 25.07.2025: товары, варианты, корзина, заказы; оплата – только адаптер Stripe (в коде пакета другого нет)</td>
+<td>shop-modules: бонусы, статусы, промокоды, СДЭК, Яндекс Доставка, эквайринг любого банка, Доли, Сплит, Подели; каталог Elite Rose с импортом CSV</td>
+<td><strong>Мы</strong>: Stripe в России не работает, наши оплаты и доставки уже подключены</td>
+</tr>
+<tr>
+<td>Многоязычность</td>
+<td>Локализация полей, языки и запасной язык в админке</td>
+<td>Языки маршрутами Astro, перевод файлами; в админке языков нет</td>
+<td><strong>Payload</strong>, но нам нужно редко: рынки РФ и Беларусь</td>
+</tr>
+<tr>
+<td>Скорость сайта</td>
+<td>Сайт – приложение Next.js с React на клиенте; можно отдавать статикой, но рантайм тяжелее</td>
+<td>Astro отдаёт чистый HTML, острова Preact только где нужно; Milovini – PageSpeed 100 (13.11)</td>
+<td><strong>Мы</strong>. Если Payload поставить «за» Astro, скорость сохраняется</td>
+</tr>
+<tr>
+<td>Хостинг и цена</td>
+<td>Нужен свой сервер с Node и базой на каждого клиента, бэкапы; облако закрыто для новых</td>
+<td>Статика бесплатно на Pages или на нашем FirstVDS через Caddy; сервер – только под заявки и ЛК</td>
+<td><strong>Мы</strong>: Payload добавляет сервер, базу и бэкап на клиента</td>
+</tr>
+<tr>
+<td>Безопасность и обновления</td>
+<td>54 бюллетеня безопасности за 2026, из них 8 критичных, 29 только в сентябре (GitHub payloadcms/payload, 17.11); выпуск раз в 1–2 недели</td>
+<td>Статику почти нечем ломать, поверхность – формы и ЛК; обновления в наших руках</td>
+<td><strong>Мы</strong>: Payload надо обновлять постоянно, иначе дыра в админке клиента</td>
+</tr>
+<tr>
+<td>Порог для наших агентов</td>
+<td>TypeScript, схема кодом, типы генерируются, плагин MCP, в 4.0 – «skills» для агентов: Claude и Codex пишут его хорошо</td>
+<td>Все скиллы, эталоны и правила (site-lead, admin-builder, site-editor) написаны под Astro; 29 сайтов как образцы</td>
+<td><strong>Мы сейчас</strong>. Payload агентам понятен, но новые эталоны и правила надо завести на пробе</td>
+</tr>
+<tr>
+<td>Перенос с Тильды</td>
+<td>Не помогает: импорта Тильды нет, только CSV в коллекции; вёрстку всё равно переносить</td>
+<td>Путь отработан: Balance, Milovini, KitAccess (683 карточки), Розалии</td>
+<td><strong>Мы</strong></td>
+</tr>
+<tr>
+<td>Выкладка статей завода</td>
+<td>Статья черновиком по REST или Local API, клиент публикует сам; конвертер Markdown → Lexical есть в пакете</td>
+<td>vykladka.py: файл в git, свой коммит, команда выкладки, проверка 200 и title, откат, IndexNow</td>
+<td><strong>Мы</strong> для своих сайтов; <strong>Payload</strong> для клиента, который хочет править статьи сам</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Итого по таблице:</strong> Payload сильнее в 4 строках (редактор при большом контенте, черновики и версии, медиа, языки), мы – в 9, ничья – в 2. Все четыре победы Payload – про одно: клиент сам управляет контентом без нас.</p>
+<h2>В заводе Payload – отдельный адаптер выкладки: клиент правит сам, но доказать «вышло» сложнее</h2>
+<p>Сейчас станция 7 (engine/vykladka.py) умеет только git-сайт: кладёт файл статьи в папку блога, делает свой коммит, запускает команду выкладки, проверяет живой адрес (200 и title) и откатывает только свой коммит при сбое. Адаптер Payload встаёт рядом, не вместо:</p>
+<div class="pl-sh">
+<div class="pl-st"><b>1. Завод</b><span>статья прошла гейты, красный список, картинки, «да» владельца</span></div><div class="pl-ar"></div>
+<div class="pl-st pl-new"><b>2. Адаптер Payload</b><span>вход по API-ключу, обложка в Медиа, Markdown → Lexical, SEO-поля, запись со статусом «черновик»</span></div><div class="pl-ar"></div>
+<div class="pl-st"><b>3. Админка клиента</b><span>клиент читает, правит, жмёт «Опубликовать» или ставит время</span></div><div class="pl-ar"></div>
+<div class="pl-st pl-new"><b>4. Вебхук → завод</b><span>хук Payload после публикации: пересборка Astro, проверка живого адреса, IndexNow, обходчик</span></div>
+</div>
+
+<p><strong>Плюсы против git-выкладки:</strong></p>
+<ul>
+<li>Клиент сам правит статью в привычной админке, без нашего коммита и без письма «поменяйте абзац».</li>
+<li>Если сайт на Next.js – правка видна сразу, без пересборки. Если витрина на Astro – пересборка по хуку, но без git и без нас.</li>
+<li>Один адаптер подходит любому клиенту на Payload, как WordPress по REST.</li>
+</ul>
+<p><strong>Минусы:</strong></p>
+<ul>
+<li>Доказательство «вышло» уходит из наших рук: ответ CMS – только «черновик принят», а публикует клиент. Нужен хук обратно в завод, иначе статья зависнет черновиком, а отчёт покажет «выложено».</li>
+<li>Клиент может испортить статью после гейтов: удалить ответ из первых 40–60 слов, ключи, ссылки. Сторож должен перепроверять живую страницу, а не наш файл.</li>
+<li>Схема коллекции у каждого клиента своя: поля и блоки надо сопоставлять при подключении.</li>
+<li>Откат «своего коммита» не работает: откатом становится версия в Payload.</li>
+<li>Сегодня это код без клиентов: у нас 0 сайтов на Payload.</li>
+</ul>
+<p><strong>Оценка адаптера:</strong> 3 ч – запись черновика с обложкой, SEO-полями и Markdown → Lexical; 2 ч – хук публикации, проверка живого адреса и IndexNow; 2 ч – тесты на поддельном Payload и проба на настоящем стенде. Итого 7 ч. С общим слоем адаптеров под WordPress, Битрикс и Тильду (задача №19) – около 10 ч.</p>
+<h2>Брать Payload стоит только рядом с Astro и только под клиента, который сам ведёт много контента</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Тип проекта</th>
+<th>Что ставим</th>
+<th>Почему</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Лендинг, визитка, клип-лендинг</td>
+<td>Astro + site-editor</td>
+<td>Правка кликом на странице, скорость, бесплатный хостинг</td>
+</tr>
+<tr>
+<td>Магазин в РФ</td>
+<td>Astro + shop-modules + каталог Elite Rose</td>
+<td>Оплаты банков РФ, СДЭК, бонусы; у Payload только Stripe</td>
+</tr>
+<tr>
+<td>Сайт с SEO-ведением и заводом</td>
+<td>Astro + git-выкладка</td>
+<td>Мы держим качество статьи до и после выхода</td>
+</tr>
+<tr>
+<td>Клиент сам пишет новости, статьи, ведёт каталог, несколько сотрудников с ролями</td>
+<td><strong>Payload как хранилище + Astro как витрина</strong></td>
+<td>Готовые черновики, версии, медиатека, роли, без пересборки нами</td>
+</tr>
+<tr>
+<td>Сайт уже на Next.js у клиента</td>
+<td>Payload целиком</td>
+<td>Встаёт в его же проект</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Проба «Payload + Astro» на одном сайте – около 18 ч:</strong></p>
+<ul>
+<li>4 ч – Payload 3.93 в Docker с Postgres на нашем FirstVDS, SSL, ночной бэкап, вход СВЕРХ админа;</li>
+<li>5 ч – коллекции Страницы, Статьи, Медиа (WebP), Заявки, плагины SEO и редиректов, русская админка;</li>
+<li>6 ч – Astro берёт контент по REST при сборке, хук «опубликовано» запускает пересборку, предпросмотр черновика;</li>
+<li>3 ч – роли клиента, закрыть лишнее в API, порядок обновлений, короткая инструкция клиенту.</li>
+</ul>
+<p>Сайт целиком на Next.js вместо Astro – ещё 12–16 ч на переписывание вёрстки, и скорость хуже: не советую. Ветку 4.0 на пробу не берём, пока она бета.</p>
+<p><strong>Риски, которые надо принять до пробы:</strong> обновлять Payload каждые 1–2 недели (54 бюллетеня за 2026); отдельный сервер и база на клиента; будущее облака решает Figma; v4 поменяет админку и часть настроек.</p>
+<p><strong>Что раскрыть:</strong> 1 – как Astro забирает контент из Payload и сколько ждать пересборки; 2 – адаптер завода по шагам и что видит клиент; 3 – сравнить Payload с нашим site-editor уровня 2–4 по часам; 4 – Payload Cloud и Figma Make: можно ли этим пользоваться из России.</p>
+<h3>Что не подтвердилось или не проверено</h3>
+<ul>
+<li>Один блог называл датой покупки 10.04.2026 – неверно: официально 17.06.2025.</li>
+<li>2FA у Payload в коробке не нашёл – возможно, есть плагином сообщества, не проверял.</li>
+<li>Ограничения Figma для России – известно с 2022, сегодня не перепроверял.</li>
+<li>Сколько памяти ест Payload на сервере – не мерил, будет видно на пробе.</li>
+<li>Что Next.js «уходит» из Payload – неверно для 3.x: адаптеры другого движка только в бете 4.0, админка пока живёт в Next.js.</li>
+<li>Как устроен Payload-адаптер у Васина – на его странице только название.</li>
+</ul>
+<p><strong>Источники (снято 17.11.2026):</strong> npm registry (payload, @payloadcms/*); GitHub payloadcms/payload и его бюллетени безопасности; <a href="https://payloadcms.com/posts/releases/payload-4-beta-redesigned-admin-tanstack-mcp">анонс 4.0 beta</a>; <a href="https://payloadcms.com/payload-has-joined-figma">Payload has joined Figma</a>; <a href="https://www.figma.com/blog/websites-with-payload-in-figma/">Figma: Payload в Figma Make</a>; документация Payload о <a href="https://payloadcms.com/docs/versions/drafts">черновиках</a> и <a href="https://payloadcms.com/docs/upload/overview">загрузках</a>; наш код: ~/Sites/zavod-ai-sfera/engine/vykladka.py, ~/Sites/site-editor, скилл admin-builder, память redaktor-saytov-razbor, shop-moduli-produkt, feedback-bazovyy-lk.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
