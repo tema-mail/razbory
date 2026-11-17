@@ -1,45 +1,37 @@
-# Автопилот завода: выбери, как он ведёт сайт
+# Автопилот завода: решения приняты, ведущие шаги готовы
 
-Автопилот сам снимает спрос, пишет статью и выкладывает её на сайт без твоего «да». Кнопка включается, только когда у клиента заполнено всё нужное. Нужны 4 ответа буквами, например «1Б, 2А, 3А, 4В». Мой совет – в синей рамке. Первый шаг (проверка готовности клиента) делаю уже сейчас: он от ответов не зависит.
+Твои ответы 18.11 вписаны в проект, сделаны три шага кода из шести: готовность клиента, включение из кабинета клиента и сама цепочка «спрос → карта → статья». На сервер ещё не выложено – ждёт твоего «да». Включать автопилот в бою можно только после шага 4 (потолок денег и автопауза).
 
-<style>
-.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:14px 0 30px}
-@media(max-width:900px){.kv{grid-template-columns:minmax(0,1fr)}}
-.v{min-width:0;border:1px solid var(--ln);border-radius:14px;background:var(--card);padding:12px}
-.v.rec{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
-.v h4{margin:0 0 10px;font-size:17px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.v h4 b{display:inline-flex;width:30px;height:30px;border-radius:9px;background:var(--ac);color:#fff;align-items:center;justify-content:center;flex:none}
-.v h4 em{flex-basis:100%;order:-1;font-style:normal;font-size:12px;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.04em}
-.v>p{font-size:14px;margin:10px 0 0;color:var(--mut)}.v>p b{color:var(--tx)}
-.m{background:#0b0e11;color:#e6efe9;border-radius:12px;padding:12px;font:500 13px/1.4 Inter,system-ui,sans-serif;min-height:170px;position:relative;overflow:hidden}
-.m small{color:#8fa39a;font-size:11.5px}
-.ok{color:#39ff88}.wa{color:#ffc24b}.bad{color:#ff5c6c}.mu{color:#8fa39a}
-.bx{background:#141a20;border:1px solid #232c34;border-radius:10px;padding:9px 11px;margin:6px 0}
-.btn{display:inline-block;padding:5px 10px;border-radius:8px;font-weight:700;font-size:12.5px;background:#3e7bff;color:#fff}
-.btn.r{background:#ff5c6c}.btn.g{background:#39ff88;color:#04140b}.btn.n{background:#232c34;color:#8fa39a}
-.lane{display:flex;justify-content:space-between;gap:4px;margin:10px 0 4px;position:relative}
-.lane i{font-style:normal;flex:1;text-align:center;font-size:11px;padding:6px 2px;border-radius:7px;background:#141a20;border:1px solid #232c34}
-.run{position:absolute;top:-6px;width:12px;height:12px;border-radius:50%;background:#39ff88;box-shadow:0 0 10px #39ff88;animation:run 4s linear infinite}
-@keyframes run{0%{left:2%}100%{left:94%}}
-.cd{height:7px;border-radius:4px;background:#232c34;overflow:hidden;margin:8px 0}.cd u{display:block;height:100%;background:#ffc24b;animation:cd 6s linear infinite}
-@keyframes cd{0%{width:100%}100%{width:0}}
-.blink{animation:bl 1.6s ease-in-out infinite}@keyframes bl{50%{opacity:.35}}
-.sw{display:inline-block;width:42px;height:22px;border-radius:11px;background:#232c34;position:relative;vertical-align:middle;animation:swb 3s steps(1) infinite}
-.sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;animation:swk 3s ease-in-out infinite}
-@keyframes swb{0%{background:#232c34}50%{background:#39ff88}}
-@keyframes swk{0%,40%{left:3px}50%,100%{left:23px}}
-.dots{display:flex;gap:5px;margin:8px 0}.dots u{width:22px;height:22px;border-radius:6px;background:#232c34;display:block}
-.dots u.f{background:#39ff88}.dots u.p{background:#3e7bff;animation:bl 1.4s infinite}
-.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.chips i{font-style:normal;font-size:11.5px;font-weight:700;padding:3px 7px;border-radius:6px}
-.chips .on{background:#39ff88;color:#04140b}.chips .off{background:#151b20;color:#55635c;border:1px solid #232c34}.chips .wb{background:#ffc24b;color:#1d1400}
-.big{font-size:26px;font-weight:800;margin:6px 0}
-.bar{height:9px;border-radius:5px;background:#232c34;overflow:hidden;margin:6px 0}.bar u{display:block;height:100%;animation:fill 5s ease-in-out infinite}
-@keyframes fill{0%{width:5%}80%,100%{width:var(--w)}}
-.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0}.chain i{font-style:normal;padding:7px 10px;border-radius:9px;background:#141a20;border:1px solid #232c34;font-size:12.5px}
-.chain i.on{border-color:#39ff88;animation:glow 5s infinite}.chain b{color:#8fa39a}
-.chain i:nth-of-type(2){animation-delay:1s}.chain i:nth-of-type(3){animation-delay:2s}.chain i:nth-of-type(4){animation-delay:3s}.chain i:nth-of-type(5){animation-delay:4s}
-@keyframes glow{0%,15%{box-shadow:0 0 0 2px #39ff88;color:#39ff88}25%,100%{box-shadow:none;color:#e6efe9}}
-</style>
+## Твои решения
+
+- **1 – В, потом Б, по кругу.** Первые 5 статей с «да». После пятой – окно, которое не закрыть без ответа: «дальше завод ведёт сам, пост можно остановить руками до выхода». Да – тихое окно 24 часа. Нет – снова 5 с «да».
+- **2 – А и Б.** Включаешь ты в пульте и клиент в кабинете. Первые 5 «да» и окно-вопрос – у того, кто включил (допущение: ты можешь ответить за клиента).
+- **3 – А.** Ведёт только сайт, площадки и карты – только с твоим «да».
+- **4 – В.** Потолок свой у каждого клиента, по умолчанию 2 000 ₽.
+
+## Сделано 18.11
+
+| Шаг | Что | Коммит | Проверка |
+|---|---|---|---|
+| 1 | Восемь условий готовности, включение только при полной готовности, обход через общие настройки закрыт | ccb5abb | ревизор: FAIL → исправлено → PASS |
+| 1б | Клиент включает в кабинете и видит, чего не хватает, без технических подсказок; «кто включил»; потолок 2 000 ₽ по умолчанию | 9b3ca74 | ревизор: FAIL → исправлено → PASS |
+| 2 | Раз в час на сайт: спрос старше 90 дней → карта → статья, если невышедших меньше двух. Стоп-кран и упавшие задачи не крутят деньги, пропала готовность – пауза | 9a13f29 | ревизор: FAIL → исправлено → PASS |
+
+Тесты – 822 из 822. Каждый шаг ревизор сначала завернул: факты утверждаются датой, а кнопка ждала «да»; общий вход владельца писался как клиент; стоп-кран сжигал бы очередь тем; возвращённые статьи запускали бы новую платную каждый час. Всё закрыто тестами.
+
+## Нужно от тебя
+
+- «Да» на выкладку завода на сервер – поедут кнопка постов и шаги 1–2. Автопилот в бою до шага 4 не включаем.
+
+## Дальше
+
+- Шаг 3 – выкладка в день из календаря без «да» и твой круг В → окно → Б, ~8 ч.
+- Шаг 4 – месячный потолок, автопауза на сбоях и возвратах, строка в дайджесте, ~4 ч.
+- Шаг 5 – кнопка и окно-вопрос в пульте и кабинете, ~8 ч.
+
+---
+
+## Было: вопросы 18.11 (ответы выше)
 
 ## Как он будет работать
 
@@ -126,7 +118,7 @@
 
 Цифры расхода в макетах условные. Деньги здесь – XMLRiver и платные замеры; Claude по подписке в потолок не входит.
 
-## Нужно от тебя
+## Было нужно от тебя
 
 - Четыре буквы: 1 …, 2 …, 3 …, 4 … Мой совет – **1Б, 2А, 3А, 4В**.
 - «Да» на выкладку завода на сервер: система прав остановила выкладку, без твоего слова не выкладываю. Поедут починка кнопки постов и шаг 1 автопилота.
