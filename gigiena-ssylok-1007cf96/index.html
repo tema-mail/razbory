@@ -1,0 +1,373 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Гигиена входящих ссылок и файл отклонения</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Гигиена входящих ссылок и файл отклонения</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Встраивать стоит как еженедельного сторожа ссылок, а не как еженедельное отклонение. Большинству сайтов файл отклонения не нужен: Google сам игнорирует мусорные ссылки, а в Яндексе такого инструмента нет вовсе. Ценность в другом: вовремя увидеть атаку (всплеск ссылок с казино за неделю) и иметь готовый файл, если она случилась или Google наложил ручную меру. В заводе это новая станция «Ссылки»: без нейросети, раз в неделю, около 16 часов работы.</p>
+<p><strong>Нужно от тебя:</strong> 1) «да» на станцию «Ссылки» (около 16 часов); 2) правило: файл отклонения грузим в Search Console только при ручной мере Google или явной атаке и только после твоего «да» по конкретному списку.</p>
+<pre><code>Вебмастер (API) + выгрузка «Ссылки» из Search Console (вручную, CSV)
+        ↓
+[1] Снять профиль: доноры, даты появления, общее число по неделям
+        ↓
+[2] Найти мусор: 9 признаков кодом → балл у каждого донора
+        ↓
+[3] Решить: «шум» / «смотреть» / «кандидат»  ← решает владелец
+        ↓
+[4] Файл disavow.txt: слить с прошлым, у каждой группы комментарий #
+        ↓
+[5] Загрузить вручную: Search Console → инструмент Disavow links
+</code></pre>
+<h2>Мусорные ссылки есть у всех, но Google в основном игнорирует их сам</h2>
+<p><strong>Ссылочный профиль</strong> – все страницы чужих сайтов, которые ссылаются на твой: сколько их, с каких доменов, на какие страницы, с каким текстом ссылки (анкором), когда появились.</p>
+<p><strong>Какой мусор бывает:</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Вид</th>
+<th>Как выглядит</th>
+<th>Опасность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сайты-анализаторы</td>
+<td>«сколько стоит сайт», whois, «анализ домена» – роботы сами делают страницу про любой домен</td>
+<td>Шум, не вредит</td>
+</tr>
+<tr>
+<td>Скраперы и копипаст</td>
+<td>Кто-то украл статью вместе со ссылками</td>
+<td>Шум</td>
+</tr>
+<tr>
+<td>Автоматические каталоги, спам-комментарии</td>
+<td>Тысячи однотипных страниц, ссылка в профиле или комментарии</td>
+<td>Обычно шум</td>
+</tr>
+<tr>
+<td>Сети сайтов (PBN), дорвеи</td>
+<td>Много доменов на одном шаблоне, часто на одном IP</td>
+<td>Если сеть твоя (куплена) – риск</td>
+</tr>
+<tr>
+<td>Казино, порно, ставки, «таблетки»</td>
+<td>Анкоры «казино», «slot», «viagra» на твою страницу</td>
+<td>Если массово и внезапно – признак атаки</td>
+</tr>
+<tr>
+<td>Ссылочная атака конкурента</td>
+<td>Сотни таких ссылок за неделю</td>
+<td>Редко, но бывает</td>
+</tr>
+<tr>
+<td>Свои купленные ссылки</td>
+<td>Биржи, «вечные» ссылки, прогоны</td>
+<td>Главный реальный риск – и в Google, и в Яндексе</td>
+</tr>
+</tbody>
+</table></div>
+<p>«Ботами засоряют» – это в основном первые три строки. Это неприятно на графике, но в выдаче почти ничего не меняет.</p>
+<p><strong>Что говорит Google.</strong></p>
+<ul>
+<li><strong>Справка Search Console (проверено 17.11.2026):</strong> «большинству сайтов этот инструмент не понадобится». Отклонять стоит, если плохих ссылок много и они привели или скорее всего приведут к ручной мере. При неправильном использовании инструмент «может навредить» позициям (<a href="https://support.google.com/webmasters/answer/2648487">Google</a>).</li>
+<li><strong>Джон Мюллер, Google, 24.01.2025:</strong> «90%+ (вероятно, 99%+) сайтов ни разу не пользовались инструментом отклонения». Это «трата времени без прямой пользы», и «спамеру выгодно, чтобы вы тратили на это время» (<a href="https://www.seroundtable.com/google-spammers-encourage-waste-time-disavowing-links-38797.html">SER</a>).</li>
+<li><strong>Мюллер, 06.03.2026:</strong> «большинству сайтов не нужно, но не всем». Сомневаешься и хочешь подстраховаться – файл отклонения ставить «совершенно нормально». Если мусор идёт с нескольких доменных зон, можно отклонить зону целиком (<a href="https://www.seroundtable.com/google-disavow-advice-41042.html">SER, 06.03.2026</a>).</li>
+</ul>
+<p><strong>Когда отклонение реально нужно:</strong></p>
+<ul>
+<li>пришла ручная мера «неестественные ссылки» в Search Console;</li>
+<li>ты сам когда-то покупал ссылки (или прошлый подрядчик) и их не снять;</li>
+<li>идёт явная атака: сотни доноров с казино-анкорами за неделю и падение позиций в Google в те же дни.</li>
+</ul>
+<h2>Яндекс отклонения не умеет: там лечат только свои SEO-ссылки</h2>
+<ul>
+<li><strong>«Минусинск»</strong> работает с 15.05.2015: сайты, которые продвигаются SEO-ссылками, «могут ранжироваться ниже» (<a href="https://adindex.ru/news/digital/2015/05/15/123612.phtml">AdIndex, 15.05.2015</a>).</li>
+<li><strong>Инструмента отклонения нет.</strong> В справке Вебмастера и в его API (v4) я не нашёл ни аналога Disavow, ни метода «отклонить ссылку» (проверено 17.11.2026).</li>
+<li><strong>Как лечить.</strong> Нарушение видно в Вебмастере, раздел «Безопасность и нарушения». Порядок: снять ссылки, описать исправление, нажать «Нарушение исправлено» и «Отправить на проверку». Проверка – до 30 дней. Если отказали, повторная отправка – не раньше чем через 30 дней (<a href="https://yandex.ru/support/webmaster/ru/threats">справка Вебмастера</a>, проверено 17.11.2026).</li>
+<li><strong>Сколько ждать.</strong> Ограничение обычно держится от одного до нескольких месяцев: зависит от того, как быстро сняты ссылки и переобойдены страницы-доноры (англоязычная справка Вебмастера по SEO-ссылкам, по выдаче поиска 17.11.2026; страница сейчас перенаправляет на общий раздел – не подтверждено).</li>
+<li><strong>Ссылки от конкурентов.</strong> Официального ответа Яндекса, как «Минусинск» отличает чужие ссылки от купленных, не нашёл – не подтверждено.</li>
+</ul>
+<p><strong>Что делать в Яндексе:</strong> следить, чтобы не было своих купленных ссылок. Раз в неделю смотреть раздел нарушений (это уже умеет снимать наш доступ к API). При атаке – писать в поддержку Вебмастера с выгрузкой доноров и датами.</p>
+<p>Отдельно: Яндекс наказывает и за <strong>исходящие</strong> SEO-ссылки с твоего сайта. Обычно это взлом, когда в подвал вшивают ссылки на казино. Это другая проверка («ИИ-следы» и взлом у Васина), её записываю как смежную.</p>
+<h2>Список ссылок снимается бесплатно; платные сервисы нужны для оценки доноров</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Где</th>
+<th>Цена на 17.11.2026</th>
+<th>Что даёт</th>
+<th>Источник</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Search Console, «Ссылки»</strong></td>
+<td>Бесплатно</td>
+<td>Топ доменов, страниц и анкоров. В таблице до 1 000 строк, выгрузка CSV до 100 000 строк: «последние ссылки» и «образец». Не полный список. <strong>API нет</strong> – только ручная выгрузка</td>
+<td><a href="https://support.google.com/webmasters/answer/9049606">Google</a>, <a href="https://support.fivetran.com/hc/en-us/community/posts/33179304550551-Connector-Improvement-Add-Linking-Sites-to-Google-Search-Console">Fivetran</a></td>
+</tr>
+<tr>
+<td><strong>Яндекс Вебмастер, «Внешние ссылки»</strong></td>
+<td>Бесплатно</td>
+<td>API: страница-донор, наша страница, дата обнаружения, дата последнего захода робота – по 100 за запрос; история общего числа ссылок по датам</td>
+<td><a href="https://yandex.ru/dev/webmaster/doc/ru/reference/host-links-external-samples">образцы</a>, <a href="https://yandex.ru/dev/webmaster/doc/ru/reference/host-links-external-history">история</a></td>
+</tr>
+<tr>
+<td><strong>CheckTrust</strong></td>
+<td>990 ₽ (2 500 проверок), 1 990 ₽, 3 990 ₽, 6 990 ₽ в месяц; разово 1 000 проверок за 1 490 ₽</td>
+<td>Оценка донора: траст, спам, 58 параметров, API</td>
+<td><a href="https://checktrust.ru/pricing.html">checktrust.ru</a></td>
+</tr>
+<tr>
+<td><strong>XTool</strong></td>
+<td>От 750 ₽/мес, «Расширенный» 2 190 ₽; бесплатно 30 проверок в день</td>
+<td>Траст и спам донора</td>
+<td><a href="https://toolfox.ru/services/s/xtool">toolfox</a> – агрегатор, у XTool цену не нашёл, не подтверждено</td>
+</tr>
+<tr>
+<td><strong>Keys.so</strong></td>
+<td>От 990 ₽/мес</td>
+<td>Есть «Анализ внешних ссылок»</td>
+<td><a href="https://toolfox.ru/services/s/keys-so/alternatives">toolfox, июнь 2026</a> – страница цен Keys.so рисуется скриптом и не отдалась, не подтверждено</td>
+</tr>
+<tr>
+<td><strong>MegaIndex</strong></td>
+<td>Бесплатно с ограничениями; платно источники спорят: 1 490 ₽ (<a href="https://startpack.ru/application/megaindex">startpack</a>) или 14 900 ₽ (<a href="https://toolfox.ru/services/s/megaindex">toolfox</a>)</td>
+<td>Беклинки</td>
+<td>Не подтверждено</td>
+</tr>
+<tr>
+<td><strong>Serpstat</strong></td>
+<td>Individual $50, Team $100, Agency $410 в месяц</td>
+<td>Беклинки, до 2 000 строк в отчёте на Individual</td>
+<td><a href="https://serpstat.com/page/pricing-plans/">serpstat.com</a></td>
+</tr>
+<tr>
+<td><strong>Majestic</strong></td>
+<td>Lite $49,99, Pro $99,99, API $399,99 в месяц</td>
+<td>Самая старая ссылочная база, «траст» и тематика донора</td>
+<td><a href="https://majestic.com/plans-pricing">majestic.com</a></td>
+</tr>
+<tr>
+<td><strong>Ahrefs</strong></td>
+<td>Lite €119, Standard €229, Advanced €419 в месяц</td>
+<td>Крупнейшая база беклинков</td>
+<td><a href="https://ahrefs.com/pricing">ahrefs.com</a>. Цены в евро; можно ли платить российской картой, сегодня не проверял</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Вывод для нас:</strong> на старте хватает бесплатного. Список – из Вебмастера по API и из выгрузки Search Console. Оценка донора – своим кодом. CheckTrust за 990 ₽ подключать, только если захотим внешнюю оценку траста. Платные базы видят больше ссылок, но для решения «есть ли атака» это не нужно.</p>
+<h2>Мусор ловится кодом по 9 признакам, а ошибка в файле стоит позиций</h2>
+<p><strong>Признаки плохого донора, все проверяются кодом:</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>№</th>
+<th>Признак</th>
+<th>Как проверить</th>
+<th>Вес</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Всплеск</td>
+<td>История Вебмастера: прирост за 7 дней больше чем в 3 раза выше медианы прошлых 8 недель и больше 50 ссылок</td>
+<td>Тревога на весь профиль</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Стоп-слова</td>
+<td>В анкоре, title или тексте донора: казино, casino, slot, ставки, bet, porn, xxx, эскорт, viagra, cialis, займ без отказа</td>
+<td>Сильный</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Чужой язык</td>
+<td><code>&lt;html lang&gt;</code> и доля кириллицы: китайский, вьетнамский, индонезийский у русского сайта</td>
+<td>Средний</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Чужая тематика</td>
+<td>Ни одного слова темы сайта (из паспорта сайта в заводе) на странице-доноре</td>
+<td>Слабый, только в сумме</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ссылочная помойка</td>
+<td>Внешних ссылок на странице донора больше 100 или их доля больше 60% от всех ссылок</td>
+<td>Средний</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Подозрительная зона</td>
+<td>.xyz, .top, .icu, .click, .buzz, .monster, .cfd и подобные – списком в настройках</td>
+<td>Слабый</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Один шаблон</td>
+<td>Одинаковый отпечаток разметки (последовательность тегов) у 5 и больше доноров или общий IP</td>
+<td>Сильный: это сеть</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Анкор-спам</td>
+<td>Точное вхождение коммерческого запроса в анкор у многих доноров разом</td>
+<td>Средний; если это наши закупки – снимать</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Мёртвый донор</td>
+<td>404, 410, домен не отвечает</td>
+<td>Не отклонять: такая ссылка уже ничего не весит</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Решение по баллам:</strong></p>
+<ul>
+<li>«шум» – анализаторы, скраперы, мёртвые: не трогаем;</li>
+<li>«смотреть» – 1–2 средних признака;</li>
+<li>«кандидат» – сильный признак или 3 средних.</li>
+</ul>
+<p>В файл попадает только то, что ты отметил.</p>
+<p><strong>Формат файла отклонения (справка Google):</strong></p>
+<ul>
+<li>обычный текст <code>.txt</code> в UTF-8;</li>
+<li>одна строка – один адрес или <code>domain:</code> + домен;</li>
+<li>строки с <code>#</code> – комментарии, Google их пропускает;</li>
+<li>до 100 000 строк и 2 МБ;</li>
+<li>один файл на ресурс, <strong>новый файл полностью заменяет старый</strong>;</li>
+<li>учитывается за несколько недель (<a href="https://support.google.com/webmasters/answer/2648487">Google</a>).</li>
+</ul>
+<pre><code># Файл отклонения для https://example.ru/ – собран заводом 17.11.2026, утвердил Артём 18.11.2026
+# Предыдущий файл от 02.10.2026 включён целиком (новый файл заменяет старый)
+
+# Казино-сетка: 412 ссылок с 38 доменов, появились 03–09.11.2026, анкоры «казино», «slot»
+domain:casino-top-777.xyz
+domain:best-slots-ru.top
+
+# Сеть на одном шаблоне, 120 ссылок, один IP
+domain:auto-katalog-24.icu
+
+# Нормальный форум, но одна страница со спам-комментарием – отклоняем только её
+https://forum.example.org/thread/123?page=4
+</code></pre>
+<p><strong>Риски:</strong></p>
+<ul>
+<li><strong>Отклонить хорошие ссылки</strong> – потерять их вес и позиции в Google. Справка прямо предупреждает, что неправильное использование может навредить.</li>
+<li><strong>Забыть прошлый файл</strong> – новый его заменит, и старые отклонения пропадут. Поэтому завод всегда сливает новый список с прошлым.</li>
+<li><strong>Отклонить анализаторы и мёртвых</strong> – бесполезная работа, Мюллер называет это тратой времени.</li>
+<li><strong>Ждать эффекта сразу</strong> – Google применяет файл, когда заново обходит ссылающиеся сайты, это недели.</li>
+</ul>
+<h2>В завод – станция «Ссылки» раз в неделю, без нейросети, около 16 часов</h2>
+<p><strong>Как устроить.</strong></p>
+<ul>
+<li><strong>Отдельная станция <code>ssylki</code></strong> (новые файлы <code>engine/ssylki.py</code> и <code>engine/st_ssylki.py</code>). «Сторож» (<code>engine/storozh.py</code>, 314 строк) не раздуваем: он про показы и позиции страниц. Ключи Вебмастера и Search Console берём те же, что у сторожа (<code>ZAVOD_YA_TOKEN</code>, <code>ZAVOD_GSC_SA</code> в <code>engine/st_storozh.py</code>).</li>
+<li><strong>Без нейросети.</strong> Все 9 признаков – правила кодом, ответ один и тот же при каждом запуске, денег не ест.</li>
+<li><strong>Расписание:</strong> понедельник 07:15 МСК, после сторожа (07:00). Обход доноров – не чаще 1 запроса в секунду, кэш страницы 30 дней.</li>
+<li><strong>Search Console:</strong> API ссылок нет. Раз в месяц ты или менеджер кладёте выгрузку CSV в ЛК сайта, станция её подхватывает.</li>
+</ul>
+<p><strong>Что видит владелец в отчёте недели:</strong></p>
+<ul>
+<li>график общего числа ссылок (Вебмастер) и плашка «всплеск», если он есть;</li>
+<li>новые доноры за неделю: сколько, из них «шум», «смотреть», «кандидат»;</li>
+<li>топ-10 кандидатов с причинами («анкор „казино“, язык – китайский, 40 ссылок за 3 дня»);</li>
+<li>кнопка «Собрать файл отклонения» – после «да» отдаёт <code>disavow.txt</code>, слитый с прошлым;</li>
+<li>напоминание: загрузить вручную в Search Console. API для загрузки у Google нет.</li>
+</ul>
+<p><strong>Оценка в часах:</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Часы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Снятие из Вебмастера: образцы с пагинацией, история, хранение в базе</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Приём CSV из Search Console</td>
+<td>1,5</td>
+</tr>
+<tr>
+<td>Обход доноров с лимитом и кэшем, признаки 1–9</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Баллы, решение, сборка <code>disavow.txt</code> со слиянием и комментариями</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Раздел в отчёте недели и расписание</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Тесты на подготовленных примерах</td>
+<td>2,5</td>
+</tr>
+<tr>
+<td>Прогон на двух живых сайтах и правка порогов</td>
+<td>1–2</td>
+</tr>
+<tr>
+<td><strong>Итого</strong></td>
+<td><strong>около 16</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Пороги (3× медианы, 50 ссылок, 100 исходящих) – допущения, их калибруем на первых двух сайтах.</p>
+<hr />
+<p><strong>Что раскрыть:</strong></p>
+<ol>
+<li>Как отличить атаку от обычного «засорения ботами» на живом примере – прогнать на одном нашем сайте вручную.</li>
+<li>Признак «один шаблон» – как считать отпечаток разметки и не ловить сайты на одной CMS.</li>
+<li>Исходящие ссылки с нашего сайта (взлом) – отдельная проверка рядом со «Сторожем».</li>
+<li>Нужен ли CheckTrust за 990 ₽ или хватит своего кода.</li>
+</ol></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
