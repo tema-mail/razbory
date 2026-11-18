@@ -1,0 +1,395 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>АвтоДилер: открытого API нет, а оферта запрещает выгружать данные скриптами – начинаем с «моста руками» за ≈ 12 000 ₽, переезд решаем через 2–3 месяца</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>АвтоДилер: открытого API нет, а оферта запрещает выгружать данные скриптами – начинаем с «моста руками» за ≈ 12 000 ₽, переезд решаем через 2–3 месяца</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод.</strong> У «АвтоДилер Онлайн» нет открытого API, и его оферта прямо запрещает автоматический сбор данных и выгрузку в сторонние программы – с неустойкой 1 млн ₽ и отключением. Поэтому интеграцию начинаем без выгрузки. CRM ведёт клиента до записи. Менеджер переносит в АвтоДилер клиента и машину, а обратно – номер заказ-наряда и сумму. Стоит ≈ 12 000 ₽, 2 дня (оценка). Параллельно ты пишешь в АвтоДилер и просишь API или письменное разрешение на выгрузку: с «да» добавляем сверку по Excel или API. Переписывать АвтоДилер ради экономии на подписке невыгодно: свой учёт ≈ 176–232 тыс. ₽ против ≈ 22 тыс. ₽ подписки в год. Переезд оправдан другим: одна система вместо двух и свои данные вместо чужой оферты. Решаем через 2–3 месяца работы CRM.</p>
+<p>Проверено по открытым источникам 18.11.2026: сайт autodealer.ru, справка online/help (180 страниц), оферта autodealer.ru/rules, страница входа online.autodealer.ru. В кабинет не входил, демо не заказывал, никому не писал. Цены и сроки – оценка, час = 1000 ₽, день = 8 часов.</p>
+<p><strong>Нужно от тебя</strong></p>
+<ul>
+<li>Буквы по 6 вопросам внизу. Совет: 1 – скажи, 2 – скажи, 3А, 4А, 5 – скажи, 6А.</li>
+<li>Отправить в АвтоДилер письмо из раздела 3 от ИП. Сам я им не пишу.</li>
+<li>Кто в АвтоДилере с ролью «Владелец». Выгружать клиентов может только он.</li>
+</ul>
+<p><img loading="lazy" alt="Схема обмена: клиент пишет в CRM, CRM главная до записи, АвтоДилер главный по заказ-нарядам и деньгам; А – руками в обе стороны, Б – Excel после разрешения, В – API, если дадут; красным – чего не делаем" src="shema.webp" /></p>
+<p><a href="shema.html">Открыть схему</a></p>
+<h2>1. Что это за программа: облако на 599 ₽ за место, все модули в подписке, своя CRM с чатами и телефонией</h2>
+<p><strong>Линейка (autodealer.ru, 18.11.2026):</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Продукт</th>
+<th>Что это</th>
+<th>Где данные</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>АвтоДилер Онлайн</strong></td>
+<td>облачная программа для СТО, вход online.autodealer.ru, на рынке с ≈ 2020 («5 лет АвтоДилер Онлайн» в истории за 2025)</td>
+<td>Яндекс Облако, ЦОД Владимир, Сасово, Калуга – РФ (<a href="https://autodealer.ru/online/help/infrastruktura/informatciia-dlia-podachi-uvedomleniia-v-roskomnadzor.html">справка «Инфраструктура»</a>)</td>
+</tr>
+<tr>
+<td>Настольная «Система АвтоДилер»</td>
+<td>старая Windows-программа, по базе знаний ещё поддерживается</td>
+<td>своя база <strong>Firebird 3.0</strong> на компьютере сервиса (<a href="https://autodealer.ru/support/knowledge-base">база знаний</a>: в загрузках Firebird 3.0, PDF «Соединение с базой данных», «Резервирование»)</td>
+</tr>
+<tr>
+<td>Приложения</td>
+<td>«АвтоДилер Онлайн» для сотрудников (iOS, Android, RuStore), «Звонки» (только Android: телефон как АТС), «АвтоМоби» для клиентов</td>
+<td>то же облако</td>
+</tr>
+</tbody>
+</table></div>
+<p>У TEYES, по ТЗ CRM от 21.10, – «АвтоДилер Онлайн», ≈ 598 клиентов. Это нужно подтвердить: вопрос 1.</p>
+<p><strong>Модули</strong> (<a href="https://autodealer.ru/">autodealer.ru</a>, <a href="https://autodealer.ru/online/help/">справка</a>): заказ-наряд с работами, товарами, платежами и печатью; запись на ремонт по постам и сетке плюс виджет онлайн-записи на сайт; CRM – канбан сделок, воронка, причины отказа; клиенты и машины с VIN и госномером; склад с приходом, остатками, инвентаризацией и проценкой; зарплата по схемам, табель; деньги и банковские выписки; касса (Атол, Штрих-М, Эвотор, СБП); отчёты; права и роли. Есть и то, что вам вряд ли нужно: каталоги запчастей, нормы времени, маркировка, ТехноВектор, ЭДО.</p>
+<p><strong>Цена</strong> (<a href="https://autodealer.ru/online#rates">autodealer.ru/online</a>, 18.11.2026): 599 ₽/мес за одно место, где место = один одновременно работающий пользователь. В таблице 2 995 ₽/мес за 5 мест и 5 990 ₽/мес за 10. Скидка до 30% при оплате за срок. CRM, интеграции, мобильные приложения и выгрузка в 1С входят в подписку. Отдельно платные: каталоги запчастей, нормы времени, автозаполнение по VIN или госномеру. Мессенджеры подключаются через сторонний <strong>Wazzup</strong>, у которого своя оплата за канал: ≈ 1 000–6 000 ₽/мес по обзорам toolfox и startpack, на официальном сайте цены в долларах – не проверено.</p>
+<p><strong>Что важно для нас:</strong> у АвтоДилера уже есть своя «первая линия». Это канбан сделок, чаты WhatsApp, Telegram, ВК и Авито через Wazzup, телефония (Mango, Новофон, МегаФон, Билайн, Телфин, UIS, Zadarma, приложение «Звонки») и справочник «Рекламные кампании» – их «откуда узнал». С нашей CRM это пересекается. Правило: одно окно – Chatwoot. Те же номера в чаты АвтоДилера не подключаем, иначе один клиент окажется в двух окнах.</p>
+<h2>2. Как с ним можно обмениваться: API нет, есть только ручные Excel и файлы, а оферта запрещает выгружать данные в сторонние программы</h2>
+<p><strong>Каждый способ – что даёт и откуда известно:</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Способ</th>
+<th>Что можно</th>
+<th>Направление</th>
+<th>Платно</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Открытый API</strong></td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td><strong>Нет.</strong> Ни в справке, ни на сайте, ни в обновлениях 2026 года API и вебхуков нет. Каталог crmindex отмечает «API для интеграции», но документации нет – не проверено</td>
+</tr>
+<tr>
+<td>Внутренний <code>/api</code> программы</td>
+<td>то, что видит сам интерфейс</td>
+<td>–</td>
+<td>–</td>
+<td>Есть: online.autodealer.ru/api отвечает 401 и требует входа. Это служебный API их веб-интерфейса, без документации. <strong>Не используем:</strong> оферта, п. 5.2.5 и 5.2.8</td>
+</tr>
+<tr>
+<td><strong>Excel: клиенты</strong></td>
+<td>ФИО, контакты (телефон, почта, Telegram), машины, свой идентификатор</td>
+<td>из АД и в АД</td>
+<td>входит</td>
+<td>Проверено по <a href="https://autodealer.ru/online/help/klienty/import-i-eksport-klientskoi-bazy.html">справке</a>: .xlsx до 15 МБ, экспорт <strong>только у роли «Владелец»</strong>, массовое обновление через экспорт и импорт по идентификатору</td>
+</tr>
+<tr>
+<td><strong>Excel: отчёт «Реестр заказ-нарядов»</strong></td>
+<td>дата начала и закрытия, номер, клиент, <strong>телефон</strong>, ответственный, состояние (в работе, выполнен, закрыт), марка, модель, год, госномер, <strong>VIN</strong>, сумма ЗН, работ и товаров, скидки, <strong>баланс</strong> (долг или переплата), прибыль</td>
+<td>из АД</td>
+<td>входит</td>
+<td>Проверено по <a href="https://autodealer.ru/online/help/otchety-monitor-i-grafiki/otchety/otchety.-servis.html">справке «Отчёты. Сервис»</a>: любой отчёт выгружается в Excel кнопкой. Только руками, расписания нет</td>
+</tr>
+<tr>
+<td>Excel: отчёт «Рекламные кампании»</td>
+<td>по каждому источнику: клиенты, число документов, сумма, прибыль</td>
+<td>из АД</td>
+<td>входит</td>
+<td>Проверено (<a href="https://autodealer.ru/online/help/otchety-monitor-i-grafiki/otchety/otchety.-drugoe.html">«Отчёты. Другое»</a>). Поле «Рекламная кампания» в заказ-наряде <strong>обязательное</strong></td>
+</tr>
+<tr>
+<td>Excel: импорт работ, номенклатуры, прихода (xlsx, csv, xml)</td>
+<td>справочники и приход товара</td>
+<td>в АД</td>
+<td>входит</td>
+<td>Проверено (справка: «Импорт и экспорт работ», «Прихода товаров из CSV/XML»)</td>
+</tr>
+<tr>
+<td>Файл в 1С:Бухгалтерию 3.0</td>
+<td>документы с НДС, формат EnterpriseData 1.20 (1.6 – до 01.01.2027)</td>
+<td>из АД в 1С</td>
+<td>входит</td>
+<td>Проверено (<a href="https://autodealer.ru/online/updates">обновления</a> 05.02, 29.09, 09.11.2026). Файл, а не онлайн-обмен</td>
+</tr>
+<tr>
+<td><strong>Виджет онлайн-записи на сайт</strong></td>
+<td>клиент выбирает дату; заявка падает в их CRM в «Неразобранное» и/или на почту</td>
+<td>сайт → АД</td>
+<td>входит</td>
+<td>Проверено (<a href="https://autodealer.ru/online/help/zapis-na-remont/onlain-zapis-na-remont.html">справка</a>). Адрес приёма заявок не описан, вклиниваться в него не будем</td>
+</tr>
+<tr>
+<td>Телефония через оператора</td>
+<td>журнал звонков, всплывающая карточка, запись разговора</td>
+<td>оператор → АД</td>
+<td>у оператора</td>
+<td>Проверено: например, Mango шлёт события на <code>online.autodealer.ru/calls/mango/online</code>. <strong>Догадка:</strong> если оператор умеет слать события двум получателям, звонки попадут и в нашу CRM без участия АД. Проверить у оператора</td>
+</tr>
+<tr>
+<td>Wazzup (чаты)</td>
+<td>переписка в окне АД</td>
+<td>мессенджер → АД</td>
+<td>Wazzup отдельно</td>
+<td>Проверено (<a href="https://autodealer.ru/online/help/integratcii/chaty/index.html">справка «Чаты»</a>). Нам не нужен: чаты у нас в Chatwoot</td>
+</tr>
+<tr>
+<td>Прямой доступ к базе</td>
+<td>всё</td>
+<td>из базы</td>
+<td>–</td>
+<td>Только у настольной версии (Firebird, файл на компьютере): технически читается SQL-ом. В облаке доступа к базе нет. Оферта, п. 5.2.13, касается и этого</td>
+</tr>
+<tr>
+<td>Робот, который входит в кабинет и скачивает</td>
+<td>всё, что видно</td>
+<td>из АД</td>
+<td>–</td>
+<td>Технически возможен. <strong>Запрещено</strong> офертой, п. 5.2.12: «автоматизированный сбор информации… скриптами, ботами»</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Оферта – главное ограничение</strong> (<a href="https://autodealer.ru/rules">autodealer.ru/rules</a>, действующая редакция, прочитана 18.11.2026):</p>
+<ul>
+<li><strong>5.2.13</strong> – Лицензиат не вправе «экспортировать данные Программы, в том числе загруженные самим Лицензиатом, в сторонние ПО».</li>
+<li><strong>5.2.12</strong> – не вправе «осуществлять автоматизированный сбор информации и её систематизацию с использованием скриптов, ботов и иных способов».</li>
+<li><strong>5.2.8</strong> – не вправе «объединять или интегрировать с другим программным… обеспечением, если иное не предусмотрено договором».</li>
+<li><strong>3.2.7</strong> – Лицензиар вправе «ограничить возможность экспорта информации, в том числе данных Лицензиата».</li>
+<li><strong>12.6</strong> – нарушение п. 5.2–5.4 – основание для прекращения договора и/или ограничения доступа «с предъявлением… штрафной неустойки в размере 1 000 000 рублей».</li>
+<li><strong>13.13</strong> – договор меняется в одностороннем порядке без уведомления.</li>
+<li>В редакции от 07.12.2023 (<a href="http://web.archive.org/web/20231207173303/https://autodealer.ru/rules">веб-архив</a>) пунктов про экспорт, скрипты и 1 млн не было, был только п. 5.2.8. Запреты добавили позже.</li>
+</ul>
+<p>Это не юридическое заключение. TEYES – оператор персональных данных своих клиентов по 152-ФЗ, АвтоДилер их только хранит. Как это сочетается с запретом выгружать собственные данные – вопрос юристу. До ответа юриста или письменного «да» АвтоДилера считаем выгрузку в CRM запрещённой.</p>
+<p><strong>Ответ на старый вопрос из ТЗ 21.10 «есть ли телефон в выгрузке»:</strong> да – и в выгрузке клиентов, и в «Реестре заказ-нарядов». Препятствие не техническое, а договорное.</p>
+<h2>3. План интеграции: сейчас мост руками, после «да» АвтоДилера – Excel или API</h2>
+<p><strong>Кто главный по каким данным (до переезда):</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Данные</th>
+<th>Главный источник</th>
+<th>Почему</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Обращение, переписка, канал, «откуда узнал», стадия до «записан», менеджер</td>
+<td><strong>CRM</strong></td>
+<td>здесь клиент появляется, здесь его ведут</td>
+</tr>
+<tr>
+<td>Клиент, машина, VIN, запись на пост, заказ-наряд, оплата, склад, зарплата, касса, 1С</td>
+<td><strong>АвтоДилер</strong></td>
+<td>здесь мастера и деньги, ломать работу сервиса не будем</td>
+</tr>
+<tr>
+<td>Связь между ними</td>
+<td>телефон в виде +7XXXXXXXXXX + номер заказ-наряда</td>
+<td>телефон есть в обеих системах, номер ЗН однозначен</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Варианты:</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>А – мост руками (совет сейчас)</th>
+<th>Б – Excel раз в неделю</th>
+<th>В – официальный API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Как</td>
+<td>При «Записан» CRM даёт кнопку «Скопировать для АвтоДилера» (ФИО, телефон, машина, VIN, причина, рекламная кампания). Менеджер вставляет это в запись АД. При «Приехал/Оплатил» менеджер вносит в CRM номер ЗН и сумму из АД</td>
+<td>Владелец раз в неделю выгружает «Реестр заказ-нарядов» в Excel и загружает его на страницу CRM. Мост сопоставляет по телефону, ставит «Приехал/Оплатил» и сумму, показывает расхождения. Файл удаляется сразу после разбора</td>
+<td>Если АвтоДилер даст доступ: при «Записан» CRM создаёт клиента и запись в АД, из АД возвращаются статус ЗН и оплата</td>
+</tr>
+<tr>
+<td>Что ходит</td>
+<td>CRM → АД: клиент, машина, причина. АД → CRM: № ЗН, сумма, дата приезда</td>
+<td>АД → CRM: телефон, VIN, № ЗН, сумма, баланс, состояние</td>
+<td>в обе стороны</td>
+</tr>
+<tr>
+<td>Частота</td>
+<td>каждый клиент, 30–60 секунд работы менеджера</td>
+<td>раз в неделю, 5 минут у Владельца</td>
+<td>сразу</td>
+</tr>
+<tr>
+<td>Деньги по источникам</td>
+<td>справочник «Рекламные кампании» в АД = наш список «откуда узнал». Их отчёт за месяц сверяем с нашей аналитикой по итогам, без выгрузки людей</td>
+<td>автоматически по телефону</td>
+<td>автоматически</td>
+</tr>
+<tr>
+<td>Защита от ошибок</td>
+<td>контролёр: «Приехал» без номера ЗН, сумма 0, ЗН повторяется у двух клиентов</td>
+<td>расхождения показываются списком</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Условие</td>
+<td>никаких</td>
+<td><strong>письменное разрешение АД</strong> (п. 5.2.13). Выгрузка только руками, без робота (п. 5.2.12)</td>
+<td>документация и цена API от АД</td>
+</tr>
+<tr>
+<td>Срок и цена (оценка)</td>
+<td>≈ 12 ч ≈ <strong>12 000 ₽, 2 дня</strong>: поля и кнопка 5 ч, контролёр 3 ч, месячная сверка 3 ч, тесты 1 ч</td>
+<td><strong>+16–20 000 ₽, 2–3 дня</strong> поверх А</td>
+<td><strong>40–60 000 ₽, 1–1,5 недели</strong> после документации; цена доступа у АД неизвестна</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Риски и как закрываем:</strong></p>
+<ul>
+<li><strong>Дубли клиентов.</strong> В АД есть «Объединение дубликатов» (необратимо). В CRM контакт ищется по телефону. Менеджер в АД сначала ищет по телефону, потом создаёт клиента – правило в регламенте.</li>
+<li><strong>Разные телефоны</strong> (8 и +7, пробелы, второй номер). Мост приводит всё к +7XXXXXXXXXX. Второй номер клиента в АД – «Ассоциировать с клиентом».</li>
+<li><strong>Ошибка менеджера в сумме.</strong> Раз в месяц сравниваем итог «Оплатил» в CRM с отчётом АД «Рекламные кампании». Расхождение больше 5% – разбор по номерам ЗН.</li>
+<li><strong>152-ФЗ.</strong> АД – Яндекс Облако в РФ, CRM – FirstVDS в Москве. Excel с клиентами (вариант Б) хранится только на сервере CRM в РФ и удаляется после разбора. Через claude-vps (Нидерланды) и через мак данные клиентов не идут.</li>
+<li><strong>Оферта.</strong> В варианте А из АД не выгружается ничего, кроме того, что менеджер видит глазами. Б и В – только с письменным «да».</li>
+</ul>
+<p><strong>Письмо в АвтоДилер (отправляешь ты от ИП, через <a href="https://autodealer.ru/support">поддержку</a>):</strong></p>
+<blockquote>
+<p>Здравствуйте. Мы пользуемся АвтоДилер Онлайн (аккаунт &lt;…&gt;). Хотим связать программу с нашей CRM обращений, чтобы видеть, какие обращения дошли до заказ-наряда и оплаты. Подскажите, пожалуйста: 1) есть ли у вас API для партнёров или клиентов и сколько стоит доступ; 2) можно ли с вашего письменного согласия раз в неделю выгружать в Excel отчёт «Реестр заказ-нарядов» и загружать его в нашу CRM – с учётом п. 5.2.12–5.2.13 оферты; 3) в каком порядке мы можем выгрузить всю свою базу клиентов и историю заказ-нарядов, если когда-нибудь перестанем пользоваться программой. Спасибо.</p>
+</blockquote>
+<h2>4. Переезд: переписать стоит 5 частей, кассу и 1С лучше не трогать; ≈ 176–232 тыс. ₽ и 2,5 месяца с параллельной работой</h2>
+<p><strong>Зачем переезжать, если подписка ≈ 22 тыс. ₽ в год.</strong> Оценка: 3 места × 599 ₽ × 12. Окупить свой учёт за 176–232 тыс. ₽ экономией на подписке не получится – это 8–10 лет. Переезд оправдывают три вещи. Одна система вместо двух. Деньги в аналитике без ручного переноса. Свои данные вместо оферты, по которой их нельзя выгрузить и которую меняют без уведомления. Если АД даст API, переезд, возможно, не нужен вообще.</p>
+<p><strong>Что переписывать, по порядку</strong> – для сервиса типа TEYES: установка магнитол и сигнализаций, русификация, без кузовного и запчастей:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Часть</th>
+<th>Что внутри</th>
+<th>Часы (оценка)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Клиенты и машины</td>
+<td>карточка с телефонами, машины (марка, модель, год, VIN, госномер), история</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Запись на посты</td>
+<td>сетка постов и мастеров, запись из CRM в один клик, напоминание клиенту</td>
+<td>32</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Заказ-наряд</td>
+<td>работы и товары из прайса, статусы, мастер, печать ЗН и акта, гарантия</td>
+<td>56</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Оплаты и деньги</td>
+<td>оплата наличными, картой, по СБП, долг и переплата, отчёт денег</td>
+<td>24</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Склад (если ведёте)</td>
+<td>приход магнитол, рамок и проводки, списание в ЗН, остатки, инвентаризация</td>
+<td>40</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Зарплата мастеров (если считаете в АД)</td>
+<td>процент от работ, отчёт за месяц</td>
+<td>16</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Перенос данных</td>
+<td>клиенты, машины, история ЗН из Excel-выгрузок</td>
+<td>16</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Роли, тесты, обучение, сопровождение параллельной работы</td>
+<td></td>
+<td>24</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Итого</strong></td>
+<td>без склада и зарплаты – 176 ч ≈ <strong>176 000 ₽</strong>; всё – 232 ч ≈ <strong>232 000 ₽</strong></td>
+<td>≈ 22–29 рабочих дней</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Что не переписываем:</strong></p>
+<ul>
+<li><strong>Касса и чеки (54-ФЗ).</strong> Если сейчас чек пробивает АД через свой кассовый модуль, после переезда касса работает сама по себе или через облачную кассу с API. Отдельная задача ≈ 16–24 ч (оценка) – риск выше всего, поэтому последней.</li>
+<li><strong>1С.</strong> Бухгалтеру – реестр документов в Excel. Свой файл EnterpriseData – только если бухгалтер без него не может, ≈ 24 ч.</li>
+<li>Каталоги запчастей, нормы времени, проценка, маркировка, ЭДО, ТехноВектор – не нужны.</li>
+</ul>
+<p><strong>Перенос данных.</strong> Клиенты и машины – встроенный экспорт клиентов (xlsx, роль «Владелец»). История – «Реестр заказ-нарядов» и отчёт «Выполненные работы» (номер ЗН, госномер, марка, работа, сумма) за всё время. Условие до старта – письменный порядок выгрузки от АД (вопрос 3 в письме) и слово юриста: п. 5.2.13 буквально запрещает и это.</p>
+<p><strong>Параллельная работа и когда выключать АвтоДилер:</strong></p>
+<ol>
+<li>Пилот 2 недели: один мастер или пост в новой системе, остальные в АД.</li>
+<li>Все новые заказ-наряды – в новой системе. АД остаётся для истории и кассы, оплаты 2 недели вносятся в обе системы для сверки.</li>
+<li>Выключаем АД, когда выполнено всё:
+   - 4 недели подряд все ЗН ведутся только в новой системе;
+   - сумма оплат за неделю сходится с кассой (ОФД) до рубля;
+   - остатки склада сходятся после инвентаризации;
+   - зарплата мастеров за месяц посчитана новой системой, мастера согласны;
+   - полная выгрузка АД (клиенты, ЗН, работы) лежит в архиве на сервере в РФ;
+   - бухгалтер получил всё нужное для 1С.</li>
+</ol>
+<p><strong>Сроки (оценка):</strong> разработка ≈ 5–6 недель, пилот и параллельная работа ≈ 4 недели, всего ≈ 2,5 месяца. Старт – после 2–3 месяцев живой CRM и ответа АвтоДилера.</p>
+<h2>5. Вопросы: версия, роли, письмо, модули, что делаем сейчас</h2>
+<ol>
+<li><strong>Какая у вас версия?</strong> А – АвтоДилер Онлайн: вход через браузер на online.autodealer.ru. Б – настольная: программа на Windows, база на компьютере. В – не знаю: пришли скрин экрана входа. Всё – 0 ₽. От этого зависит, возможен ли доступ к базе.</li>
+<li><strong>Сколько мест и кто «Владелец»?</strong> Назови число одновременно работающих (1, 3, 5) и того, у кого роль «Владелец»: А – ты, Б – управляющий или администратор (кто), В – не знаю. 0 ₽.</li>
+<li><strong>Пишем в АвтоДилер?</strong> А – да, ты отправляешь письмо из раздела 3 (0 ₽, текст готов). Б – нет, остаёмся на мосте руками. В – не пишем и сразу готовим переезд. Совет – А: ответ решит и интеграцию, и выгрузку при уходе.</li>
+<li><strong>Интеграция сейчас.</strong> А – мост руками (≈ 12 000 ₽, 2 дня). Б – мост плюс Excel-сверка, только после «да» АД (≈ 28–32 000 ₽, 4–5 дней). В – ждём ответа АД и ничего не делаем (0 ₽, деньги в аналитике менеджер вводит при «Оплатил», как решено 17.11). Совет – А.</li>
+<li><strong>Какие модули АД у вас живые?</strong> А – клиенты, запись, заказ-наряды с оплатой (переезд ≈ 176 000 ₽). Б – плюс склад и зарплата (≈ 232 000 ₽). В – плюс касса с чеками через АД, их CRM и чаты Wazzup, телефония (≈ 232 000 ₽ + касса 16–24 000 ₽). Скажи, что из этого реально пользуют.</li>
+<li><strong>Переезд.</strong> А – решаем через 2–3 месяца работы CRM и после ответа АД (0 ₽ сейчас). Б – проектируем сейчас: карта экранов и данных ≈ 16 000 ₽, 2 дня. В – не переезжаем: АД остаётся для ЗН, склада и кассы, CRM – для обращений. Совет – А.</li>
+</ol>
+<p><strong>Что раскрыть:</strong> 1 – оферта и что юристу спросить; 2 – как выглядит кнопка «Скопировать для АвтоДилера» и контролёр; 3 – переезд по экранам (заказ-наряд, сетка постов); 4 – звонки в обе системы через оператора.</p>
+<p>Источники (все открыты 18.11.2026): <a href="https://autodealer.ru/">autodealer.ru</a> · <a href="https://autodealer.ru/online#rates">тарифы</a> · <a href="https://autodealer.ru/online/crm">CRM</a> · <a href="https://autodealer.ru/online/help/">справка</a> · <a href="https://autodealer.ru/online/updates">обновления</a> · <a href="https://autodealer.ru/rules">оферта</a> · <a href="http://web.archive.org/web/20231207173303/https://autodealer.ru/rules">оферта в 2023</a> · <a href="https://autodealer.ru/support/knowledge-base">база знаний настольной версии</a> · <a href="https://crmindex.ru/products/autodealer">crmindex</a> · Wazzup: <a href="https://toolfox.ru/services/s/wazzup">toolfox</a>, <a href="https://startpack.ru/application/wazzup">startpack</a>.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
