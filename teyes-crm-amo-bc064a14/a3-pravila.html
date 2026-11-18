@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Правила на этапах – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab" href="#">Диалоги<span class="n">5</span></a>
+  <a class="tab" href="#">Сделки</a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab on" href="#">Настройки</a>
+  <span class="me"><b>Артём</b> · главный</span>
+</nav>
+<main>
+  <p class="demo-note">Макет. Приём из amoCRM «цифровая воронка»: под каждым этапом – что система делает сама. У нас это правила без конструктора ботов: 6–8 штук, включаются галочкой, тексты сообщений – из шаблонов. Меняет только главный.</p>
+
+  <div class="tools">
+    <h1>Правила на этапах<small>воронка TEYES · включено 12 правил из 14 · сработали сегодня 37 раз</small></h1>
+    <span class="sel">Воронка TEYES</span>
+    <button class="btn">Журнал срабатываний</button>
+    <button class="btn acc">Сохранить</button>
+  </div>
+
+  <div class="legend">
+    <span><span class="src src--box">Chatwoot сам</span> правило его автоматизации</span>
+    <span><span class="src src--code">наш код</span> контролёр или мост</span>
+    <span><span class="tk tk--later">выключено</span> правило есть, но не работает</span>
+  </div>
+
+  <div class="kb kb--rules">
+    <section class="kb__col"><h2>Новый</h2><p>клиент написал или позвонил</p>
+      <article class="rule"><span class="rule__when">сразу при создании</span><b>Отдать менеджеру по кругу</b><small>среди тех, кто на смене и у кого канал ●; повторного – прежнему</small><span class="src src--box">Chatwoot сам</span></article>
+      <article class="rule"><span class="rule__when">нет ответа 5 мин</span><b>Тревога главному в Telegram</b><small>в рабочее время, с именем клиента и каналом</small><span class="src src--code">наш код</span></article>
+      <article class="rule rule--off"><span class="rule__when">вне часов</span><b>Автоответ «ответим утром в 11:00»</b><small>сейчас стоит на канале, тут – выключено, чтобы не было двух</small><span class="src src--box">Chatwoot сам</span></article>
+    </section>
+
+    <section class="kb__col"><h2>Узнали машину</h2><p>марка, модель, год</p>
+      <article class="rule"><span class="rule__when">при переходе</span><b>Задача «Назвать цену» на 2 часа</b><small>ответственный – текущий менеджер</small><span class="src src--code">наш код</span></article>
+      <article class="rule"><span class="rule__when">обязательно</span><b>Марка, модель, год</b><small>без них этап не сменить</small><span class="src src--code">наш код</span></article>
+    </section>
+
+    <section class="kb__col"><h2>Назвали цену</h2><p>дожать до записи</p>
+      <article class="rule"><span class="rule__when">обязательно</span><b>Сумма</b><small>иначе этап не сменить</small><span class="src src--code">наш код</span></article>
+      <article class="rule"><span class="rule__when">при переходе</span><b>Предложить задачу «Перезвонить»</b><small>менеджер выбирает: сегодня 17:00 / завтра 11:00 / своя дата</small><span class="src src--code">наш код</span></article>
+      <article class="rule"><span class="rule__when">клиент молчит 2 дня</span><b>Задача «Напомнить о себе» + черновик</b><small>шаблон «Держу для вас окно в субботу…»; отправляет человек</small><span class="src src--code">наш код</span></article>
+    </section>
+
+    <section class="kb__col"><h2>Записан</h2><p>дата и время в карточке</p>
+      <article class="rule"><span class="rule__when">при переходе</span><b>Сообщение с адресом и схемой проезда</b><small>в тот канал, где клиент писал; шаблон «Адрес TEYES» или «Адрес EV»</small><span class="src src--code">наш код</span></article>
+      <article class="rule"><span class="rule__when">за 1 день до записи, 12:00</span><b>Напоминание клиенту</b><small>«Ждём завтра в 10:00, ехать около 3 часов»</small><span class="src src--code">наш код</span></article>
+      <article class="rule"><span class="rule__when">не приехал +1 час</span><b>Задача «Позвонить, перенести»</b><small>мастер ставит «Не приехал» в записях</small><span class="src src--code">наш код</span></article>
+    </section>
+
+    <section class="kb__col"><h2>Приехал</h2><p>машина у мастера</p>
+      <article class="rule rule--off"><span class="rule__when">при переходе</span><b>Фото работ в чат клиенту</b><small>включим, когда мастера начнут снимать в CRM</small><span class="src src--code">наш код</span></article>
+    </section>
+
+    <section class="kb__col"><h2>Оплатил</h2><p>сумма оплаты обязательна</p>
+      <article class="rule"><span class="rule__when">через 3 дня</span><b>Просьба об отзыве</b><small>ссылка на Яндекс Карты или 2ГИС – по источнику клиента</small><span class="src src--code">наш код</span></article>
+      <article class="rule rule--add">＋ правило</article>
+    </section>
+
+    <section class="kb__col"><h2>Отказ</h2><p>сделка закрыта</p>
+      <article class="rule"><span class="rule__when">обязательно</span><b>Причина из списка</b><small>дорого · купил сам · у другого сервиса · не подходит под машину · пропал · спам</small><span class="src src--code">наш код</span></article>
+      <article class="rule rule--add">＋ правило</article>
+    </section>
+  </div>
+
+  <section class="card card--note">
+    <div class="card__h"><h2>Что не берём из amoCRM на этом экране</h2></div>
+    <ul>
+      <li><b>Конструктор чат-ботов с ветками</b> – на 2–3 менеджера его некому вести, а сломанный бот молча теряет клиентов.</li>
+      <li><b>Автоматическую смену этапа</b> – этап двигает человек; правило только ставит задачу или шлёт шаблон.</li>
+      <li><b>Сообщения клиенту без человека</b>, кроме напоминания о записи и адреса: всё остальное – черновик, который отправляет менеджер.</li>
+    </ul>
+  </section>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги<em>5</em></a><a href="#"><i>◈</i>Сделки</a><a href="#"><i>▣</i>Записи</a><a href="#"><i>▥</i>Цифры</a><a class="on" href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>amoCRM: берём 8 приёмов обработки лидов, копию не делаем – своя CRM за первый год стоит столько же, дальше в 15 раз дешевле</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>amoCRM: берём 8 приёмов обработки лидов, копию не делаем – своя CRM за первый год стоит столько же, дальше в 15 раз дешевле</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод.</strong> Удобство amoCRM держится не на дизайне, а на трёх привычках, которые она навязывает менеджеру: у каждой сделки есть следующий шаг (нет задачи – карточка горит оранжевым), всё про клиента лежит в одной ленте справа от полей, а новые обращения сначала падают в «Неразобранное», где их принимают, склеивают с прежним клиентом или выкидывают. Эти приёмы и ещё пять переносим в нашу CRM на Chatwoot: 4 – в этап 1 (+ ≈ 22 000 ₽, ≈ 3 дня), остальные – в свой экран этапа 2 (+ ≈ 44 000 ₽, ≈ 5,5 дня). Копию amoCRM с их видом и названиями не делаем. Перейти на саму amoCRM с Wazzup для WhatsApp и Max – около 16 000 ₽ в месяц на 3 менеджеров плюс внедрение, своя – около 900 ₽ в месяц за сервер после разработки (все суммы – оценка, час = 1000 ₽, цены сняты 18.11.2026).</p>
+<p>Что сделал: прочитал тарифы и 40 статей справки amoCRM, тарифы Wazzup, отзывы и разборы 2024–2026 годов, сверил с нашими 6 вариантами экрана и логикой ролей. В кабинет не входил, пробный аккаунт не заводил. Видео-обзоры не смотрел – справка закрыла все вопросы, видео только повторило бы её.</p>
+<p><strong>Нужно от тебя</strong></p>
+<ul>
+<li>Буквы по 3 вопросам внизу. Совет: 1А 2Б 3А.</li>
+<li>Если хочешь сам «пощупать» amoCRM – скажи, заведу пробный аккаунт на 14 дней (вопрос 3В).</li>
+</ul>
+<h2>1. Удобство amoCRM – это следующий шаг, одна лента и разбор входящих, а не набор функций</h2>
+<h3>Что делает её удобной для обработки лидов</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Приём</th>
+<th>Как устроен у amoCRM</th>
+<th>Источник</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Следующий шаг у каждой сделки</strong></td>
+<td>На карточке в воронке кружок: оранжевый – в сделке нет задач, красный с числом – задача просрочена на столько дней, зелёный – задача на сегодня. Сверху полоса «без задач / просрочено / на сегодня», нажатие фильтрует сделки. Кнопка активности в карточке сама пишет, что задач нет</td>
+<td><a href="https://www.amocrm.ru/support/tasks/tasks_in_leads/">задачи в сделках</a>, <a href="https://www.amocrm.ru/support/leads/button_activity/">кнопка активности</a></td>
+</tr>
+<tr>
+<td><strong>Карточка сделки: поля слева, лента справа</strong></td>
+<td>Слева поля сделки, контакта и компании, справа «фид событий» – переписка, звонки, примечания, задачи, смены этапов. Ширину частей можно тянуть</td>
+<td><a href="https://www.amocrm.ru/support/starting_work/cards/">карточка и поля</a></td>
+</tr>
+<tr>
+<td><strong>Несколько бесед в одной карточке</strong></td>
+<td>Если клиент пишет в разные мессенджеры, сверху «плашки бесед»: канал, время, превью, переход к нужному диалогу</td>
+<td><a href="https://www.amocrm.ru/support/leads/multichats/">множественные беседы</a></td>
+</tr>
+<tr>
+<td><strong>Неразобранное</strong></td>
+<td>Новое обращение из чата, формы или звонка с незнакомого номера – ещё не сделка. Кнопки «Принять» (создать сделку), «Привязать» (к существующей), «Отклонить». В анализе продаж – среднее время разбора и сколько заявок стали сделками</td>
+<td><a href="https://www.amocrm.ru/support/starting_work/chats/">чаты</a>, <a href="https://www.amocrm.ru/support/incoming_leads/caller_in_unsorted/">звонки в неразобранном</a>, <a href="https://www.amocrm.ru/support/incoming_leads/analysis_of_unsorted/">аналитика неразобранного</a></td>
+</tr>
+<tr>
+<td><strong>Контроль дублей</strong></td>
+<td>Ищет повтор по телефону, почте, пикселю сайта; для чатов – сразу. До 3 дублей – обновить сделку или создать новую, после склейки может поставить задачу. Отдельно – «Поиск дублей» с кнопками «Объединить / Не дубль»</td>
+<td><a href="https://www.amocrm.ru/support/incoming_leads/kontrol-dublej/">контроль дублей</a>, <a href="https://www.amocrm.ru/support/leads/merge_duplicate_leads/">объединение сделок</a></td>
+</tr>
+<tr>
+<td><strong>Цифровая воронка</strong></td>
+<td>Под каждым этапом – действия без менеджера: поставить задачу, отправить письмо или сообщение, запустить бота, сменить этап, поставить метку. Запуск – при входе в этап, по времени, по сообщению или звонку клиента, с задержкой от 1 минуты до 999 дней</td>
+<td><a href="https://www.amocrm.ru/support/starting_work/digital_pipeline/">цифровая воронка</a>, <a href="https://www.amocrm.ru/support/digitalpipeline/trigger_conditions/">условия запуска</a>, <a href="https://www.amocrm.ru/support/digitalpipeline/task_creation_trigger/">задача по этапу</a></td>
+</tr>
+<tr>
+<td><strong>Salesbot</strong></td>
+<td>Конструктор сценариев: сообщение, условие, проверка ответа, ожидание, действие в сделке, webhook. Есть распределение по кругу – 2–100 шагов</td>
+<td><a href="https://www.amocrm.ru/support/digitalpipeline/salesbot/">Salesbot</a>, <a href="https://www.amocrm.ru/support/digitalpipeline/round-robin/">распределение</a></td>
+</tr>
+<tr>
+<td><strong>Единое окно чатов (imBox)</strong></td>
+<td>Все беседы в одном разделе, статусы «Требует ответа / Не требует ответа / Закрытые», из чата меняется этап и метки</td>
+<td><a href="https://www.amocrm.ru/support/communications/imbox/">imBox</a></td>
+</tr>
+<tr>
+<td><strong>Шаблоны ответов</strong></td>
+<td>«/» в чате – шаблон с подстановкой полей сделки, до 13 кнопок для клиента</td>
+<td><a href="https://www.amocrm.ru/support/communications/templates_chats/">шаблоны</a></td>
+</tr>
+<tr>
+<td><strong>Обязательные поля по этапу и причина отказа</strong></td>
+<td>Поле обязательно на нужном этапе (тариф «Расширенный» и выше), у закрытой неуспешной сделки – причина отказа из списка</td>
+<td><a href="https://www.amocrm.ru/buy/">тарифы</a>, <a href="https://www.amocrm.ru/developers/content/crm_platform/leads-api">API: причина отказа</a></td>
+</tr>
+<tr>
+<td><strong>Источник и метки ссылки</strong></td>
+<td>В карточке вкладка «Статистика»: источник, UTM, данные с сайта, по ним фильтр и отчёты</td>
+<td><a href="https://www.amocrm.ru/support/leads/istochniki-sdelok/">источники</a>, <a href="https://www.amocrm.ru/support/leads/section-statistics/">статистика</a></td>
+</tr>
+<tr>
+<td><strong>Телефония</strong></td>
+<td>200+ провайдеров через виджеты: всплывающая карточка, запись в карточке (хранит провайдер), пропущенный – в «Неразобранное»</td>
+<td><a href="https://www.amocrm.ru/support/starting_work/phones/">телефония</a></td>
+</tr>
+<tr>
+<td><strong>Аналитика</strong></td>
+<td>Анализ продаж – переходы и конверсия между этапами, время на этапе, прогноз; сводный отчёт; отчёт по сотрудникам (успешность = успешные / в работе); звонки; цели и план продаж</td>
+<td><a href="https://www.amocrm.ru/support/analytics/sales_analysis/">анализ продаж</a>, <a href="https://www.amocrm.ru/support/analytics/employee_report/">по сотрудникам</a>, <a href="https://www.amocrm.ru/support/analytics/consolidated_report/">сводный</a>, <a href="https://www.amocrm.ru/support/analytics/objectives/">цели</a></td>
+</tr>
+<tr>
+<td><strong>Права</strong></td>
+<td>По каждому действию: «Разрешено / Для группы / Если ответственный / Запрещено», отдельно права на «Неразобранное» и на этапы, роли</td>
+<td><a href="https://www.amocrm.ru/support/user/setting_right_users/">права</a>, <a href="https://www.amocrm.ru/support/starting_work/users/">пользователи</a></td>
+</tr>
+<tr>
+<td><strong>Мобильное приложение</strong></td>
+<td>Нижняя панель с вкладкой «Входящие», запуск и остановка ботов из карточки. Нет офлайна и приложения для планшета</td>
+<td><a href="https://www.amocrm.ru/support/mobile_apps/mobile_app/">приложение</a></td>
+</tr>
+<tr>
+<td><strong>ИИ</strong></td>
+<td>«Сделки, требующие внимания» – модель сама находит выпавшие из процесса; ИИ-агент отвечает в чатах, только на «Профессиональном», ключ OpenAI или YandexGPT свой</td>
+<td><a href="https://www.amocrm.ru/support/amma-ai/require-attention/">требующие внимания</a>, <a href="https://www.amocrm.ru/support/amoai/ai_agent/">ИИ-агент</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3>Тарифы на 18.11.2026 (за пользователя в месяц, <a href="https://www.amocrm.ru/buy/">amocrm.ru/buy</a>)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Тариф</th>
+<th>Цена</th>
+<th>Что важно для нас</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Базовый</td>
+<td>599 ₽</td>
+<td>воронка, задачи, чаты, imBox, шаблоны, контроль дублей. <strong>Нет</strong> Salesbot, обязательных полей по этапу, правил на этапах, статистики звонков</td>
+</tr>
+<tr>
+<td>Расширенный</td>
+<td>1 299 ₽</td>
+<td>всё нужное для обработки лидов: Salesbot, правила на этапах, обязательные поля, автосклейка неразобранного, статистика звонков, цели</td>
+</tr>
+<tr>
+<td>Профессиональный</td>
+<td>1 799 ₽</td>
+<td>плюс скоринг, поиск по беседам, ИИ-ответы и ИИ-агент (токены – пакетами, 999 ₽ за 100 000)</td>
+</tr>
+<tr>
+<td>«Микро-бизнес»</td>
+<td>8 999 ₽ в год на 2 пользователей</td>
+<td>функции Базового</td>
+</tr>
+</tbody>
+</table></div>
+<p>Цены растут: в разборе на vc.ru «Расширенный» после повышения в сентябре 2025 стоил 1 199 ₽ (<a href="https://vc.ru/services/2762746-amocrm-2026-vysokaya-tsena-voronki-prodazh">vc.ru, 2026</a>), сейчас на сайте 1 299 ₽. Серверы amoCRM – в России (<a href="https://www.amocrm.ru/security/">amocrm.ru/security</a>), так что «данные в РФ» – не наш довод против неё.</p>
+<h2>2. Берём 8 приёмов: 4 в этап 1 на Chatwoot как есть, 4 в свой экран этапа 2</h2>
+<h3>Макет 1. Карточка сделки: поля слева, лента справа, следующий шаг сверху</h3>
+<p><img loading="lazy" alt="Карточка сделки на 1440" src="a1-sdelka-1440.webp" /></p>
+<p><img loading="lazy" src="a1-sdelka-390.webp" width="260" alt="Карточка сделки на телефоне"></p>
+<p><a href="a1-sdelka.html">Открыть живой макет</a></p>
+<ul>
+<li><strong>Сверху – следующий шаг.</strong> Нет задачи – оранжевая плашка и три готовые кнопки: «Перезвонить сегодня 17:00», «Написать завтра 11:00», «Своя дата». Одним нажатием, без формы задачи.</li>
+<li><strong>Лента одна на все каналы:</strong> WhatsApp, Max, звонок с записью и кратким итогом, смены этапа. Сверху плашки бесед. Ответ уходит в канал, где клиент писал последним.</li>
+<li><strong>Внизу – переключатель «Чат / Заметка / Задача»</strong>, как кнопка активности у amoCRM.</li>
+<li><strong>На телефоне</strong> лента идёт первой, поля – ниже.</li>
+</ul>
+<h3>Макет 2. Воронка с «Неразобранным» и кружком задачи</h3>
+<p><img loading="lazy" alt="Воронка на 1440" src="a2-voronka-1440.webp" /></p>
+<p><img loading="lazy" src="a2-voronka-390.webp" width="260" alt="Воронка на телефоне, тёмная тема"></p>
+<p><a href="a2-voronka.html">Открыть живой макет</a></p>
+<ul>
+<li><strong>Первая колонка – ещё не сделки:</strong> пропущенный звонок, вопрос из ВК, заявка с сайта. «Принять», «Привязать» (если похоже на прежнего клиента – кнопка подсказывает к кому), «Отклонить» – спам и дубли не попадают в аналитику.</li>
+<li><strong>Кружок на каждой карточке:</strong> оранжевый – нет задачи, красный – просрочена, зелёный – на сегодня.</li>
+<li><strong>Полоса сверху</strong> – «без задачи 4 · просрочено 2 · на сегодня 6»: нажал – видишь только их.</li>
+</ul>
+<h3>Макет 3. Правила на этапах вместо конструктора ботов</h3>
+<p><img loading="lazy" alt="Правила на этапах на 1440, тёмная тема" src="a3-pravila-1440.webp" /></p>
+<p><img loading="lazy" src="a3-pravila-390.webp" width="260" alt="Правила на этапах на телефоне"></p>
+<p><a href="a3-pravila.html">Открыть живой макет</a></p>
+<ul>
+<li><strong>Под каждым этапом – что система делает сама:</strong> задача «Назвать цену» на 2 часа, адрес и схема проезда при записи, напоминание за день, просьба об отзыве через 3 дня после оплаты.</li>
+<li><strong>Без конструктора с ветками:</strong> 6–8 правил, включаются галочкой. Этап двигает только человек, клиенту без человека уходят только адрес и напоминание.</li>
+</ul>
+<h3>Таблица: что берём</h3>
+<p>Решения: «этап 1» – на Chatwoot как есть, без своего экрана; «этап 2» – в своём экране оператора. Номера этапов – из <a href="https://tema-mail.github.io/razbory/teyes-crm-logika-8e921a01/">логики ролей</a>.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Приём amoCRM</th>
+<th>Зачем нам</th>
+<th>Есть у нас</th>
+<th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Следующий шаг у каждой сделки, «нет задачи»</td>
+<td>ни один клиент с названной ценой не висит без звонка</td>
+<td>нет: в логике только «Отложен до даты»</td>
+<td><strong>Этап 1:</strong> контролёр «назвали цену, нет отложенного касания» + строка в сводке 9:00 (4 ч). <strong>Этап 2:</strong> плашка и кнопки, макет 1</td>
+</tr>
+<tr>
+<td>Полоса «без задачи / просрочено / на сегодня»</td>
+<td>главный за 5 секунд видит дыры</td>
+<td>частично: пульт v5 «ждёт &gt; 5 мин»</td>
+<td><strong>Этап 2</strong>, макет 2</td>
+</tr>
+<tr>
+<td>Склейка дублей по телефону между каналами</td>
+<td>написал в WhatsApp, потом позвонил – одна сделка, а не две</td>
+<td>нет</td>
+<td><strong>Этап 1:</strong> склейка контактов Chatwoot по телефону (8 ч)</td>
+</tr>
+<tr>
+<td>Обязательные поля по этапу</td>
+<td>аналитика без дыр</td>
+<td>есть: поля перед закрытием и по стадиям в логике</td>
+<td><strong>Этап 1:</strong> проверять при смене стадии, а не только при закрытии (2 ч)</td>
+</tr>
+<tr>
+<td>Анализ продаж: конверсия, время на этапе, время разбора входящих</td>
+<td>видно, где застревают</td>
+<td>частично: <code>analitika.py</code>, макет m4</td>
+<td><strong>Этап 1:</strong> добавить время на этапе и время до первого ответа по менеджерам (8 ч)</td>
+</tr>
+<tr>
+<td>Неразобранное: принять / привязать / отклонить</td>
+<td>спам и повторы не считаются лидами</td>
+<td>частично: очередь «Без ответственного», метки <code>не_лид</code>, <code>дубль</code></td>
+<td><strong>Этап 2</strong>, макет 2</td>
+</tr>
+<tr>
+<td>Карточка «поля слева – лента справа», плашки бесед, звонок в ленте</td>
+<td>вся история клиента на одном экране</td>
+<td>частично: v1 три колонки, m3 карточка</td>
+<td><strong>Этап 2</strong>, макет 1 – донастройка экрана v6+v1</td>
+</tr>
+<tr>
+<td>Правила на этапах (цифровая воронка)</td>
+<td>рутина без людей</td>
+<td>нет</td>
+<td><strong>Этап 2</strong>, макет 3, правила кодом без экрана настройки (вопрос 2)</td>
+</tr>
+<tr>
+<td>Причина отказа из списка</td>
+<td>видно, почему теряем</td>
+<td>есть в логике</td>
+<td>уже есть</td>
+</tr>
+<tr>
+<td>Раздача по кругу</td>
+<td>ровная нагрузка</td>
+<td>есть: Chatwoot сам</td>
+<td>уже есть</td>
+</tr>
+<tr>
+<td>Шаблоны с «/» и подстановкой</td>
+<td>быстрый ответ</td>
+<td>есть: быстрые ответы Chatwoot, черновик из прайса в v3</td>
+<td>уже есть</td>
+</tr>
+<tr>
+<td>Права по этапам, роли</td>
+<td>закрыть деньги от первой линии</td>
+<td>частично: роли в логике, в Chatwoot только админ и агент</td>
+<td><strong>Потом</strong>, когда людей станет больше 3</td>
+</tr>
+<tr>
+<td>Цели и план продаж менеджера</td>
+<td>премия по факту</td>
+<td>нет</td>
+<td><strong>Потом</strong></td>
+</tr>
+<tr>
+<td>Автозакрытие беседы и опрос NPS</td>
+<td>порядок в чатах, оценка</td>
+<td>частично: статусы Chatwoot</td>
+<td><strong>Потом</strong>: сначала просьба об отзыве (в правилах)</td>
+</tr>
+<tr>
+<td>Мобильное приложение «Входящие»</td>
+<td>ответить с телефона</td>
+<td>есть: вариант 4</td>
+<td>этап 3 экрана, как было</td>
+</tr>
+<tr>
+<td>Salesbot – конструктор ботов</td>
+<td>–</td>
+<td>–</td>
+<td><strong>Не берём</strong>: на 2–3 менеджера его некому вести, сломанный бот молча теряет клиентов</td>
+</tr>
+<tr>
+<td>ИИ-агент, «требующие внимания», скоринг</td>
+<td>–</td>
+<td>ИИ – опция этапа 4 в логике</td>
+<td><strong>Не берём сейчас</strong>: нужно 4–6 недель живых переписок</td>
+</tr>
+<tr>
+<td>Покупатели, ретаргетинг, карта лояльности</td>
+<td>–</td>
+<td>–</td>
+<td><strong>Не берём</strong>: это розница, не наш процесс</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Что у amoCRM неудобно – не повторяем</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Минус</th>
+<th>Откуда</th>
+<th>Что делаем мы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Задача, привязанная к контакту, не считается в сделке – кружок «нет задачи» врёт</td>
+<td><a href="https://www.amocrm.ru/support/tasks/tasks_in_leads/">справка amoCRM</a></td>
+<td>задача только у сделки</td>
+</tr>
+<tr>
+<td>У задачи один ответственный, нельзя приложить файл</td>
+<td><a href="https://www.amocrm.ru/support/tasks/questions_about_tasks/">частые вопросы</a></td>
+<td>при передаче – заметка из трёх строк, как в логике</td>
+</tr>
+<tr>
+<td>Сообщения из мессенджеров приходят с задержкой 30–40 минут, иногда двоятся</td>
+<td>отзывы на <a href="https://startpack.ru/application/amocrm-online/reviews">startpack</a>, 28.03.2024 и 26.01.2026</td>
+<td>мосты свои: тревога, если сообщение не дошло за 5 минут, защита от двойной доставки</td>
+</tr>
+<tr>
+<td>ИИ-помощник висит на всех экранах, отключить нельзя</td>
+<td>там же, 06.11.2026</td>
+<td>ИИ – только по твоему «да» и выключаемый</td>
+</tr>
+<tr>
+<td>Каждая доработка – отдельный виджет и подписка, ломается при обновлении</td>
+<td><a href="https://www.sostav.ru/blogs/229911/78286">sostav.ru, 26.02.2026</a>, <a href="https://vc.ru/services/2762746-amocrm-2026-vysokaya-tsena-voronki-prodazh">vc.ru, 2026</a></td>
+<td>всё в одном коде, тесты на каждый мост</td>
+</tr>
+<tr>
+<td>Отчёты фиксированные, нужное выгружают в таблицы</td>
+<td>startpack, 15.01.2021; vc.ru, 2026</td>
+<td>отчёты пишем под наши вопросы</td>
+</tr>
+<tr>
+<td>Десятки обязательных полей – менеджеры начинают их обманывать</td>
+<td><a href="https://dtf.ru/id3509608/5301673-nedostatki-amocrm">dtf.ru</a></td>
+<td>3–4 обязательных поля на этап, не больше</td>
+</tr>
+</tbody>
+</table></div>
+<h2>3. «Сделать такую же»: копию не делаем, своё с их приёмами окупается за первый год</h2>
+<h3>Почему не копия</h3>
+<ul>
+<li><strong>Их вид и названия – их бренд.</strong> Скопированный экран amoCRM с их словами («Неразобранное», Salesbot, imBox) – чужой дизайн. Берём приёмы, слова и вид – наши, в стиле кабинетов Elite Rose и EV.</li>
+<li><strong>Копировать всю amoCRM незачем:</strong> половина её функций – розница, рассылки, ретаргетинг, конструктор ботов. Нам нужна обработка обращений установочного центра.</li>
+<li><strong>Основа у нас уже есть:</strong> Chatwoot даёт окно чатов, раздачу, статусы, быстрые ответы. Сверху пишем то, чего у него нет: сделку со стадиями, следующий шаг, склейку, правила, аналитику с деньгами.</li>
+</ul>
+<h3>Деньги: amoCRM + Wazzup против своей (3 менеджера, оценка)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>amoCRM + Wazzup</th>
+<th>Своя на Chatwoot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Лицензия CRM</td>
+<td>«Расширенный» 1 299 ₽ × 3 = <strong>3 897 ₽/мес</strong></td>
+<td>0 ₽ – Chatwoot бесплатный</td>
+</tr>
+<tr>
+<td>WhatsApp TEYES, WhatsApp EV, Max-аккаунт</td>
+<td>Wazzup PRO 4 000 ₽ за канал × 3 = <strong>12 000 ₽/мес</strong> (при оплате за год 9 600 ₽), до 500 диалогов на канал в месяц (<a href="https://wazzup24.ru/pricing/">wazzup24.ru/pricing</a>, 18.11.2026)</td>
+<td>0 ₽: свои шлюзы, WhatsApp через наш туннель</td>
+</tr>
+<tr>
+<td>ВКонтакте, Telegram-бот</td>
+<td>встроены</td>
+<td>встроены (мост ВК уже работает)</td>
+</tr>
+<tr>
+<td>Сервер</td>
+<td>у amoCRM</td>
+<td>FirstVDS Москва, <strong>874 ₽/мес</strong>, уже оплачен</td>
+</tr>
+<tr>
+<td>Разработка и внедрение</td>
+<td>интегратор: 30 000–120 000 ₽ (<a href="https://vc.ru/marketing/2949862-stoimost-vnedreniya-amocrm">vc.ru, июнь 2026</a>)</td>
+<td>этапы 1 и 2 из логики 149 000 ₽ + приёмы amoCRM 66 000 ₽ = <strong>≈ 215 000 ₽</strong></td>
+</tr>
+<tr>
+<td><strong>Первый год</strong></td>
+<td>≈ 162 000–191 000 ₽ подписок + внедрение = <strong>≈ 190 000–310 000 ₽</strong></td>
+<td><strong>≈ 225 000 ₽</strong></td>
+</tr>
+<tr>
+<td><strong>Каждый следующий год</strong></td>
+<td><strong>≈ 162 000–191 000 ₽</strong>, растёт с ценами и числом менеджеров</td>
+<td><strong>≈ 10 500 ₽</strong> + доработки по желанию</td>
+</tr>
+<tr>
+<td>Срок до работы</td>
+<td>1–3 недели</td>
+<td>≈ 3 недели (этап 1 – 3–4 дня)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Важное про amoCRM для нас:</p>
+<ul>
+<li><strong>Max-аккаунт и WhatsApp сама она не подключает.</strong> Встроены ВКонтакте, Telegram-боты и Max-бот, а Max-бот не может написать клиенту первым (<a href="https://www.amocrm.ru/support/incoming_leads/max/">справка Max</a>). Наш Max-аккаунт и оба WhatsApp – только через Wazzup или похожий сервис, это ещё одна подписка и ещё одна компания, через которую идёт переписка.</li>
+<li><strong>Внутри amoCRM нет «привёл / записал», денег из «АвтоДилер Онлайн» и нашей тревоги в Telegram</strong> – это снова виджеты или интегратор.</li>
+<li><strong>Зато amoCRM готова сегодня</strong> и не требует нашего сопровождения. Если CRM нужна завтра и надолго не больше 2–3 человек – это честная альтернатива.</li>
+</ul>
+<h2>Вопросы</h2>
+<ol>
+<li><strong>Что из приёмов amoCRM в этап 1.</strong> А – четыре: следующий шаг (контролёр и сводка), склейка дублей по телефону, обязательные поля по стадии, время на этапе в аналитике (+ ≈ 22 000 ₽, + ≈ 3 дня к 27 часам этапа 1). Б – только склейка дублей и следующий шаг (+ ≈ 12 000 ₽, + 1,5 дня). В – ничего, этап 1 как в логике (0 ₽). <strong>Совет – А.</strong></li>
+<li><strong>Что в этап 2.</strong> А – всё: карточка из макета 1, воронка с неразобранным из макета 2, правила на этапах с экраном настройки из макета 3 (+ ≈ 60 000 ₽, + ≈ 8 дней к 122 часам этапа 2). Б – то же, но правила зашиты кодом без экрана настройки, меняешь через меня (+ ≈ 44 000 ₽, + ≈ 5,5 дня). В – этап 2 как в логике, без приёмов amoCRM (0 ₽). <strong>Совет – Б:</strong> на 2–3 менеджера правила меняются редко.</li>
+<li><strong>Своя или amoCRM.</strong> А – своя на Chatwoot с приёмами amoCRM, как выше. Б – переходим на amoCRM «Расширенный» + Wazzup (≈ 16 000 ₽/мес на 3 менеджеров + внедрение 30 000–120 000 ₽, 1–3 недели). В – своя, но 14 дней бесплатной amoCRM параллельно, чтобы ты сам посмотрел интерфейс (0 ₽ за amoCRM, ≈ 8 000 ₽ моей настройки, 1 день). <strong>Совет – А.</strong></li>
+</ol>
+<h2>Что раскрыть</h2>
+<ol>
+<li>Как «следующий шаг» ложится на «Отложен до даты» в Chatwoot без своего экрана.</li>
+<li>Склейка дублей: по каким полям и что делать, если номер один, а люди разные (муж и жена).</li>
+<li>Wazzup против наших шлюзов: что будет, если WhatsApp заблокирует номер.</li>
+</ol></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>

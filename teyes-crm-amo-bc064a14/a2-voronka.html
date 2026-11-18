@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Воронка с неразобранным – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab" href="#">Диалоги<span class="n">5</span></a>
+  <a class="tab on" href="#">Сделки</a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab" href="#">Аналитика</a>
+  <span class="me"><b>Артём</b> · главный</span>
+</nav>
+<main>
+  <p class="demo-note">Макет. Клиенты и суммы – пример. Приёмы из amoCRM: колонка «Неразобранное» до воронки, кружок задачи на каждой карточке и полоса «без задач / просрочено / на сегодня» – нажал и видишь только их.</p>
+
+  <div class="tools">
+    <h1>Сделки · TEYES и EV<small>18.11, среда · в работе 15 сделок на 330 300 ₽</small></h1>
+    <span class="sel">Все менеджеры</span>
+    <span class="sel hide-m">Все каналы</span>
+    <button class="btn primary">＋ Сделка</button>
+  </div>
+
+  <div class="strip" aria-label="Задачи по сделкам">
+    <span class="chip hot">Без задачи · 4</span>
+    <span class="chip hot">Просрочено · 2</span>
+    <span class="chip ok">На сегодня · 6</span>
+    <span class="chip">Неразобранное · 3, старшее ждёт 6 мин</span>
+    <span class="chip info">Дубли склеены сегодня · 2</span>
+  </div>
+
+  <div class="kb">
+    <section class="kb__col kb__col--in"><h2>Неразобранное <span>3</span></h2><p>ещё не сделка: принять, привязать к клиенту или отклонить</p>
+      <article class="kb__card"><p class="kb__top"><b>+7 913 ··· 22 07</b><i class="ch ch--call">☎</i></p><p class="kb__car">Пропущенный звонок, 41 с</p><p class="kb__meta"><span class="hotx">6 мин назад</span><span>EV</span></p>
+        <div class="acts"><button class="btn acc">Принять</button><button class="btn">Привязать</button><button class="btn ghost">Отклонить</button></div></article>
+      <article class="kb__card"><p class="kb__top"><b>Ксения</b><i class="ch ch--vk">VK</i></p><p class="kb__car">«Сколько стоит русификация Li L7?»</p><p class="kb__meta"><span>2 мин назад</span><span>TEYES</span></p>
+        <div class="acts"><button class="btn acc">Принять</button><button class="btn">Привязать</button><button class="btn ghost">Отклонить</button></div></article>
+      <article class="kb__card"><p class="kb__top"><b>Заявка с сайта</b><i class="ch ch--form">Ф</i></p><p class="kb__car">Kia Sportage 2022, сигнализация</p><p class="kb__meta"><span>1 мин назад</span><span class="chip info">похоже на Олега К.</span></p>
+        <div class="acts"><button class="btn">Принять</button><button class="btn acc">Привязать к Олегу</button><button class="btn ghost">Отклонить</button></div></article>
+    </section>
+
+    <section class="kb__col"><h2>Новый <span>4 · 0 ₽</span></h2><p>ответить, узнать машину</p>
+      <article class="kb__card kb__card--none"><p class="kb__top"><b>Руслан</b><i class="ch ch--max">M</i></p><p class="kb__car">Chery Tiggo 7 Pro Max</p><p class="kb__meta"><span class="tk tk--none">нет задачи</span><span>Алина</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Евгения</b><i class="ch ch--wa">WA</i></p><p class="kb__car">машина не указана</p><p class="kb__meta"><span class="tk tk--today">сегодня 15:00</span><span>Алина</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Денис М.</b><i class="ch ch--tg">TG</i></p><p class="kb__car">Zeekr 001, ТО</p><p class="kb__meta"><span class="tk tk--today">сегодня 12:30</span><span>Глеб · EV</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Сергей</b><i class="ch ch--site">Ч</i></p><p class="kb__car">Camry 70, звук</p><p class="kb__meta"><span class="tk tk--later">пт 21.11</span><span>Алина</span></p></article>
+    </section>
+
+    <section class="kb__col"><h2>Узнали машину <span>4 · 0 ₽</span></h2><p>подобрать, назвать цену</p>
+      <article class="kb__card kb__card--late"><p class="kb__top"><b>Марат</b><i class="ch ch--wa">WA</i></p><p class="kb__car">Li Auto L9 2024 · русификация</p><p class="kb__meta"><span class="tk tk--late">просрочено 2 дня</span><span>Алина</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Ольга</b><i class="ch ch--vk">VK</i></p><p class="kb__car">Toyota RAV4 2019 · Teyes</p><p class="kb__meta"><span class="tk tk--today">сегодня 16:00</span><span>Алина</span></p></article>
+      <article class="kb__card kb__card--none"><p class="kb__top"><b>Павел</b><i class="ch ch--call">☎</i></p><p class="kb__car">Voyah Free · диагностика</p><p class="kb__meta"><span class="tk tk--none">нет задачи</span><span>Глеб · EV</span></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Антон</b><i class="ch ch--max">M</i></p><p class="kb__car">Haval F7 · камера</p><p class="kb__meta"><span class="tk tk--later">чт 20.11</span><span>Алина</span></p></article>
+    </section>
+
+    <section class="kb__col"><h2>Назвали цену <span>4 · 157 800 ₽</span></h2><p>дожать до записи</p>
+      <article class="kb__card on kb__card--none"><p class="kb__top"><b>Игорь С.</b><i class="ch ch--wa">WA</i></p><p class="kb__car">Haval Jolion 2023 · CC3 2K</p><p class="kb__meta"><span class="tk tk--none">нет задачи</span><b>41 900 ₽</b></p></article>
+      <article class="kb__card kb__card--late"><p class="kb__top"><b>Наталья</b><i class="ch ch--wa">WA</i></p><p class="kb__car">Camry 70 · StarLine S96</p><p class="kb__meta"><span class="tk tk--late">просрочено 1 день</span><b>32 500 ₽</b></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Виктор</b><i class="ch ch--tg">TG</i></p><p class="kb__car">Li Auto L7 · русификация</p><p class="kb__meta"><span class="tk tk--today">сегодня 18:00</span><b>25 000 ₽</b></p></article>
+      <article class="kb__card kb__card--none"><p class="kb__top"><b>Елена</b><i class="ch ch--vk">VK</i></p><p class="kb__car">Kia Rio X · Teyes + звук</p><p class="kb__meta"><span class="tk tk--none">нет задачи</span><b>58 400 ₽</b></p></article>
+    </section>
+
+    <section class="kb__col"><h2>Записан <span>2 · 83 500 ₽</span></h2><p>напомнить за день, адрес</p>
+      <article class="kb__card"><p class="kb__top"><b>Андрей</b><i class="ch ch--wa">WA</i></p><p class="kb__car">Tank 300 · Teyes CC3 360</p><p class="kb__meta"><span class="tk tk--later">чт 20.11 10:00</span><b>64 900 ₽</b></p></article>
+      <article class="kb__card"><p class="kb__top"><b>Максим</b><i class="ch ch--max">M</i></p><p class="kb__car">Zeekr 001 · ТО-2</p><p class="kb__meta"><span class="tk tk--today">сегодня 14:00</span><b>18 600 ₽</b></p></article>
+    </section>
+
+    <section class="kb__col"><h2>Приехал <span>1 · 89 000 ₽</span></h2><p>в работе у мастера</p>
+      <article class="kb__card"><p class="kb__top"><b>Алексей</b><i class="ch ch--site">Ч</i></p><p class="kb__car">Lixiang L9 · русиф. + CarPlay</p><p class="kb__meta"><span class="tk tk--today">выдача 18:00</span><b>89 000 ₽</b></p></article>
+    </section>
+  </div>
+  <p class="dim">На телефоне колонки листаются вбок. Кружок: оранжевый – нет задачи, красный – просрочена, зелёный – на сегодня, пустой – задача в будущем.</p>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги<em>5</em></a><a class="on" href="#"><i>◈</i>Сделки</a><a href="#"><i>▣</i>Записи</a><a href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Карточка сделки – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab" href="#">Диалоги<span class="n">5</span></a>
+  <a class="tab on" href="#">Сделки</a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab" href="#">Аналитика</a>
+  <span class="me"><b>Алина</b> · 1 линия</span>
+</nav>
+<main>
+  <p class="demo-note">Макет. Клиент, суммы и переписка – пример. Приём из amoCRM: слева поля сделки, справа одна лента – переписка из всех каналов, звонки с записью, заметки и задачи. Сверху всегда «следующий шаг».</p>
+
+  <div class="tools">
+    <h1>Игорь С. · Haval Jolion 2023<small>+7 923 ··· 41 18 · пишет в <i class="ch ch--wa">WA</i> и <i class="ch ch--max">M</i> · звонил 1 раз · первое обращение 17.11</small></h1>
+    <button class="btn hide-m">Передать</button>
+    <button class="btn acc">Записать</button>
+  </div>
+
+  <section class="next next--none" aria-label="Следующий шаг">
+    <p class="lock-row"><span class="tk tk--none">Нет задачи</span> · такая сделка подсвечена оранжевым в воронке и в сводке главного</p>
+    <b>Назвали цену 18.11 в 10:42 – дальше ничего не запланировано</b>
+    <div class="acts">
+      <button class="btn acc">Перезвонить сегодня 17:00</button>
+      <button class="btn">Написать завтра 11:00</button>
+      <button class="btn">Своя дата…</button>
+    </div>
+    <p class="dim">Правило этапа «Назвали цену» предлагает задачу само (см. макет 3). Без задачи сделку нельзя оставить на этом этапе дольше 2 часов – контролёр напомнит.</p>
+  </section>
+
+  <section class="card" aria-label="Этап сделки">
+    <div class="card__h"><h2>Этап<small>двигает человек, правила – только подсказывают</small></h2><span class="src src--code">наш экран</span></div>
+    <ol class="steps">
+      <li class="done">Новый<small>17.11</small></li>
+      <li class="done">Узнали машину<small>17.11</small></li>
+      <li class="now">Назвали цену<small>18.11</small></li>
+      <li>Записан</li>
+      <li>Приехал</li>
+      <li>Оплатил</li>
+    </ol>
+  </section>
+
+  <div class="lay lay--amo">
+    <div class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Поля сделки</h2></div>
+        <dl class="kv">
+          <div><dt>Услуга</dt><dd>Магнитола Teyes CC3 2K + камера заднего вида</dd></div>
+          <div><dt>Назвали цену</dt><dd class="big">41 900 ₽</dd></div>
+          <div><dt>Ответственный</dt><dd>Алина · 1 линия</dd></div>
+          <div><dt>Откуда узнал</dt><dd>Яндекс Карты</dd></div>
+          <div><dt>Метка ссылки</dt><dd class="auto">не было – пришёл с карты</dd></div>
+          <div><dt>Канал первого касания</dt><dd class="auto">WhatsApp TEYES · 17.11 19:06</dd></div>
+          <div><dt>Дата записи</dt><dd>–</dd></div>
+          <div><dt>Причина отказа</dt><dd class="auto">нужна при «Отказ»</dd></div>
+        </dl>
+      </section>
+
+      <section class="card">
+        <div class="card__h"><h2>Машина и клиент</h2></div>
+        <dl class="kv">
+          <div><dt>Марка, модель</dt><dd>Haval Jolion</dd></div>
+          <div><dt>Год, рынок</dt><dd>2023 · РФ</dd></div>
+          <div><dt>Штатная</dt><dd>9" без CarPlay</dd></div>
+          <div><dt>Телефон</dt><dd>+7 923 ··· 41 18</dd></div>
+        </dl>
+        <p class="dim">Повторных нет. Дубль проверен по телефону: такой же номер пришёл звонком 18.11 – склеен с этой сделкой сам.</p>
+      </section>
+
+      <section class="card card--note">
+        <div class="card__h"><h2>Откуда пришёл</h2><span class="src src--code">наш код</span></div>
+        <ul>
+          <li><b>Источник:</b> Яндекс Карты → WhatsApp TEYES</li>
+          <li><b>Склеено:</b> WhatsApp 17.11 + звонок 18.11 (одинаковый телефон)</li>
+          <li><b>Время до первого ответа:</b> 3 мин 40 с</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Лента сделки<small>все каналы и события в одном потоке, новые снизу</small></h2>
+          <span class="src src--box">переписка – Chatwoot</span></div>
+        <div class="plates" aria-label="Беседы клиента">
+          <span class="plate on"><i class="ch ch--wa">WA</i>WhatsApp TEYES · 10:42 · открыта</span>
+          <span class="plate"><i class="ch ch--max">M</i>Max · 18.11 09:15 · ждём клиента</span>
+          <span class="plate"><i class="ch ch--call">☎</i>Звонок · 18.11 09:58</span>
+        </div>
+        <div class="chat">
+          <p class="m--sys m">17.11 · 19:06 · сделка создана из WhatsApp TEYES · источник «Яндекс Карты»</p>
+          <p class="m m--in">Здравствуйте, на Джолион 23 года можно поставить магнитолу с CarPlay и камерой? Сколько выйдет?<small>WA · 19:06</small></p>
+          <p class="m m--out">Добрый вечер! Да, ставим Teyes CC3 2K в штатную рамку, камера встаёт в подсветку номера. Подскажите, у вас штатная 9 дюймов?<small>Алина · 19:09</small></p>
+          <p class="m m--in">Да, девятка<small>WA · 19:20</small></p>
+          <p class="m--sys m">17.11 · 19:21 · этап «Новый» → «Узнали машину» · Алина</p>
+          <p class="m m--in">Можно сюда тоже писать? В вотсапе неудобно<small><i class="ch ch--max">M</i> Max · 18.11 09:15</small></p>
+          <div class="m m--note">
+            <div class="rec"><button aria-label="Слушать запись">▶</button><progress class="calm" value="35" max="100">35%</progress><span>2:14</span></div>
+            <small>Звонок входящий · 18.11 09:58 · Алина · запись с АТС. Кратко: спрашивал про рассрочку, приедет в выходные.</small>
+          </div>
+          <p class="m m--out">Игорь, под ключ 41 900 ₽: магнитола CC3 2K 4/64, рамка, камера, установка 3 часа. Есть окна в сб 22.11 в 10:00 и 14:00.<small>Алина · WA · 10:42</small></p>
+          <p class="m--sys m">18.11 · 10:42 · этап «Узнали машину» → «Назвали цену» · сумма 41 900 ₽</p>
+        </div>
+        <div class="composer">
+          <div class="seg" role="tablist" aria-label="Что добавить"><b class="on">Чат</b><b>Заметка</b><b>Задача</b></div>
+          <textarea aria-label="Сообщение клиенту">Игорь, держу за вами субботу 10:00 до вечера – подтвердите, пожалуйста</textarea>
+          <div class="foot"><span>Ответ уйдёт в канал, откуда клиент писал последним: <i class="ch ch--wa">WA</i> · «/» – шаблоны с ценой и адресом</span><button class="btn acc">Отправить</button></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги<em>5</em></a><a class="on" href="#"><i>◈</i>Сделки</a><a href="#"><i>▣</i>Записи</a><a href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>
