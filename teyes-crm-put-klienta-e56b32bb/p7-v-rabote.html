@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>В работе и доп. работы – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab" href="#">Диалоги<span class="n">1</span></a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab" href="#">Приёмка</a>
+  <a class="tab on" href="#">В работе<span class="n">5</span></a>
+  <a class="tab" href="#">Аналитика</a>
+  <span class="me"><b>Алина</b> · 1 линия</span>
+</nav>
+<main>
+  <p class="demo-note">Макет, шаг 8 пути. Четверг, 13:20. Доп. работа – только с согласия клиента: ЗоЗПП, ст. 16, п. 3.1. Доказывать согласие придётся нам, поэтому ответ клиента пишется в журнал и повторяется в закрывающем акте.</p>
+  <div class="tools">
+    <h1>Сегодня в работе<small>чт 19.11 · 5 машин · 1 ждёт ответа клиента</small></h1>
+  </div>
+
+  <div class="lay lay--work">
+    <div class="kb kb--4">
+      <section class="kb__col"><h2>В работе <span>2</span></h2>
+        <article class="kb__card"><div class="kb__top"><b>Haval Jolion</b><span class="dim">Пост 3</span></div><span>Сергей · шумоизоляция</span><div class="kb__meta"><span>Павел · с 11:20</span><b>до пт 14:00</b></div></article>
+        <article class="kb__card"><div class="kb__top"><b>Mazda CX-5</b><span class="dim">Пост 2</span></div><span>Марина · магнитола · из листа ожидания</span><div class="kb__meta"><span>Сергей · с 11:30</span><b>~15:30</b></div></article>
+      </section>
+      <section class="kb__col"><h2>Ждём ответ клиента <span>1</span></h2>
+        <article class="kb__card kb__card--late on"><div class="kb__top"><b>Toyota Camry XV70</b><span class="tk tk--late">15 мин</span></div><span>Игорь · доп. работа 1 800 ₽</span><div class="kb__meta"><span>Кирилл · Пост 1</span><b>звонок в 13:35</b></div></article>
+      </section>
+      <section class="kb__col"><h2>Ждём деталь <span>1</span></h2>
+        <article class="kb__card kb__card--none"><div class="kb__top"><b>Chery Tiggo 7 Pro</b><span class="dim">стоянка</span></div><span>Андрей · камера, нет переходника</span><div class="kb__meta"><span>курьер в 15:00 · клиент знает</span><b>~16:30</b></div></article>
+      </section>
+      <section class="kb__col"><h2>Готово к выдаче <span>1</span></h2>
+        <article class="kb__card"><div class="kb__top"><b>Kia Sportage</b><span class="okx">✓</span></div><span>Михаил · регистратор · стоянка</span><div class="kb__meta"><span>«готово» ушло 12:40</span><b>заберёт 18:00</b></div></article>
+      </section>
+    </div>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Доп. работа · Camry<small>завёл Кирилл 13:02 · текст проверила Алина</small></h2><span class="src src--code">наш экран</span></div>
+        <div class="pic">разъём штатной камеры · 13:01</div>
+        <dl class="kv">
+          <div><dt>Что нашли</dt><dd>окислен разъём штатной камеры – картинка мерцает</dd></div>
+          <div><dt>Что предлагаем</dt><dd>перепаять разъём · +30 мин</dd></div>
+          <div><dt>Цена</dt><dd class="big">1 800 ₽</dd></div>
+          <div><dt>Если не делать</dt><dd>на магнитолу не влияет, камера мерцает как раньше</dd></div>
+        </dl>
+        <ol class="ev">
+          <li><time>13:05</time><p>Отправлено в WhatsApp<small>с фото и тремя ответами</small></p></li>
+          <li><time>13:20</time><p>Ответа нет – карточка красная<small>в 13:35 задача «позвонить», работа по этому пункту стоит</small></p></li>
+        </ol>
+        <p class="dim">Ответ «1» запишется в журнал согласия: кто, когда, на что и за сколько. Без «да» пункт в заказ-наряд не попадёт, мастер его не делает.</p>
+      </section>
+
+      <div class="phone" aria-label="Что видит клиент">
+        <div class="phone__top"><span class="ava">T</span><div><b>TEYES Sibir</b><small>WhatsApp · через 7 минут</small></div></div>
+        <div class="phone__body">
+          <p class="bb">Игорь, это Кирилл, мастер. Пока ставили магнитолу, увидели: у штатной камеры окислен разъём – поэтому картинка мерцала. Перепаять – 1 800 ₽ и плюс полчаса. На магнитолу не влияет, можно и не делать.<small>13:05</small></p>
+          <div class="pic">фото разъёма</div>
+          <p class="bb">Делаем? Ответьте цифрой: 1 – да, за 1 800 ₽; 2 – не надо; 3 – позвоните мне.<small>13:05</small></p>
+          <p class="bb bb--me">1<small>13:27</small></p>
+          <p class="bb">Принято: перепаиваем разъём за 1 800 ₽. Готовность – около 16:00.<small>13:27</small></p>
+        </div>
+        <div class="phone__in"><span>Сообщение</span><i>➤</i></div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="card card--note">
+    <div class="card__h"><h2>Что клиент получает сам за время работы</h2></div>
+    <ul>
+      <li><b>Вопрос о доп. работе</b> – всегда: фото, цена, что будет, если не делать. В мессенджерах с кнопками – три кнопки, в WhatsApp – цифры.</li>
+      <li><b>«Ждём деталь»</b> – с новым временем готовности, если оно сдвинулось больше чем на час.</li>
+      <li><b>«Готово, можно забирать»</b> – когда мастер нажал «Готово». «Взяли в работу» и фото процесса – по вопросу 9.</li>
+    </ul>
+  </section>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги<em>1</em></a><a href="#"><i>▣</i>Записи</a><a href="#"><i>✓</i>Приёмка</a><a class="on" href="#"><i>⚙</i>В работе<em>5</em></a><a href="#"><i>▥</i>Цифры</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

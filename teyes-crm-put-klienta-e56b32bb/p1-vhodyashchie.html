@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Неразобранное и первый ответ – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab on" href="#">Диалоги<span class="n">4</span></a>
+  <a class="tab" href="#">Сделки</a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab" href="#">Приёмка</a>
+  <a class="tab" href="#">Аналитика</a>
+  <span class="me"><b>Алина</b> · 1 линия · на смене</span>
+</nav>
+<main>
+  <p class="demo-note">Макет, шаг 1–2 пути. Клиенты и время – пример. Новое обращение – ещё не сделка: его принимают, привязывают к прежнему клиенту или отклоняют. Таймер идёт с первого сообщения клиента.</p>
+  <div class="tools">
+    <h1>Неразобранное<small>ср 18.11 · 11:12 · ответить до 5 минут – норматив в часы работы</small></h1>
+    <span class="chip hot">ждут дольше 5 мин · 1</span>
+    <span class="chip">ночные · 2</span>
+  </div>
+
+  <div class="cv">
+    <section class="card" aria-label="Новые обращения">
+      <div class="card__h"><h2>Новые · 4<small>старые сверху, ночные – первыми с утра</small></h2></div>
+      <div class="stack">
+        <article class="kb__card kb__card--late">
+          <div class="kb__top"><span><i class="ch ch--wa">WA</i> <b>+7 913 ··· 22 07</b></span><span class="tk tk--late">6:40</span></div>
+          <p class="mut">«Здравствуйте, сколько стоит поставить магнитолу на камри 70?»</p>
+          <p class="dim">Повторный? Нет совпадений по телефону</p>
+          <div class="acts"><button class="btn acc">Принять</button><button class="btn">Отклонить</button></div>
+        </article>
+        <article class="kb__card kb__card--none on">
+          <div class="kb__top"><span><i class="ch ch--max">M</i> <b>Ольга</b></span><span class="tk tk--none">2:15</span></div>
+          <p class="mut">«Добрый день, хочу камеру заднего вида и регистратор на Крету»</p>
+          <p class="dim"><b>Похоже на прежнего:</b> Ольга Н., Hyundai Creta 2021 · ВК · 06.2026 · оплатила 6 500 ₽</p>
+          <div class="acts"><button class="btn acc">Привязать к Ольге Н.</button><button class="btn">Принять как новую</button><button class="btn ghost">Отклонить</button></div>
+        </article>
+        <article class="kb__card">
+          <div class="kb__top"><span><i class="ch ch--form">З</i> <b>Заявка сайта</b></span><span class="tk tk--today">0:40</span></div>
+          <p class="mut">Алексей · +7 952 ··· 18 40 · «Автозапуск на Rio 2017»</p>
+          <p class="dim">Метка ссылки: yandex_direct · /starline/ → «откуда узнал» = Директ</p>
+          <div class="acts"><button class="btn acc">Принять</button><button class="btn">Отклонить</button></div>
+        </article>
+        <article class="kb__card">
+          <div class="kb__top"><span><i class="ch ch--vk">VK</i> <b>Дмитрий Р.</b></span><span class="tk tk--later">ночь 01:14</span></div>
+          <p class="mut">«Русификация LiXiang L7 2024 сколько и сколько по времени?»</p>
+          <p class="dim">Бот ночью попросил машину и фото – клиент прислал фото экрана</p>
+          <div class="acts"><button class="btn acc">Принять</button><button class="btn">Отклонить</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" aria-label="Разговор">
+      <div class="card__h"><h2>Ольга · Hyundai Creta<small>разговор №318 · Max · привязан к клиенту с 06.2026</small></h2><span class="src src--code">склейка – наш код</span></div>
+      <div class="axis">
+        <p class="axis__t">Разговор <b>· чей ход</b></p>
+        <div class="st"><b>Новый</b><b class="on">В работе · ход наш</b><b>Ждём клиента</b><b>Отложен до даты</b></div>
+      </div>
+      <div class="chat">
+        <p class="m m--sys">11:10 · новое из Max · похоже на прежнего клиента – Алина привязала</p>
+        <p class="m m--in">Добрый день, хочу камеру заднего вида и регистратор на Крету<small>Max · 11:10</small></p>
+        <p class="m m--note">Ольга уже была у нас: 06.2026 ставили регистратор Teyes X5, 6 500 ₽, мастер Кирилл. Гарантия до 06.2027.<small>подсказка системы · видит только менеджер</small></p>
+        <p class="m m--out">Ольга, здравствуйте! Рады снова видеть. Регистратор у вас уже наш – хотите второй, задний, или заменить? Камеру поставим в подсветку номера, у Креты 2021 штатный экран 8" – картинка выведется на него.<small>Алина · черновик</small></p>
+      </div>
+      <div class="composer">
+        <div class="seg" role="tablist" aria-label="Что добавить"><b class="on">Чат</b><b>Заметка</b><b>Задача</b></div>
+        <textarea aria-label="Ответ клиенту">Ольга, здравствуйте! Рады снова видеть. Регистратор у вас уже наш – хотите второй, задний, или заменить?</textarea>
+        <div class="foot"><span>«/машина», «/цена», «/адрес» – шаблоны · уйдёт в <i class="ch ch--max">M</i></span><button class="btn acc">Отправить · 2:15</button></div>
+      </div>
+    </section>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Таймер первого ответа</h2><span class="src src--box">Chatwoot считает</span></div>
+        <ul class="tline">
+          <li><time>0 мин</time><div>Сообщение клиента<small>в часы работы пн–пт 11–19</small></div></li>
+          <li><time>3 мин</time><div>Карточка желтеет<small>у менеджера на экране</small></div></li>
+          <li><time>5 мин</time><div>Тревога главному в Telegram<small>с именем клиента и каналом</small></div></li>
+          <li><time>10 мин</time><div>Разговор – в общую очередь<small>берёт любой, кто на смене</small></div></li>
+        </ul>
+        <p class="dim">Почему 5 минут: в исследовании MIT и InsideSales (2007, 15 000 лидов) шанс дозвониться за 5 минут против 30 – в 100 раз выше.</p>
+      </section>
+      <section class="card card--note">
+        <div class="card__h"><h2>Ночью и в выходные</h2><span class="src src--box">автоответ канала</span></div>
+        <div class="tpl">«Здравствуйте! Мы на связи с 11:00. Чтобы утром сразу назвать цену – пришлите марку, модель, год и фото штатной магнитолы.»</div>
+        <ul>
+          <li><b>Без бота с ветками:</b> один вопрос, ответ приходит в тот же разговор.</li>
+          <li><b>Утром</b> ночные – первыми в очереди, норматив до 11:15.</li>
+        </ul>
+      </section>
+      <section class="card card--note">
+        <div class="card__h"><h2>Склейка</h2></div>
+        <ul>
+          <li><b>Тот же телефон</b> в другом канале – одна карточка, две беседы.</li>
+          <li><b>Только имя совпало</b> – подсказка «похоже на…», решает менеджер.</li>
+          <li><b>Отклонить</b> – спам и не наш профиль в лиды не считаются.</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a class="on" href="#"><i>✉</i>Диалоги<em>4</em></a><a href="#"><i>◈</i>Сделки</a><a href="#"><i>▣</i>Записи</a><a href="#"><i>✓</i>Приёмка</a><a href="#"><i>▥</i>Цифры</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

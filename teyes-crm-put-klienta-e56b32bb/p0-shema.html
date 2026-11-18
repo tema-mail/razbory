@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Путь клиента – схема</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR · EV</span>
+  <span class="me"><b>Путь клиента</b> · схема</span>
+</nav>
+<main>
+  <div class="tools"><h1>Путь клиента: от первого сообщения до отзыва<small>Строка – этап, колонки – кто что делает. Синяя полоса слева – шаг идёт сам, золотая – шаг с документом</small></h1></div>
+
+  <div class="legend">
+    <span><span class="wh wh--crm">CRM</span> живёт в нашей CRM</span>
+    <span><span class="wh wh--ad">АД</span> в переходный период – в «АвтоДилер Онлайн»</span>
+    <span><span class="wh wh--next">CRM</span> после переезда</span>
+  </div>
+
+  <section class="axes">
+    <div class="card">
+      <p class="axis__t">Сделка <b>· где клиент в воронке продаж</b></p>
+      <ol class="steps">
+        <li class="done">Новый</li>
+        <li class="done">Квалифицирован<small>было «Узнали машину»</small></li>
+        <li class="done">Назвали цену</li>
+        <li class="now">Записан</li>
+        <li>Приехал</li>
+        <li>Оплатил</li>
+        <li class="off">Отказ<small>с причиной</small></li>
+      </ol>
+    </div>
+    <div class="card">
+      <p class="axis__t">Визит <b>· что с машиной: запись и заказ-наряд</b></p>
+      <ol class="steps">
+        <li class="done">Записан</li>
+        <li class="now">Подтвердил<small>или перенос</small></li>
+        <li>Приехал<small>акт приёмки</small></li>
+        <li>В работе</li>
+        <li>Готово</li>
+        <li>Выдан<small>закрывающий акт</small></li>
+        <li class="off">Не приехал</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="jt">
+    <div class="jt__head"><span>Этап · норматив</span><span>Клиент</span><span>Менеджер</span><span>Мастер</span><span>Система сама</span><span>Сообщение клиенту</span><span>Где живёт</span></div>
+
+    <article class="jr jr--auto">
+      <div><h2><em>1</em>Попал в CRM<small>любой канал</small></h2><span class="norm">сразу</span></div>
+      <div><span class="jl">Клиент</span>Пишет в Max, WhatsApp, ВК, Telegram, чат сайта, оставляет заявку или звонит</div>
+      <div><span class="jl">Менеджер</span>«Неразобранное»: принять, привязать к прежнему клиенту или отклонить спам</div>
+      <div><span class="jl">Мастер</span><span class="dim">–</span></div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>склейка по телефону</li><li>повторный – прежнему менеджеру</li><li>метка ссылки → «откуда узнал»</li><li>ночью – автоответ</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span>Ночью: «На связи с 11:00. Пришлите марку, год и фото штатной магнитолы – утром сразу назовём цену»</div>
+      <div><span class="jl">Где живёт</span><span class="wh wh--crm">CRM</span></div>
+    </article>
+
+    <article class="jr">
+      <div><h2><em>2</em>Первый ответ<small>статус разговора</small></h2><span class="norm">до 5 мин в часы работы</span></div>
+      <div><span class="jl">Клиент</span>Получает живой ответ с одним вопросом про машину</div>
+      <div><span class="jl">Менеджер</span>Отвечает шаблоном «/машина», ставит метку услуги. Разговор «В работе» → «Ждём клиента»</div>
+      <div><span class="jl">Мастер</span><span class="dim">–</span></div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>таймер ответа</li><li>5 мин – тревога главному</li><li>время ответа – в аналитику</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span>«Здравствуйте! Подскажите марку, модель, год и, если несложно, фото штатной магнитолы – подберём рамку и назовём цену под ключ»</div>
+      <div><span class="jl">Где живёт</span><span class="wh wh--crm">CRM</span></div>
+    </article>
+
+    <article class="jr">
+      <div><h2><em>3</em>Квалифицирован<small>наш клиент и понятна машина</small></h2><span class="norm">до 30 мин после ответа</span></div>
+      <div><span class="jl">Клиент</span>Присылает машину и фото панели</div>
+      <div><span class="jl">Менеджер</span>Заполняет 5 полей: услуга, марка, модель, год, штатка по фото. Не наш профиль – «не_лид»</div>
+      <div><span class="jl">Мастер</span>Сложный подбор – через передачу с заметкой (2 линия)</div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>без 5 полей стадию не сменить</li><li>подсказка рамки и цены из прайса</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span><span class="dim">–</span></div>
+      <div><span class="jl">Где живёт</span><span class="wh wh--crm">CRM</span></div>
+    </article>
+
+    <article class="jr">
+      <div><h2><em>4</em>Назвали цену<small>и два окна</small></h2><span class="norm">в том же разговоре</span></div>
+      <div><span class="jl">Клиент</span>Видит цену под ключ, что входит, сколько по времени и два свободных окна</div>
+      <div><span class="jl">Менеджер</span>Шаблон с ценой, сумма – в поле. Клиент думает – ставит следующий шаг</div>
+      <div><span class="jl">Мастер</span><span class="dim">–</span></div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>нет следующего шага – оранжевая плашка</li><li>молчит 2 дня – черновик «напомнить»</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span>«Под ключ 38 900 ₽: Teyes CC3 2K, рамка под Camry, адаптер руля и установка, около 4 часов. Свободно чт 11:00 или пт 14:00»</div>
+      <div><span class="jl">Где живёт</span><span class="wh wh--crm">CRM</span></div>
+    </article>
+
+    <article class="jr">
+      <div><h2><em>5</em>Записан<small>пост, мастер, время</small></h2><span class="norm">до конца разговора</span></div>
+      <div><span class="jl">Клиент</span>Сразу получает «Записали»: дата, адрес, сколько ждать</div>
+      <div><span class="jl">Менеджер</span>Ставит в сетку: пост, мастер, длительность по услуге. Рамка – бронь со склада или заказ</div>
+      <div><span class="jl">Мастер</span>Видит запись в своей сетке</div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>обязательны дата, время, пост</li><li>рамки нет – запись не раньше прихода</li><li>шлёт «Записали»</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span>«Записали на чт 19.11 в 11:00. Сухарная, 35 к13, пом. 110, въезд со двора. Планы поменяются – просто напишите сюда»</div>
+      <div><span class="jl">Где живёт</span><span class="wh wh--ad">АД</span> или <span class="wh wh--crm">CRM</span> – вопрос 2</div>
+    </article>
+
+    <article class="jr jr--auto">
+      <div><h2><em>6</em>Подтвердил<small>накануне вечером</small></h2><span class="norm">18:00 → разобрать до 19:00</span></div>
+      <div><span class="jl">Клиент</span>Получает напоминание там, где писал: «Да, приеду / Перенести / Не смогу» кнопкой или цифрой</div>
+      <div><span class="jl">Менеджер</span>Экран «Завтра»: звонит не ответившим, разбирает переносы и непонятные ответы</div>
+      <div><span class="jl">Мастер</span>Видит, кто подтвердил, – готовит рамку и провода заранее</div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>понимает кнопки и слова</li><li>18:45 – задачи «позвонить»</li><li>за 2 ч – «ждём вас»</li><li>+30 мин без клиента – тревога</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span>«Игорь, добрый вечер! Завтра в 11:00 ждём вашу Camry – ставим Teyes. Получается приехать?»</div>
+      <div><span class="jl">Где живёт</span><span class="wh wh--crm">CRM</span></div>
+    </article>
+
+    <article class="jr jr--doc">
+      <div><h2><em>7</em>Приехал · акт приёмки<small>ПП РФ № 780, п. 12</small></h2><span class="norm">приёмка до 15 мин</span></div>
+      <div><span class="jl">Клиент</span>Обходит машину с мастером, подписывает пальцем на экране, получает копию акта в мессенджер</div>
+      <div><span class="jl">Менеджер</span>Переход: открывает заказ-наряд в АД, номер – в CRM</div>
+      <div><span class="jl">Мастер</span>Пробег, топливо, 8 фото по кругу, сколы на схеме, вещи и ключи, что делаем и цена</div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>без фото и повреждений подпись закрыта</li><li>сделка → «Приехал»</li><li>копия акта клиенту</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span>«Приняли вашу Camry в 11:08. Акт с фото по кругу – по ссылке. Ориентир готовности – 15:30»</div>
+      <div><span class="jl">Где живёт</span>акт <span class="wh wh--crm">CRM</span> · ЗН <span class="wh wh--ad">АД</span> → <span class="wh wh--next">CRM</span></div>
+    </article>
+
+    <article class="jr">
+      <div><h2><em>8</em>В работе<small>доп. работы – только с «да»</small></h2><span class="norm">ответ клиента до 30 мин, иначе звонок</span></div>
+      <div><span class="jl">Клиент</span>Получает вопрос о доп. работе с фото и ценой, отвечает кнопкой. Видит «готово»</div>
+      <div><span class="jl">Менеджер</span>Проверяет текст доп. работы, звонит, если клиент молчит</div>
+      <div><span class="jl">Мастер</span>Доп. работа: фото, цена, почему. «Ждём деталь» с датой. «Готово»</div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>журнал согласия: кто, когда, на что</li><li>без «да» в заказ-наряд не идёт</li><li>«готово» – клиенту</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span>«У штатной камеры окислен разъём, картинка мерцает. Перепаять – 1 800 ₽. Делаем?»</div>
+      <div><span class="jl">Где живёт</span>статус <span class="wh wh--crm">CRM</span> · работы в ЗН <span class="wh wh--ad">АД</span> → <span class="wh wh--next">CRM</span></div>
+    </article>
+
+    <article class="jr jr--doc">
+      <div><h2><em>9</em>Выдача · закрывающий акт<small>ПП № 780, п. 23–25</small></h2><span class="norm">выдача до 15 мин</span></div>
+      <div><span class="jl">Клиент</span>Проверяет машину с мастером, платит, получает акт, гарантию и памятку в мессенджер</div>
+      <div><span class="jl">Менеджер</span>Переход: сумма и номер ЗН из АД – в CRM, оплата и чек – касса АД</div>
+      <div><span class="jl">Мастер</span>Фото результата, серийные номера, показывает настройки, «замечаний нет» или пишет замечания</div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>сделка → «Оплатил» с суммой</li><li>гарантия до даты – в карточке</li><li>копия клиенту</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span>«Спасибо! Акт, гарантия и как пользоваться – по ссылке. Что-то не так – пишите сюда, чат открыт»</div>
+      <div><span class="jl">Где живёт</span>ЗН и касса <span class="wh wh--ad">АД</span>, памятка <span class="wh wh--crm">CRM</span> → всё <span class="wh wh--next">CRM</span></div>
+    </article>
+
+    <article class="jr jr--auto">
+      <div><h2><em>10</em>После<small>касание, отзыв, гарантия</small></h2><span class="norm">2-й и 5-й день</span></div>
+      <div><span class="jl">Клиент</span>2-й день: «всё работает?». 5-й: просьба об отзыве. Гарантия – пишет в тот же чат</div>
+      <div><span class="jl">Менеджер</span>Отвечает на касание. Гарантию записывает визитом за 0 ₽</div>
+      <div><span class="jl">Мастер</span>Гарантийный визит вне очереди</div>
+      <div class="sys"><span class="jl">Система сама</span><ul><li>узнаёт клиента по телефону, показывает гарантию</li><li>отзыв – Яндекс Карты или 2ГИС</li></ul></div>
+      <div class="msg"><span class="jl">Сообщение</span>«Как магнитола, привыкаете? Если что-то не настроилось – напишите, подскажем»</div>
+      <div><span class="jl">Где живёт</span><span class="wh wh--crm">CRM</span></div>
+    </article>
+  </div>
+
+  <p class="band band--boss"><b>Аналитика пути</b><span>воронка с конверсией и временем на каждом шаге</span><span>неявки: подтвердившие против не ответивших</span><span>доп. работы: предложено, согласовано, рубли</span><span>отзывы</span><span>деньги по источникам</span></p>
+</main>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

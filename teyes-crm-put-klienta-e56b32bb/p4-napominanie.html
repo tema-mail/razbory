@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Напоминание и подтверждение – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab" href="#">Диалоги<span class="n">3</span></a>
+  <a class="tab" href="#">Сделки</a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab" href="#">Приёмка</a>
+  <a class="tab on" href="#">Настройки</a>
+  <span class="me"><b>Артём</b> · главный</span>
+</nav>
+<main>
+  <p class="demo-note">Макет, шаг 6 пути. Правило настраивает только главный. Справа – как сообщение выглядит у клиента: вид мессенджеров нейтральный, это не копия Max, ВК или WhatsApp.</p>
+  <div class="tools">
+    <h1>Напоминание и подтверждение записи<small>включено · вчера: 9 запросов, 7 подтвердили, 1 перенос, 1 без ответа – дозвонились</small></h1>
+    <button class="btn">Журнал отправок</button>
+    <button class="btn acc">Сохранить</button>
+  </div>
+
+  <div class="lay lay--rem">
+    <div class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Когда и что уходит<small>время – Новосибирск</small></h2><span class="src src--code">наш код</span></div>
+        <ul class="tline">
+          <li><time>при записи</time><div><b>«Записали»</b> – дата, адрес, сколько ждать<small>сразу, в разговор, где договорились</small></div></li>
+          <li><time>накануне 18:00</time><div><b>Просьба подтвердить</b> с кнопками или цифрами<small>и в выходной: ответы разберутся сами. На понедельник 11–12 менеджер в пятницу звонит сам</small></div></li>
+          <li><time>18:45</time><div><b>Нет ответа</b> → задача «позвонить»<small>запись до 13:00 – позвонить сегодня до 19:00, позже – завтра в 11:00</small></div></li>
+          <li><time>за 2 часа</time><div><b>«Ждём вас»</b> с адресом<small>подтвердившим и не ответившим; на 11:00 – уходит в 9:00</small></div></li>
+          <li><time>+30 мин</time><div><b>Клиента нет</b> → тревога менеджеру<small>сначала звонок: опаздывает или не едет</small></div></li>
+          <li><time>+2 часа</time><div><b>«Не приехал»</b> и черновик на завтра 12:00<small>отправляет менеджер, не робот</small></div></li>
+          <li><time>3 дня тишины</time><div><b>Отказ «пропал после записи»</b><small>рамку снимаем с брони</small></div></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="card__h"><h2>Как понимаем ответ</h2><span class="src src--code">наш код</span></div>
+        <div class="scroll-x">
+          <table class="tbl">
+            <tr><th>Кнопка</th><th>Цифра</th><th>Слова в ответе</th><th>Статус записи</th></tr>
+            <tr><td>Да, приеду</td><td class="l">1</td><td class="l">да, ок, буду, приеду, +</td><td class="l"><span class="cf cf--yes">✓ Подтвердил</span></td></tr>
+            <tr><td>Перенести</td><td class="l">2</td><td class="l">перенес…, другой день, не успеваю</td><td class="l"><span class="cf cf--move">↻ Просит перенос</span></td></tr>
+            <tr><td>Не смогу</td><td class="l">3</td><td class="l">не смогу, не приеду, отмен…</td><td class="l"><span class="cf cf--no">✕ Не сможет</span></td></tr>
+            <tr><td>–</td><td class="l">–</td><td class="l">«да, но к 12», вопрос, голосовое</td><td class="l"><span class="cf cf--q">? Разобрать</span></td></tr>
+          </table>
+        </div>
+        <p class="dim">«Не» перед словом важнее слова: «не приеду» – это «Не сможет». Непонятное статус не меняет и падает менеджеру. Ответ из другого канала того же телефона тоже засчитывается.</p>
+      </section>
+
+      <section class="card">
+        <div class="card__h"><h2>Текст накануне</h2><span class="src src--code">шаблон</span></div>
+        <div class="tpl"><var>Игорь</var>, добрый вечер! Напоминаем: завтра, <var>в четверг, в 11:00</var>, ждём вашу <var>Camry</var> – <var>ставим магнитолу Teyes</var>. Подтвердите, пожалуйста, что получается приехать.</div>
+        <p class="dim">В WhatsApp вместо кнопок добавляется строка «Ответьте цифрой: 1 – приеду, 2 – перенести, 3 – не смогу».</p>
+      </section>
+
+      <section class="card card--note">
+        <div class="card__h"><h2>Куда и с какими ограничениями</h2></div>
+        <ul>
+          <li><b>Канал</b> – последний, где клиент писал сам. Кнопки – в Max, Telegram и ВК, в WhatsApp – цифры.</li>
+          <li><b>WhatsApp у нас неофициальный</b> – условия WhatsApp запрещают автоматические рассылки, риск – блокировка номера. Поэтому только тем, кто писал в этот номер; имя, машина и время в каждом тексте; без ссылок; с 18:00 до 18:40 с паузой 30–90 секунд; не больше 40 за вечер. Временная блокировка – стоп и тревога.</li>
+          <li><b>Не доставлено</b> или клиент просил не писать – вместо сообщения задача «позвонить».</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="phones">
+      <div>
+        <div class="phone" aria-label="Мессенджер с кнопками">
+          <div class="phone__top"><span class="ava">T</span><div><b>TEYES Sibir</b><small>мессенджер с кнопками · Max, Telegram, ВК</small></div></div>
+          <div class="phone__body">
+            <span class="day">Сегодня</span>
+            <p class="bb">Ольга, добрый вечер! Напоминаем: завтра, в четверг, в 15:00, ждём вашу Creta – ставим камеру заднего вида и регистратор. Подтвердите, пожалуйста, что получается приехать.<small>18:00</small></p>
+            <div class="kbd"><b class="on">Да, приеду</b><b>Перенести</b><b class="wide">Не смогу</b></div>
+            <p class="bb bb--me">Да, приеду<small>18:03</small></p>
+            <p class="bb">Отлично, ждём! Мастер Кирилл всё подготовит заранее. Сухарная, 35 к13, пом. 110, въезд со двора.<small>18:03</small></p>
+            <span class="day">Завтра</span>
+            <p class="bb">Ольга, добрый день! Ждём вас сегодня в 15:00. Задерживаетесь – напишите, мастер подождёт.<small>13:00</small></p>
+          </div>
+          <div class="phone__in"><span>Сообщение</span><i>➤</i></div>
+        </div>
+        <p class="phone__cap">Кнопка = ответ. Статус «Подтвердил» ставится сам</p>
+      </div>
+      <div>
+        <div class="phone" aria-label="Мессенджер без кнопок">
+          <div class="phone__top"><span class="ava">T</span><div><b>TEYES Sibir</b><small>мессенджер без кнопок · WhatsApp</small></div></div>
+          <div class="phone__body">
+            <span class="day">Сегодня</span>
+            <p class="bb">Алексей, добрый вечер! Напоминаем: завтра, в четверг, в 11:00, ждём ваш Kia Rio – ставим StarLine с автозапуском. Подтвердите, пожалуйста, что получается приехать.<br><br>Ответьте цифрой: 1 – приеду, 2 – перенести, 3 – не смогу.<small>18:07</small></p>
+            <p class="bb bb--me">2, не успеваю с работы<small>18:31</small></p>
+            <p class="bb">Понял вас, передал менеджеру – ответим до 19:00. Ближайшие свободные окна: пт 20.11 в 11:00 или пн 23.11 в 14:00.<small>18:31</small></p>
+            <p class="bb">Алексей, это Алина. Ставлю пятницу, 20.11, в 11:00 – подходит?<small>18:40</small></p>
+            <p class="bb bb--me">Да<small>18:42</small></p>
+            <p class="bb">Готово, ждём в пятницу в 11:00. Накануне вечером напомним.<small>18:43</small></p>
+          </div>
+          <div class="phone__in"><span>Сообщение</span><i>➤</i></div>
+        </div>
+        <p class="phone__cap">Цифра или слова. Перенос делает человек, автоперенос – потом</p>
+      </div>
+    </div>
+  </div>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги<em>3</em></a><a href="#"><i>◈</i>Сделки</a><a href="#"><i>▣</i>Записи</a><a href="#"><i>✓</i>Приёмка</a><a class="on" href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

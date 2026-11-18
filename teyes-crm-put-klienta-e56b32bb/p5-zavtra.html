@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Завтрашние записи – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab" href="#">Диалоги<span class="n">2</span></a>
+  <a class="tab" href="#">Сделки</a>
+  <a class="tab on" href="#">Записи<span class="n">2</span></a>
+  <a class="tab" href="#">Приёмка</a>
+  <a class="tab" href="#">Аналитика</a>
+  <span class="me"><b>Алина</b> · 1 линия</span>
+</nav>
+<main>
+  <p class="demo-note">Макет, шаг 6 пути. Среда, 18:50: напоминания ушли в 18:00, ответы разобраны сами. Сверху – что сделать до 19:00, ниже – все записи на завтра.</p>
+  <div class="tools">
+    <h1>Завтра · чт 19 ноября<small>6 записей · напоминания ушли в 18:00–18:22 · до конца смены 10 минут</small></h1>
+    <button class="btn hide-m">Сетка постов</button>
+  </div>
+
+  <div class="tiles">
+    <div class="tl"><span>Записей</span><b>6</b><small>3 поста</small></div>
+    <div class="tl"><span>✓ Подтвердили</span><b>2</b><small>кнопкой или «1»</small></div>
+    <div class="tl tl--hot"><span>… Нет ответа</span><b>1</b><small>звонок до 19:00</small></div>
+    <div class="tl tl--hot"><span>? Разобрать</span><b>1</b><small>ответ непонятен</small></div>
+    <div class="tl"><span>↻ Перенос · ✕ Не сможет</span><b>1 · 1</b><small>окна свободны</small></div>
+    <div class="tl tl--br"><span>Освободилось</span><b>6 ч</b><small>лист ожидания · 2</small></div>
+  </div>
+
+  <div class="lay lay--work">
+    <section class="card">
+      <div class="card__h"><h2>Записи на завтра<small>красным – что сделать до 19:00</small></h2><span class="src src--code">наш экран</span></div>
+      <div>
+        <article class="zr zr--hot">
+          <span class="zr__t">11:00<small>Пост 3</small></span>
+          <div class="zr__c"><b>Сергей · Haval Jolion 2023</b><small>шумоизоляция 4 дверей · до пт 14:00 · <i class="ch ch--vk">VK</i></small></div>
+          <div class="zr__s"><span class="cf cf--wait">… нет ответа</span><small>прочитал в 18:05 · 18:47 звонок – не взял трубку</small></div>
+          <div class="acts"><button class="btn acc">Позвонить ещё</button><button class="btn">Написать</button></div>
+        </article>
+        <article class="zr zr--hot">
+          <span class="zr__t">16:00<small>Пост 2</small></span>
+          <div class="zr__c"><b>Наталья · Skoda Octavia A7</b><small>динамики, 4 двери · <i class="ch ch--tg">TG</i></small></div>
+          <div class="zr__s"><span class="cf cf--q">? разобрать</span><small>«Да, но опоздаю минут на 20, ничего?»</small></div>
+          <div class="acts"><button class="btn acc">Ответить «ждём к 16:20» и подтвердить</button></div>
+        </article>
+        <article class="zr">
+          <span class="zr__t">11:00<small>Пост 1</small></span>
+          <div class="zr__c"><b>Игорь · Toyota Camry XV70</b><small>Teyes CC3 2K · 38 900 ₽ · <i class="ch ch--wa">WA</i></small></div>
+          <div class="zr__s"><span class="cf cf--yes">✓ подтвердил</span><small>«1» · 18:12 · рамка в брони</small></div>
+          <div class="acts"><button class="btn ghost">Открыть</button></div>
+        </article>
+        <article class="zr">
+          <span class="zr__t">11:00<small>Пост 2</small></span>
+          <div class="zr__c"><b>Алексей · Kia Rio 2017</b><small>StarLine A93 + автозапуск · <i class="ch ch--wa">WA</i></small></div>
+          <div class="zr__s"><span class="cf cf--move">↻ перенесён</span><small>на пт 20.11 11:00 · Алина, 18:43 · окно 11–16 свободно</small></div>
+          <div class="acts"><button class="btn">Предложить окно из листа</button></div>
+        </article>
+        <article class="zr">
+          <span class="zr__t">15:00<small>Пост 1</small></span>
+          <div class="zr__c"><b>Ольга · Hyundai Creta 2021</b><small>камера + регистратор · <i class="ch ch--max">M</i></small></div>
+          <div class="zr__s"><span class="cf cf--yes">✓ подтвердила</span><small>кнопка · 18:03</small></div>
+          <div class="acts"><button class="btn ghost">Открыть</button></div>
+        </article>
+        <article class="zr">
+          <span class="zr__t">17:00<small>Пост 1</small></span>
+          <div class="zr__c"><b>Виктор · Toyota RAV4 2020</b><small>регистратор · <i class="ch ch--wa">WA</i></small></div>
+          <div class="zr__s"><span class="cf cf--no">✕ не сможет</span><small>«3, приболел» · 18:20 · черновик ответа готов</small></div>
+          <div class="acts"><button class="btn">Отправить «поправляйтесь»</button><button class="btn ghost">Отменить запись</button></div>
+        </article>
+      </div>
+    </section>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Что дальше само</h2></div>
+        <ul class="tline">
+          <li><time>завтра 9:00</time><div>«Ждём вас» – записям на 11:00<small>Игорю, Сергею: без ответа тоже получает</small></div></li>
+          <li><time>завтра 10:30</time><div>Задача: позвонить Сергею ещё раз<small>не дозвонились – решает главный: держать пост или отдать</small></div></li>
+          <li><time>13:00</time><div>«Ждём вас» – Ольге на 15:00</div></li>
+          <li><time>+30 мин</time><div>Клиента нет – тревога<small>мастер видит это на своём экране</small></div></li>
+        </ul>
+      </section>
+      <section class="card card--note">
+        <div class="card__h"><h2>Лист ожидания · 2</h2><span class="src src--ai">фаза 3</span></div>
+        <ul>
+          <li><b>Марина · Mazda CX-5</b> – магнитола, просила «если будет раньше»</li>
+          <li><b>Денис · Lada Vesta</b> – сигнализация, свободен в будни</li>
+        </ul>
+        <p>Освободилось окно – менеджер одной кнопкой отправляет предложение, первый согласившийся получает окно.</p>
+      </section>
+      <section class="card card--note">
+        <div class="card__h"><h2>Пограничные случаи</h2></div>
+        <ul>
+          <li><b>Ответил в другой канал</b> – тот же телефон, ответ засчитан.</li>
+          <li><b>Две записи у клиента</b> – одно сообщение на обе.</li>
+          <li><b>Записался после 18:00 на завтра</b> – запрос не шлём, только «ждём вас» за 2 часа.</li>
+          <li><b>Не доставлено</b> – сразу задача «позвонить».</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги<em>2</em></a><a href="#"><i>◈</i>Сделки</a><a class="on" href="#"><i>▣</i>Записи<em>2</em></a><a href="#"><i>✓</i>Приёмка</a><a href="#"><i>▥</i>Цифры</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

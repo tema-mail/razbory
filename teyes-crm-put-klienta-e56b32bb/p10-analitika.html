@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Аналитика пути клиента – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab" href="#">Диалоги</a>
+  <a class="tab" href="#">Сделки</a>
+  <a class="tab" href="#">Записи</a>
+  <a class="tab on" href="#">Аналитика</a>
+  <span class="me"><b>Артём</b> · главный</span>
+</nav>
+<main>
+  <p class="demo-note">Макет, сквозная аналитика пути. Все цифры – выдуманный пример за 30 дней, не факт. Между шагами – медиана времени: где клиент ждёт дольше всего.</p>
+  <div class="tools">
+    <h1>Путь клиента · 19.10–17.11<small>TEYES · все каналы · все менеджеры</small></h1>
+    <span class="sel">30 дней</span>
+    <span class="sel hide-m">Все источники</span>
+  </div>
+
+  <div class="tiles">
+    <div class="tl"><span>Обращения</span><b>412</b><small>лидов 318</small></div>
+    <div class="tl"><span>Записаны</span><b>118</b><small>37% лидов</small></div>
+    <div class="tl tl--hot"><span>Неявки</span><b>7,5%</b><small>8 из 106 записей</small></div>
+    <div class="tl"><span>Выручка</span><b>2,18 млн</b><small>96 оплат</small></div>
+    <div class="tl"><span>Средний чек</span><b>22 750 ₽</b><small>с доп. работами</small></div>
+    <div class="tl"><span>Ответ</span><b>3 мин</b><small>медиана, в часы работы</small></div>
+  </div>
+
+  <div class="lay lay--work">
+    <section class="card">
+      <div class="card__h"><h2>Воронка и время между шагами</h2><span class="src src--code">наш код</span></div>
+      <div class="fun">
+        <div class="fun__r"><span>Обращения</span><progress class="calm" value="412" max="412">412</progress><b>412</b></div>
+        <p class="fun__gap">первый ответ · 3 мин</p>
+        <div class="fun__r"><span>Лиды<small>без спама и дублей · 77%</small></span><progress class="calm" value="318" max="412">318</progress><b>318</b></div>
+        <p class="fun__gap">до квалификации · 18 мин</p>
+        <div class="fun__r"><span>Квалифицированы<small>76%</small></span><progress class="calm" value="241" max="412">241</progress><b>241</b></div>
+        <p class="fun__gap">до цены · 52 мин</p>
+        <div class="fun__r"><span>Назвали цену<small>81%</small></span><progress class="calm" value="196" max="412">196</progress><b>196</b></div>
+        <p class="fun__gap">цена → запись · 1,4 дня</p>
+        <div class="fun__r"><span>Записаны<small>60%</small></span><progress value="118" max="412">118</progress><b>118</b></div>
+        <p class="fun__gap">запись → визит · 3,1 дня · с датой в периоде 106</p>
+        <div class="fun__r"><span>Подтвердили<small>89 из 106 · 84%</small></span><progress value="89" max="412">89</progress><b>89</b></div>
+        <div class="fun__r"><span>Приехали<small>98 из 106 · 92%</small></span><progress value="98" max="412">98</progress><b>98</b></div>
+        <p class="fun__gap">приёмка 12 мин · в работе 4,6 ч · готово → выдача 2,2 ч</p>
+        <div class="fun__r"><span>Выдали и оплатили<small>2 ещё в работе</small></span><progress value="96" max="412">96</progress><b>96</b></div>
+      </div>
+    </section>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Неявки и подтверждение</h2></div>
+        <div class="bars">
+          <div><span>Подтвердили – не приехали</span><b>3 из 89 · 3%</b><progress class="calm" value="3" max="100">3%</progress></div>
+          <div><span>Не ответили – не приехали</span><b>5 из 17 · 29%</b><progress value="29" max="100">29%</progress></div>
+        </div>
+        <p class="dim">Напоминание доставлено 103 из 106: WhatsApp 61, Max 24, ВК 12, Telegram 6. Не доставлено 3 – дозвонились.</p>
+      </section>
+      <section class="card">
+        <div class="card__h"><h2>Где теряем после цены · 78</h2></div>
+        <div class="bars">
+          <div><span>Дорого</span><b>31</b><progress value="31" max="78">31</progress></div>
+          <div><span>Думает, пропал</span><b>29</b><progress value="29" max="78">29</progress></div>
+          <div><span>Купил сам, поставил сам</span><b>11</b><progress value="11" max="78">11</progress></div>
+          <div><span>Не подходит под машину</span><b>7</b><progress value="7" max="78">7</progress></div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="split">
+    <section class="card">
+      <div class="card__h"><h2>Доп. работы</h2></div>
+      <dl class="sum">
+        <div><dt>Предложили</dt><dd>31</dd></div>
+        <div><dt>Согласились</dt><dd>22 · 71%</dd></div>
+        <div><dt>Ответ клиента, медиана</dt><dd>9 мин</dd></div>
+        <div class="total"><dt>Добавили к выручке</dt><dd>41 300 ₽</dd></div>
+      </dl>
+    </section>
+    <section class="card">
+      <div class="card__h"><h2>После выдачи</h2></div>
+      <dl class="sum">
+        <div><dt>«Всё работает?» – ответили</dt><dd>58 из 92 · 63%</dd></div>
+        <div><dt>Жалобы → решены</dt><dd>6 → 6</dd></div>
+        <div><dt>Просили отзыв · оставили</dt><dd>88 · 19 (22%)</dd></div>
+        <div class="total"><dt>Возвраты по гарантии</dt><dd>2</dd></div>
+      </dl>
+    </section>
+    <section class="card">
+      <div class="card__h"><h2>Деньги по источникам</h2></div>
+      <div class="scroll-x">
+        <table class="tbl">
+          <tr><th>Источник</th><th>Лиды</th><th>Записи</th><th>Выручка</th></tr>
+          <tr><td>Яндекс Карты</td><td>96</td><td>41</td><td>812 000</td></tr>
+          <tr><td>Повторные</td><td>34</td><td>19</td><td>402 000</td></tr>
+          <tr><td>ВКонтакте</td><td>61</td><td>24</td><td>398 000</td></tr>
+          <tr><td>Сайт, Директ</td><td>58</td><td>20</td><td>366 000</td></tr>
+          <tr><td>Сарафан</td><td>38</td><td>5</td><td>110 000</td></tr>
+          <tr><td>2ГИС</td><td>31</td><td>9</td><td>96 000</td></tr>
+          <tr class="tot"><td>Всего</td><td>318</td><td>118</td><td>2 184 000</td></tr>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги</a><a href="#"><i>◈</i>Сделки</a><a href="#"><i>▣</i>Записи</a><a class="on" href="#"><i>▥</i>Цифры</a><a href="#"><i>☰</i>Ещё</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>

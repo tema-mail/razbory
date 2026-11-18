@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Запись в расписание – макет</title>
+<link rel="stylesheet" href="crm.css">
+</head>
+<body>
+<nav class="topnav" aria-label="Разделы">
+  <span class="brand"><i>T</i>TEYES SIBIR</span>
+  <a class="tab" href="#">Диалоги<span class="n">3</span></a>
+  <a class="tab" href="#">Сделки</a>
+  <a class="tab on" href="#">Записи</a>
+  <a class="tab" href="#">Приёмка</a>
+  <a class="tab" href="#">Аналитика</a>
+  <span class="me"><b>Алина</b> · 1 линия</span>
+</nav>
+<main>
+  <p class="demo-note">Макет, шаг 5 пути. Сетка постов – если запись ведём в CRM (вопрос 2, вариант Б). В варианте А сетка остаётся в АвтоДилере, а здесь только поля даты, поста и кнопка «Скопировать для АвтоДилера».</p>
+  <div class="tools">
+    <h1>Записи · чт 19 ноября<small>3 поста · часы работы 11–19 · свободно 5 ч на посту 1, 0 ч на постах 2–3</small></h1>
+    <span class="sel">чт 19.11</span>
+    <button class="btn hide-m">Неделя</button>
+  </div>
+
+  <div class="lay lay--work">
+    <section class="card">
+      <div class="card__h"><h2>Посты и мастера<small>серая штриховка – машина остаётся на ночь</small></h2>
+        <span class="legend"><span><span class="cf cf--wait">… ждёт напоминания</span></span><span><span class="cf cf--yes">✓ подтвердил</span></span></span></div>
+      <div class="scroll-x">
+        <div class="sch">
+          <div class="sch__row sch__row--h"><span class="sch__post">Пост</span><div class="sch__lane"><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span></div></div>
+          <div class="sch__row"><span class="sch__post">Пост 1<small>Кирилл · магнитолы, камеры</small></span>
+            <div class="sch__lane">
+              <div class="bk bk--new at11 w4"><b>Игорь · Camry XV70</b>Teyes CC3 2K · 4 ч · новая</div>
+              <div class="bk at15 w2"><b>Ольга · Creta</b>камера + регистратор · 2 ч</div>
+            </div></div>
+          <div class="sch__row"><span class="sch__post">Пост 2<small>Сергей · сигнализации</small></span>
+            <div class="sch__lane">
+              <div class="bk at11 w5"><b>Алексей · Kia Rio 2017</b>StarLine A93 + автозапуск · 5 ч</div>
+              <div class="bk at16 w3"><b>Наталья · Octavia A7</b>динамики, 4 двери · 3 ч</div>
+            </div></div>
+          <div class="sch__row"><span class="sch__post">Пост 3<small>Павел · шумка, звук</small></span>
+            <div class="sch__lane">
+              <div class="bk bk--night at11 w8"><b>Сергей · Haval Jolion 2023</b>шумоизоляция 4 дверей · до пт 20.11 14:00</div>
+            </div></div>
+        </div>
+      </div>
+      <p class="dim">Длительность ставится по услуге из прайса, менеджер может поправить. Запись не встанет на занятое время и на пост, где мастер этого не делает.</p>
+    </section>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card__h"><h2>Новая запись<small>Игорь · Toyota Camry XV70 2019</small></h2><span class="src src--code">наш экран</span></div>
+        <dl class="kv">
+          <div><dt>Когда</dt><dd>чт 19.11 · 11:00–15:00</dd></div>
+          <div><dt>Пост и мастер</dt><dd>Пост 1 · Кирилл</dd></div>
+          <div><dt>Услуга · длительность</dt><dd>Магнитола под ключ · 4 ч</dd></div>
+          <div><dt>Машина</dt><dd>ждёт у нас</dd></div>
+          <div><dt>Кто привезёт</dt><dd>сам</dd></div>
+          <div><dt>Сумма</dt><dd class="big">38 900 ₽</dd></div>
+        </dl>
+        <ul class="chk">
+          <li>Рамка 9" Camry XV70 – бронь 1 из 2 на 19.11</li>
+          <li>Предоплата не нужна: деталь со склада</li>
+        </ul>
+        <p class="dim">Рамка под заказ – запись не раньше даты прихода, по правилу из вопроса 5 – предоплата. Привезёт другой человек – его имя и телефон: при выдаче представителю нужна доверенность (ПП № 780, п. 23).</p>
+        <div class="acts"><button class="btn acc">Записать и отправить «Записали»</button><button class="btn">Скопировать для АвтоДилера</button></div>
+      </section>
+      <section class="card card--note">
+        <div class="card__h"><h2>Уйдёт клиенту в WhatsApp</h2><span class="src src--code">шаблон «Записали»</span></div>
+        <div class="tpl"><var>Игорь</var>, записали вас на <var>четверг, 19 ноября, в 11:00</var>. <var>Camry</var> – ставим Teyes CC3 2K с рамкой, под ключ <var>38 900 ₽</var>. Работа займёт около <var>4 часов</var>: можно подождать у нас или оставить машину.<br>Адрес: Сухарная, 35 к13, пом. 110, въезд со двора.<br>Если планы поменяются – просто напишите сюда, подберём другое время.</div>
+        <p>Накануне в 18:00 придёт просьба подтвердить – это шаг 6.</p>
+      </section>
+    </aside>
+  </div>
+</main>
+<nav class="tabbar" aria-label="Нижнее меню">
+  <a href="#"><i>✉</i>Диалоги<em>3</em></a><a href="#"><i>◈</i>Сделки</a><a class="on" href="#"><i>▣</i>Записи</a><a href="#"><i>✓</i>Приёмка</a><a href="#"><i>▥</i>Цифры</a>
+</nav>
+<button class="theme" id="th" aria-label="Сменить тему">◐</button>
+<script src="crm.js"></script>
+</body>
+</html>
