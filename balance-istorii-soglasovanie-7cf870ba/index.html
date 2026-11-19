@@ -1,0 +1,462 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Истории Balance в Яндекс Картах – на согласование</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Истории Balance в Яндекс Картах – на согласование</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>Предлагаем в каждом клубе 10 историй: «Как пройти», акция, 7 тематических и «Клубные карты». Услуги из вашего файла разложены по темам, одна услуга – один слайд с вашим коротким описанием. Пять историй одинаковы для всей сети, пять – свои у каждого клуба. От вас – отметить в таблице, какие услуги есть в каком клубе, и ответить на 6 вопросов в конце.</p>
+<h2>Как устроены истории в Яндекс Картах</h2>
+<ul>
+<li>В карточке видно не больше 10 историй – это кружки под шапкой. Каждый кружок – тема со слайдами внутри, как «Актуальное» в Инстаграме.</li>
+<li>Название кружка – до 15 знаков. Внутри истории – до 10 слайдов. На последнем слайде кнопка «Записаться» ведёт на страницу клуба.</li>
+<li>«Как пройти» Яндекс всегда ставит первой.</li>
+<li>Историю можно выложить сразу во все филиалы сети или только в один клуб.</li>
+</ul>
+<h2>Порядок историй в каждом клубе</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>№</th>
+<th>Кружок</th>
+<th>Где</th>
+<th>Что внутри</th>
+<th>Слайдов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Как пройти</td>
+<td>свой у каждого клуба</td>
+<td>Остановка, фасад с вывеской, вход, ресепшен</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Акция</td>
+<td>вся сеть</td>
+<td>Акция месяца с датой окончания, меняем каждый месяц</td>
+<td>2–3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Групповые</td>
+<td>вся сеть</td>
+<td>8 направлений + расписание</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Единоборства</td>
+<td>свой у каждого клуба</td>
+<td>Направления клуба</td>
+<td>2–4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Персональные</td>
+<td>вся сеть</td>
+<td>4 формата + фитнес-диагност</td>
+<td>5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Фигура и ЛФК</td>
+<td>вся сеть</td>
+<td>6 целей</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Бассейн</td>
+<td>вся сеть</td>
+<td>Плавание и аква-направления</td>
+<td>7</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Детям</td>
+<td>вся сеть</td>
+<td>Секции, семейные, детский клуб</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Зоны клуба</td>
+<td>свой у каждого клуба</td>
+<td>Зоны и услуги этого клуба</td>
+<td>5–7</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Клубные карты</td>
+<td>свой у каждого клуба</td>
+<td>Карты, часы посещения, условия</td>
+<td>3–4</td>
+</tr>
+</tbody>
+</table></div>
+<p>«Вся сеть» значит, что история одна на три клуба. Но если в таблице ниже услуги в каком-то клубе нет, этот слайд для него убираем, и история становится своей для клуба.</p>
+<h2>Что внутри каждой истории</h2>
+<p>Заголовок слайда – название услуги, текст – ваше короткое описание из файла.</p>
+<h3>3. Групповые</h3>
+<ol>
+<li>Йога – Йога для любого уровня подготовки</li>
+<li>Пилатес – Укрепление мышц и гибкость</li>
+<li>Пилатес на реформере – от 500 ₽ – Пилатес на специальном тренажёре</li>
+<li>Стретчинг и функциональная растяжка – Растяжка, гибкость и свобода движений <em>(два пункта файла в одном слайде)</em></li>
+<li>TRX и функциональный тренинг – TRX и функциональная силовая нагрузка</li>
+<li>Круговые тренировки – Сила и общая выносливость</li>
+<li>Степ-аэробика – Кардиотренировка на степ-платформе</li>
+<li>Силовые тренировки – Силовые упражнения для всего тела</li>
+<li>Расписание – по кнопке – кнопка «Расписание» ведёт на страницу клуба</li>
+</ol>
+<h3>4. Единоборства</h3>
+<ol>
+<li>Смешанные единоборства – Тренировки по смешанным единоборствам</li>
+<li>Бокс для начинающих – Основы бокса для начинающих</li>
+<li>Только Абрикосово: каратэ и самбо – их нет в файле, но они есть в карточке клуба. Оставить?</li>
+</ol>
+<h3>5. Персональные</h3>
+<ol>
+<li>Персональные тренировки с тренером – Индивидуальные занятия с тренером</li>
+<li>Тренировки для подростков – Фитнес для подростков</li>
+<li>Тренировки для беременных – Безопасная активность во время беременности</li>
+<li>Тренировки для людей 60+ – Поддержание активности и подвижности</li>
+<li>Консультация фитнес-диагноста – от 500 ₽ – Оценка физической формы и рекомендации <em>(в файле она в «Дополнительных услугах», здесь она ближе по смыслу)</em></li>
+</ol>
+<h3>6. Фигура и ЛФК</h3>
+<ol>
+<li>Снижение веса и жиросжигание – Тренировки для снижения веса</li>
+<li>Набор мышечной массы – Силовые тренировки для роста мышц</li>
+<li>Коррекция осанки – Упражнения для правильной осанки</li>
+<li>Восстановление после родов – Восстановление физической формы после родов</li>
+<li>Реабилитация и ЛФК после травм – ЛФК после травм</li>
+<li>Антистресс-программы – Расслабление и снятие напряжения</li>
+</ol>
+<h3>7. Бассейн</h3>
+<ol>
+<li>Плавание для взрослых – обучение с нуля – Обучение плаванию взрослых с нуля</li>
+<li>Обучение технике плавания – Совершенствование техники плавания</li>
+<li>Подготовка к заплывам – Подготовка к плавательным заплывам</li>
+<li>Аквааэробика – Фитнес-тренировки в воде</li>
+<li>Аквааэробика для беременных – Аквааэробика для будущих мам</li>
+<li>Аква-ЛФК и восстановление в воде – Восстановительные упражнения в воде</li>
+<li>Плавание для детей – Обучение плаванию детей <em>(этот же слайд повторяется в «Детям»)</em></li>
+</ol>
+<h3>8. Детям</h3>
+<ol>
+<li>Детские секции – Спортивные занятия для детей</li>
+<li>Семейные тренировки – Совместные тренировки родителей и детей</li>
+<li>Плавание для детей – Обучение плаванию детей</li>
+<li>Детский клуб: фитнес-няня, мини-сад, продлёнка – этого нет в файле, но это есть в прайсе карточек. Оставить?</li>
+</ol>
+<h3>9. Зоны клуба – у каждого клуба свои</h3>
+<p>Из «Дополнительных услуг и зон» файла:
+1. Зона функционального тренинга
+2. Кардиозона с ТВ и видом – вид за окном видим в Адмирале (горы) и в Абрикосово (панорамные окна), про ТВ и Империал – уточнить.
+3. Студия групповых программ
+4. Бассейн
+5. Сауна и хаммам
+6. Массаж и миофасциальный релиз
+7. Только Империал – Balance spa. Кафе – в тех клубах, где оно есть.</p>
+<h3>10. Клубные карты – у каждого клуба свои</h3>
+<p>Виды карт, часы посещения и условия клуба. Сюда же переносим слайд «−20% участникам СВО». Цифры – только те, что вы подтвердите, у клубов часы дневной карты разные.</p>
+<h2>Что убираем из текущих историй</h2>
+<p>«Летний лагерь» (даты лета), «3667», «Balance», «Хорошее место!», «Преимущества», «Направления». Сами темы не пропадают:
+- «Школа плавания» → в «Бассейн» и «Детям»;
+- «Balance дети» → в «Детям»;
+- «Balance кафе» → в «Зоны клуба»;
+- «−20% для СВОих» → в «Клубные карты».</p>
+<h2>Таблица: какие услуги есть в каком клубе</h2>
+<p>✓ – знаем по карточке Яндекса, 3D-туру или сайту. ? – не знаем, отметьте. Где услуги нет, слайд в этом клубе не выходит.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Услуга</th>
+<th>Империал</th>
+<th>Абрикосово</th>
+<th>Адмирал</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Йога</td>
+<td>?</td>
+<td>✓</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Пилатес</td>
+<td>✓</td>
+<td>✓</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Пилатес на реформере – от 500 ₽</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Стретчинг</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Функциональная растяжка</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>TRX и функциональный тренинг</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Круговые тренировки</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Степ-аэробика</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Силовые тренировки</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Смешанные единоборства</td>
+<td>✓</td>
+<td>?</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Бокс для начинающих</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Персональные тренировки с тренером</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Тренировки для подростков</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Тренировки для беременных</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Тренировки для людей 60+</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Восстановление после родов</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Реабилитация и ЛФК после травм</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Коррекция осанки</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Снижение веса и жиросжигание</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Набор мышечной массы</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Антистресс-программы</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Плавание для взрослых с нуля</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Плавание для детей</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Аквааэробика</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Аквааэробика для беременных</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Аква-ЛФК и восстановление в воде</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Обучение технике плавания</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Подготовка к заплывам</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Детские секции</td>
+<td>?</td>
+<td>✓</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Семейные тренировки</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Зона функционального тренинга</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Кардиозона с ТВ и видом</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Студия групповых программ</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Бассейн</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Сауна и хаммам</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Массаж и миофасциальный релиз</td>
+<td>✓</td>
+<td>✓</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Консультация фитнес-диагноста – от 500 ₽</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Тот же файл – для раздела «Товары и услуги»</h2>
+<p>Файл подходит и для прайса карточки, но у Яндекса там жёсткое правило: <strong>позиция без цены не публикуется, и цена должна быть точной цифрой, без «от»</strong>.
+- Для прайса нужна точная цена каждой услуги в каждом клубе и единица: «1 занятие», «60 мин», «1 мес».
+- Если услуга входит в клубную карту и отдельно не продаётся – её не ставим в прайс, а показываем в историях и в описании клубной карты.
+- «от 500 ₽» убираем из названия: цена ставится в своё поле.
+- Категории файла становятся разделами прайса.</p>
+<h2>Вопросы к вам</h2>
+<ol>
+<li>Отметьте в таблице все «?».</li>
+<li>Каратэ и самбо в Абрикосово – оставить в «Единоборствах»?</li>
+<li>Сайкл, кроссфит, детский клуб (фитнес-няня, мини-сад, продлёнка), кафе и Balance spa в файле не указаны, хотя в клубах есть. Добавляем их в истории?</li>
+<li>Какая акция идёт в декабре и до какой даты?</li>
+<li>Точные цены услуг для прайса – по каждому клубу.</li>
+<li>Фото фасада и парковки Империала и Адмирала – для «Как пройти».</li>
+</ol></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
