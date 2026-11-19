@@ -1,0 +1,132 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Своя онлайн-запись в Яндекс Картах: технически можно, код готов, но Яндекс пускает только партнёра с 300+ клиентами или крупную сеть</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Своя онлайн-запись в Яндекс Картах: технически можно, код готов, но Яндекс пускает только партнёра с 300+ клиентами или крупную сеть</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>19.11.2026 · проект <code>~/Sites/yandex-zapis</code>, репозиторий tema-mail/yandex-zapis (закрытый)</p>
+<p><strong>Вывод.</strong> Свой виджет Яндексу «отправить» нельзя: окно записи в Картах Яндекс рисует сам, одинаковое для всех. Можно другое – стать партнёром самим: поставить свой сервер записи, в который Яндекс ходит за услугами, мастерами и свободным временем. Такой сервер я написал по их спецификации, плюс наш виджет для сайтов на том же расписании. Упираемся не в код, а в допуск: по оферте партнёр – это сервис с 300+ подключёнными организациями или крупная сеть со своей CRM.</p>
+<h2>1. Как это работает у Яндекса: Яндекс – клиент, мы – сервер</h2>
+<ul>
+<li>Человек жмёт «Записаться» в карточке на Картах → окно записи Яндекса → Яндекс спрашивает <strong>наш</strong> сервер: услуги, мастера, свободные даты, слоты → создаёт у нас запись.</li>
+<li>Вид окна в Картах настроить нельзя (так в справке Яндекса). Наш вид – только у виджета на нашем сайте.</li>
+<li>Протокол – 13 адресов, подпись каждого запроса ключом от Яндекса (JWT). Когда запись меняется у нас (подтвердили, перенесли, «пришёл / не пришёл»), мы сами шлём это в Яндекс, чтобы у клиента в Картах был верный статус.</li>
+<li>Денег Яндекс за это не берёт: «Соглашение является безденежным» (п. 13.1 оферты). Интеграция у них в среднем около месяца.</li>
+</ul>
+<h2>2. Кого пускают: здесь главное ограничение</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Требование</th>
+<th>Откуда</th>
+<th>Что значит для нас</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Партнёр – сервис, где <strong>более 300</strong> организаций-клиентов</td>
+<td>оферта, п. 1.1</td>
+<td>у нас пока столько нет</td>
+</tr>
+<tr>
+<td>Или <strong>крупная сеть</strong> со своей CRM</td>
+<td>инструкция для партнёров API</td>
+<td>подходит сеть клиента (например, фитнес-сеть), а не одна точка</td>
+</tr>
+<tr>
+<td>В тестовом фиде <strong>не меньше 10</strong> реальных организаций</td>
+<td>инструкция</td>
+<td>одной точкой даже тест не пройти</td>
+</tr>
+<tr>
+<td>По умолчанию открыта только <strong>красота</strong>; авто, медицина, развлечения – через менеджера</td>
+<td>инструкция</td>
+<td>автосервисы TEYES и EV – только по согласованию</td>
+</tr>
+<tr>
+<td>Тестовый сервер отдельно от боевого, сбои чинить за <strong>2 рабочих дня</strong>, иначе отключат</td>
+<td>инструкция</td>
+<td>держим два процесса и мониторинг</td>
+</tr>
+<tr>
+<td>Яндекс может отказать или отключить по своему усмотрению</td>
+<td>оферта, п. 5.3, 6.2, 7.2</td>
+<td>риск остаётся на нас</td>
+</tr>
+</tbody>
+</table></div>
+<p>Итог: подать заявку можно, но с честным ответом на «сколько у вас организаций». Реальные пути – (А) заявка от имени сети клиента, у которой 10+ точек; (Б) наш сервис записи как продукт для салонов и сервисов и заявка, когда наберём клиентов; (В) пока клиентам с одной точкой – обычный партнёр Яндекса (YCLIENTS, Dikidi и др.), а наш виджет – на их сайтах.</p>
+<h2>3. Что написано</h2>
+<ul>
+<li><strong>Сервер по спецификации Яндекса</strong> – все 13 адресов: фид организаций, услуги, мастера, отзывы, свободные даты, слоты, особые условия, запись (создать, посмотреть, перенести, отменить), предварительная бронь слота. Проверка подписи с защитой от подмены (телефон и компания в подписи должны совпасть с запросом).</li>
+<li><strong>Движок расписания</strong> – шаг сетки, рабочие часы мастеров по дням, выходные, запас «не раньше чем через час», горизонт 30 дней, запрет переноса и отмены позже чем за N минут, «любой свободный мастер».</li>
+<li><strong>Наш виджет для сайтов</strong> – одна строка вставки в Astro или Тильду, 4 шага, тёмная тема, маска телефона, пустая галочка согласия блокирует кнопку, скрытые UTM, цель Метрики только после ответа сервера.</li>
+<li><strong>Общие окна</strong> – запись с сайта сразу пропадает в Картах и наоборот: одна база на оба входа.</li>
+<li><strong>Синхронизация в Яндекс</strong> очередью с повторами: Яндекс недоступен – запись не теряется, повтор через 2, 4, 8… минут.</li>
+<li>Без внешних библиотек, один процесс на Node – ставится на любой наш сервер.</li>
+</ul>
+<p><img loading="lazy" alt="Шаг 1 – услуги" src="1-uslugi.webp" /></p>
+<p><img loading="lazy" alt="Шаг 3 – день и время" src="2-den-vremya.webp" /></p>
+<p><img loading="lazy" alt="Шаг 4 – контакты, кнопка закрыта до галочки" src="3-kontakty.webp" /></p>
+<p><img loading="lazy" alt="Готово" src="4-gotovo.webp" /></p>
+<p><img loading="lazy" alt="Тёмная тема" src="7-temnaya-dni.webp" /></p>
+<h2>4. Что проверено</h2>
+<ul>
+<li><strong>24 автотеста</strong> зелёные. Главный – ответы сервера сверяются строго со схемами из спецификации Яндекса (лишнее поле – тоже ошибка).</li>
+<li><strong>Живой сервер:</strong> запросы с настоящей подписью – фид, слоты в поясе Новосибирска (+07:00), запись создалась; чужая подпись – отказ 401.</li>
+<li><strong>Виджет в браузере</strong> (claude-vps, 390 и 1440 px): прошёл запись от услуги до «Вы записаны», светлая и тёмная тема, без прокрутки вбок. Нашёл и поправил: телефон на финале был без форматирования, полоса дней в тёмной теме была белой.</li>
+<li><strong>Не проверено:</strong> настоящий обмен с Яндексом – ключ и тестовый стенд выдаёт только их менеджер после заявки.</li>
+</ul>
+<h2>Нужно от тебя</h2>
+<ol>
+<li>Выбрать путь: <strong>А</strong> – сеть клиента с 10+ точками (какая?), <strong>Б</strong> – растим свой сервис записи до заявки, <strong>В</strong> – пока партнёры Яндекса, наш виджет только на сайтах.</li>
+<li>Если А или Б – заявку в форме Яндекса подаёшь ты (данные юрлица): forms.yandex.ru/surveys/11904974.7336a132c614bb1304259a42d96078a24f9a8775</li>
+<li>Где поднять сервер (наш FirstVDS или сервер клиента) – выкладка за мной после ответа.</li>
+</ol>
+<h2>Что раскрыть</h2>
+<ul>
+<li>Как подключить виджет к сайту конкретного клиента и в CRM (стенд crm.stend.deford.ru).</li>
+<li>Какие вопросы задать менеджеру Яндекса: формат обратного вызова, статус «не пришёл», допуск автосервисов.</li>
+<li>Сравнение с YCLIENTS/Dikidi по цене для клиента с одной точкой.</li>
+</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
