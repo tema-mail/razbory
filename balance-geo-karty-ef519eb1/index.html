@@ -41,7 +41,7 @@ html[data-theme=dark] img{filter:brightness(.92)}
 html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
 </style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
 if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
-document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Баланс: Яндекс Карты – ТЗ на три клуба и 106 слайдов сторис готовы</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Баланс: Яндекс Карты – ТЗ на три клуба и 106 слайдов сторис готовы</h1>
 <p>Карточки у клубов сильные: у всех 5,0 и «Хорошее место 2026». Слабые места – старый прайс, устаревшие сторис и нет сторис «Как пройти». ТЗ, все сторис, фото, акция, логотип и обложки готовы. Всё нарисовано бесплатно, из живых фото клуба и кадров 3D-туров. Под это заведены агент и два скилла, они работают на любого клиента.</p>
 <h2>Что увидел клиент на картах (снято 18.11 без входа в кабинет)</h2>
 <ul>
@@ -73,40 +73,7 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 <p><strong>Абрикосово</strong> – 9 историй, 35 слайдов:</p>
 <p><img loading="lazy" alt="Абрикосово" src="abricosovo-vse.webp" /></p>
 <p><strong>Адмирал</strong> – 8 историй, 33 слайда:</p>
-<p><img loading="lazy" alt="Адмирал" src="admiral-vse.webp" /></p>
-<p>Скачать: <a href="storis-imperial.zip">сторис Империала</a> · <a href="storis-abricosovo.zip">Абрикосово</a> · <a href="storis-admiral.zip">Адмирала</a>. Порядок, названия и ссылки кнопок для кабинета: <a href="vylozhit-imperial.md">Империал</a> · <a href="vylozhit-abricosovo.md">Абрикосово</a> · <a href="vylozhit-admiral.md">Адмирал</a>.</p>
-<h2>Остальной визуал</h2>
-<p><img loading="lazy" alt="Акция, логотип, обложки" src="vse.webp" /></p>
-<ul>
-<li><strong>Акция «Убывающая скидка до 30 ноября»</strong> – одна картинка на все три клуба. Проценты на неё не ставил: они падают каждые 5 дней.</li>
-<li><strong>Логотип 720×720 и обложки 1920×1080</strong> – для 2ГИС и Google.</li>
-<li><strong>Фото карточки, первые 5 по каждому клубу.</strong> На фасаде Абрикосово 9 номеров машин закрыты строго по рамке.</li>
-</ul>
-<p>Скачать: <a href="foto-kartochki.zip">фото карточек</a> · <a href="akciya-logo-oblozhki.zip">акция, логотип, обложки</a></p>
-<h2>Как сделано</h2>
-<ul>
-<li><strong>Агент <code>geo-oformitel</code></strong> и скиллы <code>geo-karty</code> (аудит и ТЗ) и <code>geo-vizual</code> (визуал): работают на любого клиента – TEYES, цветы и т. д.</li>
-<li><strong>Чем рисовал.</strong> Всё рисовал на нашем сервере claude-vps, бесплатно, без ChatGPT. Карточки смотрел нашим браузером, мак не трогал.</li>
-<li><strong>3D-туры.</strong> Это туры подрядчика «Эффект присутствия». Из них снято 128 кадров интерьера, вертикальные – сразу 9:16. Людей в кадрах нет.</li>
-</ul>
-<h2>Нужно от тебя</h2>
-<ul>
-<li><strong>Тариф сети в Яндекс Бизнесе.</strong> Сторис по правилам Яндекса есть только в платном «Расширенном». У Баланса они уже стоят – значит, тариф или реклама подключены. Кто ведёт кабинет?</li>
-<li><strong>Ответы клуба:</strong></li>
-<li>актуальные цены карт и цены Адмирала;</li>
-<li>подменные ли номера 958;</li>
-<li>действует ли оплата «от 3 667 ₽» в месяц;</li>
-<li>какая CRM для онлайн-записи;</li>
-<li>есть ли своя парковка у Абрикосово.</li>
-<li><strong>Фото фасада и парковки</strong> Империала и Адмирала. Без них два первых слайда «Как пройти» у этих клубов идут без фото, в цвете бренда.</li>
-<li><strong>Выкладка.</strong> «Да» на выкладку сторис в кабинет – или отдать файлы администратору клуба.</li>
-</ul>
-<h2>Что раскрыть</h2>
-<ul>
-<li>Почему цены на картинках не ставим, а в прайс карточки ставим.</li>
-<li>Что даёт платный тариф Яндекса и стоит ли он сети.</li>
-<li>2ГИС и Google: снаружи их пока не смотрели.</li>
-</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+<p><img loading="lazy" alt="Адмирал" src="admiral-vse.webp" /></p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
 function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
 b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
 upd();document.body.appendChild(b)})();</script></body></html>
