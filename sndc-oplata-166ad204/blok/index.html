@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SNDC Travel – способы оплаты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --head:'Montserrat',Arial,sans-serif;
+  --text:'Open Sans',Arial,sans-serif;
+  --gold1:#f1d35a;--gold2:#d9ab1f;--gold:#e3b82c;
+  --num:#c6c6c6;--ink:#000;--mut:#6f6f6f;--tile:#f3f3f1;--line:#e6e6e2;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#141414 url(img/fon.webp) repeat fixed;background-size:840px auto;color:#fff;font-family:var(--text);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:0 58px}
+
+/* ===== Блок 1 – как на сайте ===== */
+.pay{position:relative;padding:90px 0 70px}
+.pay__grid{display:grid;grid-template-columns:533px 1fr;gap:40px;align-items:start}
+.pay h2{font:600 35px/1.2 var(--head);margin:0 0 18px}
+.pay__sub{font-size:13px;line-height:1.8;margin:0 0 33px}
+.cards{display:flex;flex-direction:column;gap:19px}
+.card{position:relative;display:block;width:100%;min-height:144px;background:#fff;border-radius:16px;color:var(--ink);
+  overflow:hidden;cursor:pointer;border:2px solid transparent;text-align:left;font:inherit;padding:0;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.card.is-on{border-color:var(--gold)}
+.card__img{position:absolute;top:0;right:0;width:250px;height:100%;object-fit:cover;object-position:right center;border-radius:0 14px 14px 0;pointer-events:none}
+.card__body{position:relative;z-index:1;display:grid;grid-template-columns:26px 1fr;padding:25px 0 22px 26px;max-width:340px}
+.card__n{color:var(--num);font-size:13px;line-height:1.55;padding-top:3px}
+.card__t{font-weight:700;font-size:15px;line-height:1.55;margin:0 0 8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card__d{font-size:13px;line-height:1.3;margin:0;max-width:230px}
+.badge{font:700 10px/1 var(--text);background:var(--gold);color:#1d1a10;padding:5px 9px;border-radius:20px;letter-spacing:.02em}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;max-width:250px}
+.chip{font-size:11px;line-height:1;padding:7px 10px;border-radius:20px;background:#f5f1e3;color:#3a3420;white-space:nowrap}
+.card--new{border-color:var(--gold)}
+.card--new .card__img{width:300px;object-position:70% center}
+
+/* Телефон в руке: фото + живой экран поверх */
+.phone{position:relative;width:620px;max-width:100%;margin:-60px 0 0 auto}
+.phone>img{display:block;width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.screen{position:absolute;left:12.75%;top:3.42%;width:43.85%;height:68.47%;border-radius:8% / 4.1%;overflow:hidden;
+  container-type:inline-size;display:flex;flex-direction:column;align-items:center;
+  background:linear-gradient(180deg,rgba(14,32,26,.18) 0%,rgba(14,32,26,.05) 28%,rgba(10,26,20,.45) 100%)}
+.screen__logo{margin-top:17cqw;font:700 10.4cqw/1 var(--head);letter-spacing:.01em;color:rgba(255,255,255,.62);text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.glass{margin-top:7cqw;width:88%;padding:8cqw 7cqw 7cqw;border-radius:6cqw;background:rgba(40,62,52,.55);
+  backdrop-filter:blur(10px) saturate(1.1);-webkit-backdrop-filter:blur(10px) saturate(1.1);border:1px solid rgba(255,255,255,.12)}
+.glass__t{font:600 6.4cqw/1.25 var(--head);margin:0 0 6cqw}
+.opt{display:grid;grid-template-columns:7.5cqw 1fr;gap:3.5cqw;align-items:start;width:100%;background:none;border:0;color:#fff;
+  text-align:left;padding:0;margin:0 0 4.6cqw;cursor:pointer;font:400 5.1cqw/1.3 var(--head)}
+.opt__r{width:7.5cqw;height:7.5cqw;border-radius:50%;border:.7cqw solid #fff;display:grid;place-items:center;margin-top:-.4cqw}
+.opt__r::after{content:"";width:3.6cqw;height:3.6cqw;border-radius:50%;background:var(--gold1);transform:scale(0);transition:transform .2s}
+.opt.is-on .opt__r{border-color:var(--gold1)}
+.opt.is-on .opt__r::after{transform:scale(1)}
+.opt small{display:block;font:400 3.4cqw/1.35 var(--text);opacity:.75;margin-top:1cqw}
+.screen__btn{display:block;width:100%;margin-top:3cqw;padding:5.2cqw 0;border-radius:3.4cqw;border:0;cursor:pointer;text-decoration:none;text-align:center;
+  font:600 4.6cqw/1 var(--head);color:#3b3010;background:linear-gradient(180deg,var(--gold1),var(--gold2));box-shadow:0 2cqw 5cqw rgba(0,0,0,.25)}
+
+/* ===== Блок 2 – Как оформить оплату частями ===== */
+.how{padding:0 0 100px}
+.panel{background:#fff;color:var(--ink);border-radius:28px;padding:56px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.panel h2{font:600 30px/1.2 var(--head);margin:0 0 14px}
+.lead{font-size:14px;line-height:1.6;color:#2b2b2b;margin:0 0 30px;max-width:400px}
+.steps{list-style:none;margin:0 0 34px;padding:0;display:flex;flex-direction:column;gap:18px}
+.steps li{display:grid;grid-template-columns:30px 1fr}
+.steps b{display:block;font-size:15px;line-height:1.4}
+.steps span{font-size:13px;line-height:1.45;color:var(--mut)}
+.steps i{font-style:normal;color:var(--num);font-size:13px;line-height:1.55}
+.cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.btn{display:inline-block;padding:17px 30px;border-radius:12px;font:600 14px/1 var(--head);color:#3b3010;text-decoration:none;
+  background:linear-gradient(180deg,var(--gold1),var(--gold2));box-shadow:0 8px 20px rgba(217,171,31,.3);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.tel{font:600 15px/1 var(--head);color:var(--ink);text-decoration:none}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:var(--tile);border-radius:14px;padding:16px 18px}
+.tile b{display:block;font:700 17px/1.25 var(--head)}
+.tile span{font-size:12px;color:var(--mut)}
+.tile--dark{grid-column:1/-1;background:#111;color:#fff;display:flex;align-items:center;gap:14px}
+.tile--dark span{color:#a9a9a9}
+.ico{flex:0 0 38px;height:38px;border-radius:50%;background:var(--gold);display:grid;place-items:center}
+.banks{margin:22px 0 0}
+.banks p{font-size:12px;color:var(--mut);margin:0 0 10px}
+.banks ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.banks li{font-size:12px;font-weight:600;padding:8px 13px;border:1px solid var(--line);border-radius:20px}
+.faq{margin-top:22px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:16px 0;font-weight:600;font-size:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold2);font-size:20px;line-height:1;font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:0 0 16px;font-size:13px;line-height:1.5;color:var(--mut)}
+
+/* ===== Планшет ===== */
+@media (max-width:1199px){
+  .wrap{padding:0 32px}
+  .pay__grid{grid-template-columns:1fr 1fr;gap:24px}
+  .phone{margin:0 auto}
+  .card__img{width:42%}
+  .card--new .card__img{width:48%}
+  .panel{grid-template-columns:1fr;gap:36px;padding:44px 32px}
+}
+/* ===== Телефон (как на сайте: картинки карточек скрыты, текст крупнее) ===== */
+@media (max-width:767px){
+  .wrap{padding:0 16px}
+  .pay{padding:56px 0 40px}
+  .pay h2{font-size:26px}
+  .pay__sub{font-size:14px;margin-bottom:24px}
+  .pay__grid{grid-template-columns:1fr}
+  .card__img{display:none}
+  .card--new .card__img{display:block;position:relative;width:100%;height:150px;border-radius:0 0 14px 14px;object-position:85% 60%}
+  .card--new{display:flex;flex-direction:column-reverse}
+  .card__body{max-width:none;padding:22px 20px 22px 18px}
+  .card__d{max-width:none;font-size:14px}
+  .chips{max-width:none}
+  .phone{width:100%;max-width:400px;margin:24px auto 0}
+  .how{padding-bottom:64px}
+  .panel{padding:32px 18px;border-radius:22px}
+  .panel h2{font-size:24px}
+  .tile b{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<section class="pay" id="oplata">
+  <div class="wrap pay__grid">
+    <div>
+      <h2>Удобные способы оплаты</h2>
+      <p class="pay__sub">Выберите наиболее подходящий для вас вариант:</p>
+
+      <div class="cards">
+        <button class="card" data-m="cash" type="button">
+          <img class="card__img" src="img/nalichnye.webp" alt="" loading="lazy">
+          <div class="card__body"><span class="card__n">01</span><div>
+            <p class="card__t">Наличными, в офисе продаж</p>
+            <p class="card__d">Вы приезжаете в офис компании и сразу оплачиваете услугу наличными деньгами</p>
+          </div></div>
+        </button>
+
+        <button class="card" data-m="bank" type="button">
+          <img class="card__img" src="img/perevod.webp" alt="" loading="lazy">
+          <div class="card__body"><span class="card__n">02</span><div>
+            <p class="card__t">Перевод на расчетный счет</p>
+            <p class="card__d">Деньги не передаются наличными, а переводятся безналично с одного банковского счёта на другой</p>
+          </div></div>
+        </button>
+
+        <button class="card card--new is-on" data-m="parts" type="button">
+          <img class="card__img" src="img/chastyami.webp" alt="Оплата тура частями со смартфона на пляже" loading="lazy">
+          <div class="card__body"><span class="card__n">03</span><div>
+            <p class="card__t">Оплата частями <span class="badge">Новое</span></p>
+            <p class="card__d">Отдыхайте сейчас, а за тур платите равными частями. Всё онлайн – без похода в банк.</p>
+            <div class="chips"><span class="chip">до 60 месяцев</span><span class="chip">первый взнос от 0%</span><span class="chip">решение за 2–4 мин</span></div>
+          </div></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="phone">
+      <img src="img/telefon-ruka.webp" width="1000" height="1250" alt="Выбор способа оплаты тура SNDC Travel на смартфоне" loading="lazy">
+      <div class="screen">
+        <div class="screen__logo">SNDC TRAVEL</div>
+        <div class="glass">
+          <p class="glass__t">Выберите удобный способ оплаты</p>
+          <button class="opt" data-m="cash" type="button"><span class="opt__r"></span><span>Наличные</span></button>
+          <button class="opt" data-m="bank" type="button"><span class="opt__r"></span><span>Банковские переводы</span></button>
+          <button class="opt is-on" data-m="parts" type="button"><span class="opt__r"></span><span>Оплата частями<small>до 60 мес. · онлайн, без похода в банк</small></span></button>
+          <a class="screen__btn" id="vybrat" href="#chastyami">Выбрать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="chastyami">
+  <div class="wrap">
+    <div class="panel">
+      <div>
+        <h2>Как оформить оплату частями</h2>
+        <p class="lead">Одна онлайн-анкета уходит сразу в несколько банков-партнёров. Вы выбираете лучшее предложение и подписываете договор онлайн.</p>
+        <ol class="steps">
+          <li><i>01</i><div><b>Выберите тур</b><span>Вместе с менеджером SNDC Travel или через подбор на сайте.</span></div></li>
+          <li><i>02</i><div><b>Заполните одну анкету</b><span>Онлайн, личность подтверждается через МСИ. Нужен только паспорт.</span></div></li>
+          <li><i>03</i><div><b>Получите решение за 2–4 минуты</b><span>Выберите предложение банка и подпишите договор онлайн.</span></div></li>
+          <li><i>04</i><div><b>Отправляйтесь в путешествие</b><span>Платите равными частями, досрочно можно погасить без комиссий.</span></div></li>
+        </ol>
+        <div class="cta">
+          <a class="btn" href="#">Оформить онлайн</a>
+          <a class="tel" href="tel:+375291242211">+375 29 124-22-11</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="tiles">
+          <div class="tile"><b>до 20 000 BYN</b><span>сумма</span></div>
+          <div class="tile"><b>от 6 до 60 мес.</b><span>срок</span></div>
+          <div class="tile"><b>от 0%</b><span>первый взнос</span></div>
+          <div class="tile"><b>паспорт</b><span>без справок</span></div>
+          <div class="tile tile--dark">
+            <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1d1a10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>
+            <div><b>всё онлайн</b><span>без похода в банк – вход через МСИ</span></div>
+          </div>
+          <div class="tile"><b>2–4 минуты</b><span>до решения банка</span></div>
+          <div class="tile"><b>без комиссий</b><span>досрочное погашение</span></div>
+        </div>
+
+        <div class="banks">
+          <p>Банки-партнёры</p>
+          <ul><li>Банк Дабрабыт</li><li>Банк БелВЭБ</li><li>БНБ-Банк</li><li>Паритетбанк</li></ul>
+        </div>
+
+        <div class="faq">
+          <details open><summary>Можно ли без первого взноса?</summary><p>Да, первый взнос – от 0%.</p></details>
+          <details><summary>Нужно ли ехать в банк?</summary><p>Нет. Анкета и договор – онлайн, личность подтверждается через МСИ. Нужен только паспорт.</p></details>
+          <details><summary>Можно ли погасить досрочно?</summary><p>Да, досрочное погашение без комиссий.</p></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var cards=document.querySelectorAll('.card'),opts=document.querySelectorAll('.opt'),btn=document.getElementById('vybrat');
+  var target={cash:'tel:+375291242211',bank:'tel:+375291242211',parts:'#chastyami'};
+  function pick(m){
+    cards.forEach(function(c){c.classList.toggle('is-on',c.dataset.m===m||c.classList.contains('card--new'))});
+    opts.forEach(function(o){o.classList.toggle('is-on',o.dataset.m===m)});
+    btn.setAttribute('href',target[m]);
+  }
+  cards.forEach(function(c){c.addEventListener('click',function(){pick(c.dataset.m)})});
+  opts.forEach(function(o){o.addEventListener('click',function(){pick(o.dataset.m)})});
+})();
+</script>
+</body>
+</html>
