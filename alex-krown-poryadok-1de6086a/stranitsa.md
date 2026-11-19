@@ -12,8 +12,8 @@
 
 Где смотреть: https://tema-mail.github.io/alex-krown/v1/admin/products/ (вход тот же, сохранение – кнопка «Подключить сохранение»).
 
-![Компьютер](pc.png)
-![Телефон](tel.png)
+![Компьютер](pc.webp)
+![Телефон](tel.webp)
 
 ## Что сломал на crown.deford.ru и как вернул
 
