@@ -72,9 +72,15 @@ document.documentElement.setAttribute('data-theme',t)})();</script></head><body>
 <h2>Нужно от тебя</h2>
 <p>Ничего. Старые выжимки без строки «Старый чат» хук не трогает, их чаты переименовывай вручную, если нужно.</p>
 <p>Попутно: проверка памяти ругается на два файла про Zeekr, хотя они есть в оглавлении. Это ошибка самой проверки, она была и до меня.</p>
+<h2>Набор для передачи сотруднице</h2>
+<ul>
+<li>Архив <code>~/Desktop/pereezd-nabor.zip</code> (25 КБ). Внутри: скилл, предупреждение о толстом чате, хук переезда, скрипт переименования, установщик и инструкция README.md.</li>
+<li>Установка: распаковать и в Терминале запустить <code>bash pereezd-nabor/ustanovit.sh</code>, потом перезапустить Claude Code.</li>
+<li>Установщик прописывает хуки в её настройки и сохраняет старые рядом. Проверил на пустом компьютере и на компьютере со своими настройками: её хуки и модель на месте, повторный запуск ничего не дублирует.</li>
+<li>В наборе нет твоего имени и наших путей. Её текущий чат на 621 тыс. токенов набор не починит: в нём нужно один раз написать «переезд» после установки.</li>
+</ul>
 <h2>Что раскрыть</h2>
 <ul>
-<li>Как поставить то же самое сотруднице: её чат на 621 тыс. живёт на её компьютере, а хук стоит только на этом маке.</li>
 <li>Как устроено хранение названия чата.</li>
 </ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
 function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
