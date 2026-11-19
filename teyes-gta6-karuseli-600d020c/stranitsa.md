@@ -1,204 +1,127 @@
-# TEYES Sibir × GTA 6: три карусели – тексты и ТЗ
+# TEYES Sibir × GTA 6: три карусели готовы
 
-**Вывод:** тексты трёх каруселей готовы, ТЗ на 18 картинок написаны, нарисовано 18 из 18. Рисуем бесплатно через Codex после сброса лимита в 05:06 НСК. Пост 1 с 3 000 ₽ – только для ВКонтакте: в Инстаграме акции и цены под запретом.
+**Вывод:** 23 из 23 карточек собраны с текстом – можно выкладывать. Всё бесплатно: картинки нарисовал Codex, текст поставлен кодом ровным шрифтом. Пост 1 с 3 000 ₽ – только ВК и Telegram.
 
 <div class="box">
 
 **Нужно от тебя:**
 
-- Условия 3 000 ₽: от какой суммы чека, одна на машину, суммируется ли с другими акциями, дата старта (сейчас в тексте до 26.11 и до 19.12).
-- Пост 2: какие 3 машины – сейчас LC200, Honda Vezel, Toyota Camry (по нашим работам, по городу не проверял).
-- Пост 3: реальные фото каждого – Кирилл, Артём (китайцы), Алексей, Никита, Артём (электроника), Максим – в рост, на однотонном фоне, положить в ~/Downloads. Лица генератор не держит – фото вставим поверх нарисованного фона, так лица будут ваши. Максим и ТО: подтверди, что делаете ТО.
-- Пост 2, карточка 5: лучше снять настоящего Кирилла на капоте Крузака – 5 минут в боксе. ИИ-вариант с лицом под кепкой готовлю как запасной.
+- **Пост 3, имена:** лица взяты с GTA-кадра команды из чата про сторис. Алексей, Кирилл и Артём – как в том чате. Никита, второй Артём и Максим подписаны **наугад** – посмотри карточки 5, 6, 7 и напиши, кого с кем поменять.
+- **Условия 3 000 ₽:** от какой суммы, одна на машину, даты (в тексте – до 26.11 и до 19.12).
+- **Делаете ли ТО** – на карточке Максима «мастер ТО».
 
-**Что раскрыть:** 1 – версия поста 1 для Инстаграма без денег; 2 – подписи под постами; 3 – промт любой карточки.
+**Скачать:** [архив всех карточек](teyes-gta6-karuseli.zip) – по папке на пост. Те же файлы в Загрузках: teyes-gta6-karuseli.
 
 </div>
 
-## Почему так: правила площадок
+## Что поменял после просмотра
 
-- **Инстаграм:** реклама на площадке запрещена с 01.09.2025 (ч. 10.7 ст. 5 ФЗ «О рекламе»): без цен, акций, «3 000 ₽», «запишись». Поэтому пост 1 – ВКонтакте и Telegram; в посте 2 последняя карточка для Инстаграма – «напиши в комментариях», без стоимости.
-- **GTA:** слово «GTA 6» в тексте – как упоминание события, без логотипа, шрифта и героев игры. Для платного продвижения поста с акцией – сначала юрист: «GTA» – чужой товарный знак.
-- **Картинки:** надписи не рисуем – ставим потом ровным шрифтом; номера пустые; машины чистые 2015–2022; лица только реальные с фото.
+- **Отопитель (пост 1, карточка 7)** перерисован: теперь светится тёплый салон, а соседние машины в инее.
+- **Артём-электроника (пост 3, карточка 6)**: убраны пальмы – дворы и берёзы, как у остальных.
+- **Пост 2, последняя карточка** – две версии: для ВК (с ценой) и для Инстаграма (без цены: там реклама запрещена).
+- Карточки 4–6 поста 1 – готовые картинки из галереи (автозапуск, японское меню, большой экран).
+- Проверено глазами: надписей от генератора нет, номера пустые, логотипа и героев GTA нет. На толстовках с прошлого кадра надпись «T'EYES» с лишним штрихом – видно на обложке и последней карточке команды.
 
-## Пост 1. Дарим 3 000 ₽ тем, кто играет в GTA 6 (9 карточек)
+## Пост 1. Дарим 3 000 ₽ тем, кто играет в GTA 6 – 9 карточек, только ВК и Telegram
 
-### 1. Дарим 3 000 ₽ тем, кто играет в GTA 6
+**1. Дарим 3 000 ₽ тем, кто играет в GTA 6**
 
-На любые наши услуги. Перешли другу с машиной – пусть заберёт свои.
+![Дарим 3 000 ₽ тем, кто играет в GTA 6](gotovo/p1-01.jpg)
 
-![Дарим 3 000 ₽ тем, кто играет в GTA 6](p1-01.webp)
+**2. Как забрать**
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. A game controller and a car key lying together on fresh snow on the hood of a clean modern sedan, gift-like glowing light, top band of empty sky for a headline. Novosibirsk, Siberia, November early winter: fresh snow, frost on glass, low pink-orange sunset with cold blue shadows, sodium-orange streetlights, Soviet-era apartment blocks, birch trees, no palm trees. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Как забрать](gotovo/p1-02.jpg)
 
-### 2. Как забрать
+**3. На что потратить**
 
-Напиши нам в сообщения группы два слова: «Играю в GTA 6». Всё.
+![На что потратить](gotovo/p1-03.jpg)
 
-![Как забрать](p1-02.webp)
+**4. Сигнализация с автозапуском**
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Close-up of a hand holding a smartphone with a generic messenger chat screen showing one sent message bubble with no readable text, warm cabin light, snowy courtyard through the car window. Novosibirsk, Siberia, November early winter: fresh snow, frost on glass, low pink-orange sunset with cold blue shadows, sodium-orange streetlights, Soviet-era apartment blocks, birch trees, no palm trees. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Сигнализация с автозапуском](gotovo/p1-04.jpg)
 
-### 3. На что потратить
+**5. Русификация**
 
-На то, чтобы машина жила как в игре, а не как в Сибири: сигнализация, русификация, мультимедиа, отопитель, звук.
+![Русификация](gotovo/p1-05.jpg)
 
-![На что потратить](p1-03.webp)
+**6. Мультимедиа Teyes**
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Box-art collage grid of 5 illustrated panels with thick black dividers: a key fob with a car warming up in snow; a dashboard screen with an unreadable foreign-script menu; a large glowing navigation screen; warm air and steam around a car at night; a trunk with a subwoofer in neon glow. Novosibirsk, Siberia, November early winter: fresh snow, frost on glass, low pink-orange sunset with cold blue shadows, sodium-orange streetlights, Soviet-era apartment blocks, birch trees, no palm trees. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Мультимедиа Teyes](gotovo/p1-06.jpg)
 
-### 4. Сигнализация с автозапуском
+**7. Автономный отопитель**
 
-Машина заводится с первого раза. Как в игре. Только в −30.
+![Автономный отопитель](gotovo/p1-07.jpg)
 
-*Картинка: готовая картинка 02 или 13 из галереи.*
+**8. Автозвук**
 
-### 5. Русификация
+![Автозвук](gotovo/p1-08.jpg)
 
-Меню на русском. Китайский и японский учить не надо.
+**9. Сколько действует**
 
-*Картинка: готовая картинка 18.*
+![Сколько действует](gotovo/p1-09.jpg)
 
-### 6. Мультимедиа Teyes
+## Пост 2. За 13 лет поменялась не только GTA – 6 карточек, ВК и Инстаграм
 
-Карта на большом экране, а не на телефоне, который падает с присоски на каждой кочке.
+**1. За 13 лет поменялась не только GTA**
 
-*Картинка: готовая картинка 17.*
+![За 13 лет поменялась не только GTA](gotovo/p2-01.jpg)
 
-### 7. Автономный отопитель
+**2. Land Cruiser 200**
 
-В салоне тепло, как в Вайс-Сити, ещё до того, как ты вышел из подъезда.
+![Land Cruiser 200](gotovo/p2-02.jpg)
 
-![Автономный отопитель](p1-07.webp)
+**3. Honda Vezel**
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Night, a clean modern crossover in deep frost with warm orange light glowing from the cabin and a little steam from under the car, a person seen from behind in the apartment entrance doorway. Novosibirsk, Siberia, November early winter: fresh snow, frost on glass, low pink-orange sunset with cold blue shadows, sodium-orange streetlights, Soviet-era apartment blocks, birch trees, no palm trees. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Honda Vezel](gotovo/p2-03.jpg)
 
-### 8. Автозвук
+**4. Toyota Camry**
 
-Пробка на мосту звучит как концерт, а не как пищалки из 2008-го.
+![Toyota Camry](gotovo/p2-04.jpg)
 
-![Автозвук](p1-08.webp)
+**5. Может, пора обновить мультимедиа и в своей машине?**
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Evening traffic jam on a long city bridge in winter, one clean modern car emitting stylized glowing neon sound waves from its windows, other cars dark. Novosibirsk, Siberia, November early winter: fresh snow, frost on glass, low pink-orange sunset with cold blue shadows, sodium-orange streetlights, Soviet-era apartment blocks, birch trees, no palm trees. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Может, пора обновить мультимедиа и в своей машине?](gotovo/p2-05.jpg)
 
-### 9. Сколько действует
+**6. Напиши марку, модель и год**
 
-Напиши в течение недели – до 26 ноября. Приезжай в течение месяца – до 19 декабря.
+![Напиши марку, модель и год](gotovo/p2-06.jpg)
 
-![Сколько действует](p1-09.webp)
+Версия для Инстаграма:
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. A wall calendar in a car service bay with one week circled in red marker and no readable text, a car on a lift behind, warm work light. Novosibirsk, Siberia, November early winter: fresh snow, frost on glass, low pink-orange sunset with cold blue shadows, sodium-orange streetlights, Soviet-era apartment blocks, birch trees, no palm trees. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Напиши марку, модель и год – Инстаграм](gotovo/p2-06-insta.jpg)
 
-## Пост 2. За 13 лет поменялась не только GTA (6 карточек)
+## Пост 3. Команда TEYES Sibir – 8 карточек, ВК и Инстаграм
 
-### 1. За 13 лет поменялась не только GTA
+**1. Команда TEYES Sibir**
 
-Мультимедиа тоже. Toyota Land Cruiser Prado 150: штатная 2013 года и Teyes CC4 PRO.
+![Команда TEYES Sibir](gotovo/p3-01.jpg)
 
-![За 13 лет поменялась не только GTA](p2-01.webp)
+**2. Кирилл – маэстро Teyes**
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Split image of the same Toyota Land Cruiser Prado 150 dashboard: left an old 2013 factory head unit with small dim screen and many buttons in dull grey light; right a large modern glowing 10-inch Android head unit screen with a generic navigation map in neon light. Generic interface, no readable text, no app icons. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Кирилл – маэстро Teyes](gotovo/p3-02.jpg)
 
-### 2. Land Cruiser 200
+**3. Артём – маэстро китайских авто**
 
-Было в 2013-м – и как может быть сейчас.
+![Артём – маэстро китайских авто](gotovo/p3-03.jpg)
 
-![Land Cruiser 200](p2-02.webp)
+**4. Алексей – знает, как сделать твою машину лучше**
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Split image of the same Toyota Land Cruiser 200 dashboard: left the old 2013 factory screen in dull light; right a large modern glowing Android head unit screen with a generic map in neon light. No readable text, no app icons. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Алексей – знает, как сделать твою машину лучше](gotovo/p3-04.jpg)
 
-### 3. Honda Vezel
+**5. Никита – маэстро электроники** – имя по догадке, лицо 4
 
-Правый руль, японское меню – и как может быть.
+![Никита – маэстро электроники](gotovo/p3-05.jpg)
 
-![Honda Vezel](p2-03.webp)
+**6. Артём – маэстро электроники** – имя по догадке, лицо 5
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Split image of the same right-hand-drive Honda Vezel dashboard: left a small old factory screen with an unreadable foreign-script menu; right a large modern glowing Android head unit screen with a generic map in neon light. No readable text, no app icons. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Артём – маэстро электроники](gotovo/p3-06.jpg)
 
-### 4. Toyota Camry
+**7. Максим – мастер ТО** – имя по догадке, лицо 6
 
-Самый частый седан во дворах – и как может быть.
+![Максим – мастер ТО](gotovo/p3-07.jpg)
 
-![Toyota Camry](p2-04.webp)
+**8. Вся команда**
 
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Split image of the same Toyota Camry sedan dashboard: left the old factory screen in dull light; right a large modern glowing Android head unit screen with a generic map in neon light. No readable text, no app icons. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
+![Вся команда](gotovo/p3-08.jpg)
 
-### 5. Может, пора обновить мультимедиа и в своей машине?
-
-Кирилл уже всё поставил. Теперь отдыхает.
-
-![Может, пора обновить мультимедиа и в своей машине?](p2-05.webp)
-
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. A car technician in dark work clothes asleep on the hood of a clean Toyota Land Cruiser 200 in a warm service bay, a cap pulled over his face so the face is not visible, arms crossed, a new glowing screen visible inside the car, snow outside the open gate. Novosibirsk, Siberia, November early winter: fresh snow, frost on glass, low pink-orange sunset with cold blue shadows, sodium-orange streetlights, Soviet-era apartment blocks, birch trees, no palm trees. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
-
-### 6. Напиши марку, модель и год
-
-Скажем, какая мультимедиа встанет на твою машину и сколько это будет стоить. В Инстаграме: «Напиши в комментариях – подскажем, какая встанет».
-
-![Напиши марку, модель и год](p2-06.webp)
-
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. A clean modern sedan in front of an open service bay gate at dusk, warm light from inside, a big empty speech-bubble shape floating above the car with no text inside. Novosibirsk, Siberia, November early winter: fresh snow, frost on glass, low pink-orange sunset with cold blue shadows, sodium-orange streetlights, Soviet-era apartment blocks, birch trees, no palm trees. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
-
-## Пост 3. Команда TEYES Sibir (8 карточек)
-
-### 1. Команда TEYES Sibir
-
-Знакомься: люди, которые прокачивают машины в Новосибирске.
-
-*Картинка: реальное фото бокса с машиной.*
-
-### 2. Кирилл – маэстро Teyes
-
-Знает, какая рамка встанет на твою машину, раньше, чем ты договоришь марку.
-
-![Кирилл – маэстро Teyes](p3-02.webp)
-
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Background plate only, no people: a solid saturated mustard yellow background with dark flat silhouettes of a car lift, a dashboard with a large screen, tool chests, leaving the center-left two thirds empty for a cut-out photo of a person to be added later. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
-
-### 3. Артём – маэстро китайских авто
-
-Переведёт меню с китайского так, что машина будто родилась в Новосибирске.
-
-![Артём – маэстро китайских авто](p3-03.webp)
-
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Background plate only, no people: a solid saturated crimson red background with dark flat silhouettes of a modern Chinese crossover, a laptop with cables, a diagnostic scanner, leaving the center-left two thirds empty for a cut-out photo of a person to be added later. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
-
-### 4. Алексей – знает, как сделать твою машину лучше
-
-Подберёт под бюджет и назовёт цену до начала работ. Без сюрпризов на выдаче.
-
-![Алексей – знает, как сделать твою машину лучше](p3-04.webp)
-
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Background plate only, no people: a solid saturated teal background with dark flat silhouettes of a showroom wall of head unit screens, a desk with a phone, leaving the center-left two thirds empty for a cut-out photo of a person to be added later. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
-
-### 5. Никита – маэстро электроники
-
-Ставит сигнализацию с закрытыми глазами. Но делает с открытыми.
-
-![Никита – маэстро электроники](p3-05.webp)
-
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Background plate only, no people: a solid saturated deep blue background with dark flat silhouettes of a car with an open door, wiring harnesses, an alarm key fob, leaving the center-left two thirds empty for a cut-out photo of a person to be added later. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
-
-### 6. Артём – маэстро электроники
-
-Если в машине что-то мигает, пищит или не работает – это к нему. Провода в гофре, а не на синей изоленте.
-
-![Артём – маэстро электроники](p3-06.webp)
-
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Background plate only, no people: a solid saturated burnt orange background with dark flat silhouettes of a dashboard with exposed neat wiring, a multimeter, a soldering iron, leaving the center-left two thirds empty for a cut-out photo of a person to be added later. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
-
-### 7. Максим – мастер ТО
-
-Масло, фильтры, колодки – чтобы машина не встала в −30 по дороге на работу.
-
-![Максим – мастер ТО](p3-07.webp)
-
-<details><summary>ТЗ для генератора</summary><p><code>Vertical 3:4 illustration in the style of 2000s-2020s open-world video game loading-screen key art: thick black ink outlines, cel-shaded flat color blocks, hard-edged shadows, subtle halftone grit, semi-realistic painted forms, glossy poster finish. Background plate only, no people: a solid saturated olive green background with dark flat silhouettes of a car on a lift with wheels off, oil canisters, a wrench, leaving the center-left two thirds empty for a cut-out photo of a person to be added later. Cars are clean, well-kept common mass-market models from 2015-2022 in good condition unless the scene says otherwise. No extra people beyond those described in the scene. No text, no letters, no numbers, no logos, no game titles, no brand badges on cars, no watermark, blank license plates, no weapons, no police, no characters from any existing game, no celebrities, no visible faces: people only from behind, in silhouette or as hands.</code></p></details>
-
-### 8. Вся команда
-
-Миссия: твоя машина. Ждём.
-
-*Картинка: реальное общее фото команды.*
-
-Файлы: `~/Sites/redakciya/temy/GTA6-OBLOZHKI-004/` – karuseli.py (тексты и ТЗ), risuy2.sh (рисование), stranitsa2.py (эта страница).
+Файлы: `~/Sites/redakciya/temy/GTA6-OBLOZHKI-004/` – karuseli.py (тексты и ТЗ), kartochki.py (текст на картинки), risuy2.sh и risuy3.sh (рисование), stranitsa2.py (эта страница).
