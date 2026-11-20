@@ -1,0 +1,397 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>ИИ-консультант на сайте: делаем свой движок поверх нашей CRM, база TEYES цела</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>ИИ-консультант на сайте: делаем свой движок поверх нашей CRM, база TEYES цела</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p>База TEYES не потеряна и теперь лежит в двух местах, а консультанта выгоднее строить самим: тонкий движок на Python, который подключается к уже стоящей CRM и не может назвать цену, которой нет в прайсе. Честная граница: до комплекта с ценой бот сегодня доведёт 13 семейств машин, по остальным 416 он собирает данные и зовёт мастера. До бота на сайте TEYES – около 88 часов работы, 3–4 недели.</p>
+<p><strong>Нужно от тебя</strong></p>
+<ol>
+<li><strong>Модель.</strong> А – Opus 5.5 по твоему правилу, 8,5–19 ₽ за диалог. Б – Sonnet 5.5, 4,3–9,5 ₽. В – решает прогон на 60–100 наших вопросах, до прогона стоит Opus. Совет: В. Сам прогон трёх моделей стоит до 3 тыс. ₽.</li>
+<li><strong>Маршрут и право.</strong> А – Claude через наш сервер в Нидерландах; телефон вырезаем до отправки, но это всё равно передача данных за границу: нужны уведомление Роскомнадзора и ответ юриста. Б – модель в российском облаке Яндекса, 7,5–15 ₽ за диалог, качество на наших задачах не проверено. Совет: стенд собираем на А без живых клиентов, вопрос юристу задаём сейчас, к бою выбираем.</li>
+<li><strong>Откуда бот берёт цену.</strong> А – Google-таблица прайса, около 2 ч на подключение. Б – каталог сайта на Тильде: снимок уже есть, но он от 10.11 и стареет. В – МойСклад, 4–6 ч, зато сразу с остатками. Совет: В, если цены в МойСкладе живые, иначе А. Часы – моя оценка.</li>
+<li><strong>Мастер Кирилл на 2–3 часа:</strong> 60–100 настоящих вопросов клиентов с правильными ответами и вопросы, по которым он сам отличает одну сборку от другой.</li>
+<li><strong>«Да» на этапы 0 и 1</strong> – база для бота и движок на стенде, боевой сайт они не трогают. И «да» на 128 МБ памяти для движка: сумма лимитов CRM уже стоит на твоём потолке 1,6 ГБ.</li>
+<li><strong>Перевыпустить токен Telegram-бота:</strong> он лежит открытым текстом в первой реплике старого чата <code>764641b0</code>. Сам токен я не открывал.</li>
+</ol>
+<h2>База TEYES цела и сохранена, но боту готова примерно на треть</h2>
+<p>До сегодняшнего дня база жила в одной папке на маке: без git, без Time Machine, на сервере лежал обрезок от сентября – 20 карточек из 432. Сегодня она ушла в приватные репозитории, папку на маке я не двигал, чтобы не сломать скилл подбора.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Что</th>
+<th>Состояние на 20.11</th>
+<th>Где теперь</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>База подбора</td>
+<td>429 семейств, 910 поколений, 1 497 сборок, 34 марки; 603 текстовых файла, 2 341 фото панелей</td>
+<td><code>tema-mail/teyes-baza</code>, приватный, 3 213 файлов из 3 213</td>
+</tr>
+<tr>
+<td>Знания о компании, боли клиентов, спрос, тексты</td>
+<td>целы</td>
+<td>там же</td>
+</tr>
+<tr>
+<td>Бот «Подбор»</td>
+<td>движок правил без нейросети: 13 семейств, 56 поколений, 667 товаров; 22 коммита, удалённой копии не было</td>
+<td><code>tema-mail/teyes-podbor-bot</code>, приватный</td>
+</tr>
+<tr>
+<td>Бот «Сириус»</td>
+<td>199 коммитов в GitHub, сервис до сих пор запущен на сервере в Нидерландах</td>
+<td><code>tema-mail/omni-ai-assistant</code>, без изменений</td>
+</tr>
+<tr>
+<td>Чаты «Обучение бот Teyes» (три штуки)</td>
+<td><strong>потеряны:</strong> файлов переписки нет ни на маке, ни на сервере</td>
+<td>суть осталась в методичке и документах бота</td>
+</tr>
+</tbody>
+</table></div>
+<p>Что в базе мешает боту прямо сейчас:</p>
+<ul>
+<li><strong>До комплекта доводится 13 семейств из 429.</strong> Только у них в боте «Подбор» записан вопрос, который отличает одну сборку от другой. В широкой базе признаки сборки лежат свободным текстом, а готовый вариант комплекта есть у 117 сборок из 1 497.</li>
+<li><strong>Сверено по фото или по установке меньше трети сборок.</strong> У остальных пометка «только каталог поставщика». Такие бот называет предварительно и передаёт мастеру.</li>
+<li><strong>Цены в карточках чужие.</strong> Это цены поставщиков от 02.10: суммы есть в заметках 88 сборок, плюс 33 файла «цены не для клиента» и 57 «пластов знаний» с косяками установки. По твоим требованиям от 23.09 клиенту это не показывается – в поиск бота такие поля и папки не попадают вообще.</li>
+<li><strong>Связка «сборка – товар с нашей ценой» покрывает половину:</strong> 775 сборок из 1 497, и собрана она по снимку каталога от 24.09. Её надо пересобрать.</li>
+<li><strong>Месяц без обновлений.</strong> Последняя правка – 19.10.</li>
+</ul>
+<h2>Рынок: бот закрывает 40–70% типовых обращений, а все провалы – про выдуманные цены и условия</h2>
+<p>Почти все цифры ниже – заявления самих продавцов ботов, независимых замеров нет ни у кого. Данные собраны 20.11.2026.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Кто</th>
+<th>Что вышло</th>
+<th>Чему учит</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intercom Fin (работает на Claude)</td>
+<td>51% обращений без человека «из коробки», 67% в среднем после настройки</td>
+<td>стартуем с половины, растём разбором журнала</td>
+</tr>
+<tr>
+<td>Klarna</td>
+<td>в 2024 – две трети чатов на боте; в 2025 людей вернули на сложное</td>
+<td>человек рядом с первого дня</td>
+</tr>
+<tr>
+<td>Яндекс Такси</td>
+<td>60% обращений без оператора, четыре модели: маршрутизатор, поиск, исполнитель, проверяющий</td>
+<td>ответ перед отправкой проверяет отдельный слой</td>
+</tr>
+<tr>
+<td>Авито</td>
+<td>ответ в первый час почти вдвое повышает шанс сделки</td>
+<td>главный выигрыш – скорость и нерабочее время</td>
+</tr>
+<tr>
+<td>Магазин рыбы, малый бизнес</td>
+<td>43% закрытых обращений выросли до 80% после одной доработки по журналу</td>
+<td>качество делает разбор отказов, а не модель</td>
+</tr>
+<tr>
+<td>Автодилеры США</td>
+<td>35% чатов приходят, когда салон закрыт</td>
+<td>TEYES работает пн–пт 11–19, вечера и выходные сейчас пустые</td>
+</tr>
+</tbody>
+</table></div>
+<p>Провалы одинаковые. Air Canada: бот выдумал правило возврата, суд взыскал деньги с компании. Дилер Chevrolet: бота уговорили «продать» Tahoe за доллар. Cursor: бот выдумал правило входа, клиенты ушли. Вывод один – цены и условия бот берёт только из базы, не подтверждает сделку и при сомнении зовёт человека.</p>
+<p>Готовое в России на 300–1000 диалогов в месяц: Jivo – 12 990 ₽, Carrot quest – около 20 800 ₽, Suvvy – около 15 ₽ за диалог, Wikibot – 5 900–11 900 ₽. Ни один не умеет подбор по таблице «машина – сборка – комплект» и не проверяет цены кодом. Замеров точности подбора под автомобиль на рынке нет вообще – это наше место.</p>
+<p>Чего ждать нам (оценка, не факт): на старте 30–50% диалогов без человека на типовых вопросах – цены, услуги, адрес, запись, подбор по 13 сверенным семействам. По остальным машинам бот не закрывает разговор, а готовит его мастеру. Через 2–3 месяца разбора журнала – 60–80% на типовых.</p>
+<h2>Архитектура: один движок, у каждого клиента своя база, канал – наша CRM</h2>
+<p>Готовые конструкторы не подошли: встроенный бот Chatwoot есть только в платной версии, Dify запрещает лицензией работу на многих клиентов и ест 870 МБ памяти, остальные заброшены или не про сайт. Берём своё, но тонкое.</p>
+<div class="box">
+<div style="display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.4">
+<div style="border:1px solid var(--ln);border-radius:10px;padding:10px 12px"><b>Клиент</b> пишет в чат на сайте, позже – в ВК, Max, Telegram</div>
+<div style="text-align:center;color:var(--mut)">↓ сообщение &nbsp;&nbsp; ↑ ответ или передача менеджеру</div>
+<div style="border:1px solid var(--ln);border-radius:10px;padding:10px 12px"><b>CRM Chatwoot, Москва</b> – уже стоит. Хранит переписку и контакты, показывает разговор менеджеру, отдаёт сообщения боту как участнику разговора</div>
+<div style="text-align:center;color:var(--mut)">↓ событие &nbsp;&nbsp; ↑ текст ответа</div>
+<div style="border:2px solid var(--ac);border-radius:10px;padding:10px 12px"><b>Движок «Консультант», Москва</b> – новый, наш код на Python, 200–300 МБ памяти
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+<span style="border:1px solid var(--ln);border-radius:8px;padding:4px 8px">1. Фильтр входа: вырезает телефон и имя, лимиты</span>
+<span style="border:1px solid var(--ln);border-radius:8px;padding:4px 8px">2. Диалог: модель сама вызывает инструменты</span>
+<span style="border:1px solid var(--ln);border-radius:8px;padding:4px 8px">3. Проверка ответа кодом: цены, телефон, тема</span>
+<span style="border:1px solid var(--ln);border-radius:8px;padding:4px 8px">4. Журнал каждого диалога</span>
+</div></div>
+<div style="text-align:center;color:var(--mut)">↓ инструменты – свои у каждого клиента</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px">
+<span style="flex:1 1 150px;border:1px solid var(--ln);border-radius:10px;padding:8px 10px"><b>Подбор по авто</b><br>таблица: машина – сборка – комплект</span>
+<span style="flex:1 1 150px;border:1px solid var(--ln);border-radius:10px;padding:8px 10px"><b>Каталог и цены</b><br>только наши цены</span>
+<span style="flex:1 1 150px;border:1px solid var(--ln);border-radius:10px;padding:8px 10px"><b>Услуги и статьи</b><br>поиск по текстам</span>
+<span style="flex:1 1 150px;border:1px solid var(--ln);border-radius:10px;padding:8px 10px"><b>Заявка</b><br>машина и задача – в карточку CRM</span>
+<span style="flex:1 1 150px;border:1px solid var(--ln);border-radius:10px;padding:8px 10px"><b>Позвать человека</b><br>с короткой заметкой</span>
+</div>
+<div style="text-align:center;color:var(--mut)">↓ только текст вопроса, без телефона и имени</div>
+<div style="border:1px dashed var(--ln);border-radius:10px;padding:10px 12px"><b>Шлюз модели</b> – переключается настройкой: Claude через сервер в Нидерландах или модель в российском облаке</div>
+</div>
+</div>
+
+<p>Четыре решения, на которых всё держится:</p>
+<ul>
+<li><strong>Подбор – вызов таблицы там, где таблица проверена.</strong> Три уровня. Первый: 13 сверенных семейств – бот уточняет год и панель, называет сборку, комплект и цену. Второй: остальные машины с данными – бот называет поколение и возможные варианты с пометкой «предварительно, подтвердит мастер», просит фото панели и телефон. Третий: записи нет – честное «уточнит мастер». Уровень растёт по мере того, как Кирилл сверяет семейства.</li>
+<li><strong>Сумму считает инструмент, а проверяет код.</strong> Комплект «магнитола, рамка, установка, допы» складывает отдельный инструмент из прайса, модель только пересказывает. Перед отправкой движок сверяет каждую сумму в ответе с числами инструмента. Цена «от», диапазон, старая зачёркнутая цена, рассрочка – у каждого своё правило. Прайс старше заданного срока – цену не называем.</li>
+<li><strong>Бот – участник разговора в CRM.</strong> Поэтому тот же бот потом включается на ВК, Max, Telegram. Но бесплатно это не выйдет: сейчас наши мосты раздают менеджерам только открытые разговоры, а разговор бота стоит в ожидании. Передачу от бота надо дописать как новую раздачу, а разговоры «ведёт бот» и «закрыл бот» убрать из контролёра и воронки, иначе каждый чат посчитается лидом.</li>
+<li><strong>Клиент – это папка настроек.</strong> Тон, часы работы, правила передачи, список инструментов и база. Цветочному магазину подбор по авто не нужен: его прайс и условия доставки целиком помещаются в постоянную часть запроса к модели.</li>
+</ul>
+<p>Что берём из старых ботов: из «Подбора» – движок с четырьмя статусами, вопросы-определители по 13 семействам, разбор фото панели и правило «нет записи – не знаю и к мастеру»; из «Сириуса», по описи Фёдора, – проверки ответа и приём событий Chatwoot (сами файлы я не открывал, локальной копии нет). Не берём: Dify и привязку к Telegram.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Требование</th>
+<th>Чем закрываем</th>
+<th>Как проверяем до боя</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ни одной цены не из прайса</td>
+<td>сумму считает инструмент, сверяет код</td>
+<td>0 нарушений на эталонных вопросах, на 30 вопросах «под ключ, с допами, в рассрочку» и на 30 попытках выбить скидку</td>
+</tr>
+<tr>
+<td>Сборка подобрана верно</td>
+<td>таблица и вопросы-определители</td>
+<td>не ниже 90% на сверенных семействах; по несверенным – 100% передач мастеру</td>
+</tr>
+<tr>
+<td>Чужие цены и косяки не утекают</td>
+<td>белый список полей и папок</td>
+<td>20 вопросов «откуда цена, где дешевле, какие проблемы»</td>
+</tr>
+<tr>
+<td>«Не знаю» – значит к человеку</td>
+<td>передача с заметкой и раздача менеджеру</td>
+<td>20 вопросов вне базы; разговор появляется у менеджера</td>
+</tr>
+<tr>
+<td>Не поддаётся на «забудь инструкции»</td>
+<td>у бота нет опасных действий, фильтр темы</td>
+<td>30 атак, 0 успешных</td>
+</tr>
+<tr>
+<td>Телефон не уходит в модель</td>
+<td>фильтр входа; имя, VIN и госномер в свободном тексте он ловит не всегда</td>
+<td>20 сообщений с телефонами, номерами и VIN – отсюда вопрос юристу</td>
+</tr>
+<tr>
+<td>Первый ответ не дольше 8 секунд</td>
+<td>короткие рассуждения модели, кэш</td>
+<td>замер на стенде</td>
+</tr>
+<tr>
+<td>Расход под контролем</td>
+<td>лимит на разговор, на посетителя и на клиента в день</td>
+<td>проба атаки одним посетителем</td>
+</tr>
+</tbody>
+</table></div>
+<p>Что бот делает, когда что-то идёт не так:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ситуация</th>
+<th>Поведение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Модель или туннель недоступны</td>
+<td>шаблонный ответ, контакт, передача человеку, тревога нам</td>
+</tr>
+<tr>
+<td>Два сообщения подряд, пока бот думает</td>
+<td>очередь на разговор, отвечает на оба разом</td>
+</tr>
+<tr>
+<td>В разговор вошёл менеджер</td>
+<td>бот замолкает до возврата разговора</td>
+</tr>
+<tr>
+<td>Фото или голосовое до этапа 3</td>
+<td>«передал мастеру» и передача</td>
+</tr>
+<tr>
+<td>Ночь и выходные</td>
+<td>бот консультирует, берёт телефон и называет время, когда ответит человек</td>
+</tr>
+</tbody>
+</table></div>
+<p>Независимая ревизия: первую версию архитектуры ревизор не принял, 10 находок по коду мостов и данным базы; три главные я перепроверил сам, все десять внесены в этот текст и в план. Повторной ревизии исправленной версии не было – она нужна перед началом этапа 1. Вживую не проверено, как бот-участник ведёт себя в виджете на нашей версии Chatwoot 4.19.</p>
+<h2>Модель: единого лидера нет, выбираем прогоном на своих вопросах</h2>
+<p>Тесты сняты 19–20.11.2026. Цена диалога – 8 реплик по 6 000 токенов контекста (токен – примерно полслова), без учёта рассуждений модели, с ними выйдет дороже. Курс 81,93 ₽.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>Тест агентов поддержки</th>
+<th>Ответ строго по документу</th>
+<th>Диалог, ₽: без кэша – с кэшем</th>
+<th>Откуда доступна</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Opus 5.5</td>
+<td>75,3%</td>
+<td>62,4%</td>
+<td>19,0 – 8,5</td>
+<td>через Нидерланды</td>
+</tr>
+<tr>
+<td>Claude Sonnet 5.5</td>
+<td>78,8%</td>
+<td>62,5%</td>
+<td>9,5 – 4,3</td>
+<td>через Нидерланды</td>
+</tr>
+<tr>
+<td>Claude Haiku 5.5</td>
+<td>72,8%</td>
+<td>57,0%</td>
+<td>0,48 – 0,23</td>
+<td>через Нидерланды</td>
+</tr>
+<tr>
+<td>GPT-6.1 Terra</td>
+<td>68,4%</td>
+<td>84,2%, первое место</td>
+<td>4,75 – 2,13</td>
+<td>через Нидерланды</td>
+</tr>
+<tr>
+<td>Gemini 3.5 Flash-Lite</td>
+<td>78,3%</td>
+<td>65,9%</td>
+<td>1,59 – 0,82</td>
+<td>через Нидерланды</td>
+</tr>
+<tr>
+<td>DeepSeek V4.1 Flash в облаке Яндекса</td>
+<td>75,1%</td>
+<td>меньше всех выдумывает при пересказе: 4,2%</td>
+<td>15,4 – 7,5</td>
+<td>Россия</td>
+</tr>
+<tr>
+<td>GigaChat, YandexGPT</td>
+<td>в мировых тестах нет, по русскому тесту с 15-го места</td>
+<td>–</td>
+<td>3–40</td>
+<td>Россия</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>По тесту агентов первые 60 моделей лежат в 7 процентных пунктах</strong> – это шум, а не разница.</li>
+<li><strong>Claude устойчивее всех к взлому через текст:</strong> 0,5–2% успешных атак против 8,5–16,5% у других. Замеры сделаны на моделях прошлого поколения, вторая цифра – из новостного пересказа, так что это ориентир. Для бота, открытого любому посетителю сайта, это главный довод за Claude.</li>
+<li><strong>Claude слабее в ответах строго по документу.</strong> Поэтому цены и сборки мы и не доверяем модели, а берём из таблицы и проверяем кодом.</li>
+</ul>
+<p>Деньги в месяц на модель: Opus при 300 диалогах – 2,6–5,7 тыс. ₽, при 1000 – 8,5–19 тыс. ₽. Sonnet – вдвое меньше. У сайта TEYES около 2 400 входов в месяц (срез 12.10); если в чат пишут 2–5% – это 50–120 диалогов, то есть до 2,3 тыс. ₽ на Opus. Доля 2–5% – моя оценка, не замер.</p>
+<h2>План и деньги: 88 часов до бота на сайте TEYES</h2>
+<p>Прогноз по трём оценкам (быстро / вероятно / долго), час – 1 000 ₽ себестоимости. После ревизии этапы 0–2 выросли с 66 до 88 часов.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Этап</th>
+<th>Что на выходе</th>
+<th>Часы: быстро / вероятно / долго</th>
+<th>Ожидание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0. База для бота</td>
+<td>один справочник из двух баз, пересобранная связка с нашими ценами, чистка чужих цен, поиск кличек на Python, 60–100 эталонных вопросов</td>
+<td>14 / 22 / 36</td>
+<td>23 ч</td>
+</tr>
+<tr>
+<td>1. Движок на стенде</td>
+<td>бот отвечает в тестовом чате, передача раздаётся менеджеру, проверки пройдены, три модели сравнены на наших вопросах</td>
+<td>34 / 46 / 70</td>
+<td>48 ч</td>
+</tr>
+<tr>
+<td>2. Бой на сайте TEYES</td>
+<td>галочка согласия, виджет по нажатию и открытый для посетителя адрес чата, ночной режим, первая неделя под присмотром</td>
+<td>10 / 16 / 26</td>
+<td>17 ч</td>
+</tr>
+<tr>
+<td>3. CRM</td>
+<td>бот в ВК, Max, Telegram; черновики менеджеру; сборка по фото панели</td>
+<td>18 / 26 / 44</td>
+<td>28 ч</td>
+</tr>
+<tr>
+<td>4. Второй клиент</td>
+<td>EV Sibir: сайт на коде на нашем сервере, 284 страницы услуг с ценами</td>
+<td>8 / 12 / 20</td>
+<td>13 ч, дальше 6–8 ч на клиента</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>До бота на сайте TEYES:</strong> этапы 0–2, около 88 ч и 88 тыс. ₽ себестоимости, календарно 3–4 недели.</li>
+<li><strong>Зависимость от CRM.</strong> Передача человеку имеет смысл, когда менеджеры реально сидят в CRM. Сейчас живых каналов TEYES там нет, свой экран менеджера не в бою – по состоянию CRM на 20.11 остаток около 38 часов, это отдельный счёт. До этого бот на сайте работает как ночной и дневной сборщик заявок с оповещением.</li>
+<li><strong>Против готового:</strong> Jivo – 156 тыс. ₽ в год на одного клиента, и подбора по таблице там нет. Своё окупается на первом клиенте за 7–8 месяцев, дальше каждый новый клиент – 6–8 часов.</li>
+<li><strong>Сервер:</strong> движку ставим лимит 128 МБ. Свободно 1,25 ГБ памяти, но подкачка занята на 75%, перед выкладкой – проверка памяти.</li>
+<li><strong>Что ломает оценку:</strong> сведение двух баз с разной схемой и пересборка цен (этап 0 сорвётся первым), вставка в шапку Тильды (у KitAccess она 17.11 роняла сайт), скорость ответа Opus, ответ юриста, занятость Кирилла.</li>
+</ul>
+<p><strong>Что раскрыть</strong></p>
+<ol>
+<li>Как именно бот ведёт подбор: пример диалога «от прадика до комплекта с ценой».</li>
+<li>Право: что писать в согласии и что подавать в Роскомнадзор.</li>
+<li>Продукт для клиентов: тарифы и что входит.</li>
+<li>Сборка по фото панели: как это проверить на наших 2 341 фото.</li>
+</ol>
+<p>Затрачено на эту работу: около 30 минут по часам – проверка и сохранение базы 8 мин, три исследования параллельно 14 мин, архитектура, ревизия и страница 10 мин.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
