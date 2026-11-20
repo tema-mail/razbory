@@ -1,0 +1,118 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Вариант А работает: задачи с планёрок больше не теряются</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Вариант А работает: задачи с планёрок больше не теряются</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод.</strong> Задачи с планёрок 19 и 20.11 стоят в планере и в контроле. Ира с завтрашнего утра получает задачи от бота. Задачи с каждой новой планёрки приходят тебе в Telegram с кнопкой «Ставим». Любая поломка теперь приходит тебе аварией, а не тихой строчкой. От тебя нужно одно: нажать «Не ставить» на проверочной планёрке в боте.</p>
+<h2>1. Задачи с 19 и 20.11 – поставлены</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Кому</th>
+<th>Что</th>
+<th>Куда</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ира</td>
+<td>11 задач</td>
+<td>планер: 3 на 20.11, Баланс на 21.11, 7 на 23–25.11</td>
+</tr>
+<tr>
+<td>Ты</td>
+<td>Крон (опубликовать и проверить ЛК), Цветы (дать Ире проект)</td>
+<td>контроль Евы, срок 20.11</td>
+</tr>
+<tr>
+<td>Ты</td>
+<td>Единый процесс (бой, стенд, GitHub, бэкап), инструкция к ЛК с озвучкой</td>
+<td>инбокс, без даты (правило 18.11)</td>
+</tr>
+<tr>
+<td>Ира</td>
+<td>Расшифровка планёрки 20.11</td>
+<td>ушла ей в бота, Telegram ответил «доставлено»</td>
+</tr>
+</tbody>
+</table></div>
+<p>Из 9 задач Иры с 19.11 три она уже закрыла сама (обложка YouTube, баннер, правки конфигуратора) – их не ставила. Ещё две слила с такими же задачами с 20.11, чтобы не было дублей.</p>
+<h2>2. Почему Ира ничего не получала – и что починено</h2>
+<ul>
+<li><strong>У бота не было доступа к планеру.</strong> Теперь пароль доски на сервере, бот читает и пишет задачи. Ира связана со своим именем в планере.</li>
+<li><strong>Бот искал «срок», а в планере у задач «день».</strong> Из 66 задач срока не было ни у одной, поэтому бот не видел задач Иры, даже когда доступ был бы. Теперь день и есть срок.</li>
+<li><strong>Утром Ире – одно сообщение:</strong> задачи на сегодня, просроченные, на завтра. Прогнала вхолостую на живом планере – список правильный.</li>
+<li>Сообщение «срок перенесён» выключила: Ира сама двигает задачи по дням, и бот писал бы ей на каждый её перенос.</li>
+</ul>
+<h2>3. Кнопка «Ставим» – как будет после каждой планёрки</h2>
+<ol>
+<li>Мак пишет итоги встречи и сам отправляет их боту.</li>
+<li>Тебе приходит список задач с галочками. Сними галочку с лишних и нажми «Ставим».</li>
+<li>Ире и Владу задачи уходят в планер (без срока – на ближайший рабочий день), тебе – в контроль, без даты – в инбокс. Ира получает одно сообщение со своими задачами.</li>
+<li>Не нажал – в 18:00 напоминание, в 20:00 ставлю отмеченные сама и пишу, что поставила. В твой выходной список ждёт до рабочего дня.</li>
+</ol>
+<p>Проверено живьём: проверочная планёрка дошла с мака до бота, бот отправил тебе список. Тесты: бот – 156 из 156, работник встреч – 4 из 4.</p>
+<h2>4. Ошибки больше не тихие</h2>
+<ul>
+<li>Доска не ответила, итоги не собрались, задача не встала, файл не дошёл до бота – тебе сразу «⚠ Авария», а Секретарю строка в отчёт дня. Пока не починю, повторяется каждое утро.</li>
+<li>Сегодняшнюю аварию я отправила тебе днём, сейчас закрыла словом «починено».</li>
+</ul>
+<h2>Как проверяла</h2>
+<p>Перед выкладкой отдельный агент проверил код и нашёл три дефекта:
+- при сбое посреди постановки задачи задваивались бы;
+- дата «20.11–22.11» читалась как 11.11;
+- «Кирилл» уходил бы Ире.</p>
+<p>Все три исправила и закрыла тестами, только потом выложила.</p>
+<h2>Нужно от тебя</h2>
+<ul>
+<li>В боте лежит «ПРОВЕРКА КНОПКИ» – нажми <strong>«Не ставить»</strong>. Заодно проверишь кнопку руками.</li>
+<li>Влада со своим именем в планере я не связывала: доступ сотрудникам открываешь ты. Скажешь «Влада тоже» – свяжу.</li>
+</ul>
+<h2>Что раскрыть</h2>
+<ul>
+<li>Все 11 задач Иры по дням.</li>
+<li>Как выглядит утреннее сообщение Ире (холостой прогон).</li>
+<li>Что осталось рядом: итоги встреч пишет модель Sonnet, а по правилу везде Opus. Не меняла: модели только по твоему слову.</li>
+</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
