@@ -1,0 +1,130 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Mobile.de: официальный API есть, но по договору; бюджетный путь – готовый сборщик</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Mobile.de: официальный API есть, но по договору; бюджетный путь – готовый сборщик</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод.</strong> У mobile.de есть официальный API для поиска и скачивания объявлений, но доступ выдаёт их поддержка под договор партнёра. Пока его нет, бюджетный путь – готовый сборщик на Apify: от 0,59 $ за 1 000 машин, без своих прокси. Свой сборщик на mobile.de не советую. Разбор от 20.11.2026.</p>
+<h2>1. Официальный API есть</h2>
+<ul>
+<li><strong>Search API</strong> – поиск по марке, модели, цене, дате изменения и скачивание объявления целиком: цена, фото, продавец, характеристики.</li>
+<li><strong>Ad-Stream</strong> – поток событий «объявление создано или изменено». Это готовая ежедневная сверка без обхода списков.</li>
+<li><strong>Доступ – по заявке.</strong> Нужен «API-аккаунт», его включает поддержка mobile.de. Дилерский аккаунт даёт доступ только к своим машинам. Адрес для заявки на тестовый доступ: service@team.mobile.de.</li>
+<li><strong>Ограничение:</strong> один поиск отдаёт не больше 2 000 объявлений, большие выборки надо дробить по цене или году.</li>
+<li><strong>Цену и условия не нашёл.</strong> Дают ли доступ компании из РБ или РФ – тоже неизвестно, надо спрашивать.</li>
+</ul>
+<p>Источники: <a href="https://services.mobile.de/manual/index.html">обзор API mobile.de</a>, <a href="https://services.mobile.de/manual/search-api.html">документация Search API</a>.</p>
+<h2>2. Напрямую сайт закрыт</h2>
+<ul>
+<li><strong>Прямой запрос получил отказ.</strong> Главная и поиск ответили кодом 403 «Zugriff verweigert». Защита от роботов у mobile.de самая сильная из всех наших площадок.</li>
+<li><strong>robots.txt закрывает <code>/api/</code>.</strong></li>
+<li><strong>Свой сборщик здесь – самый дорогой в сопровождении.</strong> Защита меняется часто, чинить придётся постоянно.</li>
+</ul>
+<h2>3. Готовые сборщики</h2>
+<ul>
+<li><strong>На Apify больше десяти сборщиков mobile.de.</strong> Цена от 0,59 до 12 $ за 1 000 машин, чаще всего около 2 $. Их прокси и борьба с защитой входят в цену.</li>
+<li><strong>Есть бесплатный лимит:</strong> 5 $ в месяц на аккаунт Apify, это около 2 500 машин.</li>
+<li><strong>auto-api.com тоже отдаёт mobile.de,</strong> цена по запросу.</li>
+</ul>
+<p>Источники: <a href="https://apify.com/blackfalcondata/mobile-de-scraper">сборщик за 0,59 $</a>, <a href="https://apify.com/solidcode/mobile-de-scraper.md">сборщик solidcode</a>, <a href="https://apify.com/piotrv1001/mobile-de-scraper">сборщик piotrv1001</a>.</p>
+<h2>4. Сколько стоит</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Путь</th>
+<th>Разово</th>
+<th>В месяц</th>
+<th>Что получаем</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>А. Карточка по ссылке через Apify</td>
+<td>8–15 тыс. ₽</td>
+<td>до 5 $ – в бесплатном лимите</td>
+<td>менеджер вставляет ссылку, система делает карточку с расчётом под ключ</td>
+</tr>
+<tr>
+<td>Б. Витрина по фильтру, 10–20 тыс. машин, сверка раз в неделю</td>
+<td>15–25 тыс. ₽</td>
+<td>26–170 $ (2–14 тыс. ₽)</td>
+<td>нужные марки, годы и цены</td>
+</tr>
+<tr>
+<td>В. Официальный API</td>
+<td>10–20 тыс. ₽ на подключение</td>
+<td>неизвестно</td>
+<td>весь рынок законно, с потоком изменений</td>
+</tr>
+<tr>
+<td>Г. Весь mobile.de через Apify</td>
+<td>–</td>
+<td>от 4 600 $</td>
+<td>не берём</td>
+</tr>
+<tr>
+<td>Д. Свой сборщик</td>
+<td>30–50 тыс. ₽</td>
+<td>прокси и 5–10 часов починки</td>
+<td>не советую</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Всего на mobile.de порядка 1,8 млн объявлений</strong> – цифра из примера в их же документации, не живой счётчик.</li>
+<li><strong>Доллар – 81,93 ₽,</strong> курс ЦБ на 20.11.2026. Час работы – 1 000 ₽.</li>
+</ul>
+<h2>Что предлагаю</h2>
+<ol>
+<li>Сразу пишем в поддержку mobile.de заявку на API-аккаунт – это бесплатно.</li>
+<li>Пока ждём ответ, запускаем путь А: карточка по ссылке.</li>
+<li>Если с Европы пойдут заявки – расширяем до пути Б или переходим на официальный API.</li>
+</ol>
+<h2>Нужно от тебя</h2>
+<ol>
+<li><strong>От чьего имени писать в mobile.de?</strong> Нужна компания: наша студия или клиент. Письмо подготовлю, отправка – после твоего «да».</li>
+<li><strong>Путь А на старте – да или нет?</strong></li>
+<li><strong>Что клиент возит из Европы:</strong> марки, годы, потолок цены. Это фильтр для пути Б.</li>
+</ol>
+<p>Затрачено: около 10 минут.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
