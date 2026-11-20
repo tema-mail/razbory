@@ -1,0 +1,196 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>По 1 000 машин на страну: итог по серверу, разовым и ежемесячным затратам</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>По 1 000 машин на страну: итог по серверу, разовым и ежемесячным затратам</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод.</strong> Каталог на 4 000 машин (Корея, Китай, США, Европа по 1 000) – это 5,5–7,5 тыс. ₽ в месяц наружу и 0 ₽ разово наружу. Наша работа – 50–70 часов, запуск за 1–2 недели. Самый простой путь – ничего не писать самим под площадки, а арендовать готовые сборщики на Apify и держать маленький свой сервер. Расчёт от 20.11.2026, доллар 81,93 ₽ по курсу ЦБ.</p>
+<h2>1. Как это сделать проще</h2>
+<ul>
+<li><strong>Сборщики не пишем.</strong> На Apify есть готовые под все четыре площадки. Платим за каждую отданную машину, защиту площадок и прокси они берут на себя.</li>
+<li><strong>Своих прокси нет совсем.</strong> Вопрос «сколько платить за прокси» отпадает.</li>
+<li><strong>Сайт остаётся статическим.</strong> 4 000 карточек собираются в обычные страницы, как сейчас у Evolution Car BY. Большой сервер и база под миллионы не нужны.</li>
+<li><strong>Пишем только своё ядро.</strong> Единая запись машины, отбор тысячи по правилам, расчёт под ключ для РБ и РФ, карточка и список на сайте, замена проданных.</li>
+</ul>
+<h2>2. Сервер</h2>
+<ul>
+<li><strong>Хватит маленького:</strong> 2 ядра, 4 ГБ памяти, 80 ГБ диска. Это тариф нашего московского сервера – 874 ₽ в месяц.</li>
+<li><strong>Фото храним у себя.</strong> 4 000 машин по 15 фото – около 9 ГБ, госномера закрываем один раз при загрузке.</li>
+<li><strong>Ставим отдельно от боевого.</strong> Наш московский 17.11 уже зависал, сборку каталога на него не кладу.</li>
+</ul>
+<h2>3. Ежемесячно наружу</h2>
+<p>Сверка раз в неделю – это 4 300 машин через сборщик в месяц на каждую страну.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Страна</th>
+<th>Площадка</th>
+<th>Цена сборщика за 1 000 машин</th>
+<th>В месяц при сверке раз в неделю</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Корея</td>
+<td>Encar</td>
+<td>5 $</td>
+<td>21,5 $</td>
+</tr>
+<tr>
+<td>Китай</td>
+<td>Che168</td>
+<td>6–8,5 $</td>
+<td>26–37 $</td>
+</tr>
+<tr>
+<td>США</td>
+<td>Copart, IAAI</td>
+<td>0,8–3 $</td>
+<td>3,5–13 $</td>
+</tr>
+<tr>
+<td>Европа</td>
+<td>Mobile.de</td>
+<td>0,59–2 $</td>
+<td>2,5–9 $</td>
+</tr>
+<tr>
+<td><strong>Сборщики итого</strong></td>
+<td></td>
+<td></td>
+<td><strong>53–80 $ (4,4–6,6 тыс. ₽)</strong></td>
+</tr>
+<tr>
+<td>Сервер</td>
+<td></td>
+<td></td>
+<td>874 ₽</td>
+</tr>
+<tr>
+<td><strong>Всего в месяц</strong></td>
+<td></td>
+<td></td>
+<td><strong>5,3–7,5 тыс. ₽</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>США лучше сверять каждый день.</strong> Лот живёт до торгов несколько дней. Тогда США – 24–90 $ в месяц, а всё вместе – 7–14 тыс. ₽.</li>
+<li><strong>Всё каждый день по всем странам – 30–45 тыс. ₽.</strong> При тысяче машин на страну это лишнее.</li>
+<li><strong>Сопровождение – 3–6 часов в месяц</strong> нашей работы: заменить сборщик, если автор его забросил.</li>
+<li><strong>Цены – со страниц сборщиков, сам я их ещё не запускал.</strong> Сколько фото и полей реально приходит, покажет проба.</li>
+</ul>
+<h2>4. Разово</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Работа</th>
+<th>Часов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ядро: единая запись, справочник марок, расчёт под ключ РБ и РФ, карточка и список на сайте, фото с закрытым номером, сторож</td>
+<td>30–45</td>
+</tr>
+<tr>
+<td>Подключение четырёх сборщиков</td>
+<td>12–16</td>
+</tr>
+<tr>
+<td>Отбор тысячи машин на страну и замена проданных</td>
+<td>5–8</td>
+</tr>
+<tr>
+<td><strong>Итого</strong></td>
+<td><strong>47–69</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Наружу – 0 ₽.</strong> Это часы нашей работы; при часе 1 000 ₽ себестоимость 50–70 тыс. ₽.</li>
+<li><strong>Срок – 4 / 7 / 12 дней</strong> (быстро / вероятно / долго).</li>
+<li><strong>Первая загрузка 4 000 машин – около 15–20 $,</strong> одноразово.</li>
+</ul>
+<h2>5. Для сравнения</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Путь</th>
+<th>Разово наружу</th>
+<th>В месяц наружу</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Готовые сборщики на Apify, по 1 000 машин</td>
+<td>15–20 $</td>
+<td>5,3–7,5 тыс. ₽</td>
+</tr>
+<tr>
+<td>apiauto.space, три рынка без Европы</td>
+<td>0</td>
+<td>25 000 ₽ и сервер</td>
+</tr>
+<tr>
+<td>Свои сборщики со своими прокси</td>
+<td>4–8 тыс. ₽</td>
+<td>12–33 тыс. ₽ и 10–20 часов починки</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Что может помешать</h2>
+<ul>
+<li><strong>Оплата Apify – иностранной картой.</strong> Российские карты там, скорее всего, не пройдут; я это не проверял.</li>
+<li><strong>Сборщики чужие.</strong> Автор может забросить свой – тогда меняем на соседний, под каждую площадку их несколько.</li>
+<li><strong>Китай: новые или б/у.</strong> Che168 – это б/у. Если тебе нужен модельный ряд новых, то это Dongchedi; сборщик под него на Apify есть, цену не нашёл.</li>
+</ul>
+<h2>Нужно от тебя</h2>
+<ol>
+<li><strong>Идём этим путём – да или нет?</strong></li>
+<li><strong>Аккаунт Apify и карта.</strong> Заведи аккаунт и пришли ключ, либо скажи «заведи сам». На пробу хватит бесплатных 5 $: по 20 машин с каждой площадки.</li>
+<li><strong>Какая тысяча в каждой стране:</strong> марки, годы, потолок цены. По Китаю – новые или б/у.</li>
+<li><strong>Какой сайт первый</strong> – Evolution Car BY?</li>
+</ol>
+<p>Затрачено: около 10 минут.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
