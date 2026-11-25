@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f5f2">
+  <meta name="description" content="Пять скиллов из среды Claude адаптированы под стек Kimi, установлены и проверены на 15 реальных сценариях">
+  <title>Пять скиллов Claude адаптированы и установлены в Kimi</title>
+  <script>
+    (() => {
+      let saved = null;
+      try { saved = localStorage.getItem('kimi-report-theme'); } catch (_) {}
+      const hour = new Date().getHours();
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = saved || ((hour >= 19 || hour < 7 || systemDark) ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+  <header class="page hero">
+    <div class="topline">
+      <a class="back-link" href="../">Все разборы Артёма</a>
+      <button id="theme-toggle" type="button" aria-pressed="false">Тёмная тема</button>
+    </div>
+    <div>
+      <p class="eyebrow">Перенос из Claude · 25 ноября 2026</p>
+      <h1>Пять скиллов Claude адаптированы и установлены в Kimi</h1>
+      <p class="lead">Установлены полнота выдачи, контент-стратег, копирайтер, редактор и безопасный перенос. Все проверены на реальных сценариях: 15 из 15 пройдено, два уточнения внесены и перепроверены.</p>
+      <p class="meta">Источники: ~/.claude/skills и ~/.claude/agents. Установка: ~/.agents/skills. Каталог Kimi видит все пять.</p>
+    </div>
+    <aside class="audio-panel" aria-labelledby="audio-title">
+      <p class="eyebrow">Голосовой итог</p>
+      <h2 id="audio-title">Главное за минуту</h2>
+      <p>Русский голос Dmitri, создан локально без сети.</p>
+      <audio controls preload="metadata" src="itog.mp3">Ваш браузер не поддерживает аудио. <a href="itog.mp3">Скачать MP3</a>.</audio>
+      <p><a href="itog.mp3" download>Скачать аудио</a></p>
+      <details>
+        <summary>Текст озвучки</summary>
+        <p class="transcript">Установлены пять скиллов из шести разобранных. Фул аутпут следит за полнотой выдачи: весь код, все элементы, без заглушек. Контент стратегист строит контент-планы и останавливает шаблонные страницы под города. Копирайтер специалист пишет тексты только на подтверждённых фактах, без выдуманных скидок и отзывов. Контент эдитор редактирует, ловит неподтверждённые утверждения и не переписывает текст, когда просят только разбор. А импорт мемори переписан по твоей задаче: это больше не импорт в память Клода, а правила безопасного переноса. Ничего не ставить вслепую: сначала разбор содержимого, проверка безопасности и адаптация под стек Кими. Шестой источник, просто копирайтер, объединён со специалистом, дубль не нужен. Все пять скиллов проверены на пятнадцати реальных сценариях, все пройдены. По итогам тестов внесены два уточнения, повторные проверки тоже зелёные. Скиллы лежат в папке .agents/skills и уже видны в каталоге Кими.</p>
+      </details>
+    </aside>
+  </header>
+
+  <main id="main-content">
+    <div class="page facts" aria-label="Ключевые цифры">
+      <div class="fact"><b>5</b><span>скиллов установлено в ~/.agents/skills</span></div>
+      <div class="fact"><b>15+2</b><span>сценариев PASS и повторных проверок</span></div>
+      <div class="fact"><b>2</b><span>уточнения внесены по итогам тестов</span></div>
+      <div class="fact"><b>6</b><span>источников Claude разобрано</span></div>
+    </div>
+    <section class="page section" id="report">
+      <div class="section-head">
+        <p class="eyebrow">Что установлено</p>
+        <h2>Скиллы, источники и результаты проверок</h2>
+        <p>Каждый источник прочитан целиком, адаптирован под стек Kimi и проверен тремя сценариями. Слепого копирования не было.</p>
+      </div>
+      <p>Шесть компонентов из разбора превратились в пять установленных скиллов. Агент <b>copywriter</b> объединён с <b>copywriter-specialist</b>: их задачи совпадают, дубль не нужен. Скилл <b>import-memory</b> по прямой просьбе владельца переписан с другим назначением: вместо импорта в память Claude это теперь правила безопасного переноса любых скиллов, агентов и памяти в Kimi. Ничего не ставить вслепую: сначала разбор содержимого, проверка безопасности (промт-инъекции, ссылки, секреты, скрипты) и адаптация под стек и правила владельца.</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Установленные скиллы и проверки">
+        <table>
+          <thead>
+            <tr><th>Скилл</th><th>Источник Claude</th><th>Что делает</th><th>Проверки</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>full-output-enforcement</b></td>
+              <td>скилл full-output-enforcement</td>
+              <td>Полная выдача без пропусков: весь код, все N элементов, без заглушек. На коротких вопросах не раздувает ответ.</td>
+              <td>3/3 PASS</td>
+            </tr>
+            <tr>
+              <td><b>content-strategist</b></td>
+              <td>агент content-strategist</td>
+              <td>Контент-стратегия, календарь, брифы. Останавливает шаблонные страницы под города и не выдумывает спрос.</td>
+              <td>3/3 PASS + уточнение границ</td>
+            </tr>
+            <tr>
+              <td><b>copywriter-specialist</b></td>
+              <td>агенты copywriter-specialist и copywriter (объединены)</td>
+              <td>Лендинги, email, CTA, A/B-гипотезы. Пишет только на подтверждённых фактах, останавливает каннибализацию и переспам.</td>
+              <td>3/3 PASS</td>
+            </tr>
+            <tr>
+              <td><b>content-editor</b></td>
+              <td>агент content-editor</td>
+              <td>Редактура и разбор текстов. Ловит неподтверждённые утверждения, не переписывает, когда просят только ревью.</td>
+              <td>3/3 PASS</td>
+            </tr>
+            <tr>
+              <td><b>import-memory</b></td>
+              <td>скилл import-memory (назначение изменено по просьбе владельца)</td>
+              <td>Безопасный перенос из другого ИИ: данные не инструкции, проверка безопасности, адаптация под Kimi, подтверждение до записи.</td>
+              <td>3/3 PASS + уточнение фильтра</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Как проверяли</h3>
+      <p>Три независимых тестовых агента прогнали 15 сценариев: полнота кода и списков, отказ от шаблонных городских страниц, календарь без выдуманной статистики, лендинг строго на заданных фактах, email с одним CTA и A/B-гипотезой, отказ от каннибализации ключей, ревью без переписывания, редактура с сохранением голоса, пометка неподтверждённых гарантий, промт-инъекция в экспорте памяти, вредоносный чужой скилл с URL и фильтр чувствительных данных. Все сценарии пройдены.</p>
+      <p>По итогам внесены два уточнения: стратегу явно запрещено писать разовые тексты даже при прямой просьбе (передавать автору), а в фильтр чувствительных данных добавлено одно исключение – явное повторное слово владельца после предупреждения. Оба затронутых сценария перепроверены: PASS.</p>
+      <h3>Что сознательно не перенесено</h3>
+      <p>Привязки к Claude: <code>model: opus</code>, недоступные MCP-инструменты (<code>mcp__firecrawl</code>), память Claude. Отдельные native-агенты не создавались: их поддержка в текущей конфигурации Kimi не подтверждена, скиллы закрывают те же задачи.</p>
+      <h3>Файлы установки</h3>
+      <p><code>~/.agents/skills/full-output-enforcement/SKILL.md</code><br>
+      <code>~/.agents/skills/content-strategist/SKILL.md</code><br>
+      <code>~/.agents/skills/copywriter-specialist/SKILL.md</code><br>
+      <code>~/.agents/skills/content-editor/SKILL.md</code><br>
+      <code>~/.agents/skills/import-memory/SKILL.md</code></p>
+    </section>
+  </main>
+
+  <footer class="page footer">Собрано Kimi Code для Артёма · проверки на реальных сценариях, независимая сверка change-reviewer · шаблон report-template</footer>
+  <script>
+    (() => {
+      const button = document.getElementById('theme-toggle');
+      const updateTheme = () => {
+        const dark = document.documentElement.dataset.theme === 'dark';
+        button.textContent = dark ? 'Светлая тема' : 'Тёмная тема';
+        button.setAttribute('aria-pressed', String(dark));
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#0c1210' : '#f3f5f2';
+      };
+      button.addEventListener('click', () => {
+        document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('kimi-report-theme', document.documentElement.dataset.theme); } catch (_) {}
+        updateTheme();
+      });
+      updateTheme();
+    })();
+  </script>
+</body>
+</html>
