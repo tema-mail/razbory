@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f5f2">
+  <meta name="description" content="Полные таблицы 110 скиллов и 66 агентов Claude Артёма с оценкой переноса в Kimi и методом Минто.">
+  <title>110 скиллов и 66 агентов Claude для Kimi</title>
+  <script>
+    (() => {
+      let saved = null;
+      try { saved = localStorage.getItem('kimi-report-theme'); } catch (_) {}
+      const hour = new Date().getHours();
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = saved || ((hour >= 19 || hour < 7 || systemDark) ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к таблицам</a>
+  <header class="page hero">
+    <div class="topline">
+      <a class="back-link" href="../">Все разборы Артёма</a>
+      <button id="theme-toggle" type="button" aria-pressed="false">Тёмная тема</button>
+    </div>
+    <div>
+      <p class="eyebrow">Claude → Kimi · полный реестр</p>
+      <h1>110 скиллов и 66 агентов: что переносим в Kimi</h1>
+      <p class="lead">Две полные таблицы: назначение каждого скилла и агента, источник, инструменты и конкретное действие для переноса. Отдельно сохранён гарвардский метод объяснения – пирамида Минто.</p>
+      <p class="meta">Собрано из личных каталогов <code>~/.claude/skills</code> и <code>~/.claude/agents</code>. Плагины маркетплейса не считаются личными скиллами. Секреты и адреса серверов не публикуются.</p>
+    </div>
+    <aside class="audio-panel" aria-labelledby="audio-title">
+      <p class="eyebrow">Голосовой итог</p>
+      <h2 id="audio-title">Главное за минуту</h2>
+      <p>Русский голос Dmitri, создан локально без сети.</p>
+      <audio controls preload="metadata" src="itog.mp3">Ваш браузер не поддерживает аудио. <a href="itog.mp3">Скачать MP3</a>.</audio>
+      <p><a href="itog.mp3" download>Скачать аудио</a></p>
+      <details>
+        <summary>Текст озвучки</summary>
+        <p class="transcript">На странице собраны сто десять скиллов и шестьдесят шесть агентов Claude. Шестьдесят два агента основные, четыре архивные. Для Kimi можно забрать девяносто четыре скилла. Двадцать шесть почти готовы, шестьдесят восемь нужно адаптировать. Восемь уже доступны, восемь не переносим. Отдельно сохранён гарвардский метод объяснения: пирамида Минто. Сначала вывод, затем от двух до четырёх доводов, после них факты и следующий шаг. Правило страницы с голосом уже записано в корневых правилах Kimi, а единый дизайн вынесен в постоянный шаблон. Таблицы можно фильтровать и искать по названию и описанию.</p>
+      </details>
+    </aside>
+  </header>
+
+  <main id="main-content">
+    <div class="page facts" aria-label="Ключевые цифры">
+      <div class="fact"><b>110</b><span>скиллов: 95 основных и 15 synced</span></div>
+      <div class="fact"><b>66</b><span>агентов: 62 основных и 4 архивных</span></div>
+      <div class="fact"><b>94</b><span>скилла можно перенести</span></div>
+      <div class="fact"><b>2</b><span>агента уже имеют аналог в Kimi</span></div>
+    </div>
+
+    <nav class="nav" aria-label="Разделы реестра">
+      <div class="page nav-inner">
+        <a href="#skills">Таблица скиллов</a>
+        <a href="#agents">Таблица агентов</a>
+        <a href="#minto">Метод Минто</a>
+        <a href="#migration">Как переносить</a>
+      </div>
+    </nav>
+
+    <section class="page section" id="skills">
+      <div class="section-head">
+        <p class="eyebrow">01 · Скиллы</p>
+        <h2>Все 110 скиллов Claude</h2>
+        <p>26 почти готовы, 68 требуют адаптации, 8 уже есть в Kimi и 8 не переносятся отдельно. Откройте строку через поиск: исходное описание и рекомендация видны целиком.</p>
+      </div>
+      <div class="filters" aria-label="Фильтры скиллов">
+        <div class="filter-grid">
+          <label>Поиск по скиллам<input id="skill-search" type="search" name="skill-search" placeholder="Например: SEO, TEYES, голос…" autocomplete="off"></label>
+          <label>Статус<select id="skill-status" name="skill-status"><option value="all">Все статусы</option><option value="ready">Почти готовы · 26</option><option value="adapt">Адаптировать · 68</option><option value="installed">Уже в Kimi · 8</option><option value="skip">Не переносить · 8</option></select></label>
+          <label>Источник<select id="skill-source" name="skill-source"><option value="all">Оба источника</option><option value="personal">Основные · 95</option><option value="synced">Synced · 15</option></select></label>
+        </div>
+        <div class="filter-bottom"><p class="result" id="skill-result" role="status" aria-live="polite"></p><button id="skill-reset" type="button">Сбросить</button></div>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Таблица 110 скиллов, доступна горизонтальная прокрутка">
+        <table>
+          <thead><tr><th scope="col">Скилл</th><th scope="col">Направление</th><th scope="col">Назначение</th><th scope="col">Источник</th><th scope="col">Статус</th><th scope="col">Что делать в Kimi</th></tr></thead>
+          <tbody id="skills-body"></tbody>
+        </table>
+      </div>
+      <p class="empty hidden" id="skills-empty">Скиллы не найдены. Сбросьте фильтры или измените запрос.</p>
+    </section>
+
+    <section class="page section" id="agents">
+      <div class="section-head">
+        <p class="eyebrow">02 · Агенты</p>
+        <h2>Все 66 агентов Claude</h2>
+        <p>62 основных и 4 архивные копии. Для 53 нужна обычная адаптация, для 7 сначала нужна замена внешних интеграций, 2 уже имеют аналог в Kimi, 4 остаются архивом.</p>
+      </div>
+      <div class="filters" aria-label="Фильтры агентов">
+        <div class="filter-grid">
+          <label>Поиск по агентам<input id="agent-search" type="search" name="agent-search" placeholder="Например: Фёдор, сайт, бренд…" autocomplete="off"></label>
+          <label>Статус<select id="agent-status" name="agent-status"><option value="all">Все статусы</option><option value="adapt">Адаптировать · 53</option><option value="integration">Нужна интеграция · 7</option><option value="installed">Есть аналог · 2</option><option value="archive">Архив · 4</option></select></label>
+          <label>Источник<select id="agent-source" name="agent-source"><option value="all">Все записи</option><option value="active">Основные · 62</option><option value="backup">Архивные · 4</option></select></label>
+        </div>
+        <div class="filter-bottom"><p class="result" id="agent-result" role="status" aria-live="polite"></p><button id="agent-reset" type="button">Сбросить</button></div>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Таблица 66 агентов, доступна горизонтальная прокрутка">
+        <table>
+          <thead><tr><th scope="col">Агент</th><th scope="col">Роль</th><th scope="col">Модель Claude</th><th scope="col">Инструменты</th><th scope="col">Статус</th><th scope="col">Что делать в Kimi</th></tr></thead>
+          <tbody id="agents-body"></tbody>
+        </table>
+      </div>
+      <p class="empty hidden" id="agents-empty">Агенты не найдены. Сбросьте фильтры или измените запрос.</p>
+    </section>
+
+    <section class="page section" id="minto">
+      <div class="section-head">
+        <p class="eyebrow">03 · Гарвардский метод</p>
+        <h2>Найден скилл minto: пирамида Минто</h2>
+        <p>Это старый рабочий скилл из <code>~/.claude/skills/minto/SKILL.md</code>. Он нужен не только для отчётов, но и для обучения: сначала понять главное, затем раскрывать только нужный уровень деталей.</p>
+      </div>
+      <div class="priority">
+        <p><strong>Формула:</strong> вывод первой строкой → 2–4 довода без пересечений → факты с датой и источником → следующий шаг или выбор, что раскрыть.</p>
+      </div>
+      <div class="minto-grid">
+        <article class="minto-card">
+          <h3>Как учить и объяснять</h3>
+          <ol class="minto-steps">
+            <li>Собрать факты снизу и сгруппировать их по смыслу.</li>
+            <li>Сформулировать один вывод, который отвечает на вопрос.</li>
+            <li>Поддержать вывод 2–4 независимыми доводами по принципу MECE.</li>
+            <li>Под каждым доводом дать пример, число, дату и источник.</li>
+            <li>Предложить 2–4 направления для углубления, а не повторять всё заново.</li>
+          </ol>
+        </article>
+        <article class="minto-card">
+          <h3>Пример для этого реестра</h3>
+          <div class="minto-example">
+            <p><strong>Вывод:</strong> в Kimi переносим 94 скилла, но по одному проверенному пакету.</p>
+            <p><strong>Первое:</strong> 26 методик почти не зависят от Claude.</p>
+            <p><strong>Второе:</strong> у 68 нужно заменить инструменты и интеграции.</p>
+            <p><strong>Третье:</strong> 8 уже есть, а 8 создадут только дубли.</p>
+            <p><strong>Что раскрыть:</strong> SEO, сайты, TEYES или документы.</p>
+          </div>
+          <p class="meta">Для большого отчёта допустим короткий контекст SCQ: ситуация → осложнение → вопрос. Вывод всё равно остаётся на первом экране.</p>
+        </article>
+      </div>
+      <p class="meta"><a href="https://tema-mail.github.io/razbory/rilsy-14-11-5b7d2e90/minto/">Открыть подробный обучающий разбор Минто</a>. Источник указан внутри исходного скилла.</p>
+    </section>
+
+    <section class="page section" id="migration">
+      <div class="section-head"><p class="eyebrow">04 · Порядок переноса</p><h2>Не копировать всё одной папкой</h2></div>
+      <div class="minto-grid">
+        <article class="minto-card"><h3>1. Выбрать пакет</h3><p>Один скилл или связанная роль, её references, scripts, источники и реальный сценарий. Первыми: Минто, SEO, главред, брифолог, сайты и TEYES.</p></article>
+        <article class="minto-card"><h3>2. Заменить зависимости</h3><p>Claude hooks, MCP и браузер заменить на возможности Kimi. Секреты не переносить в инструкции, а платные действия и публикации оставить только по разрешению.</p></article>
+        <article class="minto-card"><h3>3. Проверить в работе</h3><p>Прогнать один реальный пример, сравнить результат с исходным процессом и только затем устанавливать постоянно.</p></article>
+        <article class="minto-card"><h3>4. Сохранить урок</h3><p>Правила и найденные ошибки записывать в проект и общий стандарт. Для каждого отчёта использовать единый шаблон и обязательную русскую озвучку.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page footer">
+    <p>Источники: личные каталоги Claude. В таблицах нет сторонних плагинов маркетплейса. Четыре backup-записи агентов отмечены отдельно.</p>
+    <p>Оценка переноса не означает боевую проверку каждого скилла или агента. Исходные файлы не изменялись.</p>
+  </footer>
+
+  <script src="skills-data.js"></script>
+  <script src="agents-data.js"></script>
+  <script>
+    (() => {
+      'use strict';
+      const byId = id => document.getElementById(id);
+      const clean = value => String(value).replaceAll('—', '–');
+      const make = (tag, className, text) => {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (text !== undefined) element.textContent = clean(text);
+        return element;
+      };
+      const cell = (row, className, text) => {
+        const element = make('td', className, text);
+        row.append(element);
+        return element;
+      };
+      const themeButton = byId('theme-toggle');
+      const updateTheme = () => {
+        const dark = document.documentElement.dataset.theme === 'dark';
+        themeButton.textContent = dark ? 'Светлая тема' : 'Тёмная тема';
+        themeButton.setAttribute('aria-pressed', String(dark));
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#0c1210' : '#f3f5f2';
+      };
+      themeButton.addEventListener('click', () => {
+        document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('kimi-report-theme', document.documentElement.dataset.theme); } catch (_) {}
+        updateTheme();
+      });
+      updateTheme();
+
+      const skillStatuses = { ready: 'Почти готов', adapt: 'Адаптировать', installed: 'Уже в Kimi', skip: 'Не переносить' };
+      const categories = {
+        development: 'Разработка', design: 'Дизайн', marketing: 'Маркетинг и продажи', copy: 'Тексты',
+        content: 'Контент', seo: 'SEO', geo: 'Карты', sites: 'Сайты', teyes: 'TEYES',
+        integrations: 'Интеграции', documents: 'Документы', system: 'Система'
+      };
+      const skillRows = window.SKILLS_DATA.map(skill => {
+        const row = make('tr');
+        const name = cell(row, 'cell-name', '');
+        name.append(make('code', '', skill.slug));
+        if (skill.priority) name.append(make('span', 'priority-mark', 'Первый этап'));
+        cell(row, 'cell-meta', categories[skill.category]);
+        cell(row, 'cell-description', skill.description);
+        cell(row, 'cell-meta', skill.source === 'personal' ? 'Основной' : 'Synced');
+        const status = cell(row, '', '');
+        status.append(make('span', `badge badge-${skill.status}`, skillStatuses[skill.status]));
+        cell(row, 'cell-action', skill.note);
+        row.dataset.search = [skill.slug, skill.description, skill.note, categories[skill.category]].join(' ').toLocaleLowerCase('ru');
+        row.dataset.status = skill.status;
+        row.dataset.source = skill.source;
+        byId('skills-body').append(row);
+        return row;
+      });
+      const filterSkills = () => {
+        const query = byId('skill-search').value.trim().toLocaleLowerCase('ru');
+        const status = byId('skill-status').value;
+        const source = byId('skill-source').value;
+        let visible = 0;
+        skillRows.forEach(row => {
+          const show = (!query || row.dataset.search.includes(query)) && (status === 'all' || row.dataset.status === status) && (source === 'all' || row.dataset.source === source);
+          row.hidden = !show;
+          if (show) visible += 1;
+        });
+        byId('skill-result').textContent = `Показано: ${visible} из ${skillRows.length}`;
+        byId('skills-empty').classList.toggle('hidden', visible !== 0);
+      };
+      ['skill-search','skill-status','skill-source'].forEach(id => byId(id).addEventListener(id === 'skill-search' ? 'input' : 'change', filterSkills));
+      byId('skill-reset').addEventListener('click', () => {
+        byId('skill-search').value = '';
+        byId('skill-status').value = 'all';
+        byId('skill-source').value = 'all';
+        filterSkills();
+      });
+      filterSkills();
+
+      const agentStatuses = { adapt: 'Адаптировать', integration: 'Нужна интеграция', installed: 'Есть аналог', archive: 'Архив' };
+      const agentRows = window.AGENTS_DATA.map(agent => {
+        const row = make('tr');
+        const name = cell(row, 'cell-name', '');
+        name.append(make('code', '', agent.slug));
+        cell(row, 'cell-description', agent.description);
+        cell(row, 'cell-meta', agent.model);
+        const tools = cell(row, 'cell-tools', '');
+        const details = make('details');
+        details.append(make('summary', '', 'Показать инструменты'), make('p', '', agent.tools));
+        tools.append(details);
+        const status = cell(row, '', '');
+        status.append(make('span', `badge badge-${agent.status}`, agentStatuses[agent.status]));
+        cell(row, 'cell-action', agent.note);
+        row.dataset.search = [agent.slug, agent.description, agent.note, agent.tools].join(' ').toLocaleLowerCase('ru');
+        row.dataset.status = agent.status;
+        row.dataset.source = agent.source;
+        byId('agents-body').append(row);
+        return row;
+      });
+      const filterAgents = () => {
+        const query = byId('agent-search').value.trim().toLocaleLowerCase('ru');
+        const status = byId('agent-status').value;
+        const source = byId('agent-source').value;
+        let visible = 0;
+        agentRows.forEach(row => {
+          const show = (!query || row.dataset.search.includes(query)) && (status === 'all' || row.dataset.status === status) && (source === 'all' || row.dataset.source === source);
+          row.hidden = !show;
+          if (show) visible += 1;
+        });
+        byId('agent-result').textContent = `Показано: ${visible} из ${agentRows.length}`;
+        byId('agents-empty').classList.toggle('hidden', visible !== 0);
+      };
+      ['agent-search','agent-status','agent-source'].forEach(id => byId(id).addEventListener(id === 'agent-search' ? 'input' : 'change', filterAgents));
+      byId('agent-reset').addEventListener('click', () => {
+        byId('agent-search').value = '';
+        byId('agent-status').value = 'all';
+        byId('agent-source').value = 'all';
+        filterAgents();
+      });
+      filterAgents();
+    })();
+  </script>
+</body>
+</html>
