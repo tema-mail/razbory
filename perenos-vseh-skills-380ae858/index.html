@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f5f2">
+  <meta name="description" content="Полный реестр скиллов и агентов Claude, адаптированных и установленных в среду Kimi">
+  <title>Перенос скиллов и агентов Claude в Kimi</title>
+  <script>
+    (() => {
+      let saved = null;
+      try { saved = localStorage.getItem('kimi-report-theme'); } catch (_) {}
+      const hour = new Date().getHours();
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = saved || ((hour >= 19 || hour < 7 || systemDark) ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+  <header class="page hero">
+    <div class="topline">
+      <a class="back-link" href="../claude-skilly-agenty-kimi-a110c1a0/">Исходный реестр Claude</a>
+      <button id="theme-toggle" type="button" aria-pressed="false">Тёмная тема</button>
+    </div>
+    <div>
+      <p class="eyebrow">Перенос из Claude · 26 ноября 2026</p>
+      <h1>Скиллы и агенты Claude перенесены в Kimi</h1>
+      <p class="lead" id="report-lead">Идёт финальная сверка адаптированных компонентов и связанных справочников.</p>
+      <p class="meta">Источники: ~/.claude/skills и ~/.claude/agents. Установка: ~/.agents/skills. Секреты, URL, скрипты, hooks и автозапуски не переносятся.</p>
+    </div>
+    <aside class="audio-panel" aria-labelledby="audio-title">
+      <p class="eyebrow">Голосовой итог</p>
+      <h2 id="audio-title">Главное за минуту</h2>
+      <p>Русский голос Milena, создан локально без сети.</p>
+      <audio controls preload="metadata" src="summary.m4a">Ваш браузер не поддерживает аудио. <a href="summary.m4a">Скачать M4A</a>.</audio>
+      <p><a href="summary.m4a" download>Скачать аудио</a></p>
+      <details>
+        <summary>Текст озвучки</summary>
+        <p class="transcript" id="audio-transcript">Голосовой итог будет добавлен после завершения сводной проверки.</p>
+      </details>
+    </aside>
+  </header>
+
+  <main id="main-content">
+    <div class="page facts" aria-label="Ключевые цифры">
+      <div class="fact"><b id="fact-total">0</b><span>уникальных компонентов в манифесте</span></div>
+      <div class="fact"><b id="fact-installed">0</b><span>файлов SKILL.md подтверждено</span></div>
+      <div class="fact"><b id="fact-skills">0</b><span>исходных скиллов</span></div>
+      <div class="fact"><b id="fact-agents">0</b><span>бывших агентов адаптировано как скиллы</span></div>
+    </div>
+    <section class="page section" id="report">
+      <div class="section-head">
+        <p class="eyebrow">Полный реестр</p>
+        <h2>Что перенесено и в каком состоянии</h2>
+        <p>Каждая строка соответствует уникальному имени из манифеста. Бывшие агенты Claude работают в Kimi как вызываемые скиллы, а не как отдельный тип субагента.</p>
+      </div>
+      <div class="filters" aria-label="Фильтры реестра">
+        <div class="filter-grid">
+          <label for="search">Поиск по имени или описанию
+            <input id="search" type="search" autocomplete="off" placeholder="Например, SEO или copywriting">
+          </label>
+          <label for="kind-filter">Тип источника
+            <select id="kind-filter">
+              <option value="all">Все типы</option>
+              <option value="skill">Скилл</option>
+              <option value="agent">Бывший агент</option>
+            </select>
+          </label>
+          <label for="status-filter">Состояние
+            <select id="status-filter">
+              <option value="all">Все состояния</option>
+              <option value="installed">Установлен</option>
+              <option value="pending">Ожидает переноса</option>
+              <option value="integration">Требует интеграции</option>
+            </select>
+          </label>
+        </div>
+        <div class="filter-bottom">
+          <p class="result" id="result-count" role="status" aria-live="polite">Показано 0 компонентов</p>
+          <button id="reset-filters" type="button">Сбросить фильтры</button>
+        </div>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Полная таблица переносимых компонентов">
+        <table>
+          <thead>
+            <tr><th scope="col">Компонент</th><th scope="col">Тип</th><th scope="col">Направление</th><th scope="col">Статус</th><th scope="col">Что делает</th><th scope="col">Интеграции</th></tr>
+          </thead>
+          <tbody id="report-rows"></tbody>
+        </table>
+      </div>
+      <p class="empty" id="empty-result" hidden>Ничего не найдено. Измените запрос или сбросьте фильтры.</p>
+      <noscript><p class="empty">Для интерактивной таблицы нужен JavaScript. Полные данные находятся в файле data.js.</p></noscript>
+    </section>
+    <section class="page section" id="method">
+      <div class="section-head">
+        <p class="eyebrow">Как выполнен перенос</p>
+        <h2>Адаптация вместо слепого копирования</h2>
+      </div>
+      <div class="minto-grid">
+        <article class="minto-card"><h3>Совместимость</h3><p>Удалены привязки к моделям Claude, недоступным MCP-инструментам, командам и служебным полям. Скиллы вызываются через Kimi Skill, бывшие агенты получили русские описания и инструкции в формате SKILL.md.</p></article>
+        <article class="minto-card"><h3>Безопасность</h3><p>Не перенесены секреты, токены, внешние URL, исполняемые скрипты, hooks, evals и автозапуски. Возможности, которых в Kimi нет, отмечены как требующие отдельной интеграции.</p></article>
+        <article class="minto-card"><h3>Проверки</h3><p id="checks-summary">Проверяются frontmatter, имена папок, справочники, локальные ссылки, запрещённые переносы и статические сценарии. Реальные вызовы модели и внешних API отдельно не подтверждаются.</p></article>
+        <article class="minto-card"><h3>Что раскрыть</h3><p>При необходимости следующими шагами можно проверить поведение отдельных скиллов на реальных задачах, подключить нужные интеграции и устранить дубли в рабочих процессах.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page footer">Собрано Kimi Code для Артёма · источник данных: манифесты perenos и фактические файлы ~/.agents/skills · дизайн report-template</footer>
+  <script src="data.js"></script>
+  <script src="report.js"></script>
+  <script>
+    (() => {
+      const button = document.getElementById('theme-toggle');
+      const updateTheme = () => {
+        const dark = document.documentElement.dataset.theme === 'dark';
+        button.textContent = dark ? 'Светлая тема' : 'Тёмная тема';
+        button.setAttribute('aria-pressed', String(dark));
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#0c1210' : '#f3f5f2';
+      };
+      button.addEventListener('click', () => {
+        document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('kimi-report-theme', document.documentElement.dataset.theme); } catch (_) {}
+        updateTheme();
+      });
+      updateTheme();
+    })();
+  </script>
+</body>
+</html>
