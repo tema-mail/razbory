@@ -1,0 +1,1190 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Структура единого хранилища знаний для разных нейросетей</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Структура единого хранилища знаний для разных нейросетей</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод: предлагаю четыре изолированных Git-репозитория и одну папку <code>1_LLM</code> на Google Drive с тремя зонами: карта системы, проверенные пакеты для моделей и шифрованные резервные копии.</strong> Рабочим источником остаётся Git, задачами управляет трекер, а Drive не становится ни общим редактируемым промптом, ни двусторонней синхронизацией между компьютерами.</p>
+<blockquote>
+<p><strong>Нужно от тебя:</strong> согласовать эту структуру. После твоего «согласовано» следующий шаг - создать пустую структуру в Drive, настроить rclone на тестовом безопасном комплекте и доказать восстановление. До этого содержимое Drive и настройки доступа не меняются.</p>
+</blockquote>
+<p>Дата проекта: 27.11.2026. Статус: предложение для согласования, не внедрённая система. Этот документ дополняет <a href="https://tema-mail.github.io/razbory/universalnye-pravila-ii-863039de/">общую архитектуру от 25.11.2026</a>. Ссылка и ID папки Drive сохранены в приватном состоянии проекта и намеренно не публикуются здесь.</p>
+<h2>1. У каждого типа данных будет один источник истины</h2>
+<p>Система разделена на четыре независимых контура. Это исключает главные риски исходной задачи: устаревшие копии правил, смешение личного и рабочего, конфликты между компьютерами и резерв, который невозможно восстановить.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Контур</th>
+<th>Источник истины</th>
+<th>Что попадает в Drive</th>
+<th>Что запрещено</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Правила и знания</td>
+<td>Приватные Git-репозитории</td>
+<td>Версионные экспорты и шифрованные снимки</td>
+<td>Редактировать рабочие правила только в Drive</td>
+</tr>
+<tr>
+<td>Задачи</td>
+<td>Выбранный трекер, по умолчанию GitHub Projects</td>
+<td>Только зашифрованные технические сводки</td>
+<td>Вести второй параллельный список задач в Markdown</td>
+</tr>
+<tr>
+<td>Секреты</td>
+<td>Менеджер секретов и офлайн-хранилище восстановления</td>
+<td>Ничего в открытом виде</td>
+<td>Помещать OAuth, cookies, <code>.env</code>, пароли и ключи в Git или Drive</td>
+</tr>
+<tr>
+<td>Технические журналы</td>
+<td>Репозиторий операций или защищённое хранилище запусков</td>
+<td>Датированные отчёты и heartbeat</td>
+<td>Считать текстовый отчёт доказательством без данных проверки</td>
+</tr>
+</tbody>
+</table></div>
+<p>Общая схема:</p>
+<pre><code class="language-text">                    Люди и нейросети
+                           |
+                           v
+                Единый вход AGENTS.md
+                           |
+             +-------------+-------------+
+             |                           |
+       Git-репозитории               Трекер задач
+       правила и контекст            статусы и сроки
+             |                           |
+             +-------------+-------------+
+                           |
+                 Проверки и сборщик
+                           |
+             +-------------+-------------+
+             |                           |
+      Адаптеры на устройствах      Экспорт и резерв
+      Kimi / Codex / Claude        в Google Drive 1_LLM
+      Gemini / веб-пакеты
+</code></pre>
+<p>Синхронизация не является одним потоком «всё со всеми». Есть три разных процесса: распространение правил через Git, передача результата сессии через проектные документы и одностороннее резервное копирование в Drive.</p>
+<h2>2. Четыре репозитория разделяют правила и права доступа</h2>
+<p>Предлагаемая локальная структура после внедрения:</p>
+<pre><code class="language-text">~/AI-OS/
+├── core/                       # репозиторий ai-core
+├── personal/                   # репозиторий ai-personal
+├── studio-private/             # репозиторий studio-private
+├── studio-team/                # репозиторий studio-team
+└── projects/                   # клоны отдельных проектов по мере необходимости
+</code></pre>
+<p>Это новые адреса проектируемой системы, а не существующие папки. Текущая рабочая папка <code>~/Documents/Kimi.ai</code> сохраняется как место ведения состояния переезда. Автоматически переносить или переименовывать её не требуется.</p>
+<h3>2.1. <code>ai-core</code>: переносимое ядро без личных данных</h3>
+<pre><code class="language-text">ai-core/
+├── AGENTS.md                   # короткий общий вход, собирается из исходников
+├── VERSION                     # версия пакета правил и схем
+├── rules/
+│   ├── communication.md        # язык и подача
+│   ├── workflow.md             # начало, выполнение, проверка, передача
+│   ├── security.md             # переносимые границы безопасности
+│   └── review.md               # общие критерии ревью
+├── templates/
+│   └── project/
+│       ├── AGENTS.md
+│       ├── CONTEXT.md
+│       └── docs/
+│           ├── STATE.md
+│           ├── DECISIONS.md
+│           └── HANDOFF.md
+├── adapters/
+│   ├── kimi/
+│   ├── codex/
+│   ├── claude/
+│   ├── gemini/
+│   └── web/
+├── schemas/
+│   ├── repository-registry.schema.json
+│   ├── backup-manifest.schema.json
+│   └── daily-report.schema.json
+├── scripts/
+│   ├── build.py                # собирает адаптеры
+│   ├── validate.py             # проверяет источники и сгенерированные файлы
+│   ├── sync.py                 # проверяет и обновляет управляемые блоки
+│   ├── backup.sh               # создаёт неизменяемый комплект
+│   └── restore-check.sh        # проверяет восстановление
+└── tests/                      # тесты сборки, синхронизации и резерва
+</code></pre>
+<p><code>ai-core</code> можно открыть команде без доступа к личным правилам и приватным проектам. Он содержит только общие механизмы, шаблоны и безопасные примеры.</p>
+<h3>2.2. <code>ai-personal</code>: только твои правила и реестр</h3>
+<pre><code class="language-text">ai-personal/
+├── AGENTS.md                   # личный слой поверх ai-core
+├── rules/
+│   └── personal.md             # личные предпочтения без секретов
+├── projects.yml                # реестр личных проектов
+├── contexts/                   # только личные контексты без отдельного репозитория
+└── local.example.yml           # пример локальных путей, сами пути не передаются команде
+</code></pre>
+<p>Полные чаты, браузерные сессии, credentials и содержимое <code>~/.kimi-code</code> сюда не копируются. Личный репозиторий не нужен сотруднику для работы со студией.</p>
+<h3>2.3. <code>studio-private</code>: закрытая часть студии</h3>
+<pre><code class="language-text">studio-private/
+├── AGENTS.md
+├── projects.yml
+├── strategy/
+├── finance/
+├── contracts/
+└── contexts/
+</code></pre>
+<p>Состав папок обозначает границы, а не требование немедленно переносить туда документы. Финансы, договоры, закрытые клиентские данные и стратегия не попадают в <code>ai-core</code> или <code>studio-team</code>.</p>
+<h3>2.4. <code>studio-team</code>: общий командный контур</h3>
+<pre><code class="language-text">studio-team/
+├── AGENTS.md                   # обязательные правила команды
+├── STUDIO.md                   # роли, процессы, критерии готовности
+├── projects.yml                # только разрешённые командные проекты
+├── templates/
+│   ├── issue.md
+│   ├── pull-request.md
+│   └── project/
+├── roles.md                    # матрица доступа без персональных секретов
+└── .github/
+    ├── CODEOWNERS
+    └── workflows/
+</code></pre>
+<p>Код и документы каждого клиентского проекта остаются в собственном репозитории. <code>studio-team</code> хранит реестр и стандарты, а не объединяет всех клиентов в один монорепозиторий.</p>
+<h3>2.5. Почему не один большой репозиторий</h3>
+<ul>
+<li>Доступ к Git-репозиторию обычно открывает весь репозиторий, а не отдельные папки. Значит, <code>personal/</code> рядом с <code>team/</code> не является надёжной границей.</li>
+<li>Общий инструментарий нельзя помещать только в личный репозиторий, иначе команде придётся выдать доступ к личному.</li>
+<li>Разные репозитории позволяют назначить отдельные токены, правила ревью, расписания резерва и ключи шифрования.</li>
+<li>Реестр проектов даёт единую навигацию без единого хранилища с избыточными правами.</li>
+</ul>
+<h2>3. Папка <code>1_LLM</code> получит три зоны, а не зеркало всего компьютера</h2>
+<p>Предлагаемая структура внутри уже выбранной папки:</p>
+<pre><code class="language-text">1_LLM/
+├── README.txt                  # назначение, запреты, порядок восстановления
+│
+├── 00_system/                  # только несекретная служебная информация
+│   ├── storage-map.md          # эта карта и правила владения файлами
+│   └── schema-version.txt      # текущая версия формата хранилища
+│
+├── 10_dist/                    # проверенные пакеты для ручной загрузки в веб-чаты
+│   ├── core/
+│   │   └── &lt;version&gt;/
+│   │       ├── START_HERE.md
+│   │       ├── AGENTS.md
+│   │       └── manifest.json
+│   └── studio-team/
+│       └── &lt;version&gt;/
+│           ├── START_HERE.md
+│           ├── AGENTS.md
+│           ├── STUDIO.md
+│           └── manifest.json
+│
+└── 20_secure/                  # отдельные шифрованные корни rclone crypt
+    ├── personal/
+    │   ├── backups/
+    │   │   └── &lt;UTC-run-id&gt;/
+    │   ├── dist/
+    │   └── ops/
+    │       ├── daily/
+    │       └── restore/
+    ├── studio-private/
+    │   ├── backups/
+    │   ├── dist/
+    │   └── ops/
+    ├── studio-team/
+    │   ├── backups/
+    │   ├── dist/
+    │   └── ops/
+    └── projects/
+        └── &lt;project-id&gt;/
+            ├── backups/
+            └── ops/
+</code></pre>
+<h3>3.1. Назначение зон</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Зона</th>
+<th>Что содержит</th>
+<th>Кто пишет</th>
+<th>Можно ли редактировать вручную</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>README.txt</code></td>
+<td>Краткая инструкция без ссылок на приватные проекты и секретов</td>
+<td>Владелец через изменение шаблона</td>
+<td>Только через согласованную правку</td>
+</tr>
+<tr>
+<td><code>00_system</code></td>
+<td>Версия схемы и карта хранилища</td>
+<td>Процесс публикации системной версии</td>
+<td>Не является местом для рабочих правил</td>
+</tr>
+<tr>
+<td><code>10_dist</code></td>
+<td>Только очищенные пакеты, которые разрешено загружать в сторонние веб-чаты</td>
+<td>Сборщик после проверки</td>
+<td>Нет, создаётся новая версия</td>
+</tr>
+<tr>
+<td><code>20_secure/&lt;scope&gt;/backups</code></td>
+<td>Git bundle, снимок файлов, контрольные суммы и manifest</td>
+<td>Отдельный процесс резерва области</td>
+<td>Нет, комплект неизменяем</td>
+</tr>
+<tr>
+<td><code>20_secure/&lt;scope&gt;/dist</code></td>
+<td>Личные или приватные пакеты, которые нельзя хранить открыто</td>
+<td>Сборщик со своим ключом области</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td><code>20_secure/&lt;scope&gt;/ops</code></td>
+<td>Зашифрованные отчёты запусков и восстановления</td>
+<td>Только соответствующий агент</td>
+<td>Нет, добавляется новая запись</td>
+</tr>
+</tbody>
+</table></div>
+<h3>3.2. Что намеренно отсутствует</h3>
+<ul>
+<li>Нет папки <code>INBOX</code>, из которой агент автоматически исполняет найденные инструкции. Случайный документ не должен получать управление системой.</li>
+<li>Нет <code>current/</code> с перезаписываемыми правилами. Новая версия складывается рядом, а адаптеры получают её через Git.</li>
+<li>Нет синхронизации всей домашней папки, <code>.venv</code>, кэшей, медиамоделей, браузерных профилей и сессий.</li>
+<li>Нет общего открытого списка всех клиентских проектов. Реестр хранится в Git с нужными правами, а не в <code>00_system</code>.</li>
+<li>Нет автоматического удаления старых копий на старте. Политика хранения включается после успешных проверок восстановления.</li>
+</ul>
+<h3>3.3. Как выглядит один резервный комплект</h3>
+<p>До применения <code>crypt</code> локальный комплект имеет понятную структуру:</p>
+<pre><code class="language-text">2026-11-27T05-47-00Z__&lt;run-id&gt;/
+├── source.bundle               # полная история и refs Git
+├── source.tar.gz               # файлы зафиксированного commit
+├── SHA256SUMS                  # контрольные суммы bundle, архива и manifest
+└── manifest.json               # загружается последним как признак завершения
+</code></pre>
+<p>Дата показывает формат имени, а не существующую копию. После загрузки через <code>rclone crypt</code> имена и содержимое внутри соответствующего защищённого корня шифруются. Просмотр и восстановление выполняются через правильный crypt remote, а не через обычное скачивание зашифрованных объектов из браузера.</p>
+<h2>4. Общий <code>AGENTS.md</code> будет собранным входом, а не гигантским исходником</h2>
+<p>Требование «один общий файл» сохраняется на стороне нейросети: она получает короткий <code>AGENTS.md</code>. Но люди редактируют тематические исходники, из которых этот файл собирается. Так одно обновление не требует вручную править пять копий.</p>
+<h3>4.1. Контракты файлов</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Содержит</th>
+<th>Не содержит</th>
+<th>Когда обновляется</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AGENTS.md</code></td>
+<td>Стартовый протокол, границы, обязательные ссылки, версии</td>
+<td>Длинную историю и все задачи</td>
+<td>При изменении устойчивых правил</td>
+</tr>
+<tr>
+<td><code>CONTEXT.md</code></td>
+<td>Цель, архитектуру, команды, термины и ограничения проекта</td>
+<td>Текущие ежедневные статусы</td>
+<td>При структурном изменении</td>
+</tr>
+<tr>
+<td><code>docs/STATE.md</code></td>
+<td>Текущий этап, доказанное, активную ссылку, следующий шаг</td>
+<td>Полную доску задач</td>
+<td>После проверенного шага</td>
+</tr>
+<tr>
+<td><code>docs/DECISIONS.md</code></td>
+<td>Дату, решение, причину, последствия и отмену</td>
+<td>Несогласованные идеи как решения</td>
+<td>Только после решения человека</td>
+</tr>
+<tr>
+<td><code>docs/HANDOFF.md</code></td>
+<td>Последнюю передачу: commit, файлы, проверки, блокеры</td>
+<td>Бесконечный журнал всех сессий</td>
+<td>В конце содержательной сессии</td>
+</tr>
+<tr>
+<td><code>rules/review.md</code></td>
+<td>Приоритеты и границы ревью</td>
+<td>Правила выпуска только текстом</td>
+<td>При изменении критериев</td>
+</tr>
+<tr>
+<td><code>REVIEW.md</code></td>
+<td>Адаптер облачного Claude Code Review</td>
+<td>Универсальную память всех ИИ</td>
+<td>Только если сервис включён</td>
+</tr>
+<tr>
+<td><code>projects.yml</code></td>
+<td>ID, область, владельца, репозиторий и трекер</td>
+<td>Сами задачи и секретные URL</td>
+<td>При добавлении или архивировании проекта</td>
+</tr>
+</tbody>
+</table></div>
+<h3>4.2. Порядок сборки</h3>
+<pre><code class="language-text">ai-core/rules/*
+        +
+Личный или студийный слой
+        +
+Правила конкретного проекта
+        |
+        v
+Проверка конфликтов, ссылок, секретов и размера
+        |
+        v
+AGENTS.md + адаптеры инструментов
+        |
+        v
+Версия и контрольная сумма в каждом собранном файле
+</code></pre>
+<p>Правила более закрытой области не понижаются до более открытой. Проектный файл может добавить ограничение, но не отменяет запрет владельца. Локальные дополнения человека хранятся вне управляемого блока.</p>
+<pre><code class="language-markdown">&lt;!-- AI-OS:BEGIN version=&lt;version&gt; sha256=&lt;hash&gt; --&gt;
+Сгенерированный общий блок. Руками не редактировать.
+&lt;!-- AI-OS:END --&gt;
+
+Локальные дополнения этого компьютера или инструмента.
+</code></pre>
+<h3>4.3. <code>REVIEW.md</code> остаётся специальным адаптером</h3>
+<p><code>REVIEW.md</code> не становится центром системы. Общие правила ревью редактируются в <code>ai-core/rules/review.md</code>, проект добавляет свои риски в собственном источнике. Сборщик создаёт <code>REVIEW.md</code> только для проекта, где фактически включён облачный Claude Code Review. Для локальных ревью используются поддерживаемые инструкции конкретного инструмента.</p>
+<p>Это соответствует <a href="https://code.claude.com/docs/en/code-review">официальному описанию Claude Code Review</a> и выводу предыдущего исследования: сервис на GitHub и локальная команда ревью имеют разные правила загрузки.</p>
+<h2>5. Личное, командное и приватное разделяются одновременно путями, токенами и ключами</h2>
+<p>Одной структуры папок недостаточно. Для каждой области фиксируются пять границ.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Область</th>
+<th>Git</th>
+<th>Drive</th>
+<th>Учётные данные</th>
+<th>Кто видит</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>personal</code></td>
+<td><code>ai-personal</code></td>
+<td><code>20_secure/personal</code></td>
+<td>Личный процесс резерва</td>
+<td>Только владелец</td>
+</tr>
+<tr>
+<td><code>studio-private</code></td>
+<td><code>studio-private</code></td>
+<td><code>20_secure/studio-private</code></td>
+<td>Отдельный владелец или сервис приватного резерва</td>
+<td>Владелец и отдельно допущенные</td>
+</tr>
+<tr>
+<td><code>studio-team</code></td>
+<td><code>studio-team</code></td>
+<td><code>20_secure/studio-team</code> и очищенный <code>10_dist/studio-team</code></td>
+<td>Сервисный аккаунт команды</td>
+<td>Команда по роли</td>
+</tr>
+<tr>
+<td>Проект клиента</td>
+<td>Отдельный репозиторий</td>
+<td><code>20_secure/projects/&lt;id&gt;</code></td>
+<td>Только проектный доступ</td>
+<td>Назначенная команда проекта</td>
+</tr>
+<tr>
+<td><code>public</code></td>
+<td>Отдельная публикация</td>
+<td>Только явно одобренный экспорт</td>
+<td>Публичный процесс без приватных токенов</td>
+<td>Все после одобрения</td>
+</tr>
+</tbody>
+</table></div>
+<h3>5.1. Проектируемые rclone remote</h3>
+<pre><code class="language-text">aios-drive
+  Корневая папка: выбранная 1_LLM
+  Назначение: базовый Drive remote, без шифрования сам по себе
+
+aios-personal-crypt
+  remote = aios-drive:20_secure/personal
+
+aios-private-crypt
+  remote = aios-drive:20_secure/studio-private
+
+aios-team-crypt
+  remote = aios-drive:20_secure/studio-team
+
+aios-project-&lt;id&gt;-crypt
+  remote = aios-drive:20_secure/projects/&lt;id&gt;
+</code></pre>
+<p>Каждый автоматический процесс получает только конфигурацию своей области. Например, агент задач студии вообще не получает <code>aios-personal-crypt</code> и <code>aios-private-crypt</code>.</p>
+<h3>5.2. Важное ограничение <code>root_folder_id</code></h3>
+<p><code>root_folder_id</code> ограничивает корень, с которым работает rclone, но сам по себе не заменяет разграничение прав Google. Если выданный OAuth-токен имеет доступ ко всему Drive, ошибочная или скомпрометированная конфигурация может получить больше данных, чем задумано.</p>
+<p>Поэтому защита строится так:</p>
+<ol>
+<li>Отдельный Google-аккаунт или service account для автоматики.</li>
+<li>Доступ только к необходимой папке области, насколько это поддерживает выбранная схема Drive.</li>
+<li>Минимально достаточный OAuth scope, выбранный после реального теста доступа к уже существующей общей папке.</li>
+<li>Разные crypt remote и разные пароли для личного, приватного и командного.</li>
+<li>Пароль конфигурации rclone и офлайн-копия параметров восстановления.</li>
+<li>Никаких OAuth JSON, токенов, паролей и salt в Git, отчётах или самой резервной папке.</li>
+</ol>
+<p>Текущая папка находится в разделе «Доступные мне». Это подтверждает браузерный доступ выбранного аккаунта, но не подтверждает доступ service account или OAuth-приложения. Этот сценарий нужно отдельно проверить через rclone до любого расписания.</p>
+<p>Основания: <a href="https://rclone.org/drive/">rclone Google Drive</a> описывает OAuth, scope, <code>root_folder_id</code> и service accounts; <a href="https://rclone.org/crypt/">rclone crypt</a> предупреждает, что пароль в обычной конфигурации лишь слабо скрыт, а потеря пароля и salt может сделать данные невосстановимыми.</p>
+<h2>6. Синхронизация правил между компьютерами идёт только через Git</h2>
+<h3>6.1. До начала работы</h3>
+<pre><code class="language-text">Открыть назначенный репозиторий
+  -&gt; проверить отсутствие чужих незакоммиченных правок
+  -&gt; git pull --ff-only
+  -&gt; прочитать AGENTS.md и обязательные документы
+  -&gt; выполнить sync --check
+  -&gt; сверить версию ядра, проекта и адаптера
+  -&gt; открыть задачу в трекере
+</code></pre>
+<p>Если рабочее дерево содержит чужие изменения, агент не очищает его и не прячет их. Если <code>pull --ff-only</code> невозможен, автоматическое обновление останавливается. Сначала разбирается состояние, затем начинается работа.</p>
+<h3>6.2. После проверенной работы</h3>
+<pre><code class="language-text">Проверить исходный сценарий
+  -&gt; записать реальный результат проверки
+  -&gt; обновить STATE.md и HANDOFF.md
+  -&gt; добавить решение, только если его принял человек
+  -&gt; зафиксировать точные файлы в ветке, если коммит разрешён
+  -&gt; открыть PR
+  -&gt; пройти CI и назначенное ревью
+  -&gt; после merge другие компьютеры получают новую версию
+</code></pre>
+<h3>6.3. Обновление адаптеров</h3>
+<ol>
+<li>На каждом устройстве <code>sync --check</code> сравнивает управляемый блок с выбранной версией.</li>
+<li>При расхождении сначала показывается diff, без записи.</li>
+<li>Перед первой записью создаётся локальная резервная копия изменяемого файла.</li>
+<li>Запись затрагивает только управляемый блок.</li>
+<li>После записи повторяются сборка и <code>sync --check</code>.</li>
+<li>Новая сессия каждого инструмента должна назвать версию и источник, откуда её получила.</li>
+<li>Ответ модели сверяется с файлом, потому что уверенный ответ сам по себе не доказывает загрузку.</li>
+</ol>
+<h3>6.4. Почему Drive не участвует в этом контуре</h3>
+<p>Drive не знает специальных путей Kimi, Codex, Claude и Gemini. Одновременная запись из двух мест не заменяет Git-ревью, а восстановление старого файла из облака может незаметно откатить правила. Поэтому Drive принимает выпущенные версии и резерв, но не раздаёт команды агентам автоматически.</p>
+<h2>7. Передача знаний между нейросетями имеет фиксированный протокол</h2>
+<h3>7.1. Что передаётся</h3>
+<ul>
+<li>Цель и границы задачи.</li>
+<li>Текущий этап и последний проверенный commit.</li>
+<li>Принятые решения с датами.</li>
+<li>Изменённые файлы и внешние эффекты.</li>
+<li>Полные результаты значимых проверок, включая неуспешные.</li>
+<li>Следующее физическое действие и блокер.</li>
+<li>Что не проверено и какие данные недоступны.</li>
+</ul>
+<h3>7.2. Что не передаётся</h3>
+<ul>
+<li>Полный чат со всеми отвергнутыми гипотезами.</li>
+<li>Секреты, cookies, токены и содержимое приватных конфигураций.</li>
+<li>Непроверенные выводы под видом фактов.</li>
+<li>Личный контекст в командный или клиентский отчёт.</li>
+<li>Большой автоматический конспект без ссылки на источник.</li>
+</ul>
+<h3>7.3. Конец сессии</h3>
+<pre><code class="language-text">Работа и проверки
+  -&gt; STATE.md: где находится проект
+  -&gt; DECISIONS.md: какие решения действительно приняты
+  -&gt; HANDOFF.md: что нужно следующему исполнителю
+  -&gt; Git: проверенный результат в ветке или PR
+  -&gt; Drive: только очередной резерв, не оперативная передача
+</code></pre>
+<p><code>HANDOFF.md</code> перезаписывается как актуальная передача, а предыстория остаётся в Git. Так следующий чат получает одну страницу вместо архива предыдущих передач.</p>
+<h3>7.4. Начало новой сессии</h3>
+<p>Новая модель до изменений должна вернуть:</p>
+<ol>
+<li>Цель и область данных.</li>
+<li>Текущий этап и commit.</li>
+<li>Действующие ограничения.</li>
+<li>Что проверено и каким доказательством.</li>
+<li>Следующий шаг, блокеры и неизвестное.</li>
+</ol>
+<p>После этого выполняются пять одинаковых контрольных вопросов на каждом выбранном инструменте. Если ответы различаются, исправляется источник или адаптер, а не добавляется новый повторяющийся промпт.</p>
+<h2>8. Резервное копирование будет односторонним и неизменяемым</h2>
+<h3>8.1. Последовательность одного запуска</h3>
+<pre><code class="language-text">Получить блокировку области
+  -&gt; проверить репозиторий и чистоту commit
+  -&gt; выполнить validate.py и build.py --check
+  -&gt; создать git bundle и проверить его
+  -&gt; создать git archive конкретного commit
+  -&gt; записать manifest.json без локальных секретов
+  -&gt; рассчитать SHA-256
+  -&gt; загрузить файлы через crypt remote
+  -&gt; загрузить manifest последним
+  -&gt; скачать комплект во временную папку
+  -&gt; сверить SHA-256 и завершить запуск
+</code></pre>
+<p>Наличие manifest означает, что процесс дошёл до завершающей записи, но не заменяет последующий restore-тест. Неполный комплект без manifest считается неудачным и не выбирается для восстановления.</p>
+<h3>8.2. Пример manifest без чувствительных данных</h3>
+<pre><code class="language-json">{
+  &quot;schema_version&quot;: 1,
+  &quot;run_id&quot;: &quot;&lt;UTC-time&gt;_&lt;random-id&gt;&quot;,
+  &quot;repository_alias&quot;: &quot;ai-personal&quot;,
+  &quot;scope&quot;: &quot;personal&quot;,
+  &quot;commit&quot;: &quot;&lt;full-git-hash&gt;&quot;,
+  &quot;created_utc&quot;: &quot;&lt;ISO-8601&gt;&quot;,
+  &quot;source_state&quot;: &quot;clean&quot;,
+  &quot;core_version&quot;: &quot;&lt;version&gt;&quot;,
+  &quot;files&quot;: [
+    &quot;source.bundle&quot;,
+    &quot;source.tar.gz&quot;,
+    &quot;SHA256SUMS&quot;
+  ],
+  &quot;restore_test&quot;: &quot;not_run_in_this_job&quot;
+}
+</code></pre>
+<p>В manifest не записываются имя пользователя ОС, абсолютные домашние пути, OAuth-данные, список приватных файлов с чувствительными названиями и содержимое задач.</p>
+<h3>8.3. Почему <code>copy</code>, а не <code>sync</code></h3>
+<p><a href="https://rclone.org/commands/rclone_copy/">Документация <code>rclone copy</code></a> прямо указывает, что команда не удаляет файлы в назначении. Для ежедневного резерва это безопаснее зеркала: исчезновение исходного файла не должно автоматически стирать последнюю копию.</p>
+<p>Проектируемый режим:</p>
+<pre><code class="language-text">rclone copy &lt;новый-комплект&gt; &lt;crypt-remote&gt;:backups/&lt;run-id&gt; --immutable
+</code></pre>
+<p>Это схема будущей команды, а не выполненная настройка. Флаги и поведение будут проверены на тестовом комплекте. <code>sync</code> допускается только для отдельно согласованного второго зеркала уже зашифрованных данных, не для основного ежедневного процесса.</p>
+<h3>8.4. Незакоммиченная работа</h3>
+<p>Стандартный резерв фиксирует конкретный чистый commit. Если в репозитории есть незакоммиченные изменения:</p>
+<ul>
+<li>не создавать комплект с ложной пометкой чистого состояния;</li>
+<li>сохранить предыдущие копии;</li>
+<li>сообщить, что незакоммиченная работа не защищена;</li>
+<li>продолжить обработку других независимых репозиториев;</li>
+<li>завершить общий запуск с предупреждением или ошибкой по политике;</li>
+<li>предложить человеку WIP-ветку или отдельный ручной архив после проверки на секреты.</li>
+</ul>
+<p>Автоматически собирать все untracked-файлы опасно: среди них могут оказаться ключи, локальные базы и чужие черновики.</p>
+<h3>8.5. Хранение копий</h3>
+<p>Стартовая политика после успешного пилота:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>Сколько держать</th>
+<th>Когда включается</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ежедневные</td>
+<td>30</td>
+<td>После первых успешных restore-тестов</td>
+</tr>
+<tr>
+<td>Еженедельные</td>
+<td>12</td>
+<td>После отдельной проверки выбора недельной копии</td>
+</tr>
+<tr>
+<td>Ежемесячные</td>
+<td>12</td>
+<td>После согласования места и стоимости хранения</td>
+</tr>
+</tbody>
+</table></div>
+<p>Это рекомендуемые параметры, не ограничение Google. До включения очистки все новые комплекты сохраняются. Удаление старых копий требует отдельной проверки, журнала и запрета на удаление последней проверенной копии.</p>
+<h2>9. Восстановление доказывается до включения ежедневного расписания</h2>
+<h3>9.1. Полный restore-тест</h3>
+<pre><code class="language-text">Выбрать комплект с manifest
+  -&gt; скачать через правильный crypt remote в пустую папку
+  -&gt; проверить SHA256SUMS
+  -&gt; выполнить git bundle verify source.bundle
+  -&gt; клонировать bundle в новый репозиторий
+  -&gt; сверить HEAD с commit из manifest
+  -&gt; распаковать source.tar.gz отдельно и сверить содержимое
+  -&gt; запустить validate.py и build.py --check
+  -&gt; восстановить адаптеры в изолированный тестовый HOME
+  -&gt; прочитать ключевые AGENTS.md, STATE.md и HANDOFF.md
+  -&gt; записать датированный результат
+</code></pre>
+<p>Восстановление выполняется в пустой каталог, не поверх текущих правил. Секреты для рабочего восстановления вводятся отдельно и не становятся частью архива.</p>
+<h3>9.2. Критерий готовности резерва</h3>
+<p>Резерв считается работающим только когда одновременно верно:</p>
+<ul>
+<li>комплект скачан заново из Drive;</li>
+<li>контрольные суммы сошлись;</li>
+<li>bundle прошёл проверку и клонирование;</li>
+<li>commit совпал с manifest;</li>
+<li>валидация восстановленного источника прошла;</li>
+<li>ключевые документы читаются;</li>
+<li>процесс повторим на другом устройстве или с изолированным тестовым профилем;</li>
+<li>владелец знает, где лежат офлайн-параметры восстановления.</li>
+</ul>
+<p>Сообщение <code>rclone copy</code> о загрузке не равно успешному восстановлению.</p>
+<h3>9.3. Контроль целостности crypt</h3>
+<p>Документация <a href="https://rclone.org/crypt/">rclone crypt</a> указывает, что обычные хеши backend не сохраняются для crypt и предлагает <code>rclone cryptcheck</code> для проверки зашифрованного remote. В системе используются оба уровня: техническая проверка crypt и независимая проверка SHA-256 после расшифровки.</p>
+<h2>10. Ежедневный системный агент состоит из проверяемых шагов</h2>
+<p>Это не один большой prompt. Основу выполняет скрипт, а языковая модель только объясняет результат.</p>
+<h3>10.1. Предлагаемый ежедневный цикл</h3>
+<pre><code class="language-text">06:47 НСК, проектное время
+  |
+  v
+Проверить, не идёт ли другой запуск этой области
+  |
+  v
+Для каждого разрешённого репозитория:
+  - проверить доступ и чистоту
+  - обновить только fast-forward, если это разрешено
+  - проверить схемы, ссылки, секреты и размер
+  - проверить актуальность адаптеров
+  - создать новый неизменяемый резерв
+  |
+  v
+Зафиксировать heartbeat и результат каждого шага
+  |
+  v
+Получить свежие задачи через read-only API
+  |
+  v
+Сформировать техническую сводку
+  |
+  +-&gt; LLM недоступна: отправить техническую сводку без неё
+  |
+  +-&gt; LLM доступна: объяснить приоритеты, ничего не меняя
+</code></pre>
+<p>Время 06:47 НСК остаётся предложением из общей архитектуры. Расписание пока не создано.</p>
+<h3>10.2. Таблица ответственности</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Действие</th>
+<th>Скрипт</th>
+<th>LLM</th>
+<th>Человек</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Проверка Git, ссылок, схем и версий</td>
+<td>Выполняет</td>
+<td>Не нужна</td>
+<td>Разбирает ошибку</td>
+</tr>
+<tr>
+<td>Создание bundle, архива и SHA-256</td>
+<td>Выполняет</td>
+<td>Не нужна</td>
+<td>Контролирует результат</td>
+</tr>
+<tr>
+<td>Загрузка в Drive</td>
+<td>Выполняет</td>
+<td>Не нужна</td>
+<td>Выдаёт доступ</td>
+</tr>
+<tr>
+<td>Restore-тест</td>
+<td>Выполняет по расписанию</td>
+<td>Может объяснить ошибку</td>
+<td>Периодически принимает результат</td>
+</tr>
+<tr>
+<td>Сводка задач</td>
+<td>Получает данные</td>
+<td>Суммирует с источниками</td>
+<td>Принимает решения</td>
+</tr>
+<tr>
+<td>Изменение правил</td>
+<td>Только проверяет</td>
+<td>Может предложить</td>
+<td>Утверждает через PR</td>
+</tr>
+<tr>
+<td>Закрытие задачи</td>
+<td>Не выполняет</td>
+<td>Не выполняет</td>
+<td>Подтверждает</td>
+</tr>
+<tr>
+<td>Публикация и production</td>
+<td>Не выполняет</td>
+<td>Не выполняет</td>
+<td>Даёт отдельное разрешение</td>
+</tr>
+</tbody>
+</table></div>
+<h3>10.3. Журнал запуска</h3>
+<pre><code class="language-yaml">schema_version: 1
+run_id: &lt;id&gt;
+scope: studio-team
+started_at: &lt;ISO-8601&gt;
+finished_at: &lt;ISO-8601&gt;
+scheduler: &lt;launchd|github-actions|vps&gt;
+validation: &lt;passed|failed&gt;
+adapters: &lt;current|stale|failed&gt;
+backup: &lt;verified|failed|skipped&gt;
+restore_test: &lt;passed|failed|not_scheduled&gt;
+tasks_api: &lt;ok|unavailable|not_configured&gt;
+llm_summary: &lt;ok|unavailable|disabled&gt;
+notification: &lt;sent|failed&gt;
+</code></pre>
+<p>Если один репозиторий не прошёл, отчёт содержит отдельный результат по нему. Ошибка не маскируется общим «успешно».</p>
+<h3>10.4. Наблюдение за отсутствием запуска</h3>
+<p>Heartbeat записывается после фактического результата. Если успешного резерва области нет более 25 часов, создаётся предупреждение. Порог 25 часов - стартовая проектная настройка для ежедневного процесса, а не внешний стандарт.</p>
+<p>Отдельно контролируются:</p>
+<ul>
+<li>планировщик не запустился;</li>
+<li>запуск начался и завис;</li>
+<li>сеть или Drive недоступны;</li>
+<li>загрузка завершилась, но проверка не прошла;</li>
+<li>restore-тест давно не выполнялся;</li>
+<li>отчёт не доставлен.</li>
+</ul>
+<h2>11. Агент задач студии отделён от системного резерва</h2>
+<h3>11.1. Два процесса с разными правами</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Системный агент</th>
+<th>Агент задач студии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Основная цель</td>
+<td>Целостность знаний и резерв</td>
+<td>Актуальность работы студии</td>
+</tr>
+<tr>
+<td>Источники</td>
+<td>Git и Drive</td>
+<td>Трекер, PR и CI</td>
+</tr>
+<tr>
+<td>Доступ к личному</td>
+<td>Только личный процесс владельца</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Доступ к приватному студийному</td>
+<td>Только отдельный приватный процесс</td>
+<td>Нет по умолчанию</td>
+</tr>
+<tr>
+<td>Запись</td>
+<td>Новые резервы и журналы</td>
+<td>Сначала только черновик отчёта</td>
+</tr>
+<tr>
+<td>Закрытие задач</td>
+<td>Нет</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Изменение правил</td>
+<td>Нет</td>
+<td>Нет</td>
+</tr>
+</tbody>
+</table></div>
+<p>Не нужен один всезнающий агент со всеми токенами. Общий календарь может запускать оба процесса, но их конфигурации и журналы остаются разными.</p>
+<h3>11.2. Источник и поля задачи</h3>
+<p>Если существующего трекера нет, стартовый вариант - GitHub Projects с Issues. При наличии работающего трекера он сохраняется, а GitHub не вводится как второй источник.</p>
+<p>Минимальные поля:</p>
+<pre><code class="language-text">id и ссылка
+scope: studio-team | studio-private
+project
+owner
+status
+priority
+due, если срок реально существует
+next_action
+blocker и ответственный за разблокировку
+acceptance
+evidence
+updated_at
+</code></pre>
+<h3>11.3. Стартовые права</h3>
+<p>Разрешено на первом этапе:</p>
+<ul>
+<li>читать только командный Project;</li>
+<li>читать связанные PR и статусы CI;</li>
+<li>формировать ежедневную сводку;</li>
+<li>создавать черновик отчёта в зашифрованной области;</li>
+<li>помечать недоступные источники как «нет данных».</li>
+</ul>
+<p>Не разрешено без отдельного этапа:</p>
+<ul>
+<li>менять чужие статусы;</li>
+<li>закрывать задачи;</li>
+<li>назначать людей;</li>
+<li>публиковать комментарии;</li>
+<li>читать личные проекты;</li>
+<li>получать production-секреты;</li>
+<li>менять правила, hooks и workflows.</li>
+</ul>
+<h3>11.4. Формат сводки</h3>
+<pre><code class="language-text">Вывод: сколько задач требует решения владельца и что является главным блокером.
+
+Требуют решения:
+- задача, владелец, блокер, время последнего события, ссылка.
+
+Просрочено:
+- задача, срок, следующее действие, ссылка.
+
+Ожидает ревью:
+- PR, состояние проверок, чьё решение нужно.
+
+Принято людьми за период:
+- задача и доказательство результата.
+
+Данные: источник и фактическое время API-запроса.
+Нет данных: недоступные проекты и причина.
+</code></pre>
+<p>Ошибка API отображается как отсутствие данных, а не как ноль просроченных задач. Личные задачи не попадают в командную сводку.</p>
+<h2>12. Команда работает со своими подписками, а знания получает через общий Git</h2>
+<h3>12.1. Подключение сотрудника</h3>
+<pre><code class="language-text">Личный аккаунт сотрудника в GitHub
+  -&gt; доступ к studio-team и назначенному проекту
+  -&gt; клонирование на его компьютер
+  -&gt; установка только выбранного адаптера
+  -&gt; validate.py и sync --check
+  -&gt; новая сессия называет версию и критерий готовности
+  -&gt; одна тестовая задача через ветку и PR
+  -&gt; только затем расширение доступа
+</code></pre>
+<p>Не передаются аккаунт владельца Kimi, Claude, ChatGPT или Gemini, его браузерные cookies и личные OAuth-токены. Подписка сотрудника определяет его инструмент, но не круг доступа к знаниям.</p>
+<h3>12.2. Единый рабочий цикл</h3>
+<pre><code class="language-text">Задача в трекере
+  -&gt; ветка
+  -&gt; работа на любой разрешённой нейросети
+  -&gt; реальные проверки
+  -&gt; STATE.md и HANDOFF.md
+  -&gt; pull request
+  -&gt; CI и ревью
+  -&gt; одобрение назначенного человека
+  -&gt; merge
+  -&gt; приёмка и статус задачи
+</code></pre>
+<h3>12.3. Серверные замки</h3>
+<p>Для <code>main</code> проектируются обязательный PR, нужные проверки, запрет force push, ревью владельца правил и сброс устаревших одобрений после нового commit. <code>CODEOWNERS</code> назначает ответственных за <code>AGENTS.md</code>, <code>REVIEW.md</code>, workflows, hooks и скрипты резерва.</p>
+<p>Локальный текстовый запрет остаётся подсказкой. Реальную границу дают permissions, hooks, защита ветки и ограниченные права внешних сервисов. Основания: <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches">GitHub protected branches</a>, <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">GitHub CODEOWNERS</a>, <a href="https://raytsystem.ru/m/zamki-dlya-claude-code-8-zapretov-kotorye-agent-ne-oboydet">статья о восьми запретах</a>.</p>
+<h2>13. Конфликты и ошибки обрабатываются без «победил последний файл»</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ситуация</th>
+<th>Автоматическое поведение</th>
+<th>Что требуется от человека</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Два компьютера изменили один источник</td>
+<td>Остановить fast-forward или merge при конфликте</td>
+<td>Разрешить через PR и проверку</td>
+</tr>
+<tr>
+<td>Изменился только <code>HANDOFF.md</code></td>
+<td>Показать обе версии и доказательства</td>
+<td>Оставить актуальную передачу без потери истории Git</td>
+</tr>
+<tr>
+<td>В Drive появился более новый файл</td>
+<td>Не применять его как правило</td>
+<td>Выпустить новую версию через Git</td>
+</tr>
+<tr>
+<td>Незакоммиченные чужие файлы</td>
+<td>Не удалять, не прятать, не включать молча в архив</td>
+<td>Разобрать владельца и назначение</td>
+</tr>
+<tr>
+<td>Повторный ежедневный запуск</td>
+<td>Не запускаться параллельно с активным</td>
+<td>Разобрать зависший lock по журналу</td>
+</tr>
+<tr>
+<td>Обрыв сети во время загрузки</td>
+<td>Комплект без manifest считается неполным</td>
+<td>Повторить новым run-id или штатным retry</td>
+</tr>
+<tr>
+<td>Drive возвращает ошибку</td>
+<td>Сохранить локальный комплект и записать сбой</td>
+<td>Проверить доступ, квоту и авторизацию</td>
+</tr>
+<tr>
+<td>LLM недоступна</td>
+<td>Резерв и валидация продолжаются</td>
+<td>Нет действия, если техническая сводка доставлена</td>
+</tr>
+<tr>
+<td>API трекера недоступен</td>
+<td>«Нет данных», не ноль задач</td>
+<td>Проверить токен и источник</td>
+</tr>
+<tr>
+<td>Контрольная сумма не сошлась</td>
+<td>Не восстанавливать комплект</td>
+<td>Выбрать предыдущую проверенную копию</td>
+</tr>
+<tr>
+<td>Потерян crypt password или salt</td>
+<td>Не подбирать и не менять старую конфигурацию</td>
+<td>Использовать офлайн-восстановление</td>
+</tr>
+<tr>
+<td>Сотрудник ушёл</td>
+<td>Ничего не удалять автоматически</td>
+<td>Отозвать Git, Drive, трекер и переназначить задачи</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ни один конфликт правил не разрешается силами LLM без человека. Модель может объяснить diff, но не выбирает норму самостоятельно.</p>
+<h2>14. Внедрение разбито на восемь проверяемых этапов</h2>
+<h3>Этап 0. Согласование карты</h3>
+<p><strong>Действия:</strong> подтвердить четыре репозитория, три зоны Drive, области данных, владельцев и источник задач.</p>
+<p><strong>Результат:</strong> зафиксированное решение и список первого пилота.</p>
+<p><strong>Проверка:</strong> структура понятна владельцу, все неизвестные доступы явно перечислены.</p>
+<p><strong>Сейчас:</strong> выполняется именно этот этап. Drive не изменён.</p>
+<h3>Этап 1. Локальный каркас и личный пилот</h3>
+<p><strong>Действия:</strong> создать <code>ai-core</code> и <code>ai-personal</code>, добавить шаблоны и реестр, выбрать один проект. Рекомендуемый пилот - документы текущего переезда <code>Kimi.ai</code>, без переноса <code>.venv</code>, моделей, MP3 и кэшей.</p>
+<p><strong>Результат:</strong> новый чат находит цель, состояние, решения и следующий шаг без старой переписки.</p>
+<p><strong>Проверка:</strong> снимок существующих правил сохранён, файлы не удалены, секретов нет, пять контрольных вопросов отвечают на источники.</p>
+<h3>Этап 2. Сборщик и адаптеры</h3>
+<p><strong>Действия:</strong> реализовать <code>build.py</code>, <code>validate.py</code>, <code>sync.py --check</code> и адаптеры только для фактически используемых инструментов.</p>
+<p><strong>Результат:</strong> одно изменение источника даёт предсказуемый diff во всех выбранных адаптерах.</p>
+<p><strong>Проверка:</strong> тесты на устаревшую версию, локальные дополнения, двойной импорт, запрещённую ссылку и попытку записи вне управляемого блока. Затем одна реальная задача в каждом выбранном инструменте.</p>
+<h3>Этап 3. Структура Drive и ручной резерв</h3>
+<p>Этап имеет две части, чтобы тест доступа не зависел от ещё ненаписанного сборщика.</p>
+<p><strong>3A. Доступ и безопасный тест, можно начать сразу после этапа 0:</strong> создать согласованные папки, настроить <code>aios-drive</code> и один crypt remote, загрузить и скачать несекретный тестовый файл с заранее известной контрольной суммой. Реальные правила и личные данные для этого не нужны.</p>
+<p><strong>Результат 3A:</strong> подтверждены запись, чтение, шифрование и повторное скачивание именно в выбранной общей папке.</p>
+<p><strong>3B. Полный резерв после этапов 1 и 2:</strong> создать резерв пилота со связанными <code>validate.py</code> и <code>build.py --check</code>, затем восстановить его в пустой каталог.</p>
+<p><strong>Результат 3B:</strong> полный комплект из Drive восстановлен, валидатор и сборщик работают на восстановленной копии.</p>
+<p><strong>Проверка:</strong> браузерная структура, доступ именно к общей папке, <code>rclone copy</code>, SHA-256, <code>git bundle verify</code>, клонирование, <code>validate.py</code>, отсутствие секретов в логах.</p>
+<p><strong>Стоп-условие:</strong> если OAuth или права общей папки не работают, 3B и расписание не начинаются. Сначала чинится доступ, без переноса резерва в другое место молча.</p>
+<h3>Этап 4. Ежедневная техническая автоматика</h3>
+<p><strong>Действия:</strong> добавить блокировку, heartbeat, журнал, уведомления и расписание. Для личного MVP предлагается <code>launchd</code> на Mac; для командного постоянного контура отдельно выбираются GitHub Actions или VPS.</p>
+<p><strong>Результат:</strong> ежедневная проверка и резерв идут без открытого чата и без LLM.</p>
+<p><strong>Проверка:</strong> ручной запуск, запуск по расписанию, повторный запуск, выключенная сеть, недоступный Drive, dirty repo, параллельный запуск и предупреждение об отсутствии резерва.</p>
+<h3>Этап 5. Командный контур</h3>
+<p><strong>Действия:</strong> создать <code>studio-team</code>, подключить тестового сотрудника с его собственной подпиской, включить PR, CI, CODEOWNERS и защищённую ветку.</p>
+<p><strong>Результат:</strong> сотрудник видит командное и назначенный проект, но не личное и приватное.</p>
+<p><strong>Проверка:</strong> матрица доступов на тестовой учётной записи, PR на правила останавливается без владельца, force push запрещён сервером.</p>
+<h3>Этап 6. Агент задач студии</h3>
+<p><strong>Действия:</strong> подключить выбранный трекер read-only, реализовать сводку, затем отдельно согласовать комментарии и события.</p>
+<p><strong>Результат:</strong> сводка показывает реальные задачи, владельцев, блокеры и доказательства.</p>
+<p><strong>Проверка:</strong> ошибка API, личная задача, просрочка, зависание, PR без доказательств, попытка закрыть задачу и попытка прочитать личный репозиторий.</p>
+<h3>Этап 7. Масштабирование и хранение</h3>
+<p><strong>Действия:</strong> подключать проекты по одному, проводить ежемесячный restore-тест, только затем включать очистку старых копий.</p>
+<p><strong>Результат:</strong> система обслуживает несколько проектов без потери границ и контроля восстановления.</p>
+<p><strong>Проверка:</strong> полный аудит областей, повторное восстановление выбранных проектов, отсутствие последней копии в списке на удаление, согласованная стоимость хранения.</p>
+<h2>15. Приёмка всей системы проверяется сценариями, а не числом созданных папок</h2>
+<h3>15.1. Общие правила</h3>
+<ul>
+<li>Один исходник выпускает одну версию для всех выбранных инструментов.</li>
+<li>Kimi, Codex, Claude и Gemini на своих реальных сессиях называют одинаковую версию и источник.</li>
+<li>Локальные дополнения не исчезают после обновления.</li>
+<li>Двойного импорта и противоречащих управляемых блоков нет.</li>
+<li><code>REVIEW.md</code> создаётся только там, где нужен соответствующий сервис.</li>
+</ul>
+<h3>15.2. Передача контекста</h3>
+<ul>
+<li>Новый чат без старой истории правильно отвечает на пять контрольных вопросов.</li>
+<li>Ответ содержит ссылки на конкретные файлы и commit.</li>
+<li>Непроверенное названо непроверенным.</li>
+<li>Следующий шаг совпадает с задачей трекера.</li>
+<li>Старая передача не переопределяет более свежий проверенный <code>STATE.md</code>.</li>
+</ul>
+<h3>15.3. Резерв</h3>
+<ul>
+<li>Каждый запуск создаёт новый комплект и не удаляет предыдущие.</li>
+<li>Неполная загрузка не считается пригодной к восстановлению.</li>
+<li>Повреждение обнаруживается контрольной суммой.</li>
+<li>Восстановление в пустой каталог проходит полностью.</li>
+<li>Без crypt password и salt данные не читаются.</li>
+<li>Параметры восстановления существуют офлайн и не хранятся только на том же Mac.</li>
+</ul>
+<h3>15.4. Команда и безопасность</h3>
+<ul>
+<li>Подрядчик не видит другие проекты и личные данные.</li>
+<li>Агент задач не имеет токенов резерва личного и приватного контуров.</li>
+<li>PR на правила, hooks, workflows и backup требует назначенного владельца.</li>
+<li>Сервер запрещает merge без проверок и force push.</li>
+<li>Чтение секретов проверяется через все доступные инструменты, не только через Bash.</li>
+<li>После отзыва доступа закрываются Git, Drive и трекер, а рабочие материалы остаются организации.</li>
+</ul>
+<h3>15.5. Ежедневная работа</h3>
+<ul>
+<li>Отсутствие запуска обнаруживается, а не только явная ошибка.</li>
+<li>Недоступность LLM не отменяет резерв.</li>
+<li>Недоступность трекера не превращается в «ноль проблем».</li>
+<li>Личное не попадает в командный отчёт.</li>
+<li>Агент не закрывает задачу и не публикует результат за человека.</li>
+</ul>
+<h2>16. Эксплуатация имеет небольшой набор регулярных действий</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Период</th>
+<th>Действие</th>
+<th>Доказательство</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ежедневно</td>
+<td>Валидация, резерв, heartbeat, сводка задач</td>
+<td>Журнал запуска и свежий комплект</td>
+</tr>
+<tr>
+<td>Еженедельно</td>
+<td>Разбор ошибок, устаревших адаптеров и зависших задач</td>
+<td>Список исправлений с источниками</td>
+</tr>
+<tr>
+<td>Ежемесячно</td>
+<td>Реальное восстановление выбранной области</td>
+<td>Restore-отчёт и проверенный commit</td>
+</tr>
+<tr>
+<td>При добавлении проекта</td>
+<td>Классификация, владелец, трекер, резерв</td>
+<td>Запись в реестре и тест доступа</td>
+</tr>
+<tr>
+<td>При смене правил</td>
+<td>PR, сборка, проверка моделей</td>
+<td>Версия, diff и результаты сессий</td>
+</tr>
+<tr>
+<td>При уходе сотрудника</td>
+<td>Отзыв доступов и переназначение</td>
+<td>Чек-лист offboarding</td>
+</tr>
+<tr>
+<td>При смене OAuth или crypt</td>
+<td>Новый тест записи и восстановления</td>
+<td>Новый успешный restore без потери старого доступа</td>
+</tr>
+</tbody>
+</table></div>
+<p>Метрики полезности: доля активных проектов со свежим состоянием, дата последнего успешного restore, число противоречий адаптеров, активные задачи без владельца или следующего действия, повторные ошибки и утечки между областями. Количество файлов и hooks само по себе успехом не является.</p>
+<h2>17. Предлагаемые решения по умолчанию для следующего шага</h2>
+<p>Чтобы не блокировать внедрение непринципиальными вопросами, предлагаю такие стартовые настройки:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Предлагаемый выбор</th>
+<th>Причина</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Пилот</td>
+<td>Документы проекта <code>Kimi.ai</code>, без тяжёлых медиа и окружений</td>
+<td>Уже есть реальное состояние и передачи между чатами</td>
+</tr>
+<tr>
+<td>Трекер</td>
+<td>Сохранить существующий; если его нет, GitHub Projects</td>
+<td>Не создавать вторую доску</td>
+</tr>
+<tr>
+<td>Личный scheduler</td>
+<td><code>launchd</code> на Mac для MVP</td>
+<td>Не требует нового сервера на пилоте</td>
+</tr>
+<tr>
+<td>Командный scheduler</td>
+<td>GitHub Actions или VPS после этапа 5</td>
+<td>Нужен независимый контроль и сервисные права</td>
+</tr>
+<tr>
+<td>Время</td>
+<td>06:47 НСК</td>
+<td>До начала рабочего дня, уже предложено в общей архитектуре</td>
+</tr>
+<tr>
+<td>Резерв</td>
+<td><code>git bundle</code> + <code>git archive</code> + manifest + SHA-256 + crypt</td>
+<td>Восстановление и истории, и рабочего снимка</td>
+</tr>
+<tr>
+<td>Удаление старых копий</td>
+<td>Выключено на пилоте</td>
+<td>Сначала доказать восстановление</td>
+</tr>
+<tr>
+<td>LLM в ежедневном процессе</td>
+<td>Отключена на первом этапе</td>
+<td>Технический результат не должен зависеть от модели</td>
+</tr>
+<tr>
+<td>Права агента задач</td>
+<td>Read-only</td>
+<td>Сначала проверить качество данных и границы</td>
+</tr>
+</tbody>
+</table></div>
+<p>Платные API для этой архитектуры не нужны. Возможные расходы на GitHub, Google-хранилище, VPS и необязательные LLM-запросы не оцениваются до выбора конкретного тарифа и измерения объёма. Покупки и платные вызовы не входят в следующий шаг.</p>
+<h2>18. Что нужно согласовать и что раскрыть после решения</h2>
+<p><strong>Предлагаю утвердить пакет целиком:</strong> четыре репозитория, три зоны в <code>1_LLM</code>, Git как рабочую синхронизацию, Drive как экспорт и неизменяемый шифрованный резерв, два раздельных ежедневных процесса и поэтапный запуск.</p>
+<p>После твоего «согласовано» я начну с этапа 3A: создам только показанную структуру, проверю её в браузере, настрою rclone через официальный OAuth-процесс и выполню тест записи и скачивания без реальных секретов. Полный резерв 3B начнётся после локального каркаса и валидатора. Репозитории и правила будут внедряться отдельными проверяемыми шагами, без массового переноса всей системы за один раз.</p>
+<h3>Что раскрыть следующим шагом</h3>
+<ul>
+<li>Точные команды и check-list настройки rclone для существующей папки «Доступные мне».</li>
+<li>Схемы <code>manifest.json</code> и ежедневного журнала для реализации валидатора.</li>
+<li>Минимальный пилот <code>ai-core</code> и <code>ai-personal</code> на документах <code>Kimi.ai</code>.</li>
+<li>Подключение реального трекера студии после подтверждения, какой источник уже используется.</li>
+</ul>
+<h2>Источники и статус проверки</h2>
+<ol>
+<li><a href="https://tema-mail.github.io/razbory/universalnye-pravila-ii-863039de/">Предыдущая архитектура единой системы правил и знаний</a>, исследование от 25.11.2026. Основа для AGENTS.md, адаптеров, REVIEW.md, ролей и агента задач.</li>
+<li><a href="https://raytsystem.ru/m/zamki-dlya-claude-code-8-zapretov-kotorye-agent-ne-oboydet">Статья «Замки для Claude Code: 8 запретов»</a>, повторно прочитана 27.11.2026. Использованы проверяемые критерии готовности и различие текстовых и технических запретов.</li>
+<li><a href="https://rclone.org/drive/">rclone: Google Drive</a>, прочитано 27.11.2026. OAuth, scopes, <code>root_folder_id</code>, service accounts и Shared Drives.</li>
+<li><a href="https://rclone.org/crypt/">rclone: Crypt</a>, прочитано 27.11.2026. Клиентское шифрование, пароли, salt, защита конфигурации и <code>cryptcheck</code>.</li>
+<li><a href="https://rclone.org/commands/rclone_copy/">rclone: copy</a>, прочитано 27.11.2026. Копирование без удаления назначения и режим <code>--immutable</code>.</li>
+<li><a href="https://code.claude.com/docs/en/code-review">Claude Code Review</a>, исследовано 25.11.2026. Специализированная роль <code>REVIEW.md</code>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches">GitHub: protected branches</a> и <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">CODEOWNERS</a>, исследовано 25.11.2026. Серверные требования ревью и проверок.</li>
+</ol>
+<p><strong>Подтверждено на 27.11.2026:</strong> выбранная папка Drive существует, пуста и доступна выбранному Google-аккаунту во встроенном браузере; рабочая папка проекта не является Git-репозиторием; rclone и OAuth ещё не настроены. <strong>Не подтверждено:</strong> доступ rclone к этой общей папке, работа service account, фактическая запись, восстановление и ежедневное расписание. Все схемы выше являются проектом до прохождения соответствующих этапов.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
