@@ -42,11 +42,11 @@ html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!impor
 </style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
 if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
 document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Структура единого хранилища знаний для разных нейросетей</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
-<p><strong>Вывод: предлагаю четыре изолированных Git-репозитория и одну папку <code>1_LLM</code> на Google Drive с тремя зонами: карта системы, проверенные пакеты для моделей и шифрованные резервные копии.</strong> Рабочим источником остаётся Git, задачами управляет трекер, а Drive не становится ни общим редактируемым промптом, ни двусторонней синхронизацией между компьютерами.</p>
+<p><strong>Этап 3A выполнен: структура <code>1_LLM</code> создана, rclone подключён к существующей общей папке, а шифрованный тест записи и скачивания прошёл без расхождений.</strong> Архитектура сохраняет четыре изолированных Git-репозитория и три зоны Drive. Рабочим источником остаётся Git, задачами управляет трекер, а Drive не становится ни общим редактируемым промптом, ни двусторонней синхронизацией между компьютерами.</p>
 <blockquote>
-<p><strong>Нужно от тебя:</strong> согласовать эту структуру. После твоего «согласовано» следующий шаг - создать пустую структуру в Drive, настроить rclone на тестовом безопасном комплекте и доказать восстановление. До этого содержимое Drive и настройки доступа не меняются.</p>
+<p><strong>Что проверено:</strong> загружены 3 несекретных файла, manifest записан последним, SHA-256 совпал после скачивания, <code>cryptcheck</code> нашёл 0 расхождений. Ежедневное расписание и полный резерв Git ещё не включены. Для замены временного встроенного OAuth client ID на собственный нужно решить включение MFA в Google-аккаунте.</p>
 </blockquote>
-<p>Дата проекта: 27.11.2026. Статус: предложение для согласования, не внедрённая система. Этот документ дополняет <a href="https://tema-mail.github.io/razbory/universalnye-pravila-ii-863039de/">общую архитектуру от 25.11.2026</a>. Ссылка и ID папки Drive сохранены в приватном состоянии проекта и намеренно не публикуются здесь.</p>
+<p>Дата архитектуры и внедрения 3A: 27.11.2026. Статус: структура и безопасный тест внедрены, остальные этапы остаются проектом. Этот документ дополняет <a href="https://tema-mail.github.io/razbory/universalnye-pravila-ii-863039de/">общую архитектуру от 25.11.2026</a>. Ссылка и ID папки Drive сохранены в приватном состоянии проекта и намеренно не публикуются здесь.</p>
 <h2>1. У каждого типа данных будет один источник истины</h2>
 <p>Система разделена на четыре независимых контура. Это исключает главные риски исходной задачи: устаревшие копии правил, смешение личного и рабочего, конфликты между компьютерами и резерв, который невозможно восстановить.</p>
 <div class="tw"><table>
@@ -1164,16 +1164,80 @@ updated_at
 </tbody>
 </table></div>
 <p>Платные API для этой архитектуры не нужны. Возможные расходы на GitHub, Google-хранилище, VPS и необязательные LLM-запросы не оцениваются до выбора конкретного тарифа и измерения объёма. Покупки и платные вызовы не входят в следующий шаг.</p>
-<h2>18. Что нужно согласовать и что раскрыть после решения</h2>
-<p><strong>Предлагаю утвердить пакет целиком:</strong> четыре репозитория, три зоны в <code>1_LLM</code>, Git как рабочую синхронизацию, Drive как экспорт и неизменяемый шифрованный резерв, два раздельных ежедневных процесса и поэтапный запуск.</p>
-<p>После твоего «согласовано» я начну с этапа 3A: создам только показанную структуру, проверю её в браузере, настрою rclone через официальный OAuth-процесс и выполню тест записи и скачивания без реальных секретов. Полный резерв 3B начнётся после локального каркаса и валидатора. Репозитории и правила будут внедряться отдельными проверяемыми шагами, без массового переноса всей системы за один раз.</p>
+<h2>18. Что раскрыть после этапа 3A</h2>
+<p><strong>Архитектура согласована, а доступ и шифрование проверены на безопасном комплекте.</strong> Следующий технический переход - этапы 1 и 2: локальный каркас, валидатор и адаптеры. После них можно выполнять полный резерв 3B с <code>git bundle</code>, снимком commit и восстановлением в пустой каталог.</p>
 <h3>Что раскрыть следующим шагом</h3>
 <ul>
-<li>Точные команды и check-list настройки rclone для существующей папки «Доступные мне».</li>
-<li>Схемы <code>manifest.json</code> и ежедневного журнала для реализации валидатора.</li>
 <li>Минимальный пилот <code>ai-core</code> и <code>ai-personal</code> на документах <code>Kimi.ai</code>.</li>
+<li>Схемы <code>manifest.json</code> и ежедневного журнала для реализации валидатора.</li>
+<li>Собственный OAuth client ID после решения о включении MFA.</li>
+<li>Офлайн-экспорт параметров восстановления перед реальным резервом.</li>
 <li>Подключение реального трекера студии после подтверждения, какой источник уже используется.</li>
 </ul>
+<h2>19. Фактический результат этапа 3A</h2>
+<h3>19.1. Что создано</h3>
+<ul>
+<li>В <code>1_LLM</code> созданы корневые <code>00_system</code>, <code>10_dist</code>, <code>20_secure</code>.</li>
+<li>В <code>10_dist</code> созданы <code>core</code> и <code>studio-team</code>.</li>
+<li>В <code>20_secure</code> созданы <code>personal</code>, <code>studio-private</code>, <code>studio-team</code>, <code>projects</code> и предусмотренные области <code>backups</code>, <code>dist</code>, <code>ops/daily</code>, <code>ops/restore</code>.</li>
+<li>В браузере проверены корневые зоны и четыре области внутри <code>20_secure</code>.</li>
+<li>Внутри <code>personal</code> удалены только созданные в этом шаге пустые plaintext-папки. После подключения <code>crypt</code> там остаются зашифрованные имена, без двух параллельных структур.</li>
+</ul>
+<h3>19.2. Локальная конфигурация</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Фактический результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rclone</td>
+<td>Версия 1.76.0, установлен в <code>~/.local/bin/rclone</code> без администратора</td>
+</tr>
+<tr>
+<td><code>aios-drive</code></td>
+<td>OAuth подтверждён, <code>root_folder_id</code> ограничивает работу выбранной папкой <code>1_LLM</code></td>
+</tr>
+<tr>
+<td><code>aios-personal-crypt</code></td>
+<td>Указывает на <code>20_secure/personal</code>, шифрование имён файлов и каталогов включено</td>
+</tr>
+<tr>
+<td>Конфигурация</td>
+<td>Шифрование конфигурации включено, права файла <code>0600</code></td>
+</tr>
+<tr>
+<td>Секреты</td>
+<td>Пароль конфигурации, crypt password и salt сохранены в macOS Keychain, значения не выводились</td>
+</tr>
+<tr>
+<td>Реальные данные</td>
+<td>Не загружались, использованы только несекретные smoke-файлы</td>
+</tr>
+<tr>
+<td>Расписание</td>
+<td>Не создавалось</td>
+</tr>
+</tbody>
+</table></div>
+<p>Текущий OAuth scope <code>drive</code> даёт приложению широкий доступ к Drive аккаунта. <code>root_folder_id</code> ограничивает рабочий корень rclone, но не является самостоятельной границей безопасности Google. Это ограничение остаётся в силе и будет учитываться при переходе к отдельным сервисным доступам.</p>
+<h3>19.3. Проверка записи и восстановления тестового комплекта</h3>
+<p>Запуск <code>2026-11-27T17-21-41Z</code>:</p>
+<ol>
+<li>Созданы <code>smoke.txt</code>, <code>manifest.json</code> и <code>SHA256SUMS</code> без личных данных и секретов.</li>
+<li>В <code>aios-personal-crypt:ops/daily/&lt;run-id&gt;</code> загружены 3 файла, manifest отправлен последним с <code>--immutable</code>.</li>
+<li>Комплект скачан в новую локальную папку.</li>
+<li><code>shasum -a 256 -c SHA256SUMS</code> подтвердил <code>smoke.txt: OK</code> и <code>manifest.json: OK</code>.</li>
+<li><code>rclone cryptcheck</code> завершился результатом <code>0 differences found</code>, <code>3 matching files</code>.</li>
+<li>Проверка исходного пути Drive показала только зашифрованные имена. Открытые имя файла, manifest и дата запуска отсутствуют.</li>
+<li>В браузере внутри <code>personal</code> визуально подтверждён зашифрованный каталог вместо читаемых имён.</li>
+</ol>
+<p>Это доказывает доступ, запись, скачивание и целостность тестового комплекта. Это ещё не restore-тест Git-репозитория: <code>git bundle</code>, проверка commit и запуск валидатора относятся к 3B.</p>
+<h3>19.4. Ограничение собственного OAuth client ID</h3>
+<p>Сначала официальный встроенный client rclone был проверен как временный способ доступа. Затем создан проект Google Cloud <code>ai-os-rclone</code>, включён Google Drive API. Однако экран OAuth consent остаётся заблокирован требованием Google включить двухфакторную аутентификацию. Собственный client ID и client secret поэтому не созданы.</p>
+<p>Текущий встроенный client работает, но rclone предупреждает о его выводе из эксплуатации. Проект сохранён для замены после решения владельца о MFA. Бесплатный пробный период, платные ресурсы и API с оплатой не подключались.</p>
 <h2>Источники и статус проверки</h2>
 <ol>
 <li><a href="https://tema-mail.github.io/razbory/universalnye-pravila-ii-863039de/">Предыдущая архитектура единой системы правил и знаний</a>, исследование от 25.11.2026. Основа для AGENTS.md, адаптеров, REVIEW.md, ролей и агента задач.</li>
@@ -1184,7 +1248,7 @@ updated_at
 <li><a href="https://code.claude.com/docs/en/code-review">Claude Code Review</a>, исследовано 25.11.2026. Специализированная роль <code>REVIEW.md</code>.</li>
 <li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches">GitHub: protected branches</a> и <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">CODEOWNERS</a>, исследовано 25.11.2026. Серверные требования ревью и проверок.</li>
 </ol>
-<p><strong>Подтверждено на 27.11.2026:</strong> выбранная папка Drive существует, пуста и доступна выбранному Google-аккаунту во встроенном браузере; рабочая папка проекта не является Git-репозиторием; rclone и OAuth ещё не настроены. <strong>Не подтверждено:</strong> доступ rclone к этой общей папке, работа service account, фактическая запись, восстановление и ежедневное расписание. Все схемы выше являются проектом до прохождения соответствующих этапов.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+<p><strong>Подтверждено на 27.11.2026:</strong> структура Drive создана и проверена в браузере; rclone читает и пишет в существующую общую папку; шифрованный комплект скачан и прошёл SHA-256 и <code>cryptcheck</code>; конфигурация rclone зашифрована. <strong>Не подтверждено:</strong> собственный OAuth client ID, service account, полный <code>git bundle</code> с восстановлением, ежедневное расписание и офлайн-восстановление ключей. Этап 3A внедрён, остальные схемы остаются проектом до прохождения соответствующих этапов.</p></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
 function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
 b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
 upd();document.body.appendChild(b)})();</script></body></html>
