@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f5f2">
+  <meta name="description" content="Иконки каналов для всех проектов AI Завода: реализация, тесты и причина остановки боевого выпуска">
+  <title>Иконки каналов: код готов, выпуск остановлен</title>
+  <script>
+    (() => {
+      let saved = null;
+      try { saved = localStorage.getItem('kimi-report-theme'); } catch (_) {}
+      const hour = new Date().getHours();
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = saved || ((hour >= 19 || hour < 7 || systemDark) ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+  <header class="page hero">
+    <div class="topline">
+      <a class="back-link" href="../">Все разборы Артёма</a>
+      <button id="theme-toggle" type="button" aria-pressed="false">Тёмная тема</button>
+    </div>
+    <div>
+      <p class="eyebrow">Реализация и release gate · 28.11.2026</p>
+      <h1>Иконки каналов: код готов, выпуск остановлен</h1>
+      <p class="lead">Согласованные иконки реализованы и проверены. На боевой завод не установлены: старый Starlette требует отдельного безопасного обновления.</p>
+      <p class="meta">885 тестов, независимое ревью, локальный браузер трёх клиентов, gitleaks, pip-audit и OSV.</p>
+    </div>
+    <aside class="audio-panel" aria-labelledby="audio-title">
+      <p class="eyebrow">Голосовой итог</p>
+      <h2 id="audio-title">Главное за минуту</h2>
+      <p>Русский голос Dmitri, создан локально без сети.</p>
+      <audio controls preload="metadata" src="itog.mp3">Ваш браузер не поддерживает аудио. <a href="itog.mp3">Скачать MP3</a>.</audio>
+      <p><a href="itog.mp3" download>Скачать аудио</a></p>
+      <details>
+        <summary>Текст озвучки</summary>
+        <p class="transcript">Код иконок готов для всех проектов, но на боевой завод я его не выложил. Проверка выпуска остановилась на старых уязвимостях Starlette уровня High.<br><br>Первое – реализация соответствует согласованному макету. Google, Яндекс, ВКонтакте и Дзен получили свои логотипы. Сайт получает favicon текущего клиента: Balance, EV или TEYES. Для новых площадок и клиентов в коде есть простой реестр, без файла остаётся буква.<br><br>Второе – качество проверено. Восемьсот восемьдесят пять тестов прошли. Независимый ревизор нашёл мобильный дефект, я его исправил, повторное ревью прошло. Три клиента проверены в браузере на десктопе и телефоне.<br><br>Боевой выпуск остановлен честно. Starlette 0.41.3 имеет две подтверждённые DoS-уязвимости уровня High. Это старый техдолг, а не ошибка иконок. Push и выкладка не выполнялись, работающий завод не тронут.<br><br>Нужно твоё отдельное разрешение обновить FastAPI и Starlette с полным циклом проверок. После зелёного deploy-check можно будет установить иконки и сверить живой календарь.</p>
+      </details>
+    </aside>
+  </header>
+
+  <main id="main-content">
+    <div class="page facts" aria-label="Ключевые цифры"><div class="fact"><b>7</b><span>локальных PNG 256 × 256</span></div><div class="fact"><b>885</b><span>тестов прошло</span></div><div class="fact"><b>3</b><span>favicon по клиентам</span></div><div class="fact"><b>NO-GO</b><span>боевой выпуск до обновления Starlette</span></div></div>
+    <section class="page section" id="report">
+      <div class="section-head">
+        <p class="eyebrow">Честный статус</p>
+        <h2>Реализация готова, production не тронут</h2>
+        <p>Нужно отдельное решение на обновление FastAPI/Starlette и полный цикл проверок зависимостей.</p>
+      </div>
+
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Статус реализации и выпуска">
+        <table>
+          <thead><tr><th>Контур</th><th>Результат</th><th>Статус</th></tr></thead>
+          <tbody><tr><td class="cell-name">Код</td><td class="cell-description">7 локальных PNG, favicon по домену клиента, правило для новых площадок и fallback буквами.</td><td class="cell-action">Коммит 61ec06c</td></tr>
+<tr><td class="cell-name">Проверки</td><td class="cell-description">885 тестов, change-reviewer PASS, локальный браузер трёх клиентов на 1280 и 375 px.</td><td class="cell-action">PASS</td></tr>
+<tr><td class="cell-name">Production</td><td class="cell-description">Starlette 0.41.3: две High DoS. Push и выкладка не выполнялись.</td><td class="cell-action">NO-GO до обновления зависимостей</td></tr></tbody>
+        </table>
+      </div>
+      <div class="report-body"><p><strong>Главный вывод:</strong> согласованные иконки реализованы для всех проектов и проверены, но на боевой завод не установлены. <code>deploy-check</code> вернул <code>NO-GO</code> из-за старых production-уязвимостей Starlette уровня High.</p>
+<p><strong>Что нужно от тебя:</strong> отдельное разрешение обновить FastAPI/Starlette и провести полный цикл проверок зависимостей. Без него я не меняю рабочий стек и не обхожу запрет выпуска.</p>
+<h2>1. Что согласовано и реализовано</h2>
+<p><img loading="lazy" alt="Иконки Google Карт, Яндекс Карт, ВКонтакте, Дзена и сайта Balance" src="ikonki.webp" /></p>
+<p>Общие каналы получили единые PNG 256×256:</p>
+<ul>
+<li>Google Карты;</li>
+<li>Яндекс Карты, включая внутренний канал <code>yandex_biznes</code>;</li>
+<li>ВКонтакте;</li>
+<li>Дзен.</li>
+</ul>
+<p>Канал «Сайт» получает favicon текущего проекта, а не один значок Balance для всех:</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица отчёта"><table>
+<thead>
+<tr>
+<th>Проект</th>
+<th>Домен</th>
+<th>Значок сайта</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Balance</td>
+<td><code>balance-fit.ru</code></td>
+<td>Лаймовая звезда из favicon сайта</td>
+</tr>
+<tr>
+<td>EV Sibir</td>
+<td><code>evolutioncarservice.ru</code></td>
+<td>EV из favicon сайта</td>
+</tr>
+<tr>
+<td>TEYES Sibir</td>
+<td><code>teyes-sibir.ru</code></td>
+<td>T из favicon сайта</td>
+</tr>
+</tbody>
+</table></div>
+<p><img loading="lazy" alt="Иконки каналов и сайтов трёх клиентов в размере 52 px" src="vse-proekty.webp" /></p>
+<p><a href="ikonki-balance.zip">Скачать комплект из семи PNG</a></p>
+<h2>2. Как это выглядит в календаре</h2>
+<p><img loading="lazy" alt="Календарь Balance с новыми иконками каналов" src="kalendar.webp" /></p>
+<p>Согласованный макет содержит 70 замен. Сетка, названия клубов, обрезанные заголовки, жёлтые полосы и расписание не менялись.</p>
+<p><img loading="lazy" alt="Фрагмент календаря с иконками в реальном размере" src="fragment.webp" /></p>
+<p>После согласования макет перенесён в общий рендер <code>KAL.znachok</code>, поэтому одно изменение работает для владельца, клиентских кабинетов, сводки, фильтров и календаря.</p>
+<h2>3. Что заложено для будущих площадок</h2>
+<p>В <code>web/kanaly.js</code> записан простой контракт:</p>
+<ol>
+<li>Для новой площадки добавляется локальный PNG 256×256 в <code>web/icons</code> и поле <code>ikonka</code> в реестре канала.</li>
+<li>Для нового клиента добавляется favicon в <code>SAYT_IKONKI</code> по домену.</li>
+<li>Если файл ещё не добавлен, остаётся понятная буква, а не чужой логотип или сломанная ссылка.</li>
+</ol>
+<p>Внешние URL при рендере не используются. Изображения имеют фиксированные размеры, пустой <code>alt</code> рядом с доступным названием канала и ленивую загрузку. Отдельное мобильное правило убирает лишние боковые поля.</p>
+<h2>4. Проверки кода</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица отчёта"><table>
+<thead>
+<tr>
+<th>Проверка</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RED</td>
+<td>Старый код упал по отсутствию <code>saytDomen</code> и PNG</td>
+</tr>
+<tr>
+<td>GREEN</td>
+<td>2 focused-теста прошли</td>
+</tr>
+<tr>
+<td>Полный suite</td>
+<td>885 тестов прошли</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td><code>node --check</code> обоих изменённых файлов прошёл</td>
+</tr>
+<tr>
+<td>Независимое ревью</td>
+<td>FAIL на мобильном padding → исправление → PASS</td>
+</tr>
+<tr>
+<td>Секреты</td>
+<td><code>gitleaks</code> коммита <code>61ec06c</code>: утечек нет</td>
+</tr>
+<tr>
+<td>Браузер</td>
+<td>Локальный рендер Balance, EV и TEYES на 1280 и 375 px проверен</td>
+</tr>
+<tr>
+<td>Коммиты</td>
+<td><code>61ec06c</code> – код и иконки, <code>9727f1d</code> – состояние проекта</td>
+</tr>
+</tbody>
+</table></div>
+<p><img loading="lazy" alt="Мобильная проверка иконок трёх проектов" src="proverka-mobile.webp" /></p>
+<p>Проверены раздельные favicon трёх клиентов, буквенный fallback неизвестного канала и домена, семь локальных PNG 256×256 и отсутствие внешних зависимостей.</p>
+<h2>5. Почему на боевом заводе иконок ещё нет</h2>
+<p>Среда: production. Проверенная версия: <code>61ec06c</code>. Вердикт: <strong>NO-GO</strong>.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица отчёта"><table>
+<thead>
+<tr>
+<th>Пункт deploy-check</th>
+<th>Статус</th>
+<th>Доказательство</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Тесты</td>
+<td>PASS</td>
+<td>885 тестов</td>
+</tr>
+<tr>
+<td>2. Git</td>
+<td>PASS</td>
+<td>Только собственные точные коммиты</td>
+</tr>
+<tr>
+<td>3. Схема БД</td>
+<td>N/A</td>
+<td>Модели и схема не менялись</td>
+</tr>
+<tr>
+<td>4. Секреты</td>
+<td>PASS</td>
+<td><code>gitleaks</code> чисто</td>
+</tr>
+<tr>
+<td>5. Отладочные артефакты</td>
+<td>PASS</td>
+<td>В изменённых production JS нет console.log, debugger, TODO</td>
+</tr>
+<tr>
+<td>6. Переменные окружения</td>
+<td>N/A</td>
+<td>Новых переменных нет</td>
+</tr>
+<tr>
+<td>7. Авторизация</td>
+<td>N/A</td>
+<td>API не менялся; публичные только статические PNG</td>
+</tr>
+<tr>
+<td>8. Зависимости</td>
+<td>FAIL</td>
+<td>Starlette 0.41.3: High DoS</td>
+</tr>
+<tr>
+<td>9. Сборка</td>
+<td>PASS</td>
+<td>Статический frontend без bundle, Node-проверки прошли</td>
+</tr>
+<tr>
+<td>10. Миграции</td>
+<td>N/A</td>
+<td>Данных и миграций нет; резервная копия в штатном скрипте предусмотрена</td>
+</tr>
+</tbody>
+</table></div>
+<p>Блокеры подтверждены через OSV 28.11.2026:</p>
+<ul>
+<li><code>CVE-2025-62727</code> – O(n²) DoS через объединение Range-заголовков, доступность High;</li>
+<li><code>CVE-2026-54283</code> – игнорирование лимитов <code>request.form()</code> для <code>application/x-www-form-urlencoded</code>, доступность High.</li>
+</ul>
+<p>Это старый техдолг, а не изменение из задачи иконок. Обновлять зависимости в том же коммите не стал: это отдельный риск для всего завода.</p>
+<h2>6. Что осталось для боевого результата</h2>
+<ol>
+<li>Отдельно обновить FastAPI/Starlette до безопасных совместимых версий.</li>
+<li>Прогнать полный suite, проверки API, статики, авторизации и боевого UI.</li>
+<li>Повторить <code>deploy-check</code> до <code>GO</code>.</li>
+<li>Выполнить <code>scripts/vylozhit.sh</code> с резервной копией базы.</li>
+<li>Сравнить живой календарь Balance, EV и TEYES на десктопе и телефоне с этим макетом.</li>
+<li>Обновить публичную схему механик завода после выпуска.</li>
+</ol>
+<p>Сейчас push и <code>vylozhit.sh</code> не выполнялись. Боевая база, сервисы и текущий завод не затронуты.</p>
+<h2>Источники</h2>
+<ul>
+<li>Согласование Артёма и присланные логотипы, 28.11.2026.</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Google_Maps_icon_(2020).svg">Google Maps icon (2020), Wikimedia Commons</a> – высокодетализированная версия знака.</li>
+<li>Favicon <a href="https://balance-fit.ru/">Balance</a>, <a href="https://evolutioncarservice.ru/">EV Sibir</a> и <a href="https://teyes-sibir.ru/">TEYES Sibir</a>, получены 28.11.2026.</li>
+<li>OSV: <a href="https://api.osv.dev/v1/vulns/CVE-2025-62727">CVE-2025-62727</a> и <a href="https://api.osv.dev/v1/vulns/CVE-2026-54283">CVE-2026-54283</a>, прочитано 28.11.2026.</li>
+<li>Тесты, независимый change-reviewer и локальная браузерная проверка, 28.11.2026.</li>
+</ul>
+<h2>Что раскрыть</h2>
+<ul>
+<li>Сам код иконок готов и не требует доработки по текущему ревью.</li>
+<li>Для выпуска нужен отдельный шаг обновления зависимостей, а не повторная попытка выкладки.</li>
+</ul></div>
+    </section>
+  </main>
+
+  <footer class="page footer">Kimi Code · 28.11.2026 · Код сохранён, production не изменён · Локальная озвучка Piper Dmitri</footer>
+  <script>
+    (() => {
+      const button = document.getElementById('theme-toggle');
+      const updateTheme = () => {
+        const dark = document.documentElement.dataset.theme === 'dark';
+        button.textContent = dark ? 'Светлая тема' : 'Тёмная тема';
+        button.setAttribute('aria-pressed', String(dark));
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#0c1210' : '#f3f5f2';
+      };
+      button.addEventListener('click', () => {
+        document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('kimi-report-theme', document.documentElement.dataset.theme); } catch (_) {}
+        updateTheme();
+      });
+      updateTheme();
+    })();
+  </script>
+</body>
+</html>
