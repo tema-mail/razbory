@@ -1,0 +1,151 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Как отчитываются нейронки Артёма: Claude, Kimi, Codex, ZCode и боты</title><style>:root{--bg:#f6f6f4;--card:#fff;--tx:#1b1c1e;--mut:#6b6e74;--ln:#e2e2de;--ac:#3d6fd8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 90px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px}h2{font-size:22px;margin:40px 0 10px}h3{font-size:18px;margin:26px 0 8px}
+a{color:var(--ac);overflow-wrap:anywhere}p{margin:10px 0}ul,ol{padding-left:22px}li{margin:5px 0}
+img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
+blockquote{margin:12px 0;padding:10px 16px;border-left:3px solid var(--ac);background:var(--card);border-radius:0 10px 10px 0}
+pre{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+code{font:13.5px/1.45 ui-monospace,Menlo,monospace}p code,li code,td code{background:#ececea;padding:1px 5px;border-radius:5px}
+.tw{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+th,td{text-align:left;padding:8px;border:1px solid var(--ln);vertical-align:top}th{color:var(--mut);font-weight:600;font-size:13.5px}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin:14px 0}audio{width:100%;margin-top:6px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#lb img{max-height:92vh;cursor:default;border:0}#lb button{position:absolute;top:12px;right:16px;font-size:32px;background:none;border:0;color:#fff;cursor:pointer}
+html[data-theme=dark]{--bg:#141518;--card:#1f2125;--tx:#e4e4e2;--mut:#a9abb0;--ln:#33363c;--ac:#82a3ff}
+html[data-theme=dark] p code,html[data-theme=dark] li code,html[data-theme=dark] td code{background:#2a2d33}
+@media(max-width:640px){h1{font-size:25px}}</style><style data-tema-v1>
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#141518!important;color:#e4e4e2!important}
+html[data-theme=dark] a{color:#8ab8ff}
+html[data-theme=dark] .w-btn:not(.ghost){background:#e4e4e2!important;color:#141518!important;border-color:#e4e4e2!important}
+html[data-theme=dark] .w-btn.ghost{background:transparent!important;color:#e4e4e2!important;border-color:#e4e4e2!important}
+html[data-theme=dark] :is(.t,.box,.card,details,.kit,.nav,.code button,button,.btn,textarea,input,select){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] button.main,html[data-theme=dark] .nav a,html[data-theme=dark] .step span{background:#e4e4e2!important;color:#141518!important}
+html[data-theme=dark] :is(.chip,.int,code,th){background:#2a2d33!important;color:#e4e4e2!important}
+html[data-theme=dark] :is(.flag,.note){background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] .ready{background:#1f3320!important;color:#d6ecd0!important}
+html[data-theme=dark] .stop{background:#3b2222!important;color:#f3d6d3!important}
+html[data-theme=dark] :is(td,th,details[open] summary){border-color:#33363c!important}
+html[data-theme=dark] :is(.sub,.meta,.top,small,.ex small,details){color:#a9abb0!important}
+html[data-theme=dark] :is(h1,h2,h3,.day,dt,summary){color:#f2f2f0!important}
+/* комплект ч/б прототипа marketolog/prototip (w-*, p-*) – светлые плашки и панели */
+html[data-theme=dark] :is(.w-sticky,.w-header,.w-footer,.w-bar){background:#141518!important}
+html[data-theme=dark] :is(.w-card,.w-cta,.w-success,.w-logic,.w-media,.w-steps li,.w-faq details,.w-form,.w-table th,.p-box,.p-res div,.p-flag,.p-formula,.p-chips label){background:#1f2125!important;color:#e4e4e2!important;border-color:#3a3c42!important}
+html[data-theme=dark] :is(.w-muted,.w-hint,.w-descr,.p-res span,.p-flag span,.w-table td small){color:#a9abb0!important}
+html[data-theme=dark] .w-ask{background:#3b2222!important;color:#f3b4ad!important}
+html[data-theme=dark] .w-note{background:#3a3220!important;color:#f1e6c8!important}
+html[data-theme=dark] :is(.w-block,.w-table td,.w-table th){border-color:#3a3c42!important}
+html[data-theme=dark] img{filter:brightness(.92)}
+#tema-btn{position:fixed;right:14px;bottom:14px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#111;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+html[data-theme=dark] #tema-btn{background:#2a2d33!important;color:#f2f2f0!important;border-color:#44474e!important}
+</style><script>(function(){var t;try{t=localStorage.getItem('tema')}catch(e){}
+if(!t){var h=new Date().getHours();t=(h>=19||h<7||(matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t)})();</script></head><body><main><h1>Как отчитываются нейронки Артёма: Claude, Kimi, Codex, ZCode и боты</h1><div class="box"><b>Послушать итог голосом</b><audio controls preload="none" src="itog.mp3"></audio></div>
+<p><strong>Вывод: у каждой среды свой канал отчёта, и они сходятся в четыре точки – razbory (страницы с голосом), Штаб (картина проектов и отчёт дня), Telegram (быстрые сигналы) и чат среды (итог работы).</strong> Регулярные отчёты держит Claude через launchd: Фёдор в 09:00, Секретарь в 21:30, Отчёты заказчику в воскресенье 20:00, SEO-отчёт 1-го числа 10:00. Kimi отчитывается большими страницами-разборами с аудио-итогом, Codex – автоматизациями и картой проектов, ZCode – тем же стандартом артефакт-страниц, что и Claude, боты – голосом и сообщениями в Telegram.</p>
+<h2>Общая картина</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Среда</th>
+<th>Основной формат</th>
+<th>Где лежит</th>
+<th>По расписанию</th>
+<th>Голос</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude</td>
+<td>Страница-артефакт с голосом после каждой задачи</td>
+<td><code>~/Sites/razbory</code> → Pages</td>
+<td>4 задачи launchd + РУКИ 07:30</td>
+<td>Piper, локально</td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td>Страница-разбор с реестром и аудио-итогом «Главное за минуту»</td>
+<td><code>~/Documents/Kimi.ai</code> → локальный сервер 127.0.0.1:8765</td>
+<td>Нет</td>
+<td>Piper, локально (Milena)</td>
+</tr>
+<tr>
+<td>Codex</td>
+<td>Итог в чате автоматизации + карта проектов</td>
+<td><code>~/.codex/automations</code>, <code>~/Documents/Codex/&lt;дата&gt;</code></td>
+<td>5 активных heartbeat</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>ZCode</td>
+<td>Тот же стандарт артефакт-страниц, что у Claude</td>
+<td><code>~/Sites/razbory</code> → Pages</td>
+<td>Нет – намеренно (не дублировать Claude)</td>
+<td>Piper, локально</td>
+</tr>
+<tr>
+<td>Боты (Ева, Гром, Тренер)</td>
+<td>Сообщения и голос в Telegram</td>
+<td>claude-vps, systemd</td>
+<td>Через воркеров и очереди</td>
+<td>Свои, у Грома HeyGen через OpenRouter</td>
+</tr>
+</tbody>
+</table></div>
+<p>Единые точки, куда всё стекается: <strong>Штаб</strong> (<code>~/Sites/shtab</code>, страница shtab-view – картина 103 проектов), <strong>razbory</strong> (все страницы-артефакты с голосом), <strong>Telegram</strong> (аварии через <code>avariya.sh</code>, отчёты ботов, задачи через мост Codex) и <strong>отчёт дня Секретаря</strong> в 21:30.</p>
+<h2>Claude: страница-артефакт плюс три агента-отчётчика</h2>
+<ul>
+<li>Правило АСБ от 15.11: любая задача кончается страницей на Pages с голосовым итогом «что сделано, проверено, что нужно от Артёма». Сборка <code>artefakt.py</code>: <code>stranitsa.md</code> + <code>golos.txt</code> → <code>index.html</code> + <code>itog.mp3</code> (локальный Piper, без сети), тёмная тема принудительно, ссылка проверяется скриптом.</li>
+<li><strong>Фёдор, 09:00 ежедневно</strong> (<code>com.artem.shtab-fedor</code> → <code>fedor-daily.sh</code>, <code>claude -p --model opus</code>): скрипт <code>sverka</code> собирает факты, агент сверяет реестр Штаба с действительностью, пишет журнал дня и обновляет shtab-view.</li>
+<li><strong>Секретарь, 21:30 ежедневно</strong> (<code>com.artem.shtab-sekretar</code> → <code>sekretar-daily.sh</code>, <code>claude -p --model opus</code>): отчёт дня «что сделали – что не так – что ждёт Артёма» по всем чатам мака и VPS, снимает расход лимита Claude в <code>docs/den/limit/</code>, несделанное кладёт в инбокс Штаба.</li>
+<li><strong>Отчёты заказчику, воскресенье 20:00</strong> (<code>com.artem.otchety-sbor</code> → <code>sbor-nedeli.sh</code>): отчёт недели страницей с голосом и в очередь бота «Отчёты» – клиент получает только после кнопки Артёма.</li>
+<li><strong>SEO-отчёт, 1-го числа 10:00</strong> (<code>com.artem.seo-otchet</code> → <code>zapusk.sh</code>): подробный разбор индекса, позиций, трафика и заявок страницей с голосом.</li>
+<li>Выжимки переезда из толстых чатов – <code>~/.claude/vyzhimki/</code> (общая с Kimi Code и ZCode).</li>
+</ul>
+<h2>Kimi: разбор с аудио-итогом, но не на Pages</h2>
+<ul>
+<li>Формат: одна большая страница со сводкой «Главное за минуту» (аудио), реестр-таблица с фильтрами и раздел «как выполнен перенос». Пример – <code>otchet-kimi-2026-11-24</code> (index.html, itog.mp3, itog.txt, data.js, skills.html) и отчёт о переносе скиллов 26.11.</li>
+<li>Живёт в <code>~/Documents/Kimi.ai</code> (docs, otchet-…, report-template, perenos, podbor-golosov) и раздаётся локальным Python-сервером на <code>127.0.0.1:8765</code> – на Pages не выходит, с телефона ссылку не открыть.</li>
+<li>Kimi Code держит свой маяк контекста (<code>~/.kimi-code/hooks/</code>), выжимки пишет в ту же общую папку.</li>
+</ul>
+<h2>Codex: автоматизации и карта, итог в чате</h2>
+<ul>
+<li><strong>6 heartbeat-автоматизаций</strong> в <code>~/.codex/automations</code> (5 активных): <code>evolutioncar-by</code> ежедневно 09:00 (кабинеты Яндекса), <code>balance</code> ежедневно 09:30 (публикации на картах), <code>codex</code> очередь Грома – ежедневно с 04:00 до 16:00 и в 19:00, <code>codex-2</code> очередь Тренера – каждые 5 минут, <code>mac</code> чистка места – воскресенье 21:00; <code>vps-mac</code> (аудит места VPS) на паузе. Отчёт – итог в чате автоматизации, уведомление – только при падении запуска (<code>notification_policy = failed_runs_only</code>).</li>
+<li><strong>Карта проектов</strong> <code>~/.claude/karta-proektov-codex.md</code> (разбор 12.10) – постоянный документ «что где лежит», читается всеми средами, заново не разведывается.</li>
+<li>Разовые чаты <code>~/Documents/Codex/&lt;дата&gt;/&lt;чат&gt;</code> – разобранные проекты как документы.</li>
+<li>Мост Telegram (<code>com.artem.codex-telegram-bridge</code>) – задачи из Telegram попадают в Codex; воркеры Евы и Грома (<code>ru.deford.*-codex-worker</code>) зовут Codex как модель для реплик ботов.</li>
+</ul>
+<h2>ZCode: тот же стандарт, расписания не дублируются</h2>
+<ul>
+<li>Стандарт артефакт-страниц унаследован от Claude целиком: этот отчёт собран <code>artefakt.py</code> из ZCode. Правила – <code>~/.zcode/AGENTS.md</code> (Минто, проверка до «готово», инбокс Штаба).</li>
+<li>Хуки: маяк толстого чата на 300 тыс. токенов, переезд с общей папкой выжимок на три среды. 62 нативных агента вызываются по имени, 171 скилл читается из <code>~/.agents/skills</code>.</li>
+<li>Отчёты по расписанию в ZCode намеренно не заведены: Секретарь, Фёдор, Отчёты и SEO-отчёт остаются в Claude – иначе выйдут два отчёта. Фёдор и РУКИ в ZCode – по слову владельца.</li>
+</ul>
+<h2>Боты: голос и сообщения в Telegram</h2>
+<ul>
+<li>Гром (@mentorbott_bot), Тренер (@trener_artem_bot), Ева – реплики и отчёты в Telegram с claude-vps; у Грома голос HeyGen Vincent через OpenRouter, для отчётов Евы и Грома подобраны бесплатные голоса.</li>
+<li>Отчёты недели заказчикам шлёт бот «Отчёты» – после кнопки Артёма в очереди.</li>
+<li>Аварии любой среды – <code>avariya.sh</code>: сообщение Еве и Артёму сразу, «починено» – той же командой.</li>
+</ul>
+<h2>Слабые места</h2>
+<ul>
+<li><strong>Kimi не на Pages:</strong> разборы Kimi живут на локальном сервере – с телефона их не открыть. Перенести папку в razbory – механическая задача.</li>
+<li><strong>Codex без страниц:</strong> итоги автоматизаций остаются в чате, страниц с голосом Codex не делает – если итог важный, его надо руками сохранять страницей.</li>
+<li><strong>Все расписания – на Claude:</strong> отписка Claude = тишина Секретаря и Фёдора. ZCode и Kimi не дублируют их намеренно.</li>
+<li><strong>launchd молчит о сбоях:</strong> задача, упавшая ночью, не отчитается сама, если в её скрипте нет ветки с <code>avariya.sh</code> (правило «скрипт без ветки отказа – недоделан»).</li>
+</ul>
+<h2>Нужно от тебя</h2>
+<ul>
+<li>Решить по Kimi: переносить разборы на Pages (механически, папкой в razbory) или оставить локальным архивом.</li>
+<li>Если Claude перестанет быть основным – сказать, кого из отчётчиков переносить в ZCode первым (логичный кандидат – Секретарь, он снимает расход лимита).</li>
+</ul>
+<h2>Что раскрыть</h2>
+<ul>
+<li>Цифры на 27.11: launchd – 20 задач (15 <code>com.artem.*</code>, 5 <code>ru.*</code>), из них отчётных – 7; crontab – 2 (рекомендации EV по часам пн–ср, снятие доступов по сроку); Codex-автоматизаций – 6 (5 активных); в реестре Штаба – 103 проекта.</li>
+<li>Страницы-артефакты этого набора: переезд ZCode – tema-mail.github.io/razbory/pereezd-claude-zcode-e2364d25/, разбор лимитов Claude – tema-mail.github.io/razbory/limity-claude-8e0192b7/.</li>
+<li>Голоса: Piper (Claude, ZCode, Kimi – локально, без сети), HeyGen/OpenRouter (Гром). Расход лимита Claude снимает сам Секретарь (<code>raskhod-limita.py</code>) – отчёт о расходе не зависит от мнения модели.</li>
+<li>Голос страницы – локальный Piper (Dmitri), без сети.</li>
+</ul></main><div id="lb" onclick="this.style.display='none'"><button aria-label="Закрыть">×</button><img alt=""></div><script>document.querySelectorAll("main img").forEach(i=>i.onclick=()=>{const l=document.getElementById("lb");l.querySelector("img").src=i.src;l.style.display="flex"})</script><script data-tema-v1>(function(){var b=document.createElement('button');b.id='tema-btn';b.type='button';
+function upd(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.textContent=d?'☀':'☾';b.title=d?'Светлая тема':'Тёмная тема';b.setAttribute('aria-label',b.title)}
+b.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('tema',n)}catch(e){}upd()};
+upd();document.body.appendChild(b)})();</script></body></html>
